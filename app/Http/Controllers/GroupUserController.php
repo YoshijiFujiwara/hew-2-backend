@@ -12,6 +12,77 @@ class GroupUserController extends Controller
 {
     /**
      * あるグループのユーザー一覧
+     *
+     * @queryParam group required グループid
+     *
+     * @response {
+    "data": [
+    {
+    "id": 17,
+    "name": "野村 里佳",
+    "username": "nomura.taichi",
+    "email": "fhamada@example.com",
+    "created_at": {
+    "date": "2019-01-13 09:36:18.000000",
+    "timezone_type": 3,
+    "timezone": "UTC"
+    },
+    "updated_at": {
+    "date": "2019-01-13 09:36:18.000000",
+    "timezone_type": 3,
+    "timezone": "UTC"
+    }
+    },
+    {
+    "id": 19,
+    "name": "松本 千代",
+    "username": "haruka.murayama",
+    "email": "mhamada@example.net",
+    "created_at": {
+    "date": "2019-01-13 09:36:18.000000",
+    "timezone_type": 3,
+    "timezone": "UTC"
+    },
+    "updated_at": {
+    "date": "2019-01-13 09:36:18.000000",
+    "timezone_type": 3,
+    "timezone": "UTC"
+    }
+    },
+    {
+    "id": 30,
+    "name": "佐々木 さゆり",
+    "username": "syamaguchi",
+    "email": "yui.matsumoto@example.net",
+    "created_at": {
+    "date": "2019-01-13 09:36:18.000000",
+    "timezone_type": 3,
+    "timezone": "UTC"
+    },
+    "updated_at": {
+    "date": "2019-01-13 09:36:18.000000",
+    "timezone_type": 3,
+    "timezone": "UTC"
+    }
+    },
+    {
+    "id": 36,
+    "name": "井上 和也",
+    "username": "tsubasa67",
+    "email": "mai.yamamoto@example.com",
+    "created_at": {
+    "date": "2019-01-13 09:36:18.000000",
+    "timezone_type": 3,
+    "timezone": "UTC"
+    },
+    "updated_at": {
+    "date": "2019-01-13 09:36:18.000000",
+    "timezone_type": 3,
+    "timezone": "UTC"
+    }
+    }
+    ]
+    }
      */
     public function index(Request $request, Group $group)
     {
@@ -20,6 +91,79 @@ class GroupUserController extends Controller
 
     /**
      * グループにユーザーを追加する
+     * @queryParam group required グループid
+     *
+     * @response {
+    "data": [
+    {
+    "id": 17,
+    "name": "野村 里佳",
+    "username": "nomura.taichi",
+    "email": "fhamada@example.com",
+    "created_at": {
+    "date": "2019-01-13 09:36:18.000000",
+    "timezone_type": 3,
+    "timezone": "UTC"
+    },
+    "updated_at": {
+    "date": "2019-01-13 09:36:18.000000",
+    "timezone_type": 3,
+    "timezone": "UTC"
+    }
+    },
+    {
+    "id": 19,
+    "name": "松本 千代",
+    "username": "haruka.murayama",
+    "email": "mhamada@example.net",
+    "created_at": {
+    "date": "2019-01-13 09:36:18.000000",
+    "timezone_type": 3,
+    "timezone": "UTC"
+    },
+    "updated_at": {
+    "date": "2019-01-13 09:36:18.000000",
+    "timezone_type": 3,
+    "timezone": "UTC"
+    }
+    },
+    {
+    "id": 30,
+    "name": "佐々木 さゆり",
+    "username": "syamaguchi",
+    "email": "yui.matsumoto@example.net",
+    "created_at": {
+    "date": "2019-01-13 09:36:18.000000",
+    "timezone_type": 3,
+    "timezone": "UTC"
+    },
+    "updated_at": {
+    "date": "2019-01-13 09:36:18.000000",
+    "timezone_type": 3,
+    "timezone": "UTC"
+    }
+    },
+    {
+    "id": 36,
+    "name": "井上 和也",
+    "username": "tsubasa67",
+    "email": "mai.yamamoto@example.com",
+    "created_at": {
+    "date": "2019-01-13 09:36:18.000000",
+    "timezone_type": 3,
+    "timezone": "UTC"
+    },
+    "updated_at": {
+    "date": "2019-01-13 09:36:18.000000",
+    "timezone_type": 3,
+    "timezone": "UTC"
+    }
+    }
+    ]
+    }
+     * @response 409 {
+    "error": "すでにそのグループに登録されています"
+    }
      */
     public function store(Request $request, Group $group)
     {
@@ -38,6 +182,29 @@ class GroupUserController extends Controller
 
     /**
      * あるグループの中のひとりのユーザー情報を得る
+     * @queryParam group required グループid
+     * @queryParam user required グループに所属する一人のユーザーのid
+     * @response {
+    "data": {
+    "id": 17,
+    "name": "野村 里佳",
+    "username": "nomura.taichi",
+    "email": "fhamada@example.com",
+    "created_at": {
+    "date": "2019-01-13 09:36:18.000000",
+    "timezone_type": 3,
+    "timezone": "UTC"
+    },
+    "updated_at": {
+    "date": "2019-01-13 09:36:18.000000",
+    "timezone_type": 3,
+    "timezone": "UTC"
+    }
+    }
+    }
+     * @response 409 {
+    "error": "そのユーザーはそのグループの一員ではありません"
+    }
      */
     public function show(Request $request, Group $group, User $user)
     {
@@ -51,6 +218,12 @@ class GroupUserController extends Controller
 
     /**
      * ユーザーをグループから削除
+     * @queryParam group required グループid
+     * @queryParam user required グループに所属する一人のユーザーのid
+     * 
+     * @response 409 {
+    "error": "そのユーザーはそのグループの一員ではありません"
+    }
      */
     public function destroy(Request $request, Group $group, User $user)
     {

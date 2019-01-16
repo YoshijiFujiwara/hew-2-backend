@@ -21,13 +21,84 @@ Welcome to the generated API reference.
 <!-- END_INFO -->
 
 #general
-<!-- START_a925a8d22b3615f12fca79456d286859 -->
-## Get a JWT via given credentials.
+<!-- START_2e1c96dcffcfe7e0eb58d6408f1d619e -->
+## email, password, usernameでユーザー登録し、JWTを得る
 
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/auth/login" 
+curl -X POST "http://localhost/api/auth/register"     -d "email"="W3efZL6ZoT54kZMO" \
+    -d "name"="VLAEwpGgvxjuhrSS" \
+    -d "username"="jlVLbTMgBcFYnGL2" \
+    -d "password"="7uV7R4GsAKBorNHb" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/auth/register");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+let body = JSON.stringify({
+    "email": "W3efZL6ZoT54kZMO",
+    "name": "VLAEwpGgvxjuhrSS",
+    "username": "jlVLbTMgBcFYnGL2",
+    "password": "7uV7R4GsAKBorNHb",
+})
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response (401):
+
+```json
+{
+    "message": "Unauthenticated."
+}
+```
+> Example response (422):
+
+```json
+{
+    "message": "The given data was invalid.",
+    "errors": {
+        "email": [
+            "The email has already been taken."
+        ]
+    }
+}
+```
+
+### HTTP Request
+`POST api/auth/register`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    email | string |  required  | メールアドレス
+    name | string |  required  | 名前
+    username | string |  required  | ユーザーネーム（表示される名前）
+    password | string |  required  | パスワード
+
+<!-- END_2e1c96dcffcfe7e0eb58d6408f1d619e -->
+
+<!-- START_a925a8d22b3615f12fca79456d286859 -->
+## email, password でログインし、JWTを得る
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/api/auth/login"     -d "email"="tdDrcDaim9PhAPQ0" \
+    -d "password"="tgC44PNVCJLwItUP" 
 ```
 
 ```javascript
@@ -38,23 +109,51 @@ let headers = {
     "Content-Type": "application/json",
 }
 
+let body = JSON.stringify({
+    "email": "tdDrcDaim9PhAPQ0",
+    "password": "tgC44PNVCJLwItUP",
+})
+
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
 ```
 
+> Example response (401):
+
+```json
+{
+    "error": "Unauthorized"
+}
+```
+> Example response (200):
+
+```json
+{
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvYXV0aFwvbG9naW4iLCJpYXQiOjE1NDc2MDE0MzAsImV4cCI6MTU0NzYwNTAzMCwibmJmIjoxNTQ3NjAxNDMwLCJqdGkiOiJpYVR5Tld6NEFJRmpzZmhMIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.3NMSXPcEPngdi_xQlNUp30-C7mPJSNUub24BaLj-0sc",
+    "token_type": "bearer",
+    "expires_in": 3600
+}
+```
 
 ### HTTP Request
 `POST api/auth/login`
 
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    email | string |  required  | メールアドレス
+    password | string |  required  | パスワード
 
 <!-- END_a925a8d22b3615f12fca79456d286859 -->
 
 <!-- START_19ff1b6f8ce19d3c444e9b518e8f7160 -->
-## Log the user out (Invalidate the token).
+## ログアウト
 
 > Example request:
 
@@ -86,7 +185,7 @@ fetch(url, {
 <!-- END_19ff1b6f8ce19d3c444e9b518e8f7160 -->
 
 <!-- START_994af8f47e3039ba6d6d67c09dd9e415 -->
-## Refresh a token.
+## トークンのリフレッシュ
 
 > Example request:
 
@@ -118,7 +217,7 @@ fetch(url, {
 <!-- END_994af8f47e3039ba6d6d67c09dd9e415 -->
 
 <!-- START_a47210337df3b4ba0df697c115ba0c1e -->
-## Get the authenticated User.
+## 現在ログインしているユーザーの情報を得る
 
 > Example request:
 
@@ -174,409 +273,265 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
-> Example response (500):
+> Example response (200):
 
 ```json
 {
-    "message": "The token could not be parsed from the request",
-    "exception": "Tymon\\JWTAuth\\Exceptions\\JWTException",
-    "file": "\/var\/www\/vendor\/tymon\/jwt-auth\/src\/JWT.php",
-    "line": 185,
-    "trace": [
+    "data": [
         {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Support\/Facades\/Facade.php",
-            "line": 237,
-            "function": "parseToken",
-            "class": "Tymon\\JWTAuth\\JWT",
-            "type": "->"
+            "id": 14,
+            "name": "斉藤 太郎",
+            "username": "asuka72",
+            "email": "maaya86@example.org",
+            "attribute_id": 4,
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         },
         {
-            "file": "\/var\/www\/app\/Http\/Middleware\/JWT.php",
-            "line": 20,
-            "function": "__callStatic",
-            "class": "Illuminate\\Support\\Facades\\Facade",
-            "type": "::"
+            "id": 15,
+            "name": "杉山 太一",
+            "username": "yosuke.yamamoto",
+            "email": "dogaki@example.net",
+            "attribute_id": 3,
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         },
         {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "App\\Http\\Middleware\\JWT",
-            "type": "->"
+            "id": 17,
+            "name": "野村 里佳",
+            "username": "nomura.taichi",
+            "email": "fhamada@example.com",
+            "attribute_id": 2,
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         },
         {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
+            "id": 19,
+            "name": "松本 千代",
+            "username": "haruka.murayama",
+            "email": "mhamada@example.net",
+            "attribute_id": 2,
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         },
         {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php",
-            "line": 41,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
+            "id": 23,
+            "name": "井上 洋介",
+            "username": "yuki.ogaki",
+            "email": "yuta.yamaguchi@example.org",
+            "attribute_id": 3,
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         },
         {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
-            "type": "->"
+            "id": 25,
+            "name": "原田 太一",
+            "username": "murayama.taro",
+            "email": "ryohei50@example.com",
+            "attribute_id": 3,
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         },
         {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
+            "id": 26,
+            "name": "渚 花子",
+            "username": "ssasaki",
+            "email": "wakamatsu.yoko@example.com",
+            "attribute_id": 4,
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         },
         {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/ThrottleRequests.php",
-            "line": 58,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
+            "id": 30,
+            "name": "佐々木 さゆり",
+            "username": "syamaguchi",
+            "email": "yui.matsumoto@example.net",
+            "attribute_id": 4,
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         },
         {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
-            "type": "->"
+            "id": 31,
+            "name": "宇野 加奈",
+            "username": "kimura.hiroshi",
+            "email": "kimura.maaya@example.net",
+            "attribute_id": 4,
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         },
         {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
+            "id": 36,
+            "name": "井上 和也",
+            "username": "tsubasa67",
+            "email": "mai.yamamoto@example.com",
+            "attribute_id": 1,
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         },
         {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 104,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
+            "id": 37,
+            "name": "青田 充",
+            "username": "ito.kana",
+            "email": "akira02@example.org",
+            "attribute_id": 1,
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         },
         {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-            "line": 684,
-            "function": "then",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
+            "id": 38,
+            "name": "津田 幹",
+            "username": "takahashi.kaori",
+            "email": "puno@example.com",
+            "attribute_id": 1,
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         },
         {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-            "line": 659,
-            "function": "runRouteWithinStack",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "->"
+            "id": 45,
+            "name": "加納 拓真",
+            "username": "kimura.takuma",
+            "email": "taichi48@example.org",
+            "attribute_id": 2,
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         },
         {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-            "line": 625,
-            "function": "runRoute",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "->"
+            "id": 48,
+            "name": "村山 知実",
+            "username": "nanami15",
+            "email": "ito.hanako@example.net",
+            "attribute_id": 5,
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         },
         {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-            "line": 614,
-            "function": "dispatchToRoute",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
-            "line": 176,
-            "function": "dispatch",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 30,
-            "function": "Illuminate\\Foundation\\Http\\{closure}",
-            "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/fideloper\/proxy\/src\/TrustProxies.php",
-            "line": 57,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "Fideloper\\Proxy\\TrustProxies",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php",
-            "line": 31,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php",
-            "line": 31,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ValidatePostSize.php",
-            "line": 27,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/CheckForMaintenanceMode.php",
-            "line": 62,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 104,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
-            "line": 151,
-            "function": "then",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
-            "line": 116,
-            "function": "sendRequestThroughRouter",
-            "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseStrategies\/ResponseCallStrategy.php",
-            "line": 272,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseStrategies\/ResponseCallStrategy.php",
-            "line": 256,
-            "function": "callLaravelRoute",
-            "class": "Mpociot\\ApiDoc\\Tools\\ResponseStrategies\\ResponseCallStrategy",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseStrategies\/ResponseCallStrategy.php",
-            "line": 33,
-            "function": "makeApiCall",
-            "class": "Mpociot\\ApiDoc\\Tools\\ResponseStrategies\\ResponseCallStrategy",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseResolver.php",
-            "line": 49,
-            "function": "__invoke",
-            "class": "Mpociot\\ApiDoc\\Tools\\ResponseStrategies\\ResponseCallStrategy",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseResolver.php",
-            "line": 68,
-            "function": "resolve",
-            "class": "Mpociot\\ApiDoc\\Tools\\ResponseResolver",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/Generator.php",
-            "line": 54,
-            "function": "getResponse",
-            "class": "Mpociot\\ApiDoc\\Tools\\ResponseResolver",
-            "type": "::"
-        },
-        {
-            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Commands\/GenerateDocumentation.php",
-            "line": 196,
-            "function": "processRoute",
-            "class": "Mpociot\\ApiDoc\\Tools\\Generator",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Commands\/GenerateDocumentation.php",
-            "line": 57,
-            "function": "processRoutes",
-            "class": "Mpociot\\ApiDoc\\Commands\\GenerateDocumentation",
-            "type": "->"
-        },
-        {
-            "function": "handle",
-            "class": "Mpociot\\ApiDoc\\Commands\\GenerateDocumentation",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php",
-            "line": 29,
-            "function": "call_user_func_array"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php",
-            "line": 87,
-            "function": "Illuminate\\Container\\{closure}",
-            "class": "Illuminate\\Container\\BoundMethod",
-            "type": "::"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php",
-            "line": 31,
-            "function": "callBoundMethod",
-            "class": "Illuminate\\Container\\BoundMethod",
-            "type": "::"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/Container.php",
-            "line": 572,
-            "function": "call",
-            "class": "Illuminate\\Container\\BoundMethod",
-            "type": "::"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Command.php",
-            "line": 183,
-            "function": "call",
-            "class": "Illuminate\\Container\\Container",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/symfony\/console\/Command\/Command.php",
-            "line": 255,
-            "function": "execute",
-            "class": "Illuminate\\Console\\Command",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Command.php",
-            "line": 170,
-            "function": "run",
-            "class": "Symfony\\Component\\Console\\Command\\Command",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/symfony\/console\/Application.php",
-            "line": 901,
-            "function": "run",
-            "class": "Illuminate\\Console\\Command",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/symfony\/console\/Application.php",
-            "line": 262,
-            "function": "doRunCommand",
-            "class": "Symfony\\Component\\Console\\Application",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/symfony\/console\/Application.php",
-            "line": 145,
-            "function": "doRun",
-            "class": "Symfony\\Component\\Console\\Application",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Application.php",
-            "line": 89,
-            "function": "run",
-            "class": "Symfony\\Component\\Console\\Application",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Console\/Kernel.php",
-            "line": 122,
-            "function": "run",
-            "class": "Illuminate\\Console\\Application",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/artisan",
-            "line": 37,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Console\\Kernel",
-            "type": "->"
+            "id": 49,
+            "name": "井高 さゆり",
+            "username": "maaya29",
+            "email": "yamagishi.yosuke@example.net",
+            "attribute_id": 5,
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         }
     ]
 }
@@ -594,7 +549,7 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/friends" 
+curl -X POST "http://localhost/api/friends"     -d "email"="eN7ET0xNNFRGAewR" 
 ```
 
 ```javascript
@@ -605,18 +560,57 @@ let headers = {
     "Content-Type": "application/json",
 }
 
+let body = JSON.stringify({
+    "email": "eN7ET0xNNFRGAewR",
+})
+
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
 ```
 
+> Example response (200):
+
+```json
+{
+    "data": {
+        "id": 2,
+        "name": "大垣 美加子",
+        "username": "cyamada",
+        "email": "taro.kato@example.net",
+        "created_at": {
+            "date": "2019-01-13 09:36:18.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        },
+        "updated_at": {
+            "date": "2019-01-13 09:36:18.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        }
+    }
+}
+```
+> Example response (409):
+
+```json
+{
+    "error": "すでにフレンドです"
+}
+```
 
 ### HTTP Request
 `POST api/friends`
 
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    email | string |  required  | 追加する友達のメールアドレス
 
 <!-- END_f05cf1deece1e8c35e1ec331331e3319 -->
 
@@ -632,6 +626,11 @@ curl -X GET -G "http://localhost/api/friends/{friend}"
 ```javascript
 const url = new URL("http://localhost/api/friends/{friend}");
 
+    let params = {
+            "friend": "xsmP9LghjkmFivFD",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
 let headers = {
     "Accept": "application/json",
     "Content-Type": "application/json",
@@ -645,15 +644,37 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
-> Example response:
+> Example response (200):
 
 ```json
-null
+{
+    "data": {
+        "id": 2,
+        "name": "大垣 美加子",
+        "username": "cyamada",
+        "email": "taro.kato@example.net",
+        "created_at": {
+            "date": "2019-01-13 09:36:18.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        },
+        "updated_at": {
+            "date": "2019-01-13 09:36:18.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        }
+    }
+}
 ```
 
 ### HTTP Request
 `GET api/friends/{friend}`
 
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    friend |  required  | 友達のid
 
 <!-- END_21d33fd99fad4620b704e1c5c2326a37 -->
 
@@ -669,6 +690,11 @@ curl -X DELETE "http://localhost/api/friends/{friend}"
 ```javascript
 const url = new URL("http://localhost/api/friends/{friend}");
 
+    let params = {
+            "friend": "wRAN7gJnsf9Hh7Iz",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
 let headers = {
     "Accept": "application/json",
     "Content-Type": "application/json",
@@ -682,10 +708,20 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+> Example response (204):
+
+```json
+{}
+```
 
 ### HTTP Request
 `DELETE api/friends/{friend}`
 
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    friend |  required  | 友達のid
 
 <!-- END_5256ac7cddbd9267236aaa0874cb6a49 -->
 
@@ -714,409 +750,298 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
-> Example response (500):
+> Example response (200):
 
 ```json
 {
-    "message": "The token could not be parsed from the request",
-    "exception": "Tymon\\JWTAuth\\Exceptions\\JWTException",
-    "file": "\/var\/www\/vendor\/tymon\/jwt-auth\/src\/JWT.php",
-    "line": 185,
-    "trace": [
+    "data": [
         {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Support\/Facades\/Facade.php",
-            "line": 237,
-            "function": "parseToken",
-            "class": "Tymon\\JWTAuth\\JWT",
-            "type": "->"
+            "id": 1,
+            "manager": {
+                "id": 1,
+                "name": "加藤 里佳",
+                "username": "eaota",
+                "email": "momoko48@example.net",
+                "created_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "eius",
+            "users": [
+                {
+                    "id": 17,
+                    "name": "野村 里佳",
+                    "username": "nomura.taichi",
+                    "email": "fhamada@example.com",
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 19,
+                    "name": "松本 千代",
+                    "username": "haruka.murayama",
+                    "email": "mhamada@example.net",
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 30,
+                    "name": "佐々木 さゆり",
+                    "username": "syamaguchi",
+                    "email": "yui.matsumoto@example.net",
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 36,
+                    "name": "井上 和也",
+                    "username": "tsubasa67",
+                    "email": "mai.yamamoto@example.com",
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         },
         {
-            "file": "\/var\/www\/app\/Http\/Middleware\/JWT.php",
-            "line": 20,
-            "function": "__callStatic",
-            "class": "Illuminate\\Support\\Facades\\Facade",
-            "type": "::"
+            "id": 2,
+            "manager": {
+                "id": 1,
+                "name": "加藤 里佳",
+                "username": "eaota",
+                "email": "momoko48@example.net",
+                "created_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "tempore",
+            "users": [
+                {
+                    "id": 14,
+                    "name": "斉藤 太郎",
+                    "username": "asuka72",
+                    "email": "maaya86@example.org",
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 25,
+                    "name": "原田 太一",
+                    "username": "murayama.taro",
+                    "email": "ryohei50@example.com",
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 30,
+                    "name": "佐々木 さゆり",
+                    "username": "syamaguchi",
+                    "email": "yui.matsumoto@example.net",
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 45,
+                    "name": "加納 拓真",
+                    "username": "kimura.takuma",
+                    "email": "taichi48@example.org",
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         },
         {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "App\\Http\\Middleware\\JWT",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php",
-            "line": 41,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/ThrottleRequests.php",
-            "line": 58,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 104,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-            "line": 684,
-            "function": "then",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-            "line": 659,
-            "function": "runRouteWithinStack",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-            "line": 625,
-            "function": "runRoute",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-            "line": 614,
-            "function": "dispatchToRoute",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
-            "line": 176,
-            "function": "dispatch",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 30,
-            "function": "Illuminate\\Foundation\\Http\\{closure}",
-            "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/fideloper\/proxy\/src\/TrustProxies.php",
-            "line": 57,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "Fideloper\\Proxy\\TrustProxies",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php",
-            "line": 31,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php",
-            "line": 31,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ValidatePostSize.php",
-            "line": 27,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/CheckForMaintenanceMode.php",
-            "line": 62,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 104,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
-            "line": 151,
-            "function": "then",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
-            "line": 116,
-            "function": "sendRequestThroughRouter",
-            "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseStrategies\/ResponseCallStrategy.php",
-            "line": 272,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseStrategies\/ResponseCallStrategy.php",
-            "line": 256,
-            "function": "callLaravelRoute",
-            "class": "Mpociot\\ApiDoc\\Tools\\ResponseStrategies\\ResponseCallStrategy",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseStrategies\/ResponseCallStrategy.php",
-            "line": 33,
-            "function": "makeApiCall",
-            "class": "Mpociot\\ApiDoc\\Tools\\ResponseStrategies\\ResponseCallStrategy",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseResolver.php",
-            "line": 49,
-            "function": "__invoke",
-            "class": "Mpociot\\ApiDoc\\Tools\\ResponseStrategies\\ResponseCallStrategy",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseResolver.php",
-            "line": 68,
-            "function": "resolve",
-            "class": "Mpociot\\ApiDoc\\Tools\\ResponseResolver",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/Generator.php",
-            "line": 54,
-            "function": "getResponse",
-            "class": "Mpociot\\ApiDoc\\Tools\\ResponseResolver",
-            "type": "::"
-        },
-        {
-            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Commands\/GenerateDocumentation.php",
-            "line": 196,
-            "function": "processRoute",
-            "class": "Mpociot\\ApiDoc\\Tools\\Generator",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Commands\/GenerateDocumentation.php",
-            "line": 57,
-            "function": "processRoutes",
-            "class": "Mpociot\\ApiDoc\\Commands\\GenerateDocumentation",
-            "type": "->"
-        },
-        {
-            "function": "handle",
-            "class": "Mpociot\\ApiDoc\\Commands\\GenerateDocumentation",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php",
-            "line": 29,
-            "function": "call_user_func_array"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php",
-            "line": 87,
-            "function": "Illuminate\\Container\\{closure}",
-            "class": "Illuminate\\Container\\BoundMethod",
-            "type": "::"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php",
-            "line": 31,
-            "function": "callBoundMethod",
-            "class": "Illuminate\\Container\\BoundMethod",
-            "type": "::"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/Container.php",
-            "line": 572,
-            "function": "call",
-            "class": "Illuminate\\Container\\BoundMethod",
-            "type": "::"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Command.php",
-            "line": 183,
-            "function": "call",
-            "class": "Illuminate\\Container\\Container",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/symfony\/console\/Command\/Command.php",
-            "line": 255,
-            "function": "execute",
-            "class": "Illuminate\\Console\\Command",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Command.php",
-            "line": 170,
-            "function": "run",
-            "class": "Symfony\\Component\\Console\\Command\\Command",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/symfony\/console\/Application.php",
-            "line": 901,
-            "function": "run",
-            "class": "Illuminate\\Console\\Command",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/symfony\/console\/Application.php",
-            "line": 262,
-            "function": "doRunCommand",
-            "class": "Symfony\\Component\\Console\\Application",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/symfony\/console\/Application.php",
-            "line": 145,
-            "function": "doRun",
-            "class": "Symfony\\Component\\Console\\Application",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Application.php",
-            "line": 89,
-            "function": "run",
-            "class": "Symfony\\Component\\Console\\Application",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Console\/Kernel.php",
-            "line": 122,
-            "function": "run",
-            "class": "Illuminate\\Console\\Application",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/artisan",
-            "line": 37,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Console\\Kernel",
-            "type": "->"
+            "id": 3,
+            "manager": {
+                "id": 1,
+                "name": "加藤 里佳",
+                "username": "eaota",
+                "email": "momoko48@example.net",
+                "created_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "consequuntur",
+            "users": [
+                {
+                    "id": 36,
+                    "name": "井上 和也",
+                    "username": "tsubasa67",
+                    "email": "mai.yamamoto@example.com",
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 38,
+                    "name": "津田 幹",
+                    "username": "takahashi.kaori",
+                    "email": "puno@example.com",
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 45,
+                    "name": "加納 拓真",
+                    "username": "kimura.takuma",
+                    "email": "taichi48@example.org",
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 48,
+                    "name": "村山 知実",
+                    "username": "nanami15",
+                    "email": "ito.hanako@example.net",
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         }
     ]
 }
@@ -1134,7 +1059,7 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/groups" 
+curl -X POST "http://localhost/api/groups"     -d "name"="98QiWInRr5A0Hpnh" 
 ```
 
 ```javascript
@@ -1145,18 +1070,72 @@ let headers = {
     "Content-Type": "application/json",
 }
 
+let body = JSON.stringify({
+    "name": "98QiWInRr5A0Hpnh",
+})
+
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
 ```
 
+> Example response (200):
+
+```json
+{
+    "data": {
+        "id": 151,
+        "manager": {
+            "id": 1,
+            "name": "加藤 里佳",
+            "username": "eaota",
+            "email": "momoko48@example.net",
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        "name": "あたらしい",
+        "users": [],
+        "created_at": {
+            "date": "2019-01-13 12:01:30.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        },
+        "updated_at": {
+            "date": "2019-01-13 12:01:30.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        }
+    }
+}
+```
+> Example response (409):
+
+```json
+{
+    "error": "同じ名前は使用できません"
+}
+```
 
 ### HTTP Request
 `POST api/groups`
 
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    name | string |  required  | 新規グループの名前
 
 <!-- END_15c22564ad248f952405021410fd1d25 -->
 
@@ -1172,6 +1151,11 @@ curl -X GET -G "http://localhost/api/groups/{group}"
 ```javascript
 const url = new URL("http://localhost/api/groups/{group}");
 
+    let params = {
+            "group": "khi9wydcWK87Zb9f",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
 let headers = {
     "Accept": "application/json",
     "Content-Type": "application/json",
@@ -1185,15 +1169,117 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
-> Example response:
+> Example response (200):
 
 ```json
-null
+{
+    "data": {
+        "id": 1,
+        "manager": {
+            "id": 1,
+            "name": "加藤 里佳",
+            "username": "eaota",
+            "email": "momoko48@example.net",
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        "name": "eius",
+        "users": [
+            {
+                "id": 17,
+                "name": "野村 里佳",
+                "username": "nomura.taichi",
+                "email": "fhamada@example.com",
+                "created_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            {
+                "id": 19,
+                "name": "松本 千代",
+                "username": "haruka.murayama",
+                "email": "mhamada@example.net",
+                "created_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            {
+                "id": 30,
+                "name": "佐々木 さゆり",
+                "username": "syamaguchi",
+                "email": "yui.matsumoto@example.net",
+                "created_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            {
+                "id": 36,
+                "name": "井上 和也",
+                "username": "tsubasa67",
+                "email": "mai.yamamoto@example.com",
+                "created_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            }
+        ],
+        "created_at": {
+            "date": "2019-01-13 09:36:18.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        },
+        "updated_at": {
+            "date": "2019-01-13 09:36:18.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        }
+    }
+}
 ```
 
 ### HTTP Request
 `GET api/groups/{group}`
 
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    group |  required  | グループid
 
 <!-- END_a209a43173c7c4aaf7ab070d77fb7f0c -->
 
@@ -1203,31 +1289,160 @@ null
 > Example request:
 
 ```bash
-curl -X PUT "http://localhost/api/groups/{group}" 
+curl -X PUT "http://localhost/api/groups/{group}"     -d "name"="Nqt4PodJ1YbNkdlK" 
 ```
 
 ```javascript
 const url = new URL("http://localhost/api/groups/{group}");
+
+    let params = {
+            "group": "PvU8rz0aj97q2NBc",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
 let headers = {
     "Accept": "application/json",
     "Content-Type": "application/json",
 }
 
+let body = JSON.stringify({
+    "name": "Nqt4PodJ1YbNkdlK",
+})
+
 fetch(url, {
     method: "PUT",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
 ```
 
+> Example response (409):
+
+```json
+{
+    "error": "同じ名前は使用できません"
+}
+```
+> Example response (200):
+
+```json
+{
+    "data": {
+        "id": 1,
+        "manager": {
+            "id": 1,
+            "name": "加藤 里佳",
+            "username": "eaota",
+            "email": "momoko48@example.net",
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        "name": "eius",
+        "users": [
+            {
+                "id": 17,
+                "name": "野村 里佳",
+                "username": "nomura.taichi",
+                "email": "fhamada@example.com",
+                "created_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            {
+                "id": 19,
+                "name": "松本 千代",
+                "username": "haruka.murayama",
+                "email": "mhamada@example.net",
+                "created_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            {
+                "id": 30,
+                "name": "佐々木 さゆり",
+                "username": "syamaguchi",
+                "email": "yui.matsumoto@example.net",
+                "created_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            {
+                "id": 36,
+                "name": "井上 和也",
+                "username": "tsubasa67",
+                "email": "mai.yamamoto@example.com",
+                "created_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            }
+        ],
+        "created_at": {
+            "date": "2019-01-13 09:36:18.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        },
+        "updated_at": {
+            "date": "2019-01-13 09:36:18.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        }
+    }
+}
+```
 
 ### HTTP Request
 `PUT api/groups/{group}`
 
 `PATCH api/groups/{group}`
 
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    name | string |  required  | 新たにつけるグループ名
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    group |  required  | グループid
 
 <!-- END_5b84408c838201930093112a7621935c -->
 
@@ -1243,6 +1458,11 @@ curl -X DELETE "http://localhost/api/groups/{group}"
 ```javascript
 const url = new URL("http://localhost/api/groups/{group}");
 
+    let params = {
+            "group": "3d5YiCed7ZIPvGdF",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
 let headers = {
     "Accept": "application/json",
     "Content-Type": "application/json",
@@ -1256,10 +1476,20 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+> Example response (204):
+
+```json
+{}
+```
 
 ### HTTP Request
 `DELETE api/groups/{group}`
 
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    group |  required  | グループid
 
 <!-- END_bd4f731f3f84c755053406b8971eba1f -->
 
@@ -1275,6 +1505,11 @@ curl -X GET -G "http://localhost/api/groups/{group}/users"
 ```javascript
 const url = new URL("http://localhost/api/groups/{group}/users");
 
+    let params = {
+            "group": "J4JDa5MplpBhNZjX",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
 let headers = {
     "Accept": "application/json",
     "Content-Type": "application/json",
@@ -1288,15 +1523,87 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
-> Example response:
+> Example response (200):
 
 ```json
-null
+{
+    "data": [
+        {
+            "id": 17,
+            "name": "野村 里佳",
+            "username": "nomura.taichi",
+            "email": "fhamada@example.com",
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 19,
+            "name": "松本 千代",
+            "username": "haruka.murayama",
+            "email": "mhamada@example.net",
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 30,
+            "name": "佐々木 さゆり",
+            "username": "syamaguchi",
+            "email": "yui.matsumoto@example.net",
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 36,
+            "name": "井上 和也",
+            "username": "tsubasa67",
+            "email": "mai.yamamoto@example.com",
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        }
+    ]
+}
 ```
 
 ### HTTP Request
 `GET api/groups/{group}/users`
 
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    group |  required  | グループid
 
 <!-- END_25cacea309e94199433ca72c489534bc -->
 
@@ -1312,6 +1619,11 @@ curl -X POST "http://localhost/api/groups/{group}/users"
 ```javascript
 const url = new URL("http://localhost/api/groups/{group}/users");
 
+    let params = {
+            "group": "D8ZTd8Nd9f59G6HF",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
 let headers = {
     "Accept": "application/json",
     "Content-Type": "application/json",
@@ -1325,10 +1637,94 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+> Example response (200):
+
+```json
+{
+    "data": [
+        {
+            "id": 17,
+            "name": "野村 里佳",
+            "username": "nomura.taichi",
+            "email": "fhamada@example.com",
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 19,
+            "name": "松本 千代",
+            "username": "haruka.murayama",
+            "email": "mhamada@example.net",
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 30,
+            "name": "佐々木 さゆり",
+            "username": "syamaguchi",
+            "email": "yui.matsumoto@example.net",
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 36,
+            "name": "井上 和也",
+            "username": "tsubasa67",
+            "email": "mai.yamamoto@example.com",
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        }
+    ]
+}
+```
+> Example response (409):
+
+```json
+{
+    "error": "すでにそのグループに登録されています"
+}
+```
 
 ### HTTP Request
 `POST api/groups/{group}/users`
 
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    group |  required  | グループid
 
 <!-- END_f40148555e0e5ae9fd501d8c12dd032c -->
 
@@ -1344,6 +1740,12 @@ curl -X GET -G "http://localhost/api/groups/{group}/users/{user}"
 ```javascript
 const url = new URL("http://localhost/api/groups/{group}/users/{user}");
 
+    let params = {
+            "group": "CpUSPkGk09wPypuf",
+            "user": "au4ybUgA8drCfJmZ",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
 let headers = {
     "Accept": "application/json",
     "Content-Type": "application/json",
@@ -1357,15 +1759,45 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
-> Example response:
+> Example response (200):
 
 ```json
-null
+{
+    "data": {
+        "id": 17,
+        "name": "野村 里佳",
+        "username": "nomura.taichi",
+        "email": "fhamada@example.com",
+        "created_at": {
+            "date": "2019-01-13 09:36:18.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        },
+        "updated_at": {
+            "date": "2019-01-13 09:36:18.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        }
+    }
+}
+```
+> Example response (409):
+
+```json
+{
+    "error": "そのユーザーはそのグループの一員ではありません"
+}
 ```
 
 ### HTTP Request
 `GET api/groups/{group}/users/{user}`
 
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    group |  required  | グループid
+    user |  required  | グループに所属する一人のユーザーのid
 
 <!-- END_193dc746eafa37d49a04e41e8a28bb43 -->
 
@@ -1381,6 +1813,12 @@ curl -X DELETE "http://localhost/api/groups/{group}/users/{user}"
 ```javascript
 const url = new URL("http://localhost/api/groups/{group}/users/{user}");
 
+    let params = {
+            "group": "Q3BoXlJ7WqvjIFCy",
+            "user": "wmCnIOvmngswyste",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
 let headers = {
     "Accept": "application/json",
     "Content-Type": "application/json",
@@ -1394,10 +1832,23 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+> Example response (409):
+
+```json
+{
+    "error": "そのユーザーはそのグループの一員ではありません"
+}
+```
 
 ### HTTP Request
 `DELETE api/groups/{group}/users/{user}`
 
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    group |  required  | グループid
+    user |  required  | グループに所属する一人のユーザーのid
 
 <!-- END_5d098753a466f1ebdbceb5c54720efb3 -->
 
@@ -1426,6 +1877,736 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+> Example response (200):
+
+```json
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "consequatur",
+            "shop_id": 349,
+            "budget": 23048,
+            "actual": 11930,
+            "start_time": "1982-08-26 06:36:15",
+            "end_time": null,
+            "manager": {
+                "id": 1,
+                "name": "加藤 里佳",
+                "username": "eaota",
+                "email": "momoko48@example.net",
+                "created_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [
+                {
+                    "id": 17,
+                    "name": "野村 里佳",
+                    "username": "nomura.taichi",
+                    "email": "fhamada@example.com",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 19,
+                    "name": "松本 千代",
+                    "username": "haruka.murayama",
+                    "email": "mhamada@example.net",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 23,
+                    "name": "井上 洋介",
+                    "username": "yuki.ogaki",
+                    "email": "yuta.yamaguchi@example.org",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 38,
+                    "name": "津田 幹",
+                    "username": "takahashi.kaori",
+                    "email": "puno@example.com",
+                    "join_status": "allow",
+                    "paid": 1,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 48,
+                    "name": "村山 知実",
+                    "username": "nanami15",
+                    "email": "ito.hanako@example.net",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 49,
+                    "name": "井高 さゆり",
+                    "username": "maaya29",
+                    "email": "yamagishi.yosuke@example.net",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 2,
+            "name": "quas",
+            "shop_id": 954,
+            "budget": 19513,
+            "actual": 23912,
+            "start_time": "2008-03-11 01:08:35",
+            "end_time": null,
+            "manager": {
+                "id": 1,
+                "name": "加藤 里佳",
+                "username": "eaota",
+                "email": "momoko48@example.net",
+                "created_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [
+                {
+                    "id": 17,
+                    "name": "野村 里佳",
+                    "username": "nomura.taichi",
+                    "email": "fhamada@example.com",
+                    "join_status": "allow",
+                    "paid": 1,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 25,
+                    "name": "原田 太一",
+                    "username": "murayama.taro",
+                    "email": "ryohei50@example.com",
+                    "join_status": "allow",
+                    "paid": 0,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 26,
+                    "name": "渚 花子",
+                    "username": "ssasaki",
+                    "email": "wakamatsu.yoko@example.com",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 37,
+                    "name": "青田 充",
+                    "username": "ito.kana",
+                    "email": "akira02@example.org",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 48,
+                    "name": "村山 知実",
+                    "username": "nanami15",
+                    "email": "ito.hanako@example.net",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 49,
+                    "name": "井高 さゆり",
+                    "username": "maaya29",
+                    "email": "yamagishi.yosuke@example.net",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 3,
+            "name": "et",
+            "shop_id": 356,
+            "budget": 25903,
+            "actual": 37587,
+            "start_time": "1995-11-21 01:28:07",
+            "end_time": null,
+            "manager": {
+                "id": 1,
+                "name": "加藤 里佳",
+                "username": "eaota",
+                "email": "momoko48@example.net",
+                "created_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [
+                {
+                    "id": 17,
+                    "name": "野村 里佳",
+                    "username": "nomura.taichi",
+                    "email": "fhamada@example.com",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 26,
+                    "name": "渚 花子",
+                    "username": "ssasaki",
+                    "email": "wakamatsu.yoko@example.com",
+                    "join_status": "allow",
+                    "paid": 0,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 37,
+                    "name": "青田 充",
+                    "username": "ito.kana",
+                    "email": "akira02@example.org",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 38,
+                    "name": "津田 幹",
+                    "username": "takahashi.kaori",
+                    "email": "puno@example.com",
+                    "join_status": "allow",
+                    "paid": 0,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 45,
+                    "name": "加納 拓真",
+                    "username": "kimura.takuma",
+                    "email": "taichi48@example.org",
+                    "join_status": "allow",
+                    "paid": 0,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 48,
+                    "name": "村山 知実",
+                    "username": "nanami15",
+                    "email": "ito.hanako@example.net",
+                    "join_status": "allow",
+                    "paid": 0,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 4,
+            "name": "neque",
+            "shop_id": 175,
+            "budget": 5969,
+            "actual": 10843,
+            "start_time": "1981-11-12 22:24:47",
+            "end_time": null,
+            "manager": {
+                "id": 1,
+                "name": "加藤 里佳",
+                "username": "eaota",
+                "email": "momoko48@example.net",
+                "created_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [
+                {
+                    "id": 15,
+                    "name": "杉山 太一",
+                    "username": "yosuke.yamamoto",
+                    "email": "dogaki@example.net",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 17,
+                    "name": "野村 里佳",
+                    "username": "nomura.taichi",
+                    "email": "fhamada@example.com",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 30,
+                    "name": "佐々木 さゆり",
+                    "username": "syamaguchi",
+                    "email": "yui.matsumoto@example.net",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 36,
+                    "name": "井上 和也",
+                    "username": "tsubasa67",
+                    "email": "mai.yamamoto@example.com",
+                    "join_status": "allow",
+                    "paid": 1,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 38,
+                    "name": "津田 幹",
+                    "username": "takahashi.kaori",
+                    "email": "puno@example.com",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 49,
+                    "name": "井高 さゆり",
+                    "username": "maaya29",
+                    "email": "yamagishi.yosuke@example.net",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-01-13 09:36:18.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        }
+    ]
+}
+```
+
+### HTTP Request
+`GET api/sessions`
+
+
+<!-- END_77bc4cbc7d1ccbd254470fad1c1498a2 -->
+
+<!-- START_b0309e45a2af0a1e9b599219dbce6d98 -->
+## セッションを作成
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/api/sessions"     -d "name"="r94A8Mx8ZhlyAzp5" \
+    -d "shop_id"="15" \
+    -d "budget"="6" \
+    -d "actual"="14" \
+    -d "start_time"="2Gd45FDAnIDRCiQ9" \
+    -d "end_time"="p4gZmRbfUi6oHvuP" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/sessions");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+let body = JSON.stringify({
+    "name": "r94A8Mx8ZhlyAzp5",
+    "shop_id": "15",
+    "budget": "6",
+    "actual": "14",
+    "start_time": "2Gd45FDAnIDRCiQ9",
+    "end_time": "p4gZmRbfUi6oHvuP",
+})
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+### HTTP Request
+`POST api/sessions`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    name | string |  required  | 新規セッションの名前
+    shop_id | integer |  optional  | ショップのID(ぐるなび？)
+    budget | integer |  optional  | 予算額
+    actual | integer |  optional  | 実際の金額
+    start_time | datetime |  optional  | セッションの開始時刻
+    end_time | datetime |  optional  | セッションの終了時刻
+
+<!-- END_b0309e45a2af0a1e9b599219dbce6d98 -->
+
+<!-- START_de7ab2ee5e93bb1ef0dadb0e40c75c35 -->
+## 一つのセッションの詳細
+
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/sessions/{session}" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/sessions/{session}");
+
+    let params = {
+            "session": "dlPod30izMt2pRMI",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
 > Example response (500):
 
 ```json
@@ -1835,97 +3016,56 @@ fetch(url, {
 ```
 
 ### HTTP Request
-`GET api/sessions`
-
-
-<!-- END_77bc4cbc7d1ccbd254470fad1c1498a2 -->
-
-<!-- START_b0309e45a2af0a1e9b599219dbce6d98 -->
-## api/sessions
-> Example request:
-
-```bash
-curl -X POST "http://localhost/api/sessions" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/sessions");
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-### HTTP Request
-`POST api/sessions`
-
-
-<!-- END_b0309e45a2af0a1e9b599219dbce6d98 -->
-
-<!-- START_de7ab2ee5e93bb1ef0dadb0e40c75c35 -->
-## api/sessions/{session}
-> Example request:
-
-```bash
-curl -X GET -G "http://localhost/api/sessions/{session}" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/sessions/{session}");
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response:
-
-```json
-null
-```
-
-### HTTP Request
 `GET api/sessions/{session}`
 
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    session |  required  | セッションid
 
 <!-- END_de7ab2ee5e93bb1ef0dadb0e40c75c35 -->
 
 <!-- START_01d1a457f56b8ac4134ff996daf9e9ab -->
-## api/sessions/{session}
+## セッション情報を更新
+
 > Example request:
 
 ```bash
-curl -X PUT "http://localhost/api/sessions/{session}" 
+curl -X PUT "http://localhost/api/sessions/{session}"     -d "name"="daCulXdicMvxMb4g" \
+    -d "shop_id"="6" \
+    -d "budget"="9" \
+    -d "actual"="4" \
+    -d "start_time"="ev5Jx4nRf4OWnX7e" \
+    -d "end_time"="KoXPmoaSWfD7HmyF" 
 ```
 
 ```javascript
 const url = new URL("http://localhost/api/sessions/{session}");
+
+    let params = {
+            "session": "yHpmZEZpeJphLLM9",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
 let headers = {
     "Accept": "application/json",
     "Content-Type": "application/json",
 }
 
+let body = JSON.stringify({
+    "name": "daCulXdicMvxMb4g",
+    "shop_id": "6",
+    "budget": "9",
+    "actual": "4",
+    "start_time": "ev5Jx4nRf4OWnX7e",
+    "end_time": "KoXPmoaSWfD7HmyF",
+})
+
 fetch(url, {
     method: "PUT",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
@@ -1937,11 +3077,27 @@ fetch(url, {
 
 `PATCH api/sessions/{session}`
 
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    name | string |  required  | 新規セッションの名前
+    shop_id | integer |  optional  | ショップのID(ぐるなび？)
+    budget | integer |  optional  | 予算額
+    actual | integer |  optional  | 実際の金額
+    start_time | datetime |  optional  | セッションの開始時刻
+    end_time | datetime |  optional  | セッションの終了時刻
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    session |  required  | セッションid
 
 <!-- END_01d1a457f56b8ac4134ff996daf9e9ab -->
 
 <!-- START_4fd1093757d2141b14b2cd8666e3e281 -->
-## api/sessions/{session}
+## セッションを削除
+
 > Example request:
 
 ```bash
@@ -1950,6 +3106,11 @@ curl -X DELETE "http://localhost/api/sessions/{session}"
 
 ```javascript
 const url = new URL("http://localhost/api/sessions/{session}");
+
+    let params = {
+            "session": "o2zjZ2iRPGaRTiG4",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
 let headers = {
     "Accept": "application/json",
@@ -1968,11 +3129,17 @@ fetch(url, {
 ### HTTP Request
 `DELETE api/sessions/{session}`
 
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    session |  required  | セッションid
 
 <!-- END_4fd1093757d2141b14b2cd8666e3e281 -->
 
 <!-- START_b2c8f3f41fac647952bc19177cbb6dd9 -->
-## api/sessions/{session}/users
+## あるセッションのユーザー一覧
+
 > Example request:
 
 ```bash
@@ -1982,6 +3149,11 @@ curl -X GET -G "http://localhost/api/sessions/{session}/users"
 ```javascript
 const url = new URL("http://localhost/api/sessions/{session}/users");
 
+    let params = {
+            "session": "QcB6Gy0frTvssavV",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
 let headers = {
     "Accept": "application/json",
     "Content-Type": "application/json",
@@ -1995,37 +3167,463 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
-> Example response:
+> Example response (500):
 
 ```json
-null
+{
+    "message": "The token could not be parsed from the request",
+    "exception": "Tymon\\JWTAuth\\Exceptions\\JWTException",
+    "file": "\/var\/www\/vendor\/tymon\/jwt-auth\/src\/JWT.php",
+    "line": 185,
+    "trace": [
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Support\/Facades\/Facade.php",
+            "line": 237,
+            "function": "parseToken",
+            "class": "Tymon\\JWTAuth\\JWT",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/app\/Http\/Middleware\/JWT.php",
+            "line": 20,
+            "function": "__callStatic",
+            "class": "Illuminate\\Support\\Facades\\Facade",
+            "type": "::"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 151,
+            "function": "handle",
+            "class": "App\\Http\\Middleware\\JWT",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
+            "line": 53,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php",
+            "line": 41,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 151,
+            "function": "handle",
+            "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
+            "line": 53,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/ThrottleRequests.php",
+            "line": 58,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 151,
+            "function": "handle",
+            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
+            "line": 53,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 104,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+            "line": 684,
+            "function": "then",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+            "line": 659,
+            "function": "runRouteWithinStack",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+            "line": 625,
+            "function": "runRoute",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+            "line": 614,
+            "function": "dispatchToRoute",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
+            "line": 176,
+            "function": "dispatch",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
+            "line": 30,
+            "function": "Illuminate\\Foundation\\Http\\{closure}",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/fideloper\/proxy\/src\/TrustProxies.php",
+            "line": 57,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 151,
+            "function": "handle",
+            "class": "Fideloper\\Proxy\\TrustProxies",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
+            "line": 53,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php",
+            "line": 31,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 151,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
+            "line": 53,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php",
+            "line": 31,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 151,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
+            "line": 53,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ValidatePostSize.php",
+            "line": 27,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 151,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
+            "line": 53,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/CheckForMaintenanceMode.php",
+            "line": 62,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 151,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
+            "line": 53,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 104,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
+            "line": 151,
+            "function": "then",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
+            "line": 116,
+            "function": "sendRequestThroughRouter",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseStrategies\/ResponseCallStrategy.php",
+            "line": 272,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseStrategies\/ResponseCallStrategy.php",
+            "line": 256,
+            "function": "callLaravelRoute",
+            "class": "Mpociot\\ApiDoc\\Tools\\ResponseStrategies\\ResponseCallStrategy",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseStrategies\/ResponseCallStrategy.php",
+            "line": 33,
+            "function": "makeApiCall",
+            "class": "Mpociot\\ApiDoc\\Tools\\ResponseStrategies\\ResponseCallStrategy",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseResolver.php",
+            "line": 49,
+            "function": "__invoke",
+            "class": "Mpociot\\ApiDoc\\Tools\\ResponseStrategies\\ResponseCallStrategy",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseResolver.php",
+            "line": 68,
+            "function": "resolve",
+            "class": "Mpociot\\ApiDoc\\Tools\\ResponseResolver",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/Generator.php",
+            "line": 54,
+            "function": "getResponse",
+            "class": "Mpociot\\ApiDoc\\Tools\\ResponseResolver",
+            "type": "::"
+        },
+        {
+            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Commands\/GenerateDocumentation.php",
+            "line": 196,
+            "function": "processRoute",
+            "class": "Mpociot\\ApiDoc\\Tools\\Generator",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Commands\/GenerateDocumentation.php",
+            "line": 57,
+            "function": "processRoutes",
+            "class": "Mpociot\\ApiDoc\\Commands\\GenerateDocumentation",
+            "type": "->"
+        },
+        {
+            "function": "handle",
+            "class": "Mpociot\\ApiDoc\\Commands\\GenerateDocumentation",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php",
+            "line": 29,
+            "function": "call_user_func_array"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php",
+            "line": 87,
+            "function": "Illuminate\\Container\\{closure}",
+            "class": "Illuminate\\Container\\BoundMethod",
+            "type": "::"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php",
+            "line": 31,
+            "function": "callBoundMethod",
+            "class": "Illuminate\\Container\\BoundMethod",
+            "type": "::"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/Container.php",
+            "line": 572,
+            "function": "call",
+            "class": "Illuminate\\Container\\BoundMethod",
+            "type": "::"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Command.php",
+            "line": 183,
+            "function": "call",
+            "class": "Illuminate\\Container\\Container",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/symfony\/console\/Command\/Command.php",
+            "line": 255,
+            "function": "execute",
+            "class": "Illuminate\\Console\\Command",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Command.php",
+            "line": 170,
+            "function": "run",
+            "class": "Symfony\\Component\\Console\\Command\\Command",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/symfony\/console\/Application.php",
+            "line": 901,
+            "function": "run",
+            "class": "Illuminate\\Console\\Command",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/symfony\/console\/Application.php",
+            "line": 262,
+            "function": "doRunCommand",
+            "class": "Symfony\\Component\\Console\\Application",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/symfony\/console\/Application.php",
+            "line": 145,
+            "function": "doRun",
+            "class": "Symfony\\Component\\Console\\Application",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Application.php",
+            "line": 89,
+            "function": "run",
+            "class": "Symfony\\Component\\Console\\Application",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Console\/Kernel.php",
+            "line": 122,
+            "function": "run",
+            "class": "Illuminate\\Console\\Application",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/artisan",
+            "line": 37,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Console\\Kernel",
+            "type": "->"
+        }
+    ]
+}
 ```
 
 ### HTTP Request
 `GET api/sessions/{session}/users`
 
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    session |  required  | セッションid
 
 <!-- END_b2c8f3f41fac647952bc19177cbb6dd9 -->
 
 <!-- START_5daba3574b7419977eed93c2d276b285 -->
-## api/sessions/{session}/users
+## セッションにユーザーを追加する
+
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/sessions/{session}/users" 
+curl -X POST "http://localhost/api/sessions/{session}/users"     -d "user_id"="MLYGDXIzPm3CgbDZ" \
+    -d "join_status"="JwpabG6t9pr4w6bq" \
+    -d "paid"="9" \
+    -d "plus_minus"="8" \
+    -d "ratio"="iQOhScJa3J8EIaMh" 
 ```
 
 ```javascript
 const url = new URL("http://localhost/api/sessions/{session}/users");
+
+    let params = {
+            "session": "nBXO6hemDRgm6tkp",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
 let headers = {
     "Accept": "application/json",
     "Content-Type": "application/json",
 }
 
+let body = JSON.stringify({
+    "user_id": "MLYGDXIzPm3CgbDZ",
+    "join_status": "JwpabG6t9pr4w6bq",
+    "paid": "9",
+    "plus_minus": "8",
+    "ratio": "iQOhScJa3J8EIaMh",
+})
+
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
@@ -2035,11 +3633,26 @@ fetch(url, {
 ### HTTP Request
 `POST api/sessions/{session}/users`
 
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    user_id | string |  required  | 追加するユーザーのID
+    join_status | required |  optional  | integer 参加状況のステータス
+    paid | integer |  optional  | 支払いしたか
+    plus_minus | integer |  optional  | 加減算
+    ratio | datetime |  optional  | 割合（加減算と重複しないほうが良いでしょう）
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    session |  required  | セッションid
 
 <!-- END_5daba3574b7419977eed93c2d276b285 -->
 
 <!-- START_f2c83404c04fc70752a6cac97faeaf89 -->
-## api/sessions/{session}/users/{user}
+## セッションの中の一人のユーザーの詳細を得る（属性とか見たりするでしょう）
+
 > Example request:
 
 ```bash
@@ -2048,6 +3661,12 @@ curl -X GET -G "http://localhost/api/sessions/{session}/users/{user}"
 
 ```javascript
 const url = new URL("http://localhost/api/sessions/{session}/users/{user}");
+
+    let params = {
+            "session": "3Sk0WgiI6wIXtlDW",
+            "user": "DEk07TsBFrz5SJoR",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
 let headers = {
     "Accept": "application/json",
@@ -2062,37 +3681,465 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
-> Example response:
+> Example response (500):
 
 ```json
-null
+{
+    "message": "The token could not be parsed from the request",
+    "exception": "Tymon\\JWTAuth\\Exceptions\\JWTException",
+    "file": "\/var\/www\/vendor\/tymon\/jwt-auth\/src\/JWT.php",
+    "line": 185,
+    "trace": [
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Support\/Facades\/Facade.php",
+            "line": 237,
+            "function": "parseToken",
+            "class": "Tymon\\JWTAuth\\JWT",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/app\/Http\/Middleware\/JWT.php",
+            "line": 20,
+            "function": "__callStatic",
+            "class": "Illuminate\\Support\\Facades\\Facade",
+            "type": "::"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 151,
+            "function": "handle",
+            "class": "App\\Http\\Middleware\\JWT",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
+            "line": 53,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php",
+            "line": 41,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 151,
+            "function": "handle",
+            "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
+            "line": 53,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/ThrottleRequests.php",
+            "line": 58,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 151,
+            "function": "handle",
+            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
+            "line": 53,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 104,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+            "line": 684,
+            "function": "then",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+            "line": 659,
+            "function": "runRouteWithinStack",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+            "line": 625,
+            "function": "runRoute",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+            "line": 614,
+            "function": "dispatchToRoute",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
+            "line": 176,
+            "function": "dispatch",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
+            "line": 30,
+            "function": "Illuminate\\Foundation\\Http\\{closure}",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/fideloper\/proxy\/src\/TrustProxies.php",
+            "line": 57,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 151,
+            "function": "handle",
+            "class": "Fideloper\\Proxy\\TrustProxies",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
+            "line": 53,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php",
+            "line": 31,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 151,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
+            "line": 53,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php",
+            "line": 31,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 151,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
+            "line": 53,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ValidatePostSize.php",
+            "line": 27,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 151,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
+            "line": 53,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/CheckForMaintenanceMode.php",
+            "line": 62,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 151,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
+            "line": 53,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+            "line": 104,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
+            "line": 151,
+            "function": "then",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
+            "line": 116,
+            "function": "sendRequestThroughRouter",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseStrategies\/ResponseCallStrategy.php",
+            "line": 272,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseStrategies\/ResponseCallStrategy.php",
+            "line": 256,
+            "function": "callLaravelRoute",
+            "class": "Mpociot\\ApiDoc\\Tools\\ResponseStrategies\\ResponseCallStrategy",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseStrategies\/ResponseCallStrategy.php",
+            "line": 33,
+            "function": "makeApiCall",
+            "class": "Mpociot\\ApiDoc\\Tools\\ResponseStrategies\\ResponseCallStrategy",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseResolver.php",
+            "line": 49,
+            "function": "__invoke",
+            "class": "Mpociot\\ApiDoc\\Tools\\ResponseStrategies\\ResponseCallStrategy",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseResolver.php",
+            "line": 68,
+            "function": "resolve",
+            "class": "Mpociot\\ApiDoc\\Tools\\ResponseResolver",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/Generator.php",
+            "line": 54,
+            "function": "getResponse",
+            "class": "Mpociot\\ApiDoc\\Tools\\ResponseResolver",
+            "type": "::"
+        },
+        {
+            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Commands\/GenerateDocumentation.php",
+            "line": 196,
+            "function": "processRoute",
+            "class": "Mpociot\\ApiDoc\\Tools\\Generator",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Commands\/GenerateDocumentation.php",
+            "line": 57,
+            "function": "processRoutes",
+            "class": "Mpociot\\ApiDoc\\Commands\\GenerateDocumentation",
+            "type": "->"
+        },
+        {
+            "function": "handle",
+            "class": "Mpociot\\ApiDoc\\Commands\\GenerateDocumentation",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php",
+            "line": 29,
+            "function": "call_user_func_array"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php",
+            "line": 87,
+            "function": "Illuminate\\Container\\{closure}",
+            "class": "Illuminate\\Container\\BoundMethod",
+            "type": "::"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php",
+            "line": 31,
+            "function": "callBoundMethod",
+            "class": "Illuminate\\Container\\BoundMethod",
+            "type": "::"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/Container.php",
+            "line": 572,
+            "function": "call",
+            "class": "Illuminate\\Container\\BoundMethod",
+            "type": "::"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Command.php",
+            "line": 183,
+            "function": "call",
+            "class": "Illuminate\\Container\\Container",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/symfony\/console\/Command\/Command.php",
+            "line": 255,
+            "function": "execute",
+            "class": "Illuminate\\Console\\Command",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Command.php",
+            "line": 170,
+            "function": "run",
+            "class": "Symfony\\Component\\Console\\Command\\Command",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/symfony\/console\/Application.php",
+            "line": 901,
+            "function": "run",
+            "class": "Illuminate\\Console\\Command",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/symfony\/console\/Application.php",
+            "line": 262,
+            "function": "doRunCommand",
+            "class": "Symfony\\Component\\Console\\Application",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/symfony\/console\/Application.php",
+            "line": 145,
+            "function": "doRun",
+            "class": "Symfony\\Component\\Console\\Application",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Application.php",
+            "line": 89,
+            "function": "run",
+            "class": "Symfony\\Component\\Console\\Application",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Console\/Kernel.php",
+            "line": 122,
+            "function": "run",
+            "class": "Illuminate\\Console\\Application",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/artisan",
+            "line": 37,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Console\\Kernel",
+            "type": "->"
+        }
+    ]
+}
 ```
 
 ### HTTP Request
 `GET api/sessions/{session}/users/{user}`
 
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    session |  required  | セッションid
+    user |  required  | セッションに属するユーザーのid
 
 <!-- END_f2c83404c04fc70752a6cac97faeaf89 -->
 
 <!-- START_1156464718907736210a026360f1182b -->
-## api/sessions/{session}/users/{user}
+## セッションの中のユーザーのステータスなどを更新する
+
 > Example request:
 
 ```bash
-curl -X PUT "http://localhost/api/sessions/{session}/users/{user}" 
+curl -X PUT "http://localhost/api/sessions/{session}/users/{user}"     -d "user_id"="5eGVYMwGjVSFI4zl" \
+    -d "join_status"="kSnuOrEakSXZpjcR" \
+    -d "paid"="11" \
+    -d "plus_minus"="13" \
+    -d "ratio"="xO8M4LKgpCCYCjRv" 
 ```
 
 ```javascript
 const url = new URL("http://localhost/api/sessions/{session}/users/{user}");
+
+    let params = {
+            "session": "GwW4kBhxEbuaP5l4",
+            "user": "gP3j2apr1CIe0A4T",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
 let headers = {
     "Accept": "application/json",
     "Content-Type": "application/json",
 }
 
+let body = JSON.stringify({
+    "user_id": "5eGVYMwGjVSFI4zl",
+    "join_status": "kSnuOrEakSXZpjcR",
+    "paid": "11",
+    "plus_minus": "13",
+    "ratio": "xO8M4LKgpCCYCjRv",
+})
+
 fetch(url, {
     method: "PUT",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
@@ -2104,11 +4151,27 @@ fetch(url, {
 
 `PATCH api/sessions/{session}/users/{user}`
 
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    user_id | string |  required  | 追加するユーザーのID
+    join_status | required |  optional  | integer 参加状況のステータス
+    paid | integer |  optional  | 支払いしたか
+    plus_minus | integer |  optional  | 加減算
+    ratio | datetime |  optional  | 割合（加減算と重複しないほうが良いでしょう）
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    session |  required  | セッションid
+    user |  required  | セッションに属するユーザーのid
 
 <!-- END_1156464718907736210a026360f1182b -->
 
 <!-- START_eaedfe94c6aa4eb87de54290a553fe2e -->
-## api/sessions/{session}/users/{user}
+## セッションからユーザーを削除する
+
 > Example request:
 
 ```bash
@@ -2117,6 +4180,12 @@ curl -X DELETE "http://localhost/api/sessions/{session}/users/{user}"
 
 ```javascript
 const url = new URL("http://localhost/api/sessions/{session}/users/{user}");
+
+    let params = {
+            "session": "mICYg8uaMUB55tVa",
+            "user": "uD7V4ZmRODkrA8dM",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
 let headers = {
     "Accept": "application/json",
@@ -2135,6 +4204,12 @@ fetch(url, {
 ### HTTP Request
 `DELETE api/sessions/{session}/users/{user}`
 
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    session |  required  | セッションid
+    user |  required  | セッションに属するユーザーのid
 
 <!-- END_eaedfe94c6aa4eb87de54290a553fe2e -->
 
@@ -2163,409 +4238,170 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
-> Example response (500):
+> Example response (200):
 
 ```json
 {
-    "message": "The token could not be parsed from the request",
-    "exception": "Tymon\\JWTAuth\\Exceptions\\JWTException",
-    "file": "\/var\/www\/vendor\/tymon\/jwt-auth\/src\/JWT.php",
-    "line": 185,
-    "trace": [
+    "data": [
         {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Support\/Facades\/Facade.php",
-            "line": 237,
-            "function": "parseToken",
-            "class": "Tymon\\JWTAuth\\JWT",
-            "type": "->"
+            "id": 1,
+            "manager": {
+                "id": 1,
+                "name": "佐々木 和也",
+                "username": "haoyama",
+                "email": "esuzuki@example.net",
+                "created_at": {
+                    "date": "2019-01-13 05:43:21.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 05:43:21.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "possimus",
+            "plus_minus": -1683,
+            "ratio": 2,
+            "created_at": {
+                "date": "2019-01-13 05:43:21.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 05:43:21.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         },
         {
-            "file": "\/var\/www\/app\/Http\/Middleware\/JWT.php",
-            "line": 20,
-            "function": "__callStatic",
-            "class": "Illuminate\\Support\\Facades\\Facade",
-            "type": "::"
+            "id": 2,
+            "manager": {
+                "id": 1,
+                "name": "佐々木 和也",
+                "username": "haoyama",
+                "email": "esuzuki@example.net",
+                "created_at": {
+                    "date": "2019-01-13 05:43:21.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 05:43:21.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "corrupti",
+            "plus_minus": 1060,
+            "ratio": 2,
+            "created_at": {
+                "date": "2019-01-13 05:43:21.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 05:43:21.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         },
         {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "App\\Http\\Middleware\\JWT",
-            "type": "->"
+            "id": 3,
+            "manager": {
+                "id": 1,
+                "name": "佐々木 和也",
+                "username": "haoyama",
+                "email": "esuzuki@example.net",
+                "created_at": {
+                    "date": "2019-01-13 05:43:21.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 05:43:21.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "voluptates",
+            "plus_minus": -1596,
+            "ratio": 1,
+            "created_at": {
+                "date": "2019-01-13 05:43:21.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 05:43:21.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         },
         {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
+            "id": 4,
+            "manager": {
+                "id": 1,
+                "name": "佐々木 和也",
+                "username": "haoyama",
+                "email": "esuzuki@example.net",
+                "created_at": {
+                    "date": "2019-01-13 05:43:21.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 05:43:21.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "cupiditate",
+            "plus_minus": -170,
+            "ratio": 2,
+            "created_at": {
+                "date": "2019-01-13 05:43:21.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 05:43:21.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         },
         {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/SubstituteBindings.php",
-            "line": 41,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Middleware\/ThrottleRequests.php",
-            "line": 58,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 104,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-            "line": 684,
-            "function": "then",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-            "line": 659,
-            "function": "runRouteWithinStack",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-            "line": 625,
-            "function": "runRoute",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-            "line": 614,
-            "function": "dispatchToRoute",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
-            "line": 176,
-            "function": "dispatch",
-            "class": "Illuminate\\Routing\\Router",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 30,
-            "function": "Illuminate\\Foundation\\Http\\{closure}",
-            "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/fideloper\/proxy\/src\/TrustProxies.php",
-            "line": 57,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "Fideloper\\Proxy\\TrustProxies",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php",
-            "line": 31,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php",
-            "line": 31,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ValidatePostSize.php",
-            "line": 27,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/CheckForMaintenanceMode.php",
-            "line": 62,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-            "line": 104,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
-            "line": 151,
-            "function": "then",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
-            "line": 116,
-            "function": "sendRequestThroughRouter",
-            "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseStrategies\/ResponseCallStrategy.php",
-            "line": 272,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseStrategies\/ResponseCallStrategy.php",
-            "line": 256,
-            "function": "callLaravelRoute",
-            "class": "Mpociot\\ApiDoc\\Tools\\ResponseStrategies\\ResponseCallStrategy",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseStrategies\/ResponseCallStrategy.php",
-            "line": 33,
-            "function": "makeApiCall",
-            "class": "Mpociot\\ApiDoc\\Tools\\ResponseStrategies\\ResponseCallStrategy",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseResolver.php",
-            "line": 49,
-            "function": "__invoke",
-            "class": "Mpociot\\ApiDoc\\Tools\\ResponseStrategies\\ResponseCallStrategy",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/ResponseResolver.php",
-            "line": 68,
-            "function": "resolve",
-            "class": "Mpociot\\ApiDoc\\Tools\\ResponseResolver",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Tools\/Generator.php",
-            "line": 54,
-            "function": "getResponse",
-            "class": "Mpociot\\ApiDoc\\Tools\\ResponseResolver",
-            "type": "::"
-        },
-        {
-            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Commands\/GenerateDocumentation.php",
-            "line": 196,
-            "function": "processRoute",
-            "class": "Mpociot\\ApiDoc\\Tools\\Generator",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/mpociot\/laravel-apidoc-generator\/src\/Commands\/GenerateDocumentation.php",
-            "line": 57,
-            "function": "processRoutes",
-            "class": "Mpociot\\ApiDoc\\Commands\\GenerateDocumentation",
-            "type": "->"
-        },
-        {
-            "function": "handle",
-            "class": "Mpociot\\ApiDoc\\Commands\\GenerateDocumentation",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php",
-            "line": 29,
-            "function": "call_user_func_array"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php",
-            "line": 87,
-            "function": "Illuminate\\Container\\{closure}",
-            "class": "Illuminate\\Container\\BoundMethod",
-            "type": "::"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/BoundMethod.php",
-            "line": 31,
-            "function": "callBoundMethod",
-            "class": "Illuminate\\Container\\BoundMethod",
-            "type": "::"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Container\/Container.php",
-            "line": 572,
-            "function": "call",
-            "class": "Illuminate\\Container\\BoundMethod",
-            "type": "::"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Command.php",
-            "line": 183,
-            "function": "call",
-            "class": "Illuminate\\Container\\Container",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/symfony\/console\/Command\/Command.php",
-            "line": 255,
-            "function": "execute",
-            "class": "Illuminate\\Console\\Command",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Command.php",
-            "line": 170,
-            "function": "run",
-            "class": "Symfony\\Component\\Console\\Command\\Command",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/symfony\/console\/Application.php",
-            "line": 901,
-            "function": "run",
-            "class": "Illuminate\\Console\\Command",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/symfony\/console\/Application.php",
-            "line": 262,
-            "function": "doRunCommand",
-            "class": "Symfony\\Component\\Console\\Application",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/symfony\/console\/Application.php",
-            "line": 145,
-            "function": "doRun",
-            "class": "Symfony\\Component\\Console\\Application",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Console\/Application.php",
-            "line": 89,
-            "function": "run",
-            "class": "Symfony\\Component\\Console\\Application",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Console\/Kernel.php",
-            "line": 122,
-            "function": "run",
-            "class": "Illuminate\\Console\\Application",
-            "type": "->"
-        },
-        {
-            "file": "\/var\/www\/artisan",
-            "line": 37,
-            "function": "handle",
-            "class": "Illuminate\\Foundation\\Console\\Kernel",
-            "type": "->"
+            "id": 5,
+            "manager": {
+                "id": 1,
+                "name": "佐々木 和也",
+                "username": "haoyama",
+                "email": "esuzuki@example.net",
+                "created_at": {
+                    "date": "2019-01-13 05:43:21.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 05:43:21.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "vitae",
+            "plus_minus": 921,
+            "ratio": 2,
+            "created_at": {
+                "date": "2019-01-13 05:43:21.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 05:43:21.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         }
     ]
 }
@@ -2583,7 +4419,9 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/attributes" 
+curl -X POST "http://localhost/api/attributes"     -d "name"="jIirSPEAnAbbHWze" \
+    -d "plus_minus"="19" \
+    -d "ratio"="466224.46344183" 
 ```
 
 ```javascript
@@ -2594,18 +4432,77 @@ let headers = {
     "Content-Type": "application/json",
 }
 
+let body = JSON.stringify({
+    "name": "jIirSPEAnAbbHWze",
+    "plus_minus": "19",
+    "ratio": "466224.46344183",
+})
+
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
 ```
 
+> Example response (200):
+
+```json
+{
+    "data": {
+        "id": 252,
+        "manager": {
+            "id": 1,
+            "name": "加藤 里佳",
+            "username": "eaota",
+            "email": "momoko48@example.net",
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        "name": "ボス!",
+        "plus_minus": -1000,
+        "ratio": null,
+        "created_at": {
+            "date": "2019-01-13 09:37:49.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        },
+        "updated_at": {
+            "date": "2019-01-13 09:37:49.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        }
+    }
+}
+```
+> Example response (409):
+
+```json
+{
+    "error": "同じ名前は使用できません"
+}
+```
 
 ### HTTP Request
 `POST api/attributes`
 
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    name | string |  required  | 属性名。必須
+    plus_minus | integer |  optional  | 加減算
+    ratio | float |  optional  | 割合。加減算と割合はどちらかのみの設定にしたほうがいいような気がする
 
 <!-- END_abc4770376dd728225ce9843bc74360e -->
 
@@ -2621,6 +4518,11 @@ curl -X GET -G "http://localhost/api/attributes/{attribute}"
 ```javascript
 const url = new URL("http://localhost/api/attributes/{attribute}");
 
+    let params = {
+            "attribute": "9XXidE6wnUKsDZf0",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
 let headers = {
     "Accept": "application/json",
     "Content-Type": "application/json",
@@ -2634,15 +4536,247 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
-> Example response:
+> Example response (200):
 
 ```json
-null
+{
+    "data": [
+        {
+            "id": 1,
+            "manager": {
+                "id": 1,
+                "name": "加藤 里佳",
+                "username": "eaota",
+                "email": "momoko48@example.net",
+                "created_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "laboriosam",
+            "plus_minus": -1630,
+            "ratio": 1,
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 2,
+            "manager": {
+                "id": 1,
+                "name": "加藤 里佳",
+                "username": "eaota",
+                "email": "momoko48@example.net",
+                "created_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "dolor",
+            "plus_minus": -2888,
+            "ratio": 2,
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 3,
+            "manager": {
+                "id": 1,
+                "name": "加藤 里佳",
+                "username": "eaota",
+                "email": "momoko48@example.net",
+                "created_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "dignissimos",
+            "plus_minus": 597,
+            "ratio": 2,
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 4,
+            "manager": {
+                "id": 1,
+                "name": "加藤 里佳",
+                "username": "eaota",
+                "email": "momoko48@example.net",
+                "created_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "iste",
+            "plus_minus": 1972,
+            "ratio": 0,
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 5,
+            "manager": {
+                "id": 1,
+                "name": "加藤 里佳",
+                "username": "eaota",
+                "email": "momoko48@example.net",
+                "created_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "eligendi",
+            "plus_minus": 303,
+            "ratio": 2,
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 251,
+            "manager": {
+                "id": 1,
+                "name": "加藤 里佳",
+                "username": "eaota",
+                "email": "momoko48@example.net",
+                "created_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "ボス",
+            "plus_minus": -1000,
+            "ratio": null,
+            "created_at": {
+                "date": "2019-01-13 09:37:01.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:37:01.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 252,
+            "manager": {
+                "id": 1,
+                "name": "加藤 里佳",
+                "username": "eaota",
+                "email": "momoko48@example.net",
+                "created_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-01-13 09:36:18.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "ボス!",
+            "plus_minus": -1000,
+            "ratio": null,
+            "created_at": {
+                "date": "2019-01-13 09:37:49.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:37:49.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        }
+    ]
+}
 ```
 
 ### HTTP Request
 `GET api/attributes/{attribute}`
 
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    attribute |  required  | 属性id
 
 <!-- END_85b732dd345201c742119d9c4b34ca8e -->
 
@@ -2652,31 +4786,95 @@ null
 > Example request:
 
 ```bash
-curl -X PUT "http://localhost/api/attributes/{attribute}" 
+curl -X PUT "http://localhost/api/attributes/{attribute}"     -d "name"="GZJOdNXkkI8Kfor8" \
+    -d "plus_minus"="3" \
+    -d "ratio"="0.9" 
 ```
 
 ```javascript
 const url = new URL("http://localhost/api/attributes/{attribute}");
+
+    let params = {
+            "attribute": "oMAW6cDSpcW12Hgt",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
 let headers = {
     "Accept": "application/json",
     "Content-Type": "application/json",
 }
 
+let body = JSON.stringify({
+    "name": "GZJOdNXkkI8Kfor8",
+    "plus_minus": "3",
+    "ratio": "0.9",
+})
+
 fetch(url, {
     method: "PUT",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
 ```
 
+> Example response (200):
+
+```json
+{
+    "data": {
+        "id": 252,
+        "manager": {
+            "id": 1,
+            "name": "加藤 里佳",
+            "username": "eaota",
+            "email": "momoko48@example.net",
+            "created_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-01-13 09:36:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        "name": "ボス!",
+        "plus_minus": -1000,
+        "ratio": null,
+        "created_at": {
+            "date": "2019-01-13 09:37:49.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        },
+        "updated_at": {
+            "date": "2019-01-13 09:37:49.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        }
+    }
+}
+```
 
 ### HTTP Request
 `PUT api/attributes/{attribute}`
 
 `PATCH api/attributes/{attribute}`
 
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    name | string |  required  | 属性名。必須
+    plus_minus | integer |  optional  | 加減算
+    ratio | float |  optional  | 割合。加減算と割合はどちらかのみの設定にしたほうがいいような気がする
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    attribute |  required  | 属性id
 
 <!-- END_5bed01b4fc768cd179c6ed6f42562e64 -->
 
@@ -2692,6 +4890,11 @@ curl -X DELETE "http://localhost/api/attributes/{attribute}"
 ```javascript
 const url = new URL("http://localhost/api/attributes/{attribute}");
 
+    let params = {
+            "attribute": "ErNoyLfJuMHcnyTz",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
 let headers = {
     "Accept": "application/json",
     "Content-Type": "application/json",
@@ -2705,10 +4908,20 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+> Example response (204):
+
+```json
+{}
+```
 
 ### HTTP Request
 `DELETE api/attributes/{attribute}`
 
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    attribute |  required  | 属性id
 
 <!-- END_03afcd8c669e225fdb1d3490f7759c85 -->
 

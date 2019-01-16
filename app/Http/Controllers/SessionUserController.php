@@ -11,11 +11,24 @@ use Illuminate\Http\Response;
 
 class SessionUserController extends Controller
 {
+    /**
+     * あるセッションのユーザー一覧
+     * @queryParam session required セッションid
+     */
     public function index(Request $request, Session $session)
     {
         return UserResource::collection($session->users);
     }
 
+    /**
+     * セッションにユーザーを追加する
+     * @queryParam session required セッションid
+     * @bodyParam user_id string required 追加するユーザーのID
+     * @bodyParam join_status required integer 参加状況のステータス
+     * @bodyParam paid integer  支払いしたか
+     * @bodyParam plus_minus integer 加減算
+     * @bodyParam ratio datetime  割合（加減算と重複しないほうが良いでしょう）
+     */
     public function store(Request $request, Session $session)
     {
         // ルートパラメータにないので、ここに書くしかない
@@ -37,6 +50,11 @@ class SessionUserController extends Controller
         return UserResource::collection(Session::find($session->id)->users);
     }
 
+    /**
+     * セッションの中の一人のユーザーの詳細を得る（属性とか見たりするでしょう）
+     * @queryParam session required セッションid
+     * @queryParam user required セッションに属するユーザーのid
+     */
     public function show(Request $request, Session $session, User $user)
     {
         // セッションの一員でない
@@ -48,6 +66,16 @@ class SessionUserController extends Controller
     }
 
 
+    /**
+     * セッションの中のユーザーのステータスなどを更新する
+     * @queryParam session required セッションid
+     * @queryParam user required セッションに属するユーザーのid
+     * @bodyParam user_id string required 追加するユーザーのID
+     * @bodyParam join_status required integer 参加状況のステータス
+     * @bodyParam paid integer  支払いしたか
+     * @bodyParam plus_minus integer 加減算
+     * @bodyParam ratio datetime  割合（加減算と重複しないほうが良いでしょう）
+     */
     public function update(Request $request, Session $session, User $user)
     {
         // セッションの一員でない
@@ -65,6 +93,11 @@ class SessionUserController extends Controller
         return new UserResource($session->users->where('id', $user->id)->first());
     }
 
+    /**
+     * セッションからユーザーを削除する
+     * @queryParam session required セッションid
+     * @queryParam user required セッションに属するユーザーのid
+     */
     public function destroy(Session $session, User $user)
     {
         // セッションの一員でない

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRegisterRequest;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 
@@ -15,13 +16,25 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login']]);
+        $this->middleware('auth:api', ['except' => ['login', 'register']]);
     }
 
     /**
-     * Get a JWT via given credentials.
+     * email, password でログインし、JWTを得る
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @bodyParam email string required メールアドレス
+     * @bodyParam password string required パスワード
+     *
+     * @response 401 {
+    "error": "Unauthorized"
+    }
+     *
+     * @response {
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvYXV0aFwvbG9naW4iLCJpYXQiOjE1NDc2MDE0MzAsImV4cCI6MTU0NzYwNTAzMCwibmJmIjoxNTQ3NjAxNDMwLCJqdGkiOiJpYVR5Tld6NEFJRmpzZmhMIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.3NMSXPcEPngdi_xQlNUp30-C7mPJSNUub24BaLj-0sc",
+    "token_type": "bearer",
+    "expires_in": 3600
+    }
+     *
      */
     public function login()
     {
@@ -34,14 +47,36 @@ class AuthController extends Controller
         return $this->respondWithToken($token);
     }
 
+    /**
+     * email, password, usernameでユーザー登録し、JWTを得る
+     *
+     * @bodyParam email string required メールアドレス
+     * @bodyParam name string required 名前
+     * @bodyParam username string required ユーザーネーム（表示される名前）
+     * @bodyParam password string required パスワード
+     *
+     * @response 401 {
+    "message": "Unauthenticated."
+    }
+     *
+     * @response 422 {
+    "message": "The given data was invalid.",
+    "errors": {
+    "email": [
+    "The email has already been taken."
+    ]
+    }
+    }
+     *
+     * @respnose {
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvYXV0aFwvcmVnaXN0ZXIiLCJpYXQiOjE1NDc2MDIzMDEsImV4cCI6MTU0NzYwNTkwMSwibmJmIjoxNTQ3NjAyMzAxLCJqdGkiOiI5QmpQNXlqanRDdEtaaG96Iiwic3ViIjo1MiwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.wdRof4C_u5ePANfsS6y3Q1nBrsmuNMt_9fXWFwu02Rg",
+    "token_type": "bearer",
+    "expires_in": 3600
+    }
+     */
     public function register(UserRegisterRequest $request)
     {
-        $user = User::create([
-            'email' => $request->email,
-            'name' => $request->name,
-            'usernaem' => $request->username,
-            'password' => bcrypt($request->password)
-        ]);
+        $user = User::create($request->only(['email', 'password', 'name', 'username']));
 
         if (! $token = auth()->attempt($request->only(['email', 'password']))) {
             return abort(401);
@@ -51,9 +86,17 @@ class AuthController extends Controller
     }
 
     /**
-     * Get the authenticated User.
+     * 現在ログインしているユーザーの情報を得る
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @respose {
+    "id": 52,
+    "name": "aaasaaaaaa",
+    "username": "aaaasaaaa",
+    "email": "hogehsoges@hoge.com",
+    "email_verified_at": null,
+    "created_at": "2019-01-16 01:31:41",
+    "updated_at": "2019-01-16 01:31:41"
+    }
      */
     public function me()
     {
@@ -61,9 +104,7 @@ class AuthController extends Controller
     }
 
     /**
-     * Log the user out (Invalidate the token).
-     *
-     * @return \Illuminate\Http\JsonResponse
+     * ログアウト
      */
     public function logout()
     {
@@ -73,9 +114,7 @@ class AuthController extends Controller
     }
 
     /**
-     * Refresh a token.
-     *
-     * @return \Illuminate\Http\JsonResponse
+     * トークンのリフレッシュ
      */
     public function refresh()
     {
