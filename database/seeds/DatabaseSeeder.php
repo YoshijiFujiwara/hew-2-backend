@@ -19,7 +19,10 @@ class DatabaseSeeder extends Seeder
             $u->managedAttributes()->saveMany(factory(\App\Model\Attribute::class, 5)->make());
 
             foreach (\App\User::where('id', '<>', $u->id)->get()->random(15) as $friend) {
-                $u->friends()->attach($friend, ['attribute_id' => $u->managedAttributes->random()->id]);
+                $u->friends()->attach($friend, [
+                    'attribute_id' => $u->managedAttributes->random()->id,
+                    'permitted' => (rand(0,10) > 3)? true: false,
+                ]);
             }
 
             $u->managedGroups()->saveMany(factory(\App\Model\Group::class, 3)->make())

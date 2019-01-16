@@ -70,8 +70,47 @@ class User extends Authenticatable implements JWTSubject
 
     public function friends()
     {
+        return $this->allFriends()->wherePivot('permitted', true);
+    }
+
+    public function allFriends()
+    {
         return $this->belongsToMany(self::class, 'user_friends', 'user_id', 'friend_id')
-            ->withPivot('attribute_id');
+            ->withPivot('attribute_id', 'permitted');
+    }
+
+    public function blockedFriends()
+    {
+        return $this->allFriends()->wherePivot('permitted', false);
+    }
+
+    public function waitingFriends()
+    {
+        return $this->allFriends()->wherePivot('permitted', null);
+    }
+
+    /**
+     * 自分を友たちとして追加しているユーザー
+     */
+    public function allFriendedUsers()
+    {
+        return $this->belongsToMany(self::class, 'user_friends', 'friend_id', 'user_id')
+            ->withPivot('attribute_id', 'permitted');
+    }
+
+    public function invitingUsers()
+    {
+        return $this->allFriendedUsers()->wherePivot('permitted', null);
+    }
+
+    public function friendedUsers()
+    {
+        return $this->allFriendedUsers()->wherePivot('permitted', true);
+    }
+
+    public function blockingUsers()
+    {
+        return $this->allFriendedUsers()->wherePivot('permitted', false);
     }
 
     public function managedSessions()
@@ -121,5 +160,10 @@ class User extends Authenticatable implements JWTSubject
     public function hasTheAttribute(Attribute $attribute)
     {
         return $this->managedAttributes()->where('id', $attribute->id)->exists();
+    }
+
+    public function participatedTheSession(Session $session)
+    {
+        return $this->participatedSessions()->where('id', $session->id)->exists();
     }
 }

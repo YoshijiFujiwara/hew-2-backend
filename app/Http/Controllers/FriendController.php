@@ -281,7 +281,7 @@ class FriendController extends Controller
     }
 
     /**
-     * 友達に追加
+     * 友達申請する
      *
      * @bodyParam email string required 追加する友達のメールアドレス
      *
@@ -311,14 +311,19 @@ class FriendController extends Controller
     public function store(FriendStoreRequest $request)
     {
         // すでに友達の場合、２重登録しないようにする
-        if (! empty($request->user()->friends->where('email', $request->email)->first())) {
-            return response()->json(['error' => 'すでにフレンドです'], Response::HTTP_CONFLICT);
+        if (! empty($request->user()->allFriends->where('email', $request->email)->first())) {
+            return response()->json(['error' => 'すでにフレンドか、申請中です'], Response::HTTP_CONFLICT);
+        }
+
+        // 自分か
+        if ($request->user()->id == User::where('email', $request->email)->first()->id) {
+            return response()->json(['error' => '自分です'], Response::HTTP_CONFLICT);
         }
 
         $newFriend = User::where('email', $request->email)->first();
-        $request->user()->friends()->attach($newFriend);
+        $request->user()->friends()->attach($newFriend, ['permitted' => null]);
 
-        return new UserResource($newFriend);
+        return new UserResource($request->user()->waitingFriends->where('id', $newFriend->id)->first());
     }
 
     /**
@@ -362,5 +367,65 @@ class FriendController extends Controller
         $request->user()->friends()->detach($friend);
 
         return response(null, Response::HTTP_NO_CONTENT);
+    }
+
+    /**
+     * 申請した中でブロックされているユーザー一覧
+     */
+    public function blockedUsers(Request $request)
+    {
+        return UserResource::collection($request->user()->blockedFriends);
+    }
+
+    /**
+     * 申請した中で待っているユーザー一覧
+     */
+    public function waitingFriends(Request $request)
+    {
+        return UserResource::collection($request->user()->waitingFriends);
+    }
+
+    /**
+     * 友達申請を許可
+     * @bodyParam user_id integer required 友達申請してきてる人のユーザーID
+     */
+    public function permit(Request $request)
+    {
+        // 申請されているか
+        if (! $request->user()->invitingUsers()->where('id', $request->user_id)->exists()) {
+            return response()->json(['error' => 'そのユーザーからは招待されていません'], Response::HTTP_CONFLICT);
+        }
+
+        $request->user()->invitingUsers()->updateExistingPivot($request->user()->id, [
+            'permitted' => true
+        ]);
+
+        return response(null, 201);
+    }
+
+    /**
+     * 友達申請を拒否
+     * @bodyParam user_id integer required 友達申請してきてる人のユーザーID
+     */
+    public function reject(Request $request)
+    {
+        // 申請されているか
+        if (! $request->user()->invitingUsers()->where('id', $request->user_id)->exists()) {
+            return response()->json(['error' => 'そのユーザーからは招待されていません'], Response::HTTP_CONFLICT);
+        }
+
+        $request->user()->invitingUsers()->updateExistingPivot($request->user()->id, [
+            'permitted' => false
+        ]);
+
+        return response(null, 201);
+    }
+
+    /**
+     * 申請してきてるユーザー
+     */
+    public function friendRequestUsers(Request $request)
+    {
+        return UserResource::collection($request->user()->invitingUsers);
     }
 }

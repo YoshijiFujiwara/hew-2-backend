@@ -674,7 +674,6 @@ class SessionController extends Controller
      */
     public function show(Request $request, Session $session)
     {
-        $this->authorize('has', $session);
         return new SessionResource($session);
     }
 
@@ -691,7 +690,6 @@ class SessionController extends Controller
      */
     public function update(Request $request, Session $session)
     {
-        $this->authorize('has', $session);
         $session->update($request->all());
         return new SessionResource($session);
     }
@@ -702,7 +700,6 @@ class SessionController extends Controller
      */
     public function destroy(Session $session)
     {
-        $this->authorize('has', $session);
         $session->users()->detach();
         $session->delete();
         return response(null, Response::HTTP_NO_CONTENT);

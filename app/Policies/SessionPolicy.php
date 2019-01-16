@@ -25,4 +25,10 @@ class SessionPolicy
     {
         return $manager->hasTheSession($session);
     }
+
+    // 対象のセッションに参加しているか
+    public function participated(User $user, Session $session)
+    {
+        return $user->participatedTheSession($session);
+    }
 }
