@@ -14,7 +14,8 @@
         "laravel/telescope": "^1.0",
         "laravel/tinker": "^1.0",
         "mpociot/laravel-apidoc-generator": "^3.3",
-        "tymon/jwt-auth": "^1.0.0"
+        "tymon/jwt-auth": "^1.0.0",
+        "ext-bcmath": "*"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -60,6 +61,11 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "post-install-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postInstall",
+            "php artisan optimize",
+            "chmod -R 755 bootstrap\/cache"
         ]
     }
 }
