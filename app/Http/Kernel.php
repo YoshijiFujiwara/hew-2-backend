@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\RecordResponse;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -19,6 +20,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\TrustProxies::class,
+        RecordResponse::class,
     ];
 
     /**
@@ -61,8 +63,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         // 追加
-        'JWT' => \App\Http\Middleware\JWT::class,
-    ];
+        'JWT' => \App\Http\Middleware\JWT::class,];
 
     /**
      * The priority-sorted list of middleware.
