@@ -27,11 +27,13 @@ class DatabaseSeeder extends Seeder
 
             $u->managedGroups()->saveMany(factory(\App\Model\Group::class, 3)->make())
                 ->each(function ($g) {
-                    $g->users()->attach($g->manager->friends->random(4));
+                    // 全フレンドの25％を適当に登録
+                    $g->users()->attach($g->manager->friends->random($g->manager->friends->count() / 4));
                 });
             $u->managedSessions()->saveMany(factory(\App\Model\Session::class, 4)->make())
                 ->each(function ($s) {
-                    foreach ($s->manager->friends->random(6) as $friend) {
+                    // 全フレンドの50%を適当に登録
+                    foreach ($s->manager->friends->random($s->manager->friends->count() / 2) as $friend) {
 
                         switch (rand(1,3)) {
                             case 1:
