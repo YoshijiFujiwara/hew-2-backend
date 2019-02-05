@@ -14,3 +14,4 @@ yarn-error.log
 /bootstrap/app.php
 app.yaml
 .DS_Store
+/storage/*.php
