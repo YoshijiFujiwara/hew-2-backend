@@ -21,7 +21,10 @@ class RecordResponse
     public function handle($request, Closure $next)
     {
         $response = $next($request);
-        Storage::disk('response')->put($request->route()->getActionName() . '.json', $response->getContent());
+        Log::debug(print_r($response, true));
+        
+        $statusCode = ($response->status() >= 200 && $response->status() < 300)? '' : '.'.$response->status();
+        Storage::disk('response')->put("{$request->route()->getActionName()}{$statusCode}.json", $response->getContent());
         return $response;
     }
 }
