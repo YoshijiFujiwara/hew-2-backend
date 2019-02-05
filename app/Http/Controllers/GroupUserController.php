@@ -11,7 +11,7 @@ use Illuminate\Http\Response;
 class GroupUserController extends Controller
 {
     /**
-     * あるグループのユーザー一覧
+     * groups.users.index あるグループのユーザー一覧
      *
      * @queryParam group required グループid
      *
@@ -90,7 +90,7 @@ class GroupUserController extends Controller
     }
 
     /**
-     * グループにユーザーを追加する
+     * groups.users.store グループにユーザーを追加する
      * @queryParam group required グループid
      *
      * @response {
@@ -181,7 +181,7 @@ class GroupUserController extends Controller
     }
 
     /**
-     * あるグループの中のひとりのユーザー情報を得る
+     * groups.users.show あるグループの中のひとりのユーザー情報を得る
      * @queryParam group required グループid
      * @queryParam user required グループに所属する一人のユーザーのid
      * @response {
@@ -217,7 +217,7 @@ class GroupUserController extends Controller
     }
 
     /**
-     * ユーザーをグループから削除
+     * groups.users.destory ユーザーをグループから削除
      * @queryParam group required グループid
      * @queryParam user required グループに所属する一人のユーザーのid
      * 

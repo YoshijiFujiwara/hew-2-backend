@@ -11,7 +11,7 @@ use Illuminate\Http\Response;
 class GroupController extends Controller
 {
     /**
-     * 自分が管理しているグループ一覧
+     * groups.index 自分が管理しているグループ一覧
      *
      * @response {
     "data": [
@@ -312,7 +312,7 @@ class GroupController extends Controller
     }
 
     /**
-     * グループを追加
+     * groups.store グループを追加
      *
      * @bodyParam name string required 新規グループの名前
      * @response {
@@ -363,7 +363,7 @@ class GroupController extends Controller
     }
 
     /**
-     * グループ詳細
+     * groups.show グループ詳細
      *
      * @queryParam group required グループid
      *
@@ -472,7 +472,7 @@ class GroupController extends Controller
     }
 
     /**
-     * グループの情報を更新
+     * groups.update グループの情報を更新
      * @bodyParam name string required 新たにつけるグループ名
      * @queryParam group required グループid
      *
@@ -592,7 +592,7 @@ class GroupController extends Controller
     }
 
     /**
-     * グループを削除
+     * groups.destory グループを削除
      *
      * @queryParam group required グループid
      * @response 204 null

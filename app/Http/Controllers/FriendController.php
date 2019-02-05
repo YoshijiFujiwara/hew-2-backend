@@ -13,7 +13,7 @@ use Illuminate\Http\Response;
 class FriendController extends Controller
 {
     /**
-     * 友達一覧
+     * friends.index 友達一覧
      *
      * @response {
     "data": [
@@ -281,7 +281,7 @@ class FriendController extends Controller
     }
 
     /**
-     * 友達申請する
+     * friends.store 友達申請する
      *
      * @bodyParam email string required 追加する友達のメールアドレス
      *
@@ -327,7 +327,7 @@ class FriendController extends Controller
     }
 
     /**
-     * 特定の友達の詳細情報
+     * friends.show 特定の友達の詳細情報
      *
      * @queryParam friend required 友達のid
      *
@@ -356,7 +356,7 @@ class FriendController extends Controller
     }
 
     /**
-     * 友達から削除
+     * friends.destory 友達から削除
      *
      * @queryParam friend required 友達のid
      *
@@ -370,7 +370,7 @@ class FriendController extends Controller
     }
 
     /**
-     * 申請した中でブロックされているユーザー一覧
+     * friends.blockedUsers 申請した中でブロックされているユーザー一覧
      */
     public function blockedUsers(Request $request)
     {
@@ -378,7 +378,7 @@ class FriendController extends Controller
     }
 
     /**
-     * 申請した中で待っているユーザー一覧
+     * friends.waitingFriends 申請した中で待っているユーザー一覧
      */
     public function waitingFriends(Request $request)
     {
@@ -386,7 +386,7 @@ class FriendController extends Controller
     }
 
     /**
-     * 友達申請を許可
+     * friends.permit 友達申請を許可
      * @bodyParam user_id integer required 友達申請してきてる人のユーザーID
      */
     public function permit(Request $request)
@@ -404,7 +404,7 @@ class FriendController extends Controller
     }
 
     /**
-     * 友達申請を拒否
+     * friends.reject 友達申請を拒否
      * @bodyParam user_id integer required 友達申請してきてる人のユーザーID
      */
     public function reject(Request $request)
@@ -422,7 +422,7 @@ class FriendController extends Controller
     }
 
     /**
-     * 申請してきてるユーザー
+     * friends.friendRequestUsers 申請してきてるユーザー
      */
     public function friendRequestUsers(Request $request)
     {

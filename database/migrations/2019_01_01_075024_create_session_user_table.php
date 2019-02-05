@@ -14,6 +14,7 @@ class CreateSessionUserTable extends Migration
     public function up()
     {
         Schema::create('session_user', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('session_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->enum('join_status', ['allow', 'deny', 'wait']);
