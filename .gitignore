@@ -13,3 +13,4 @@ yarn-error.log
 /config/view.php
 /bootstrap/app.php
 app.yaml
+.DS_Store
