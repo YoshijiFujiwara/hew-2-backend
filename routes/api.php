@@ -33,7 +33,7 @@ Route::middleware('JWT')->group(function () {
     Route::apiResource('attributes', 'AttributeController')->only(['index', 'store']);
     Route::apiResource('attributes', 'AttributeController')->only(['show', 'update', 'destroy'])->middleware('can:has,attribute');
 
-    Route::group(['prefix' => 'guest', 'namespace' => 'Guest'], function () {
+    Route::group(['prefix' => 'guest', 'namespace' => 'Guest', 'as' => 'guests.'], function () {
         Route::apiResource('sessions', 'SessionController')->only(['index']);
         Route::apiResource('sessions', 'SessionController')->only(['show'])->middleware('can:participated,session');
 

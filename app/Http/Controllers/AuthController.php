@@ -86,7 +86,7 @@ class AuthController extends Controller
     }
 
     /**
-     * 現在ログインしているユーザーの情報を得る
+     * me 現在ログインしているユーザーの情報を得る
      *
      * @respose {
     "id": 52,
@@ -104,7 +104,7 @@ class AuthController extends Controller
     }
 
     /**
-     * ログアウト
+     * logout ログアウト
      */
     public function logout()
     {
@@ -114,7 +114,7 @@ class AuthController extends Controller
     }
 
     /**
-     * トークンのリフレッシュ
+     * refresh token トークンのリフレッシュ
      */
     public function refresh()
     {

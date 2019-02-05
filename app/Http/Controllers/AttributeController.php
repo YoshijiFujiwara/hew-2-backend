@@ -11,7 +11,7 @@ use Illuminate\Http\Response;
 class AttributeController extends Controller
 {
     /**
-     * 自分が管理している属性一覧
+     * attributes.index 自分が管理している属性一覧
      *
      * @response {
     "data": [
@@ -78,102 +78,6 @@ class AttributeController extends Controller
     "timezone_type": 3,
     "timezone": "UTC"
     }
-    },
-    {
-    "id": 3,
-    "manager": {
-    "id": 1,
-    "name": "佐々木 和也",
-    "username": "haoyama",
-    "email": "esuzuki@example.net",
-    "created_at": {
-    "date": "2019-01-13 05:43:21.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 05:43:21.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    "name": "voluptates",
-    "plus_minus": -1596,
-    "ratio": 1,
-    "created_at": {
-    "date": "2019-01-13 05:43:21.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 05:43:21.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    {
-    "id": 4,
-    "manager": {
-    "id": 1,
-    "name": "佐々木 和也",
-    "username": "haoyama",
-    "email": "esuzuki@example.net",
-    "created_at": {
-    "date": "2019-01-13 05:43:21.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 05:43:21.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    "name": "cupiditate",
-    "plus_minus": -170,
-    "ratio": 2,
-    "created_at": {
-    "date": "2019-01-13 05:43:21.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 05:43:21.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    {
-    "id": 5,
-    "manager": {
-    "id": 1,
-    "name": "佐々木 和也",
-    "username": "haoyama",
-    "email": "esuzuki@example.net",
-    "created_at": {
-    "date": "2019-01-13 05:43:21.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 05:43:21.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    "name": "vitae",
-    "plus_minus": 921,
-    "ratio": 2,
-    "created_at": {
-    "date": "2019-01-13 05:43:21.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 05:43:21.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
     }
     ]
     }
@@ -185,7 +89,7 @@ class AttributeController extends Controller
     }
 
     /**
-     * 属性追加
+     * attributes.store 属性追加
      *
      * @bodyParam name string required 属性名。必須
      * @bodyParam plus_minus integer 加減算
@@ -241,7 +145,7 @@ class AttributeController extends Controller
     }
 
     /**
-     * 属性の一つの詳細を得る
+     * attributes.show 属性の一つの詳細を得る
      *
      * @queryParam attribute required 属性id
      *
@@ -480,7 +384,7 @@ class AttributeController extends Controller
     }
 
     /**
-     * 対象の属性をアップデート
+     * attributes.update 対象の属性をアップデート
      * @queryParam attribute required 属性id
      * @bodyParam name string required 属性名。必須
      * @bodyParam plus_minus integer 加減算
@@ -527,7 +431,7 @@ class AttributeController extends Controller
     }
 
     /**
-     * 属性の削除
+     * attributes.destory 属性の削除
      *
      * @queryParam attribute required 属性id
      *

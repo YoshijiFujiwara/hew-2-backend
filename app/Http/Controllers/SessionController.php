@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class SessionController extends Controller
 {
     /**
-     * 管理しているセッション一覧
+     * sessions.index 管理しているセッション一覧
      *
      * @response {
     "data": [
@@ -652,7 +652,7 @@ class SessionController extends Controller
     }
 
     /**
-     * セッションを作成
+     * sessions.store セッションを作成
      *
      * @bodyParam name string required 新規セッションの名前
      * @bodyParam shop_id integer  ショップのID(ぐるなび？)
@@ -669,7 +669,7 @@ class SessionController extends Controller
     }
 
     /**
-     * 一つのセッションの詳細
+     * sessions.show 一つのセッションの詳細
      * @queryParam session required セッションid
      */
     public function show(Request $request, Session $session)
@@ -679,7 +679,7 @@ class SessionController extends Controller
 
 
     /**
-     * セッション情報を更新
+     * sessions.update セッション情報を更新
      * @bodyParam name string required 新規セッションの名前
      * @bodyParam shop_id integer  ショップのID(ぐるなび？)
      * @bodyParam budget integer  予算額
@@ -695,7 +695,7 @@ class SessionController extends Controller
     }
 
     /**
-     * セッションを削除
+     * sessions.destory セッションを削除
      * @queryParam session required セッションid
      */
     public function destroy(Session $session)

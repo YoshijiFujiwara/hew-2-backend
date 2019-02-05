@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class SessionController extends Controller
 {
     /**
-     * ゲストとして参加しているセッション一覧
+     * guests.sessions.index ゲストとして参加しているセッション一覧
      */
     public function index(Request $request)
     {
@@ -18,7 +18,7 @@ class SessionController extends Controller
     }
 
     /**
-     * ゲストとして参加しているセッションの一つの詳細
+     * guests.sessions.show ゲストとして参加しているセッションの一つの詳細
      * @queryParam session required セッションid
      */
     public function show(Request $request, Session $session)

@@ -27,10 +27,10 @@ Welcome to the generated API reference.
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/auth/register"     -d "email"="Idw8SfN3OAVRovuW" \
-    -d "name"="Ang4gMJfdhoj4okG" \
-    -d "username"="BYhjUBtILRUDritu" \
-    -d "password"="gKJogrwywSTurd6c" 
+curl -X POST "http://localhost/api/auth/register"     -d "email"="E9o9dakCKmuqcb5j" \
+    -d "name"="PizFwAhOD8juRjjr" \
+    -d "username"="mY79idNadLK5FP9n" \
+    -d "password"="OTr21lJVr6VgdiOF" 
 ```
 
 ```javascript
@@ -42,10 +42,10 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "email": "Idw8SfN3OAVRovuW",
-    "name": "Ang4gMJfdhoj4okG",
-    "username": "BYhjUBtILRUDritu",
-    "password": "gKJogrwywSTurd6c",
+    "email": "E9o9dakCKmuqcb5j",
+    "name": "PizFwAhOD8juRjjr",
+    "username": "mY79idNadLK5FP9n",
+    "password": "OTr21lJVr6VgdiOF",
 })
 
 fetch(url, {
@@ -97,8 +97,8 @@ Parameter | Type | Status | Description
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/auth/login"     -d "email"="azvFMrPo92qvzc3k" \
-    -d "password"="99ZYMd7u42kOE2CO" 
+curl -X POST "http://localhost/api/auth/login"     -d "email"="xzaCXka26eG38NJw" \
+    -d "password"="k9i0f9QcEUmrcie2" 
 ```
 
 ```javascript
@@ -110,8 +110,8 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "email": "azvFMrPo92qvzc3k",
-    "password": "99ZYMd7u42kOE2CO",
+    "email": "xzaCXka26eG38NJw",
+    "password": "k9i0f9QcEUmrcie2",
 })
 
 fetch(url, {
@@ -153,7 +153,7 @@ Parameter | Type | Status | Description
 <!-- END_a925a8d22b3615f12fca79456d286859 -->
 
 <!-- START_19ff1b6f8ce19d3c444e9b518e8f7160 -->
-## ログアウト
+## logout ログアウト
 
 > Example request:
 
@@ -185,7 +185,7 @@ fetch(url, {
 <!-- END_19ff1b6f8ce19d3c444e9b518e8f7160 -->
 
 <!-- START_994af8f47e3039ba6d6d67c09dd9e415 -->
-## トークンのリフレッシュ
+## refresh token トークンのリフレッシュ
 
 > Example request:
 
@@ -217,7 +217,7 @@ fetch(url, {
 <!-- END_994af8f47e3039ba6d6d67c09dd9e415 -->
 
 <!-- START_a47210337df3b4ba0df697c115ba0c1e -->
-## 現在ログインしているユーザーの情報を得る
+## me 現在ログインしているユーザーの情報を得る
 
 > Example request:
 
@@ -249,7 +249,7 @@ fetch(url, {
 <!-- END_a47210337df3b4ba0df697c115ba0c1e -->
 
 <!-- START_7edc0e9974cb6ca47974c68a17d1938f -->
-## 友達一覧
+## friends.index 友達一覧
 
 > Example request:
 
@@ -544,12 +544,12 @@ fetch(url, {
 <!-- END_7edc0e9974cb6ca47974c68a17d1938f -->
 
 <!-- START_f05cf1deece1e8c35e1ec331331e3319 -->
-## 友達申請する
+## friends.store 友達申請する
 
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/friends"     -d "email"="RJFqzMOck5DM4vUA" 
+curl -X POST "http://localhost/api/friends"     -d "email"="rifyRsxaadC4t6u6" 
 ```
 
 ```javascript
@@ -561,7 +561,7 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "email": "RJFqzMOck5DM4vUA",
+    "email": "rifyRsxaadC4t6u6",
 })
 
 fetch(url, {
@@ -615,7 +615,7 @@ Parameter | Type | Status | Description
 <!-- END_f05cf1deece1e8c35e1ec331331e3319 -->
 
 <!-- START_b3cd0c5ef680836492350c2f2072c3a3 -->
-## 申請した中でブロックされているユーザー一覧
+## friends.blockedUsers 申請した中でブロックされているユーザー一覧
 
 > Example request:
 
@@ -1054,7 +1054,7 @@ fetch(url, {
 <!-- END_b3cd0c5ef680836492350c2f2072c3a3 -->
 
 <!-- START_d0f209202760e23f7254507b81d7dca5 -->
-## 申請した中で待っているユーザー一覧
+## friends.waitingFriends 申請した中で待っているユーザー一覧
 
 > Example request:
 
@@ -1493,7 +1493,7 @@ fetch(url, {
 <!-- END_d0f209202760e23f7254507b81d7dca5 -->
 
 <!-- START_76eb010618732a67401c369843a126a8 -->
-## 申請してきてるユーザー
+## friends.friendRequestUsers 申請してきてるユーザー
 
 > Example request:
 
@@ -1932,12 +1932,12 @@ fetch(url, {
 <!-- END_76eb010618732a67401c369843a126a8 -->
 
 <!-- START_fbc14c6de0e1413d77c7983cac955138 -->
-## 友達申請を許可
+## friends.permit 友達申請を許可
 
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/friends/permit"     -d "user_id"="8" 
+curl -X POST "http://localhost/api/friends/permit"     -d "user_id"="13" 
 ```
 
 ```javascript
@@ -1949,7 +1949,7 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "user_id": "8",
+    "user_id": "13",
 })
 
 fetch(url, {
@@ -1974,12 +1974,12 @@ Parameter | Type | Status | Description
 <!-- END_fbc14c6de0e1413d77c7983cac955138 -->
 
 <!-- START_8283675255190daaedee86bae7f6e419 -->
-## 友達申請を拒否
+## friends.reject 友達申請を拒否
 
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/friends/reject"     -d "user_id"="7" 
+curl -X POST "http://localhost/api/friends/reject"     -d "user_id"="2" 
 ```
 
 ```javascript
@@ -1991,7 +1991,7 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "user_id": "7",
+    "user_id": "2",
 })
 
 fetch(url, {
@@ -2016,7 +2016,7 @@ Parameter | Type | Status | Description
 <!-- END_8283675255190daaedee86bae7f6e419 -->
 
 <!-- START_21d33fd99fad4620b704e1c5c2326a37 -->
-## 特定の友達の詳細情報
+## friends.show 特定の友達の詳細情報
 
 > Example request:
 
@@ -2028,7 +2028,7 @@ curl -X GET -G "http://localhost/api/friends/{friend}"
 const url = new URL("http://localhost/api/friends/{friend}");
 
     let params = {
-            "friend": "Y50hvMzSFVRyLgpe",
+            "friend": "LSNGfsowDTFGqUvI",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -2080,7 +2080,7 @@ Parameter | Status | Description
 <!-- END_21d33fd99fad4620b704e1c5c2326a37 -->
 
 <!-- START_5256ac7cddbd9267236aaa0874cb6a49 -->
-## 友達から削除
+## friends.destory 友達から削除
 
 > Example request:
 
@@ -2092,7 +2092,7 @@ curl -X DELETE "http://localhost/api/friends/{friend}"
 const url = new URL("http://localhost/api/friends/{friend}");
 
     let params = {
-            "friend": "ycWRuDrQDqLZtoyy",
+            "friend": "20W4RQUFu6JPpTE4",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -2127,7 +2127,7 @@ Parameter | Status | Description
 <!-- END_5256ac7cddbd9267236aaa0874cb6a49 -->
 
 <!-- START_007018a8a9f15c2d47fcb105431ffeee -->
-## 自分が管理しているグループ一覧
+## groups.index 自分が管理しているグループ一覧
 
 > Example request:
 
@@ -2455,12 +2455,12 @@ fetch(url, {
 <!-- END_007018a8a9f15c2d47fcb105431ffeee -->
 
 <!-- START_15c22564ad248f952405021410fd1d25 -->
-## グループを追加
+## groups.store グループを追加
 
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/groups"     -d "name"="JL9e39wO8Kmj4OVW" 
+curl -X POST "http://localhost/api/groups"     -d "name"="S6Qhk07nNmImRekP" 
 ```
 
 ```javascript
@@ -2472,7 +2472,7 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "name": "JL9e39wO8Kmj4OVW",
+    "name": "S6Qhk07nNmImRekP",
 })
 
 fetch(url, {
@@ -2541,7 +2541,7 @@ Parameter | Type | Status | Description
 <!-- END_15c22564ad248f952405021410fd1d25 -->
 
 <!-- START_a209a43173c7c4aaf7ab070d77fb7f0c -->
-## グループ詳細
+## groups.show グループ詳細
 
 > Example request:
 
@@ -2553,7 +2553,7 @@ curl -X GET -G "http://localhost/api/groups/{group}"
 const url = new URL("http://localhost/api/groups/{group}");
 
     let params = {
-            "group": "2Dy20PK7Im2ESl4v",
+            "group": "JlAWnTU3K1AIVMfo",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -2685,19 +2685,19 @@ Parameter | Status | Description
 <!-- END_a209a43173c7c4aaf7ab070d77fb7f0c -->
 
 <!-- START_5b84408c838201930093112a7621935c -->
-## グループの情報を更新
+## groups.update グループの情報を更新
 
 > Example request:
 
 ```bash
-curl -X PUT "http://localhost/api/groups/{group}"     -d "name"="KMm1IKyH9DX7lSQw" 
+curl -X PUT "http://localhost/api/groups/{group}"     -d "name"="AuN9K4dTdEWXQ0mS" 
 ```
 
 ```javascript
 const url = new URL("http://localhost/api/groups/{group}");
 
     let params = {
-            "group": "ewBK0OnJb9jB2bwn",
+            "group": "sqTkHKfXWEJMgPSR",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -2707,7 +2707,7 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "name": "KMm1IKyH9DX7lSQw",
+    "name": "AuN9K4dTdEWXQ0mS",
 })
 
 fetch(url, {
@@ -2848,7 +2848,7 @@ Parameter | Status | Description
 <!-- END_5b84408c838201930093112a7621935c -->
 
 <!-- START_bd4f731f3f84c755053406b8971eba1f -->
-## グループを削除
+## groups.destory グループを削除
 
 > Example request:
 
@@ -2860,7 +2860,7 @@ curl -X DELETE "http://localhost/api/groups/{group}"
 const url = new URL("http://localhost/api/groups/{group}");
 
     let params = {
-            "group": "O4BhmzCqRXXMyXXX",
+            "group": "368dpvLhQCX9j9lr",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -2895,7 +2895,7 @@ Parameter | Status | Description
 <!-- END_bd4f731f3f84c755053406b8971eba1f -->
 
 <!-- START_25cacea309e94199433ca72c489534bc -->
-## あるグループのユーザー一覧
+## groups.users.index あるグループのユーザー一覧
 
 > Example request:
 
@@ -2907,7 +2907,7 @@ curl -X GET -G "http://localhost/api/groups/{group}/users"
 const url = new URL("http://localhost/api/groups/{group}/users");
 
     let params = {
-            "group": "EncPTfhRI2bySlHA",
+            "group": "7A3hREQet1sUBTzT",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -3009,7 +3009,7 @@ Parameter | Status | Description
 <!-- END_25cacea309e94199433ca72c489534bc -->
 
 <!-- START_f40148555e0e5ae9fd501d8c12dd032c -->
-## グループにユーザーを追加する
+## groups.users.store グループにユーザーを追加する
 
 > Example request:
 
@@ -3021,7 +3021,7 @@ curl -X POST "http://localhost/api/groups/{group}/users"
 const url = new URL("http://localhost/api/groups/{group}/users");
 
     let params = {
-            "group": "xGJehShyMTAFfDkH",
+            "group": "lBRWqr6RoHSUmbkI",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -3130,7 +3130,7 @@ Parameter | Status | Description
 <!-- END_f40148555e0e5ae9fd501d8c12dd032c -->
 
 <!-- START_193dc746eafa37d49a04e41e8a28bb43 -->
-## あるグループの中のひとりのユーザー情報を得る
+## groups.users.show あるグループの中のひとりのユーザー情報を得る
 
 > Example request:
 
@@ -3142,8 +3142,8 @@ curl -X GET -G "http://localhost/api/groups/{group}/users/{user}"
 const url = new URL("http://localhost/api/groups/{group}/users/{user}");
 
     let params = {
-            "group": "G4ZOaBrqHBY3pJCF",
-            "user": "QYz7Kn4oedGQxUF8",
+            "group": "YJ74Wq7uUEmHlET2",
+            "user": "5uLI49P8kf3QUJLj",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -3203,7 +3203,7 @@ Parameter | Status | Description
 <!-- END_193dc746eafa37d49a04e41e8a28bb43 -->
 
 <!-- START_5d098753a466f1ebdbceb5c54720efb3 -->
-## ユーザーをグループから削除
+## groups.users.destory ユーザーをグループから削除
 
 > Example request:
 
@@ -3215,8 +3215,8 @@ curl -X DELETE "http://localhost/api/groups/{group}/users/{user}"
 const url = new URL("http://localhost/api/groups/{group}/users/{user}");
 
     let params = {
-            "group": "zFDbyR6GKDyseAnF",
-            "user": "QdJYHnqPFFxkz6zG",
+            "group": "QkWxbQrn7taefvut",
+            "user": "u9SKobiENrg7gBdn",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -3254,7 +3254,7 @@ Parameter | Status | Description
 <!-- END_5d098753a466f1ebdbceb5c54720efb3 -->
 
 <!-- START_77bc4cbc7d1ccbd254470fad1c1498a2 -->
-## 管理しているセッション一覧
+## sessions.index 管理しているセッション一覧
 
 > Example request:
 
@@ -3922,17 +3922,17 @@ fetch(url, {
 <!-- END_77bc4cbc7d1ccbd254470fad1c1498a2 -->
 
 <!-- START_b0309e45a2af0a1e9b599219dbce6d98 -->
-## セッションを作成
+## sessions.store セッションを作成
 
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/sessions"     -d "name"="YLKUTumhfSCaiSZG" \
-    -d "shop_id"="4" \
-    -d "budget"="12" \
-    -d "actual"="14" \
-    -d "start_time"="vgCYVEVRD3jkZo23" \
-    -d "end_time"="fQNq2LtbbrqUFicZ" 
+curl -X POST "http://localhost/api/sessions"     -d "name"="5Y7dodBHrfcoq5PD" \
+    -d "shop_id"="20" \
+    -d "budget"="13" \
+    -d "actual"="13" \
+    -d "start_time"="dXl8REPJD1OvAqmH" \
+    -d "end_time"="19n5czcGRXPnV5xk" 
 ```
 
 ```javascript
@@ -3944,12 +3944,12 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "name": "YLKUTumhfSCaiSZG",
-    "shop_id": "4",
-    "budget": "12",
-    "actual": "14",
-    "start_time": "vgCYVEVRD3jkZo23",
-    "end_time": "fQNq2LtbbrqUFicZ",
+    "name": "5Y7dodBHrfcoq5PD",
+    "shop_id": "20",
+    "budget": "13",
+    "actual": "13",
+    "start_time": "dXl8REPJD1OvAqmH",
+    "end_time": "19n5czcGRXPnV5xk",
 })
 
 fetch(url, {
@@ -3979,7 +3979,7 @@ Parameter | Type | Status | Description
 <!-- END_b0309e45a2af0a1e9b599219dbce6d98 -->
 
 <!-- START_de7ab2ee5e93bb1ef0dadb0e40c75c35 -->
-## 一つのセッションの詳細
+## sessions.show 一つのセッションの詳細
 
 > Example request:
 
@@ -3991,7 +3991,7 @@ curl -X GET -G "http://localhost/api/sessions/{session}"
 const url = new URL("http://localhost/api/sessions/{session}");
 
     let params = {
-            "session": "03PttQw82rWXfcQX",
+            "session": "Isa80tbBNQ27XUne",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -4428,24 +4428,24 @@ Parameter | Status | Description
 <!-- END_de7ab2ee5e93bb1ef0dadb0e40c75c35 -->
 
 <!-- START_01d1a457f56b8ac4134ff996daf9e9ab -->
-## セッション情報を更新
+## sessions.update セッション情報を更新
 
 > Example request:
 
 ```bash
-curl -X PUT "http://localhost/api/sessions/{session}"     -d "name"="QIe63dfHKrIa0Zgt" \
-    -d "shop_id"="17" \
-    -d "budget"="17" \
-    -d "actual"="19" \
-    -d "start_time"="W5KEn1SRZVKQWMuu" \
-    -d "end_time"="VzTUgnBKxAhG2Ufd" 
+curl -X PUT "http://localhost/api/sessions/{session}"     -d "name"="YrPVocGYDA5VI45z" \
+    -d "shop_id"="10" \
+    -d "budget"="13" \
+    -d "actual"="4" \
+    -d "start_time"="vcB2NHH7Ouq8HpGr" \
+    -d "end_time"="asUgeObyVJhPo6N2" 
 ```
 
 ```javascript
 const url = new URL("http://localhost/api/sessions/{session}");
 
     let params = {
-            "session": "aQlbIOq8ql51SOho",
+            "session": "2DzYKU06Y5muWzXh",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -4455,12 +4455,12 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "name": "QIe63dfHKrIa0Zgt",
-    "shop_id": "17",
-    "budget": "17",
-    "actual": "19",
-    "start_time": "W5KEn1SRZVKQWMuu",
-    "end_time": "VzTUgnBKxAhG2Ufd",
+    "name": "YrPVocGYDA5VI45z",
+    "shop_id": "10",
+    "budget": "13",
+    "actual": "4",
+    "start_time": "vcB2NHH7Ouq8HpGr",
+    "end_time": "asUgeObyVJhPo6N2",
 })
 
 fetch(url, {
@@ -4497,7 +4497,7 @@ Parameter | Status | Description
 <!-- END_01d1a457f56b8ac4134ff996daf9e9ab -->
 
 <!-- START_4fd1093757d2141b14b2cd8666e3e281 -->
-## セッションを削除
+## sessions.destory セッションを削除
 
 > Example request:
 
@@ -4509,7 +4509,7 @@ curl -X DELETE "http://localhost/api/sessions/{session}"
 const url = new URL("http://localhost/api/sessions/{session}");
 
     let params = {
-            "session": "3gCmoNmvzOgIPg9Q",
+            "session": "qvOPUEFz3tt1rIZB",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -4539,7 +4539,7 @@ Parameter | Status | Description
 <!-- END_4fd1093757d2141b14b2cd8666e3e281 -->
 
 <!-- START_b2c8f3f41fac647952bc19177cbb6dd9 -->
-## あるセッションのユーザー一覧
+## sessions.users.index あるセッションのユーザー一覧
 
 > Example request:
 
@@ -4551,7 +4551,7 @@ curl -X GET -G "http://localhost/api/sessions/{session}/users"
 const url = new URL("http://localhost/api/sessions/{session}/users");
 
     let params = {
-            "session": "vNqiax4t9Z4SrDVx",
+            "session": "OxmLsDGs2Xoh07rI",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -4988,23 +4988,23 @@ Parameter | Status | Description
 <!-- END_b2c8f3f41fac647952bc19177cbb6dd9 -->
 
 <!-- START_5daba3574b7419977eed93c2d276b285 -->
-## セッションにユーザーを追加する
+## sessions.users.store セッションにユーザーを追加する
 
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/sessions/{session}/users"     -d "user_id"="Tbz4mwvfEPRpS5GD" \
-    -d "join_status"="J4NfYVUQ5jL8I85C" \
+curl -X POST "http://localhost/api/sessions/{session}/users"     -d "user_id"="whYrtxvqLDM3pJ2g" \
+    -d "join_status"="RqbgPuPhpLCuJo4C" \
     -d "paid"="12" \
-    -d "plus_minus"="15" \
-    -d "ratio"="Sx50mYZpYklZAYsQ" 
+    -d "plus_minus"="10" \
+    -d "ratio"="u82JNvHT8Gw2YlJE" 
 ```
 
 ```javascript
 const url = new URL("http://localhost/api/sessions/{session}/users");
 
     let params = {
-            "session": "QSJ7cRX6XUfTju54",
+            "session": "xy2w47iXC3Ug3Dt8",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -5014,11 +5014,11 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "user_id": "Tbz4mwvfEPRpS5GD",
-    "join_status": "J4NfYVUQ5jL8I85C",
+    "user_id": "whYrtxvqLDM3pJ2g",
+    "join_status": "RqbgPuPhpLCuJo4C",
     "paid": "12",
-    "plus_minus": "15",
-    "ratio": "Sx50mYZpYklZAYsQ",
+    "plus_minus": "10",
+    "ratio": "u82JNvHT8Gw2YlJE",
 })
 
 fetch(url, {
@@ -5052,7 +5052,7 @@ Parameter | Status | Description
 <!-- END_5daba3574b7419977eed93c2d276b285 -->
 
 <!-- START_f2c83404c04fc70752a6cac97faeaf89 -->
-## セッションの中の一人のユーザーの詳細を得る（属性とか見たりするでしょう）
+## sessions.users.show セッションの中の一人のユーザーの詳細を得る（属性とか見たりするでしょう）
 
 > Example request:
 
@@ -5064,8 +5064,8 @@ curl -X GET -G "http://localhost/api/sessions/{session}/users/{user}"
 const url = new URL("http://localhost/api/sessions/{session}/users/{user}");
 
     let params = {
-            "session": "5VfFX77qEjuvEYef",
-            "user": "cNmEOoqlylvnhQQa",
+            "session": "apSPWNWLNif7IRqm",
+            "user": "twJa7qSGIWfet0r3",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -5503,24 +5503,24 @@ Parameter | Status | Description
 <!-- END_f2c83404c04fc70752a6cac97faeaf89 -->
 
 <!-- START_1156464718907736210a026360f1182b -->
-## セッションの中のユーザーのステータスなどを更新する
+## sessions.users.update セッションの中のユーザーのステータスなどを更新する
 
 > Example request:
 
 ```bash
-curl -X PUT "http://localhost/api/sessions/{session}/users/{user}"     -d "user_id"="Lq4pvgMiQ9jSV3ZF" \
-    -d "join_status"="NB0UltzhYGaHwgh6" \
-    -d "paid"="7" \
-    -d "plus_minus"="14" \
-    -d "ratio"="z1QcbZDkVDJyLHba" 
+curl -X PUT "http://localhost/api/sessions/{session}/users/{user}"     -d "user_id"="BoMhwrzo80bKkPLI" \
+    -d "join_status"="PPsJdAycVDVMANvy" \
+    -d "paid"="18" \
+    -d "plus_minus"="19" \
+    -d "ratio"="gQZFfpbuo69xH6AU" 
 ```
 
 ```javascript
 const url = new URL("http://localhost/api/sessions/{session}/users/{user}");
 
     let params = {
-            "session": "lQsbZQdYTIcSfx7U",
-            "user": "iQqB5sWi3RPSdYsW",
+            "session": "YArA4Zk0YOhEfM06",
+            "user": "rrTLr4NEd4CUvKGo",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -5530,11 +5530,11 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "user_id": "Lq4pvgMiQ9jSV3ZF",
-    "join_status": "NB0UltzhYGaHwgh6",
-    "paid": "7",
-    "plus_minus": "14",
-    "ratio": "z1QcbZDkVDJyLHba",
+    "user_id": "BoMhwrzo80bKkPLI",
+    "join_status": "PPsJdAycVDVMANvy",
+    "paid": "18",
+    "plus_minus": "19",
+    "ratio": "gQZFfpbuo69xH6AU",
 })
 
 fetch(url, {
@@ -5571,7 +5571,7 @@ Parameter | Status | Description
 <!-- END_1156464718907736210a026360f1182b -->
 
 <!-- START_eaedfe94c6aa4eb87de54290a553fe2e -->
-## セッションからユーザーを削除する
+## sessions.users.destory セッションからユーザーを削除する
 
 > Example request:
 
@@ -5583,8 +5583,8 @@ curl -X DELETE "http://localhost/api/sessions/{session}/users/{user}"
 const url = new URL("http://localhost/api/sessions/{session}/users/{user}");
 
     let params = {
-            "session": "xkit3Ln972g9xQfm",
-            "user": "EuD4kuPB2Ra5iVAb",
+            "session": "hrqYj1RxUoS8B3th",
+            "user": "nIEXGlmVf7j8vkbA",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -5615,7 +5615,7 @@ Parameter | Status | Description
 <!-- END_eaedfe94c6aa4eb87de54290a553fe2e -->
 
 <!-- START_03c20e5ac43ca78ea06bde43541c6522 -->
-## 自分が管理している属性一覧
+## attributes.index 自分が管理している属性一覧
 
 > Example request:
 
@@ -5707,102 +5707,6 @@ fetch(url, {
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
-        },
-        {
-            "id": 3,
-            "manager": {
-                "id": 1,
-                "name": "佐々木 和也",
-                "username": "haoyama",
-                "email": "esuzuki@example.net",
-                "created_at": {
-                    "date": "2019-01-13 05:43:21.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-01-13 05:43:21.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "name": "voluptates",
-            "plus_minus": -1596,
-            "ratio": 1,
-            "created_at": {
-                "date": "2019-01-13 05:43:21.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-01-13 05:43:21.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 4,
-            "manager": {
-                "id": 1,
-                "name": "佐々木 和也",
-                "username": "haoyama",
-                "email": "esuzuki@example.net",
-                "created_at": {
-                    "date": "2019-01-13 05:43:21.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-01-13 05:43:21.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "name": "cupiditate",
-            "plus_minus": -170,
-            "ratio": 2,
-            "created_at": {
-                "date": "2019-01-13 05:43:21.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-01-13 05:43:21.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 5,
-            "manager": {
-                "id": 1,
-                "name": "佐々木 和也",
-                "username": "haoyama",
-                "email": "esuzuki@example.net",
-                "created_at": {
-                    "date": "2019-01-13 05:43:21.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-01-13 05:43:21.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "name": "vitae",
-            "plus_minus": 921,
-            "ratio": 2,
-            "created_at": {
-                "date": "2019-01-13 05:43:21.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-01-13 05:43:21.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
         }
     ]
 }
@@ -5815,14 +5719,14 @@ fetch(url, {
 <!-- END_03c20e5ac43ca78ea06bde43541c6522 -->
 
 <!-- START_abc4770376dd728225ce9843bc74360e -->
-## 属性追加
+## attributes.store 属性追加
 
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/attributes"     -d "name"="iy0o6baUBTT2yRzn" \
-    -d "plus_minus"="14" \
-    -d "ratio"="593.357568" 
+curl -X POST "http://localhost/api/attributes"     -d "name"="1tKEdJyoqTsjTPsV" \
+    -d "plus_minus"="19" \
+    -d "ratio"="1673.0251953" 
 ```
 
 ```javascript
@@ -5834,9 +5738,9 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "name": "iy0o6baUBTT2yRzn",
-    "plus_minus": "14",
-    "ratio": "593.357568",
+    "name": "1tKEdJyoqTsjTPsV",
+    "plus_minus": "19",
+    "ratio": "1673.0251953",
 })
 
 fetch(url, {
@@ -5908,7 +5812,7 @@ Parameter | Type | Status | Description
 <!-- END_abc4770376dd728225ce9843bc74360e -->
 
 <!-- START_85b732dd345201c742119d9c4b34ca8e -->
-## 属性の一つの詳細を得る
+## attributes.show 属性の一つの詳細を得る
 
 > Example request:
 
@@ -5920,7 +5824,7 @@ curl -X GET -G "http://localhost/api/attributes/{attribute}"
 const url = new URL("http://localhost/api/attributes/{attribute}");
 
     let params = {
-            "attribute": "XELeo2WMYv7Uf46I",
+            "attribute": "l0PKhRXuG98sbeXb",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -6182,21 +6086,21 @@ Parameter | Status | Description
 <!-- END_85b732dd345201c742119d9c4b34ca8e -->
 
 <!-- START_5bed01b4fc768cd179c6ed6f42562e64 -->
-## 対象の属性をアップデート
+## attributes.update 対象の属性をアップデート
 
 > Example request:
 
 ```bash
-curl -X PUT "http://localhost/api/attributes/{attribute}"     -d "name"="x6XNdfSQRVoeYBlv" \
-    -d "plus_minus"="16" \
-    -d "ratio"="2148.14995" 
+curl -X PUT "http://localhost/api/attributes/{attribute}"     -d "name"="IvbjSr5S2BaPJrhb" \
+    -d "plus_minus"="14" \
+    -d "ratio"="116" 
 ```
 
 ```javascript
 const url = new URL("http://localhost/api/attributes/{attribute}");
 
     let params = {
-            "attribute": "kw4jtd5Ou29Zzf0w",
+            "attribute": "2tkyZb5eHJ37eokj",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -6206,9 +6110,9 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "name": "x6XNdfSQRVoeYBlv",
-    "plus_minus": "16",
-    "ratio": "2148.14995",
+    "name": "IvbjSr5S2BaPJrhb",
+    "plus_minus": "14",
+    "ratio": "116",
 })
 
 fetch(url, {
@@ -6280,7 +6184,7 @@ Parameter | Status | Description
 <!-- END_5bed01b4fc768cd179c6ed6f42562e64 -->
 
 <!-- START_03afcd8c669e225fdb1d3490f7759c85 -->
-## 属性の削除
+## attributes.destory 属性の削除
 
 > Example request:
 
@@ -6292,7 +6196,7 @@ curl -X DELETE "http://localhost/api/attributes/{attribute}"
 const url = new URL("http://localhost/api/attributes/{attribute}");
 
     let params = {
-            "attribute": "01zXdbUIobFRZAMl",
+            "attribute": "BTtZPH3n4LsQkKjH",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -6327,7 +6231,7 @@ Parameter | Status | Description
 <!-- END_03afcd8c669e225fdb1d3490f7759c85 -->
 
 <!-- START_3a84a6accee6980b8f6727dfd0c9301a -->
-## ゲストとして参加しているセッション一覧
+## guests.sessions.index ゲストとして参加しているセッション一覧
 
 > Example request:
 
@@ -6766,7 +6670,7 @@ fetch(url, {
 <!-- END_3a84a6accee6980b8f6727dfd0c9301a -->
 
 <!-- START_f002f7656ea051619cc8b112ba27bdbd -->
-## ゲストとして参加しているセッションの一つの詳細
+## guests.sessions.show ゲストとして参加しているセッションの一つの詳細
 
 > Example request:
 
@@ -6778,7 +6682,7 @@ curl -X GET -G "http://localhost/api/guest/sessions/{session}"
 const url = new URL("http://localhost/api/guest/sessions/{session}");
 
     let params = {
-            "session": "7rhGOUEZpRcOxHyr",
+            "session": "8Dnkb5x98JciAK6C",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 

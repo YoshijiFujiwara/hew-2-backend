@@ -12,7 +12,7 @@ use Illuminate\Http\Response;
 class SessionUserController extends Controller
 {
     /**
-     * あるセッションのユーザー一覧
+     * sessions.users.index あるセッションのユーザー一覧
      * @queryParam session required セッションid
      */
     public function index(Request $request, Session $session)
@@ -21,7 +21,7 @@ class SessionUserController extends Controller
     }
 
     /**
-     * セッションにユーザーを追加する
+     * sessions.users.store セッションにユーザーを追加する
      * @queryParam session required セッションid
      * @bodyParam user_id string required 追加するユーザーのID
      * @bodyParam join_status required integer 参加状況のステータス
@@ -51,7 +51,7 @@ class SessionUserController extends Controller
     }
 
     /**
-     * セッションの中の一人のユーザーの詳細を得る（属性とか見たりするでしょう）
+     * sessions.users.show セッションの中の一人のユーザーの詳細を得る（属性とか見たりするでしょう）
      * @queryParam session required セッションid
      * @queryParam user required セッションに属するユーザーのid
      */
@@ -67,7 +67,7 @@ class SessionUserController extends Controller
 
 
     /**
-     * セッションの中のユーザーのステータスなどを更新する
+     * sessions.users.update セッションの中のユーザーのステータスなどを更新する
      * @queryParam session required セッションid
      * @queryParam user required セッションに属するユーザーのid
      * @bodyParam user_id string required 追加するユーザーのID
@@ -94,7 +94,7 @@ class SessionUserController extends Controller
     }
 
     /**
-     * セッションからユーザーを削除する
+     * sessions.users.destory セッションからユーザーを削除する
      * @queryParam session required セッションid
      * @queryParam user required セッションに属するユーザーのid
      */
