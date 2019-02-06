@@ -5,21 +5,21 @@ Route::group([
     'prefix' => 'auth'
 ], function ($router) {
 
-    Route::post('register', 'AuthController@register');
-    Route::post('login', 'AuthController@login');
-    Route::post('logout', 'AuthController@logout');
-    Route::post('refresh', 'AuthController@refresh');
-    Route::post('me', 'AuthController@me');
+    Route::post('register', 'AuthController@register')->name('auth.register');
+    Route::post('login', 'AuthController@login')->name('auth.login');
+    Route::post('logout', 'AuthController@logout')->name('auth.logout');
+    Route::post('refresh', 'AuthController@refresh')->name('auth.refresh');
+    Route::post('me', 'AuthController@me')->name('auth.me');
 
 });
 
 Route::middleware('JWT')->group(function () {
     Route::apiResource('friends', 'FriendController')->only(['index', 'store']);
-    Route::get('friends/blocked', 'FriendController@blockedUsers');
-    Route::get('friends/waiting', 'FriendController@waitingFriends');
-    Route::get('friends/requested', 'FriendController@friendRequestUsers');
-    Route::post('friends/permit', 'FriendController@permit');
-    Route::post('friends/reject', 'FriendController@reject');
+    Route::get('friends/blocked', 'FriendController@blockedUsers')->name('friends.blockedUsers');
+    Route::get('friends/waiting', 'FriendController@waitingFriends')->name('friends.waitingFriends');
+    Route::get('friends/requested', 'FriendController@friendRequestUsers')->name('friends.friendRequestUsers');
+    Route::post('friends/permit', 'FriendController@permit')->name('friends.permit');
+    Route::post('friends/reject', 'FriendController@reject')->name('friends.reject');
     Route::apiResource('friends', 'FriendController')->only(['show', 'destroy'])->middleware('can:has,friend');
 
     Route::apiResource('groups', 'GroupController')->only(['index', 'store']);
