@@ -23,7 +23,7 @@ class FriendController extends Controller
         if ($request->user()->friends()->count() === 0) {
             return response()->json(null, Response::HTTP_NO_CONTENT);
         } else {
-            return UserResource::collection($request->user()->invitingUsers);
+            return UserResource::collection($request->user()->friends);
         }
     }
 
