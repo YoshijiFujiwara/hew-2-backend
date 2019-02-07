@@ -14,7 +14,7 @@ class CreateUserFriendsTable extends Migration
     public function up()
     {
         Schema::create('user_friends', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('pivot_id');
             $table->integer('user_id')->unsigned()->comment('ユーザーid');
             $table->integer('friend_id')->unsigned()->comment('と、その友達のid');
             $table->boolean('permitted')->nullable()->comment('友達追加OKか。nullが待機中');

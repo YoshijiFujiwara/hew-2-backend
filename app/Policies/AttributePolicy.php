@@ -2,6 +2,7 @@
 
 namespace App\Policies;
 
+use App\Model\Attribute;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
@@ -19,8 +20,8 @@ class AttributePolicy
         //
     }
 
-    public function has(User $user, User $friend)
+    public function has(User $user, Attribute $attribute)
     {
-        return $user->hasTheAttribute($friend);
+        return $user->hasTheAttribute($attribute);
     }
 }

@@ -11,6 +11,8 @@ class SessionController extends Controller
 {
     /**
      * guests.sessions.index ゲストとして参加しているセッション一覧
+     *
+     * @responseFile 200 responses/guests.sessions.index.200.json
      */
     public function index(Request $request)
     {
@@ -20,6 +22,8 @@ class SessionController extends Controller
     /**
      * guests.sessions.show ゲストとして参加しているセッションの一つの詳細
      * @queryParam session required セッションid
+     *
+     * @responseFile 200 responses/guests.sessions.show.200.json
      */
     public function show(Request $request, Session $session)
     {

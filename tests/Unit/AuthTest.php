@@ -45,7 +45,7 @@ class AuthTest extends TestCase
     {
         $newEmail = 'testuser2@example.com';
         if (User::where('email', $newEmail)->exists()) {
-            User::where('email', $newEmail)->get()->delete();
+            User::where('email', $newEmail)->delete();
         }
 
         $response = $this->withHeaders([
@@ -68,7 +68,7 @@ class AuthTest extends TestCase
     {
         $newEmail = 'testuser3@example.com';
         if (User::where('email', $newEmail)->exists()) {
-            User::where('email', $newEmail)->get()->delete();
+            User::where('email', $newEmail)->delete();
         }
 
         User::create([

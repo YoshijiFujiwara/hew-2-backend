@@ -30,8 +30,16 @@ class RecordResponse
 
 //        $actionName = $request->route()->getActionName();
 //        $actionName = str_replace('App\Http\Controllers', '', $actionName);
-        $statusCode = ($response->status() >= 200 && $response->status() < 300)? '' : '.'.$response->status();
-        Storage::disk('response')->put("{$route->getName()}{$statusCode}.json", $response->getContent());
+
+
+        if ($response->status() === 204) {
+            Storage::disk('response')->put("{$route->getName()}.{$response->status()}.json", '{}');
+        } elseif(empty($response->getContent())) {
+            Storage::disk('response')->put("{$route->getName()}.{$response->status()}.json", '{}');
+        } else {
+            Storage::disk('response')->put("{$route->getName()}.{$response->status()}.json", $response->getContent());
+        }
+
         return $response;
     }
 }

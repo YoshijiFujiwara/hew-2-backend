@@ -15,9 +15,9 @@ Route::group([
 
 Route::middleware('JWT')->group(function () {
     Route::apiResource('friends', 'FriendController')->only(['index', 'store']);
-    Route::get('friends/blocked', 'FriendController@blockedUsers')->name('friends.blockedUsers');
-    Route::get('friends/waiting', 'FriendController@waitingFriends')->name('friends.waitingFriends');
-    Route::get('friends/requested', 'FriendController@friendRequestUsers')->name('friends.friendRequestUsers');
+    Route::get('friends/blocked', 'FriendController@blockedUsers')->name('friends.blocked_users');
+    Route::get('friends/waiting', 'FriendController@waitingFriends')->name('friends.waiting_friends');
+    Route::get('friends/requested', 'FriendController@friendRequestUsers')->name('friends.friend_request_users');
     Route::post('friends/permit', 'FriendController@permit')->name('friends.permit');
     Route::post('friends/reject', 'FriendController@reject')->name('friends.reject');
     Route::apiResource('friends', 'FriendController')->only(['show', 'destroy'])->middleware('can:has,friend');

@@ -25,7 +25,7 @@ class AuthController extends Controller
      * @bodyParam email string required メールアドレス
      * @bodyParam password string required パスワード
      *
-     * @responseFile responses/auth.login.json
+     * @responseFile 200 responses/auth.login.200.json
      * @responseFile 401 responses/auth.login.401.json
      */
     public function login()
@@ -47,7 +47,7 @@ class AuthController extends Controller
      * @bodyParam username string required ユーザーネーム（表示される名前）
      * @bodyParam password string required パスワード
      *
-     * @responseFile responses/auth.register.json
+     * @responseFile 200 responses/auth.register.200.json
      * @responseFile 422 responses/auth.register.422.json
      */
     public function register(UserRegisterRequest $request)
@@ -64,7 +64,7 @@ class AuthController extends Controller
     /**
      * me 現在ログインしているユーザーの情報を得る
      *
-     * @responseFile responses/auth.me.json
+     * @responseFile 200 responses/auth.me.200.json
      */
     public function me()
     {
@@ -74,7 +74,7 @@ class AuthController extends Controller
     /**
      * logout ログアウト
      *
-     * @responseFile responses/auth.logout.json
+     * @responseFile 200 responses/auth.logout.200.json
      */
     public function logout()
     {
@@ -86,7 +86,7 @@ class AuthController extends Controller
     /**
      * refresh token トークンのリフレッシュ
      *
-     * @responseFile responses/auth.refresh.json
+     * @responseFile 200 responses/auth.refresh.200.json
      */
     public function refresh()
     {

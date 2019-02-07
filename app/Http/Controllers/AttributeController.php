@@ -13,75 +13,7 @@ class AttributeController extends Controller
     /**
      * attributes.index 自分が管理している属性一覧
      *
-     * @response {
-    "data": [
-    {
-    "id": 1,
-    "manager": {
-    "id": 1,
-    "name": "佐々木 和也",
-    "username": "haoyama",
-    "email": "esuzuki@example.net",
-    "created_at": {
-    "date": "2019-01-13 05:43:21.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 05:43:21.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    "name": "possimus",
-    "plus_minus": -1683,
-    "ratio": 2,
-    "created_at": {
-    "date": "2019-01-13 05:43:21.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 05:43:21.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    {
-    "id": 2,
-    "manager": {
-    "id": 1,
-    "name": "佐々木 和也",
-    "username": "haoyama",
-    "email": "esuzuki@example.net",
-    "created_at": {
-    "date": "2019-01-13 05:43:21.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 05:43:21.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    "name": "corrupti",
-    "plus_minus": 1060,
-    "ratio": 2,
-    "created_at": {
-    "date": "2019-01-13 05:43:21.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 05:43:21.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    }
-    ]
-    }
-     *
+     * @responseFile 200 responses/attributes.index.200.json
      */
     public function index(Request $request)
     {
@@ -95,44 +27,8 @@ class AttributeController extends Controller
      * @bodyParam plus_minus integer 加減算
      * @bodyParam ratio float 割合。加減算と割合はどちらかのみの設定にしたほうがいいような気がする
      *
-     * @response {
-    "data": {
-    "id": 252,
-    "manager": {
-    "id": 1,
-    "name": "加藤 里佳",
-    "username": "eaota",
-    "email": "momoko48@example.net",
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    "name": "ボス!",
-    "plus_minus": -1000,
-    "ratio": null,
-    "created_at": {
-    "date": "2019-01-13 09:37:49.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:37:49.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    }
-    }
-     *
-     * @response 409 {
-    "error": "同じ名前は使用できません"
-    }
+     * @responseFile 201 responses/attributes.store.201.json
+     * @responseFile 409 responses/attributes.store.409.json
      */
     public function store(Request $request)
     {
@@ -149,234 +45,7 @@ class AttributeController extends Controller
      *
      * @queryParam attribute required 属性id
      *
-     * @response {
-    "data": [
-    {
-    "id": 1,
-    "manager": {
-    "id": 1,
-    "name": "加藤 里佳",
-    "username": "eaota",
-    "email": "momoko48@example.net",
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    "name": "laboriosam",
-    "plus_minus": -1630,
-    "ratio": 1,
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    {
-    "id": 2,
-    "manager": {
-    "id": 1,
-    "name": "加藤 里佳",
-    "username": "eaota",
-    "email": "momoko48@example.net",
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    "name": "dolor",
-    "plus_minus": -2888,
-    "ratio": 2,
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    {
-    "id": 3,
-    "manager": {
-    "id": 1,
-    "name": "加藤 里佳",
-    "username": "eaota",
-    "email": "momoko48@example.net",
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    "name": "dignissimos",
-    "plus_minus": 597,
-    "ratio": 2,
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    {
-    "id": 4,
-    "manager": {
-    "id": 1,
-    "name": "加藤 里佳",
-    "username": "eaota",
-    "email": "momoko48@example.net",
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    "name": "iste",
-    "plus_minus": 1972,
-    "ratio": 0,
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    {
-    "id": 5,
-    "manager": {
-    "id": 1,
-    "name": "加藤 里佳",
-    "username": "eaota",
-    "email": "momoko48@example.net",
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    "name": "eligendi",
-    "plus_minus": 303,
-    "ratio": 2,
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    {
-    "id": 251,
-    "manager": {
-    "id": 1,
-    "name": "加藤 里佳",
-    "username": "eaota",
-    "email": "momoko48@example.net",
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    "name": "ボス",
-    "plus_minus": -1000,
-    "ratio": null,
-    "created_at": {
-    "date": "2019-01-13 09:37:01.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:37:01.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    {
-    "id": 252,
-    "manager": {
-    "id": 1,
-    "name": "加藤 里佳",
-    "username": "eaota",
-    "email": "momoko48@example.net",
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    "name": "ボス!",
-    "plus_minus": -1000,
-    "ratio": null,
-    "created_at": {
-    "date": "2019-01-13 09:37:49.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:37:49.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    }
-    ]
-    }
+     * @responseFile 200 responses/attributes.show.200.json
      */
     public function show(Request $request, Attribute $attribute)
     {
@@ -390,44 +59,13 @@ class AttributeController extends Controller
      * @bodyParam plus_minus integer 加減算
      * @bodyParam ratio float 割合。加減算と割合はどちらかのみの設定にしたほうがいいような気がする
      *
-     * @response {
-    "data": {
-    "id": 252,
-    "manager": {
-    "id": 1,
-    "name": "加藤 里佳",
-    "username": "eaota",
-    "email": "momoko48@example.net",
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    "name": "ボス!",
-    "plus_minus": -1000,
-    "ratio": null,
-    "created_at": {
-    "date": "2019-01-13 09:37:49.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:37:49.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    }
-    }
+     * @responseFile 200 responses/attributes.update.200.json
      */
     public function update(Request $request, Attribute $attribute)
     {
-        return new AttributeResource($attribute->update($request->all()));
+        $attribute->update($request->all());
+        // 更新後のものを返す
+        return new AttributeResource(Attribute::find($attribute->id));
     }
 
     /**
@@ -435,12 +73,15 @@ class AttributeController extends Controller
      *
      * @queryParam attribute required 属性id
      *
-     * @response 204 null
+     * @responseFile 204 responses/attributes.destroy.204.json
      */
     public function destroy(Request $request, Attribute $attribute)
     {
-        $request->user()->managedAttributes()->delete($attribute);
-        $request->user()->friends->where('attribute_id', $attribute->id)->update(['attribute_id' => null]);
+        $request->user()->friends()->wherePivot('attribute_id', $attribute->id)->get()->each(function ($f) {
+            $f->pivot->attribute_id = null;
+            $f->pivot->save();
+        });
+        $attribute->delete();
         return response(null, Response::HTTP_NO_CONTENT);
     }
 }

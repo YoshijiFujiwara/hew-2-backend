@@ -14,6 +14,8 @@ class SessionUserController extends Controller
     /**
      * sessions.users.index あるセッションのユーザー一覧
      * @queryParam session required セッションid
+     *
+     * @responseFile 200 responses/sessions.users.index.200.json
      */
     public function index(Request $request, Session $session)
     {
@@ -28,6 +30,9 @@ class SessionUserController extends Controller
      * @bodyParam paid integer  支払いしたか
      * @bodyParam plus_minus integer 加減算
      * @bodyParam ratio datetime  割合（加減算と重複しないほうが良いでしょう）
+     *
+     * @responseFile 200 responses/sessions.users.store.200.json
+     * @responseFile 403 responses/sessions.users.store.403.json
      */
     public function store(Request $request, Session $session)
     {
@@ -54,6 +59,8 @@ class SessionUserController extends Controller
      * sessions.users.show セッションの中の一人のユーザーの詳細を得る（属性とか見たりするでしょう）
      * @queryParam session required セッションid
      * @queryParam user required セッションに属するユーザーのid
+     *
+     * @responseFile 200 responses/sessions.users.show.200.json
      */
     public function show(Request $request, Session $session, User $user)
     {
@@ -75,6 +82,8 @@ class SessionUserController extends Controller
      * @bodyParam paid integer  支払いしたか
      * @bodyParam plus_minus integer 加減算
      * @bodyParam ratio datetime  割合（加減算と重複しないほうが良いでしょう）
+     *
+     * @responseFile 200 responses/sessions.users.update.200.json
      */
     public function update(Request $request, Session $session, User $user)
     {
@@ -97,6 +106,8 @@ class SessionUserController extends Controller
      * sessions.users.destory セッションからユーザーを削除する
      * @queryParam session required セッションid
      * @queryParam user required セッションに属するユーザーのid
+     *
+     * @responseFile 204 responses/sessions.users.destroy.204.json
      */
     public function destroy(Session $session, User $user)
     {

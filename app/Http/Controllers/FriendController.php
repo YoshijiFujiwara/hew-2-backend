@@ -15,269 +15,16 @@ class FriendController extends Controller
     /**
      * friends.index 友達一覧
      *
-     * @response {
-    "data": [
-    {
-    "id": 14,
-    "name": "斉藤 太郎",
-    "username": "asuka72",
-    "email": "maaya86@example.org",
-    "attribute_id": 4,
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    {
-    "id": 15,
-    "name": "杉山 太一",
-    "username": "yosuke.yamamoto",
-    "email": "dogaki@example.net",
-    "attribute_id": 3,
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    {
-    "id": 17,
-    "name": "野村 里佳",
-    "username": "nomura.taichi",
-    "email": "fhamada@example.com",
-    "attribute_id": 2,
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    {
-    "id": 19,
-    "name": "松本 千代",
-    "username": "haruka.murayama",
-    "email": "mhamada@example.net",
-    "attribute_id": 2,
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    {
-    "id": 23,
-    "name": "井上 洋介",
-    "username": "yuki.ogaki",
-    "email": "yuta.yamaguchi@example.org",
-    "attribute_id": 3,
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    {
-    "id": 25,
-    "name": "原田 太一",
-    "username": "murayama.taro",
-    "email": "ryohei50@example.com",
-    "attribute_id": 3,
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    {
-    "id": 26,
-    "name": "渚 花子",
-    "username": "ssasaki",
-    "email": "wakamatsu.yoko@example.com",
-    "attribute_id": 4,
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    {
-    "id": 30,
-    "name": "佐々木 さゆり",
-    "username": "syamaguchi",
-    "email": "yui.matsumoto@example.net",
-    "attribute_id": 4,
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    {
-    "id": 31,
-    "name": "宇野 加奈",
-    "username": "kimura.hiroshi",
-    "email": "kimura.maaya@example.net",
-    "attribute_id": 4,
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    {
-    "id": 36,
-    "name": "井上 和也",
-    "username": "tsubasa67",
-    "email": "mai.yamamoto@example.com",
-    "attribute_id": 1,
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    {
-    "id": 37,
-    "name": "青田 充",
-    "username": "ito.kana",
-    "email": "akira02@example.org",
-    "attribute_id": 1,
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    {
-    "id": 38,
-    "name": "津田 幹",
-    "username": "takahashi.kaori",
-    "email": "puno@example.com",
-    "attribute_id": 1,
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    {
-    "id": 45,
-    "name": "加納 拓真",
-    "username": "kimura.takuma",
-    "email": "taichi48@example.org",
-    "attribute_id": 2,
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    {
-    "id": 48,
-    "name": "村山 知実",
-    "username": "nanami15",
-    "email": "ito.hanako@example.net",
-    "attribute_id": 5,
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    },
-    {
-    "id": 49,
-    "name": "井高 さゆり",
-    "username": "maaya29",
-    "email": "yamagishi.yosuke@example.net",
-    "attribute_id": 5,
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    }
-    ]
-    }
+     * @responseFile 200 responses/friends.index.200.json
+     * @responseFile 204 responses/friends.index.204.json
      */
     public function index(Request $request)
     {
-        return UserResource::collection($request->user()->friends);
+        if ($request->user()->friends()->count() === 0) {
+            return response()->json(null, Response::HTTP_NO_CONTENT);
+        } else {
+            return UserResource::collection($request->user()->invitingUsers);
+        }
     }
 
     /**
@@ -285,28 +32,8 @@ class FriendController extends Controller
      *
      * @bodyParam email string required 追加する友達のメールアドレス
      *
-     * @response {
-    "data": {
-    "id": 2,
-    "name": "大垣 美加子",
-    "username": "cyamada",
-    "email": "taro.kato@example.net",
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    }
-    }
-     *
-     * @response 409 {
-    "error": "すでにフレンドです"
-    }
+     * @responseFile 201 responses/friends.store.201.json
+     * @responseFile 409 responses/friends.store.409.json
      */
     public function store(FriendStoreRequest $request)
     {
@@ -323,7 +50,7 @@ class FriendController extends Controller
         $newFriend = User::where('email', $request->email)->first();
         $request->user()->friends()->attach($newFriend, ['permitted' => null]);
 
-        return new UserResource($request->user()->waitingFriends->where('id', $newFriend->id)->first());
+        return response(new UserResource($request->user()->waitingFriends->where('id', $newFriend->id)->first()),  Response::HTTP_CREATED);
     }
 
     /**
@@ -331,24 +58,7 @@ class FriendController extends Controller
      *
      * @queryParam friend required 友達のid
      *
-     * @response {
-    "data": {
-    "id": 2,
-    "name": "大垣 美加子",
-    "username": "cyamada",
-    "email": "taro.kato@example.net",
-    "created_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    },
-    "updated_at": {
-    "date": "2019-01-13 09:36:18.000000",
-    "timezone_type": 3,
-    "timezone": "UTC"
-    }
-    }
-    }
+     * @responseFile 200 responses/friends.show.200.json
      */
     public function show(Request $request, User $friend)
     {
@@ -360,7 +70,7 @@ class FriendController extends Controller
      *
      * @queryParam friend required 友達のid
      *
-     * @response 204 null
+     * @responseFile 204 responses/friends.destroy.204.json
      */
     public function destroy(Request $request, User $friend)
     {
@@ -371,6 +81,8 @@ class FriendController extends Controller
 
     /**
      * friends.blockedUsers 申請した中でブロックされているユーザー一覧
+     *
+     * @responseFile 200 responses/friends.blocked_users.200.json
      */
     public function blockedUsers(Request $request)
     {
@@ -379,6 +91,8 @@ class FriendController extends Controller
 
     /**
      * friends.waitingFriends 申請した中で待っているユーザー一覧
+     *
+     * @responseFile 200 responses/friends.waiting_friends.200.json
      */
     public function waitingFriends(Request $request)
     {
@@ -388,6 +102,9 @@ class FriendController extends Controller
     /**
      * friends.permit 友達申請を許可
      * @bodyParam user_id integer required 友達申請してきてる人のユーザーID
+     *
+     * @responseFile 200 responses/friends.permit.200.json
+     * @responseFile 409 responses/friends.permit.409.json
      */
     public function permit(Request $request)
     {
@@ -400,12 +117,15 @@ class FriendController extends Controller
             'permitted' => true
         ]);
 
-        return response(null, 201);
+        return response(['message' => '招待を許可しました'], Response::HTTP_OK);
     }
 
     /**
      * friends.reject 友達申請を拒否
      * @bodyParam user_id integer required 友達申請してきてる人のユーザーID
+     *
+     * @responseFile 200 responses/friends.reject.200.json
+     * @responseFile 409 responses/friends.reject.409.json
      */
     public function reject(Request $request)
     {
@@ -418,11 +138,13 @@ class FriendController extends Controller
             'permitted' => false
         ]);
 
-        return response(null, 201);
+        return response(['message' => '招待をキャンセルしました'], Response::HTTP_OK);
     }
 
     /**
      * friends.friendRequestUsers 申請してきてるユーザー
+     *
+     * @responseFile 200 responses/friends.friend_request_users.200.json
      */
     public function friendRequestUsers(Request $request)
     {
