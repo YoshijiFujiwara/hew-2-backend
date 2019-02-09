@@ -63,8 +63,7 @@ class DatabaseSeeder extends Seeder
         // id 1番を固定のユーザーとする
         $testUser = \App\User::find(1);
         $testUser->email = 'testuser@example.com';
-        $testUser->name = 'テスト太郎';
-        $testUser->username = 'testuser';
+        $testUser->username = 'テスト太郎';
         $testUser->save();
 
 

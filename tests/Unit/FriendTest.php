@@ -21,7 +21,6 @@ class FriendTest extends TestCase
 
         User::create([
             'email' => $newEmail,
-            'name' => 'nofriend',
             'username' => 'testuser3',
             'password' => 'secret'
         ]);
@@ -49,7 +48,6 @@ class FriendTest extends TestCase
 
         User::create([
             'email' => $newEmail,
-            'name' => 'nofriend',
             'username' => 'testuser3',
             'password' => 'secret'
         ]);
@@ -129,7 +127,6 @@ class FriendTest extends TestCase
 
         $newInvitingUser = new User;
         $newInvitingUser->email = str_random(5) . '@new.com';
-        $newInvitingUser->name = 'bbb';
         $newInvitingUser->username = 'aaaa';
         $newInvitingUser->password = 'secret';
         $newInvitingUser->save();
@@ -151,7 +148,6 @@ class FriendTest extends TestCase
 
         $newInvitingUser = new User;
         $newInvitingUser->email = str_random(6) . '@new.com';
-        $newInvitingUser->name = 'bbb';
         $newInvitingUser->username = 'aaaa';
         $newInvitingUser->password = 'secret';
         $newInvitingUser->save();
@@ -168,7 +164,6 @@ class FriendTest extends TestCase
 
         $newInvitingUser = new User;
         $newInvitingUser->email = str_random(7) . '@new.com';
-        $newInvitingUser->name = 'bbb';
         $newInvitingUser->username = 'aaaa';
         $newInvitingUser->password = 'secret';
         $newInvitingUser->save();
@@ -190,7 +185,6 @@ class FriendTest extends TestCase
 
         $newInvitingUser = new User;
         $newInvitingUser->email = str_random(8) . '@new.com';
-        $newInvitingUser->name = 'bbb';
         $newInvitingUser->username = 'aaaa';
         $newInvitingUser->password = 'secret';
         $newInvitingUser->save();

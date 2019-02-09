@@ -321,7 +321,7 @@
         },
         {
             "file": "/var/www/tests/Unit/FriendTest.php",
-            "line": 107,
+            "line": 105,
             "function": "apiAs",
             "class": "Tests\\TestCase",
             "type": "->"
@@ -342,7 +342,7 @@
         },
         {
             "file": "/var/www/vendor/phpunit/phpunit/src/Framework/TestResult.php",
-            "line": 675,
+            "line": 687,
             "function": "runBare",
             "class": "PHPUnit\\Framework\\TestCase",
             "type": "->"
@@ -370,7 +370,7 @@
         },
         {
             "file": "/var/www/vendor/phpunit/phpunit/src/TextUI/TestRunner.php",
-            "line": 629,
+            "line": 641,
             "function": "run",
             "class": "PHPUnit\\Framework\\TestSuite",
             "type": "->"
