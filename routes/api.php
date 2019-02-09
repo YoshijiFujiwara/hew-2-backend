@@ -42,4 +42,9 @@ Route::middleware('JWT')->group(function () {
     Route::group(['prefix' => 'profile'], function () {
         Route::put('update', 'ProfileController@update')->name('profile.update');
     });
+
+    Route::group(['prefix' => 'search'], function () {
+        Route::post('by_username', 'SearchController@searchByUsername')->name('search.by_username');
+        Route::post('by_unique_id', 'SearchController@searchByUniqueId')->name('search.by_unique_id');
+    });
 });

@@ -64,6 +64,7 @@ class DatabaseSeeder extends Seeder
         $testUser = \App\User::find(1);
         $testUser->email = 'testuser@example.com';
         $testUser->username = 'テスト太郎';
+        $testUser->unique_id = 'TESTTEST';
         $testUser->save();
 
 
