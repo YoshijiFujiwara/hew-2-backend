@@ -43,7 +43,6 @@ class AuthController extends Controller
      * email, password, usernameでユーザー登録し、JWTを得る
      *
      * @bodyParam email string required メールアドレス
-     * @bodyParam name string required 名前
      * @bodyParam username string required ユーザーネーム（表示される名前）
      * @bodyParam password string required パスワード
      *
@@ -52,7 +51,7 @@ class AuthController extends Controller
      */
     public function register(UserRegisterRequest $request)
     {
-        $user = User::create($request->only(['email', 'password', 'name', 'username']));
+        $user = User::create($request->only(['email', 'password', 'username']));
 
         if (! $token = auth()->attempt($request->only(['email', 'password']))) {
             return abort(401);

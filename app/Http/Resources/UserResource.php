@@ -16,7 +16,7 @@ class UserResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
+            'unique_id' => $this->unique_id,
             'username' => $this->username,
             'email' => $this->email,
             'permitted' => $this->whenPivotLoaded('user_friends', function () {

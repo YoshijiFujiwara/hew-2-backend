@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Str;
 use PhpParser\Builder;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
@@ -17,13 +18,26 @@ class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
 
+
+    /**
+     * Boot function from laravel.
+     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            $model->unique_id = str_random(10);
+        });
+    }
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'username', 'email', 'password',
+        'username', 'email', 'password',
     ];
 
     /**

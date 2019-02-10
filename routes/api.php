@@ -38,4 +38,14 @@ Route::middleware('JWT')->group(function () {
         Route::apiResource('sessions', 'SessionController')->only(['show'])->middleware('can:participated,session');
 
     });
+
+    Route::group(['prefix' => 'profile'], function () {
+        Route::put('update', 'ProfileController@update')->name('profile.update');
+    });
+
+    Route::group(['prefix' => 'search'], function () {
+        Route::post('forward_by_username', 'SearchController@forwardSearchByUsername')->name('search.forward_by_username');
+        Route::post('perfect_by_unique_id', 'SearchController@perfectSearchByUniqueId')->name('search.perfect_by_unique_id');
+        Route::post('forward_by_unique_id', 'SearchController@forwardSearchByUniqueId')->name('search.forward_by_unique_id');
+    });
 });

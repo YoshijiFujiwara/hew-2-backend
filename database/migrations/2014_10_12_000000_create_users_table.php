@@ -15,12 +15,14 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->comment('本名');
+            $table->string('unique_id')->unique()->comment('検索などに使用するunique_id');
             $table->string('username')->comment('ユーザーネーム');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->boolean('unique_id_search_flag')->default(false)->comment('unique_idでの検索を有りにする');
+            $table->boolean('username_search_flag')->default(false)->comment('unique_idでの検索を有りにする');
             $table->timestamps();
         });
     }
