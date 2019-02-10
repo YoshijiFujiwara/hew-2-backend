@@ -16,6 +16,8 @@ class ProfileController extends Controller
      * @bodyParam unique_id string required
      * @bodyParam username string required
      * @bodyParam password string required
+     * @bodyParam unique_id_search_flag boolean required
+     * @bodyParam username_search_flag boolean required
      *
      * @responseFile 200 responses/profile.update.200.json
      */
@@ -25,13 +27,17 @@ class ProfileController extends Controller
             'email' => 'email|required|unique:users,email,'.$request->user()->id,
             'username' => 'required',
             'unique_id' => 'required|unique:users,unique_id,'.$request->user()->id,
-            'password' => 'required'
+            'password' => 'required',
+            'unique_id_search_flag' => 'boolean',
+            'username_search_flag' => 'boolean',
         ]);
 
         $user = $request->user();
         $user->email = $request->email;
         $user->username = $request->username;
         $user->password = $request->password;
+        $user->unique_id_search_flag = isset($request->unique_id_search_flag)? $request->unique_id_search_flag : $user->unique_id_search_flag;
+        $user->username_search_flag = isset($request->username_search_flag)? $request->username_search_flag : $user->username_search_flag;
         $user->save();
 
         // orm のbootを無視したいから、仕方ない
