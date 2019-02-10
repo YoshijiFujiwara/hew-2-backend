@@ -16,8 +16,8 @@ class ProfileController extends Controller
      * @bodyParam unique_id string required
      * @bodyParam username string required
      * @bodyParam password string required
-     * @bodyParam unique_id_search_flag boolean required
-     * @bodyParam username_search_flag boolean required
+     * @bodyParam unique_id_search_flag boolean
+     * @bodyParam username_search_flag boolean
      *
      * @responseFile 200 responses/profile.update.200.json
      */
