@@ -17,7 +17,7 @@ class SearchTest extends TestCase
     {
         $testUser = User::find(1);
 
-        $response = $this->apiAs($testUser, 'POST', route('search.by_username'), [
+        $response = $this->apiAs($testUser, 'POST', route('search.forward_by_username'), [
             'username' => 'te'
         ], []);
 
@@ -31,8 +31,22 @@ class SearchTest extends TestCase
     {
         $testUser = User::find(1);
 
-        $response = $this->apiAs($testUser, 'POST', route('search.by_unique_id'), [
+        $response = $this->apiAs($testUser, 'POST', route('search.perfect_by_unique_id'), [
             'unique_id' => 'TESTTEST'
+        ], []);
+
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
+    /**
+     * search.byUniqueId ユニークidで検索し、あれば複数件返す
+     */
+    public function testForwardSearchByUniqueId()
+    {
+        $testUser = User::find(1);
+
+        $response = $this->apiAs($testUser, 'POST', route('search.forward_by_unique_id'), [
+            'unique_id' => 'T'
         ], []);
 
         $response->assertStatus(Response::HTTP_OK);

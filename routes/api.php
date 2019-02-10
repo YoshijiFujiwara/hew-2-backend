@@ -44,7 +44,8 @@ Route::middleware('JWT')->group(function () {
     });
 
     Route::group(['prefix' => 'search'], function () {
-        Route::post('by_username', 'SearchController@searchByUsername')->name('search.by_username');
-        Route::post('by_unique_id', 'SearchController@searchByUniqueId')->name('search.by_unique_id');
+        Route::post('forward_by_username', 'SearchController@forwardSearchByUsername')->name('search.forward_by_username');
+        Route::post('perfect_by_unique_id', 'SearchController@perfectSearchByUniqueId')->name('search.perfect_by_unique_id');
+        Route::post('forward_by_unique_id', 'SearchController@forwardSearchByUniqueId')->name('search.forward_by_unique_id');
     });
 });

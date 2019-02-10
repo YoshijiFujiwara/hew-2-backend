@@ -21,6 +21,8 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->boolean('unique_id_search_flag')->default(false)->comment('unique_idでの検索を有りにする');
+            $table->boolean('username_search_flag')->default(false)->comment('unique_idでの検索を有りにする');
             $table->timestamps();
         });
     }

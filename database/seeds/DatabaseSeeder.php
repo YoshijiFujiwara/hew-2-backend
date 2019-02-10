@@ -64,8 +64,12 @@ class DatabaseSeeder extends Seeder
         $testUser = \App\User::find(1);
         $testUser->email = 'testuser@example.com';
         $testUser->username = 'テスト太郎';
-        $testUser->unique_id = 'TESTTEST';
+        $testUser->unique_id_search_flag = true;
+        $testUser->username_search_flag = true;
         $testUser->save();
+
+        // orm のbootを無視したいから、仕方ない
+        \Illuminate\Support\Facades\DB::table('users')->where('id', 1)->update(['unique_id' => 'TESTTEST']);
 
 
 //        factory(\App\User::class, 30)
