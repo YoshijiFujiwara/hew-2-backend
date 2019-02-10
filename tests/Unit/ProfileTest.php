@@ -23,6 +23,8 @@ class ProfileTest extends TestCase
             'username' => $newUserName,
             'unique_id' => $newUniqueId,
             'password' => $newPassword,
+            'unique_id_search_flag' => true,
+            'username_search_flag' => true,
         ]), [], []);
         $response->assertStatus(Response::HTTP_OK);
 
