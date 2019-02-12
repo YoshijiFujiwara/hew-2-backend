@@ -11,7 +11,7 @@ use Illuminate\Http\Response;
 class DefaultSettingController extends Controller
 {
     /**
-     * default_settings.index
+     * default_settings.index デフォルト設定の一覧を取得する
      *
      * @responseFile 200 responses/default_settings.index.200.json
      */
@@ -21,7 +21,7 @@ class DefaultSettingController extends Controller
     }
 
     /**
-     * default_settings.store
+     * default_settings.store 新規デフォルト設定を作成する
      *
      * @bodyParam name string required 設定名
      * @bodyParam timer integer required 始まるまでの時間'01:00:00'形式
@@ -40,7 +40,7 @@ class DefaultSettingController extends Controller
     }
 
     /**
-     * default_settings.show
+     * default_settings.show 一つのデフォルト設定の詳細を得る
      *
      * @queryParam default_setting required 設定のid
      *
@@ -52,7 +52,7 @@ class DefaultSettingController extends Controller
     }
 
     /**
-     * default_settings.update
+     * default_settings.update 一つのデフォルト設定情報のupdate
      *
      * @queryParam default_setting required 設定のid
      * @bodyParam name string required 設定名
@@ -69,7 +69,7 @@ class DefaultSettingController extends Controller
     }
 
     /**
-     * default_settings.destroy
+     * default_settings.destroy 一つのデフォルト設定を削除する
      *
      * @queryParam default_setting required 設定のid
      *
