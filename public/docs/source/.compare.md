@@ -27,9 +27,9 @@ Welcome to the generated API reference.
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/auth/register"     -d "email"="8nWt6jktyyMEKKXZ" \
-    -d "username"="nlg1NOo86uQOo06m" \
-    -d "password"="7kzf7fymmULGB2UP" 
+curl -X POST "http://localhost/api/auth/register"     -d "email"="v7MPDxNvQtQtttVk" \
+    -d "username"="zwiNVEex84TcNnnQ" \
+    -d "password"="KG61aClsVrZGXY9A" 
 ```
 
 ```javascript
@@ -41,9 +41,9 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "email": "8nWt6jktyyMEKKXZ",
-    "username": "nlg1NOo86uQOo06m",
-    "password": "7kzf7fymmULGB2UP",
+    "email": "v7MPDxNvQtQtttVk",
+    "username": "zwiNVEex84TcNnnQ",
+    "password": "KG61aClsVrZGXY9A",
 })
 
 fetch(url, {
@@ -59,7 +59,7 @@ fetch(url, {
 
 ```json
 {
-    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvYXV0aFwvcmVnaXN0ZXIiLCJpYXQiOjE1NDk5NzE1NjEsImV4cCI6MTU0OTk3NTE2MSwibmJmIjoxNTQ5OTcxNTYxLCJqdGkiOiJ0MElBMkNvRldVSnhvcDNNIiwic3ViIjo1OSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.twgfGRTGQHxxFaayEM8aQ7k0wtnrifr6qwF4JmzLFss",
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvYXV0aFwvcmVnaXN0ZXIiLCJpYXQiOjE1NDk5Nzk0NDMsImV4cCI6MTU0OTk4MzA0MywibmJmIjoxNTQ5OTc5NDQzLCJqdGkiOiJQSGtBNnVwT2RSM2lRenFEIiwic3ViIjo2NywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.Y_A7I2LrXIf60vrqsGB7ia2KxkrjAXCVnW-AaQumQQg",
     "token_type": "bearer",
     "expires_in": 3600
 }
@@ -96,8 +96,8 @@ Parameter | Type | Status | Description
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/auth/login"     -d "email"="43JAP58m0mRJmOhR" \
-    -d "password"="nYCdttc0Xgo6bTJ5" 
+curl -X POST "http://localhost/api/auth/login"     -d "email"="w4uCqXIquR2x1GOS" \
+    -d "password"="QLszxiD7suj0Tblm" 
 ```
 
 ```javascript
@@ -109,8 +109,8 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "email": "43JAP58m0mRJmOhR",
-    "password": "nYCdttc0Xgo6bTJ5",
+    "email": "w4uCqXIquR2x1GOS",
+    "password": "QLszxiD7suj0Tblm",
 })
 
 fetch(url, {
@@ -126,7 +126,7 @@ fetch(url, {
 
 ```json
 {
-    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvYXV0aFwvbG9naW4iLCJpYXQiOjE1NDk5NzE1NjIsImV4cCI6MTU0OTk3NTE2MiwibmJmIjoxNTQ5OTcxNTYyLCJqdGkiOiJCR0F2Vkhpa29lN3VNSHFwIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.OerlxKYYac5cve2lhPIPS_Lk5hcj5qfi6gWjWJTweQg",
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvYXV0aFwvbG9naW4iLCJpYXQiOjE1NDk5Nzk0NDQsImV4cCI6MTU0OTk4MzA0NCwibmJmIjoxNTQ5OTc5NDQ0LCJqdGkiOiJJNExBb3dOVkczN2U0Y3ZDIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.AArcXWvIaw0xxtdtCsG7BhDgWlRONvXW1vRQT9KEq-c",
     "token_type": "bearer",
     "expires_in": 3600
 }
@@ -219,7 +219,7 @@ fetch(url, {
 
 ```json
 {
-    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvYXV0aFwvcmVmcmVzaCIsImlhdCI6MTU0OTk3MTU2MSwiZXhwIjoxNTQ5OTc1MTYxLCJuYmYiOjE1NDk5NzE1NjEsImp0aSI6IkViZmxYT2Q3NWFCNUd6Ym4iLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.Hie0FQZmrjqJlk6YmNHiYNuS0ozqaXedVtvMlW5zoxU",
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvYXV0aFwvcmVmcmVzaCIsImlhdCI6MTU0OTk3OTQ0MywiZXhwIjoxNTQ5OTgzMDQzLCJuYmYiOjE1NDk5Nzk0NDMsImp0aSI6ImhlMWZodms5NG13ZnNjNWwiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ue8MpnttLDWoqAQ7KbAF93S1JVOhuz0ElMcPMV4J6nU",
     "token_type": "bearer",
     "expires_in": 3600
 }
@@ -264,11 +264,11 @@ fetch(url, {
     "unique_id": "TESTTEST",
     "username": "テスト太郎",
     "email": "testuser@example.com",
-    "email_verified_at": "2019-02-12 11:38:11",
+    "email_verified_at": "2019-02-12 11:53:15",
     "unique_id_search_flag": 1,
     "username_search_flag": 1,
-    "created_at": "2019-02-12 11:38:14",
-    "updated_at": "2019-02-12 11:38:29"
+    "created_at": "2019-02-12 11:53:17",
+    "updated_at": "2019-02-12 11:53:31"
 }
 ```
 
@@ -309,127 +309,91 @@ fetch(url, {
 {
     "data": [
         {
-            "id": 19,
-            "unique_id": "uAldIFWpqt",
-            "username": "藤本 陽一",
-            "email": "ogaki.hanako@example.com",
+            "id": 21,
+            "unique_id": "MVUtbAk8RA",
+            "username": "山田 零",
+            "email": "sasaki.kaori@example.net",
             "permitted": 1,
             "attribute_id": null,
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
             "id": 22,
-            "unique_id": "jVN2UMYobs",
-            "username": "工藤 直樹",
-            "email": "saito.naoko@example.net",
+            "unique_id": "nVn7V9UH76",
+            "username": "井高 くみ子",
+            "email": "rkobayashi@example.org",
+            "permitted": 1,
+            "attribute_id": 2,
+            "created_at": {
+                "date": "2019-02-12 11:53:17.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 11:53:17.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 36,
+            "unique_id": "DvooOnEv4q",
+            "username": "宮沢 裕樹",
+            "email": "yui14@example.com",
+            "permitted": 1,
+            "attribute_id": 2,
+            "created_at": {
+                "date": "2019-02-12 11:53:17.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 11:53:17.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 39,
+            "unique_id": "r6yOajgy3V",
+            "username": "伊藤 知実",
+            "email": "gaoyama@example.org",
             "permitted": 1,
             "attribute_id": 5,
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "id": 26,
-            "unique_id": "dipBioJzPe",
-            "username": "山本 七夏",
-            "email": "taro.sakamoto@example.org",
-            "permitted": 1,
-            "attribute_id": 5,
-            "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 29,
-            "unique_id": "dr0S5DpLWe",
-            "username": "笹田 香織",
-            "email": "zekoda@example.com",
-            "permitted": 1,
-            "attribute_id": 1,
-            "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 37,
-            "unique_id": "iSscd0h7lL",
-            "username": "青山 知実",
-            "email": "nsaito@example.org",
+            "id": 44,
+            "unique_id": "loroKDDaIl",
+            "username": "石田 七夏",
+            "email": "sasaki.yosuke@example.org",
             "permitted": 1,
             "attribute_id": null,
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 45,
-            "unique_id": "cW9Y77jv0B",
-            "username": "中島 亮介",
-            "email": "yui.kobayashi@example.org",
-            "permitted": 1,
-            "attribute_id": 1,
-            "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 46,
-            "unique_id": "OPwOdqde9D",
-            "username": "小泉 太一",
-            "email": "hmatsumoto@example.com",
-            "permitted": 1,
-            "attribute_id": 5,
-            "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -455,7 +419,7 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/friends"     -d "email"="QYX5GQ66OA2ycpyM" 
+curl -X POST "http://localhost/api/friends"     -d "email"="zueF24Wr0naMa4Q2" 
 ```
 
 ```javascript
@@ -467,7 +431,7 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "email": "QYX5GQ66OA2ycpyM",
+    "email": "zueF24Wr0naMa4Q2",
 })
 
 fetch(url, {
@@ -490,12 +454,12 @@ fetch(url, {
     "permitted": null,
     "attribute_id": null,
     "created_at": {
-        "date": "2019-02-12 11:38:14.000000",
+        "date": "2019-02-12 11:53:17.000000",
         "timezone_type": 3,
         "timezone": "UTC"
     },
     "updated_at": {
-        "date": "2019-02-12 11:38:29.000000",
+        "date": "2019-02-12 11:53:31.000000",
         "timezone_type": 3,
         "timezone": "UTC"
     }
@@ -551,127 +515,145 @@ fetch(url, {
 {
     "data": [
         {
-            "id": 2,
-            "unique_id": "DDDDDDDD",
-            "username": "AAAAAAAAAAA",
-            "email": "new@new.com",
+            "id": 11,
+            "unique_id": "zAJpTM7hQV",
+            "username": "松本 裕樹",
+            "email": "youichi.takahashi@example.com",
             "permitted": 0,
-            "attribute_id": 1,
+            "attribute_id": 5,
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "id": 13,
-            "unique_id": "Al2oTaN9kZ",
-            "username": "藤本 加奈",
-            "email": "kobayashi.naoko@example.org",
+            "id": 12,
+            "unique_id": "qQTNtino6d",
+            "username": "宮沢 太一",
+            "email": "yasuhiro73@example.com",
             "permitted": 0,
-            "attribute_id": 1,
+            "attribute_id": 4,
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "id": 17,
-            "unique_id": "eYwz5fDgRU",
-            "username": "小林 太一",
-            "email": "wakamatsu.miki@example.net",
+            "id": 16,
+            "unique_id": "ayhnVR9zmW",
+            "username": "山本 香織",
+            "email": "taichi43@example.net",
             "permitted": 0,
-            "attribute_id": 2,
+            "attribute_id": 5,
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
             "id": 20,
-            "unique_id": "qhZNGgrFo0",
-            "username": "浜田 修平",
-            "email": "hkanou@example.com",
+            "unique_id": "a1JDNraorH",
+            "username": "藤本 花子",
+            "email": "gidaka@example.org",
             "permitted": 0,
-            "attribute_id": 2,
+            "attribute_id": 4,
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
             "id": 23,
-            "unique_id": "8PhUSitNfQ",
-            "username": "喜嶋 京助",
-            "email": "matsumoto.atsushi@example.com",
+            "unique_id": "joBfTCOwjf",
+            "username": "杉山 直樹",
+            "email": "yoko95@example.org",
             "permitted": 0,
-            "attribute_id": 1,
+            "attribute_id": 3,
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "id": 25,
-            "unique_id": "m2nyQ6RXcw",
-            "username": "渚 聡太郎",
-            "email": "yoko.sasaki@example.com",
+            "id": 24,
+            "unique_id": "2xWJd0ESDs",
+            "username": "小林 くみ子",
+            "email": "naoki.hamada@example.org",
             "permitted": 0,
-            "attribute_id": 2,
+            "attribute_id": 1,
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "id": 34,
-            "unique_id": "I66agLsQag",
-            "username": "若松 修平",
-            "email": "tomoya27@example.com",
+            "id": 38,
+            "unique_id": "X8wZY89iBW",
+            "username": "青山 裕太",
+            "email": "minoru.kudo@example.net",
             "permitted": 0,
             "attribute_id": 1,
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 50,
+            "unique_id": "OsitllEjlw",
+            "username": "山口 洋介",
+            "email": "ekoda.yuki@example.com",
+            "permitted": 0,
+            "attribute_id": 1,
+            "created_at": {
+                "date": "2019-02-12 11:53:17.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -717,19 +699,19 @@ fetch(url, {
 {
     "data": [
         {
-            "id": 62,
-            "unique_id": "CR9xet0Z3r",
+            "id": 70,
+            "unique_id": "5T42D5HahX",
             "username": "testuser3",
             "email": "newfriend@newfriend.com",
             "permitted": null,
             "attribute_id": null,
             "created_at": {
-                "date": "2019-02-12 11:39:21.000000",
+                "date": "2019-02-12 13:50:43.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:39:21.000000",
+                "date": "2019-02-12 13:50:43.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -776,72 +758,108 @@ fetch(url, {
     "data": [
         {
             "id": 55,
-            "unique_id": "5AQqYmZq7p",
+            "unique_id": "7cN3rwjAgb",
             "username": "aaaa",
-            "email": "isbYV@new.com",
+            "email": "l0BFh@new.com",
             "permitted": null,
             "attribute_id": null,
             "created_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:34.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:34.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
             "id": 57,
-            "unique_id": "iHXcpwNx4o",
+            "unique_id": "J0rjFCm0Mh",
             "username": "aaaa",
-            "email": "pA5KGLW@new.com",
+            "email": "u3Opyi7@new.com",
             "permitted": null,
             "attribute_id": null,
             "created_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:35.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:35.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
             "id": 63,
-            "unique_id": "WdM8zAqwJh",
+            "unique_id": "bIwgJpReAa",
             "username": "aaaa",
-            "email": "I9XMS@new.com",
+            "email": "VW0U2@new.com",
             "permitted": null,
             "attribute_id": null,
             "created_at": {
-                "date": "2019-02-12 11:39:22.000000",
+                "date": "2019-02-12 13:49:14.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:39:22.000000",
+                "date": "2019-02-12 13:49:14.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
             "id": 65,
-            "unique_id": "U1audxYTah",
+            "unique_id": "aPyZfKBSIm",
             "username": "aaaa",
-            "email": "yaw1DbN@new.com",
+            "email": "XyfpsqO@new.com",
             "permitted": null,
             "attribute_id": null,
             "created_at": {
-                "date": "2019-02-12 11:39:22.000000",
+                "date": "2019-02-12 13:49:14.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:39:22.000000",
+                "date": "2019-02-12 13:49:14.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 71,
+            "unique_id": "IzMXnbzdwk",
+            "username": "aaaa",
+            "email": "GUdLc@new.com",
+            "permitted": null,
+            "attribute_id": null,
+            "created_at": {
+                "date": "2019-02-12 13:50:43.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 13:50:43.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 73,
+            "unique_id": "THkquQSyLg",
+            "username": "aaaa",
+            "email": "cxVhSh3@new.com",
+            "permitted": null,
+            "attribute_id": null,
+            "created_at": {
+                "date": "2019-02-12 13:50:43.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 13:50:43.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -862,7 +880,7 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/friends/permit"     -d "user_id"="18" 
+curl -X POST "http://localhost/api/friends/permit"     -d "user_id"="4" 
 ```
 
 ```javascript
@@ -874,7 +892,7 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "user_id": "18",
+    "user_id": "4",
 })
 
 fetch(url, {
@@ -918,7 +936,7 @@ Parameter | Type | Status | Description
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/friends/reject"     -d "user_id"="10" 
+curl -X POST "http://localhost/api/friends/reject"     -d "user_id"="16" 
 ```
 
 ```javascript
@@ -930,7 +948,7 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "user_id": "10",
+    "user_id": "16",
 })
 
 fetch(url, {
@@ -981,7 +999,7 @@ curl -X GET -G "http://localhost/api/friends/{friend}"
 const url = new URL("http://localhost/api/friends/{friend}");
 
     let params = {
-            "friend": "o0ymIOiqBUaQBSdh",
+            "friend": "sedeosol2cD6XlG6",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -1003,17 +1021,17 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 29,
-        "unique_id": "dr0S5DpLWe",
-        "username": "笹田 香織",
-        "email": "zekoda@example.com",
+        "id": 36,
+        "unique_id": "DvooOnEv4q",
+        "username": "宮沢 裕樹",
+        "email": "yui14@example.com",
         "created_at": {
-            "date": "2019-02-12 11:38:14.000000",
+            "date": "2019-02-12 11:53:17.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-12 11:38:14.000000",
+            "date": "2019-02-12 11:53:17.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -1045,7 +1063,7 @@ curl -X DELETE "http://localhost/api/friends/{friend}"
 const url = new URL("http://localhost/api/friends/{friend}");
 
     let params = {
-            "friend": "LKvfmBzc4BBTdfc5",
+            "friend": "gHvRlzLMG1mO9nCo",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -1117,58 +1135,42 @@ fetch(url, {
                 "username": "テスト太郎",
                 "email": "testuser@example.com",
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:29.000000",
+                    "date": "2019-02-12 11:53:31.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
             },
-            "name": "ut",
+            "name": "qui",
             "users": [
                 {
-                    "id": 10,
-                    "unique_id": "65uxfPaxzB",
-                    "username": "山口 結衣",
-                    "email": "mikako.nakatsugawa@example.com",
+                    "id": 43,
+                    "unique_id": "D8QjdHY4Fz",
+                    "username": "井高 翼",
+                    "email": "tsubasa.saito@example.com",
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 26,
-                    "unique_id": "dipBioJzPe",
-                    "username": "山本 七夏",
-                    "email": "taro.sakamoto@example.org",
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 }
             ],
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:18.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:18.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -1181,58 +1183,42 @@ fetch(url, {
                 "username": "テスト太郎",
                 "email": "testuser@example.com",
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:29.000000",
+                    "date": "2019-02-12 11:53:31.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
             },
-            "name": "doloribus",
+            "name": "iste",
             "users": [
                 {
-                    "id": 37,
-                    "unique_id": "iSscd0h7lL",
-                    "username": "青山 知実",
-                    "email": "nsaito@example.org",
+                    "id": 36,
+                    "unique_id": "DvooOnEv4q",
+                    "username": "宮沢 裕樹",
+                    "email": "yui14@example.com",
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 45,
-                    "unique_id": "cW9Y77jv0B",
-                    "username": "中島 亮介",
-                    "email": "yui.kobayashi@example.org",
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 }
             ],
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:18.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:18.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -1245,58 +1231,42 @@ fetch(url, {
                 "username": "テスト太郎",
                 "email": "testuser@example.com",
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:29.000000",
+                    "date": "2019-02-12 11:53:31.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
             },
-            "name": "newGroupiz1yxW5p",
+            "name": "newGroupOQK4FIrG",
             "users": [
                 {
-                    "id": 22,
-                    "unique_id": "jVN2UMYobs",
-                    "username": "工藤 直樹",
-                    "email": "saito.naoko@example.net",
+                    "id": 43,
+                    "unique_id": "D8QjdHY4Fz",
+                    "username": "井高 翼",
+                    "email": "tsubasa.saito@example.com",
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 26,
-                    "unique_id": "dipBioJzPe",
-                    "username": "山本 七夏",
-                    "email": "taro.sakamoto@example.org",
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 }
             ],
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:18.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 13:49:14.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -1309,25 +1279,25 @@ fetch(url, {
                 "username": "テスト太郎",
                 "email": "testuser@example.com",
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:29.000000",
+                    "date": "2019-02-12 11:53:31.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
             },
-            "name": "newGroupyxJGf",
+            "name": "newGrouplWsOHFQK",
             "users": [],
             "created_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:35.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:35.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -1340,25 +1310,25 @@ fetch(url, {
                 "username": "テスト太郎",
                 "email": "testuser@example.com",
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:29.000000",
+                    "date": "2019-02-12 11:53:31.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
             },
-            "name": "newGroupl9Swj",
+            "name": "newGroup033iQ",
             "users": [],
             "created_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:35.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:35.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -1371,42 +1341,42 @@ fetch(url, {
                 "username": "テスト太郎",
                 "email": "testuser@example.com",
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:29.000000",
+                    "date": "2019-02-12 11:53:31.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
             },
-            "name": "newGroupuo5B9",
+            "name": "newGroupLTeAR",
             "users": [
                 {
-                    "id": 29,
-                    "unique_id": "dr0S5DpLWe",
-                    "username": "笹田 香織",
-                    "email": "zekoda@example.com",
+                    "id": 44,
+                    "unique_id": "loroKDDaIl",
+                    "username": "石田 七夏",
+                    "email": "sasaki.yosuke@example.org",
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 }
             ],
             "created_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:35.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:35.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -1419,42 +1389,42 @@ fetch(url, {
                 "username": "テスト太郎",
                 "email": "testuser@example.com",
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:29.000000",
+                    "date": "2019-02-12 11:53:31.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
             },
-            "name": "newGroupp4OXq",
+            "name": "newGroupjvs3j",
             "users": [
                 {
-                    "id": 45,
-                    "unique_id": "cW9Y77jv0B",
-                    "username": "中島 亮介",
-                    "email": "yui.kobayashi@example.org",
+                    "id": 35,
+                    "unique_id": "JNMreqoQoe",
+                    "username": "中島 舞",
+                    "email": "matsumoto.ryosuke@example.com",
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 }
             ],
             "created_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:35.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:35.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -1467,25 +1437,214 @@ fetch(url, {
                 "username": "テスト太郎",
                 "email": "testuser@example.com",
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:29.000000",
+                    "date": "2019-02-12 11:53:31.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
             },
-            "name": "newGrouptGulE",
+            "name": "newGroupiq8gH",
             "users": [],
             "created_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:35.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:35.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 157,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:31.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "newGroup3rFnY",
+            "users": [],
+            "created_at": {
+                "date": "2019-02-12 13:49:14.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 13:49:14.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 159,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:31.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "newGroupgxOBh",
+            "users": [],
+            "created_at": {
+                "date": "2019-02-12 13:49:14.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 13:49:14.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 160,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:31.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "newGroupm2cFx",
+            "users": [
+                {
+                    "id": 39,
+                    "unique_id": "r6yOajgy3V",
+                    "username": "伊藤 知実",
+                    "email": "gaoyama@example.org",
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-12 13:49:14.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 13:49:14.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 161,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:31.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "newGroup3lSGl",
+            "users": [
+                {
+                    "id": 21,
+                    "unique_id": "MVUtbAk8RA",
+                    "username": "山田 零",
+                    "email": "sasaki.kaori@example.net",
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-12 13:49:14.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 13:49:14.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 162,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:31.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "newGroupMpjzt",
+            "users": [],
+            "created_at": {
+                "date": "2019-02-12 13:49:15.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 13:49:15.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -1506,7 +1665,7 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/groups"     -d "name"="JwQAyPYKxyxT4P2s" 
+curl -X POST "http://localhost/api/groups"     -d "name"="LZ2kGiduHlsHXx0Q" 
 ```
 
 ```javascript
@@ -1518,7 +1677,7 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "name": "JwQAyPYKxyxT4P2s",
+    "name": "LZ2kGiduHlsHXx0Q",
 })
 
 fetch(url, {
@@ -1535,32 +1694,32 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 157,
+        "id": 163,
         "manager": {
             "id": 1,
             "unique_id": "TESTTEST",
             "username": "テスト太郎",
             "email": "testuser@example.com",
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:29.000000",
+                "date": "2019-02-12 11:53:31.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
-        "name": "newGroupTugbD",
+        "name": "newGroup5om5c",
         "users": [],
         "created_at": {
-            "date": "2019-02-12 11:39:22.000000",
+            "date": "2019-02-12 13:50:44.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-12 11:39:22.000000",
+            "date": "2019-02-12 13:50:44.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -1599,7 +1758,7 @@ curl -X GET -G "http://localhost/api/groups/{group}"
 const url = new URL("http://localhost/api/groups/{group}");
 
     let params = {
-            "group": "TKIAodjSWAKTKkx3",
+            "group": "yt5NeNKEyr7cMOBE",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -1621,32 +1780,32 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 157,
+        "id": 156,
         "manager": {
             "id": 1,
             "unique_id": "TESTTEST",
             "username": "テスト太郎",
             "email": "testuser@example.com",
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:29.000000",
+                "date": "2019-02-12 11:53:31.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
-        "name": "newGroupTugbD",
+        "name": "newGroupiq8gH",
         "users": [],
         "created_at": {
-            "date": "2019-02-12 11:39:22.000000",
+            "date": "2019-02-12 11:53:35.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-12 11:39:22.000000",
+            "date": "2019-02-12 11:53:35.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -1671,14 +1830,14 @@ Parameter | Status | Description
 > Example request:
 
 ```bash
-curl -X PUT "http://localhost/api/groups/{group}"     -d "name"="aaicOyhwacdV5fcG" 
+curl -X PUT "http://localhost/api/groups/{group}"     -d "name"="AMs3SIyIbi10D4CI" 
 ```
 
 ```javascript
 const url = new URL("http://localhost/api/groups/{group}");
 
     let params = {
-            "group": "jRnRpZdB6ruBAxy4",
+            "group": "uXIJ02MuBQRsGeZS",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -1688,7 +1847,7 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "name": "aaicOyhwacdV5fcG",
+    "name": "AMs3SIyIbi10D4CI",
 })
 
 fetch(url, {
@@ -1705,49 +1864,32 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 155,
+        "id": 153,
         "manager": {
             "id": 1,
             "unique_id": "TESTTEST",
             "username": "テスト太郎",
             "email": "testuser@example.com",
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:29.000000",
+                "date": "2019-02-12 11:53:31.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
-        "name": "newGroup4rrOkhaL",
-        "users": [
-            {
-                "id": 45,
-                "unique_id": "cW9Y77jv0B",
-                "username": "中島 亮介",
-                "email": "yui.kobayashi@example.org",
-                "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            }
-        ],
+        "name": "newGroupR4WM0zz0",
+        "users": [],
         "created_at": {
-            "date": "2019-02-12 11:38:45.000000",
+            "date": "2019-02-12 11:53:35.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-12 11:39:22.000000",
+            "date": "2019-02-12 13:50:44.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -1786,7 +1928,7 @@ curl -X DELETE "http://localhost/api/groups/{group}"
 const url = new URL("http://localhost/api/groups/{group}");
 
     let params = {
-            "group": "vRqfLVJm982c0I1Z",
+            "group": "HuleOj81RNCwyKab",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -1840,7 +1982,7 @@ curl -X GET -G "http://localhost/api/groups/{group}/users"
 const url = new URL("http://localhost/api/groups/{group}/users");
 
     let params = {
-            "group": "s8SPSzO6dwwgnlqk",
+            "group": "T6jVGsMsZD7ZEKJ2",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -1861,40 +2003,7 @@ fetch(url, {
 
 ```json
 {
-    "data": [
-        {
-            "id": 37,
-            "unique_id": "iSscd0h7lL",
-            "username": "青山 知実",
-            "email": "nsaito@example.org",
-            "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 45,
-            "unique_id": "cW9Y77jv0B",
-            "username": "中島 亮介",
-            "email": "yui.kobayashi@example.org",
-            "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        }
-    ]
+    "data": []
 }
 ```
 
@@ -1922,7 +2031,7 @@ curl -X POST "http://localhost/api/groups/{group}/users"
 const url = new URL("http://localhost/api/groups/{group}/users");
 
     let params = {
-            "group": "S5xj1acfSqQKstmM",
+            "group": "IiLX6usznq1tz0f1",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -1971,8 +2080,8 @@ curl -X GET -G "http://localhost/api/groups/{group}/users/{user}"
 const url = new URL("http://localhost/api/groups/{group}/users/{user}");
 
     let params = {
-            "group": "OgmST60MLJdJEvBP",
-            "user": "XR2MsjbxOEmvDFrR",
+            "group": "LtL30KdkITnLsk33",
+            "user": "Aas1JfLpA83D7hnD",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -1994,17 +2103,17 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 26,
-        "unique_id": "dipBioJzPe",
-        "username": "山本 七夏",
-        "email": "taro.sakamoto@example.org",
+        "id": 22,
+        "unique_id": "nVn7V9UH76",
+        "username": "井高 くみ子",
+        "email": "rkobayashi@example.org",
         "created_at": {
-            "date": "2019-02-12 11:38:14.000000",
+            "date": "2019-02-12 11:53:17.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-12 11:38:14.000000",
+            "date": "2019-02-12 11:53:17.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -2037,8 +2146,8 @@ curl -X DELETE "http://localhost/api/groups/{group}/users/{user}"
 const url = new URL("http://localhost/api/groups/{group}/users/{user}");
 
     let params = {
-            "group": "tN0JegjrpSi89g3Z",
-            "user": "gpoMKd2A3arLPwxZ",
+            "group": "mncJOslQR3BqR8oH",
+            "user": "RYPwPuPaMiepAeJl",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -2074,7 +2183,7 @@ Parameter | Status | Description
 <!-- END_5d098753a466f1ebdbceb5c54720efb3 -->
 
 <!-- START_a436107cbaaa107d55c5d5db3d5e2dd9 -->
-## default_settings.index
+## default_settings.index デフォルト設定の一覧を取得する
 
 > Example request:
 
@@ -2111,25 +2220,87 @@ fetch(url, {
                 "username": "テスト太郎",
                 "email": "testuser@example.com",
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:29.000000",
+                    "date": "2019-02-12 11:53:31.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
             },
-            "name": "newSettingxTqVc",
+            "name": "newSettingsKpO1ZMHz",
             "timer": "01:00:00",
             "created_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:34.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:34.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 53,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:31.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "OBNf98",
+            "timer": "01:00:00",
+            "created_at": {
+                "date": "2019-02-12 13:49:14.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 13:49:14.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 54,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:31.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "newSettingZ32kn",
+            "timer": "01:00:00",
+            "created_at": {
+                "date": "2019-02-12 13:49:14.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 13:49:14.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -2145,14 +2316,14 @@ fetch(url, {
 <!-- END_a436107cbaaa107d55c5d5db3d5e2dd9 -->
 
 <!-- START_36cc79ce9a383a7588678684a551a6f5 -->
-## default_settings.store
+## default_settings.store 新規デフォルト設定を作成する
 
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/default_settings"     -d "name"="egJKOH95Uqtlntk1" \
-    -d "timer"="14" \
-    -d "group_id"="14" 
+curl -X POST "http://localhost/api/default_settings"     -d "name"="S1h8E5mY39wzOZoQ" \
+    -d "timer"="1" \
+    -d "group_id"="4" 
 ```
 
 ```javascript
@@ -2164,9 +2335,9 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "name": "egJKOH95Uqtlntk1",
-    "timer": "14",
-    "group_id": "14",
+    "name": "S1h8E5mY39wzOZoQ",
+    "timer": "1",
+    "group_id": "4",
 })
 
 fetch(url, {
@@ -2183,32 +2354,32 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 52,
+        "id": 55,
         "manager": {
             "id": 1,
             "unique_id": "TESTTEST",
             "username": "テスト太郎",
             "email": "testuser@example.com",
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:29.000000",
+                "date": "2019-02-12 11:53:31.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
-        "name": "rpEAqn",
+        "name": "FnqVkR",
         "timer": "01:00:00",
         "created_at": {
-            "date": "2019-02-12 11:39:21.000000",
+            "date": "2019-02-12 13:50:43.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-12 11:39:21.000000",
+            "date": "2019-02-12 13:50:43.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -2230,7 +2401,7 @@ Parameter | Type | Status | Description
 <!-- END_36cc79ce9a383a7588678684a551a6f5 -->
 
 <!-- START_72e63016f90edb1f9e183a491b8a3953 -->
-## default_settings.show
+## default_settings.show 一つのデフォルト設定の詳細を得る
 
 > Example request:
 
@@ -2242,7 +2413,7 @@ curl -X GET -G "http://localhost/api/default_settings/{default_setting}"
 const url = new URL("http://localhost/api/default_settings/{default_setting}");
 
     let params = {
-            "default_setting": "h6GxExQSEMD8YuMz",
+            "default_setting": "iH0Tex6NQn8hRxP4",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -2264,32 +2435,32 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 52,
+        "id": 51,
         "manager": {
             "id": 1,
             "unique_id": "TESTTEST",
             "username": "テスト太郎",
             "email": "testuser@example.com",
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:29.000000",
+                "date": "2019-02-12 11:53:31.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
-        "name": "rpEAqn",
+        "name": "newSettingsKpO1ZMHz",
         "timer": "01:00:00",
         "created_at": {
-            "date": "2019-02-12 11:39:21.000000",
+            "date": "2019-02-12 11:53:34.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-12 11:39:21.000000",
+            "date": "2019-02-12 11:53:34.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -2309,21 +2480,21 @@ Parameter | Status | Description
 <!-- END_72e63016f90edb1f9e183a491b8a3953 -->
 
 <!-- START_108e89ba25f8435d33422f2e6276f453 -->
-## default_settings.update
+## default_settings.update 一つのデフォルト設定情報のupdate
 
 > Example request:
 
 ```bash
-curl -X PUT "http://localhost/api/default_settings/{default_setting}"     -d "name"="s4eEeIghVLpV66Lu" \
-    -d "timer"="6" \
-    -d "group_id"="1" 
+curl -X PUT "http://localhost/api/default_settings/{default_setting}"     -d "name"="hUMBg6cFXT1Xc9nb" \
+    -d "timer"="16" \
+    -d "group_id"="18" 
 ```
 
 ```javascript
 const url = new URL("http://localhost/api/default_settings/{default_setting}");
 
     let params = {
-            "default_setting": "OGFMdkaQITD4kpqr",
+            "default_setting": "Y4XrJi8LZVXgThel",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -2333,9 +2504,9 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "name": "s4eEeIghVLpV66Lu",
-    "timer": "6",
-    "group_id": "1",
+    "name": "hUMBg6cFXT1Xc9nb",
+    "timer": "16",
+    "group_id": "18",
 })
 
 fetch(url, {
@@ -2359,25 +2530,25 @@ fetch(url, {
             "username": "テスト太郎",
             "email": "testuser@example.com",
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:29.000000",
+                "date": "2019-02-12 11:53:31.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
-        "name": "newSettingsnOSkL6TT",
+        "name": "newSettingsSYy1MLoV",
         "timer": "01:00:00",
         "created_at": {
-            "date": "2019-02-12 11:38:45.000000",
+            "date": "2019-02-12 11:53:34.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-12 11:39:21.000000",
+            "date": "2019-02-12 13:50:43.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -2406,7 +2577,7 @@ Parameter | Status | Description
 <!-- END_108e89ba25f8435d33422f2e6276f453 -->
 
 <!-- START_fe7a18e854551327301cd1f7609b1572 -->
-## default_settings.destroy
+## default_settings.destroy 一つのデフォルト設定を削除する
 
 > Example request:
 
@@ -2418,7 +2589,7 @@ curl -X DELETE "http://localhost/api/default_settings/{default_setting}"
 const url = new URL("http://localhost/api/default_settings/{default_setting}");
 
     let params = {
-            "default_setting": "x2lFUims2tukNnq5",
+            "default_setting": "01Wxxe8vOt1oiE35",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -2483,12 +2654,12 @@ fetch(url, {
 {
     "data": [
         {
-            "id": 2,
-            "name": "facilis",
-            "shop_id": 897,
-            "budget": 26019,
-            "actual": 5635,
-            "start_time": "1993-02-16 05:21:48",
+            "id": 1,
+            "name": "quia",
+            "shop_id": 754,
+            "budget": 23026,
+            "actual": 32311,
+            "start_time": "2006-10-29 08:55:01",
             "end_time": null,
             "manager": {
                 "id": 1,
@@ -2496,116 +2667,96 @@ fetch(url, {
                 "username": "テスト太郎",
                 "email": "testuser@example.com",
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:29.000000",
+                    "date": "2019-02-12 11:53:31.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
             },
             "users": [
                 {
-                    "id": 22,
-                    "unique_id": "jVN2UMYobs",
-                    "username": "工藤 直樹",
-                    "email": "saito.naoko@example.net",
+                    "id": 21,
+                    "unique_id": "MVUtbAk8RA",
+                    "username": "山田 零",
+                    "email": "sasaki.kaori@example.net",
                     "join_status": "allow",
-                    "paid": 0,
+                    "paid": 1,
                     "plus_minus": null,
                     "ratio": null,
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 },
                 {
-                    "id": 26,
-                    "unique_id": "dipBioJzPe",
-                    "username": "山本 七夏",
-                    "email": "taro.sakamoto@example.org",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 37,
-                    "unique_id": "iSscd0h7lL",
-                    "username": "青山 知実",
-                    "email": "nsaito@example.org",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 45,
-                    "unique_id": "cW9Y77jv0B",
-                    "username": "中島 亮介",
-                    "email": "yui.kobayashi@example.org",
+                    "id": 39,
+                    "unique_id": "r6yOajgy3V",
+                    "username": "伊藤 知実",
+                    "email": "gaoyama@example.org",
                     "join_status": "deny",
                     "paid": null,
                     "plus_minus": null,
                     "ratio": null,
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 43,
+                    "unique_id": "D8QjdHY4Fz",
+                    "username": "井高 翼",
+                    "email": "tsubasa.saito@example.com",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 }
             ],
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:18.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:18.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
             "id": 3,
-            "name": "qui",
-            "shop_id": 833,
-            "budget": 4548,
-            "actual": 4330,
-            "start_time": "1979-04-29 17:46:09",
+            "name": "tempora",
+            "shop_id": 630,
+            "budget": 25604,
+            "actual": 12879,
+            "start_time": "2013-04-18 19:56:33",
             "end_time": null,
             "manager": {
                 "id": 1,
@@ -2613,112 +2764,189 @@ fetch(url, {
                 "username": "テスト太郎",
                 "email": "testuser@example.com",
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:29.000000",
+                    "date": "2019-02-12 11:53:31.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
             },
             "users": [
                 {
-                    "id": 19,
-                    "unique_id": "uAldIFWpqt",
-                    "username": "藤本 陽一",
-                    "email": "ogaki.hanako@example.com",
-                    "join_status": "allow",
-                    "paid": 0,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 22,
-                    "unique_id": "jVN2UMYobs",
-                    "username": "工藤 直樹",
-                    "email": "saito.naoko@example.net",
-                    "join_status": "allow",
-                    "paid": 0,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 26,
-                    "unique_id": "dipBioJzPe",
-                    "username": "山本 七夏",
-                    "email": "taro.sakamoto@example.org",
+                    "id": 39,
+                    "unique_id": "r6yOajgy3V",
+                    "username": "伊藤 知実",
+                    "email": "gaoyama@example.org",
                     "join_status": "deny",
                     "paid": null,
                     "plus_minus": null,
                     "ratio": null,
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 },
                 {
-                    "id": 45,
-                    "unique_id": "cW9Y77jv0B",
-                    "username": "中島 亮介",
-                    "email": "yui.kobayashi@example.org",
-                    "join_status": "wait",
+                    "id": 43,
+                    "unique_id": "D8QjdHY4Fz",
+                    "username": "井高 翼",
+                    "email": "tsubasa.saito@example.com",
+                    "join_status": "deny",
                     "paid": null,
                     "plus_minus": null,
                     "ratio": null,
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 44,
+                    "unique_id": "loroKDDaIl",
+                    "username": "石田 七夏",
+                    "email": "sasaki.yosuke@example.org",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 }
             ],
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:18.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:18.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
             "id": 4,
-            "name": "newUpdateSessionc9QHe",
+            "name": "commodi",
+            "shop_id": 618,
+            "budget": 23821,
+            "actual": 27643,
+            "start_time": "1979-04-26 14:40:25",
+            "end_time": null,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:31.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [
+                {
+                    "id": 22,
+                    "unique_id": "nVn7V9UH76",
+                    "username": "井高 くみ子",
+                    "email": "rkobayashi@example.org",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 35,
+                    "unique_id": "JNMreqoQoe",
+                    "username": "中島 舞",
+                    "email": "matsumoto.ryosuke@example.com",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 39,
+                    "unique_id": "r6yOajgy3V",
+                    "username": "伊藤 知実",
+                    "email": "gaoyama@example.org",
+                    "join_status": "allow",
+                    "paid": 0,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-12 11:53:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 11:53:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 201,
+            "name": "newUpdateSessionvmZ1M",
             "shop_id": 34,
             "budget": 5000,
             "actual": 3000,
@@ -2730,150 +2958,33 @@ fetch(url, {
                 "username": "テスト太郎",
                 "email": "testuser@example.com",
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:29.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "users": [
-                {
-                    "id": 10,
-                    "unique_id": "65uxfPaxzB",
-                    "username": "山口 結衣",
-                    "email": "mikako.nakatsugawa@example.com",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 26,
-                    "unique_id": "dipBioJzPe",
-                    "username": "山本 七夏",
-                    "email": "taro.sakamoto@example.org",
-                    "join_status": "allow",
-                    "paid": 0,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 45,
-                    "unique_id": "cW9Y77jv0B",
-                    "username": "中島 亮介",
-                    "email": "yui.kobayashi@example.org",
-                    "join_status": "allow",
-                    "paid": 0,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 46,
-                    "unique_id": "OPwOdqde9D",
-                    "username": "小泉 太一",
-                    "email": "hmatsumoto@example.com",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                }
-            ],
-            "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:45.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 201,
-            "name": "newSessionRm0tS",
-            "shop_id": 34,
-            "budget": 3000,
-            "actual": 3000,
-            "start_time": null,
-            "end_time": null,
-            "manager": {
-                "id": 1,
-                "unique_id": "TESTTEST",
-                "username": "テスト太郎",
-                "email": "testuser@example.com",
-                "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-12 11:38:29.000000",
+                    "date": "2019-02-12 11:53:31.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
             },
             "users": [],
             "created_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:35.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:35.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
             "id": 202,
-            "name": "newSessionmZH52",
+            "name": "newUpdateSessionE2K7V",
             "shop_id": 34,
-            "budget": 3000,
+            "budget": 5000,
             "actual": 3000,
             "start_time": null,
             "end_time": null,
@@ -2883,52 +2994,52 @@ fetch(url, {
                 "username": "テスト太郎",
                 "email": "testuser@example.com",
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:29.000000",
+                    "date": "2019-02-12 11:53:31.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
             },
             "users": [
                 {
-                    "id": 37,
-                    "unique_id": "iSscd0h7lL",
-                    "username": "青山 知実",
-                    "email": "nsaito@example.org",
+                    "id": 35,
+                    "unique_id": "JNMreqoQoe",
+                    "username": "中島 舞",
+                    "email": "matsumoto.ryosuke@example.com",
                     "join_status": "allow",
                     "paid": 0,
                     "plus_minus": 0,
                     "ratio": null,
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 }
             ],
             "created_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:35.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 13:49:15.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
             "id": 203,
-            "name": "newSessionVQ76f",
+            "name": "newSessionS3sCc",
             "shop_id": 34,
             "budget": 3000,
             "actual": 3000,
@@ -2940,52 +3051,52 @@ fetch(url, {
                 "username": "テスト太郎",
                 "email": "testuser@example.com",
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:29.000000",
+                    "date": "2019-02-12 11:53:31.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
             },
             "users": [
                 {
-                    "id": 19,
-                    "unique_id": "uAldIFWpqt",
-                    "username": "藤本 陽一",
-                    "email": "ogaki.hanako@example.com",
+                    "id": 36,
+                    "unique_id": "DvooOnEv4q",
+                    "username": "宮沢 裕樹",
+                    "email": "yui14@example.com",
                     "join_status": "allow",
                     "paid": 0,
                     "plus_minus": 0,
                     "ratio": null,
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 }
             ],
             "created_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:35.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:35.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
             "id": 204,
-            "name": "newSessioneahT4",
+            "name": "newSession5c4jB",
             "shop_id": 34,
             "budget": 3000,
             "actual": 3000,
@@ -2997,52 +3108,52 @@ fetch(url, {
                 "username": "テスト太郎",
                 "email": "testuser@example.com",
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:29.000000",
+                    "date": "2019-02-12 11:53:31.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
             },
             "users": [
                 {
-                    "id": 37,
-                    "unique_id": "iSscd0h7lL",
-                    "username": "青山 知実",
-                    "email": "nsaito@example.org",
+                    "id": 39,
+                    "unique_id": "r6yOajgy3V",
+                    "username": "伊藤 知実",
+                    "email": "gaoyama@example.org",
                     "join_status": "allow",
                     "paid": 0,
                     "plus_minus": 10000,
                     "ratio": null,
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 }
             ],
             "created_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:35.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:35.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
             "id": 205,
-            "name": "newSessionpisl7",
+            "name": "newSessionJ5WvG",
             "shop_id": 34,
             "budget": 3000,
             "actual": 3000,
@@ -3054,24 +3165,231 @@ fetch(url, {
                 "username": "テスト太郎",
                 "email": "testuser@example.com",
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:29.000000",
+                    "date": "2019-02-12 11:53:31.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
             },
             "users": [],
             "created_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:35.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:45.000000",
+                "date": "2019-02-12 11:53:35.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 207,
+            "name": "newSessionGQHJH",
+            "shop_id": 34,
+            "budget": 3000,
+            "actual": 3000,
+            "start_time": null,
+            "end_time": null,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:31.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [
+                {
+                    "id": 22,
+                    "unique_id": "nVn7V9UH76",
+                    "username": "井高 くみ子",
+                    "email": "rkobayashi@example.org",
+                    "join_status": "allow",
+                    "paid": 0,
+                    "plus_minus": 0,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-12 13:49:15.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 13:49:15.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 208,
+            "name": "newSessionwH7x5",
+            "shop_id": 34,
+            "budget": 3000,
+            "actual": 3000,
+            "start_time": null,
+            "end_time": null,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:31.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [
+                {
+                    "id": 22,
+                    "unique_id": "nVn7V9UH76",
+                    "username": "井高 くみ子",
+                    "email": "rkobayashi@example.org",
+                    "join_status": "allow",
+                    "paid": 0,
+                    "plus_minus": 0,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-12 13:49:15.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 13:49:15.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 209,
+            "name": "newSessionxDcKE",
+            "shop_id": 34,
+            "budget": 3000,
+            "actual": 3000,
+            "start_time": null,
+            "end_time": null,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:31.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [
+                {
+                    "id": 21,
+                    "unique_id": "MVUtbAk8RA",
+                    "username": "山田 零",
+                    "email": "sasaki.kaori@example.net",
+                    "join_status": "allow",
+                    "paid": 0,
+                    "plus_minus": 10000,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-12 13:49:15.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 13:49:15.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 210,
+            "name": "newSessionkI2pp",
+            "shop_id": 34,
+            "budget": 3000,
+            "actual": 3000,
+            "start_time": null,
+            "end_time": null,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:31.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [],
+            "created_at": {
+                "date": "2019-02-12 13:49:15.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 13:49:15.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -3092,12 +3410,12 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/sessions"     -d "name"="jhiEoYCDgPPLzxxZ" \
-    -d "shop_id"="11" \
-    -d "budget"="17" \
-    -d "actual"="5" \
-    -d "start_time"="JVY38QTpyTUuhadA" \
-    -d "end_time"="wMvDxZl9AAcnlGOF" 
+curl -X POST "http://localhost/api/sessions"     -d "name"="XSEbPGLPS1KTZQKh" \
+    -d "shop_id"="13" \
+    -d "budget"="13" \
+    -d "actual"="14" \
+    -d "start_time"="5CJAfROpoP0k1s4I" \
+    -d "end_time"="r65KKw7I8hREMoIH" 
 ```
 
 ```javascript
@@ -3109,12 +3427,12 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "name": "jhiEoYCDgPPLzxxZ",
-    "shop_id": "11",
-    "budget": "17",
-    "actual": "5",
-    "start_time": "JVY38QTpyTUuhadA",
-    "end_time": "wMvDxZl9AAcnlGOF",
+    "name": "XSEbPGLPS1KTZQKh",
+    "shop_id": "13",
+    "budget": "13",
+    "actual": "14",
+    "start_time": "5CJAfROpoP0k1s4I",
+    "end_time": "r65KKw7I8hREMoIH",
 })
 
 fetch(url, {
@@ -3131,8 +3449,8 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 206,
-        "name": "newSessionhHVOA",
+        "id": 211,
+        "name": "newSession6gzkB",
         "shop_id": 34,
         "budget": 3000,
         "actual": 3000,
@@ -3144,24 +3462,24 @@ fetch(url, {
             "username": "テスト太郎",
             "email": "testuser@example.com",
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:29.000000",
+                "date": "2019-02-12 11:53:31.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         "users": [],
         "created_at": {
-            "date": "2019-02-12 11:39:22.000000",
+            "date": "2019-02-12 13:50:44.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-12 11:39:22.000000",
+            "date": "2019-02-12 13:50:44.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -3198,7 +3516,7 @@ curl -X GET -G "http://localhost/api/sessions/{session}"
 const url = new URL("http://localhost/api/sessions/{session}");
 
     let params = {
-            "session": "KZBigkjBY7iRlxZT",
+            "session": "f3EBpScaSaPyTfO5",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -3220,8 +3538,8 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 204,
-        "name": "newSessioneahT4",
+        "id": 207,
+        "name": "newSessionGQHJH",
         "shop_id": 34,
         "budget": 3000,
         "actual": 3000,
@@ -3233,45 +3551,45 @@ fetch(url, {
             "username": "テスト太郎",
             "email": "testuser@example.com",
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:29.000000",
+                "date": "2019-02-12 11:53:31.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         "users": [
             {
-                "id": 37,
-                "unique_id": "iSscd0h7lL",
-                "username": "青山 知実",
-                "email": "nsaito@example.org",
+                "id": 22,
+                "unique_id": "nVn7V9UH76",
+                "username": "井高 くみ子",
+                "email": "rkobayashi@example.org",
                 "join_status": "allow",
                 "paid": 0,
-                "plus_minus": 10000,
+                "plus_minus": 0,
                 "ratio": null,
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
             }
         ],
         "created_at": {
-            "date": "2019-02-12 11:38:45.000000",
+            "date": "2019-02-12 13:49:15.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-12 11:38:45.000000",
+            "date": "2019-02-12 13:49:15.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -3296,19 +3614,19 @@ Parameter | Status | Description
 > Example request:
 
 ```bash
-curl -X PUT "http://localhost/api/sessions/{session}"     -d "name"="oZeRwKjogtCXtyza" \
-    -d "shop_id"="9" \
-    -d "budget"="1" \
-    -d "actual"="6" \
-    -d "start_time"="lDpSOpI7LFfuLCOD" \
-    -d "end_time"="keILv2ptdlDO0boe" 
+curl -X PUT "http://localhost/api/sessions/{session}"     -d "name"="utU0nseXMcI0lsSX" \
+    -d "shop_id"="10" \
+    -d "budget"="8" \
+    -d "actual"="8" \
+    -d "start_time"="53DhTnFohxGsc4qh" \
+    -d "end_time"="X36F41KY6i7hmFnx" 
 ```
 
 ```javascript
 const url = new URL("http://localhost/api/sessions/{session}");
 
     let params = {
-            "session": "4F3JqiwQu4fsVt7H",
+            "session": "8PcttrHopQ7YWZ2z",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -3318,12 +3636,12 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "name": "oZeRwKjogtCXtyza",
-    "shop_id": "9",
-    "budget": "1",
-    "actual": "6",
-    "start_time": "lDpSOpI7LFfuLCOD",
-    "end_time": "keILv2ptdlDO0boe",
+    "name": "utU0nseXMcI0lsSX",
+    "shop_id": "10",
+    "budget": "8",
+    "actual": "8",
+    "start_time": "53DhTnFohxGsc4qh",
+    "end_time": "X36F41KY6i7hmFnx",
 })
 
 fetch(url, {
@@ -3340,8 +3658,8 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 206,
-        "name": "newUpdateSessionzerG9",
+        "id": 204,
+        "name": "newUpdateSessionkFN3m",
         "shop_id": 34,
         "budget": 5000,
         "actual": 3000,
@@ -3353,24 +3671,45 @@ fetch(url, {
             "username": "テスト太郎",
             "email": "testuser@example.com",
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:29.000000",
+                "date": "2019-02-12 11:53:31.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
-        "users": [],
+        "users": [
+            {
+                "id": 39,
+                "unique_id": "r6yOajgy3V",
+                "username": "伊藤 知実",
+                "email": "gaoyama@example.org",
+                "join_status": "allow",
+                "paid": 0,
+                "plus_minus": 10000,
+                "ratio": null,
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            }
+        ],
         "created_at": {
-            "date": "2019-02-12 11:39:22.000000",
+            "date": "2019-02-12 11:53:35.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-12 11:39:22.000000",
+            "date": "2019-02-12 13:50:44.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -3414,7 +3753,7 @@ curl -X DELETE "http://localhost/api/sessions/{session}"
 const url = new URL("http://localhost/api/sessions/{session}");
 
     let params = {
-            "session": "09FnXw0vtlv7Hn4s",
+            "session": "BRdyxmX4ptkAydQW",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -3461,7 +3800,7 @@ curl -X GET -G "http://localhost/api/sessions/{session}/users"
 const url = new URL("http://localhost/api/sessions/{session}/users");
 
     let params = {
-            "session": "gAkXQn3IYvhKaDPr",
+            "session": "A3APAVn0xCWZcR6I",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -3484,81 +3823,21 @@ fetch(url, {
 {
     "data": [
         {
-            "id": 19,
-            "unique_id": "uAldIFWpqt",
-            "username": "藤本 陽一",
-            "email": "ogaki.hanako@example.com",
+            "id": 36,
+            "unique_id": "DvooOnEv4q",
+            "username": "宮沢 裕樹",
+            "email": "yui14@example.com",
             "join_status": "allow",
             "paid": 0,
-            "plus_minus": null,
+            "plus_minus": 0,
             "ratio": null,
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 22,
-            "unique_id": "jVN2UMYobs",
-            "username": "工藤 直樹",
-            "email": "saito.naoko@example.net",
-            "join_status": "allow",
-            "paid": 0,
-            "plus_minus": null,
-            "ratio": null,
-            "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 26,
-            "unique_id": "dipBioJzPe",
-            "username": "山本 七夏",
-            "email": "taro.sakamoto@example.org",
-            "join_status": "deny",
-            "paid": null,
-            "plus_minus": null,
-            "ratio": null,
-            "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 45,
-            "unique_id": "cW9Y77jv0B",
-            "username": "中島 亮介",
-            "email": "yui.kobayashi@example.org",
-            "join_status": "wait",
-            "paid": null,
-            "plus_minus": null,
-            "ratio": null,
-            "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -3584,18 +3863,18 @@ Parameter | Status | Description
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/sessions/{session}/users"     -d "user_id"="VIw5h5ZjTKf4kXmX" \
-    -d "join_status"="3YD2yw9xSjkjeaqh" \
-    -d "paid"="17" \
-    -d "plus_minus"="15" \
-    -d "ratio"="6BDCOoVOtU9j0zKn" 
+curl -X POST "http://localhost/api/sessions/{session}/users"     -d "user_id"="nY5Rsk13Yc4340sO" \
+    -d "join_status"="iFdZSPIZ2i1AmJ3u" \
+    -d "paid"="16" \
+    -d "plus_minus"="4" \
+    -d "ratio"="p1epnoOFwTFNzgSZ" 
 ```
 
 ```javascript
 const url = new URL("http://localhost/api/sessions/{session}/users");
 
     let params = {
-            "session": "c7atGVWXS05dHNCv",
+            "session": "cuC7vHsAwPPK6fCt",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -3605,11 +3884,11 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "user_id": "VIw5h5ZjTKf4kXmX",
-    "join_status": "3YD2yw9xSjkjeaqh",
-    "paid": "17",
-    "plus_minus": "15",
-    "ratio": "6BDCOoVOtU9j0zKn",
+    "user_id": "nY5Rsk13Yc4340sO",
+    "join_status": "iFdZSPIZ2i1AmJ3u",
+    "paid": "16",
+    "plus_minus": "4",
+    "ratio": "p1epnoOFwTFNzgSZ",
 })
 
 fetch(url, {
@@ -3627,21 +3906,21 @@ fetch(url, {
 {
     "data": [
         {
-            "id": 46,
-            "unique_id": "OPwOdqde9D",
-            "username": "小泉 太一",
-            "email": "hmatsumoto@example.com",
+            "id": 39,
+            "unique_id": "r6yOajgy3V",
+            "username": "伊藤 知実",
+            "email": "gaoyama@example.org",
             "join_status": "allow",
             "paid": 0,
             "plus_minus": 0,
             "ratio": null,
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -4108,8 +4387,8 @@ curl -X GET -G "http://localhost/api/sessions/{session}/users/{user}"
 const url = new URL("http://localhost/api/sessions/{session}/users/{user}");
 
     let params = {
-            "session": "XInoDTlrUYzQrxkz",
-            "user": "pkFHRvHGgjO5MHLq",
+            "session": "OrkH2A0s2ymBZRk8",
+            "user": "GlQJfoZclykpHopX",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -4131,21 +4410,21 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 46,
-        "unique_id": "OPwOdqde9D",
-        "username": "小泉 太一",
-        "email": "hmatsumoto@example.com",
+        "id": 39,
+        "unique_id": "r6yOajgy3V",
+        "username": "伊藤 知実",
+        "email": "gaoyama@example.org",
         "join_status": "allow",
         "paid": 0,
         "plus_minus": 0,
         "ratio": null,
         "created_at": {
-            "date": "2019-02-12 11:38:14.000000",
+            "date": "2019-02-12 11:53:17.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-12 11:38:14.000000",
+            "date": "2019-02-12 11:53:17.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -4171,19 +4450,19 @@ Parameter | Status | Description
 > Example request:
 
 ```bash
-curl -X PUT "http://localhost/api/sessions/{session}/users/{user}"     -d "user_id"="ziELHzESkzxF4OFE" \
-    -d "join_status"="SnYM6e7fAE9Pvegb" \
-    -d "paid"="12" \
-    -d "plus_minus"="3" \
-    -d "ratio"="rede5JgUnL3rujf3" 
+curl -X PUT "http://localhost/api/sessions/{session}/users/{user}"     -d "user_id"="JI3BKeTghhBiJVQb" \
+    -d "join_status"="7MZT9vr0Yz7op9CE" \
+    -d "paid"="14" \
+    -d "plus_minus"="6" \
+    -d "ratio"="gzsBIu3cZYhfoOV0" 
 ```
 
 ```javascript
 const url = new URL("http://localhost/api/sessions/{session}/users/{user}");
 
     let params = {
-            "session": "JdM6InJNWT8l3FCT",
-            "user": "RtS10d8DJRePUOVt",
+            "session": "ttIPBNEEXrWBj6UL",
+            "user": "7JXqwDm7V7fOFewQ",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -4193,11 +4472,11 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "user_id": "ziELHzESkzxF4OFE",
-    "join_status": "SnYM6e7fAE9Pvegb",
-    "paid": "12",
-    "plus_minus": "3",
-    "ratio": "rede5JgUnL3rujf3",
+    "user_id": "JI3BKeTghhBiJVQb",
+    "join_status": "7MZT9vr0Yz7op9CE",
+    "paid": "14",
+    "plus_minus": "6",
+    "ratio": "gzsBIu3cZYhfoOV0",
 })
 
 fetch(url, {
@@ -4214,21 +4493,21 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 37,
-        "unique_id": "iSscd0h7lL",
-        "username": "青山 知実",
-        "email": "nsaito@example.org",
+        "id": 36,
+        "unique_id": "DvooOnEv4q",
+        "username": "宮沢 裕樹",
+        "email": "yui14@example.com",
         "join_status": "allow",
         "paid": 0,
         "plus_minus": 10000,
         "ratio": null,
         "created_at": {
-            "date": "2019-02-12 11:38:14.000000",
+            "date": "2019-02-12 11:53:17.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-12 11:38:14.000000",
+            "date": "2019-02-12 11:53:17.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -4272,8 +4551,8 @@ curl -X DELETE "http://localhost/api/sessions/{session}/users/{user}"
 const url = new URL("http://localhost/api/sessions/{session}/users/{user}");
 
     let params = {
-            "session": "SO7LMB7VmkQ9iFsH",
-            "user": "GHaC4FRoaoDwlARQ",
+            "session": "4g456xuIdQWfQiut",
+            "user": "tyvOaFOIGhhZhkZ3",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -4346,26 +4625,26 @@ fetch(url, {
                 "username": "テスト太郎",
                 "email": "testuser@example.com",
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:29.000000",
+                    "date": "2019-02-12 11:53:31.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
             },
-            "name": "updateylC01",
-            "plus_minus": null,
-            "ratio": null,
+            "name": "officiis",
+            "plus_minus": 411,
+            "ratio": 1,
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:44.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -4378,26 +4657,26 @@ fetch(url, {
                 "username": "テスト太郎",
                 "email": "testuser@example.com",
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:29.000000",
+                    "date": "2019-02-12 11:53:31.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
             },
-            "name": "ullam",
-            "plus_minus": -1604,
-            "ratio": 1,
+            "name": "rerum",
+            "plus_minus": 1509,
+            "ratio": 2,
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -4410,26 +4689,58 @@ fetch(url, {
                 "username": "テスト太郎",
                 "email": "testuser@example.com",
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:29.000000",
+                    "date": "2019-02-12 11:53:31.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
             },
-            "name": "maiores",
-            "plus_minus": -1983,
+            "name": "nisi",
+            "plus_minus": 2660,
             "ratio": 1,
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 4,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:31.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "ea",
+            "plus_minus": 2029,
+            "ratio": 0,
+            "created_at": {
+                "date": "2019-02-12 11:53:17.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -4442,90 +4753,26 @@ fetch(url, {
                 "username": "テスト太郎",
                 "email": "testuser@example.com",
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:29.000000",
+                    "date": "2019-02-12 11:53:31.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
             },
             "name": "et",
-            "plus_minus": 2572,
-            "ratio": 1,
+            "plus_minus": -789,
+            "ratio": 0,
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 251,
-            "manager": {
-                "id": 1,
-                "unique_id": "TESTTEST",
-                "username": "テスト太郎",
-                "email": "testuser@example.com",
-                "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-12 11:38:29.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "name": "attributenameMWXkm",
-            "plus_minus": null,
-            "ratio": null,
-            "created_at": {
-                "date": "2019-02-12 11:38:44.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:44.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 252,
-            "manager": {
-                "id": 1,
-                "unique_id": "TESTTEST",
-                "username": "テスト太郎",
-                "email": "testuser@example.com",
-                "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-12 11:38:29.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "name": "attributenamemr1lU",
-            "plus_minus": null,
-            "ratio": null,
-            "created_at": {
-                "date": "2019-02-12 11:38:44.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:44.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -4546,9 +4793,9 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/attributes"     -d "name"="hbfsiiTmEBoASZFx" \
-    -d "plus_minus"="17" \
-    -d "ratio"="76.84325091" 
+curl -X POST "http://localhost/api/attributes"     -d "name"="m6zzm2ef3NAIZGMk" \
+    -d "plus_minus"="4" \
+    -d "ratio"="439.81438" 
 ```
 
 ```javascript
@@ -4560,9 +4807,9 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "name": "hbfsiiTmEBoASZFx",
-    "plus_minus": "17",
-    "ratio": "76.84325091",
+    "name": "m6zzm2ef3NAIZGMk",
+    "plus_minus": "4",
+    "ratio": "439.81438",
 })
 
 fetch(url, {
@@ -4646,7 +4893,7 @@ curl -X GET -G "http://localhost/api/attributes/{attribute}"
 const url = new URL("http://localhost/api/attributes/{attribute}");
 
     let params = {
-            "attribute": "FGXfYtHn9p13J58L",
+            "attribute": "6Ywtj6JDRTJfDT46",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -4668,33 +4915,33 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 252,
+        "id": 1,
         "manager": {
             "id": 1,
             "unique_id": "TESTTEST",
             "username": "テスト太郎",
             "email": "testuser@example.com",
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:29.000000",
+                "date": "2019-02-12 11:53:31.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
-        "name": "attributenamemr1lU",
-        "plus_minus": null,
-        "ratio": null,
+        "name": "officiis",
+        "plus_minus": 411,
+        "ratio": 1,
         "created_at": {
-            "date": "2019-02-12 11:38:44.000000",
+            "date": "2019-02-12 11:53:17.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-12 11:38:44.000000",
+            "date": "2019-02-12 11:53:17.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -4719,16 +4966,16 @@ Parameter | Status | Description
 > Example request:
 
 ```bash
-curl -X PUT "http://localhost/api/attributes/{attribute}"     -d "name"="B7e8sPYMaomgQ2oh" \
-    -d "plus_minus"="8" \
-    -d "ratio"="7.20328" 
+curl -X PUT "http://localhost/api/attributes/{attribute}"     -d "name"="MIMfK6SWwj8NDzXE" \
+    -d "plus_minus"="6" \
+    -d "ratio"="147036.9" 
 ```
 
 ```javascript
 const url = new URL("http://localhost/api/attributes/{attribute}");
 
     let params = {
-            "attribute": "AJflkp6N7AkxwHny",
+            "attribute": "1GgPjFewETxXloSp",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -4738,9 +4985,9 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "name": "B7e8sPYMaomgQ2oh",
-    "plus_minus": "8",
-    "ratio": "7.20328",
+    "name": "MIMfK6SWwj8NDzXE",
+    "plus_minus": "6",
+    "ratio": "147036.9",
 })
 
 fetch(url, {
@@ -4764,26 +5011,26 @@ fetch(url, {
             "username": "テスト太郎",
             "email": "testuser@example.com",
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:29.000000",
+                "date": "2019-02-12 11:53:31.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
-        "name": "updatez4N7w",
+        "name": "updateu5erh",
         "plus_minus": null,
         "ratio": null,
         "created_at": {
-            "date": "2019-02-12 11:38:14.000000",
+            "date": "2019-02-12 11:53:17.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-12 11:39:21.000000",
+            "date": "2019-02-12 13:50:43.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -4824,7 +5071,7 @@ curl -X DELETE "http://localhost/api/attributes/{attribute}"
 const url = new URL("http://localhost/api/attributes/{attribute}");
 
     let params = {
-            "attribute": "rrrFcCfvvGzY377e",
+            "attribute": "YKF4b4Oim2U9i31G",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -4889,25 +5136,25 @@ fetch(url, {
 {
     "data": [
         {
-            "id": 6,
-            "name": "ullam",
-            "shop_id": 294,
-            "budget": 18944,
-            "actual": 2083,
-            "start_time": "1987-06-22 01:43:48",
+            "id": 10,
+            "name": "ut",
+            "shop_id": 508,
+            "budget": 18716,
+            "actual": 5758,
+            "start_time": "2004-09-23 21:10:11",
             "end_time": null,
             "manager": {
-                "id": 2,
-                "unique_id": "DDDDDDDD",
-                "username": "AAAAAAAAAAA",
-                "email": "new@new.com",
+                "id": 3,
+                "unique_id": "XAZmeLbS1z",
+                "username": "廣川 学",
+                "email": "yoshida.atsushi@example.net",
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:45.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
@@ -4918,270 +5165,310 @@ fetch(url, {
                     "unique_id": "TESTTEST",
                     "username": "テスト太郎",
                     "email": "testuser@example.com",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:29.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 8,
-                    "unique_id": "sj9CrxDv5y",
-                    "username": "笹田 直樹",
-                    "email": "qyamagishi@example.net",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 14,
-                    "unique_id": "hXCAIpeXzG",
-                    "username": "笹田 さゆり",
-                    "email": "yui82@example.org",
                     "join_status": "deny",
                     "paid": null,
                     "plus_minus": null,
                     "ratio": null,
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:31.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 },
                 {
-                    "id": 38,
-                    "unique_id": "cjqc2jmIsb",
-                    "username": "浜田 学",
-                    "email": "charada@example.net",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 48,
-                    "unique_id": "HkIhxeItcW",
-                    "username": "伊藤 康弘",
-                    "email": "tidaka@example.org",
+                    "id": 22,
+                    "unique_id": "nVn7V9UH76",
+                    "username": "井高 くみ子",
+                    "email": "rkobayashi@example.org",
                     "join_status": "allow",
-                    "paid": 0,
+                    "paid": 1,
                     "plus_minus": null,
                     "ratio": null,
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                }
-            ],
-            "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 7,
-            "name": "consequuntur",
-            "shop_id": 313,
-            "budget": 28878,
-            "actual": 30088,
-            "start_time": "1992-10-29 14:24:48",
-            "end_time": null,
-            "manager": {
-                "id": 2,
-                "unique_id": "DDDDDDDD",
-                "username": "AAAAAAAAAAA",
-                "email": "new@new.com",
-                "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-12 11:38:45.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "users": [
-                {
-                    "id": 1,
-                    "unique_id": "TESTTEST",
-                    "username": "テスト太郎",
-                    "email": "testuser@example.com",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:29.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 13,
-                    "unique_id": "Al2oTaN9kZ",
-                    "username": "藤本 加奈",
-                    "email": "kobayashi.naoko@example.org",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 23,
-                    "unique_id": "8PhUSitNfQ",
-                    "username": "喜嶋 京助",
-                    "email": "matsumoto.atsushi@example.com",
-                    "join_status": "allow",
-                    "paid": 0,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 },
                 {
                     "id": 33,
-                    "unique_id": "mT1snLStcu",
-                    "username": "山田 七夏",
-                    "email": "ywakamatsu@example.org",
-                    "join_status": "deny",
-                    "paid": null,
+                    "unique_id": "S1fq11mUdI",
+                    "username": "加納 真綾",
+                    "email": "hamada.manabu@example.net",
+                    "join_status": "allow",
+                    "paid": 0,
                     "plus_minus": null,
                     "ratio": null,
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 },
                 {
-                    "id": 48,
-                    "unique_id": "HkIhxeItcW",
-                    "username": "伊藤 康弘",
-                    "email": "tidaka@example.org",
-                    "join_status": "deny",
+                    "id": 44,
+                    "unique_id": "loroKDDaIl",
+                    "username": "石田 七夏",
+                    "email": "sasaki.yosuke@example.org",
+                    "join_status": "wait",
                     "paid": null,
                     "plus_minus": null,
                     "ratio": null,
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 45,
+                    "unique_id": "tIwn1KdctX",
+                    "username": "山口 修平",
+                    "email": "shota.kimura@example.net",
+                    "join_status": "allow",
+                    "paid": 1,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 46,
+                    "unique_id": "VYJ7UofGLL",
+                    "username": "山岸 稔",
+                    "email": "kenichi.yoshimoto@example.org",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 }
             ],
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:18.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:18.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "id": 21,
-            "name": "sequi",
-            "shop_id": 602,
-            "budget": 12644,
-            "actual": 29894,
-            "start_time": "2013-10-19 12:37:30",
+            "id": 12,
+            "name": "voluptates",
+            "shop_id": 574,
+            "budget": 10007,
+            "actual": 20512,
+            "start_time": "1998-12-01 23:45:52",
             "end_time": null,
             "manager": {
-                "id": 6,
-                "unique_id": "RNgsHu8Oqe",
-                "username": "廣川 健一",
-                "email": "nanami21@example.com",
+                "id": 3,
+                "unique_id": "XAZmeLbS1z",
+                "username": "廣川 学",
+                "email": "yoshida.atsushi@example.net",
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [
+                {
+                    "id": 1,
+                    "unique_id": "TESTTEST",
+                    "username": "テスト太郎",
+                    "email": "testuser@example.com",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:31.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 7,
+                    "unique_id": "5atRLO3NAr",
+                    "username": "浜田 直樹",
+                    "email": "youichi94@example.com",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 9,
+                    "unique_id": "1SnSkyv1Yn",
+                    "username": "伊藤 充",
+                    "email": "amatsumoto@example.com",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 22,
+                    "unique_id": "nVn7V9UH76",
+                    "username": "井高 くみ子",
+                    "email": "rkobayashi@example.org",
+                    "join_status": "allow",
+                    "paid": 0,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 29,
+                    "unique_id": "PlXzA3j8lZ",
+                    "username": "小泉 直人",
+                    "email": "hanako.nakatsugawa@example.com",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 33,
+                    "unique_id": "S1fq11mUdI",
+                    "username": "加納 真綾",
+                    "email": "hamada.manabu@example.net",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-12 11:53:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 11:53:18.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 32,
+            "name": "velit",
+            "shop_id": 193,
+            "budget": 21745,
+            "actual": 29136,
+            "start_time": "1990-09-20 17:39:09",
+            "end_time": null,
+            "manager": {
+                "id": 8,
+                "unique_id": "7epVELpe4P",
+                "username": "田中 拓真",
+                "email": "hideki.nagisa@example.com",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
@@ -5193,1944 +5480,269 @@ fetch(url, {
                     "username": "テスト太郎",
                     "email": "testuser@example.com",
                     "join_status": "allow",
-                    "paid": 0,
+                    "paid": 1,
                     "plus_minus": null,
                     "ratio": null,
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:29.000000",
+                        "date": "2019-02-12 11:53:31.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 },
                 {
-                    "id": 23,
-                    "unique_id": "8PhUSitNfQ",
-                    "username": "喜嶋 京助",
-                    "email": "matsumoto.atsushi@example.com",
+                    "id": 10,
+                    "unique_id": "pSI218auP8",
+                    "username": "大垣 智也",
+                    "email": "tkato@example.com",
                     "join_status": "allow",
                     "paid": 1,
                     "plus_minus": null,
                     "ratio": null,
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 },
                 {
-                    "id": 25,
-                    "unique_id": "m2nyQ6RXcw",
-                    "username": "渚 聡太郎",
-                    "email": "yoko.sasaki@example.com",
+                    "id": 29,
+                    "unique_id": "PlXzA3j8lZ",
+                    "username": "小泉 直人",
+                    "email": "hanako.nakatsugawa@example.com",
                     "join_status": "wait",
                     "paid": null,
                     "plus_minus": null,
                     "ratio": null,
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 },
                 {
-                    "id": 35,
-                    "unique_id": "GqTJUlJdtO",
-                    "username": "桐山 零",
-                    "email": "kudo.naoko@example.net",
+                    "id": 31,
+                    "unique_id": "zK4E99BOfa",
+                    "username": "山岸 千代",
+                    "email": "sasaki.yui@example.org",
+                    "join_status": "allow",
+                    "paid": 1,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-12 11:53:20.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 11:53:20.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 78,
+            "name": "voluptatem",
+            "shop_id": 787,
+            "budget": 18695,
+            "actual": 2729,
+            "start_time": "1989-12-06 18:00:31",
+            "end_time": null,
+            "manager": {
+                "id": 20,
+                "unique_id": "a1JDNraorH",
+                "username": "藤本 花子",
+                "email": "gidaka@example.org",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [
+                {
+                    "id": 1,
+                    "unique_id": "TESTTEST",
+                    "username": "テスト太郎",
+                    "email": "testuser@example.com",
                     "join_status": "wait",
                     "paid": null,
                     "plus_minus": null,
                     "ratio": null,
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:31.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 11,
+                    "unique_id": "zAJpTM7hQV",
+                    "username": "松本 裕樹",
+                    "email": "youichi.takahashi@example.com",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 16,
+                    "unique_id": "ayhnVR9zmW",
+                    "username": "山本 香織",
+                    "email": "taichi43@example.net",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 },
                 {
                     "id": 39,
-                    "unique_id": "OT67Yurhod",
-                    "username": "木村 学",
-                    "email": "tomoya.suzuki@example.net",
-                    "join_status": "allow",
-                    "paid": 1,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                }
-            ],
-            "created_at": {
-                "date": "2019-02-12 11:38:16.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:16.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 29,
-            "name": "dolores",
-            "shop_id": 491,
-            "budget": 15894,
-            "actual": 12294,
-            "start_time": "1970-10-29 13:13:34",
-            "end_time": null,
-            "manager": {
-                "id": 8,
-                "unique_id": "sj9CrxDv5y",
-                "username": "笹田 直樹",
-                "email": "qyamagishi@example.net",
-                "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "users": [
-                {
-                    "id": 1,
-                    "unique_id": "TESTTEST",
-                    "username": "テスト太郎",
-                    "email": "testuser@example.com",
+                    "unique_id": "r6yOajgy3V",
+                    "username": "伊藤 知実",
+                    "email": "gaoyama@example.org",
                     "join_status": "deny",
                     "paid": null,
                     "plus_minus": null,
                     "ratio": null,
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:29.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 4,
-                    "unique_id": "VVEqwCFmMm",
-                    "username": "大垣 明美",
-                    "email": "tsuzuki@example.net",
-                    "join_status": "allow",
-                    "paid": 0,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 25,
-                    "unique_id": "m2nyQ6RXcw",
-                    "username": "渚 聡太郎",
-                    "email": "yoko.sasaki@example.com",
-                    "join_status": "allow",
-                    "paid": 1,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 43,
-                    "unique_id": "r5KOpf4Guk",
-                    "username": "中津川 学",
-                    "email": "kobayashi.jun@example.com",
-                    "join_status": "allow",
-                    "paid": 1,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                }
-            ],
-            "created_at": {
-                "date": "2019-02-12 11:38:16.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:16.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 30,
-            "name": "dignissimos",
-            "shop_id": 744,
-            "budget": 5598,
-            "actual": 33278,
-            "start_time": "2002-09-19 10:35:50",
-            "end_time": null,
-            "manager": {
-                "id": 8,
-                "unique_id": "sj9CrxDv5y",
-                "username": "笹田 直樹",
-                "email": "qyamagishi@example.net",
-                "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "users": [
-                {
-                    "id": 1,
-                    "unique_id": "TESTTEST",
-                    "username": "テスト太郎",
-                    "email": "testuser@example.com",
-                    "join_status": "allow",
-                    "paid": 1,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:29.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 4,
-                    "unique_id": "VVEqwCFmMm",
-                    "username": "大垣 明美",
-                    "email": "tsuzuki@example.net",
-                    "join_status": "allow",
-                    "paid": 1,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 25,
-                    "unique_id": "m2nyQ6RXcw",
-                    "username": "渚 聡太郎",
-                    "email": "yoko.sasaki@example.com",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 43,
-                    "unique_id": "r5KOpf4Guk",
-                    "username": "中津川 学",
-                    "email": "kobayashi.jun@example.com",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                }
-            ],
-            "created_at": {
-                "date": "2019-02-12 11:38:16.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:16.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 31,
-            "name": "dolore",
-            "shop_id": 791,
-            "budget": 23992,
-            "actual": 33413,
-            "start_time": "1982-11-07 11:32:19",
-            "end_time": null,
-            "manager": {
-                "id": 8,
-                "unique_id": "sj9CrxDv5y",
-                "username": "笹田 直樹",
-                "email": "qyamagishi@example.net",
-                "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "users": [
-                {
-                    "id": 1,
-                    "unique_id": "TESTTEST",
-                    "username": "テスト太郎",
-                    "email": "testuser@example.com",
-                    "join_status": "allow",
-                    "paid": 1,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:29.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 23,
-                    "unique_id": "8PhUSitNfQ",
-                    "username": "喜嶋 京助",
-                    "email": "matsumoto.atsushi@example.com",
-                    "join_status": "deny",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 25,
-                    "unique_id": "m2nyQ6RXcw",
-                    "username": "渚 聡太郎",
-                    "email": "yoko.sasaki@example.com",
-                    "join_status": "deny",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 35,
-                    "unique_id": "GqTJUlJdtO",
-                    "username": "桐山 零",
-                    "email": "kudo.naoko@example.net",
-                    "join_status": "deny",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                }
-            ],
-            "created_at": {
-                "date": "2019-02-12 11:38:16.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:16.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 79,
-            "name": "officia",
-            "shop_id": 521,
-            "budget": 21817,
-            "actual": 27457,
-            "start_time": "1991-08-02 23:44:13",
-            "end_time": null,
-            "manager": {
-                "id": 20,
-                "unique_id": "qhZNGgrFo0",
-                "username": "浜田 修平",
-                "email": "hkanou@example.com",
-                "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "users": [
-                {
-                    "id": 1,
-                    "unique_id": "TESTTEST",
-                    "username": "テスト太郎",
-                    "email": "testuser@example.com",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:29.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 43,
-                    "unique_id": "r5KOpf4Guk",
-                    "username": "中津川 学",
-                    "email": "kobayashi.jun@example.com",
-                    "join_status": "deny",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                }
-            ],
-            "created_at": {
-                "date": "2019-02-12 11:38:20.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:20.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 80,
-            "name": "eos",
-            "shop_id": 334,
-            "budget": 28633,
-            "actual": 5607,
-            "start_time": "1983-02-17 00:15:40",
-            "end_time": null,
-            "manager": {
-                "id": 20,
-                "unique_id": "qhZNGgrFo0",
-                "username": "浜田 修平",
-                "email": "hkanou@example.com",
-                "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "users": [
-                {
-                    "id": 1,
-                    "unique_id": "TESTTEST",
-                    "username": "テスト太郎",
-                    "email": "testuser@example.com",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:29.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 43,
-                    "unique_id": "r5KOpf4Guk",
-                    "username": "中津川 学",
-                    "email": "kobayashi.jun@example.com",
-                    "join_status": "allow",
-                    "paid": 0,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                }
-            ],
-            "created_at": {
-                "date": "2019-02-12 11:38:20.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:20.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 101,
-            "name": "recusandae",
-            "shop_id": 107,
-            "budget": 29382,
-            "actual": 19035,
-            "start_time": "2006-09-28 04:15:14",
-            "end_time": null,
-            "manager": {
-                "id": 26,
-                "unique_id": "dipBioJzPe",
-                "username": "山本 七夏",
-                "email": "taro.sakamoto@example.org",
-                "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "users": [
-                {
-                    "id": 1,
-                    "unique_id": "TESTTEST",
-                    "username": "テスト太郎",
-                    "email": "testuser@example.com",
-                    "join_status": "allow",
-                    "paid": 1,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:29.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 21,
-                    "unique_id": "psvxK7dnGK",
-                    "username": "石田 康弘",
-                    "email": "kazuya08@example.net",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 42,
-                    "unique_id": "qcDNefwVQS",
-                    "username": "井高 裕樹",
-                    "email": "tyoshimoto@example.com",
-                    "join_status": "allow",
-                    "paid": 1,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 47,
-                    "unique_id": "WHKVWQkAJP",
-                    "username": "加藤 千代",
-                    "email": "naoki.hirokawa@example.com",
-                    "join_status": "deny",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                }
-            ],
-            "created_at": {
-                "date": "2019-02-12 11:38:22.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:22.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 113,
-            "name": "est",
-            "shop_id": 425,
-            "budget": 1184,
-            "actual": 11322,
-            "start_time": "1981-07-07 05:28:29",
-            "end_time": null,
-            "manager": {
-                "id": 29,
-                "unique_id": "dr0S5DpLWe",
-                "username": "笹田 香織",
-                "email": "zekoda@example.com",
-                "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "users": [
-                {
-                    "id": 1,
-                    "unique_id": "TESTTEST",
-                    "username": "テスト太郎",
-                    "email": "testuser@example.com",
-                    "join_status": "deny",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:29.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 35,
-                    "unique_id": "GqTJUlJdtO",
-                    "username": "桐山 零",
-                    "email": "kudo.naoko@example.net",
-                    "join_status": "allow",
-                    "paid": 1,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 48,
-                    "unique_id": "HkIhxeItcW",
-                    "username": "伊藤 康弘",
-                    "email": "tidaka@example.org",
-                    "join_status": "deny",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                }
-            ],
-            "created_at": {
-                "date": "2019-02-12 11:38:22.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:22.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 114,
-            "name": "sed",
-            "shop_id": 644,
-            "budget": 15947,
-            "actual": 23918,
-            "start_time": "1972-10-14 19:56:01",
-            "end_time": null,
-            "manager": {
-                "id": 29,
-                "unique_id": "dr0S5DpLWe",
-                "username": "笹田 香織",
-                "email": "zekoda@example.com",
-                "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "users": [
-                {
-                    "id": 1,
-                    "unique_id": "TESTTEST",
-                    "username": "テスト太郎",
-                    "email": "testuser@example.com",
-                    "join_status": "allow",
-                    "paid": 0,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:29.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 27,
-                    "unique_id": "mjGFWN3KL3",
-                    "username": "渡辺 充",
-                    "email": "matsumoto.mikako@example.net",
-                    "join_status": "deny",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 48,
-                    "unique_id": "HkIhxeItcW",
-                    "username": "伊藤 康弘",
-                    "email": "tidaka@example.org",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                }
-            ],
-            "created_at": {
-                "date": "2019-02-12 11:38:22.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:22.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 121,
-            "name": "non",
-            "shop_id": 654,
-            "budget": 14497,
-            "actual": 36101,
-            "start_time": "1987-03-26 21:31:51",
-            "end_time": null,
-            "manager": {
-                "id": 31,
-                "unique_id": "ul8hcgL4y2",
-                "username": "宇野 智也",
-                "email": "xharada@example.com",
-                "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "users": [
-                {
-                    "id": 1,
-                    "unique_id": "TESTTEST",
-                    "username": "テスト太郎",
-                    "email": "testuser@example.com",
-                    "join_status": "deny",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:29.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 6,
-                    "unique_id": "RNgsHu8Oqe",
-                    "username": "廣川 健一",
-                    "email": "nanami21@example.com",
-                    "join_status": "allow",
-                    "paid": 0,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 13,
-                    "unique_id": "Al2oTaN9kZ",
-                    "username": "藤本 加奈",
-                    "email": "kobayashi.naoko@example.org",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 34,
-                    "unique_id": "I66agLsQag",
-                    "username": "若松 修平",
-                    "email": "tomoya27@example.com",
-                    "join_status": "allow",
-                    "paid": 0,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 },
                 {
                     "id": 40,
-                    "unique_id": "6Xk4Iqpx34",
-                    "username": "津田 裕太",
-                    "email": "qnakatsugawa@example.net",
+                    "unique_id": "oKN0phJrCl",
+                    "username": "笹田 洋介",
+                    "email": "satomi.yoshimoto@example.net",
                     "join_status": "deny",
                     "paid": null,
                     "plus_minus": null,
                     "ratio": null,
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                }
-            ],
-            "created_at": {
-                "date": "2019-02-12 11:38:23.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:23.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 122,
-            "name": "rem",
-            "shop_id": 758,
-            "budget": 2020,
-            "actual": 13904,
-            "start_time": "1977-10-17 12:38:41",
-            "end_time": null,
-            "manager": {
-                "id": 31,
-                "unique_id": "ul8hcgL4y2",
-                "username": "宇野 智也",
-                "email": "xharada@example.com",
-                "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "users": [
-                {
-                    "id": 1,
-                    "unique_id": "TESTTEST",
-                    "username": "テスト太郎",
-                    "email": "testuser@example.com",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:29.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 6,
-                    "unique_id": "RNgsHu8Oqe",
-                    "username": "廣川 健一",
-                    "email": "nanami21@example.com",
-                    "join_status": "allow",
-                    "paid": 0,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 8,
-                    "unique_id": "sj9CrxDv5y",
-                    "username": "笹田 直樹",
-                    "email": "qyamagishi@example.net",
-                    "join_status": "allow",
-                    "paid": 1,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 17,
-                    "unique_id": "eYwz5fDgRU",
-                    "username": "小林 太一",
-                    "email": "wakamatsu.miki@example.net",
-                    "join_status": "deny",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 24,
-                    "unique_id": "rXNGMMjPD4",
-                    "username": "佐々木 康弘",
-                    "email": "rkudo@example.org",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                }
-            ],
-            "created_at": {
-                "date": "2019-02-12 11:38:23.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:23.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 124,
-            "name": "voluptas",
-            "shop_id": 164,
-            "budget": 21257,
-            "actual": 48831,
-            "start_time": "1993-04-06 11:00:44",
-            "end_time": null,
-            "manager": {
-                "id": 31,
-                "unique_id": "ul8hcgL4y2",
-                "username": "宇野 智也",
-                "email": "xharada@example.com",
-                "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "users": [
-                {
-                    "id": 1,
-                    "unique_id": "TESTTEST",
-                    "username": "テスト太郎",
-                    "email": "testuser@example.com",
-                    "join_status": "deny",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:29.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 6,
-                    "unique_id": "RNgsHu8Oqe",
-                    "username": "廣川 健一",
-                    "email": "nanami21@example.com",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 13,
-                    "unique_id": "Al2oTaN9kZ",
-                    "username": "藤本 加奈",
-                    "email": "kobayashi.naoko@example.org",
-                    "join_status": "allow",
-                    "paid": 0,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 24,
-                    "unique_id": "rXNGMMjPD4",
-                    "username": "佐々木 康弘",
-                    "email": "rkudo@example.org",
-                    "join_status": "deny",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 28,
-                    "unique_id": "cRIfa4qKRX",
-                    "username": "中島 あすか",
-                    "email": "miyake.akira@example.org",
-                    "join_status": "deny",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                }
-            ],
-            "created_at": {
-                "date": "2019-02-12 11:38:23.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:23.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 141,
-            "name": "sequi",
-            "shop_id": 929,
-            "budget": 26380,
-            "actual": 20814,
-            "start_time": "2009-10-20 15:52:05",
-            "end_time": null,
-            "manager": {
-                "id": 36,
-                "unique_id": "uahhOAecaa",
-                "username": "喜嶋 里佳",
-                "email": "rika74@example.com",
-                "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "users": [
-                {
-                    "id": 1,
-                    "unique_id": "TESTTEST",
-                    "username": "テスト太郎",
-                    "email": "testuser@example.com",
-                    "join_status": "allow",
-                    "paid": 1,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:29.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 9,
-                    "unique_id": "CQcbcM01Ya",
-                    "username": "小林 真綾",
-                    "email": "ntanaka@example.com",
-                    "join_status": "deny",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 17,
-                    "unique_id": "eYwz5fDgRU",
-                    "username": "小林 太一",
-                    "email": "wakamatsu.miki@example.net",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 },
                 {
                     "id": 49,
-                    "unique_id": "C67b8DJT9F",
-                    "username": "藤本 康弘",
-                    "email": "utanaka@example.org",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                }
-            ],
-            "created_at": {
-                "date": "2019-02-12 11:38:24.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:24.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 142,
-            "name": "numquam",
-            "shop_id": 131,
-            "budget": 18056,
-            "actual": 40729,
-            "start_time": "1976-11-19 08:11:54",
-            "end_time": null,
-            "manager": {
-                "id": 36,
-                "unique_id": "uahhOAecaa",
-                "username": "喜嶋 里佳",
-                "email": "rika74@example.com",
-                "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "users": [
-                {
-                    "id": 1,
-                    "unique_id": "TESTTEST",
-                    "username": "テスト太郎",
-                    "email": "testuser@example.com",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:29.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 9,
-                    "unique_id": "CQcbcM01Ya",
-                    "username": "小林 真綾",
-                    "email": "ntanaka@example.com",
-                    "join_status": "allow",
-                    "paid": 1,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 12,
-                    "unique_id": "pCA3tfA6Tw",
-                    "username": "江古田 洋介",
-                    "email": "akemi.wakamatsu@example.com",
+                    "unique_id": "yz3LzCfRdM",
+                    "username": "佐藤 裕樹",
+                    "email": "byamamoto@example.com",
                     "join_status": "allow",
                     "paid": 0,
                     "plus_minus": null,
                     "ratio": null,
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 17,
-                    "unique_id": "eYwz5fDgRU",
-                    "username": "小林 太一",
-                    "email": "wakamatsu.miki@example.net",
-                    "join_status": "deny",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 }
             ],
             "created_at": {
-                "date": "2019-02-12 11:38:24.000000",
+                "date": "2019-02-12 11:53:23.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:24.000000",
+                "date": "2019-02-12 11:53:23.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "id": 153,
-            "name": "similique",
-            "shop_id": 346,
-            "budget": 26120,
-            "actual": 20263,
-            "start_time": "1973-02-20 14:16:58",
+            "id": 80,
+            "name": "et",
+            "shop_id": 169,
+            "budget": 2022,
+            "actual": 35449,
+            "start_time": "2003-07-26 13:59:03",
             "end_time": null,
             "manager": {
-                "id": 39,
-                "unique_id": "OT67Yurhod",
-                "username": "木村 学",
-                "email": "tomoya.suzuki@example.net",
+                "id": 20,
+                "unique_id": "a1JDNraorH",
+                "username": "藤本 花子",
+                "email": "gidaka@example.org",
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "users": [
-                {
-                    "id": 1,
-                    "unique_id": "TESTTEST",
-                    "username": "テスト太郎",
-                    "email": "testuser@example.com",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:29.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 18,
-                    "unique_id": "yQPeUOsqbF",
-                    "username": "若松 明美",
-                    "email": "rei.yamaguchi@example.net",
-                    "join_status": "deny",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 30,
-                    "unique_id": "ijMWosMseZ",
-                    "username": "杉山 加奈",
-                    "email": "asuka.hirokawa@example.com",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 46,
-                    "unique_id": "OPwOdqde9D",
-                    "username": "小泉 太一",
-                    "email": "hmatsumoto@example.com",
-                    "join_status": "deny",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                }
-            ],
-            "created_at": {
-                "date": "2019-02-12 11:38:25.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:25.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 155,
-            "name": "aut",
-            "shop_id": 465,
-            "budget": 28829,
-            "actual": 3250,
-            "start_time": "1998-03-10 04:24:14",
-            "end_time": null,
-            "manager": {
-                "id": 39,
-                "unique_id": "OT67Yurhod",
-                "username": "木村 学",
-                "email": "tomoya.suzuki@example.net",
-                "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "users": [
-                {
-                    "id": 1,
-                    "unique_id": "TESTTEST",
-                    "username": "テスト太郎",
-                    "email": "testuser@example.com",
-                    "join_status": "deny",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:29.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 21,
-                    "unique_id": "psvxK7dnGK",
-                    "username": "石田 康弘",
-                    "email": "kazuya08@example.net",
-                    "join_status": "deny",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 27,
-                    "unique_id": "mjGFWN3KL3",
-                    "username": "渡辺 充",
-                    "email": "matsumoto.mikako@example.net",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 46,
-                    "unique_id": "OPwOdqde9D",
-                    "username": "小泉 太一",
-                    "email": "hmatsumoto@example.com",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                }
-            ],
-            "created_at": {
-                "date": "2019-02-12 11:38:25.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:25.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 173,
-            "name": "pariatur",
-            "shop_id": 279,
-            "budget": 1804,
-            "actual": 12793,
-            "start_time": "1999-09-17 20:58:35",
-            "end_time": null,
-            "manager": {
-                "id": 44,
-                "unique_id": "pZN4JrMGzV",
-                "username": "中島 花子",
-                "email": "cmatsumoto@example.org",
-                "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "users": [
-                {
-                    "id": 1,
-                    "unique_id": "TESTTEST",
-                    "username": "テスト太郎",
-                    "email": "testuser@example.com",
-                    "join_status": "deny",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:29.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 14,
-                    "unique_id": "hXCAIpeXzG",
-                    "username": "笹田 さゆり",
-                    "email": "yui82@example.org",
-                    "join_status": "wait",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 20,
-                    "unique_id": "qhZNGgrFo0",
-                    "username": "浜田 修平",
-                    "email": "hkanou@example.com",
-                    "join_status": "deny",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 40,
-                    "unique_id": "6Xk4Iqpx34",
-                    "username": "津田 裕太",
-                    "email": "qnakatsugawa@example.net",
-                    "join_status": "allow",
-                    "paid": 1,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                }
-            ],
-            "created_at": {
-                "date": "2019-02-12 11:38:27.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-12 11:38:27.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "id": 175,
-            "name": "rerum",
-            "shop_id": 115,
-            "budget": 14350,
-            "actual": 26490,
-            "start_time": "1978-10-07 01:36:01",
-            "end_time": null,
-            "manager": {
-                "id": 44,
-                "unique_id": "pZN4JrMGzV",
-                "username": "中島 花子",
-                "email": "cmatsumoto@example.org",
-                "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
@@ -7146,108 +5758,148 @@ fetch(url, {
                     "plus_minus": null,
                     "ratio": null,
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:29.000000",
+                        "date": "2019-02-12 11:53:31.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 },
                 {
-                    "id": 3,
-                    "unique_id": "ksHY1RoJZr",
-                    "username": "浜田 加奈",
-                    "email": "hamada.rei@example.com",
-                    "join_status": "deny",
-                    "paid": null,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 34,
-                    "unique_id": "I66agLsQag",
-                    "username": "若松 修平",
-                    "email": "tomoya27@example.com",
+                    "id": 4,
+                    "unique_id": "VKOvlE6Idq",
+                    "username": "木村 篤司",
+                    "email": "rei.sasaki@example.net",
                     "join_status": "allow",
                     "paid": 1,
                     "plus_minus": null,
                     "ratio": null,
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 },
                 {
                     "id": 35,
-                    "unique_id": "GqTJUlJdtO",
-                    "username": "桐山 零",
-                    "email": "kudo.naoko@example.net",
+                    "unique_id": "JNMreqoQoe",
+                    "username": "中島 舞",
+                    "email": "matsumoto.ryosuke@example.com",
+                    "join_status": "allow",
+                    "paid": 1,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 39,
+                    "unique_id": "r6yOajgy3V",
+                    "username": "伊藤 知実",
+                    "email": "gaoyama@example.org",
                     "join_status": "wait",
                     "paid": null,
                     "plus_minus": null,
                     "ratio": null,
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 42,
+                    "unique_id": "zRrvLBt559",
+                    "username": "宮沢 明美",
+                    "email": "ksasaki@example.org",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 46,
+                    "unique_id": "VYJ7UofGLL",
+                    "username": "山岸 稔",
+                    "email": "kenichi.yoshimoto@example.org",
+                    "join_status": "allow",
+                    "paid": 1,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 }
             ],
             "created_at": {
-                "date": "2019-02-12 11:38:27.000000",
+                "date": "2019-02-12 11:53:23.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:27.000000",
+                "date": "2019-02-12 11:53:23.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "id": 176,
-            "name": "quisquam",
-            "shop_id": 126,
-            "budget": 6137,
-            "actual": 39221,
-            "start_time": "1979-02-12 09:30:57",
+            "id": 118,
+            "name": "minus",
+            "shop_id": 210,
+            "budget": 18153,
+            "actual": 11084,
+            "start_time": "2005-09-01 17:30:20",
             "end_time": null,
             "manager": {
-                "id": 44,
-                "unique_id": "pZN4JrMGzV",
-                "username": "中島 花子",
-                "email": "cmatsumoto@example.org",
+                "id": 30,
+                "unique_id": "O5m2WgG6bL",
+                "username": "杉山 涼平",
+                "email": "tomoya.yamada@example.org",
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
@@ -7263,84 +5915,1551 @@ fetch(url, {
                     "plus_minus": null,
                     "ratio": null,
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:29.000000",
+                        "date": "2019-02-12 11:53:31.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 },
                 {
-                    "id": 3,
-                    "unique_id": "ksHY1RoJZr",
-                    "username": "浜田 加奈",
-                    "email": "hamada.rei@example.com",
-                    "join_status": "allow",
-                    "paid": 1,
-                    "plus_minus": null,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                },
-                {
-                    "id": 34,
-                    "unique_id": "I66agLsQag",
-                    "username": "若松 修平",
-                    "email": "tomoya27@example.com",
+                    "id": 11,
+                    "unique_id": "zAJpTM7hQV",
+                    "username": "松本 裕樹",
+                    "email": "youichi.takahashi@example.com",
                     "join_status": "deny",
                     "paid": null,
                     "plus_minus": null,
                     "ratio": null,
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 },
                 {
-                    "id": 38,
-                    "unique_id": "cjqc2jmIsb",
-                    "username": "浜田 学",
-                    "email": "charada@example.net",
-                    "join_status": "deny",
+                    "id": 16,
+                    "unique_id": "ayhnVR9zmW",
+                    "username": "山本 香織",
+                    "email": "taichi43@example.net",
+                    "join_status": "wait",
                     "paid": null,
                     "plus_minus": null,
                     "ratio": null,
                     "created_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     },
                     "updated_at": {
-                        "date": "2019-02-12 11:38:14.000000",
+                        "date": "2019-02-12 11:53:17.000000",
                         "timezone_type": 3,
                         "timezone": "UTC"
                     }
                 }
             ],
             "created_at": {
-                "date": "2019-02-12 11:38:27.000000",
+                "date": "2019-02-12 11:53:26.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:27.000000",
+                "date": "2019-02-12 11:53:26.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 120,
+            "name": "quaerat",
+            "shop_id": 385,
+            "budget": 22226,
+            "actual": 32791,
+            "start_time": "2004-01-07 03:59:30",
+            "end_time": null,
+            "manager": {
+                "id": 30,
+                "unique_id": "O5m2WgG6bL",
+                "username": "杉山 涼平",
+                "email": "tomoya.yamada@example.org",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [
+                {
+                    "id": 1,
+                    "unique_id": "TESTTEST",
+                    "username": "テスト太郎",
+                    "email": "testuser@example.com",
+                    "join_status": "allow",
+                    "paid": 1,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:31.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 5,
+                    "unique_id": "HqbgS4MaAv",
+                    "username": "青山 春香",
+                    "email": "soutaro59@example.com",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 48,
+                    "unique_id": "3m0Dwe5SVl",
+                    "username": "江古田 晃",
+                    "email": "atsushi.ito@example.org",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-12 11:53:26.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 11:53:26.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 138,
+            "name": "animi",
+            "shop_id": 576,
+            "budget": 16457,
+            "actual": 10067,
+            "start_time": "1994-02-14 04:24:55",
+            "end_time": null,
+            "manager": {
+                "id": 35,
+                "unique_id": "JNMreqoQoe",
+                "username": "中島 舞",
+                "email": "matsumoto.ryosuke@example.com",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [
+                {
+                    "id": 1,
+                    "unique_id": "TESTTEST",
+                    "username": "テスト太郎",
+                    "email": "testuser@example.com",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:31.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 17,
+                    "unique_id": "OpQltmhLkC",
+                    "username": "西之園 稔",
+                    "email": "yui.nakamura@example.net",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 28,
+                    "unique_id": "yma2oUqj4c",
+                    "username": "木村 洋介",
+                    "email": "taro.matsumoto@example.net",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 32,
+                    "unique_id": "oWjdaSKE82",
+                    "username": "佐藤 桃子",
+                    "email": "tkoizumi@example.org",
+                    "join_status": "allow",
+                    "paid": 0,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 49,
+                    "unique_id": "yz3LzCfRdM",
+                    "username": "佐藤 裕樹",
+                    "email": "byamamoto@example.com",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-12 11:53:27.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 11:53:27.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 140,
+            "name": "aperiam",
+            "shop_id": 944,
+            "budget": 2634,
+            "actual": 29052,
+            "start_time": "1981-06-10 18:02:38",
+            "end_time": null,
+            "manager": {
+                "id": 35,
+                "unique_id": "JNMreqoQoe",
+                "username": "中島 舞",
+                "email": "matsumoto.ryosuke@example.com",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [
+                {
+                    "id": 1,
+                    "unique_id": "TESTTEST",
+                    "username": "テスト太郎",
+                    "email": "testuser@example.com",
+                    "join_status": "allow",
+                    "paid": 0,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:31.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 14,
+                    "unique_id": "yjk8dVSnGd",
+                    "username": "渚 淳",
+                    "email": "hiroshi65@example.com",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 28,
+                    "unique_id": "yma2oUqj4c",
+                    "username": "木村 洋介",
+                    "email": "taro.matsumoto@example.net",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 32,
+                    "unique_id": "oWjdaSKE82",
+                    "username": "佐藤 桃子",
+                    "email": "tkoizumi@example.org",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 49,
+                    "unique_id": "yz3LzCfRdM",
+                    "username": "佐藤 裕樹",
+                    "email": "byamamoto@example.com",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-12 11:53:27.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 11:53:27.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 141,
+            "name": "vero",
+            "shop_id": 725,
+            "budget": 8410,
+            "actual": 39561,
+            "start_time": "1982-04-01 02:52:12",
+            "end_time": null,
+            "manager": {
+                "id": 36,
+                "unique_id": "DvooOnEv4q",
+                "username": "宮沢 裕樹",
+                "email": "yui14@example.com",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [
+                {
+                    "id": 1,
+                    "unique_id": "TESTTEST",
+                    "username": "テスト太郎",
+                    "email": "testuser@example.com",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:31.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 7,
+                    "unique_id": "5atRLO3NAr",
+                    "username": "浜田 直樹",
+                    "email": "youichi94@example.com",
+                    "join_status": "allow",
+                    "paid": 0,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 9,
+                    "unique_id": "1SnSkyv1Yn",
+                    "username": "伊藤 充",
+                    "email": "amatsumoto@example.com",
+                    "join_status": "allow",
+                    "paid": 1,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 14,
+                    "unique_id": "yjk8dVSnGd",
+                    "username": "渚 淳",
+                    "email": "hiroshi65@example.com",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 15,
+                    "unique_id": "cVlVl11lIl",
+                    "username": "小泉 稔",
+                    "email": "nakatsugawa.kumiko@example.com",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 37,
+                    "unique_id": "WxBuq0cHL2",
+                    "username": "青山 洋介",
+                    "email": "mitsuru.nakamura@example.com",
+                    "join_status": "allow",
+                    "paid": 1,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-12 11:53:27.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 11:53:27.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 142,
+            "name": "sunt",
+            "shop_id": 276,
+            "budget": 29056,
+            "actual": 43328,
+            "start_time": "1974-02-07 00:44:44",
+            "end_time": null,
+            "manager": {
+                "id": 36,
+                "unique_id": "DvooOnEv4q",
+                "username": "宮沢 裕樹",
+                "email": "yui14@example.com",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [
+                {
+                    "id": 1,
+                    "unique_id": "TESTTEST",
+                    "username": "テスト太郎",
+                    "email": "testuser@example.com",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:31.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 7,
+                    "unique_id": "5atRLO3NAr",
+                    "username": "浜田 直樹",
+                    "email": "youichi94@example.com",
+                    "join_status": "allow",
+                    "paid": 1,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 14,
+                    "unique_id": "yjk8dVSnGd",
+                    "username": "渚 淳",
+                    "email": "hiroshi65@example.com",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 28,
+                    "unique_id": "yma2oUqj4c",
+                    "username": "木村 洋介",
+                    "email": "taro.matsumoto@example.net",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 35,
+                    "unique_id": "JNMreqoQoe",
+                    "username": "中島 舞",
+                    "email": "matsumoto.ryosuke@example.com",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 43,
+                    "unique_id": "D8QjdHY4Fz",
+                    "username": "井高 翼",
+                    "email": "tsubasa.saito@example.com",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-12 11:53:27.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 11:53:27.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 144,
+            "name": "perspiciatis",
+            "shop_id": 946,
+            "budget": 19178,
+            "actual": 37417,
+            "start_time": "1997-12-20 10:01:59",
+            "end_time": null,
+            "manager": {
+                "id": 36,
+                "unique_id": "DvooOnEv4q",
+                "username": "宮沢 裕樹",
+                "email": "yui14@example.com",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [
+                {
+                    "id": 1,
+                    "unique_id": "TESTTEST",
+                    "username": "テスト太郎",
+                    "email": "testuser@example.com",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:31.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 9,
+                    "unique_id": "1SnSkyv1Yn",
+                    "username": "伊藤 充",
+                    "email": "amatsumoto@example.com",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 15,
+                    "unique_id": "cVlVl11lIl",
+                    "username": "小泉 稔",
+                    "email": "nakatsugawa.kumiko@example.com",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 31,
+                    "unique_id": "zK4E99BOfa",
+                    "username": "山岸 千代",
+                    "email": "sasaki.yui@example.org",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 35,
+                    "unique_id": "JNMreqoQoe",
+                    "username": "中島 舞",
+                    "email": "matsumoto.ryosuke@example.com",
+                    "join_status": "allow",
+                    "paid": 0,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 43,
+                    "unique_id": "D8QjdHY4Fz",
+                    "username": "井高 翼",
+                    "email": "tsubasa.saito@example.com",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-12 11:53:27.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 11:53:27.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 150,
+            "name": "impedit",
+            "shop_id": 244,
+            "budget": 20779,
+            "actual": 7365,
+            "start_time": "1998-07-05 15:26:25",
+            "end_time": null,
+            "manager": {
+                "id": 38,
+                "unique_id": "X8wZY89iBW",
+                "username": "青山 裕太",
+                "email": "minoru.kudo@example.net",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [
+                {
+                    "id": 1,
+                    "unique_id": "TESTTEST",
+                    "username": "テスト太郎",
+                    "email": "testuser@example.com",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:31.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 32,
+                    "unique_id": "oWjdaSKE82",
+                    "username": "佐藤 桃子",
+                    "email": "tkoizumi@example.org",
+                    "join_status": "allow",
+                    "paid": 1,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 44,
+                    "unique_id": "loroKDDaIl",
+                    "username": "石田 七夏",
+                    "email": "sasaki.yosuke@example.org",
+                    "join_status": "allow",
+                    "paid": 0,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 49,
+                    "unique_id": "yz3LzCfRdM",
+                    "username": "佐藤 裕樹",
+                    "email": "byamamoto@example.com",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-12 11:53:28.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 11:53:28.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 152,
+            "name": "perspiciatis",
+            "shop_id": 540,
+            "budget": 26732,
+            "actual": 34149,
+            "start_time": "2010-05-14 06:17:14",
+            "end_time": null,
+            "manager": {
+                "id": 38,
+                "unique_id": "X8wZY89iBW",
+                "username": "青山 裕太",
+                "email": "minoru.kudo@example.net",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [
+                {
+                    "id": 1,
+                    "unique_id": "TESTTEST",
+                    "username": "テスト太郎",
+                    "email": "testuser@example.com",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:31.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 27,
+                    "unique_id": "iyhgHqrlye",
+                    "username": "浜田 真綾",
+                    "email": "kondo.hideki@example.net",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 32,
+                    "unique_id": "oWjdaSKE82",
+                    "username": "佐藤 桃子",
+                    "email": "tkoizumi@example.org",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 40,
+                    "unique_id": "oKN0phJrCl",
+                    "username": "笹田 洋介",
+                    "email": "satomi.yoshimoto@example.net",
+                    "join_status": "allow",
+                    "paid": 1,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-12 11:53:28.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 11:53:28.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 181,
+            "name": "quibusdam",
+            "shop_id": 931,
+            "budget": 11698,
+            "actual": 2297,
+            "start_time": "2000-04-12 03:51:57",
+            "end_time": null,
+            "manager": {
+                "id": 46,
+                "unique_id": "VYJ7UofGLL",
+                "username": "山岸 稔",
+                "email": "kenichi.yoshimoto@example.org",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [
+                {
+                    "id": 1,
+                    "unique_id": "TESTTEST",
+                    "username": "テスト太郎",
+                    "email": "testuser@example.com",
+                    "join_status": "allow",
+                    "paid": 1,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:31.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 4,
+                    "unique_id": "VKOvlE6Idq",
+                    "username": "木村 篤司",
+                    "email": "rei.sasaki@example.net",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 20,
+                    "unique_id": "a1JDNraorH",
+                    "username": "藤本 花子",
+                    "email": "gidaka@example.org",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 38,
+                    "unique_id": "X8wZY89iBW",
+                    "username": "青山 裕太",
+                    "email": "minoru.kudo@example.net",
+                    "join_status": "allow",
+                    "paid": 1,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 40,
+                    "unique_id": "oKN0phJrCl",
+                    "username": "笹田 洋介",
+                    "email": "satomi.yoshimoto@example.net",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-12 11:53:30.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 11:53:30.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 182,
+            "name": "et",
+            "shop_id": 771,
+            "budget": 23762,
+            "actual": 30161,
+            "start_time": "2003-12-10 12:02:37",
+            "end_time": null,
+            "manager": {
+                "id": 46,
+                "unique_id": "VYJ7UofGLL",
+                "username": "山岸 稔",
+                "email": "kenichi.yoshimoto@example.org",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [
+                {
+                    "id": 1,
+                    "unique_id": "TESTTEST",
+                    "username": "テスト太郎",
+                    "email": "testuser@example.com",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:31.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 11,
+                    "unique_id": "zAJpTM7hQV",
+                    "username": "松本 裕樹",
+                    "email": "youichi.takahashi@example.com",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 18,
+                    "unique_id": "YFOohxSn7a",
+                    "username": "渚 聡太郎",
+                    "email": "kmiyazawa@example.com",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 19,
+                    "unique_id": "cSsgZ3tVd2",
+                    "username": "井高 裕太",
+                    "email": "akemi.kato@example.com",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 20,
+                    "unique_id": "a1JDNraorH",
+                    "username": "藤本 花子",
+                    "email": "gidaka@example.org",
+                    "join_status": "deny",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-12 11:53:30.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 11:53:30.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 183,
+            "name": "aut",
+            "shop_id": 390,
+            "budget": 4231,
+            "actual": 13076,
+            "start_time": "1991-11-15 20:47:56",
+            "end_time": null,
+            "manager": {
+                "id": 46,
+                "unique_id": "VYJ7UofGLL",
+                "username": "山岸 稔",
+                "email": "kenichi.yoshimoto@example.org",
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [
+                {
+                    "id": 1,
+                    "unique_id": "TESTTEST",
+                    "username": "テスト太郎",
+                    "email": "testuser@example.com",
+                    "join_status": "wait",
+                    "paid": null,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:31.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 11,
+                    "unique_id": "zAJpTM7hQV",
+                    "username": "松本 裕樹",
+                    "email": "youichi.takahashi@example.com",
+                    "join_status": "allow",
+                    "paid": 0,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 18,
+                    "unique_id": "YFOohxSn7a",
+                    "username": "渚 聡太郎",
+                    "email": "kmiyazawa@example.com",
+                    "join_status": "allow",
+                    "paid": 0,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 30,
+                    "unique_id": "O5m2WgG6bL",
+                    "username": "杉山 涼平",
+                    "email": "tomoya.yamada@example.org",
+                    "join_status": "allow",
+                    "paid": 0,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                },
+                {
+                    "id": 38,
+                    "unique_id": "X8wZY89iBW",
+                    "username": "青山 裕太",
+                    "email": "minoru.kudo@example.net",
+                    "join_status": "allow",
+                    "paid": 0,
+                    "plus_minus": null,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-12 11:53:17.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-12 11:53:30.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-12 11:53:30.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -7368,7 +7487,7 @@ curl -X GET -G "http://localhost/api/guest/sessions/{session}"
 const url = new URL("http://localhost/api/guest/sessions/{session}");
 
     let params = {
-            "session": "oK1HnUpnvqgjpU9d",
+            "session": "Ln4dkMsDPRvUZfvo",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -7390,25 +7509,25 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 31,
-        "name": "dolore",
-        "shop_id": 791,
-        "budget": 23992,
-        "actual": 33413,
-        "start_time": "1982-11-07 11:32:19",
+        "id": 152,
+        "name": "perspiciatis",
+        "shop_id": 540,
+        "budget": 26732,
+        "actual": 34149,
+        "start_time": "2010-05-14 06:17:14",
         "end_time": null,
         "manager": {
-            "id": 8,
-            "unique_id": "sj9CrxDv5y",
-            "username": "笹田 直樹",
-            "email": "qyamagishi@example.net",
+            "id": 38,
+            "unique_id": "X8wZY89iBW",
+            "username": "青山 裕太",
+            "email": "minoru.kudo@example.net",
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -7419,89 +7538,89 @@ fetch(url, {
                 "unique_id": "TESTTEST",
                 "username": "テスト太郎",
                 "email": "testuser@example.com",
+                "join_status": "wait",
+                "paid": null,
+                "plus_minus": null,
+                "ratio": null,
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:31.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            {
+                "id": 27,
+                "unique_id": "iyhgHqrlye",
+                "username": "浜田 真綾",
+                "email": "kondo.hideki@example.net",
+                "join_status": "deny",
+                "paid": null,
+                "plus_minus": null,
+                "ratio": null,
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            {
+                "id": 32,
+                "unique_id": "oWjdaSKE82",
+                "username": "佐藤 桃子",
+                "email": "tkoizumi@example.org",
+                "join_status": "wait",
+                "paid": null,
+                "plus_minus": null,
+                "ratio": null,
+                "created_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-12 11:53:17.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            {
+                "id": 40,
+                "unique_id": "oKN0phJrCl",
+                "username": "笹田 洋介",
+                "email": "satomi.yoshimoto@example.net",
                 "join_status": "allow",
                 "paid": 1,
                 "plus_minus": null,
                 "ratio": null,
                 "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 },
                 "updated_at": {
-                    "date": "2019-02-12 11:38:29.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            {
-                "id": 23,
-                "unique_id": "8PhUSitNfQ",
-                "username": "喜嶋 京助",
-                "email": "matsumoto.atsushi@example.com",
-                "join_status": "deny",
-                "paid": null,
-                "plus_minus": null,
-                "ratio": null,
-                "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            {
-                "id": 25,
-                "unique_id": "m2nyQ6RXcw",
-                "username": "渚 聡太郎",
-                "email": "yoko.sasaki@example.com",
-                "join_status": "deny",
-                "paid": null,
-                "plus_minus": null,
-                "ratio": null,
-                "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            {
-                "id": 35,
-                "unique_id": "GqTJUlJdtO",
-                "username": "桐山 零",
-                "email": "kudo.naoko@example.net",
-                "join_status": "deny",
-                "paid": null,
-                "plus_minus": null,
-                "ratio": null,
-                "created_at": {
-                    "date": "2019-02-12 11:38:14.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-12 11:38:14.000000",
+                    "date": "2019-02-12 11:53:17.000000",
                     "timezone_type": 3,
                     "timezone": "UTC"
                 }
             }
         ],
         "created_at": {
-            "date": "2019-02-12 11:38:16.000000",
+            "date": "2019-02-12 11:53:28.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-12 11:38:16.000000",
+            "date": "2019-02-12 11:53:28.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -7526,11 +7645,11 @@ Parameter | Status | Description
 > Example request:
 
 ```bash
-curl -X PUT "http://localhost/api/profile/update"     -d "unique_id"="kg7o1hPKDZWYrTht" \
-    -d "username"="eLp4Wb7s64VwDAvL" \
-    -d "password"="gLhDJYiEzGVWT3bF" \
+curl -X PUT "http://localhost/api/profile/update"     -d "unique_id"="aFGdW5o5ReRSSmNQ" \
+    -d "username"="qAE1yb0ABMGZN9BC" \
+    -d "password"="QLIFzojiBry46GT6" \
     -d "unique_id_search_flag"="false" \
-    -d "username_search_flag"="1" 
+    -d "username_search_flag"="false" 
 ```
 
 ```javascript
@@ -7542,11 +7661,11 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "unique_id": "kg7o1hPKDZWYrTht",
-    "username": "eLp4Wb7s64VwDAvL",
-    "password": "gLhDJYiEzGVWT3bF",
+    "unique_id": "aFGdW5o5ReRSSmNQ",
+    "username": "qAE1yb0ABMGZN9BC",
+    "password": "QLIFzojiBry46GT6",
     "unique_id_search_flag": "",
-    "username_search_flag": "1",
+    "username_search_flag": "",
 })
 
 fetch(url, {
@@ -7568,12 +7687,12 @@ fetch(url, {
         "username": "AAAAAAAAAAA",
         "email": "new@new.com",
         "created_at": {
-            "date": "2019-02-12 11:38:14.000000",
+            "date": "2019-02-12 11:53:17.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-12 11:39:22.000000",
+            "date": "2019-02-12 13:50:44.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -7602,7 +7721,7 @@ Parameter | Type | Status | Description
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/search/forward_by_username"     -d "username"="YzZHvegavQCVjsJ8" 
+curl -X POST "http://localhost/api/search/forward_by_username"     -d "username"="uGLH1YytvmQlg8Ua" 
 ```
 
 ```javascript
@@ -7614,7 +7733,7 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "username": "YzZHvegavQCVjsJ8",
+    "username": "uGLH1YytvmQlg8Ua",
 })
 
 fetch(url, {
@@ -7651,7 +7770,7 @@ Parameter | Type | Status | Description
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/search/perfect_by_unique_id"     -d "unique_id"="WlKauVCNz8RgashF" 
+curl -X POST "http://localhost/api/search/perfect_by_unique_id"     -d "unique_id"="3zOSO6rKrUHpcIH6" 
 ```
 
 ```javascript
@@ -7663,7 +7782,7 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "unique_id": "WlKauVCNz8RgashF",
+    "unique_id": "3zOSO6rKrUHpcIH6",
 })
 
 fetch(url, {
@@ -7685,12 +7804,12 @@ fetch(url, {
         "username": "テスト太郎",
         "email": "testuser@example.com",
         "created_at": {
-            "date": "2019-02-12 11:38:14.000000",
+            "date": "2019-02-12 11:53:17.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-12 11:38:29.000000",
+            "date": "2019-02-12 11:53:31.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -7715,7 +7834,7 @@ Parameter | Type | Status | Description
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/search/forward_by_unique_id"     -d "unique_id"="qVynJkaezTPmf25G" 
+curl -X POST "http://localhost/api/search/forward_by_unique_id"     -d "unique_id"="NmdIhD15MTUHIzTq" 
 ```
 
 ```javascript
@@ -7727,7 +7846,7 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "unique_id": "qVynJkaezTPmf25G",
+    "unique_id": "NmdIhD15MTUHIzTq",
 })
 
 fetch(url, {
@@ -7750,12 +7869,12 @@ fetch(url, {
             "username": "テスト太郎",
             "email": "testuser@example.com",
             "created_at": {
-                "date": "2019-02-12 11:38:14.000000",
+                "date": "2019-02-12 11:53:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-12 11:38:29.000000",
+                "date": "2019-02-12 11:53:31.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
