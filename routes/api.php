@@ -26,6 +26,9 @@ Route::middleware('JWT')->group(function () {
     Route::apiResource('groups', 'GroupController')->only(['show', 'update', 'destroy'])->middleware('can:has,group');
     Route::apiResource('groups/{group}/users', 'GroupUserController', ['as' => 'groups'])->middleware('can:has,group');
 
+    Route::apiResource('default_settings', 'DefaultSettingController')->only(['index', 'store']);
+    Route::apiResource('default_settings', 'DefaultSettingController')->only(['show', 'update', 'destroy'])->middleware('can:has,default_setting');
+
     Route::apiResource('sessions', 'SessionController')->only(['index', 'store']);
     Route::apiResource('sessions', 'SessionController')->only(['show', 'update', 'destroy'])->middleware('can:has,session');
     Route::apiResource('sessions/{session}/users', 'SessionUserController', ['as' => 'sessions'])->middleware('can:has,session');

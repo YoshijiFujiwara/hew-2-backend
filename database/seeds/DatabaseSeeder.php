@@ -58,6 +58,12 @@ class DatabaseSeeder extends Seeder
                         ]);
                     }
                 });
+
+            $defaultSetting = new \App\Model\DefaultSetting;
+            $defaultSetting->name = str_random(7);
+            $defaultSetting->timer =  \Carbon\Carbon::createFromTime(1,0,0);
+            $defaultSetting->group()->associate($u->managedGroups()->get()->random());
+            $u->managedDefaultSettings()->save($defaultSetting);
         });
 
         // id 1番を固定のユーザーとする
