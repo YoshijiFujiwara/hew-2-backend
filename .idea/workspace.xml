@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc97d55e-750a-4d18-8aca-a7e761cc613c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/DefaultSettingStoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/DefaultSettingStoreRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FriendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FriendController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Attribute/AttributeRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Attribute/AttributeRepositoryInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Repository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/RepositoryInterface.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/responses/attributes.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/attributes.index.200.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/responses/attributes.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/attributes.show.200.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/responses/attributes.store.201.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/attributes.store.201.json" afterDir="false" />
@@ -13,10 +18,13 @@
       <change beforePath="$PROJECT_DIR$/storage/responses/auth.register.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/auth.register.200.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/responses/default_settings.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/default_settings.index.200.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/responses/default_settings.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/default_settings.show.200.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/responses/default_settings.store.201.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/default_settings.store.201.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/responses/default_settings.update.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/default_settings.update.200.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/responses/friends.blocked_users.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.blocked_users.200.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/responses/friends.friend_request_users.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.friend_request_users.200.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/responses/friends.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.index.200.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/responses/friends.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.show.200.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/responses/friends.show.403.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.show.403.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/responses/friends.store.201.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.store.201.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/responses/friends.waiting_friends.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.waiting_friends.200.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/responses/groups.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/groups.index.200.json" afterDir="false" />
@@ -38,6 +46,7 @@
       <change beforePath="$PROJECT_DIR$/storage/responses/sessions.users.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.users.show.200.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/responses/sessions.users.store.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.users.store.200.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/responses/sessions.users.update.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.users.update.200.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +72,7 @@
           <entry key="html" value="3" />
           <entry key="json" value="3" />
           <entry key="log" value="3" />
-          <entry key="php" value="73" />
+          <entry key="php" value="75" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -71,113 +80,292 @@
           <entry key="HTML" value="3" />
           <entry key="JSON" value="3" />
           <entry key="Log" value="3" />
-          <entry key="PHP" value="73" />
+          <entry key="PHP" value="75" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="3046" />
+          <entry key="php" value="3120" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="3046" />
+          <entry key="PHP" value="3120" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FriendController.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DefaultSettingController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="58" column="34" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
-              <folding>
-                <element signature="e#40#89#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/Unit/DefaultSettingTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="34" lean-forward="true" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
-              <folding>
-                <element signature="e#30#43#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Requests/FriendStoreRequest.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Requests/ProfileUpdateRequest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="29" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Requests/GroupStoreRequest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="19" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Requests/DefaultSettingStoreRequest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/docs/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AuthController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.66182226">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AttributeController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="215">
+                  <caret line="39" column="101" selection-start-line="39" selection-start-column="101" selection-end-line="39" selection-end-column="101" />
+                  <folding>
+                    <element signature="e#40#81#0#PHP" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/docs/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="300">
+                  <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+                  <folding>
+                    <element signature="e#2493#2497#0" expanded="true" />
+                    <element signature="e#2531#2535#0" expanded="true" />
+                    <element signature="e#4537#4541#0" expanded="true" />
+                    <element signature="e#4575#4579#0" expanded="true" />
+                    <element signature="e#6156#6160#0" expanded="true" />
+                    <element signature="e#6194#6198#0" expanded="true" />
+                    <element signature="e#6989#6993#0" expanded="true" />
+                    <element signature="e#7027#7031#0" expanded="true" />
+                    <element signature="e#8168#8172#0" expanded="true" />
+                    <element signature="e#8206#8210#0" expanded="true" />
+                    <element signature="e#9236#9240#0" expanded="true" />
+                    <element signature="e#9274#9278#0" expanded="true" />
+                    <element signature="e#13021#13025#0" expanded="true" />
+                    <element signature="e#13059#13063#0" expanded="true" />
+                    <element signature="e#14618#14622#0" expanded="true" />
+                    <element signature="e#14656#14660#0" expanded="true" />
+                    <element signature="e#19887#19891#0" expanded="true" />
+                    <element signature="e#19925#19929#0" expanded="true" />
+                    <element signature="e#21290#21294#0" expanded="true" />
+                    <element signature="e#21328#21332#0" expanded="true" />
+                    <element signature="e#25501#25505#0" expanded="true" />
+                    <element signature="e#25539#25543#0" expanded="true" />
+                    <element signature="e#26803#26807#0" expanded="true" />
+                    <element signature="e#26841#26845#0" expanded="true" />
+                    <element signature="e#27963#27967#0" expanded="true" />
+                    <element signature="e#28183#28187#0" expanded="true" />
+                    <element signature="e#28221#28225#0" expanded="true" />
+                    <element signature="e#29561#29565#0" expanded="true" />
+                    <element signature="e#29784#29788#0" expanded="true" />
+                    <element signature="e#29822#29826#0" expanded="true" />
+                    <element signature="e#30778#30782#0" expanded="true" />
+                    <element signature="e#30816#30820#0" expanded="true" />
+                    <element signature="e#49162#49166#0" expanded="true" />
+                    <element signature="e#49200#49204#0" expanded="true" />
+                    <element signature="e#51143#51147#0" expanded="true" />
+                    <element signature="e#51363#51367#0" expanded="true" />
+                    <element signature="e#51401#51405#0" expanded="true" />
+                    <element signature="e#53220#53224#0" expanded="true" />
+                    <element signature="e#53519#53523#0" expanded="true" />
+                    <element signature="e#53557#53561#0" expanded="true" />
+                    <element signature="e#55629#55633#0" expanded="true" />
+                    <element signature="e#55852#55856#0" expanded="true" />
+                    <element signature="e#55890#55894#0" expanded="true" />
+                    <element signature="e#56971#56975#0" expanded="true" />
+                    <element signature="e#57191#57195#0" expanded="true" />
+                    <element signature="e#57229#57233#0" expanded="true" />
+                    <element signature="e#58171#58175#0" expanded="true" />
+                    <element signature="e#58392#58396#0" expanded="true" />
+                    <element signature="e#58430#58434#0" expanded="true" />
+                    <element signature="e#59436#59440#0" expanded="true" />
+                    <element signature="e#59656#59660#0" expanded="true" />
+                    <element signature="e#59694#59698#0" expanded="true" />
+                    <element signature="e#61196#61200#0" expanded="true" />
+                    <element signature="e#61419#61423#0" expanded="true" />
+                    <element signature="e#61457#61461#0" expanded="true" />
+                    <element signature="e#62526#62530#0" expanded="true" />
+                    <element signature="e#62564#62568#0" expanded="true" />
+                    <element signature="e#66591#66595#0" expanded="true" />
+                    <element signature="e#66629#66633#0" expanded="true" />
+                    <element signature="e#68690#68694#0" expanded="true" />
+                    <element signature="e#68910#68914#0" expanded="true" />
+                    <element signature="e#68948#68952#0" expanded="true" />
+                    <element signature="e#70925#70929#0" expanded="true" />
+                    <element signature="e#71265#71269#0" expanded="true" />
+                    <element signature="e#71303#71307#0" expanded="true" />
+                    <element signature="e#73674#73678#0" expanded="true" />
+                    <element signature="e#73897#73901#0" expanded="true" />
+                    <element signature="e#73935#73939#0" expanded="true" />
+                    <element signature="e#74922#74926#0" expanded="true" />
+                    <element signature="e#74960#74964#0" expanded="true" />
+                    <element signature="e#101681#101685#0" expanded="true" />
+                    <element signature="e#101719#101723#0" expanded="true" />
+                    <element signature="e#104084#104088#0" expanded="true" />
+                    <element signature="e#104304#104308#0" expanded="true" />
+                    <element signature="e#104342#104346#0" expanded="true" />
+                    <element signature="e#107154#107158#0" expanded="true" />
+                    <element signature="e#107586#107590#0" expanded="true" />
+                    <element signature="e#107624#107628#0" expanded="true" />
+                    <element signature="e#110959#110963#0" expanded="true" />
+                    <element signature="e#111182#111186#0" expanded="true" />
+                    <element signature="e#111220#111224#0" expanded="true" />
+                    <element signature="e#112164#112168#0" expanded="true" />
+                    <element signature="e#112384#112388#0" expanded="true" />
+                    <element signature="e#112422#112426#0" expanded="true" />
+                    <element signature="e#114154#114158#0" expanded="true" />
+                    <element signature="e#114570#114574#0" expanded="true" />
+                    <element signature="e#114608#114612#0" expanded="true" />
+                    <element signature="e#116034#116038#0" expanded="true" />
+                    <element signature="e#116273#116277#0" expanded="true" />
+                    <element signature="e#116531#116535#0" expanded="true" />
+                    <element signature="e#116803#116807#0" expanded="true" />
+                    <element signature="e#117100#117104#0" expanded="true" />
+                    <element signature="e#117375#117379#0" expanded="true" />
+                    <element signature="e#117664#117668#0" expanded="true" />
+                    <element signature="e#117915#117919#0" expanded="true" />
+                    <element signature="e#118177#118181#0" expanded="true" />
+                    <element signature="e#118466#118470#0" expanded="true" />
+                    <element signature="e#118775#118779#0" expanded="true" />
+                    <element signature="e#119062#119066#0" expanded="true" />
+                    <element signature="e#119351#119355#0" expanded="true" />
+                    <element signature="e#119658#119662#0" expanded="true" />
+                    <element signature="e#119943#119947#0" expanded="true" />
+                    <element signature="e#120232#120236#0" expanded="true" />
+                    <element signature="e#120521#120525#0" expanded="true" />
+                    <element signature="e#120782#120786#0" expanded="true" />
+                    <element signature="e#121055#121059#0" expanded="true" />
+                    <element signature="e#121317#121321#0" expanded="true" />
+                    <element signature="e#121586#121590#0" expanded="true" />
+                    <element signature="e#121857#121861#0" expanded="true" />
+                    <element signature="e#122160#122164#0" expanded="true" />
+                    <element signature="e#122422#122426#0" expanded="true" />
+                    <element signature="e#122695#122699#0" expanded="true" />
+                    <element signature="e#122984#122988#0" expanded="true" />
+                    <element signature="e#123252#123256#0" expanded="true" />
+                    <element signature="e#123518#123522#0" expanded="true" />
+                    <element signature="e#123807#123811#0" expanded="true" />
+                    <element signature="e#124124#124128#0" expanded="true" />
+                    <element signature="e#124419#124423#0" expanded="true" />
+                    <element signature="e#124708#124712#0" expanded="true" />
+                    <element signature="e#125025#125029#0" expanded="true" />
+                    <element signature="e#125320#125324#0" expanded="true" />
+                    <element signature="e#125609#125613#0" expanded="true" />
+                    <element signature="e#125925#125929#0" expanded="true" />
+                    <element signature="e#126219#126223#0" expanded="true" />
+                    <element signature="e#126508#126512#0" expanded="true" />
+                    <element signature="e#126831#126835#0" expanded="true" />
+                    <element signature="e#127132#127136#0" expanded="true" />
+                    <element signature="e#127421#127425#0" expanded="true" />
+                    <element signature="e#127710#127714#0" expanded="true" />
+                    <element signature="e#127980#127984#0" expanded="true" />
+                    <element signature="e#128276#128280#0" expanded="true" />
+                    <element signature="e#128578#128582#0" expanded="true" />
+                    <element signature="e#128883#128887#0" expanded="true" />
+                    <element signature="e#129109#129113#0" expanded="true" />
+                    <element signature="e#129308#129312#0" expanded="true" />
+                    <element signature="e#129522#129526#0" expanded="true" />
+                    <element signature="e#129776#129780#0" expanded="true" />
+                    <element signature="e#130028#130032#0" expanded="true" />
+                    <element signature="e#130282#130286#0" expanded="true" />
+                    <element signature="e#130532#130536#0" expanded="true" />
+                    <element signature="e#130781#130785#0" expanded="true" />
+                    <element signature="e#131031#131035#0" expanded="true" />
+                    <element signature="e#131279#131283#0" expanded="true" />
+                    <element signature="e#131524#131528#0" expanded="true" />
+                    <element signature="e#131764#131768#0" expanded="true" />
+                    <element signature="e#133484#133488#0" expanded="true" />
+                    <element signature="e#133704#133708#0" expanded="true" />
+                    <element signature="e#133742#133746#0" expanded="true" />
+                    <element signature="e#135524#135528#0" expanded="true" />
+                    <element signature="e#135939#135943#0" expanded="true" />
+                    <element signature="e#135977#135981#0" expanded="true" />
+                    <element signature="e#138242#138246#0" expanded="true" />
+                    <element signature="e#138465#138469#0" expanded="true" />
+                    <element signature="e#138503#138507#0" expanded="true" />
+                    <element signature="e#139556#139560#0" expanded="true" />
+                    <element signature="e#139594#139598#0" expanded="true" />
+                    <element signature="e#145693#145697#0" expanded="true" />
+                    <element signature="e#145731#145735#0" expanded="true" />
+                    <element signature="e#147921#147925#0" expanded="true" />
+                    <element signature="e#148141#148145#0" expanded="true" />
+                    <element signature="e#148179#148183#0" expanded="true" />
+                    <element signature="e#150107#150111#0" expanded="true" />
+                    <element signature="e#150454#150458#0" expanded="true" />
+                    <element signature="e#150492#150496#0" expanded="true" />
+                    <element signature="e#152804#152808#0" expanded="true" />
+                    <element signature="e#153027#153031#0" expanded="true" />
+                    <element signature="e#153065#153069#0" expanded="true" />
+                    <element signature="e#154058#154062#0" expanded="true" />
+                    <element signature="e#154096#154100#0" expanded="true" />
+                    <element signature="e#240733#240737#0" expanded="true" />
+                    <element signature="e#240953#240957#0" expanded="true" />
+                    <element signature="e#240991#240995#0" expanded="true" />
+                    <element signature="e#246207#246211#0" expanded="true" />
+                    <element signature="e#246245#246249#0" expanded="true" />
+                    <element signature="e#248104#248108#0" expanded="true" />
+                    <element signature="e#248142#248146#0" expanded="true" />
+                    <element signature="e#249325#249329#0" expanded="true" />
+                    <element signature="e#249363#249367#0" expanded="true" />
+                    <element signature="e#250966#250970#0" expanded="true" />
+                    <element signature="e#251004#251008#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DefaultSettingController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="731">
+                  <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
+                  <folding>
+                    <element signature="e#40#89#0#PHP" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FriendController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="510">
+                  <caret line="52" column="29" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/config/app.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2475">
+                  <caret line="165" column="35" selection-start-line="165" selection-start-column="35" selection-end-line="165" selection-end-column="35" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-02-12.log">
+              <provider selected="true" editor-type-id="LogFileEditorProvider">
+                <state relative-caret-position="43335">
+                  <caret line="2889" column="52" selection-start-line="2889" selection-start-column="52" selection-end-line="2889" selection-end-column="52" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AttributeController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="215">
+                  <caret line="39" column="101" selection-start-line="39" selection-start-column="101" selection-end-line="39" selection-end-column="101" />
+                  <folding>
+                    <element signature="e#40#81#0#PHP" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>name</find>
       <find>groups.</find>
+      <find>testbasicte</find>
     </findStrings>
     <replaceStrings>
       <replace>default_settings.</replace>
@@ -215,6 +403,8 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/GroupController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DefaultSettingController.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/DefaultSettingStoreRequest.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Repository.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/FriendController.php" />
       </list>
     </option>
   </component>
@@ -385,29 +575,7 @@
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Guest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Requests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Policies" type="462c0819:PsiDirectoryNode" />
+              <item name="Providers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
@@ -482,7 +650,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="defaultsettingte&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/tests/Unit/DefaultSettingTest.php&#10;inde&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/public/docs/index.html&#10;groupcon&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Controllers/GroupController.php&#10;User&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/User.php&#10;groupte&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/tests/Unit/GroupTest.php&#10;grouptesrt&#9;null&#9;null&#10;index&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/public/docs/index.html&#10;attributecon&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Controllers/AttributeController.php&#10;defaultsettingcon&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Controllers/DefaultSettingController.php&#10;defa&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/database/factories/DefaultSettingFactory.php&#10;DATA&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/database/seeds/DatabaseSeeder.php&#10;defaultsettingfa&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/database/factories/DefaultSettingFactory.php&#10;database&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/database/seeds/DatabaseSeeder.php&#10;grouptest&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/tests/Unit/GroupTest.php&#10;attribute&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/tests/Unit/AttributeTest.php&#10;defaultsettingtest&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/tests/Unit/DefaultSettingTest.php&#10;da&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/database/seeds/DatabaseSeeder.php&#10;databasesee&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/database/seeds/DatabaseSeeder.php&#10;defaultsettingre&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Resources/DefaultSettingResource.php&#10;api&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/routes/api.php&#10;authser&#9;null&#9;null&#10;sear&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Controllers/SearchController.php&#10;profilecon&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Controllers/ProfileController.php&#10;laravel&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/storage/logs/laravel-2019-02-09.log&#10;Grouptest&#9;null&#9;null&#10;sea&#9;null&#9;null&#10;api.php&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/routes/api.php&#10;searchcon&#9;null&#9;null&#10;apidoc&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/vendor/mpociot/laravel-apidoc-generator/config/apidoc.php&#10;index.h&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/public/docs/index.html&#10;authcon&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Controllers/AuthController.php&#10;auth&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/tests/Unit/AuthTest.php&#10;Userre&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Requests/UserRegisterRequest.php&#10;authtest&#9;null&#9;null&#10;ProfileUpdate&#9;null&#9;null&#10;friendtest&#9;null&#9;null&#10;userfa&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/database/factories/UserFactory.php&#10;Userresource&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="repositoryse&#9;null&#9;null&#10;defaultsettingte&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/tests/Unit/DefaultSettingTest.php&#10;inde&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/public/docs/index.html&#10;groupcon&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Controllers/GroupController.php&#10;User&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/User.php&#10;groupte&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/tests/Unit/GroupTest.php&#10;grouptesrt&#9;null&#9;null&#10;index&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/public/docs/index.html&#10;attributecon&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Controllers/AttributeController.php&#10;defaultsettingcon&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Controllers/DefaultSettingController.php&#10;defa&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/database/factories/DefaultSettingFactory.php&#10;DATA&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/database/seeds/DatabaseSeeder.php&#10;defaultsettingfa&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/database/factories/DefaultSettingFactory.php&#10;database&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/database/seeds/DatabaseSeeder.php&#10;grouptest&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/tests/Unit/GroupTest.php&#10;attribute&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/tests/Unit/AttributeTest.php&#10;defaultsettingtest&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/tests/Unit/DefaultSettingTest.php&#10;da&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/database/seeds/DatabaseSeeder.php&#10;databasesee&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/database/seeds/DatabaseSeeder.php&#10;defaultsettingre&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Resources/DefaultSettingResource.php&#10;api&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/routes/api.php&#10;authser&#9;null&#9;null&#10;sear&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Controllers/SearchController.php&#10;profilecon&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Controllers/ProfileController.php&#10;laravel&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/storage/logs/laravel-2019-02-09.log&#10;Grouptest&#9;null&#9;null&#10;sea&#9;null&#9;null&#10;api.php&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/routes/api.php&#10;searchcon&#9;null&#9;null&#10;apidoc&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/vendor/mpociot/laravel-apidoc-generator/config/apidoc.php&#10;index.h&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/public/docs/index.html&#10;authcon&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Controllers/AuthController.php&#10;auth&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/tests/Unit/AuthTest.php&#10;Userre&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Requests/UserRegisterRequest.php&#10;authtest&#9;null&#9;null&#10;ProfileUpdate&#9;null&#9;null&#10;friendtest&#9;null&#9;null&#10;userfa&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/database/factories/UserFactory.php&#10;Userresource&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -518,13 +686,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11423000" />
+    <option name="totallyTimeSpent" value="11696000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="31" width="960" height="1049" extended-state="4" />
-    <editor active="true" />
+    <frame x="1920" y="-1" width="1920" height="1081" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.0" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15601704" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -555,23 +722,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="17" column="76" selection-start-line="17" selection-start-column="76" selection-end-line="17" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Resources/UserResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Guest/SessionController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SessionController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="533">
@@ -622,9 +772,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="36" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="e#30#43#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -656,9 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-          <folding>
-            <element signature="e#32#61#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -680,9 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
-          <folding>
-            <element signature="e#40#76#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -731,13 +872,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/DefaultSettingFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="56" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/DefaultSettingFactory.php" />
     <entry file="file://$PROJECT_DIR$/app/Model/DefaultSetting.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -754,15 +889,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-02-12.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="544">
-          <caret line="425" column="3" selection-start-line="425" selection-start-column="3" selection-end-line="425" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AttributeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="57" column="7" selection-start-line="57" selection-start-column="7" selection-end-line="59" selection-end-column="64" />
+        <state relative-caret-position="43335">
+          <caret line="2889" column="52" selection-start-line="2889" selection-start-column="52" selection-end-line="2889" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -798,9 +926,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="19" selection-end-column="55" />
-          <folding>
-            <element signature="e#40#76#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -821,9 +946,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FriendController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/FriendStoreRequest.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -838,6 +960,188 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+          <folding>
+            <element signature="e#2493#2497#0" expanded="true" />
+            <element signature="e#2531#2535#0" expanded="true" />
+            <element signature="e#4537#4541#0" expanded="true" />
+            <element signature="e#4575#4579#0" expanded="true" />
+            <element signature="e#6156#6160#0" expanded="true" />
+            <element signature="e#6194#6198#0" expanded="true" />
+            <element signature="e#6989#6993#0" expanded="true" />
+            <element signature="e#7027#7031#0" expanded="true" />
+            <element signature="e#8168#8172#0" expanded="true" />
+            <element signature="e#8206#8210#0" expanded="true" />
+            <element signature="e#9236#9240#0" expanded="true" />
+            <element signature="e#9274#9278#0" expanded="true" />
+            <element signature="e#13021#13025#0" expanded="true" />
+            <element signature="e#13059#13063#0" expanded="true" />
+            <element signature="e#14618#14622#0" expanded="true" />
+            <element signature="e#14656#14660#0" expanded="true" />
+            <element signature="e#19887#19891#0" expanded="true" />
+            <element signature="e#19925#19929#0" expanded="true" />
+            <element signature="e#21290#21294#0" expanded="true" />
+            <element signature="e#21328#21332#0" expanded="true" />
+            <element signature="e#25501#25505#0" expanded="true" />
+            <element signature="e#25539#25543#0" expanded="true" />
+            <element signature="e#26803#26807#0" expanded="true" />
+            <element signature="e#26841#26845#0" expanded="true" />
+            <element signature="e#27963#27967#0" expanded="true" />
+            <element signature="e#28183#28187#0" expanded="true" />
+            <element signature="e#28221#28225#0" expanded="true" />
+            <element signature="e#29561#29565#0" expanded="true" />
+            <element signature="e#29784#29788#0" expanded="true" />
+            <element signature="e#29822#29826#0" expanded="true" />
+            <element signature="e#30778#30782#0" expanded="true" />
+            <element signature="e#30816#30820#0" expanded="true" />
+            <element signature="e#49162#49166#0" expanded="true" />
+            <element signature="e#49200#49204#0" expanded="true" />
+            <element signature="e#51143#51147#0" expanded="true" />
+            <element signature="e#51363#51367#0" expanded="true" />
+            <element signature="e#51401#51405#0" expanded="true" />
+            <element signature="e#53220#53224#0" expanded="true" />
+            <element signature="e#53519#53523#0" expanded="true" />
+            <element signature="e#53557#53561#0" expanded="true" />
+            <element signature="e#55629#55633#0" expanded="true" />
+            <element signature="e#55852#55856#0" expanded="true" />
+            <element signature="e#55890#55894#0" expanded="true" />
+            <element signature="e#56971#56975#0" expanded="true" />
+            <element signature="e#57191#57195#0" expanded="true" />
+            <element signature="e#57229#57233#0" expanded="true" />
+            <element signature="e#58171#58175#0" expanded="true" />
+            <element signature="e#58392#58396#0" expanded="true" />
+            <element signature="e#58430#58434#0" expanded="true" />
+            <element signature="e#59436#59440#0" expanded="true" />
+            <element signature="e#59656#59660#0" expanded="true" />
+            <element signature="e#59694#59698#0" expanded="true" />
+            <element signature="e#61196#61200#0" expanded="true" />
+            <element signature="e#61419#61423#0" expanded="true" />
+            <element signature="e#61457#61461#0" expanded="true" />
+            <element signature="e#62526#62530#0" expanded="true" />
+            <element signature="e#62564#62568#0" expanded="true" />
+            <element signature="e#66591#66595#0" expanded="true" />
+            <element signature="e#66629#66633#0" expanded="true" />
+            <element signature="e#68690#68694#0" expanded="true" />
+            <element signature="e#68910#68914#0" expanded="true" />
+            <element signature="e#68948#68952#0" expanded="true" />
+            <element signature="e#70925#70929#0" expanded="true" />
+            <element signature="e#71265#71269#0" expanded="true" />
+            <element signature="e#71303#71307#0" expanded="true" />
+            <element signature="e#73674#73678#0" expanded="true" />
+            <element signature="e#73897#73901#0" expanded="true" />
+            <element signature="e#73935#73939#0" expanded="true" />
+            <element signature="e#74922#74926#0" expanded="true" />
+            <element signature="e#74960#74964#0" expanded="true" />
+            <element signature="e#101681#101685#0" expanded="true" />
+            <element signature="e#101719#101723#0" expanded="true" />
+            <element signature="e#104084#104088#0" expanded="true" />
+            <element signature="e#104304#104308#0" expanded="true" />
+            <element signature="e#104342#104346#0" expanded="true" />
+            <element signature="e#107154#107158#0" expanded="true" />
+            <element signature="e#107586#107590#0" expanded="true" />
+            <element signature="e#107624#107628#0" expanded="true" />
+            <element signature="e#110959#110963#0" expanded="true" />
+            <element signature="e#111182#111186#0" expanded="true" />
+            <element signature="e#111220#111224#0" expanded="true" />
+            <element signature="e#112164#112168#0" expanded="true" />
+            <element signature="e#112384#112388#0" expanded="true" />
+            <element signature="e#112422#112426#0" expanded="true" />
+            <element signature="e#114154#114158#0" expanded="true" />
+            <element signature="e#114570#114574#0" expanded="true" />
+            <element signature="e#114608#114612#0" expanded="true" />
+            <element signature="e#116034#116038#0" expanded="true" />
+            <element signature="e#116273#116277#0" expanded="true" />
+            <element signature="e#116531#116535#0" expanded="true" />
+            <element signature="e#116803#116807#0" expanded="true" />
+            <element signature="e#117100#117104#0" expanded="true" />
+            <element signature="e#117375#117379#0" expanded="true" />
+            <element signature="e#117664#117668#0" expanded="true" />
+            <element signature="e#117915#117919#0" expanded="true" />
+            <element signature="e#118177#118181#0" expanded="true" />
+            <element signature="e#118466#118470#0" expanded="true" />
+            <element signature="e#118775#118779#0" expanded="true" />
+            <element signature="e#119062#119066#0" expanded="true" />
+            <element signature="e#119351#119355#0" expanded="true" />
+            <element signature="e#119658#119662#0" expanded="true" />
+            <element signature="e#119943#119947#0" expanded="true" />
+            <element signature="e#120232#120236#0" expanded="true" />
+            <element signature="e#120521#120525#0" expanded="true" />
+            <element signature="e#120782#120786#0" expanded="true" />
+            <element signature="e#121055#121059#0" expanded="true" />
+            <element signature="e#121317#121321#0" expanded="true" />
+            <element signature="e#121586#121590#0" expanded="true" />
+            <element signature="e#121857#121861#0" expanded="true" />
+            <element signature="e#122160#122164#0" expanded="true" />
+            <element signature="e#122422#122426#0" expanded="true" />
+            <element signature="e#122695#122699#0" expanded="true" />
+            <element signature="e#122984#122988#0" expanded="true" />
+            <element signature="e#123252#123256#0" expanded="true" />
+            <element signature="e#123518#123522#0" expanded="true" />
+            <element signature="e#123807#123811#0" expanded="true" />
+            <element signature="e#124124#124128#0" expanded="true" />
+            <element signature="e#124419#124423#0" expanded="true" />
+            <element signature="e#124708#124712#0" expanded="true" />
+            <element signature="e#125025#125029#0" expanded="true" />
+            <element signature="e#125320#125324#0" expanded="true" />
+            <element signature="e#125609#125613#0" expanded="true" />
+            <element signature="e#125925#125929#0" expanded="true" />
+            <element signature="e#126219#126223#0" expanded="true" />
+            <element signature="e#126508#126512#0" expanded="true" />
+            <element signature="e#126831#126835#0" expanded="true" />
+            <element signature="e#127132#127136#0" expanded="true" />
+            <element signature="e#127421#127425#0" expanded="true" />
+            <element signature="e#127710#127714#0" expanded="true" />
+            <element signature="e#127980#127984#0" expanded="true" />
+            <element signature="e#128276#128280#0" expanded="true" />
+            <element signature="e#128578#128582#0" expanded="true" />
+            <element signature="e#128883#128887#0" expanded="true" />
+            <element signature="e#129109#129113#0" expanded="true" />
+            <element signature="e#129308#129312#0" expanded="true" />
+            <element signature="e#129522#129526#0" expanded="true" />
+            <element signature="e#129776#129780#0" expanded="true" />
+            <element signature="e#130028#130032#0" expanded="true" />
+            <element signature="e#130282#130286#0" expanded="true" />
+            <element signature="e#130532#130536#0" expanded="true" />
+            <element signature="e#130781#130785#0" expanded="true" />
+            <element signature="e#131031#131035#0" expanded="true" />
+            <element signature="e#131279#131283#0" expanded="true" />
+            <element signature="e#131524#131528#0" expanded="true" />
+            <element signature="e#131764#131768#0" expanded="true" />
+            <element signature="e#133484#133488#0" expanded="true" />
+            <element signature="e#133704#133708#0" expanded="true" />
+            <element signature="e#133742#133746#0" expanded="true" />
+            <element signature="e#135524#135528#0" expanded="true" />
+            <element signature="e#135939#135943#0" expanded="true" />
+            <element signature="e#135977#135981#0" expanded="true" />
+            <element signature="e#138242#138246#0" expanded="true" />
+            <element signature="e#138465#138469#0" expanded="true" />
+            <element signature="e#138503#138507#0" expanded="true" />
+            <element signature="e#139556#139560#0" expanded="true" />
+            <element signature="e#139594#139598#0" expanded="true" />
+            <element signature="e#145693#145697#0" expanded="true" />
+            <element signature="e#145731#145735#0" expanded="true" />
+            <element signature="e#147921#147925#0" expanded="true" />
+            <element signature="e#148141#148145#0" expanded="true" />
+            <element signature="e#148179#148183#0" expanded="true" />
+            <element signature="e#150107#150111#0" expanded="true" />
+            <element signature="e#150454#150458#0" expanded="true" />
+            <element signature="e#150492#150496#0" expanded="true" />
+            <element signature="e#152804#152808#0" expanded="true" />
+            <element signature="e#153027#153031#0" expanded="true" />
+            <element signature="e#153065#153069#0" expanded="true" />
+            <element signature="e#154058#154062#0" expanded="true" />
+            <element signature="e#154096#154100#0" expanded="true" />
+            <element signature="e#240733#240737#0" expanded="true" />
+            <element signature="e#240953#240957#0" expanded="true" />
+            <element signature="e#240991#240995#0" expanded="true" />
+            <element signature="e#246207#246211#0" expanded="true" />
+            <element signature="e#246245#246249#0" expanded="true" />
+            <element signature="e#248104#248108#0" expanded="true" />
+            <element signature="e#248142#248146#0" expanded="true" />
+            <element signature="e#249325#249329#0" expanded="true" />
+            <element signature="e#249363#249367#0" expanded="true" />
+            <element signature="e#250966#250970#0" expanded="true" />
+            <element signature="e#251004#251008#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -845,19 +1149,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="34" lean-forward="true" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
-          <folding>
-            <element signature="e#30#43#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DefaultSettingController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="58" column="34" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
-          <folding>
-            <element signature="e#40#89#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -872,6 +1163,78 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding>
+            <element signature="e#33#84#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Repository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/RepositoryInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Attribute/AttributeRepositoryInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Attribute/AttributeRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AttributeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="39" column="101" selection-start-line="39" selection-start-column="101" selection-end-line="39" selection-end-column="101" />
+          <folding>
+            <element signature="e#40#81#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DefaultSettingController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
+          <folding>
+            <element signature="e#40#89#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Unit/ExampleTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FriendController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="52" column="29" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
         </state>
       </provider>
     </entry>

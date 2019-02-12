@@ -1,112 +1,112 @@
 {
-    "message": "This action is unauthorized.",
-    "exception": "Symfony\\Component\\HttpKernel\\Exception\\AccessDeniedHttpException",
-    "file": "/var/www/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php",
-    "line": 202,
+    "message": "Target [App\\Repositories\\Attribute\\AttributeRepositoryInterface] is not instantiable while building [App\\Http\\Controllers\\AttributeController].",
+    "exception": "Illuminate\\Contracts\\Container\\BindingResolutionException",
+    "file": "/var/www/vendor/laravel/framework/src/Illuminate/Container/Container.php",
+    "line": 945,
     "trace": [
         {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php",
-            "line": 176,
-            "function": "prepareException",
-            "class": "Illuminate\\Foundation\\Exceptions\\Handler",
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Container/Container.php",
+            "line": 785,
+            "function": "notInstantiable",
+            "class": "Illuminate\\Container\\Container",
             "type": "->"
         },
         {
-            "file": "/var/www/app/Exceptions/Handler.php",
-            "line": 49,
-            "function": "render",
-            "class": "Illuminate\\Foundation\\Exceptions\\Handler",
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Container/Container.php",
+            "line": 658,
+            "function": "build",
+            "class": "Illuminate\\Container\\Container",
             "type": "->"
         },
         {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php",
-            "line": 83,
-            "function": "render",
-            "class": "App\\Exceptions\\Handler",
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Container/Container.php",
+            "line": 609,
+            "function": "resolve",
+            "class": "Illuminate\\Container\\Container",
             "type": "->"
         },
         {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php",
-            "line": 55,
-            "function": "handleException",
-            "class": "Illuminate\\Routing\\Pipeline",
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Foundation/Application.php",
+            "line": 759,
+            "function": "make",
+            "class": "Illuminate\\Container\\Container",
             "type": "->"
         },
         {
-            "file": "/var/www/app/Http/Middleware/JWT.php",
-            "line": 21,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Container/Container.php",
+            "line": 912,
+            "function": "make",
+            "class": "Illuminate\\Foundation\\Application",
             "type": "->"
         },
         {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "App\\Http\\Middleware\\JWT",
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Container/Container.php",
+            "line": 840,
+            "function": "resolveClass",
+            "class": "Illuminate\\Container\\Container",
             "type": "->"
         },
         {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Container/Container.php",
+            "line": 807,
+            "function": "resolveDependencies",
+            "class": "Illuminate\\Container\\Container",
             "type": "->"
         },
         {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php",
-            "line": 41,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Container/Container.php",
+            "line": 658,
+            "function": "build",
+            "class": "Illuminate\\Container\\Container",
             "type": "->"
         },
         {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Container/Container.php",
+            "line": 609,
+            "function": "resolve",
+            "class": "Illuminate\\Container\\Container",
             "type": "->"
         },
         {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Foundation/Application.php",
+            "line": 759,
+            "function": "make",
+            "class": "Illuminate\\Container\\Container",
             "type": "->"
         },
         {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
-            "line": 58,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+            "line": 233,
+            "function": "make",
+            "class": "Illuminate\\Foundation\\Application",
             "type": "->"
         },
         {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-            "line": 151,
-            "function": "handle",
-            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+            "line": 833,
+            "function": "getController",
+            "class": "Illuminate\\Routing\\Route",
             "type": "->"
         },
         {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php",
-            "line": 53,
-            "function": "Illuminate\\Pipeline\\{closure}",
-            "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-            "line": 104,
-            "function": "Illuminate\\Routing\\{closure}",
-            "class": "Illuminate\\Routing\\Pipeline",
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+            "line": 794,
+            "function": "controllerMiddleware",
+            "class": "Illuminate\\Routing\\Route",
             "type": "->"
         },
         {
             "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-            "line": 684,
-            "function": "then",
-            "class": "Illuminate\\Pipeline\\Pipeline",
+            "line": 695,
+            "function": "gatherMiddleware",
+            "class": "Illuminate\\Routing\\Route",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "line": 675,
+            "function": "gatherRouteMiddleware",
+            "class": "Illuminate\\Routing\\Router",
             "type": "->"
         },
         {
@@ -320,8 +320,8 @@
             "type": "->"
         },
         {
-            "file": "/var/www/tests/Unit/FriendTest.php",
-            "line": 105,
+            "file": "/var/www/tests/Unit/AttributeTest.php",
+            "line": 17,
             "function": "apiAs",
             "class": "Tests\\TestCase",
             "type": "->"
@@ -329,8 +329,8 @@
         {
             "file": "/var/www/vendor/phpunit/phpunit/src/Framework/TestCase.php",
             "line": 1153,
-            "function": "testDestory",
-            "class": "Tests\\Unit\\FriendTest",
+            "function": "testIndex",
+            "class": "Tests\\Unit\\AttributeTest",
             "type": "->"
         },
         {
@@ -359,13 +359,6 @@
             "line": 746,
             "function": "run",
             "class": "PHPUnit\\Framework\\TestCase",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
-            "line": 746,
-            "function": "run",
-            "class": "PHPUnit\\Framework\\TestSuite",
             "type": "->"
         },
         {
