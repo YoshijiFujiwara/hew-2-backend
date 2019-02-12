@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DefaultSettingStoreRequest;
 use App\Http\Resources\DefaultSettingResource;
 use App\Model\DefaultSetting;
 use Illuminate\Http\Request;
@@ -28,7 +29,7 @@ class DefaultSettingController extends Controller
      *
      * @responseFile 201 responses/default_settings.store.201.json
      */
-    public function store(Request $request)
+    public function store(DefaultSettingStoreRequest $request)
     {
         // 同じ名前はやめよう
         if ($request->user()->managedDefaultSettings()->where('name', $request->name)->exists()) {
@@ -60,7 +61,7 @@ class DefaultSettingController extends Controller
      *
      * @responseFile 200 responses/default_settings.update.200.json
      */
-    public function update(Request $request, DefaultSetting $defaultSetting)
+    public function update(DefaultSettingStoreRequest $request, DefaultSetting $defaultSetting)
     {
         $defaultSetting->update($request->all());
         // 更新後のものを返す
