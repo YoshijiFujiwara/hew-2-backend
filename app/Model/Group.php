@@ -19,6 +19,11 @@ class Group extends Model
         return $this->belongsToMany(User::class);
     }
 
+    public function defaultSettings()
+    {
+        return $this->hasMany(DefaultSetting::class);
+    }
+
     /**
      * ポリシーで使用する
      */

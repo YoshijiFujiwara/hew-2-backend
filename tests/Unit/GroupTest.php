@@ -70,12 +70,34 @@ class GroupTest extends TestCase
 
     public function testDestory()
     {
-        $newGroupName = 'newGroup' . str_random(8);
-
+        $newGroupName = 'newGroup' . str_random(5);
         $testUser = User::find(1);
-        $alreadyGroup = $testUser->managedGroups->random();
-        $response = $this->apiAs($testUser, 'DELETE', route('groups.destroy', $alreadyGroup), [], []);
+        $testUser->managedGroups()->create([
+            'name' => $newGroupName
+        ]);
+        $newGroup = $testUser->managedGroups->where('name', $newGroupName)->first();
+        $response = $this->apiAs($testUser, 'DELETE', route('groups.destroy', $newGroup), [], []);
 
         $response->assertStatus(Response::HTTP_NO_CONTENT);
+    }
+
+    public function testCantDestory()
+    {
+        $newGroupName = 'newGroup' . str_random(5);
+        $newDefaultSettingName = 'newSetting' . str_random(5);
+        $testUser = User::find(1);
+        $testUser->managedGroups()->create([
+            'name' => $newGroupName
+        ]);
+        $newGroup = $testUser->managedGroups->where('name', $newGroupName)->first();
+        $testUser->managedDefaultSettings()->create([
+            'name' => $newDefaultSettingName,
+            'timer' => '01:00:00',
+            'group_id' => $newGroup->id
+        ]);
+
+        $response = $this->apiAs($testUser, 'DELETE', route('groups.destroy', $newGroup), [], []);
+
+        $response->assertStatus(Response::HTTP_CONFLICT);
     }
 }

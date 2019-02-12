@@ -3,9 +3,11 @@
 namespace App\Providers;
 
 use App\Model\Attribute;
+use App\Model\DefaultSetting;
 use App\Model\Group;
 use App\Model\Session;
 use App\Policies\AttributePolicy;
+use App\Policies\DefaultSettingPolicy;
 use App\Policies\FriendPolicy;
 use App\Policies\GroupPolicy;
 use App\Policies\SessionPolicy;
@@ -26,6 +28,7 @@ class AuthServiceProvider extends ServiceProvider
         Group::class => GroupPolicy::class,
         Session::class  => SessionPolicy::class,
         Attribute::class => AttributePolicy::class,
+        DefaultSetting::class => DefaultSettingPolicy::class,
     ];
 
     /**

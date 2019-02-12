@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Model\Attribute;
+use App\Model\DefaultSetting;
 use App\Model\Group;
 use App\Model\Manager;
 use App\Model\Session;
@@ -152,6 +153,11 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(Attribute::class, 'manager_id');
     }
 
+    public function managedDefaultSettings()
+    {
+        return $this->hasMany(DefaultSetting::class, 'manager_id');
+    }
+
 
     /**
      * ポリシーで使用するメソッド
@@ -174,6 +180,11 @@ class User extends Authenticatable implements JWTSubject
     public function hasTheAttribute(Attribute $attribute)
     {
         return $this->managedAttributes()->where('id', $attribute->id)->exists();
+    }
+
+    public function hasTheDefaultSetting(DefaultSetting $defaultSetting)
+    {
+        return $this->managedDefaultSettings()->where('id', $defaultSetting->id)->exists();
     }
 
     public function participatedTheSession(Session $session)

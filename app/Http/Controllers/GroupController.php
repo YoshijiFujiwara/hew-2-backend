@@ -75,9 +75,15 @@ class GroupController extends Controller
      * @queryParam group required グループid
      *
      * @responseFile 204 responses/groups.destroy.204.json
+     * @responseFile 409 responses/groups.destroy.409.json
      */
     public function destroy(Request $request, Group $group)
     {
+        // このグループを使っているデフォルト設定があった場合エラーを返す
+        if ($group->defaultSettings()->exists()) {
+            return response()->json(['error' => 'このグループを使用しているデフォルト設定があるので、削除できません'], Response::HTTP_CONFLICT);
+        }
+
         $group->users()->detach();
         $group->delete();
         return response(null, Response::HTTP_NO_CONTENT);
