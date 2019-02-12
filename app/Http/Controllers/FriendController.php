@@ -62,7 +62,7 @@ class FriendController extends Controller
      */
     public function show(Request $request, User $friend)
     {
-        return new UserResource($friend);
+        return new UserResource($request->user()->friends->where('id', $friend->id)->first());
     }
 
     /**

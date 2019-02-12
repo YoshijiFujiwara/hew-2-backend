@@ -1,35 +1,148 @@
 {
-    "message": "This action is unauthorized.",
-    "exception": "Symfony\\Component\\HttpKernel\\Exception\\AccessDeniedHttpException",
-    "file": "/var/www/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php",
-    "line": 202,
+    "message": "SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user_id' in 'field list' (SQL: insert into `attributes` (`name`, `user_id`, `updated_at`, `created_at`) values (attributenamesqFi7, , 2019-02-12 13:50:43, 2019-02-12 13:50:43))",
+    "exception": "Illuminate\\Database\\QueryException",
+    "file": "/var/www/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+    "line": 664,
     "trace": [
         {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php",
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+            "line": 624,
+            "function": "runQueryCallback",
+            "class": "Illuminate\\Database\\Connection",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+            "line": 459,
+            "function": "run",
+            "class": "Illuminate\\Database\\Connection",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+            "line": 411,
+            "function": "statement",
+            "class": "Illuminate\\Database\\Connection",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/Processor.php",
+            "line": 32,
+            "function": "insert",
+            "class": "Illuminate\\Database\\Connection",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+            "line": 2628,
+            "function": "processInsertGetId",
+            "class": "Illuminate\\Database\\Query\\Processors\\Processor",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
+            "line": 1338,
+            "function": "insertGetId",
+            "class": "Illuminate\\Database\\Query\\Builder",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
+            "line": 823,
+            "function": "__call",
+            "class": "Illuminate\\Database\\Eloquent\\Builder",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
+            "line": 788,
+            "function": "insertAndSetId",
+            "class": "Illuminate\\Database\\Eloquent\\Model",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
+            "line": 651,
+            "function": "performInsert",
+            "class": "Illuminate\\Database\\Eloquent\\Model",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/HasOneOrMany.php",
+            "line": 281,
+            "function": "save",
+            "class": "Illuminate\\Database\\Eloquent\\Model",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Support/helpers.php",
+            "line": 1027,
+            "function": "Illuminate\\Database\\Eloquent\\Relations\\{closure}",
+            "class": "Illuminate\\Database\\Eloquent\\Relations\\HasOneOrMany",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/HasOneOrMany.php",
+            "line": 282,
+            "function": "tap"
+        },
+        {
+            "file": "/var/www/app/Repositories/Attribute/AttributeRepository.php",
+            "line": 28,
+            "function": "create",
+            "class": "Illuminate\\Database\\Eloquent\\Relations\\HasOneOrMany",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/app/Http/Controllers/AttributeController.php",
+            "line": 48,
+            "function": "create",
+            "class": "App\\Repositories\\Attribute\\AttributeRepository",
+            "type": "->"
+        },
+        {
+            "function": "store",
+            "class": "App\\Http\\Controllers\\AttributeController",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Controller.php",
+            "line": 54,
+            "function": "call_user_func_array"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php",
+            "line": 45,
+            "function": "callAction",
+            "class": "Illuminate\\Routing\\Controller",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+            "line": 219,
+            "function": "dispatch",
+            "class": "Illuminate\\Routing\\ControllerDispatcher",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
             "line": 176,
-            "function": "prepareException",
-            "class": "Illuminate\\Foundation\\Exceptions\\Handler",
+            "function": "runController",
+            "class": "Illuminate\\Routing\\Route",
             "type": "->"
         },
         {
-            "file": "/var/www/app/Exceptions/Handler.php",
-            "line": 49,
-            "function": "render",
-            "class": "Illuminate\\Foundation\\Exceptions\\Handler",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php",
-            "line": 83,
-            "function": "render",
-            "class": "App\\Exceptions\\Handler",
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "line": 682,
+            "function": "run",
+            "class": "Illuminate\\Routing\\Route",
             "type": "->"
         },
         {
             "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php",
-            "line": 55,
-            "function": "handleException",
-            "class": "Illuminate\\Routing\\Pipeline",
+            "line": 30,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Router",
             "type": "->"
         },
         {
@@ -320,8 +433,8 @@
             "type": "->"
         },
         {
-            "file": "/var/www/tests/Unit/FriendTest.php",
-            "line": 105,
+            "file": "/var/www/tests/Unit/AttributeTest.php",
+            "line": 49,
             "function": "apiAs",
             "class": "Tests\\TestCase",
             "type": "->"
@@ -329,8 +442,8 @@
         {
             "file": "/var/www/vendor/phpunit/phpunit/src/Framework/TestCase.php",
             "line": 1153,
-            "function": "testDestory",
-            "class": "Tests\\Unit\\FriendTest",
+            "function": "testCantStore",
+            "class": "Tests\\Unit\\AttributeTest",
             "type": "->"
         },
         {
@@ -359,13 +472,6 @@
             "line": 746,
             "function": "run",
             "class": "PHPUnit\\Framework\\TestCase",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
-            "line": 746,
-            "function": "run",
-            "class": "PHPUnit\\Framework\\TestSuite",
             "type": "->"
         },
         {
