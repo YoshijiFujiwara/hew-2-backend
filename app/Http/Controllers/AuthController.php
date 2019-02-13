@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRegisterRequest;
+use App\Http\Resources\MeResource;
+use App\Http\Resources\UserResource;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
@@ -67,7 +69,8 @@ class AuthController extends Controller
      */
     public function me()
     {
-        return response()->json(auth()->user());
+        $userId = auth()->user()->id;
+        return new MeResource(User::find($userId));
     }
 
     /**
