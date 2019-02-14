@@ -37,9 +37,8 @@ class Handler extends ExceptionHandler
     {
         if (isset($_SERVER['GAE_SERVICE'])) {
             Bootstrap::exceptionHandler($exception);
-        } else {
-            parent::report($exception);
         }
+        parent::report($exception);
     }
 
     /**
