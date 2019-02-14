@@ -74,8 +74,12 @@ class DatabaseSeeder extends Seeder
         $testUser->username_search_flag = true;
         $testUser->save();
 
+
         // orm のbootを無視したいから、仕方ない
         \Illuminate\Support\Facades\DB::table('users')->where('id', 1)->update(['unique_id' => 'TESTTEST']);
+
+        // テストデータでは、検索はすべてありにするか
+        \Illuminate\Support\Facades\DB::table('users')->update(['unique_id_search_flag' => true, 'username_search_flag' => true]);
 
 
 //        factory(\App\User::class, 30)
