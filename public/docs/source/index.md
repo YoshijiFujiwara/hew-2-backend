@@ -27,9 +27,9 @@ Welcome to the generated API reference.
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/auth/register"     -d "email"="Qpd387vbBzSdHaHd" \
-    -d "username"="W5dL0v4pJUTyqIPY" \
-    -d "password"="oFhPQFxo6lRfmlne" 
+curl -X POST "http://localhost/api/auth/register"     -d "email"="nyRpLxvc82pSqIbK" \
+    -d "username"="1v3gSQAsMb8L6VT7" \
+    -d "password"="9eoGGALoAXjNnSJ1" 
 ```
 
 ```javascript
@@ -41,9 +41,9 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "email": "Qpd387vbBzSdHaHd",
-    "username": "W5dL0v4pJUTyqIPY",
-    "password": "oFhPQFxo6lRfmlne",
+    "email": "nyRpLxvc82pSqIbK",
+    "username": "1v3gSQAsMb8L6VT7",
+    "password": "9eoGGALoAXjNnSJ1",
 })
 
 fetch(url, {
@@ -59,7 +59,7 @@ fetch(url, {
 
 ```json
 {
-    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvYXV0aFwvcmVnaXN0ZXIiLCJpYXQiOjE1NTAxMjU4MzEsImV4cCI6MTU1MDEyOTQzMSwibmJmIjoxNTUwMTI1ODMxLCJqdGkiOiJ5Y0xKT1RVb3IxSlhUVkNzIiwic3ViIjo5MSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.Ky5rrOgNuTrCDn1iH04HNB1h5GEO2iZysLnPLSeoH54",
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvYXV0aFwvcmVnaXN0ZXIiLCJpYXQiOjE1NTAxMjYwNTcsImV4cCI6MTU1MDEyOTY1NywibmJmIjoxNTUwMTI2MDU3LCJqdGkiOiJocU1xV1Bvcm5Zakdta0pWIiwic3ViIjo5OSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.sMAWxsVIMbSgGVN3fAFL9IlsWIZ0PAxKhABD4ZG_hwc",
     "token_type": "bearer",
     "expires_in": 3600
 }
@@ -96,8 +96,8 @@ Parameter | Type | Status | Description
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/auth/login"     -d "email"="R4JRe28f6oj3hL93" \
-    -d "password"="VNiiBuBN6Z7EPkwk" 
+curl -X POST "http://localhost/api/auth/login"     -d "email"="zrSeZhPnN7oG9ULk" \
+    -d "password"="wmUI3SQyxDOZaeLE" 
 ```
 
 ```javascript
@@ -109,8 +109,8 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "email": "R4JRe28f6oj3hL93",
-    "password": "VNiiBuBN6Z7EPkwk",
+    "email": "zrSeZhPnN7oG9ULk",
+    "password": "wmUI3SQyxDOZaeLE",
 })
 
 fetch(url, {
@@ -126,7 +126,7 @@ fetch(url, {
 
 ```json
 {
-    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvYXV0aFwvbG9naW4iLCJpYXQiOjE1NTAxMjU4MzIsImV4cCI6MTU1MDEyOTQzMiwibmJmIjoxNTUwMTI1ODMyLCJqdGkiOiIyNlQ5UTc2c3I2cHV4YmxOIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.SYASp7QaOsYVyx6QKKHcb-TWok3GQBD9yy_b7fftzU4",
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvYXV0aFwvbG9naW4iLCJpYXQiOjE1NTAxMjYwNTgsImV4cCI6MTU1MDEyOTY1OCwibmJmIjoxNTUwMTI2MDU4LCJqdGkiOiJrZHpOc2xaa0VlRUxVbDQ0Iiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.iU7u6Szens4cj7lkQWxMA2cbxSPoTqYsda7MKu9igR4",
     "token_type": "bearer",
     "expires_in": 3600
 }
@@ -219,7 +219,7 @@ fetch(url, {
 
 ```json
 {
-    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvYXV0aFwvcmVmcmVzaCIsImlhdCI6MTU1MDEyNTgzMSwiZXhwIjoxNTUwMTI5NDMxLCJuYmYiOjE1NTAxMjU4MzEsImp0aSI6IlRKaTBleW9oc2VhemlEaHkiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.DXC0r0XHQOy3VARGLh7k5JkPHnSOZ2t_kvmad2wXywo",
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvYXV0aFwvcmVmcmVzaCIsImlhdCI6MTU1MDEyNjA1NywiZXhwIjoxNTUwMTI5NjU3LCJuYmYiOjE1NTAxMjYwNTcsImp0aSI6IjBveG5abm5Bd1ZzNjVMOUUiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.O8W4WEgOONvcY6sJBbMx7O-A4CpUFGxzhXV5_qZJ-nQ",
     "token_type": "bearer",
     "expires_in": 3600
 }
@@ -352,24 +352,6 @@ fetch(url, {
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
-        },
-        {
-            "id": 46,
-            "unique_id": "DhkEYK98p9",
-            "username": "中津川 涼平",
-            "email": "ekoda.tomoya@example.net",
-            "permitted": 1,
-            "attribute_id": 3,
-            "created_at": {
-                "date": "2019-02-14 06:26:47.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-14 06:26:47.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
         }
     ]
 }
@@ -392,7 +374,7 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/friends"     -d "email"="spvQ83PggHSeFu1l" 
+curl -X POST "http://localhost/api/friends"     -d "email"="lOLQsNQ8CcPny0H4" 
 ```
 
 ```javascript
@@ -404,7 +386,7 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "email": "spvQ83PggHSeFu1l",
+    "email": "lOLQsNQ8CcPny0H4",
 })
 
 fetch(url, {
@@ -654,19 +636,19 @@ fetch(url, {
 {
     "data": [
         {
-            "id": 94,
-            "unique_id": "4MIh4XvhbB",
+            "id": 102,
+            "unique_id": "tZKpIViE4L",
             "username": "testuser3",
             "email": "newfriend@newfriend.com",
             "permitted": null,
             "attribute_id": null,
             "created_at": {
-                "date": "2019-02-14 06:30:31.000000",
+                "date": "2019-02-14 06:34:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-14 06:30:31.000000",
+                "date": "2019-02-14 06:34:17.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -926,6 +908,42 @@ fetch(url, {
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
+        },
+        {
+            "id": 103,
+            "unique_id": "lUSEeyijVo",
+            "username": "aaaa",
+            "email": "VKYvU@new.com",
+            "permitted": null,
+            "attribute_id": null,
+            "created_at": {
+                "date": "2019-02-14 06:34:17.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-14 06:34:17.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 105,
+            "unique_id": "AuX7QCoiTN",
+            "username": "aaaa",
+            "email": "m45hhxh@new.com",
+            "permitted": null,
+            "attribute_id": null,
+            "created_at": {
+                "date": "2019-02-14 06:34:17.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-14 06:34:17.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         }
     ]
 }
@@ -943,7 +961,7 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/friends/permit"     -d "user_id"="11" 
+curl -X POST "http://localhost/api/friends/permit"     -d "user_id"="5" 
 ```
 
 ```javascript
@@ -955,7 +973,7 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "user_id": "11",
+    "user_id": "5",
 })
 
 fetch(url, {
@@ -999,7 +1017,7 @@ Parameter | Type | Status | Description
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/friends/reject"     -d "user_id"="13" 
+curl -X POST "http://localhost/api/friends/reject"     -d "user_id"="3" 
 ```
 
 ```javascript
@@ -1011,7 +1029,7 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "user_id": "13",
+    "user_id": "3",
 })
 
 fetch(url, {
@@ -1062,7 +1080,7 @@ curl -X GET -G "http://localhost/api/friends/{friend}"
 const url = new URL("http://localhost/api/friends/{friend}");
 
     let params = {
-            "friend": "Lnal4pYobPfCPORe",
+            "friend": "iaTWbc4AB95ZzxLz",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -1084,12 +1102,12 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 14,
-        "unique_id": "IrJQrQ143r",
-        "username": "笹田 あすか",
-        "email": "maaya98@example.net",
+        "id": 35,
+        "unique_id": "j9lPMEQC35",
+        "username": "西之園 聡太郎",
+        "email": "yamaguchi.yosuke@example.com",
         "permitted": 1,
-        "attribute_id": 3,
+        "attribute_id": 2,
         "created_at": {
             "date": "2019-02-14 06:26:47.000000",
             "timezone_type": 3,
@@ -1128,7 +1146,7 @@ curl -X DELETE "http://localhost/api/friends/{friend}"
 const url = new URL("http://localhost/api/friends/{friend}");
 
     let params = {
-            "friend": "YlkIN4f1nGfikY7E",
+            "friend": "uYsTVzxbx0VKdboy",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -1890,7 +1908,7 @@ fetch(url, {
                     "timezone": "UTC"
                 }
             },
-            "name": "newGroupYAmsH",
+            "name": "newGroupBMexwdi5",
             "users": [
                 {
                     "id": 35,
@@ -1915,7 +1933,7 @@ fetch(url, {
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-14 06:28:52.000000",
+                "date": "2019-02-14 06:30:31.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -2328,6 +2346,195 @@ fetch(url, {
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
+        },
+        {
+            "id": 181,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-14 06:26:47.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-14 06:27:04.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "newGroupy6xq2",
+            "users": [],
+            "created_at": {
+                "date": "2019-02-14 06:30:31.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-14 06:30:31.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 183,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-14 06:26:47.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-14 06:27:04.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "newGroupP1pOb",
+            "users": [],
+            "created_at": {
+                "date": "2019-02-14 06:30:31.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-14 06:30:31.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 184,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-14 06:26:47.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-14 06:27:04.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "newGroupGPmuR",
+            "users": [
+                {
+                    "id": 14,
+                    "unique_id": "IrJQrQ143r",
+                    "username": "笹田 あすか",
+                    "email": "maaya98@example.net",
+                    "created_at": {
+                        "date": "2019-02-14 06:26:47.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-14 06:26:47.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-14 06:30:31.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-14 06:30:31.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 185,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-14 06:26:47.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-14 06:27:04.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "newGroup5v0Mz",
+            "users": [
+                {
+                    "id": 14,
+                    "unique_id": "IrJQrQ143r",
+                    "username": "笹田 あすか",
+                    "email": "maaya98@example.net",
+                    "created_at": {
+                        "date": "2019-02-14 06:26:47.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-14 06:26:47.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-14 06:30:32.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-14 06:30:32.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 186,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-14 06:26:47.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-14 06:27:04.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "newGroupTWQNd",
+            "users": [],
+            "created_at": {
+                "date": "2019-02-14 06:30:32.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-14 06:30:32.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         }
     ]
 }
@@ -2345,7 +2552,7 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/groups"     -d "name"="xEXcjmVzu5RCKHhm" 
+curl -X POST "http://localhost/api/groups"     -d "name"="0AQWqbN9Vis5YoHr" 
 ```
 
 ```javascript
@@ -2357,7 +2564,7 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "name": "xEXcjmVzu5RCKHhm",
+    "name": "0AQWqbN9Vis5YoHr",
 })
 
 fetch(url, {
@@ -2374,7 +2581,7 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 181,
+        "id": 188,
         "manager": {
             "id": 1,
             "unique_id": "TESTTEST",
@@ -2391,26 +2598,19 @@ fetch(url, {
                 "timezone": "UTC"
             }
         },
-        "name": "newGroupy6xq2",
+        "name": "newGroupfat7M",
         "users": [],
         "created_at": {
-            "date": "2019-02-14 06:30:31.000000",
+            "date": "2019-02-14 06:34:17.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-14 06:30:31.000000",
+            "date": "2019-02-14 06:34:17.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
     }
-}
-```
-> Example response (409):
-
-```json
-{
-    "error": "同じ名前は使用できません"
 }
 ```
 
@@ -2438,7 +2638,7 @@ curl -X GET -G "http://localhost/api/groups/{group}"
 const url = new URL("http://localhost/api/groups/{group}");
 
     let params = {
-            "group": "poZbdLssICscLf0H",
+            "group": "oXhrvoXdy9mqAzZW",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -2460,7 +2660,7 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 174,
+        "id": 157,
         "manager": {
             "id": 1,
             "unique_id": "TESTTEST",
@@ -2477,15 +2677,15 @@ fetch(url, {
                 "timezone": "UTC"
             }
         },
-        "name": "newGrouptHNpF",
+        "name": "newGrouphuTHY",
         "users": [],
         "created_at": {
-            "date": "2019-02-14 06:29:40.000000",
+            "date": "2019-02-14 06:27:57.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-14 06:29:40.000000",
+            "date": "2019-02-14 06:27:57.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -2510,14 +2710,14 @@ Parameter | Status | Description
 > Example request:
 
 ```bash
-curl -X PUT "http://localhost/api/groups/{group}"     -d "name"="c9tahPPbHX8kAC3D" 
+curl -X PUT "http://localhost/api/groups/{group}"     -d "name"="HRmSqJp3QD83KxPs" 
 ```
 
 ```javascript
 const url = new URL("http://localhost/api/groups/{group}");
 
     let params = {
-            "group": "G8Ip6hBC3cc7UwJG",
+            "group": "CLJcDhSLTrBiOuYu",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -2527,7 +2727,7 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "name": "c9tahPPbHX8kAC3D",
+    "name": "HRmSqJp3QD83KxPs",
 })
 
 fetch(url, {
@@ -2561,7 +2761,7 @@ fetch(url, {
                 "timezone": "UTC"
             }
         },
-        "name": "newGroupBMexwdi5",
+        "name": "newGroupJ3x0sVqU",
         "users": [
             {
                 "id": 35,
@@ -2586,7 +2786,7 @@ fetch(url, {
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-14 06:30:31.000000",
+            "date": "2019-02-14 06:34:17.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -2625,7 +2825,7 @@ curl -X DELETE "http://localhost/api/groups/{group}"
 const url = new URL("http://localhost/api/groups/{group}");
 
     let params = {
-            "group": "K2k0MMXh9RU58uAD",
+            "group": "IoVwtw3MO14sMQYT",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -2679,7 +2879,7 @@ curl -X GET -G "http://localhost/api/groups/{group}/users"
 const url = new URL("http://localhost/api/groups/{group}/users");
 
     let params = {
-            "group": "BhtniGrMZlu3tsfY",
+            "group": "JJ8ZUio12puUk46f",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -2728,7 +2928,7 @@ curl -X POST "http://localhost/api/groups/{group}/users"
 const url = new URL("http://localhost/api/groups/{group}/users");
 
     let params = {
-            "group": "F6XiRv93LKRFihCz",
+            "group": "Ax02I3lrawO302MC",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -2777,8 +2977,8 @@ curl -X GET -G "http://localhost/api/groups/{group}/users/{user}"
 const url = new URL("http://localhost/api/groups/{group}/users/{user}");
 
     let params = {
-            "group": "ZXiFHrAhha7CuHW3",
-            "user": "EFJv4mVXtuyFromE",
+            "group": "w6dL601tfEEutI1O",
+            "user": "GJItvHXmnsPSR4cB",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -2800,10 +3000,10 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 35,
-        "unique_id": "j9lPMEQC35",
-        "username": "西之園 聡太郎",
-        "email": "yamaguchi.yosuke@example.com",
+        "id": 14,
+        "unique_id": "IrJQrQ143r",
+        "username": "笹田 あすか",
+        "email": "maaya98@example.net",
         "created_at": {
             "date": "2019-02-14 06:26:47.000000",
             "timezone_type": 3,
@@ -2843,8 +3043,8 @@ curl -X DELETE "http://localhost/api/groups/{group}/users/{user}"
 const url = new URL("http://localhost/api/groups/{group}/users/{user}");
 
     let params = {
-            "group": "iBe5kIPts4gIjEbT",
-            "user": "SeQYIinL5sLq1JmF",
+            "group": "OKb2xWJ84VncSLXZ",
+            "user": "MuXHuvczocBqsew0",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -2927,7 +3127,7 @@ fetch(url, {
                     "timezone": "UTC"
                 }
             },
-            "name": "Fjil7FT",
+            "name": "newSettingsbm4CeVOH",
             "timer": "01:00:00",
             "created_at": {
                 "date": "2019-02-14 06:26:48.000000",
@@ -2935,7 +3135,7 @@ fetch(url, {
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-14 06:26:48.000000",
+                "date": "2019-02-14 06:30:31.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -3034,37 +3234,6 @@ fetch(url, {
             }
         },
         {
-            "id": 58,
-            "manager": {
-                "id": 1,
-                "unique_id": "TESTTEST",
-                "username": "テスト太郎",
-                "email": "testuser@example.com",
-                "created_at": {
-                    "date": "2019-02-14 06:26:47.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-14 06:27:04.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "name": "newSettingIpVjr",
-            "timer": "01:00:00",
-            "created_at": {
-                "date": "2019-02-14 06:29:40.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-14 06:29:40.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
             "id": 60,
             "manager": {
                 "id": 1,
@@ -3094,6 +3263,68 @@ fetch(url, {
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
+        },
+        {
+            "id": 61,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-14 06:26:47.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-14 06:27:04.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "DZ4l54",
+            "timer": "01:00:00",
+            "created_at": {
+                "date": "2019-02-14 06:30:31.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-14 06:30:31.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 62,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-14 06:26:47.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-14 06:27:04.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "newSettingGIDDh",
+            "timer": "01:00:00",
+            "created_at": {
+                "date": "2019-02-14 06:30:31.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-14 06:30:31.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         }
     ]
 }
@@ -3111,9 +3342,9 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/default_settings"     -d "name"="zDNwFINg8RVOMebj" \
-    -d "timer"="1" \
-    -d "group_id"="6" 
+curl -X POST "http://localhost/api/default_settings"     -d "name"="yWrsbzCh2E462rhu" \
+    -d "timer"="2" \
+    -d "group_id"="1" 
 ```
 
 ```javascript
@@ -3125,9 +3356,9 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "name": "zDNwFINg8RVOMebj",
-    "timer": "1",
-    "group_id": "6",
+    "name": "yWrsbzCh2E462rhu",
+    "timer": "2",
+    "group_id": "1",
 })
 
 fetch(url, {
@@ -3140,6 +3371,87 @@ fetch(url, {
 ```
 
 > Example response (201):
+
+```json
+{
+    "data": {
+        "id": 63,
+        "manager": {
+            "id": 1,
+            "unique_id": "TESTTEST",
+            "username": "テスト太郎",
+            "email": "testuser@example.com",
+            "created_at": {
+                "date": "2019-02-14 06:26:47.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-14 06:27:04.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        "name": "iRKaXS",
+        "timer": "01:00:00",
+        "created_at": {
+            "date": "2019-02-14 06:34:17.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        },
+        "updated_at": {
+            "date": "2019-02-14 06:34:17.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        }
+    }
+}
+```
+
+### HTTP Request
+`POST api/default_settings`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    name | string |  required  | 設定名
+    timer | integer |  required  | 始まるまでの時間'01:00:00'形式
+    group_id | integer |  required  | この設定を適用するグループid
+
+<!-- END_36cc79ce9a383a7588678684a551a6f5 -->
+
+<!-- START_72e63016f90edb1f9e183a491b8a3953 -->
+## default_settings.show 一つのデフォルト設定の詳細を得る
+
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/default_settings/{default_setting}" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/default_settings/{default_setting}");
+
+    let params = {
+            "default_setting": "OMnIPuEg5nCtZtwg",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response (200):
 
 ```json
 {
@@ -3178,87 +3490,6 @@ fetch(url, {
 ```
 
 ### HTTP Request
-`POST api/default_settings`
-
-#### Body Parameters
-
-Parameter | Type | Status | Description
---------- | ------- | ------- | ------- | -----------
-    name | string |  required  | 設定名
-    timer | integer |  required  | 始まるまでの時間'01:00:00'形式
-    group_id | integer |  required  | この設定を適用するグループid
-
-<!-- END_36cc79ce9a383a7588678684a551a6f5 -->
-
-<!-- START_72e63016f90edb1f9e183a491b8a3953 -->
-## default_settings.show 一つのデフォルト設定の詳細を得る
-
-> Example request:
-
-```bash
-curl -X GET -G "http://localhost/api/default_settings/{default_setting}" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/default_settings/{default_setting}");
-
-    let params = {
-            "default_setting": "UeM2Bm6EYG7f6T6R",
-        };
-    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response (200):
-
-```json
-{
-    "data": {
-        "id": 52,
-        "manager": {
-            "id": 1,
-            "unique_id": "TESTTEST",
-            "username": "テスト太郎",
-            "email": "testuser@example.com",
-            "created_at": {
-                "date": "2019-02-14 06:26:47.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-14 06:27:04.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        "name": "newSettingpOqg0",
-        "timer": "01:00:00",
-        "created_at": {
-            "date": "2019-02-14 06:27:19.000000",
-            "timezone_type": 3,
-            "timezone": "UTC"
-        },
-        "updated_at": {
-            "date": "2019-02-14 06:27:19.000000",
-            "timezone_type": 3,
-            "timezone": "UTC"
-        }
-    }
-}
-```
-
-### HTTP Request
 `GET api/default_settings/{default_setting}`
 
 #### Query Parameters
@@ -3275,16 +3506,16 @@ Parameter | Status | Description
 > Example request:
 
 ```bash
-curl -X PUT "http://localhost/api/default_settings/{default_setting}"     -d "name"="n4SXhmoCugqZM2KK" \
-    -d "timer"="18" \
-    -d "group_id"="7" 
+curl -X PUT "http://localhost/api/default_settings/{default_setting}"     -d "name"="iC0kbyJM3r3EkEEb" \
+    -d "timer"="4" \
+    -d "group_id"="20" 
 ```
 
 ```javascript
 const url = new URL("http://localhost/api/default_settings/{default_setting}");
 
     let params = {
-            "default_setting": "Fz9ZNBTISdOboWxw",
+            "default_setting": "BJ3BVYXCxzs1zvI5",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -3294,9 +3525,9 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "name": "n4SXhmoCugqZM2KK",
-    "timer": "18",
-    "group_id": "7",
+    "name": "iC0kbyJM3r3EkEEb",
+    "timer": "4",
+    "group_id": "20",
 })
 
 fetch(url, {
@@ -3313,7 +3544,7 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 1,
+        "id": 55,
         "manager": {
             "id": 1,
             "unique_id": "TESTTEST",
@@ -3330,15 +3561,15 @@ fetch(url, {
                 "timezone": "UTC"
             }
         },
-        "name": "newSettingsbm4CeVOH",
+        "name": "newSettingsaMatjBAk",
         "timer": "01:00:00",
         "created_at": {
-            "date": "2019-02-14 06:26:48.000000",
+            "date": "2019-02-14 06:28:51.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-14 06:30:31.000000",
+            "date": "2019-02-14 06:34:17.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -3379,7 +3610,7 @@ curl -X DELETE "http://localhost/api/default_settings/{default_setting}"
 const url = new URL("http://localhost/api/default_settings/{default_setting}");
 
     let params = {
-            "default_setting": "AzZsstsucOUH1BgR",
+            "default_setting": "i3MEnRF0437aTrI0",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -4212,63 +4443,6 @@ fetch(url, {
             }
         },
         {
-            "id": 217,
-            "name": "newUpdateSession3494j",
-            "shop_id": 34,
-            "budget": 5000,
-            "actual": 3000,
-            "start_time": null,
-            "end_time": null,
-            "manager": {
-                "id": 1,
-                "unique_id": "TESTTEST",
-                "username": "テスト太郎",
-                "email": "testuser@example.com",
-                "created_at": {
-                    "date": "2019-02-14 06:26:47.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-14 06:27:04.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "users": [
-                {
-                    "id": 46,
-                    "unique_id": "DhkEYK98p9",
-                    "username": "中津川 涼平",
-                    "email": "ekoda.tomoya@example.net",
-                    "join_status": "allow",
-                    "paid": 0,
-                    "plus_minus": 0,
-                    "ratio": null,
-                    "created_at": {
-                        "date": "2019-02-14 06:26:47.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-14 06:26:47.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    }
-                }
-            ],
-            "created_at": {
-                "date": "2019-02-14 06:29:41.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-14 06:30:16.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
             "id": 218,
             "name": "newSessionFc2Vp",
             "shop_id": 34,
@@ -4327,9 +4501,9 @@ fetch(url, {
         },
         {
             "id": 219,
-            "name": "newSessionvBIwJ",
+            "name": "newUpdateSessionvzkHY",
             "shop_id": 34,
-            "budget": 3000,
+            "budget": 5000,
             "actual": 3000,
             "start_time": null,
             "end_time": null,
@@ -4377,7 +4551,7 @@ fetch(url, {
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-14 06:29:41.000000",
+                "date": "2019-02-14 06:30:32.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -4660,6 +4834,249 @@ fetch(url, {
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
+        },
+        {
+            "id": 226,
+            "name": "newSessionXwdUM",
+            "shop_id": 34,
+            "budget": 3000,
+            "actual": 3000,
+            "start_time": null,
+            "end_time": null,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-14 06:26:47.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-14 06:27:04.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [],
+            "created_at": {
+                "date": "2019-02-14 06:30:32.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-14 06:30:32.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 227,
+            "name": "newSessionMUMNJ",
+            "shop_id": 34,
+            "budget": 3000,
+            "actual": 3000,
+            "start_time": null,
+            "end_time": null,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-14 06:26:47.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-14 06:27:04.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [
+                {
+                    "id": 35,
+                    "unique_id": "j9lPMEQC35",
+                    "username": "西之園 聡太郎",
+                    "email": "yamaguchi.yosuke@example.com",
+                    "join_status": "allow",
+                    "paid": 0,
+                    "plus_minus": 0,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-14 06:26:47.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-14 06:26:47.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-14 06:30:32.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-14 06:30:32.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 228,
+            "name": "newSessionydz0X",
+            "shop_id": 34,
+            "budget": 3000,
+            "actual": 3000,
+            "start_time": null,
+            "end_time": null,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-14 06:26:47.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-14 06:27:04.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [
+                {
+                    "id": 35,
+                    "unique_id": "j9lPMEQC35",
+                    "username": "西之園 聡太郎",
+                    "email": "yamaguchi.yosuke@example.com",
+                    "join_status": "allow",
+                    "paid": 0,
+                    "plus_minus": 0,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-14 06:26:47.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-14 06:26:47.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-14 06:30:32.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-14 06:30:32.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 229,
+            "name": "newSessionMGrCm",
+            "shop_id": 34,
+            "budget": 3000,
+            "actual": 3000,
+            "start_time": null,
+            "end_time": null,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-14 06:26:47.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-14 06:27:04.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [
+                {
+                    "id": 14,
+                    "unique_id": "IrJQrQ143r",
+                    "username": "笹田 あすか",
+                    "email": "maaya98@example.net",
+                    "join_status": "allow",
+                    "paid": 0,
+                    "plus_minus": 10000,
+                    "ratio": null,
+                    "created_at": {
+                        "date": "2019-02-14 06:26:47.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-14 06:26:47.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    }
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-14 06:30:32.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-14 06:30:32.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 230,
+            "name": "newSessionHDlMv",
+            "shop_id": 34,
+            "budget": 3000,
+            "actual": 3000,
+            "start_time": null,
+            "end_time": null,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-14 06:26:47.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-14 06:27:04.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "users": [],
+            "created_at": {
+                "date": "2019-02-14 06:30:32.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-14 06:30:32.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         }
     ]
 }
@@ -4677,12 +5094,12 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/sessions"     -d "name"="HqiwXd5jUVjMMAfd" \
-    -d "shop_id"="2" \
-    -d "budget"="12" \
-    -d "actual"="1" \
-    -d "start_time"="zU6xkTWmSKOLBmjo" \
-    -d "end_time"="tiOZP3Cy0Ols5iyz" 
+curl -X POST "http://localhost/api/sessions"     -d "name"="HhVUnBVd0dK8P9pV" \
+    -d "shop_id"="19" \
+    -d "budget"="2" \
+    -d "actual"="7" \
+    -d "start_time"="DmninEF1WbYyVLgC" \
+    -d "end_time"="tsrStTj9mjQ9j9XO" 
 ```
 
 ```javascript
@@ -4694,12 +5111,12 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "name": "HqiwXd5jUVjMMAfd",
-    "shop_id": "2",
-    "budget": "12",
-    "actual": "1",
-    "start_time": "zU6xkTWmSKOLBmjo",
-    "end_time": "tiOZP3Cy0Ols5iyz",
+    "name": "HhVUnBVd0dK8P9pV",
+    "shop_id": "19",
+    "budget": "2",
+    "actual": "7",
+    "start_time": "DmninEF1WbYyVLgC",
+    "end_time": "tsrStTj9mjQ9j9XO",
 })
 
 fetch(url, {
@@ -4716,8 +5133,8 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 226,
-        "name": "newSessionXwdUM",
+        "id": 231,
+        "name": "newSessionqzf36",
         "shop_id": 34,
         "budget": 3000,
         "actual": 3000,
@@ -4741,12 +5158,12 @@ fetch(url, {
         },
         "users": [],
         "created_at": {
-            "date": "2019-02-14 06:30:32.000000",
+            "date": "2019-02-14 06:34:18.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-14 06:30:32.000000",
+            "date": "2019-02-14 06:34:18.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -4783,7 +5200,7 @@ curl -X GET -G "http://localhost/api/sessions/{session}"
 const url = new URL("http://localhost/api/sessions/{session}");
 
     let params = {
-            "session": "RPIjVgP9jVF4CTeB",
+            "session": "QEoJLFBmZeymRSmX",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -4805,8 +5222,8 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 212,
-        "name": "newSessionvDurs",
+        "id": 202,
+        "name": "newSessionJO1pD",
         "shop_id": 34,
         "budget": 3000,
         "actual": 3000,
@@ -4851,12 +5268,12 @@ fetch(url, {
             }
         ],
         "created_at": {
-            "date": "2019-02-14 06:28:53.000000",
+            "date": "2019-02-14 06:27:20.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-14 06:28:53.000000",
+            "date": "2019-02-14 06:27:20.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -4881,19 +5298,19 @@ Parameter | Status | Description
 > Example request:
 
 ```bash
-curl -X PUT "http://localhost/api/sessions/{session}"     -d "name"="aPPCUZ5tmHypFByk" \
-    -d "shop_id"="20" \
-    -d "budget"="1" \
-    -d "actual"="9" \
-    -d "start_time"="A3hrZo76VAlTnaZS" \
-    -d "end_time"="tkrv6ZY5lwCBXEnG" 
+curl -X PUT "http://localhost/api/sessions/{session}"     -d "name"="duDbZ1ZlfIEuJK2y" \
+    -d "shop_id"="14" \
+    -d "budget"="2" \
+    -d "actual"="1" \
+    -d "start_time"="o3Gj9L1f3MUNd8a9" \
+    -d "end_time"="Ong4HekRdzyQdY1r" 
 ```
 
 ```javascript
 const url = new URL("http://localhost/api/sessions/{session}");
 
     let params = {
-            "session": "RlCPUNrMZtorH8MM",
+            "session": "gkZXWk1uGTh3BAEI",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -4903,12 +5320,12 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "name": "aPPCUZ5tmHypFByk",
-    "shop_id": "20",
-    "budget": "1",
-    "actual": "9",
-    "start_time": "A3hrZo76VAlTnaZS",
-    "end_time": "tkrv6ZY5lwCBXEnG",
+    "name": "duDbZ1ZlfIEuJK2y",
+    "shop_id": "14",
+    "budget": "2",
+    "actual": "1",
+    "start_time": "o3Gj9L1f3MUNd8a9",
+    "end_time": "Ong4HekRdzyQdY1r",
 })
 
 fetch(url, {
@@ -4925,8 +5342,8 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 219,
-        "name": "newUpdateSessionvzkHY",
+        "id": 224,
+        "name": "newUpdateSessionMH4Hj",
         "shop_id": 34,
         "budget": 5000,
         "actual": 3000,
@@ -4971,12 +5388,12 @@ fetch(url, {
             }
         ],
         "created_at": {
-            "date": "2019-02-14 06:29:41.000000",
+            "date": "2019-02-14 06:30:16.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-14 06:30:32.000000",
+            "date": "2019-02-14 06:34:18.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -5020,7 +5437,7 @@ curl -X DELETE "http://localhost/api/sessions/{session}"
 const url = new URL("http://localhost/api/sessions/{session}");
 
     let params = {
-            "session": "3cMFuCNBL9pUhWTF",
+            "session": "HMCx2t1JRXnltjgm",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -5067,7 +5484,7 @@ curl -X GET -G "http://localhost/api/sessions/{session}/users"
 const url = new URL("http://localhost/api/sessions/{session}/users");
 
     let params = {
-            "session": "VkizHntjkieYc55n",
+            "session": "QKpHHFs1B0FtpNww",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -5130,18 +5547,18 @@ Parameter | Status | Description
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/sessions/{session}/users"     -d "user_id"="PFCF5gYT6QsZF25e" \
-    -d "join_status"="SMbZ1JSCrfWe2if8" \
-    -d "paid"="4" \
-    -d "plus_minus"="5" \
-    -d "ratio"="YaZWC6w9hbyCf2iP" 
+curl -X POST "http://localhost/api/sessions/{session}/users"     -d "user_id"="XyaWGHRl4eoOj1J8" \
+    -d "join_status"="q16lOCFZ8o38UcMs" \
+    -d "paid"="11" \
+    -d "plus_minus"="19" \
+    -d "ratio"="jz2SvAaqrPBgAUBF" 
 ```
 
 ```javascript
 const url = new URL("http://localhost/api/sessions/{session}/users");
 
     let params = {
-            "session": "O2Ekoy7ChYRfEykf",
+            "session": "AzHJnFeLoUN6HZXS",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -5151,11 +5568,11 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "user_id": "PFCF5gYT6QsZF25e",
-    "join_status": "SMbZ1JSCrfWe2if8",
-    "paid": "4",
-    "plus_minus": "5",
-    "ratio": "YaZWC6w9hbyCf2iP",
+    "user_id": "XyaWGHRl4eoOj1J8",
+    "join_status": "q16lOCFZ8o38UcMs",
+    "paid": "11",
+    "plus_minus": "19",
+    "ratio": "jz2SvAaqrPBgAUBF",
 })
 
 fetch(url, {
@@ -5173,10 +5590,10 @@ fetch(url, {
 {
     "data": [
         {
-            "id": 35,
-            "unique_id": "j9lPMEQC35",
-            "username": "西之園 聡太郎",
-            "email": "yamaguchi.yosuke@example.com",
+            "id": 14,
+            "unique_id": "IrJQrQ143r",
+            "username": "笹田 あすか",
+            "email": "maaya98@example.net",
             "join_status": "allow",
             "paid": 0,
             "plus_minus": 0,
@@ -5654,8 +6071,8 @@ curl -X GET -G "http://localhost/api/sessions/{session}/users/{user}"
 const url = new URL("http://localhost/api/sessions/{session}/users/{user}");
 
     let params = {
-            "session": "shLccKC3jlS4cMKs",
-            "user": "Zi3aoowTJeBDG5iW",
+            "session": "zhHHb0EwcJtLNqv0",
+            "user": "MhiTQlosTi6670zE",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -5677,10 +6094,10 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 35,
-        "unique_id": "j9lPMEQC35",
-        "username": "西之園 聡太郎",
-        "email": "yamaguchi.yosuke@example.com",
+        "id": 14,
+        "unique_id": "IrJQrQ143r",
+        "username": "笹田 あすか",
+        "email": "maaya98@example.net",
         "join_status": "allow",
         "paid": 0,
         "plus_minus": 0,
@@ -5717,19 +6134,19 @@ Parameter | Status | Description
 > Example request:
 
 ```bash
-curl -X PUT "http://localhost/api/sessions/{session}/users/{user}"     -d "user_id"="UZCCwdPOaIX6oa1T" \
-    -d "join_status"="lFUeVSIREKgcL96S" \
-    -d "paid"="14" \
-    -d "plus_minus"="19" \
-    -d "ratio"="xCLf4UhOWxBSuHbY" 
+curl -X PUT "http://localhost/api/sessions/{session}/users/{user}"     -d "user_id"="t50mBV00er987wa0" \
+    -d "join_status"="jt3kKaiDR9vuEfdP" \
+    -d "paid"="5" \
+    -d "plus_minus"="16" \
+    -d "ratio"="9RR1wuItcNQSPNEN" 
 ```
 
 ```javascript
 const url = new URL("http://localhost/api/sessions/{session}/users/{user}");
 
     let params = {
-            "session": "Br8KGzjZ05gZPI08",
-            "user": "LnCV22cejA5uIT3S",
+            "session": "JFc6WgsC1X5qoC2h",
+            "user": "NKQOXCSnWOlZ74Wb",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -5739,11 +6156,11 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "user_id": "UZCCwdPOaIX6oa1T",
-    "join_status": "lFUeVSIREKgcL96S",
-    "paid": "14",
-    "plus_minus": "19",
-    "ratio": "xCLf4UhOWxBSuHbY",
+    "user_id": "t50mBV00er987wa0",
+    "join_status": "jt3kKaiDR9vuEfdP",
+    "paid": "5",
+    "plus_minus": "16",
+    "ratio": "9RR1wuItcNQSPNEN",
 })
 
 fetch(url, {
@@ -5818,8 +6235,8 @@ curl -X DELETE "http://localhost/api/sessions/{session}/users/{user}"
 const url = new URL("http://localhost/api/sessions/{session}/users/{user}");
 
     let params = {
-            "session": "5fIuD2PTAIG15G2W",
-            "user": "hw1DzLiNu5pZ9W5X",
+            "session": "y7lVU11WRMe5ebeK",
+            "user": "K9JS86IRt9PiJdGv",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -6109,38 +6526,6 @@ fetch(url, {
             }
         },
         {
-            "id": 258,
-            "manager": {
-                "id": 1,
-                "unique_id": "TESTTEST",
-                "username": "テスト太郎",
-                "email": "testuser@example.com",
-                "created_at": {
-                    "date": "2019-02-14 06:26:47.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-14 06:27:04.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            "name": "attributename9HeIo",
-            "plus_minus": null,
-            "ratio": null,
-            "created_at": {
-                "date": "2019-02-14 06:29:39.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-14 06:29:39.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
             "id": 259,
             "manager": {
                 "id": 1,
@@ -6158,7 +6543,7 @@ fetch(url, {
                     "timezone": "UTC"
                 }
             },
-            "name": "attributenameVFJOT",
+            "name": "updateiD0Jr",
             "plus_minus": null,
             "ratio": null,
             "created_at": {
@@ -6167,7 +6552,7 @@ fetch(url, {
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-14 06:30:15.000000",
+                "date": "2019-02-14 06:30:31.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -6203,6 +6588,70 @@ fetch(url, {
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
+        },
+        {
+            "id": 261,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-14 06:26:47.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-14 06:27:04.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "attributenameFx1Lm",
+            "plus_minus": null,
+            "ratio": null,
+            "created_at": {
+                "date": "2019-02-14 06:30:31.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-14 06:30:31.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "id": 262,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "created_at": {
+                    "date": "2019-02-14 06:26:47.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-14 06:27:04.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                }
+            },
+            "name": "attributenameKGOn3",
+            "plus_minus": null,
+            "ratio": null,
+            "created_at": {
+                "date": "2019-02-14 06:30:31.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-14 06:30:31.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
         }
     ]
 }
@@ -6220,9 +6669,9 @@ fetch(url, {
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/attributes"     -d "name"="HIuehixQNQ7mZHQv" \
-    -d "plus_minus"="5" \
-    -d "ratio"="209081665.79031" 
+curl -X POST "http://localhost/api/attributes"     -d "name"="mqgE0QUGLQdIUyf0" \
+    -d "plus_minus"="8" \
+    -d "ratio"="244555.814" 
 ```
 
 ```javascript
@@ -6234,9 +6683,9 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "name": "HIuehixQNQ7mZHQv",
-    "plus_minus": "5",
-    "ratio": "209081665.79031",
+    "name": "mqgE0QUGLQdIUyf0",
+    "plus_minus": "8",
+    "ratio": "244555.814",
 })
 
 fetch(url, {
@@ -6253,7 +6702,7 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 262,
+        "id": 264,
         "manager": {
             "id": 1,
             "unique_id": "TESTTEST",
@@ -6270,16 +6719,16 @@ fetch(url, {
                 "timezone": "UTC"
             }
         },
-        "name": "attributenameKGOn3",
+        "name": "attributenameNzW1i",
         "plus_minus": null,
         "ratio": null,
         "created_at": {
-            "date": "2019-02-14 06:30:31.000000",
+            "date": "2019-02-14 06:34:17.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-14 06:30:31.000000",
+            "date": "2019-02-14 06:34:17.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -6320,7 +6769,7 @@ curl -X GET -G "http://localhost/api/attributes/{attribute}"
 const url = new URL("http://localhost/api/attributes/{attribute}");
 
     let params = {
-            "attribute": "Frlbk97U2tIXCuSo",
+            "attribute": "m8uUnJHp4SXiHYba",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -6342,7 +6791,7 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 258,
+        "id": 254,
         "manager": {
             "id": 1,
             "unique_id": "TESTTEST",
@@ -6359,16 +6808,16 @@ fetch(url, {
                 "timezone": "UTC"
             }
         },
-        "name": "attributename9HeIo",
+        "name": "attributenameb109f",
         "plus_minus": null,
         "ratio": null,
         "created_at": {
-            "date": "2019-02-14 06:29:39.000000",
+            "date": "2019-02-14 06:27:56.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-14 06:29:39.000000",
+            "date": "2019-02-14 06:27:56.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -6393,16 +6842,16 @@ Parameter | Status | Description
 > Example request:
 
 ```bash
-curl -X PUT "http://localhost/api/attributes/{attribute}"     -d "name"="ZHoWqAAUF8YM0lBQ" \
-    -d "plus_minus"="7" \
-    -d "ratio"="82670.5" 
+curl -X PUT "http://localhost/api/attributes/{attribute}"     -d "name"="zj7kUbXTguowmy3E" \
+    -d "plus_minus"="8" \
+    -d "ratio"="513.8238" 
 ```
 
 ```javascript
 const url = new URL("http://localhost/api/attributes/{attribute}");
 
     let params = {
-            "attribute": "prE1Xaexgd2qvDWM",
+            "attribute": "nAHQ6mV3dCjoBczI",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -6412,9 +6861,9 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "name": "ZHoWqAAUF8YM0lBQ",
-    "plus_minus": "7",
-    "ratio": "82670.5",
+    "name": "zj7kUbXTguowmy3E",
+    "plus_minus": "8",
+    "ratio": "513.8238",
 })
 
 fetch(url, {
@@ -6448,7 +6897,7 @@ fetch(url, {
                 "timezone": "UTC"
             }
         },
-        "name": "updateiD0Jr",
+        "name": "updatesICrl",
         "plus_minus": null,
         "ratio": null,
         "created_at": {
@@ -6457,7 +6906,7 @@ fetch(url, {
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-14 06:30:31.000000",
+            "date": "2019-02-14 06:34:17.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -6498,7 +6947,7 @@ curl -X DELETE "http://localhost/api/attributes/{attribute}"
 const url = new URL("http://localhost/api/attributes/{attribute}");
 
     let params = {
-            "attribute": "br8JTbI0NrkEB0qG",
+            "attribute": "h3aQNvXXDPrBzl95",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -8266,7 +8715,7 @@ curl -X GET -G "http://localhost/api/guest/sessions/{session}"
 const url = new URL("http://localhost/api/guest/sessions/{session}");
 
     let params = {
-            "session": "xcH4xVPuBa8pCN3W",
+            "session": "85YCCaZKSHTJnpBF",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -8288,18 +8737,18 @@ fetch(url, {
 ```json
 {
     "data": {
-        "id": 67,
-        "name": "voluptas",
-        "shop_id": 959,
-        "budget": 17416,
-        "actual": 11413,
-        "start_time": "1980-04-30 21:47:33",
+        "id": 16,
+        "name": "ut",
+        "shop_id": 282,
+        "budget": 2976,
+        "actual": 29115,
+        "start_time": "1998-05-10 08:57:53",
         "end_time": null,
         "manager": {
-            "id": 17,
-            "unique_id": "RLZpbrgpog",
-            "username": "伊藤 千代",
-            "email": "lnakajima@example.net",
+            "id": 4,
+            "unique_id": "MRQQiIYriq",
+            "username": "宇野 直人",
+            "email": "aota.yumiko@example.com",
             "created_at": {
                 "date": "2019-02-14 06:26:47.000000",
                 "timezone_type": 3,
@@ -8333,10 +8782,10 @@ fetch(url, {
                 }
             },
             {
-                "id": 6,
-                "unique_id": "944p0nloDq",
-                "username": "吉田 舞",
-                "email": "iyoshimoto@example.com",
+                "id": 15,
+                "unique_id": "WHD8V9Ugro",
+                "username": "中島 加奈",
+                "email": "csuzuki@example.org",
                 "join_status": "deny",
                 "paid": null,
                 "plus_minus": null,
@@ -8353,71 +8802,11 @@ fetch(url, {
                 }
             },
             {
-                "id": 23,
-                "unique_id": "LGAYA4EVfY",
-                "username": "廣川 知実",
-                "email": "mkondo@example.net",
-                "join_status": "deny",
-                "paid": null,
-                "plus_minus": null,
-                "ratio": null,
-                "created_at": {
-                    "date": "2019-02-14 06:26:47.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-14 06:26:47.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            {
-                "id": 24,
-                "unique_id": "rfgjzqUz12",
-                "username": "吉田 舞",
-                "email": "kenichi02@example.net",
-                "join_status": "allow",
-                "paid": 0,
-                "plus_minus": null,
-                "ratio": null,
-                "created_at": {
-                    "date": "2019-02-14 06:26:47.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-14 06:26:47.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            {
-                "id": 36,
-                "unique_id": "OscRASSF51",
-                "username": "佐々木 くみ子",
-                "email": "kumiko31@example.net",
-                "join_status": "allow",
-                "paid": 0,
-                "plus_minus": null,
-                "ratio": null,
-                "created_at": {
-                    "date": "2019-02-14 06:26:47.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-14 06:26:47.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                }
-            },
-            {
-                "id": 46,
-                "unique_id": "DhkEYK98p9",
-                "username": "中津川 涼平",
-                "email": "ekoda.tomoya@example.net",
-                "join_status": "deny",
+                "id": 45,
+                "unique_id": "2xrGM8kfqp",
+                "username": "吉田 春香",
+                "email": "bito@example.com",
+                "join_status": "wait",
                 "paid": null,
                 "plus_minus": null,
                 "ratio": null,
@@ -8434,12 +8823,12 @@ fetch(url, {
             }
         ],
         "created_at": {
-            "date": "2019-02-14 06:26:53.000000",
+            "date": "2019-02-14 06:26:49.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-14 06:26:53.000000",
+            "date": "2019-02-14 06:26:49.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -8464,10 +8853,10 @@ Parameter | Status | Description
 > Example request:
 
 ```bash
-curl -X PUT "http://localhost/api/profile/update"     -d "unique_id"="JYADsYdN71pTG3CZ" \
-    -d "username"="w7ExdwjbAtDgpAV8" \
-    -d "password"="0W1cpSQWcuZzeRXr" \
-    -d "unique_id_search_flag"="false" \
+curl -X PUT "http://localhost/api/profile/update"     -d "unique_id"="GKB2zuxWE0jlIDF1" \
+    -d "username"="g8sAIr0yXLDUpT0j" \
+    -d "password"="h4kHrIbfGo0CZP36" \
+    -d "unique_id_search_flag"="1" \
     -d "username_search_flag"="false" 
 ```
 
@@ -8480,10 +8869,10 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "unique_id": "JYADsYdN71pTG3CZ",
-    "username": "w7ExdwjbAtDgpAV8",
-    "password": "0W1cpSQWcuZzeRXr",
-    "unique_id_search_flag": "",
+    "unique_id": "GKB2zuxWE0jlIDF1",
+    "username": "g8sAIr0yXLDUpT0j",
+    "password": "h4kHrIbfGo0CZP36",
+    "unique_id_search_flag": "1",
     "username_search_flag": "",
 })
 
@@ -8511,7 +8900,7 @@ fetch(url, {
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-14 06:30:32.000000",
+            "date": "2019-02-14 06:34:18.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         }
@@ -8540,7 +8929,7 @@ Parameter | Type | Status | Description
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/search/forward_by_username"     -d "username"="z6f70J8LJmdF4hUY" 
+curl -X POST "http://localhost/api/search/forward_by_username"     -d "username"="90CjT98Ffi0GOUOk" 
 ```
 
 ```javascript
@@ -8552,7 +8941,7 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "username": "z6f70J8LJmdF4hUY",
+    "username": "90CjT98Ffi0GOUOk",
 })
 
 fetch(url, {
@@ -8606,7 +8995,7 @@ Parameter | Type | Status | Description
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/search/perfect_by_unique_id"     -d "unique_id"="dKl0uhLJzcsHHiVp" 
+curl -X POST "http://localhost/api/search/perfect_by_unique_id"     -d "unique_id"="avcwHJWmuNjgZF45" 
 ```
 
 ```javascript
@@ -8618,7 +9007,7 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "unique_id": "dKl0uhLJzcsHHiVp",
+    "unique_id": "avcwHJWmuNjgZF45",
 })
 
 fetch(url, {
@@ -8670,7 +9059,7 @@ Parameter | Type | Status | Description
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/search/forward_by_unique_id"     -d "unique_id"="d2LdhfZ3N4b4h8P1" 
+curl -X POST "http://localhost/api/search/forward_by_unique_id"     -d "unique_id"="DbmKfZuPc4TvqbjM" 
 ```
 
 ```javascript
@@ -8682,7 +9071,7 @@ let headers = {
 }
 
 let body = JSON.stringify({
-    "unique_id": "d2LdhfZ3N4b4h8P1",
+    "unique_id": "DbmKfZuPc4TvqbjM",
 })
 
 fetch(url, {

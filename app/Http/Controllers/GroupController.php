@@ -26,14 +26,14 @@ class GroupController extends Controller
      * @bodyParam name string required 新規グループの名前
      *
      * @responseFile 201 responses/groups.store.201.json
-     * @responseFile 409 responses/groups.store.409.json
      */
     public function store(GroupStoreRequest $request)
     {
-        // 同じグループ名はやめよう
-        if ($request->user()->managedGroups()->where('name', $request->name)->exists()) {
-            return response()->json(['error' => '同じ名前は使用できません'], Response::HTTP_CONFLICT);
-        }
+        // 同じ名前を許可する
+//        // 同じグループ名はやめよう
+//        if ($request->user()->managedGroups()->where('name', $request->name)->exists()) {
+//            return response()->json(['error' => '同じ名前は使用できません'], Response::HTTP_CONFLICT);
+//        }
 
         return new GroupResource($request->user()->managedGroups()->create($request->all()));
     }
@@ -59,10 +59,10 @@ class GroupController extends Controller
      */
     public function update(Request $request, Group $group)
     {
-        // 同じグループ名はやめよう
-        if ($request->user()->managedGroups()->where('name', $request->name)->exists()) {
-            return response()->json(['error' => '同じ名前は使用できません'], Response::HTTP_CONFLICT);
-        }
+//        // 同じグループ名はやめよう
+//        if ($request->user()->managedGroups()->where('name', $request->name)->exists()) {
+//            return response()->json(['error' => '同じ名前は使用できません'], Response::HTTP_CONFLICT);
+//        }
 
         $group->update($request->all());
 
