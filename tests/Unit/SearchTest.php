@@ -18,7 +18,7 @@ class SearchTest extends TestCase
         $testUser = User::find(1);
 
         $response = $this->apiAs($testUser, 'POST', route('search.forward_by_username'), [
-            'username' => 'te'
+            'username' => 'テスト'
         ], []);
 
         $response->assertStatus(Response::HTTP_OK);
