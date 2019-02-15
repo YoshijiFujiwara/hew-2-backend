@@ -32,7 +32,6 @@ class SessionUserController extends Controller
      * @bodyParam ratio datetime  割合（加減算と重複しないほうが良いでしょう）
      *
      * @responseFile 200 responses/sessions.users.store.200.json
-     * @responseFile 403 responses/sessions.users.store.403.json
      */
     public function store(Request $request, Session $session)
     {
