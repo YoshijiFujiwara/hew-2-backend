@@ -126,6 +126,7 @@ class SessionUserTest extends TestCase
         $newSession = $testUser->managedSessions->where('name', $newSessionName)->first();
 
         $newMember = $testUser->friends->random();
+
         $response = $this->apiAs($testUser, 'POST', route('sessions.users.store', [$newSession]), [
             'user_id' => $newMember->id,
             'join_status' => 'allow',
@@ -134,14 +135,9 @@ class SessionUserTest extends TestCase
             'ratio' => null,
         ], []);
 
-        $response->assertStatus(Response::HTTP_OK);
-
         $response = $this->apiAs($testUser, 'GET', route('sessions.users.show', [$newSession, $newMember]), [], []);
 
-        $response->assertStatus(Response::HTTP_OK);
-
         $response = $this->apiAs($testUser, 'DELETE', route('sessions.users.destroy', [$newSession, $newMember]), [], []);
-
         $response->assertStatus(Response::HTTP_NO_CONTENT);
     }
 }

@@ -51,4 +51,13 @@ class SearchTest extends TestCase
 
         $response->assertStatus(Response::HTTP_OK);
     }
+
+    public function testCanAddFriendUsers()
+    {
+        $testUser = User::find(1);
+
+        $response = $this->apiAs($testUser, 'GET', route('search.can_add_friend_users'), []);
+
+        $response->assertStatus(Response::HTTP_OK);
+    }
 }

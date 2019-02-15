@@ -19,6 +19,15 @@ class GroupUserTest extends TestCase
         $response->assertStatus(Response::HTTP_OK);
     }
 
+    public function testCanAddUsers()
+    {
+        $testUser = User::find(1);
+        $alreadyGroup = $testUser->managedGroups->random();
+        $response = $this->apiAs($testUser, 'GET', route('groups.can_add_users', ['group' => $alreadyGroup->id]), [], []);
+
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
     public function testStore()
     {
         $testUser = User::find(1);

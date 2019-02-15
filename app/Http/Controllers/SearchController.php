@@ -74,11 +74,23 @@ class SearchController extends Controller
             $users = User::where('unique_id', 'like', $request->unique_id . '%')->where('unique_id_search_flag', true)->get();
         }
 
-
         if (isset($users) && $users->count() > 0) {
             return UserResource::collection($users);
         } else {
             return response(null, Response::HTTP_NO_CONTENT);
         }
+    }
+
+    /**
+     * search.can_add_friend_users 友達追加可能なユーザー一覧を返す
+     *
+     * @responseFile 200 responses/search.can_add_friend_users.200.json
+     */
+    public function canAddFriendUsers(Request $request)
+    {
+        $users = User::whereNotIn('id', $request->user()->allFriends()->pluck('id'))
+            ->where('id', '!=', $request->user()->id)->get();
+
+        return UserResource::collection($users);
     }
 }

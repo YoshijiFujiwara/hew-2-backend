@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\Http\Resources\UserResource;
 use App\User;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Log;
