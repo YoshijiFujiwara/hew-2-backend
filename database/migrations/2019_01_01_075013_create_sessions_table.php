@@ -23,6 +23,7 @@ class CreateSessionsTable extends Migration
             $table->timestamp('start_time')->nullable()->comment('開始時刻');
             $table->timestamp('end_time')->nullable()->comment('終了時刻');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

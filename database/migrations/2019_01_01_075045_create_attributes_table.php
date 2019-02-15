@@ -20,6 +20,7 @@ class CreateAttributesTable extends Migration
             $table->integer('plus_minus')->nullable()->comment('加減算');
             $table->integer('ratio')->nullable()->comment('割合');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
