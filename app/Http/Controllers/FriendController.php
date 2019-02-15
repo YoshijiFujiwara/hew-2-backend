@@ -16,15 +16,10 @@ class FriendController extends Controller
      * friends.index 友達一覧
      *
      * @responseFile 200 responses/friends.index.200.json
-     * @responseFile 204 responses/friends.index.204.json
      */
     public function index(Request $request)
     {
-        if ($request->user()->friends()->count() === 0) {
-            return response()->json(null, Response::HTTP_NO_CONTENT);
-        } else {
-            return UserResource::collection($request->user()->friends);
-        }
+        return UserResource::collection($request->user()->friends);
     }
 
     /**

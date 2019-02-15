@@ -25,7 +25,7 @@ class GroupUserController extends Controller
     /**
      * groups.users.store グループにユーザーを追加する
      * @queryParam group required グループid
-     *
+     * @bodyParam user_id integer required 追加するユーザーのID
      * @responseFile 200 responses/groups.users.store.200.json
      */
     public function store(Request $request, Group $group)
