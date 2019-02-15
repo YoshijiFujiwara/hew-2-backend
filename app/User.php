@@ -158,7 +158,6 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(DefaultSetting::class, 'manager_id');
     }
 
-
     /**
      * ポリシーで使用するメソッド
      */
