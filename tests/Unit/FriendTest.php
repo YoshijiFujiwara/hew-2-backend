@@ -82,7 +82,7 @@ class FriendTest extends TestCase
 
         $response
             ->assertStatus(Response::HTTP_CONFLICT)
-            ->assertJson(['error' => 'すでにフレンドか、申請中です']);
+            ->assertJson(['error' => 'すでにフレンドです']);
     }
 
     public function testShow()
@@ -107,17 +107,38 @@ class FriendTest extends TestCase
         $response->assertStatus(Response::HTTP_FORBIDDEN);
     }
 
-    public function testBlockedUsers()
+    public function testBlockMeUsers()
     {
         $testUser = User::find(1);
-        $response = $this->apiAs($testUser, 'GET', route('friends.blocked_users'), [], []);
+        $response = $this->apiAs($testUser, 'GET', route('friends.waiting_friends'), [], []);
+//        Log::debug(print_r($response, true));
         $response->assertStatus(Response::HTTP_OK);
     }
+
 
     public function testWaitingFriends()
     {
         $testUser = User::find(1);
         $response = $this->apiAs($testUser, 'GET', route('friends.waiting_friends'), [], []);
+//        Log::debug(print_r($response, true));
+
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
+    public function testBlockingUsers()
+    {
+        $testUser = User::find(1);
+        $response = $this->apiAs($testUser, 'GET', route('friends.blocking_users'), [], []);
+//        Log::debug(print_r($response, true));
+
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
+    public function testPermittingUsers()
+    {
+        $testUser = User::find(1);
+        $response = $this->apiAs($testUser, 'GET', route('friends.permitting'), [], []);
+
         $response->assertStatus(Response::HTTP_OK);
     }
 
@@ -199,6 +220,33 @@ class FriendTest extends TestCase
     {
         $testUser = User::find(1);
         $response = $this->apiAs($testUser, 'GET', route('friends.friend_request_users'), [], []);
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
+    public function testCancelInvitation()
+    {
+        $testUser = User::find(1);
+        $invitingUser = $testUser->waitingFriends->random();
+        $response = $this->apiAs($testUser, 'PUT', route('friends.cancel_invitation', ['friend' => $invitingUser]), [], []);
+
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
+    public function testBlock()
+    {
+        $testUser = User::find(1);
+        $friend = $testUser->friends->random();
+        $response = $this->apiAs($testUser, 'PUT', route('friends.block', ['friend' => $friend]), [], []);
+
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
+    public function testUnBlock()
+    {
+        $testUser = User::find(1);
+        $friend = $testUser->friends->random();
+        $response = $this->apiAs($testUser, 'PUT', route('friends.un_block', ['friend' => $friend]), [], []);
+
         $response->assertStatus(Response::HTTP_OK);
     }
 }

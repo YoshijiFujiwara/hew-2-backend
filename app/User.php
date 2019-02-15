@@ -7,6 +7,8 @@ use App\Model\DefaultSetting;
 use App\Model\Group;
 use App\Model\Manager;
 use App\Model\Session;
+use function foo\func;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -17,8 +19,9 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject
 {
-    use Notifiable;
+    use Notifiable, SoftDeletes;
 
+    protected $dates = ['deleted_at'];
 
     /**
      * Boot function from laravel.
@@ -83,50 +86,54 @@ class User extends Authenticatable implements JWTSubject
      * リレーション
      */
 
+    // 申請中＋フレンド＋申請したけどブロックされた
+    public function allFriends()
+    {
+        return $this->belongsToMany(self::class, 'user_friends', 'user_id', 'friend_id')
+            ->withPivot(['attribute_id', 'permitted', 'deleted_at'])
+            ->wherePivot('deleted_at', null)
+            ->withTimestamps();
+    }
+    // フレンド
     public function friends()
     {
         return $this->allFriends()->wherePivot('permitted', true);
     }
-
-    public function allFriends()
-    {
-        return $this->belongsToMany(self::class, 'user_friends', 'user_id', 'friend_id')
-            ->withPivot('attribute_id', 'permitted');
-    }
-
-    public function blockedFriends()
+    // 申請したけどブロックされた！
+    public function blockMeUsers()
     {
         return $this->allFriends()->wherePivot('permitted', false);
     }
-
+    // 申請中
     public function waitingFriends()
     {
         return $this->allFriends()->wherePivot('permitted', null);
     }
 
-    /**
-     * 自分を友たちとして追加しているユーザー
-     */
-    public function allFriendedUsers()
+    // 自分に対してフレンド申請かなにかをしたユーザー
+    public function allRequestMeUsers()
     {
         return $this->belongsToMany(self::class, 'user_friends', 'friend_id', 'user_id')
-            ->withPivot('attribute_id', 'permitted');
+            ->withPivot(['attribute_id', 'permitted', 'deleted_at'])
+            ->wherePivot('deleted_at', null)
+            ->withTimestamps();
     }
-
-    public function invitingUsers()
+    // 自分にフレンド申請しているユーザー
+    public function invitingMeUsers()
     {
-        return $this->allFriendedUsers()->wherePivot('permitted', null);
+        return $this->allRequestMeUsers()->wherePivot('permitted', null);
     }
-
-    public function friendedUsers()
+    // 自分に申請してきたユーザーで、自分がそれを了承した
+    public function permittingUsers()
     {
-        return $this->allFriendedUsers()->wherePivot('permitted', true);
+        return $this->allRequestMeUsers()->wherePivot('permitted', true);
     }
-
+    // 申請してきたけど、ブロックした
     public function blockingUsers()
     {
-        return $this->allFriendedUsers()->wherePivot('permitted', false);
+        return $this->allRequestMeUsers()->wherePivot('permitted', false);
     }
+
 
     public function managedSessions()
     {
@@ -135,7 +142,10 @@ class User extends Authenticatable implements JWTSubject
 
     public function participatedSessions()
     {
-        return $this->belongsToMany(Session::class)->withPivot('join_status', 'paid', 'plus_minus', 'ratio');
+        return $this->belongsToMany(Session::class)
+            ->withPivot(['join_status', 'paid', 'plus_minus', 'ratio', 'deleted_at'])
+            ->wherePivot('deleted_at', null)
+            ->withTimestamps();
     }
 
     public function managedGroups()
@@ -145,7 +155,10 @@ class User extends Authenticatable implements JWTSubject
 
     public function participatedGroups()
     {
-        return $this->belongsToMany(Group::class);
+        return $this->belongsToMany(Group::class)
+            ->withPivot('deleted_at')
+            ->wherePivot('deleted_at', null)
+            ->withTimestamps();
     }
 
     public function managedAttributes()

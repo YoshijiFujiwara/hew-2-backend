@@ -4,10 +4,30 @@ namespace App\Model;
 
 use App\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Group extends Model
 {
-    protected $guarded = ['manager_id'];
+    use SoftDeletes;
+
+    protected $guarded = ['manager_id', 'id'];
+    protected $dates = ['deleted_at'];
+
+
+    /**
+     * Boot function from laravel.
+     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function (Group $group) {
+            $group->users()->get()->each(function ($u) {
+                $u->pivot->deleted_at = now();
+                $u->pivot->save();
+            });
+        });
+    }
 
     public function manager()
     {
@@ -16,7 +36,10 @@ class Group extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class)
+            ->withPivot('deleted_at')
+            ->wherePivot('deleted_at', null)
+            ->withTimestamps();
     }
 
     public function defaultSettings()

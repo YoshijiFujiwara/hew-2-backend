@@ -19,10 +19,17 @@
             "type": "->"
         },
         {
+            "file": "/var/www/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php",
+            "line": 68,
+            "function": "render",
+            "class": "App\\Exceptions\\Handler",
+            "type": "->"
+        },
+        {
             "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php",
             "line": 83,
             "function": "render",
-            "class": "App\\Exceptions\\Handler",
+            "class": "NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler",
             "type": "->"
         },
         {
@@ -342,7 +349,7 @@
         },
         {
             "file": "/var/www/vendor/phpunit/phpunit/src/Framework/TestResult.php",
-            "line": 687,
+            "line": 675,
             "function": "runBare",
             "class": "PHPUnit\\Framework\\TestCase",
             "type": "->"
@@ -377,7 +384,7 @@
         },
         {
             "file": "/var/www/vendor/phpunit/phpunit/src/TextUI/TestRunner.php",
-            "line": 641,
+            "line": 629,
             "function": "run",
             "class": "PHPUnit\\Framework\\TestSuite",
             "type": "->"

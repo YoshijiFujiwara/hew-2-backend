@@ -19,6 +19,8 @@ class CreateUserFriendsTable extends Migration
             $table->integer('friend_id')->unsigned()->comment('と、その友達のid');
             $table->boolean('permitted')->nullable()->comment('友達追加OKか。nullが待機中');
             $table->integer('attribute_id')->unsigned()->nullable()->comment('属性id');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

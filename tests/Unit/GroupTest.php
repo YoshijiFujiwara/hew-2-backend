@@ -31,20 +31,6 @@ class GroupTest extends TestCase
         $response->assertStatus(Response::HTTP_CREATED);
     }
 
-    public function testCantStore()
-    {
-//        $newGroupName = 'newGroup' . str_random(5);
-
-        $testUser = User::find(1);
-        $alreadyGroup = $testUser->managedGroups->random();
-
-        $response = $this->apiAs($testUser, 'POST', route('groups.store'), [
-            'name' => $alreadyGroup->name
-        ], []);
-
-        $response->assertStatus(Response::HTTP_CONFLICT);
-    }
-
     public function testShow()
     {
         $testUser = User::find(1);

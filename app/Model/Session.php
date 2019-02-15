@@ -4,10 +4,30 @@ namespace App\Model;
 
 use App\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Session extends Model
 {
-    protected $guarded = ['manager_id'];
+    use SoftDeletes;
+
+    protected $guarded = ['manager_id', 'id'];
+    protected $dates = ['deleted_at'];
+
+
+    /**
+     * Boot function from laravel.
+     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function (Session $session) {
+            $session->users()->get()->each(function ($u) {
+                $u->pivot->deleted_at = now();
+                $u->pivot->save();
+            });
+        });
+    }
 
     public function manager()
     {
@@ -16,7 +36,10 @@ class Session extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class)->withPivot('join_status', 'paid', 'plus_minus', 'ratio');
+        return $this->belongsToMany(User::class)
+            ->withPivot(['join_status', 'paid', 'plus_minus', 'ratio', 'deleted_at'])
+            ->wherePivot('deleted_at', null)
+            ->withTimestamps();
     }
 
     /**
