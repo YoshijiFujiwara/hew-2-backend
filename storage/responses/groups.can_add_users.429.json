@@ -251,7 +251,7 @@
         },
         {
             "file": "/var/www/tests/Unit/GroupUserTest.php",
-            "line": 83,
+            "line": 26,
             "function": "apiAs",
             "class": "Tests\\TestCase",
             "type": "->"
@@ -259,7 +259,7 @@
         {
             "file": "/var/www/vendor/phpunit/phpunit/src/Framework/TestCase.php",
             "line": 1153,
-            "function": "testDestroy",
+            "function": "testCanAddUsers",
             "class": "Tests\\Unit\\GroupUserTest",
             "type": "->"
         },

@@ -1,14 +1,49 @@
 {
-    "message": "Too Many Attempts.",
-    "exception": "Illuminate\\Http\\Exceptions\\ThrottleRequestsException",
-    "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
-    "line": 124,
+    "message": "No query results for model [App\\User].",
+    "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
+    "file": "/var/www/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php",
+    "line": 200,
     "trace": [
         {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php",
+            "line": 176,
+            "function": "prepareException",
+            "class": "Illuminate\\Foundation\\Exceptions\\Handler",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/app/Exceptions/Handler.php",
             "line": 53,
-            "function": "buildException",
-            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+            "function": "render",
+            "class": "Illuminate\\Foundation\\Exceptions\\Handler",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php",
+            "line": 68,
+            "function": "render",
+            "class": "App\\Exceptions\\Handler",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php",
+            "line": 83,
+            "function": "render",
+            "class": "NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php",
+            "line": 55,
+            "function": "handleException",
+            "class": "Illuminate\\Routing\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+            "line": 58,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Pipeline",
             "type": "->"
         },
         {
@@ -251,7 +286,7 @@
         },
         {
             "file": "/var/www/tests/Unit/GroupUserTest.php",
-            "line": 83,
+            "line": 26,
             "function": "apiAs",
             "class": "Tests\\TestCase",
             "type": "->"
@@ -259,7 +294,7 @@
         {
             "file": "/var/www/vendor/phpunit/phpunit/src/Framework/TestCase.php",
             "line": 1153,
-            "function": "testDestroy",
+            "function": "testCanAddUsers",
             "class": "Tests\\Unit\\GroupUserTest",
             "type": "->"
         },

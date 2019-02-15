@@ -1,14 +1,122 @@
 {
-    "message": "Too Many Attempts.",
-    "exception": "Illuminate\\Http\\Exceptions\\ThrottleRequestsException",
-    "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
-    "line": 124,
+    "message": "Class 'App\\Http\\Controllers\\UserResource' not found",
+    "exception": "Symfony\\Component\\Debug\\Exception\\FatalThrowableError",
+    "file": "/var/www/app/Http/Controllers/GroupController.php",
+    "line": 65,
     "trace": [
         {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+            "function": "canAddUsers",
+            "class": "App\\Http\\Controllers\\GroupController",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Controller.php",
+            "line": 54,
+            "function": "call_user_func_array"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php",
+            "line": 45,
+            "function": "callAction",
+            "class": "Illuminate\\Routing\\Controller",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+            "line": 219,
+            "function": "dispatch",
+            "class": "Illuminate\\Routing\\ControllerDispatcher",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+            "line": 176,
+            "function": "runController",
+            "class": "Illuminate\\Routing\\Route",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "line": 682,
+            "function": "run",
+            "class": "Illuminate\\Routing\\Route",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php",
+            "line": 30,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authorize.php",
+            "line": 45,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 151,
+            "function": "handle",
+            "class": "Illuminate\\Auth\\Middleware\\Authorize",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php",
             "line": 53,
-            "function": "buildException",
-            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/app/Http/Middleware/JWT.php",
+            "line": 21,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 151,
+            "function": "handle",
+            "class": "App\\Http\\Middleware\\JWT",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php",
+            "line": 53,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php",
+            "line": 41,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 151,
+            "function": "handle",
+            "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php",
+            "line": 53,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+            "line": 58,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Pipeline",
             "type": "->"
         },
         {
@@ -251,7 +359,7 @@
         },
         {
             "file": "/var/www/tests/Unit/GroupUserTest.php",
-            "line": 83,
+            "line": 26,
             "function": "apiAs",
             "class": "Tests\\TestCase",
             "type": "->"
@@ -259,7 +367,7 @@
         {
             "file": "/var/www/vendor/phpunit/phpunit/src/Framework/TestCase.php",
             "line": 1153,
-            "function": "testDestroy",
+            "function": "testCanAddUsers",
             "class": "Tests\\Unit\\GroupUserTest",
             "type": "->"
         },

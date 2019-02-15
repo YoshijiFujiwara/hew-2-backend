@@ -250,8 +250,8 @@
             "type": "->"
         },
         {
-            "file": "/var/www/tests/Unit/GroupUserTest.php",
-            "line": 83,
+            "file": "/var/www/tests/Unit/SessionUserTest.php",
+            "line": 111,
             "function": "apiAs",
             "class": "Tests\\TestCase",
             "type": "->"
@@ -259,8 +259,8 @@
         {
             "file": "/var/www/vendor/phpunit/phpunit/src/Framework/TestCase.php",
             "line": 1153,
-            "function": "testDestroy",
-            "class": "Tests\\Unit\\GroupUserTest",
+            "function": "testUpdate",
+            "class": "Tests\\Unit\\SessionUserTest",
             "type": "->"
         },
         {

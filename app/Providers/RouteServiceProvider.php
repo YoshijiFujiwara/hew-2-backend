@@ -3,6 +3,10 @@
 namespace App\Providers;
 
 use App\Model\Attribute;
+use App\Model\DefaultSetting;
+use App\Model\Group;
+use App\Model\Session;
+use App\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -29,6 +33,11 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot();
 
         Route::model('attribute', Attribute::class);
+        Route::model('group', Group::class);
+        Route::model('friend', User::class);
+        Route::model('user', User::class);
+        Route::model('session', Session::class);
+        Route::model('default_setting', DefaultSetting::class);
     }
 
     /**

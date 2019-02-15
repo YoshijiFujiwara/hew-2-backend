@@ -24,6 +24,7 @@ Route::middleware('JWT')->group(function () {
 
     Route::apiResource('groups', 'GroupController')->only(['index', 'store']);
     Route::apiResource('groups', 'GroupController')->only(['show', 'update', 'destroy'])->middleware('can:has,group');
+    Route::get('groups/{group}/users/can_add', 'GroupController@canAddUsers')->name('groups.can_add_users')->middleware('can:has,group');
     Route::apiResource('groups/{group}/users', 'GroupUserController', ['as' => 'groups'])->middleware('can:has,group');
 
     Route::apiResource('default_settings', 'DefaultSettingController')->only(['index', 'store']);

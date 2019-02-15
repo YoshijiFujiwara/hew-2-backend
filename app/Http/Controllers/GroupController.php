@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\GroupStoreRequest;
 use App\Http\Resources\GroupResource;
+use App\Http\Resources\UserResource;
 use App\Model\Group;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -48,6 +50,20 @@ class GroupController extends Controller
     public function show(Request $request, Group $group)
     {
         return new GroupResource($group);
+    }
+
+    /**
+     * groups.can_add_users  対象のグループに追加できるユーザー一覧を返す（自分のフレンド−そのグループのメンバー）
+     *
+     * @queryParam group required グループid
+     *
+     * @responseFile 200 responses/groups.can_add_users.200.json
+     */
+    public function canAddUsers(Request $request, Group $group)
+    {
+        $users = $request->user()->friends()->whereNotIn('id', $group->users()->pluck('id'))->get();
+
+        return UserResource::collection($users);
     }
 
     /**
