@@ -54,13 +54,13 @@ Route::middleware('JWT')->group(function () {
         Route::post('forward_by_unique_id', 'SearchController@forwardSearchByUniqueId')->name('search.forward_by_unique_id');
     });
 });
-
-Route::group([
-    'prefix' => 'admin',
-    'as' => 'admin.',
-    'namespace' => 'Admin'
-], function () {
-    Route::apiResource('users', 'UserController');
-    Route::apiResource('groups', 'GroupController');
-    Route::apiResource('sessions', 'SessionController');
-});
+//
+//Route::group([
+//    'prefix' => 'admin',
+//    'as' => 'admin.',
+//    'namespace' => 'Admin'
+//], function () {
+//    Route::apiResource('users', 'UserController');
+//    Route::apiResource('groups', 'GroupController');
+//    Route::apiResource('sessions', 'SessionController');
+//});
