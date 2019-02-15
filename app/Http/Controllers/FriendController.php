@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\FriendStoreRequest;
 use App\Http\Resources\SessionResource;
 use App\Http\Resources\UserResource;
+use App\Model\Group;
+use App\Model\Session;
 use App\User;
 use function Composer\Autoload\includeFile;
 use Illuminate\Http\Request;
@@ -16,15 +18,10 @@ class FriendController extends Controller
      * friends.index 友達一覧
      *
      * @responseFile 200 responses/friends.index.200.json
-     * @responseFile 204 responses/friends.index.204.json
      */
     public function index(Request $request)
     {
-        if ($request->user()->friends()->count() === 0) {
-            return response()->json(null, Response::HTTP_NO_CONTENT);
-        } else {
-            return UserResource::collection($request->user()->friends);
-        }
+        return UserResource::collection($request->user()->friends);
     }
 
     /**
@@ -74,6 +71,14 @@ class FriendController extends Controller
      */
     public function destroy(Request $request, User $friend)
     {
+        $manager = $request->user();
+        $manager->managedGroups->each(function (Group $group) use ($friend) {
+            $group->users()->where('id', $friend->id)->delete();
+        });
+        $manager->managedSessions->each(function (Session $session) use ($friend) {
+            $session->users()->where('id', $friend->id)->delete();
+        });
+
         $request->user()->friends()->detach($friend);
 
         return response(null, Response::HTTP_NO_CONTENT);
