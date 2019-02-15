@@ -92,6 +92,8 @@ class User extends Authenticatable implements JWTSubject
     public function allFriends()
     {
         return $this->belongsToMany(self::class, 'user_friends', 'user_id', 'friend_id')
+            ->wherePivot('deleted_at', null)
+            ->withTimestamps()
             ->withPivot('attribute_id', 'permitted');
     }
 
@@ -111,6 +113,8 @@ class User extends Authenticatable implements JWTSubject
     public function allFriendedUsers()
     {
         return $this->belongsToMany(self::class, 'user_friends', 'friend_id', 'user_id')
+            ->wherePivot('deleted_at', null)
+            ->withTimestamps()
             ->withPivot('attribute_id', 'permitted');
     }
 
@@ -136,7 +140,10 @@ class User extends Authenticatable implements JWTSubject
 
     public function participatedSessions()
     {
-        return $this->belongsToMany(Session::class)->withPivot('join_status', 'paid', 'plus_minus', 'ratio');
+        return $this->belongsToMany(Session::class)
+            ->wherePivot('deleted_at', null)
+            ->withTimestamps()
+            ->withPivot('join_status', 'paid', 'plus_minus', 'ratio');
     }
 
     public function managedGroups()
@@ -146,7 +153,9 @@ class User extends Authenticatable implements JWTSubject
 
     public function participatedGroups()
     {
-        return $this->belongsToMany(Group::class);
+        return $this->belongsToMany(Group::class)
+            ->wherePivot('deleted_at', null)
+            ->withTimestamps();
     }
 
     public function managedAttributes()

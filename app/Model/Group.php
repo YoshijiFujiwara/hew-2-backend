@@ -20,7 +20,9 @@ class Group extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class)
+            ->wherePivot('deleted_at', null)
+            ->withTimestamps();
     }
 
     public function defaultSettings()

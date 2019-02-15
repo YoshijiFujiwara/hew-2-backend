@@ -21,7 +21,10 @@ class Session extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class)->withPivot('join_status', 'paid', 'plus_minus', 'ratio');
+        return $this->belongsToMany(User::class)
+            ->wherePivot('deleted_at', null)
+            ->withTimestamps()
+            ->withPivot('join_status', 'paid', 'plus_minus', 'ratio');
     }
 
     /**
