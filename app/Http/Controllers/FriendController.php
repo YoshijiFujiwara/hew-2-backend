@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\FriendStoreRequest;
 use App\Http\Resources\SessionResource;
 use App\Http\Resources\UserResource;
+use App\Model\Group;
+use App\Model\Session;
 use App\User;
 use function Composer\Autoload\includeFile;
 use Illuminate\Http\Request;
@@ -69,6 +71,14 @@ class FriendController extends Controller
      */
     public function destroy(Request $request, User $friend)
     {
+        $manager = $request->user();
+        $manager->managedGroups->each(function (Group $group) use ($friend) {
+            $group->users()->where('id', $friend->id)->delete();
+        });
+        $manager->managedSessions->each(function (Session $session) use ($friend) {
+            $session->users()->where('id', $friend->id)->delete();
+        });
+
         $request->user()->friends()->detach($friend);
 
         return response(null, Response::HTTP_NO_CONTENT);
