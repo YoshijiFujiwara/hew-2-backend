@@ -20,6 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('name')->nullable()->comment('本名。管理者用');
+            $table->string('is_admin')->default(false)->comment('管理者ならtrue');
             $table->rememberToken();
             $table->boolean('unique_id_search_flag')->default(false)->comment('unique_idでの検索を有りにする');
             $table->boolean('username_search_flag')->default(false)->comment('unique_idでの検索を有りにする');
