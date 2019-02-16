@@ -68,7 +68,7 @@ class FriendController extends Controller
             $request->user()->friends()->attach($friendRequestUser, ['permitted' => null]);
         }
 
-        return response(new UserResource($request->user()->waitingFriends->where('id', $newFriend->id)->first()),  Response::HTTP_CREATED);
+        return response(new UserResource($request->user()->waitingFriends->where('id', $friendRequestUser->id)->first()),  Response::HTTP_CREATED);
     }
 
     /**
