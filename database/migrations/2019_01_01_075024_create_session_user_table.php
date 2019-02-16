@@ -21,7 +21,6 @@ class CreateSessionUserTable extends Migration
             $table->boolean('paid')->nullable();
             $table->integer('plus_minus')->nullable()->comment('加減算');
             $table->integer('ratio')->nullable()->comment('割合');
-            $table->timestamps();
             $table->softDeletes();
         });
     }

@@ -7,7 +7,9 @@ use App\Model\DefaultSetting;
 use App\Model\Group;
 use App\Model\Manager;
 use App\Model\Session;
+use function foo\func;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -30,6 +32,34 @@ class User extends Authenticatable implements JWTSubject
 
         static::creating(function ($model) {
             $model->unique_id = str_random(10);
+        });
+
+        static::deleting(function (User $user) {
+            // 参加している系
+            $user->participatedGroups()->get()->each(function (Group $group) {
+                $group->pivot->deleted_at = now();
+                $group->pivot->save();
+            });
+            $user->participatedSessions()->get()->each(function (Session $session) {
+                $session->pivot->deleted_at = now();
+                $session->pivot->save();
+            });
+
+            // 友達は双方向で削除
+            $user->allFriends()->get()->each(function (User $user) {
+                $user->pivot->deleted_at = now();
+                $user->pivot->save();
+            });
+            $user->allFriendedUsers()->get()->each(function (User $user) {
+                $user->pivot->deleted_at = now();
+                $user->pivot->save();
+            });
+
+            // 管理しているものを削除
+            $user->managedAttributes()->delete();
+            $user->managedGroups()->delete();
+            $user->managedDefaultSettings()->delete();
+            $user->managedSessions()->delete();
         });
     }
 
@@ -93,8 +123,7 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->belongsToMany(self::class, 'user_friends', 'user_id', 'friend_id')
             ->wherePivot('deleted_at', null)
-            ->withTimestamps()
-            ->withPivot('attribute_id', 'permitted');
+            ->withPivot('attribute_id', 'permitted', 'deleted_at');
     }
 
     public function blockedFriends()
@@ -114,8 +143,7 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->belongsToMany(self::class, 'user_friends', 'friend_id', 'user_id')
             ->wherePivot('deleted_at', null)
-            ->withTimestamps()
-            ->withPivot('attribute_id', 'permitted');
+            ->withPivot('attribute_id', 'permitted', 'deleted_at');
     }
 
     public function invitingUsers()
@@ -142,8 +170,7 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->belongsToMany(Session::class)
             ->wherePivot('deleted_at', null)
-            ->withTimestamps()
-            ->withPivot('join_status', 'paid', 'plus_minus', 'ratio');
+            ->withPivot('join_status', 'paid', 'plus_minus', 'ratio', 'deleted_at');
     }
 
     public function managedGroups()
@@ -155,7 +182,7 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->belongsToMany(Group::class)
             ->wherePivot('deleted_at', null)
-            ->withTimestamps();
+            ->withPivot('deleted_at');
     }
 
     public function managedAttributes()
