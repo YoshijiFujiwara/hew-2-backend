@@ -10,6 +10,9 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
+/**
+ * @group groups グループ
+ */
 class GroupController extends Controller
 {
     /**

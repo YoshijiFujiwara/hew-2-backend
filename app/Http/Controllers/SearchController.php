@@ -7,6 +7,9 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
+/**
+ * @group search 検索
+ */
 class SearchController extends Controller
 {
     /**
