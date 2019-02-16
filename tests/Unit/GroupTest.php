@@ -31,7 +31,7 @@ class GroupTest extends TestCase
         $response->assertStatus(Response::HTTP_CREATED);
     }
 
-    public function testCantStore()
+    public function testSameNameStore()
     {
 //        $newGroupName = 'newGroup' . str_random(5);
 
@@ -42,7 +42,7 @@ class GroupTest extends TestCase
             'name' => $alreadyGroup->name
         ], []);
 
-        $response->assertStatus(Response::HTTP_CONFLICT);
+        $response->assertStatus(Response::HTTP_CREATED);
     }
 
     public function testShow()
