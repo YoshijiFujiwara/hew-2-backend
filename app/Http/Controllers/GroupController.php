@@ -95,7 +95,7 @@ class GroupController extends Controller
      */
     public function destroy(Request $request, Group $group)
     {
-        // このグループを使っているデフォルト設定があった場合エラーを返す
+        // このグループを使っているデフォルト設定があった場合エラーを返す(important!!!)
         if ($group->defaultSettings()->exists()) {
             return response()->json(['error' => 'このグループを使用しているデフォルト設定があるので、削除できません'], Response::HTTP_CONFLICT);
         }

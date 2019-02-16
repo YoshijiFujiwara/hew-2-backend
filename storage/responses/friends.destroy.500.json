@@ -1,5 +1,5 @@
 {
-    "message": "SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'updated_at' in field list is ambiguous (SQL: update `users` inner join `group_user` on `users`.`id` = `group_user`.`user_id` set `users`.`deleted_at` = 2019-02-15 22:37:34, `updated_at` = 2019-02-15 22:37:34 where `group_user`.`group_id` = 1 and `group_user`.`deleted_at` is null and `id` = 47 and `users`.`deleted_at` is null)",
+    "message": "SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'updated_at' in field list is ambiguous (SQL: update `users` inner join `group_user` on `users`.`id` = `group_user`.`user_id` set `users`.`deleted_at` = 2019-02-16 00:01:47, `updated_at` = 2019-02-16 00:01:47 where `group_user`.`group_id` = 1 and `group_user`.`deleted_at` is null and `id` = 21 and `users`.`deleted_at` is null)",
     "exception": "Illuminate\\Database\\QueryException",
     "file": "/var/www/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
     "line": 664,

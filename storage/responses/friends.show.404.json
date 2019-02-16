@@ -285,8 +285,8 @@
             "type": "->"
         },
         {
-            "file": "/var/www/tests/Unit/SearchTest.php",
-            "line": 59,
+            "file": "/var/www/tests/Unit/FriendTest.php",
+            "line": 106,
             "function": "apiAs",
             "class": "Tests\\TestCase",
             "type": "->"
@@ -294,8 +294,8 @@
         {
             "file": "/var/www/vendor/phpunit/phpunit/src/Framework/TestCase.php",
             "line": 1153,
-            "function": "testCanAddFriendUsers",
-            "class": "Tests\\Unit\\SearchTest",
+            "function": "testDestory",
+            "class": "Tests\\Unit\\FriendTest",
             "type": "->"
         },
         {
