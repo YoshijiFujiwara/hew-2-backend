@@ -9,6 +9,9 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
+/**
+ * @group sessions.users セッションのユーザー管理
+ */
 class SessionUserController extends Controller
 {
     /**

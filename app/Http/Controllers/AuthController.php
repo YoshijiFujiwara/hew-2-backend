@@ -9,6 +9,9 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 
+/**
+ * @group auth 認証
+ */
 class AuthController extends Controller
 {
     /**

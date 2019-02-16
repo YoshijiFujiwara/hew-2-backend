@@ -12,6 +12,9 @@ use function Composer\Autoload\includeFile;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
+/**
+ * @group friends 友達
+ */
 class FriendController extends Controller
 {
     /**
