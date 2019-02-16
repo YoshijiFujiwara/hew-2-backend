@@ -70,3 +70,17 @@ Route::group([
     Route::post('register', 'AuthController@adminRegister')->name('auth.register');
     Route::post('login', 'AuthController@adminLogin')->name('auth.login');
 });
+
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'admin',
+    'as' => 'admin.',
+    'namespace' => 'Admin'
+], function () {
+    Route::apiResource('groups', 'GroupController')->only(['index', 'show', 'destroy']);
+    Route::apiResource('sessions', 'SessionController')->only(['index', 'show', 'destroy']);
+    Route::apiResource('users', 'UserController')->only(['index', 'show', 'destroy']);
+    Route::apiResource('attributes', 'AttributeController')->only(['index', 'show', 'destroy']);
+
+
+});
