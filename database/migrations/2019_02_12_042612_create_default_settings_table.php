@@ -20,6 +20,7 @@ class CreateDefaultSettingsTable extends Migration
             $table->string('name')->comment('設定名称');
             $table->time('timer')->comment('セッションが始まるまでの時間をtimestampで格納する');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

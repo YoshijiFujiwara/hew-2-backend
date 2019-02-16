@@ -78,7 +78,6 @@ class SessionController extends Controller
      */
     public function destroy(Session $session)
     {
-        $session->users()->detach();
         $session->delete();
         return response(null, Response::HTTP_NO_CONTENT);
     }

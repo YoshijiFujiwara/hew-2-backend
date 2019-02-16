@@ -32,7 +32,6 @@ class SessionUserController extends Controller
      * @bodyParam ratio datetime  割合（加減算と重複しないほうが良いでしょう）
      *
      * @responseFile 200 responses/sessions.users.store.200.json
-     * @responseFile 403 responses/sessions.users.store.403.json
      */
     public function store(Request $request, Session $session)
     {
@@ -116,7 +115,10 @@ class SessionUserController extends Controller
             return response()->json(['error' => 'そのユーザーはそのグループの一員ではありません'], Response::HTTP_NOT_FOUND);
         }
 
-        $session->users()->detach($user);
+        $session->users()->where('id', $user->id)->get()->each(function (User $user) {
+            $user->pivot->deleted_at = now();
+            $user->pivot->save();
+        });
         return response(null, Response::HTTP_NO_CONTENT);
     }
 }
