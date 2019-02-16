@@ -12,26 +12,6 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class FriendTest extends TestCase
 {
-
-    public function testNoFriendIndex()
-    {
-        $newEmail = 'nofriend@nofriend.com';
-        if (User::where('email', $newEmail)->exists()) {
-            User::where('email', $newEmail)->delete();
-        }
-
-        User::create([
-            'email' => $newEmail,
-            'username' => 'testuser3',
-            'password' => 'secret'
-        ]);
-
-        $testUser = User::where('email', $newEmail)->first();
-        $response = $this->apiAs($testUser, 'GET', route('friends.index'), [], []);
-
-        $response->assertStatus(Response::HTTP_NO_CONTENT);
-    }
-
     public function testIndex()
     {
         $testUser = User::find(1);
@@ -82,8 +62,7 @@ class FriendTest extends TestCase
         ], []);
 
         $response
-            ->assertStatus(Response::HTTP_CONFLICT)
-            ->assertJson(['error' => 'すでにフレンドか、申請中です']);
+            ->assertStatus(Response::HTTP_CONFLICT);
     }
 
     public function testShow()
@@ -108,10 +87,17 @@ class FriendTest extends TestCase
         $response->assertStatus(Response::HTTP_FORBIDDEN);
     }
 
-    public function testBlockedUsers()
+    public function testBlockingUsers()
     {
         $testUser = User::find(1);
-        $response = $this->apiAs($testUser, 'GET', route('friends.blocked_users'), [], []);
+        $response = $this->apiAs($testUser, 'GET', route('friends.blocking_users'), [], []);
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
+    public function testBlockMeUsers( )
+    {
+        $testUser = User::find(1);
+        $response = $this->apiAs($testUser, 'GET', route('friends.block_me_users'), [], []);
         $response->assertStatus(Response::HTTP_OK);
     }
 
@@ -119,6 +105,20 @@ class FriendTest extends TestCase
     {
         $testUser = User::find(1);
         $response = $this->apiAs($testUser, 'GET', route('friends.waiting_friends'), [], []);
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
+    public function testPermittingUsers()
+    {
+        $testUser = User::find(1);
+        $response = $this->apiAs($testUser, 'GET', route('friends.permitting'), [], []);
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
+    public function testFriendRequestUsers()
+    {
+        $testUser = User::find(1);
+        $response = $this->apiAs($testUser, 'GET', route('friends.friend_request_users'), [], []);
         $response->assertStatus(Response::HTTP_OK);
     }
 
@@ -196,10 +196,27 @@ class FriendTest extends TestCase
         $response->assertStatus(Response::HTTP_CONFLICT);
     }
 
-    public function testRequestUsers()
+    public function testCancelInvitation()
     {
         $testUser = User::find(1);
-        $response = $this->apiAs($testUser, 'GET', route('friends.friend_request_users'), [], []);
+        $friend = $testUser->waitingFriends->random();
+        $response = $this->apiAs($testUser, 'PUT', route('friends.cancel_invitation', [$friend]), [], []);
+        $response->assertStatus(Response::HTTP_NO_CONTENT);
+    }
+
+    public function testBlock()
+    {
+        $testUser = User::find(1);
+        $friend = $testUser->friends->random();
+        $response = $this->apiAs($testUser, 'PUT', route('friends.block', [$friend]), [], []);
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
+    public function testUnBlock()
+    {
+        $testUser = User::find(1);
+        $friend = $testUser->blockingUsers->random();
+        $response = $this->apiAs($testUser, 'PUT', route('friends.un_block', [$friend]), [], []);
         $response->assertStatus(Response::HTTP_OK);
     }
 }
