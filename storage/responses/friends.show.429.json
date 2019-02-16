@@ -251,7 +251,7 @@
         },
         {
             "file": "/var/www/tests/Unit/FriendTest.php",
-            "line": 94,
+            "line": 202,
             "function": "apiAs",
             "class": "Tests\\TestCase",
             "type": "->"
@@ -259,7 +259,7 @@
         {
             "file": "/var/www/vendor/phpunit/phpunit/src/Framework/TestCase.php",
             "line": 1153,
-            "function": "testShow",
+            "function": "testRequestUsers",
             "class": "Tests\\Unit\\FriendTest",
             "type": "->"
         },

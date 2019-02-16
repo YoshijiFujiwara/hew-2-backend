@@ -19,17 +19,10 @@
             "type": "->"
         },
         {
-            "file": "/var/www/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php",
-            "line": 68,
-            "function": "render",
-            "class": "App\\Exceptions\\Handler",
-            "type": "->"
-        },
-        {
             "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php",
             "line": 83,
             "function": "render",
-            "class": "NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler",
+            "class": "App\\Exceptions\\Handler",
             "type": "->"
         },
         {
@@ -257,116 +250,11 @@
             "type": "->"
         },
         {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
-            "line": 345,
+            "file": "/var/www/public/index.php",
+            "line": 55,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Kernel",
             "type": "->"
-        },
-        {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
-            "line": 317,
-            "function": "call",
-            "class": "Illuminate\\Foundation\\Testing\\TestCase",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/tests/TestCase.php",
-            "line": 27,
-            "function": "json",
-            "class": "Illuminate\\Foundation\\Testing\\TestCase",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/tests/TestCase.php",
-            "line": 21,
-            "function": "api",
-            "class": "Tests\\TestCase",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/tests/Unit/FriendTest.php",
-            "line": 106,
-            "function": "apiAs",
-            "class": "Tests\\TestCase",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/vendor/phpunit/phpunit/src/Framework/TestCase.php",
-            "line": 1153,
-            "function": "testDestory",
-            "class": "Tests\\Unit\\FriendTest",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/vendor/phpunit/phpunit/src/Framework/TestCase.php",
-            "line": 842,
-            "function": "runTest",
-            "class": "PHPUnit\\Framework\\TestCase",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/vendor/phpunit/phpunit/src/Framework/TestResult.php",
-            "line": 675,
-            "function": "runBare",
-            "class": "PHPUnit\\Framework\\TestCase",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/vendor/phpunit/phpunit/src/Framework/TestCase.php",
-            "line": 796,
-            "function": "run",
-            "class": "PHPUnit\\Framework\\TestResult",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
-            "line": 746,
-            "function": "run",
-            "class": "PHPUnit\\Framework\\TestCase",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
-            "line": 746,
-            "function": "run",
-            "class": "PHPUnit\\Framework\\TestSuite",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
-            "line": 746,
-            "function": "run",
-            "class": "PHPUnit\\Framework\\TestSuite",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/vendor/phpunit/phpunit/src/TextUI/TestRunner.php",
-            "line": 629,
-            "function": "run",
-            "class": "PHPUnit\\Framework\\TestSuite",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/vendor/phpunit/phpunit/src/TextUI/Command.php",
-            "line": 206,
-            "function": "doRun",
-            "class": "PHPUnit\\TextUI\\TestRunner",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/vendor/phpunit/phpunit/src/TextUI/Command.php",
-            "line": 162,
-            "function": "run",
-            "class": "PHPUnit\\TextUI\\Command",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/vendor/phpunit/phpunit/phpunit",
-            "line": 61,
-            "function": "main",
-            "class": "PHPUnit\\TextUI\\Command",
-            "type": "::"
         }
     ]
 }

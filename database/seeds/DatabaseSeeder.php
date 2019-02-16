@@ -18,10 +18,21 @@ class DatabaseSeeder extends Seeder
         \App\User::all()->each(function ($u) {
             $u->managedAttributes()->saveMany(factory(\App\Model\Attribute::class, 5)->make());
 
-            foreach (\App\User::where('id', '<>', $u->id)->get()->random(15) as $friend) {
+            foreach (\App\User::where('id', '<>', $u->id)->get()->random(25) as $friend) {
+                $permitted = false;
+                switch (rand(1,3)) {
+                    case 1:
+                        $permitted = null;
+                        break;
+                    case 2:
+                        $permitted = true;
+                        break;
+                    default:
+                        break;
+                }
                 $u->friends()->attach($friend, [
                     'attribute_id' => $u->managedAttributes->random()->id,
-                    'permitted' => (rand(0,10) > 3)? true: false,
+                    'permitted' => $permitted
                 ]);
             }
 

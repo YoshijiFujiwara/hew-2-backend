@@ -7,6 +7,7 @@ use App\Http\Resources\SessionResource;
 use App\Http\Resources\UserResource;
 use App\Model\Group;
 use App\Model\Session;
+use App\Services\FriendService;
 use App\User;
 use function Composer\Autoload\includeFile;
 use Illuminate\Http\Request;
@@ -17,6 +18,13 @@ use Illuminate\Http\Response;
  */
 class FriendController extends Controller
 {
+    protected $friendService;
+
+    public function __construct(FriendService $friendService)
+    {
+        $this->friendService = $friendService;
+    }
+
     /**
      * friends.index 友達一覧
      *
@@ -37,20 +45,9 @@ class FriendController extends Controller
      */
     public function store(FriendStoreRequest $request)
     {
-        // すでに友達の場合、２重登録しないようにする
-        if (! empty($request->user()->allFriends->where('email', $request->email)->first())) {
-            return response()->json(['error' => 'すでにフレンドか、申請中です'], Response::HTTP_CONFLICT);
-        }
-
-        // 自分か
-        if ($request->user()->id == User::where('email', $request->email)->first()->id) {
-            return response()->json(['error' => '自分です'], Response::HTTP_CONFLICT);
-        }
-
-        $newFriend = User::where('email', $request->email)->first();
-        $request->user()->friends()->attach($newFriend, ['permitted' => null]);
-
-        return response(new UserResource($request->user()->waitingFriends->where('id', $newFriend->id)->first()),  Response::HTTP_CREATED);
+        // 申請対象者
+        $friendRequestUser = User::where('email', $request->email)->first();
+        return $this->friendService->store($request->user(), $friendRequestUser, $request->email);
     }
 
     /**
@@ -75,34 +72,19 @@ class FriendController extends Controller
     public function destroy(Request $request, User $friend)
     {
         $manager = $request->user();
-        $manager->managedGroups->each(function (Group $group) use ($friend) {
-            $group->users()->where('id', $friend->id)->get()->each(function (User $user) {
-                $user->pivot->deleted_at = now();
-                $user->pivot->save();
-            });
-        });
-        $manager->managedSessions->each(function (Session $session) use ($friend) {
-            $session->users()->where('id', $friend->id)->get()->each(function (User $user) {
-                $user->pivot->deleted_at = now();
-                $user->pivot->save();
-            });
-        });
-        $request->user()->friends()->where('id', $friend->id)->get()->each(function (User $user) {
-            $user->pivot->deleted_at = now();
-            $user->pivot->save();
-        });
+        $this->friendService->delete($manager, $friend);
 
         return response(null, Response::HTTP_NO_CONTENT);
     }
 
     /**
-     * friends.blockedUsers 申請した中でブロックされているユーザー一覧
+     * friends.block_me_users 申請した中でブロックされているユーザー一覧
      *
-     * @responseFile 200 responses/friends.blocked_users.200.json
+     * @responseFile 200 responses/friends.block_me_users.200.json
      */
-    public function blockedUsers(Request $request)
+    public function blockMeUsers(Request $request)
     {
-        return UserResource::collection($request->user()->blockedFriends);
+        return UserResource::collection($request->user()->blockMeUsers);
     }
 
     /**
@@ -116,6 +98,48 @@ class FriendController extends Controller
     }
 
     /**
+     * friends.blockingUsers 申請してきたけど、ブロックしたユーザー一覧
+     *
+     * @responseFile 200 responses/friends.blocking_users.200.json
+     */
+    public function blockingUsers(Request $request)
+    {
+        if ($request->user()->blockingUsers()->exists()) {
+            return UserResource::collection($request->user()->blockingUsers);
+        } else {
+            return response(null, Response::HTTP_NO_CONTENT);
+        }
+    }
+
+    /**
+     * friends.permittingUsers 自分に申請してきたユーザーで、自分がそれを了承したユーザー（自分をフレンドとしているユーザー一覧）
+     *
+     * @responseFile 200 responses/friends.permitting.200.json
+     */
+    public function permittingUsers(Request $request)
+    {
+        if ($request->user()->permittingUsers()->exists()) {
+            return UserResource::collection($request->user()->permittingUsers);
+        } else {
+            return response(null, Response::HTTP_NO_CONTENT);
+        }
+    }
+
+    /**
+     * friends.friendRequestUsers 自分に申請してきてるけど、まだ返事していない相手一覧
+     *
+     * @responseFile 200 responses/friends.friend_request_users.200.json
+     */
+    public function friendRequestUsers(Request $request)
+    {
+        if ($request->user()->invitingMeUsers()->exists()) {
+            return UserResource::collection($request->user()->invitingMeUsers);
+        } else {
+            return response(null, Response::HTTP_NO_CONTENT);
+        }
+    }
+
+    /**
      * friends.permit 友達申請を許可
      * @bodyParam user_id integer required 友達申請してきてる人のユーザーID
      *
@@ -125,14 +149,20 @@ class FriendController extends Controller
     public function permit(Request $request)
     {
         // 申請されているか
-        if (! $request->user()->invitingUsers()->where('id', $request->user_id)->exists()) {
+        if (! $request->user()->invitingMeUsers()->where('id', $request->user_id)->exists()) {
             return response()->json(['error' => 'そのユーザーからは招待されていません'], Response::HTTP_CONFLICT);
         }
-
-        $request->user()->invitingUsers()->updateExistingPivot($request->user()->id, [
+        $request->user()->invitingMeUsers()->updateExistingPivot($request->user()->id, [
             'permitted' => true
         ]);
-
+        // 自分からも友達に追加する
+        if ($request->user()->allFriends()->where('id', $request->user_id)->exists()) {
+            $request->user()->allFriends()->where('id', $request->user_id)->updateExistingPivot($request->user_id, [
+                'permitted' => true
+            ]);
+        } else {
+            $request->user()->friends()->attach($request->user_id, ['permitted' => true]);
+        }
         return response(['message' => '招待を許可しました'], Response::HTTP_OK);
     }
 
@@ -146,24 +176,73 @@ class FriendController extends Controller
     public function reject(Request $request)
     {
         // 申請されているか
-        if (! $request->user()->invitingUsers()->where('id', $request->user_id)->exists()) {
+        if (! $request->user()->invitingMeUsers()->where('id', $request->user_id)->exists()) {
             return response()->json(['error' => 'そのユーザーからは招待されていません'], Response::HTTP_CONFLICT);
         }
-
-        $request->user()->invitingUsers()->updateExistingPivot($request->user()->id, [
+        $request->user()->invitingMeUsers()->updateExistingPivot($request->user()->id, [
             'permitted' => false
         ]);
-
+        // すでに友達の場合は、destoryするか
+        if ($request->user()->allFriends()->where('id', $request->user_id)->exists()) {
+            $request->user()->allFriends()->where('id', $request->user_id)->get()->each(function ($u) {
+                $u->pivot->deleted_at = now();
+                $u->pivot->save();
+            });
+        }
         return response(['message' => '招待をキャンセルしました'], Response::HTTP_OK);
     }
 
     /**
-     * friends.friendRequestUsers 申請してきてるユーザー
+     * friends.cancel_invitation 友達申請したけど、やっぱり取り消そう
      *
-     * @responseFile 200 responses/friends.friend_request_users.200.json
+     * @responseFile 204 responses/friends.cancel_invitation.204.json
      */
-    public function friendRequestUsers(Request $request)
+    public function cancelInvitation(Request $request, User $friend)
     {
-        return UserResource::collection($request->user()->invitingUsers);
+        $request->user()->waitingFriends()->where('id', $friend->id)->get()->each(function ($f) {
+            $f->pivot->deleted_at = now();
+            $f->pivot->save();
+        });
+        return response(null, Response::HTTP_NO_CONTENT);
+    }
+    /**
+     * friends.block ブロックする。すでに友達の場合は、削除もする
+     *
+     * @responseFile 200 responses/friends.block.200.json
+     */
+    public function block(Request $request, User $friend)
+    {
+        if ($request->user()->allRequestMeUsers()->where('id', $friend->id)->exists()) {
+            $request->user()->allRequestMeUsers()->where('id', $friend->id)->updateExistingPivot($friend->id, [
+                'permitted' => false
+            ]);
+            // 友達にしてたなら削除する
+            $this->friendService->delete($request->user(), $friend);
+        } else {
+            return response()->json(['error' => 'そのユーザーからは招待されていません'], Response::HTTP_CONFLICT);
+        }
+        return response(['message' => 'ユーザーをブロックしました'], Response::HTTP_OK);
+    }
+    /**
+     * friends.unBlock ブロックしてたけど、かわいそうだから解除してやろう
+     *
+     * @responseFile 200 responses/friends.un_block.200.json
+     */
+    public function unBlock(Request $request, User $friend)
+    {
+        if ($request->user()->blockingUsers()->where('id', $friend->id)->exists()) {
+            $request->user()->blockingUsers()->where('id', $friend->id)->updateExistingPivot($friend->id, [
+                'permitted' => true
+            ]);
+        }
+        // ついでに友達追加
+        if ($request->user()->allFriends()->where('id', $friend->id)->exists()) {
+            $request->user()->allFriends()->where('id', $friend->id)->updateExistingPivot($friend->id, [
+                'permitted' => true
+            ]);
+        } else {
+            $request->user()->friends()->attach($friend, ['permitted' => true]);
+        }
+        return response(['message' => 'ユーザーをブロックしました'], Response::HTTP_OK);
     }
 }

@@ -1,94 +1,35 @@
 {
-    "message": "SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'updated_at' in field list is ambiguous (SQL: update `users` inner join `group_user` on `users`.`id` = `group_user`.`user_id` set `users`.`deleted_at` = 2019-02-16 00:01:47, `updated_at` = 2019-02-16 00:01:47 where `group_user`.`group_id` = 1 and `group_user`.`deleted_at` is null and `id` = 21 and `users`.`deleted_at` is null)",
-    "exception": "Illuminate\\Database\\QueryException",
-    "file": "/var/www/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
-    "line": 664,
+    "message": "Call to undefined method App\\User::user()",
+    "exception": "BadMethodCallException",
+    "file": "/var/www/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php",
+    "line": 50,
     "trace": [
         {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
-            "line": 624,
-            "function": "runQueryCallback",
-            "class": "Illuminate\\Database\\Connection",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
-            "line": 490,
-            "function": "run",
-            "class": "Illuminate\\Database\\Connection",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
-            "line": 423,
-            "function": "affectingStatement",
-            "class": "Illuminate\\Database\\Connection",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
-            "line": 2659,
-            "function": "update",
-            "class": "Illuminate\\Database\\Connection",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
-            "line": 815,
-            "function": "update",
-            "class": "Illuminate\\Database\\Query\\Builder",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Database/Eloquent/SoftDeletingScope.php",
-            "line": 42,
-            "function": "update",
-            "class": "Illuminate\\Database\\Eloquent\\Builder",
-            "type": "->"
-        },
-        {
-            "function": "Illuminate\\Database\\Eloquent\\{closure}",
-            "class": "Illuminate\\Database\\Eloquent\\SoftDeletingScope",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
-            "line": 874,
-            "function": "call_user_func"
-        },
-        {
             "file": "/var/www/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php",
-            "line": 23,
-            "function": "delete",
-            "class": "Illuminate\\Database\\Eloquent\\Builder",
-            "type": "->"
+            "line": 36,
+            "function": "throwBadMethodCallException",
+            "class": "Illuminate\\Database\\Eloquent\\Model",
+            "type": "::"
         },
         {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/Relation.php",
-            "line": 386,
+            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
+            "line": 1608,
             "function": "forwardCallTo",
-            "class": "Illuminate\\Database\\Eloquent\\Relations\\Relation",
+            "class": "Illuminate\\Database\\Eloquent\\Model",
             "type": "->"
         },
         {
-            "file": "/var/www/app/Http/Controllers/FriendController.php",
-            "line": 76,
+            "file": "/var/www/app/Services/FriendService.php",
+            "line": 58,
             "function": "__call",
-            "class": "Illuminate\\Database\\Eloquent\\Relations\\Relation",
-            "type": "->"
-        },
-        {
-            "file": "/var/www/vendor/laravel/framework/src/Illuminate/Support/Collection.php",
-            "line": 418,
-            "function": "App\\Http\\Controllers\\{closure}",
-            "class": "App\\Http\\Controllers\\FriendController",
+            "class": "Illuminate\\Database\\Eloquent\\Model",
             "type": "->"
         },
         {
             "file": "/var/www/app/Http/Controllers/FriendController.php",
             "line": 77,
-            "function": "each",
-            "class": "Illuminate\\Support\\Collection",
+            "function": "delete",
+            "class": "App\\Services\\FriendService",
             "type": "->"
         },
         {
@@ -446,7 +387,7 @@
         },
         {
             "file": "/var/www/tests/Unit/FriendTest.php",
-            "line": 103,
+            "line": 82,
             "function": "apiAs",
             "class": "Tests\\TestCase",
             "type": "->"
