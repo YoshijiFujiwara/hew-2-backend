@@ -115,7 +115,10 @@ class SessionUserController extends Controller
             return response()->json(['error' => 'そのユーザーはそのグループの一員ではありません'], Response::HTTP_NOT_FOUND);
         }
 
-        $session->users()->detach($user);
+        $session->users()->where('id', $user->id)->get()->each(function (User $user) {
+            $user->pivot->deleted_at = now();
+            $user->pivot->save();
+        });
         return response(null, Response::HTTP_NO_CONTENT);
     }
 }
