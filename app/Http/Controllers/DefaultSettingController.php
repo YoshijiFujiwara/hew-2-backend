@@ -8,6 +8,9 @@ use App\Model\DefaultSetting;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
+/**
+ * @group default_settings デフォルト設定
+ */
 class DefaultSettingController extends Controller
 {
     /**

@@ -9,6 +9,9 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
+/**
+ * @group session イベントセッション
+ */
 class SessionController extends Controller
 {
     /**

@@ -8,6 +8,9 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
+/**
+ * @group groups.users グループのユーザー管理
+ */
 class GroupUserController extends Controller
 {
     /**

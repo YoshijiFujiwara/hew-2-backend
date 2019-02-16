@@ -8,6 +8,9 @@ use App\Model\Session;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
+/**
+ * @group attribute 属性
+ */
 class AttributeController extends Controller
 {
     /**
