@@ -116,6 +116,7 @@
       <path value="$PROJECT_DIR$/vendor/google/gax" />
       <path value="$PROJECT_DIR$/vendor/google/common-protos" />
       <path value="$PROJECT_DIR$/vendor/google/cloud-error-reporting" />
+      <path value="$PROJECT_DIR$/vendor/iatstuti/laravel-cascade-soft-deletes" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
