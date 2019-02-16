@@ -154,7 +154,7 @@ class User extends Authenticatable implements JWTSubject
         return $this->allRequestMeUsers()->wherePivot('permitted', null);
     }
     // 自分に申請してきたユーザーで、自分がそれを了承した
-    public function permittedUsers()
+    public function permittingUsers()
     {
         return $this->allRequestMeUsers()->wherePivot('permitted', true);
     }
