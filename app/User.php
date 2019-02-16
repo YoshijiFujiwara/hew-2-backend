@@ -50,7 +50,7 @@ class User extends Authenticatable implements JWTSubject
                 $user->pivot->deleted_at = now();
                 $user->pivot->save();
             });
-            $user->allFriendedUsers()->get()->each(function (User $user) {
+            $user->allRequestMeUsers()->get()->each(function (User $user) {
                 $user->pivot->deleted_at = now();
                 $user->pivot->save();
             });
@@ -114,23 +114,24 @@ class User extends Authenticatable implements JWTSubject
      * リレーション
      */
 
-    public function friends()
-    {
-        return $this->allFriends()->wherePivot('permitted', true);
-    }
-
+    // 申請中 ＋ フレンド ＋ 申請したけどブロックされた
     public function allFriends()
     {
         return $this->belongsToMany(self::class, 'user_friends', 'user_id', 'friend_id')
             ->wherePivot('deleted_at', null)
             ->withPivot('attribute_id', 'permitted', 'deleted_at');
     }
-
-    public function blockedFriends()
+    // フレンド
+    public function friends()
+    {
+        return $this->allFriends()->wherePivot('permitted', true);
+    }
+    // 申請したけどブロックされた
+    public function blockMeUsers()
     {
         return $this->allFriends()->wherePivot('permitted', false);
     }
-
+    // 申請中
     public function waitingFriends()
     {
         return $this->allFriends()->wherePivot('permitted', null);
@@ -139,26 +140,28 @@ class User extends Authenticatable implements JWTSubject
     /**
      * 自分を友たちとして追加しているユーザー
      */
-    public function allFriendedUsers()
+
+    // 自分に対してフレンド申請かなにかをしたユーザー
+    public function allRequestMeUsers()
     {
         return $this->belongsToMany(self::class, 'user_friends', 'friend_id', 'user_id')
             ->wherePivot('deleted_at', null)
             ->withPivot('attribute_id', 'permitted', 'deleted_at');
     }
-
-    public function invitingUsers()
+    // 自分にフレンド申請しているユーザー
+    public function invitingMeUsers()
     {
-        return $this->allFriendedUsers()->wherePivot('permitted', null);
+        return $this->allRequestMeUsers()->wherePivot('permitted', null);
     }
-
-    public function friendedUsers()
+    // 自分に申請してきたユーザーで、自分がそれを了承した
+    public function permittedUsers()
     {
-        return $this->allFriendedUsers()->wherePivot('permitted', true);
+        return $this->allRequestMeUsers()->wherePivot('permitted', true);
     }
-
+    // 申請してきたけど、ブロックした
     public function blockingUsers()
     {
-        return $this->allFriendedUsers()->wherePivot('permitted', false);
+        return $this->allRequestMeUsers()->wherePivot('permitted', false);
     }
 
     public function managedSessions()
