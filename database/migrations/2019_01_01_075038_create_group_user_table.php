@@ -17,6 +17,7 @@ class CreateGroupUserTable extends Migration
             $table->increments('pivot_id');
             $table->integer('group_id')->unsigned()->comment('グループid');
             $table->integer('user_id')->unsigned()->comment('所属するユーザーid');
+            $table->softDeletes();
         });
     }
 

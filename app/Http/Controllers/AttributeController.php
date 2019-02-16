@@ -77,10 +77,6 @@ class AttributeController extends Controller
      */
     public function destroy(Request $request, Attribute $attribute)
     {
-        $request->user()->friends()->wherePivot('attribute_id', $attribute->id)->get()->each(function ($f) {
-            $f->pivot->attribute_id = null;
-            $f->pivot->save();
-        });
         $attribute->delete();
         return response(null, Response::HTTP_NO_CONTENT);
     }

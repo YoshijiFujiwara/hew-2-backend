@@ -73,13 +73,21 @@ class FriendController extends Controller
     {
         $manager = $request->user();
         $manager->managedGroups->each(function (Group $group) use ($friend) {
-            $group->users()->where('id', $friend->id)->delete();
+            $group->users()->where('id', $friend->id)->get()->each(function (User $user) {
+                $user->pivot->deleted_at = now();
+                $user->pivot->save();
+            });
         });
         $manager->managedSessions->each(function (Session $session) use ($friend) {
-            $session->users()->where('id', $friend->id)->delete();
+            $session->users()->where('id', $friend->id)->get()->each(function (User $user) {
+                $user->pivot->deleted_at = now();
+                $user->pivot->save();
+            });
         });
-
-        $request->user()->friends()->detach($friend);
+        $request->user()->friends()->where('id', $friend->id)->get()->each(function (User $user) {
+            $user->pivot->deleted_at = now();
+            $user->pivot->save();
+        });
 
         return response(null, Response::HTTP_NO_CONTENT);
     }

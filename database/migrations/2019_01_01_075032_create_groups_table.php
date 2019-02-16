@@ -18,6 +18,7 @@ class CreateGroupsTable extends Migration
             $table->integer('manager_id')->unsigned()->comment('幹事id');
             $table->string('name')->comment('グループ名');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
