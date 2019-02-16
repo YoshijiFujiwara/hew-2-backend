@@ -7,6 +7,7 @@ use App\Http\Resources\SessionResource;
 use App\Http\Resources\UserResource;
 use App\Model\Group;
 use App\Model\Session;
+use App\Services\FriendService;
 use App\User;
 use function Composer\Autoload\includeFile;
 use Illuminate\Http\Request;
@@ -17,6 +18,13 @@ use Illuminate\Http\Response;
  */
 class FriendController extends Controller
 {
+    protected $friendService;
+
+    public function __construct(FriendService $friendService)
+    {
+        $this->friendService = $friendService;
+    }
+
     /**
      * friends.index 友達一覧
      *
@@ -39,34 +47,7 @@ class FriendController extends Controller
     {
         // 申請対象者
         $friendRequestUser = User::where('email', $request->email)->first();
-        // 自分か
-        if ($request->user()->id == $friendRequestUser->id) {
-            return response()->json(['error' => '自分です'], Response::HTTP_CONFLICT);
-        }
-        // すでに友達の場合、２重登録しないようにする
-        if ($request->user()->friends()->where('email', $request->email)->exists()) {
-            return response()->json(['error' => 'すでにフレンドです'], Response::HTTP_CONFLICT);
-        } else if ($request->user()->blockMeUsers()->where('email', $request->email)->exists()) {
-            return response()->json(['error' => 'そのユーザーにはブロックされています'], Response::HTTP_CONFLICT);
-        } else if ($request->user()->waitingFriends()->where('email', $request->email)->exists()) {
-            return response()->json(['error' => 'すでに申請中です'], Response::HTTP_CONFLICT);
-        }
-        // すでに申請が来ていたり、ブロックされていたりした場合
-        if ($request->user()->blockingUsers()->where('email', $request->email)->exists()) {
-            return response()->json(['error' => 'そのユーザーからのフレンド申請に対して、ブロックをしています。申請する前に、そのユーザーに対するブロックを解除してください'], Response::HTTP_CONFLICT);
-        // すでに申請が来ていた場合は、両方の了承を得たと解釈して良いだろう
-        } else if ($request->user()->invitingMeUsers()->where('email', $request->email)->exists()) {
-            $request->user()->invitingMeUsers()->where('email', $request->email)->updateExistingPivot($friendRequestUser->id, [
-                'permitted' => true
-            ]);
-            $request->user()->friends()->attach($friendRequestUser, ['permitted' => true]);
-        // すでに友達申請が来て、許可していた場合
-        } else if ($request->user()->permittingUsers()->where('email', $request->email)->exists()) {
-            $request->user()->friends()->attach($friendRequestUser, ['permitted' => true]);
-        // 何も申請が来てない
-        } else {
-            $request->user()->friends()->attach($friendRequestUser, ['permitted' => null]);
-        }
+        $this->friendService->store($request->user(), $friendRequestUser, $request->email);
 
         return response(new UserResource($request->user()->waitingFriends->where('id', $friendRequestUser->id)->first()),  Response::HTTP_CREATED);
     }
@@ -93,32 +74,17 @@ class FriendController extends Controller
     public function destroy(Request $request, User $friend)
     {
         $manager = $request->user();
-        $manager->managedGroups->each(function (Group $group) use ($friend) {
-            $group->users()->where('id', $friend->id)->get()->each(function (User $user) {
-                $user->pivot->deleted_at = now();
-                $user->pivot->save();
-            });
-        });
-        $manager->managedSessions->each(function (Session $session) use ($friend) {
-            $session->users()->where('id', $friend->id)->get()->each(function (User $user) {
-                $user->pivot->deleted_at = now();
-                $user->pivot->save();
-            });
-        });
-        $request->user()->friends()->where('id', $friend->id)->get()->each(function (User $user) {
-            $user->pivot->deleted_at = now();
-            $user->pivot->save();
-        });
+        $this->friendService->delete($manager, $friend);
 
         return response(null, Response::HTTP_NO_CONTENT);
     }
 
     /**
-     * friends.blockedUsers 申請した中でブロックされているユーザー一覧
+     * friends.block_me_users 申請した中でブロックされているユーザー一覧
      *
-     * @responseFile 200 responses/friends.blocked_users.200.json
+     * @responseFile 200 responses/friends.block_me_users.200.json
      */
-    public function blockedUsers(Request $request)
+    public function blockMeUsers(Request $request)
     {
         return UserResource::collection($request->user()->blockMeUsers);
     }
@@ -230,6 +196,8 @@ class FriendController extends Controller
 
     /**
      * friends.cancel_invitation 友達申請したけど、やっぱり取り消そう
+     *
+     * @responseFile 204 responses/friends.cancel_invitation.204.json
      */
     public function cancelInvitation(Request $request, User $friend)
     {
@@ -240,25 +208,27 @@ class FriendController extends Controller
         return response(null, Response::HTTP_NO_CONTENT);
     }
     /**
-     * friends.block 友達を解除する、そして相手に対してブロックもする
+     * friends.block ブロックする。すでに友達の場合は、削除もする
+     *
+     * @responseFile 200 responses/friends.block.200.json
      */
     public function block(Request $request, User $friend)
     {
-        if ($request->user()->friends()->where('id', $friend->id)->exists()) {
-            $request->user()->friends()->where('id', $friend->id)->get()->each(function ($u) {
-                $u->pivot->deleted_at = now();
-                $u->pivot->save();
-            });
-        }
-        if ($friend->allFriends()->where('id', $request->user()->id)->exists()) {
-            $friend->allFriends()->where('id', $request->user()->id)->updateExistingPivot($request->user()->id, [
+        if ($request->user()->allRequestMeUsers()->where('id', $friend->id)->exists()) {
+            $request->user()->allRequestMeUsers()->where('id', $friend->id)->updateExistingPivot($friend->id, [
                 'permitted' => false
             ]);
+            // 友達にしてたなら削除する
+            $this->friendService->delete($request->user(), $friend);
+        } else {
+            return response()->json(['error' => 'そのユーザーからは招待されていません'], Response::HTTP_CONFLICT);
         }
         return response(['message' => 'ユーザーをブロックしました'], Response::HTTP_OK);
     }
     /**
      * friends.unBlock ブロックしてたけど、かわいそうだから解除してやろう
+     *
+     * @responseFile 200 responses/friends.un_block.200.json
      */
     public function unBlock(Request $request, User $friend)
     {
