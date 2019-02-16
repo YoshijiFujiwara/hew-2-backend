@@ -2,6 +2,7 @@
 namespace App\Services;
 
 
+use App\Http\Resources\UserResource;
 use App\Model\Group;
 use App\Model\Session;
 use App\User;
@@ -39,6 +40,8 @@ class FriendService
         } else {
             $user->friends()->attach($friendRequestUser, ['permitted' => null]);
         }
+
+        return response(new UserResource($user->waitingFriends->where('id', $friendRequestUser->id)->first()),  Response::HTTP_CREATED);
     }
 
     public function delete(User $user, User $friend)
@@ -55,7 +58,7 @@ class FriendService
                 $user->pivot->save();
             });
         });
-        $user->user()->friends()->where('id', $friend->id)->get()->each(function (User $user) {
+        $user->friends()->where('id', $friend->id)->get()->each(function (User $user) {
             $user->pivot->deleted_at = now();
             $user->pivot->save();
         });

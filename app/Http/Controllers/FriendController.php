@@ -47,9 +47,7 @@ class FriendController extends Controller
     {
         // 申請対象者
         $friendRequestUser = User::where('email', $request->email)->first();
-        $this->friendService->store($request->user(), $friendRequestUser, $request->email);
-
-        return response(new UserResource($request->user()->waitingFriends->where('id', $friendRequestUser->id)->first()),  Response::HTTP_CREATED);
+        return $this->friendService->store($request->user(), $friendRequestUser, $request->email);
     }
 
     /**

@@ -15,7 +15,6 @@ Route::group([
 
 Route::middleware('JWT')->group(function () {
     Route::apiResource('friends', 'FriendController')->only(['index', 'store']);
-    Route::apiResource('friends', 'FriendController')->only(['show', 'destroy'])->middleware('can:has,friend');
     Route::group(['prefix' => 'friends'], function () {
         Route::get('blocking', 'FriendController@blockingUsers')->name('friends.blocking_users');
         Route::get('block_me', 'FriendController@blockMeUsers')->name('friends.block_me_users');
@@ -28,6 +27,7 @@ Route::middleware('JWT')->group(function () {
         Route::put('{friend}/block', 'FriendController@block')->name('friends.block');
         Route::put('{friend}/un_block', 'FriendController@unBlock')->name('friends.un_block');
     });
+    Route::apiResource('friends', 'FriendController')->only(['show', 'destroy'])->middleware('can:has,friend');
 
     Route::apiResource('groups', 'GroupController')->only(['index', 'store']);
     Route::apiResource('groups', 'GroupController')->only(['show', 'update', 'destroy'])->middleware('can:has,group');
