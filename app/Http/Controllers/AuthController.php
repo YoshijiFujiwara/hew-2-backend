@@ -6,8 +6,10 @@ use App\Http\Requests\UserRegisterRequest;
 use App\Http\Resources\MeResource;
 use App\Http\Resources\UserResource;
 use App\User;
+use http\Env\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\UserRegisterRequest as AdminUserRegister;
 
 /**
  * @group auth 認証
@@ -21,7 +23,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login', 'register']]);
+        $this->middleware('auth:api', ['except' => ['login', 'register', 'adminRegister']]);
     }
 
     /**
@@ -57,6 +59,17 @@ class AuthController extends Controller
     public function register(UserRegisterRequest $request)
     {
         $user = User::create($request->only(['email', 'password', 'username']));
+
+        if (! $token = auth()->attempt($request->only(['email', 'password']))) {
+            return abort(401);
+        }
+
+        return $this->respondWithToken($token);
+    }
+
+    public function adminRegister(AdminUserRegister $request)
+    {
+        $user = User::create($request->only(['email', 'password', 'name']));
 
         if (! $token = auth()->attempt($request->only(['email', 'password']))) {
             return abort(401);
