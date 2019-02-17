@@ -6,8 +6,10 @@ use App\Http\Requests\UserRegisterRequest;
 use App\Http\Resources\MeResource;
 use App\Http\Resources\UserResource;
 use App\User;
+use http\Env\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\UserRegisterRequest as AdminUserRegister;
 
 /**
  * @group auth 認証
@@ -21,7 +23,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login', 'register']]);
+        $this->middleware('auth:api', ['except' => ['login', 'register', 'adminRegister', 'adminLogin']]);
     }
 
     /**
@@ -45,6 +47,30 @@ class AuthController extends Controller
     }
 
     /**
+     * email, password でログインし、JWTを得る
+     *
+     * @bodyParam email string required メールアドレス
+     * @bodyParam password string required パスワード
+     *
+     * @responseFile 200 responses/auth.login.200.json
+     * @responseFile 401 responses/auth.login.401.json
+     */
+    public function adminLogin()
+    {
+        if (! request('email') == 'testuser@example.com') {
+            return abort(401);
+        }
+
+        $credentials = request(['email', 'password']);
+
+        if (! $token = auth()->attempt($credentials)) {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
+
+        return $this->respondWithToken($token);
+    }
+
+    /**
      * email, password, usernameでユーザー登録し、JWTを得る
      *
      * @bodyParam email string required メールアドレス
@@ -57,6 +83,17 @@ class AuthController extends Controller
     public function register(UserRegisterRequest $request)
     {
         $user = User::create($request->only(['email', 'password', 'username']));
+
+        if (! $token = auth()->attempt($request->only(['email', 'password']))) {
+            return abort(401);
+        }
+
+        return $this->respondWithToken($token);
+    }
+
+    public function adminRegister(AdminUserRegister $request)
+    {
+        $user = User::create($request->only(['email', 'password', 'name']));
 
         if (! $token = auth()->attempt($request->only(['email', 'password']))) {
             return abort(401);

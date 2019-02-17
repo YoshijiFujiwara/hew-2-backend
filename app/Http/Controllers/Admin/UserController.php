@@ -2,33 +2,27 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Resources\UserResource;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Response;
 
 class UserController extends Controller
 {
     public function index()
     {
-        //
+        return UserResource::collection(User::all());
     }
 
-    public function store(Request $request)
+    public function show(User $user)
     {
-        //
+        return new UserResource($user);
     }
 
-    public function show($id)
+    public function destroy(User $user)
     {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
+        $user->delete();
+        return response(null, Response::HTTP_NO_CONTENT);
     }
 }

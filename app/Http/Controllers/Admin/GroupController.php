@@ -4,44 +4,30 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Resources\GroupResource;
 use App\Model\Group;
-use App\Repositories\Repository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Response;
 
 class GroupController extends Controller
 {
-    protected $model;
-    protected $resource;
-
-    public function __construct(Group $group, GroupResource $groupResource)
-    {
-        $this->model = new Repository($group);
-        $this->resource = $groupResource;
-    }
-
     public function index()
     {
-        return ($this->resource)::collection($this->model->all());
+        return GroupResource::collection(Group::all());
     }
 
-    public function store(Request $request)
+    public function show(Group $group)
     {
-        // create record and pass in only fields that are fillable
-        return $this->model->create($request->only($this->model->getModel()->fillable));
+        return new GroupResource($group);
     }
 
-    public function show($id)
+    public function destroy(Group $group)
     {
-        //
-    }
+        // このグループを使っているデフォルト設定があった場合エラーを返す(important!!!)
+        if ($group->defaultSettings()->exists()) {
+            return response()->json(['error' => 'このグループを使用しているデフォルト設定があるので、削除できません'], Response::HTTP_CONFLICT);
+        }
 
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
+        $group->delete();
+        return response(null, Response::HTTP_NO_CONTENT);
     }
 }

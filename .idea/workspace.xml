@@ -1,60 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dc97d55e-750a-4d18-8aca-a7e761cc613c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FriendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FriendController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/FriendService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/FriendService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/collection.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/source/.compare.md" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/source/.compare.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/source/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/source/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/attributes.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/attributes.index.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/attributes.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/attributes.show.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/attributes.store.201.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/attributes.store.201.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/attributes.update.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/attributes.update.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/auth.login.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/auth.login.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/auth.me.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/auth.me.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/auth.refresh.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/auth.refresh.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/auth.register.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/auth.register.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/default_settings.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/default_settings.index.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/default_settings.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/default_settings.show.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/default_settings.store.201.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/default_settings.store.201.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/default_settings.update.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/default_settings.update.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/friends.destroy.500.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.destroy.500.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/friends.friend_request_users.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.friend_request_users.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/friends.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.index.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/friends.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.show.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/friends.show.403.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.show.403.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/friends.show.404.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.show.404.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/friends.show.429.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.show.429.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/friends.store.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.store.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/friends.store.201.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.store.201.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/friends.store.409.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.store.409.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/friends.waiting_friends.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.waiting_friends.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/groups.can_add_users.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/groups.can_add_users.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/groups.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/groups.index.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/groups.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/groups.show.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/groups.store.201.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/groups.store.201.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/groups.update.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/groups.update.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/groups.users.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/groups.users.show.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/guests.sessions.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/guests.sessions.index.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/guests.sessions.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/guests.sessions.show.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/profile.update.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/profile.update.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/search.can_add_friend_users.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/search.can_add_friend_users.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/search.forward_by_unique_id.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/search.forward_by_unique_id.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/search.forward_by_username.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/search.forward_by_username.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/search.perfect_by_unique_id.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/search.perfect_by_unique_id.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/sessions.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.index.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/sessions.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.show.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/sessions.store.201.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.store.201.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/sessions.update.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.update.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/sessions.users.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.users.index.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/sessions.users.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.users.show.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/sessions.users.store.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.users.store.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/sessions.users.update.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.users.update.200.json" afterDir="false" />
-    </list>
+    <list default="true" id="dc97d55e-750a-4d18-8aca-a7e761cc613c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,65 +30,53 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-29">
-              <caret line="19" column="93" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="93" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FriendController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="691">
-              <caret line="242" column="16" lean-forward="true" selection-start-line="242" selection-start-column="16" selection-end-line="242" selection-end-column="16" />
+            <state relative-caret-position="177">
+              <caret line="66" column="28" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-02-16.log">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserSessionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="1178" column="3" selection-start-line="1178" selection-start-column="3" selection-end-line="1178" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Services/FriendService.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+            <state relative-caret-position="240">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
               <folding>
-                <element signature="e#32#68#0#PHP" expanded="true" />
+                <element signature="e#46#85#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/index.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+              <folding>
+                <element signature="e#46#82#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AuthController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
-              <caret line="30" column="58" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
+              <caret line="70" column="5" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
+              <folding>
+                <element signature="e#40#82#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/docs/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="144" column="37" selection-start-line="144" selection-start-column="20" selection-end-line="144" selection-end-column="37" />
+            <state relative-caret-position="405">
+              <caret line="39" column="27" lean-forward="true" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -149,17 +84,36 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/Unit/FriendTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="203" column="57" selection-start-line="203" selection-start-column="42" selection-end-line="203" selection-end-column="57" />
+            <state relative-caret-position="276">
+              <caret line="185" selection-start-line="185" selection-end-line="185" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/Unit/GroupTest.php">
+        <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-02-17.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="582">
-              <caret line="88" column="44" selection-start-line="88" selection-start-column="44" selection-end-line="88" selection-end-column="44" />
+            <state relative-caret-position="-8676" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/vendor/telescope/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="2043" column="24" selection-start-line="2043" selection-start-column="24" selection-end-line="2043" selection-end-column="24" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="403">
+              <caret line="86" column="26" selection-start-line="86" selection-start-column="26" selection-end-line="86" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -167,8 +121,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/Unit/AuthTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="285">
+              <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -177,12 +131,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>groups.</find>
-      <find>testbasicte</find>
-      <find>401</find>
-      <find>すでにフレンドか、申請中です</find>
-      <find>debug</find>
-      <find>belongstomany</find>
       <find>withTimestamps()</find>
       <find>blockedFriends</find>
       <find>allFriendedUsers</find>
@@ -207,6 +155,12 @@
       <find>$request-&gt;email</find>
       <find>error</find>
       <find>user()</find>
+      <find>&quot;Barryvdh\\Debugbar\\ServiceProvider&quot;</find>
+      <find>cors</find>
+      <find>'groups</find>
+      <find>'groups.</find>
+      <find>Group</find>
+      <find>abor</find>
     </findStrings>
     <replaceStrings>
       <replace>default_settings.</replace>
@@ -217,6 +171,8 @@
       <replace>permittingUsers</replace>
       <replace>$user</replace>
       <replace>$email</replace>
+      <replace>Sess</replace>
+      <replace>'admin.groups.</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -225,36 +181,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/factories/UserFactory.php" />
-        <option value="$PROJECT_DIR$/app/Http/Resources/UserResource.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/ProfileUpdateRequest.php" />
-        <option value="$PROJECT_DIR$/tests/Unit/ProfileTest.php" />
-        <option value="$PROJECT_DIR$/config/apidoc.php" />
-        <option value="$PROJECT_DIR$/app/Policies/DefaultSettingPolicy.php" />
-        <option value="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
-        <option value="$PROJECT_DIR$/app/Http/Resources/DefaultSettingResource.php" />
-        <option value="$PROJECT_DIR$/database/factories/DefaultSettingFactory.php" />
-        <option value="$PROJECT_DIR$/tests/Unit/DefaultSettingTest.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/DefaultSettingStoreRequest.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Repository.php" />
-        <option value="$PROJECT_DIR$/app/Http/Resources/MeResource.php" />
-        <option value="$PROJECT_DIR$/tests/Unit/SearchTest.php" />
-        <option value="$PROJECT_DIR$/app/Exceptions/Handler.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_01_01_075013_create_sessions_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_01_01_075032_create_groups_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_01_01_075045_create_attributes_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_02_12_042612_create_default_settings_table.php" />
         <option value="$PROJECT_DIR$/storage/.gitignore" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_01_075007_create_user_friends_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_01_075024_create_session_user_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_01_075038_create_group_user_table.php" />
         <option value="$PROJECT_DIR$/app/Model/Session.php" />
-        <option value="$PROJECT_DIR$/app/Model/DefaultSetting.php" />
         <option value="$PROJECT_DIR$/app/Model/Group.php" />
         <option value="$PROJECT_DIR$/app/Model/Attribute.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AttributeController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DefaultSettingController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/GroupController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/GroupUserController.php" />
@@ -262,14 +197,41 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SessionController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SessionUserController.php" />
-        <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
-        <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
-        <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/tests/Unit/GroupTest.php" />
         <option value="$PROJECT_DIR$/tests/Unit/FriendTest.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FriendController.php" />
         <option value="$PROJECT_DIR$/app/Services/FriendService.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
+        <option value="$PROJECT_DIR$/app/User.php" />
+        <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/UserRegisterRequest.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/Admin/UserRegisterRequest.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/RepositoryInterface.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Repository.php" />
+        <option value="$PROJECT_DIR$/tests/Unit/AdminGroupTest.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/GroupController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/SessionController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/AttributeController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/DefaultSettingController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Resources/AttributeResource.php" />
+        <option value="$PROJECT_DIR$/app/Http/Resources/GroupResource.php" />
+        <option value="$PROJECT_DIR$/app/Http/Resources/MeResource.php" />
+        <option value="$PROJECT_DIR$/app/Http/Resources/SessionResource.php" />
+        <option value="$PROJECT_DIR$/app/Http/Resources/UserResource.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UserGroupController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UserSessionController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Resources/DefaultSettingResource.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UserAttributeController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UserDefaultSettingController.php" />
+        <option value="$PROJECT_DIR$/app/Model/DefaultSetting.php" />
+        <option value="$PROJECT_DIR$/routes/api.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" />
+        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/tests/Unit/AuthTest.php" />
       </list>
     </option>
   </component>
@@ -394,6 +356,8 @@
       <path value="$PROJECT_DIR$/vendor/google/common-protos" />
       <path value="$PROJECT_DIR$/vendor/google/cloud-error-reporting" />
       <path value="$PROJECT_DIR$/vendor/iatstuti/laravel-cascade-soft-deletes" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-cors" />
+      <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -422,6 +386,59 @@
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Console" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Exceptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Middleware" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
@@ -475,10 +492,16 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="groupcon&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Controllers/GroupController.php&#10;searchtest&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/tests/Unit/SearchTest.php&#10;sea&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Controllers/SearchController.php&#10;collection.&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/public/docs/collection.json&#10;searchcon&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Controllers/SearchController.php&#10;index&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/public/docs/index.html&#10;Userre&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Resources/UserResource.php&#10;Meresource&#9;null&#9;null&#10;authcon&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Controllers/AuthController.php&#10;inde&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/public/docs/index.html&#10;repositoryse&#9;null&#9;null&#10;defaultsettingte&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/tests/Unit/DefaultSettingTest.php&#10;User&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/User.php&#10;groupte&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/tests/Unit/GroupTest.php&#10;grouptesrt&#9;null&#9;null&#10;attributecon&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Controllers/AttributeController.php&#10;defaultsettingcon&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Controllers/DefaultSettingController.php&#10;defa&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/database/factories/DefaultSettingFactory.php&#10;DATA&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/database/seeds/DatabaseSeeder.php&#10;defaultsettingfa&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/database/factories/DefaultSettingFactory.php&#10;database&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/database/seeds/DatabaseSeeder.php&#10;grouptest&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/tests/Unit/GroupTest.php&#10;attribute&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/tests/Unit/AttributeTest.php&#10;defaultsettingtest&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/tests/Unit/DefaultSettingTest.php&#10;da&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/database/seeds/DatabaseSeeder.php&#10;databasesee&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/database/seeds/DatabaseSeeder.php&#10;defaultsettingre&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Resources/DefaultSettingResource.php&#10;api&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/routes/api.php&#10;authser&#9;null&#9;null&#10;sear&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Controllers/SearchController.php&#10;profilecon&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/app/Http/Controllers/ProfileController.php&#10;laravel&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/storage/logs/laravel-2019-02-09.log&#10;Grouptest&#9;null&#9;null&#10;api.php&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/routes/api.php&#10;apidoc&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/vendor/mpociot/laravel-apidoc-generator/config/apidoc.php&#10;index.h&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/public/docs/index.html&#10;auth&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/tests/Unit/AuthTest.php&#10;authtest&#9;null&#9;null&#10;ProfileUpdate&#9;null&#9;null&#10;friendtest&#9;null&#9;null&#10;userfa&#9;FILE&#9;file:///home/yoshiji/webdev/laravels/projects/hew-3/src/database/factories/UserFactory.php&#10;Userresource&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../nuxt-zlack-2" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/Unit" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -513,16 +536,16 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34306000" />
+    <option name="totallyTimeSpent" value="56942000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-1" width="1920" height="1081" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15974441" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" side_tool="true" />
-      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="1" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.22683705" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -547,230 +570,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Resources/UserResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/JWT.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="70" column="10" lean-forward="true" selection-start-line="70" selection-start-column="10" selection-end-line="70" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2239">
-          <caret line="33" column="79" lean-forward="true" selection-start-line="33" selection-start-column="79" selection-end-line="33" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="39" column="47" lean-forward="true" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Exceptions/Handler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding>
-            <element signature="e#34#48#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_01_075013_create_sessions_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_01_075032_create_groups_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_01_075045_create_attributes_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" selection-start-column="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-02-15.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="1153" column="12" selection-start-line="1153" selection-start-column="12" selection-end-line="1153" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_01_075007_create_user_friends_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_01_075024_create_session_user_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_01_075038_create_group_user_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_12_042612_create_default_settings_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_16_131633_create_cache_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Model/Session.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="28" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Model/DefaultSetting.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Model/Attribute.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="27" column="11" lean-forward="true" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Model/Group.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="29" column="15" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AttributeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AuthController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DefaultSettingController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-          <folding>
-            <element signature="e#40#89#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GroupController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GroupUserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SessionUserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-          <folding>
-            <element signature="e#40#83#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SessionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SearchController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProfileController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -792,20 +591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/Unit/SessionTest.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -819,13 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Unit/AuthTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/Unit/GroupTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="582">
@@ -833,45 +611,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Unit/FriendTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="203" column="57" selection-start-line="203" selection-start-column="42" selection-end-line="203" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-29">
-          <caret line="19" column="93" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/docs/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="30" column="58" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="144" column="37" selection-start-line="144" selection-start-column="20" selection-end-line="144" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-02-16.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="1178" column="3" selection-start-line="1178" selection-start-column="3" selection-end-line="1178" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -885,10 +628,331 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/http/http3.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="992" column="14" selection-start-line="992" selection-start-column="14" selection-end-line="992" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="52" column="6" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Admin/UserRegisterRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/UserRegisterRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/apidoc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="44" column="10" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/RepositoryInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding>
+            <element signature="e#33#80#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FriendController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
-          <caret line="242" column="16" lean-forward="true" selection-start-line="242" selection-start-column="16" selection-end-line="242" selection-end-column="16" />
+        <state relative-caret-position="477">
+          <caret line="91" column="6" selection-start-line="91" selection-start-column="6" selection-end-line="91" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Repository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GroupController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="100" column="7" selection-start-line="100" selection-start-column="7" selection-end-line="106" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-02-16.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="1934" column="62" selection-start-line="1934" selection-start-column="62" selection-end-line="1934" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SessionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="65" column="34" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AttributeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="e#47#88#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/GroupController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="31" selection-end-column="5" />
+          <folding>
+            <element signature="e#46#83#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/SessionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+          <folding>
+            <element signature="e#46#85#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/MeResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="22" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/SessionResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/UserResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="42" lean-forward="true" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/AttributeResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/GroupResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/DefaultSettingController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#46#92#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/DefaultSettingResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Model/DefaultSetting.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserAttributeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#46#87#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserDefaultSettingController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#46#92#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserGroupController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#46#83#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="74" column="7" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserSessionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#46#85#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+          <folding>
+            <element signature="e#46#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="66" column="28" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="70" column="5" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
+          <folding>
+            <element signature="e#40#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/vendor/telescope/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="2043" column="24" selection-start-line="2043" selection-start-column="24" selection-end-line="2043" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Unit/AdminGroupTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="86" column="26" selection-start-line="86" selection-start-column="26" selection-end-line="86" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Unit/AuthTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-02-17.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8676" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Unit/FriendTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="185" selection-start-line="185" selection-end-line="185" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/docs/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="39" column="27" lean-forward="true" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
         </state>
       </provider>
     </entry>
