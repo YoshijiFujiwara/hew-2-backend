@@ -23,7 +23,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login', 'register', 'adminRegister']]);
+        $this->middleware('auth:api', ['except' => ['login', 'register', 'adminRegister', 'adminLogin']]);
     }
 
     /**
@@ -37,6 +37,30 @@ class AuthController extends Controller
      */
     public function login()
     {
+        $credentials = request(['email', 'password']);
+
+        if (! $token = auth()->attempt($credentials)) {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
+
+        return $this->respondWithToken($token);
+    }
+
+    /**
+     * email, password でログインし、JWTを得る
+     *
+     * @bodyParam email string required メールアドレス
+     * @bodyParam password string required パスワード
+     *
+     * @responseFile 200 responses/auth.login.200.json
+     * @responseFile 401 responses/auth.login.401.json
+     */
+    public function adminLogin()
+    {
+        if (! request('email') == 'testuser@example.com') {
+            return abort(401);
+        }
+
         $credentials = request(['email', 'password']);
 
         if (! $token = auth()->attempt($credentials)) {

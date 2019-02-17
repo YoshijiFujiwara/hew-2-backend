@@ -64,7 +64,7 @@ Route::middleware('JWT')->group(function () {
 
 Route::group([
     'middleware' => 'api',
-    'prefix' => 'admin',
+    'prefix' => 'admin/auth/',
     'as' => 'admin.',
 ], function () {
     Route::post('register', 'AuthController@adminRegister')->name('auth.register');
@@ -81,6 +81,37 @@ Route::group([
     Route::apiResource('sessions', 'SessionController')->only(['index', 'show', 'destroy']);
     Route::apiResource('users', 'UserController')->only(['index', 'show', 'destroy']);
     Route::apiResource('attributes', 'AttributeController')->only(['index', 'show', 'destroy']);
+    Route::apiResource('default_settings', 'DefaultSettingController')->only(['index', 'show', 'destroy']);
+
+    Route::get('users', 'UserController@index')->name('users.index');
+    Route::group([
+        'prefix' => 'users/{user}',
+    ], function () {
+        Route::get('', 'UserController@show')->name('users.show');
+        Route::delete('', 'UserController@destroy')->name('users.destroy');
+
+        Route::prefix('groups')->group(function () {
+            Route::get('', 'UserGroupController@index')->name('users.groups.index');
+
+        });
+
+        Route::prefix('sessions')->group(function () {
+            Route::get('', 'UserSessionController@index')->name('users.sessions.index');
+
+        });
+
+        Route::prefix('attributes')->group(function () {
+            Route::get('', 'UserAttributeController@index')->name('users.attributes.index');
+
+        });
+
+        Route::prefix('default_settings')->group(function () {
+            Route::get('', 'UserDefaultSettingController@index')->name('users.default_settings.index');
+
+        });
+    });
+
+
 
 
 });

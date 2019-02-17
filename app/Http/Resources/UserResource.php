@@ -20,6 +20,8 @@ class UserResource extends JsonResource
             'name' => $this->name,
             'username' => $this->username,
             'email' => $this->email,
+            'unique_id_search_flag' => $this->unique_id_search_flag,
+            'username_search_flag' => $this->username_search_flag,
             'permitted' => $this->whenPivotLoaded('user_friends', function () {
                 return $this->pivot->permitted;
             }),
@@ -40,6 +42,7 @@ class UserResource extends JsonResource
             }),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
+            'deleted_at' => $this->deleted_at,
         ];
     }
 }

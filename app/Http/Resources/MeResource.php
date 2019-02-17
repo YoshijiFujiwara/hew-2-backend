@@ -23,6 +23,7 @@ class MeResource extends JsonResource
             'username_search_flag' => $this->username_search_flag,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
+            'deleted_at' => $this->deleted_at,
         ];
     }
 }
