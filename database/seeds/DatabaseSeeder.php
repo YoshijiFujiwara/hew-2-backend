@@ -81,7 +81,6 @@ class DatabaseSeeder extends Seeder
         $testUser = \App\User::find(1);
         $testUser->email = 'testuser@example.com';
         $testUser->username = 'テスト太郎';
-        $testUser->password = 'o34k30skm3h4b';
         $testUser->unique_id_search_flag = true;
         $testUser->username_search_flag = true;
         $testUser->save();
