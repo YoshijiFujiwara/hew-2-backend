@@ -12,6 +12,10 @@
 # below:
 .git
 .gitignore
+.env
 
 # PHP Composer dependencies:
+composer.lock
 vendor/
+node_modules/
+#/bootstrap/cache/*.php

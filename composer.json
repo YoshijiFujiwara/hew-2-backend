@@ -20,7 +20,7 @@
         "tymon/jwt-auth": "^1.0.0"
     },
     "require-dev": {
-        "beyondcode/laravel-dump-server": "^1.0",
+        "beyondcode/laravel-dump-server": "^1.2",
         "filp/whoops": "^2.0",
         "fzaninotto/faker": "^1.4",
         "mockery/mockery": "^1.0",
@@ -67,13 +67,14 @@
         "post-install-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
             "chmod -R 755 bootstrap\/cache",
+            "php artisan cache:clear",
+            "php artisan view:clear",
             "php artisan route:cache",
             "php artisan config:cache"
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "php artisan route:cache",
-            "php artisan config:cache"
+            "php artisan cache:clear"
        ]
     }
 }

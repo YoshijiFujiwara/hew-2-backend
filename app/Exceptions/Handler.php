@@ -3,8 +3,8 @@
 namespace App\Exceptions;
 
 use Exception;
-use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Google\Cloud\ErrorReporting\Bootstrap;
+use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
 {
@@ -36,9 +36,11 @@ class Handler extends ExceptionHandler
     public function report(Exception $exception)
     {
         if (isset($_SERVER['GAE_SERVICE'])) {
+            Bootstrap::init();
             Bootstrap::exceptionHandler($exception);
+        }else{
+            parent::report($exception);
         }
-        parent::report($exception);
     }
 
     /**
