@@ -21,7 +21,7 @@ class AuthTest extends TestCase
         ])->json('POST', route('auth.login'),
             [
                 'email' => 'testuser@example.com',
-                'password' => 'secret'
+                'password' => 'o34k30skm3h4b'
             ]);
 
         $response->assertStatus(200);

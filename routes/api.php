@@ -61,13 +61,57 @@ Route::middleware('JWT')->group(function () {
         Route::post('forward_by_unique_id', 'SearchController@forwardSearchByUniqueId')->name('search.forward_by_unique_id');
     });
 });
-//
-//Route::group([
-//    'prefix' => 'admin',
-//    'as' => 'admin.',
-//    'namespace' => 'Admin'
-//], function () {
-//    Route::apiResource('users', 'UserController');
-//    Route::apiResource('groups', 'GroupController');
-//    Route::apiResource('sessions', 'SessionController');
-//});
+
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'admin/auth/',
+    'as' => 'admin.',
+], function () {
+    Route::post('register', 'AuthController@adminRegister')->name('auth.register');
+    Route::post('login', 'AuthController@adminLogin')->name('auth.login');
+});
+
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'admin',
+    'as' => 'admin.',
+    'namespace' => 'Admin'
+], function () {
+    Route::apiResource('groups', 'GroupController')->only(['index', 'show', 'destroy']);
+    Route::apiResource('sessions', 'SessionController')->only(['index', 'show', 'destroy']);
+    Route::apiResource('users', 'UserController')->only(['index', 'show', 'destroy']);
+    Route::apiResource('attributes', 'AttributeController')->only(['index', 'show', 'destroy']);
+    Route::apiResource('default_settings', 'DefaultSettingController')->only(['index', 'show', 'destroy']);
+
+    Route::get('users', 'UserController@index')->name('users.index');
+    Route::group([
+        'prefix' => 'users/{user}',
+    ], function () {
+        Route::get('', 'UserController@show')->name('users.show');
+        Route::delete('', 'UserController@destroy')->name('users.destroy');
+
+        Route::prefix('groups')->group(function () {
+            Route::get('', 'UserGroupController@index')->name('users.groups.index');
+
+        });
+
+        Route::prefix('sessions')->group(function () {
+            Route::get('', 'UserSessionController@index')->name('users.sessions.index');
+
+        });
+
+        Route::prefix('attributes')->group(function () {
+            Route::get('', 'UserAttributeController@index')->name('users.attributes.index');
+
+        });
+
+        Route::prefix('default_settings')->group(function () {
+            Route::get('', 'UserDefaultSettingController@index')->name('users.default_settings.index');
+
+        });
+    });
+
+
+
+
+});

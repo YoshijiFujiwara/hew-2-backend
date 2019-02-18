@@ -17,10 +17,12 @@ class DefaultSettingResource extends JsonResource
         return [
             'id' => $this->id,
             'manager' => new UserResource($this->manager),
+            'group' => new GroupResource($this->group),
             'name' => $this->name,
             'timer' => $this->timer,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
+            'deleted_at' => $this->deleted_at,
         ];
     }
 }

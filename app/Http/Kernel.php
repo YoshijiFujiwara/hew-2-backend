@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use App\Http\Middleware\RecordResponse;
+use Barryvdh\Cors\HandleCors;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -37,11 +38,13 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            HandleCors::class,
         ],
 
         'api' => [
             'throttle:1000,1',
             'bindings',
+            HandleCors::class,
         ],
     ];
 
