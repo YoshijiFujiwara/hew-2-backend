@@ -17,7 +17,7 @@ class CreateSessionsTable extends Migration
             $table->increments('id');
             $table->string('name')->nullable()->comment('セッション名');
             $table->integer('manager_id')->unsigned()->comment('幹事id');
-            $table->integer('shop_id')->nullable()->comment('ショップid');
+            $table->string('shop_id')->nullable()->comment('ショップid');
             $table->integer('budget')->nullable()->comment('予算');
             $table->integer('actual')->nullable()->comment('実額');
             $table->timestamp('start_time')->nullable()->comment('開始時刻');
