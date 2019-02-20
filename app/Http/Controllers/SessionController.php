@@ -28,7 +28,7 @@ class SessionController extends Controller
      * sessions.store セッションを作成
      *
      * @bodyParam name string required 新規セッションの名前
-     * @bodyParam shop_id integer  ショップのID(ぐるなび？)
+     * @bodyParam shop_id string  ショップのID(ぐるなび？)
      * @bodyParam budget integer  予算額
      * @bodyParam actual integer  実際の金額
      * @bodyParam start_time datetime  セッションの開始時刻
