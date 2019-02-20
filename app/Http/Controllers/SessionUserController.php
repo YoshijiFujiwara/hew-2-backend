@@ -50,7 +50,6 @@ class SessionUserController extends Controller
             'join_status' => $request->join_status,
             'paid' => $request->paid,
             'plus_minus' => $request->plus_minus,
-            'ratio' => $request->ratio,
         ]);
 
         // ユーザー情報を更新するため、あえて再インスタンス化
@@ -83,7 +82,6 @@ class SessionUserController extends Controller
      * @bodyParam join_status required integer 参加状況のステータス
      * @bodyParam paid integer  支払いしたか
      * @bodyParam plus_minus integer 加減算
-     * @bodyParam ratio datetime  割合（加減算と重複しないほうが良いでしょう）
      *
      * @responseFile 200 responses/sessions.users.update.200.json
      */
@@ -98,7 +96,6 @@ class SessionUserController extends Controller
             'join_status' => $request->join_status,
             'paid' => $request->paid,
             'plus_minus' => $request->plus_minus,
-            'ratio' => $request->ratio,
         ]);
 
         return new UserResource($session->users->where('id', $user->id)->first());

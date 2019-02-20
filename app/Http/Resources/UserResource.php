@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Model\Attribute;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class UserResource extends JsonResource
@@ -25,8 +26,8 @@ class UserResource extends JsonResource
             'permitted' => $this->whenPivotLoaded('user_friends', function () {
                 return $this->pivot->permitted;
             }),
-            'attribute_id' => $this->whenPivotLoaded('user_friends', function () {
-                return $this->pivot->attribute_id;
+            'attribute' => $this->whenPivotLoaded('user_friends', function () {
+                return new AttributeResource(Attribute::find($this->pivot->attribute_id));
             }),
             'join_status' => $this->whenPivotLoaded('session_user', function () {
                 return $this->pivot->join_status;
@@ -36,9 +37,6 @@ class UserResource extends JsonResource
             }),
             'plus_minus' => $this->whenPivotLoaded('session_user', function () {
                 return $this->pivot->plus_minus;
-            }),
-            'ratio' => $this->whenPivotLoaded('session_user', function () {
-                return $this->pivot->ratio;
             }),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,

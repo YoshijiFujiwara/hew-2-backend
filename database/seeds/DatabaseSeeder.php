@@ -65,7 +65,6 @@ class DatabaseSeeder extends Seeder
                             'join_status' => $joinStatus,
                             'paid' => $paidStatus,
                             'plus_minus' => null,
-                            'ratio'=> null
                         ]);
                     }
                 });

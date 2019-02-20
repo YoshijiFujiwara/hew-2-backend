@@ -173,7 +173,7 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->belongsToMany(Session::class)
             ->wherePivot('deleted_at', null)
-            ->withPivot('join_status', 'paid', 'plus_minus', 'ratio', 'deleted_at');
+            ->withPivot('join_status', 'paid', 'plus_minus', 'deleted_at');
     }
 
     public function managedGroups()
