@@ -28,7 +28,6 @@ class AttributeController extends Controller
      *
      * @bodyParam name string required 属性名。必須
      * @bodyParam plus_minus integer 加減算
-     * @bodyParam ratio float 割合。加減算と割合はどちらかのみの設定にしたほうがいいような気がする
      *
      * @responseFile 201 responses/attributes.store.201.json
      * @responseFile 409 responses/attributes.store.409.json
@@ -60,7 +59,6 @@ class AttributeController extends Controller
      * @queryParam attribute required 属性id
      * @bodyParam name string required 属性名。必須
      * @bodyParam plus_minus integer 加減算
-     * @bodyParam ratio float 割合。加減算と割合はどちらかのみの設定にしたほうがいいような気がする
      *
      * @responseFile 200 responses/attributes.update.200.json
      */

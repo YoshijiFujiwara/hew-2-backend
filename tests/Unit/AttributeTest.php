@@ -64,7 +64,6 @@ class AttributeTest extends TestCase
         $response = $this->apiAs($testUser, 'PUT', route('attributes.update', $attribute->id), [
             'name' => 'update' . str_random(5),
             'plus_minus' => null,
-            'ratio' => null
         ], []);
 
         $response->assertStatus(Response::HTTP_OK);

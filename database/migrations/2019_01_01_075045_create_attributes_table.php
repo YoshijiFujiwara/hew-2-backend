@@ -18,7 +18,6 @@ class CreateAttributesTable extends Migration
             $table->integer('manager_id')->unsigned()->comment('幹事のid');
             $table->string('name')->comment('属性名');
             $table->integer('plus_minus')->nullable()->comment('加減算');
-            $table->integer('ratio')->nullable()->comment('割合');
             $table->timestamps();
             $table->softDeletes();
         });

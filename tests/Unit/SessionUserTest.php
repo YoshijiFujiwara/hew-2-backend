@@ -38,7 +38,6 @@ class SessionUserTest extends TestCase
             'join_status' => 'allow',
             'paid' => false,
             'plus_minus' => 0,
-            'ratio' => null,
         ], []);
 
         $response->assertStatus(Response::HTTP_OK);
@@ -64,7 +63,6 @@ class SessionUserTest extends TestCase
             'join_status' => 'allow',
             'paid' => false,
             'plus_minus' => 0,
-            'ratio' => null,
         ], []);
 
         $response->assertStatus(Response::HTTP_OK);
@@ -94,7 +92,6 @@ class SessionUserTest extends TestCase
             'join_status' => 'allow',
             'paid' => false,
             'plus_minus' => 0,
-            'ratio' => null,
         ], []);
 
         $response->assertStatus(Response::HTTP_OK);
@@ -107,7 +104,6 @@ class SessionUserTest extends TestCase
             'join_status' => 'allow',
             'paid' => false,
             'plus_minus' => 10000,
-            'ratio' => null,
         ], []);
     }
 
@@ -132,7 +128,6 @@ class SessionUserTest extends TestCase
             'join_status' => 'allow',
             'paid' => false,
             'plus_minus' => 0,
-            'ratio' => null,
         ], []);
 
         $response = $this->apiAs($testUser, 'GET', route('sessions.users.show', [$newSession, $newMember]), [], []);

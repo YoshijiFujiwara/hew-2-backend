@@ -13,7 +13,7 @@
         },
         {
             "file": "/var/www/app/Exceptions/Handler.php",
-            "line": 53,
+            "line": 55,
             "function": "render",
             "class": "Illuminate\\Foundation\\Exceptions\\Handler",
             "type": "->"
