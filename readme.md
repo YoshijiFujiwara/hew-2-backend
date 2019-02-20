@@ -12,3 +12,6 @@ public/docs/public/docs/index.html
 ```angular2html
 php artisan apidoc:generate
 ```
+### APIリファレンス
+
+<https://laravelv2-dot-eventer-1543384121468.appspot.com/docs/index.html>
