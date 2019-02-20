@@ -7,6 +7,9 @@ use App\Http\Resources\AttributeResource;
 use App\Model\Attribute;
 use Illuminate\Http\Response;
 
+/**
+ * @group admin 管理者ページ
+ */
 class AttributeController
 {
     public function index()

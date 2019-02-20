@@ -8,6 +8,9 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+/**
+ * @group admin 管理者ページ
+ */
 class UserDefaultSettingController extends Controller
 {
     public function index(User $user)
