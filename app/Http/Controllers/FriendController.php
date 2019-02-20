@@ -140,6 +140,26 @@ class FriendController extends Controller
     }
 
     /**
+     * friends.update_attribute フレンドにつける属性IDを更新する
+     * @queryParam friend required フレンドID
+     * @bodyParam attribute_id integer required 更新する属性ID
+     *
+     * @responseFile 200 responses/friends.update_attribute.200.json
+     */
+    public function updateAttribute(Request $request, User $friend)
+    {
+        // 自分が管理している属性かチェック
+        $attribute = $request->user()->managedAttributes()->where('id', $request->attribute_id)->first();
+        if (empty($attribute)) {
+            return response()->json(['error' => 'その属性は管理していません'], Response::HTTP_CONFLICT);
+        }
+        $request->user()->friends()->updateExistingPivot($friend, [
+            'attribute_id' => $attribute->id
+        ]);
+        return new UserResource($request->user()->friends->where('id', $friend->id)->first());
+    }
+
+    /**
      * friends.permit 友達申請を許可
      * @bodyParam user_id integer required 友達申請してきてる人のユーザーID
      *
@@ -195,6 +215,7 @@ class FriendController extends Controller
     /**
      * friends.cancel_invitation 友達申請したけど、やっぱり取り消そう
      *
+     * @queryParam friend required フレンドID
      * @responseFile 204 responses/friends.cancel_invitation.204.json
      */
     public function cancelInvitation(Request $request, User $friend)
@@ -208,6 +229,7 @@ class FriendController extends Controller
     /**
      * friends.block ブロックする。すでに友達の場合は、削除もする
      *
+     * @queryParam friend required フレンドID
      * @responseFile 200 responses/friends.block.200.json
      */
     public function block(Request $request, User $friend)
@@ -226,6 +248,7 @@ class FriendController extends Controller
     /**
      * friends.unBlock ブロックしてたけど、かわいそうだから解除してやろう
      *
+     * @queryParam friend required フレンドID
      * @responseFile 200 responses/friends.un_block.200.json
      */
     public function unBlock(Request $request, User $friend)
