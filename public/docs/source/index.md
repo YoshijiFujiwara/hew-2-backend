@@ -20,6 +20,666 @@ Welcome to the generated API reference.
 
 <!-- END_INFO -->
 
+#admin 管理者ページ
+<!-- START_16e8f19f8b875dc584cd9ff3a21657f2 -->
+## api/admin/groups
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/admin/groups" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/admin/groups");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response:
+
+```json
+null
+```
+
+### HTTP Request
+`GET api/admin/groups`
+
+
+<!-- END_16e8f19f8b875dc584cd9ff3a21657f2 -->
+
+<!-- START_2bf3169a40c33f16d969dd6d64a5a09f -->
+## api/admin/groups/{group}
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/admin/groups/{group}" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/admin/groups/{group}");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response:
+
+```json
+null
+```
+
+### HTTP Request
+`GET api/admin/groups/{group}`
+
+
+<!-- END_2bf3169a40c33f16d969dd6d64a5a09f -->
+
+<!-- START_e4d4d7fb4ae896fde38ceed5b1927fc4 -->
+## api/admin/groups/{group}
+> Example request:
+
+```bash
+curl -X DELETE "http://localhost/api/admin/groups/{group}" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/admin/groups/{group}");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+### HTTP Request
+`DELETE api/admin/groups/{group}`
+
+
+<!-- END_e4d4d7fb4ae896fde38ceed5b1927fc4 -->
+
+<!-- START_da33775b36055453531edd783ecc8d25 -->
+## api/admin/sessions
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/admin/sessions" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/admin/sessions");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response:
+
+```json
+null
+```
+
+### HTTP Request
+`GET api/admin/sessions`
+
+
+<!-- END_da33775b36055453531edd783ecc8d25 -->
+
+<!-- START_a7775cea8212d21ad7719f96ec9caa56 -->
+## api/admin/sessions/{session}
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/admin/sessions/{session}" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/admin/sessions/{session}");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response:
+
+```json
+null
+```
+
+### HTTP Request
+`GET api/admin/sessions/{session}`
+
+
+<!-- END_a7775cea8212d21ad7719f96ec9caa56 -->
+
+<!-- START_5f5bb270627aea8826378210b369088e -->
+## api/admin/sessions/{session}
+> Example request:
+
+```bash
+curl -X DELETE "http://localhost/api/admin/sessions/{session}" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/admin/sessions/{session}");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+### HTTP Request
+`DELETE api/admin/sessions/{session}`
+
+
+<!-- END_5f5bb270627aea8826378210b369088e -->
+
+<!-- START_1fdf5c126c9b5b722e5044c3f680bf8e -->
+## api/admin/users
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/admin/users" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/admin/users");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response:
+
+```json
+null
+```
+
+### HTTP Request
+`GET api/admin/users`
+
+
+<!-- END_1fdf5c126c9b5b722e5044c3f680bf8e -->
+
+<!-- START_538c6352521b306dbf554e89cd64ac98 -->
+## api/admin/users/{user}
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/admin/users/{user}" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/admin/users/{user}");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response:
+
+```json
+null
+```
+
+### HTTP Request
+`GET api/admin/users/{user}`
+
+
+<!-- END_538c6352521b306dbf554e89cd64ac98 -->
+
+<!-- START_7d625b15e5b59cfac2c9129fa450c5f5 -->
+## api/admin/users/{user}
+> Example request:
+
+```bash
+curl -X DELETE "http://localhost/api/admin/users/{user}" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/admin/users/{user}");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+### HTTP Request
+`DELETE api/admin/users/{user}`
+
+
+<!-- END_7d625b15e5b59cfac2c9129fa450c5f5 -->
+
+<!-- START_0c83e767b9d8eab5c7d6a48c01a776a5 -->
+## api/admin/attributes
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/admin/attributes" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/admin/attributes");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response:
+
+```json
+null
+```
+
+### HTTP Request
+`GET api/admin/attributes`
+
+
+<!-- END_0c83e767b9d8eab5c7d6a48c01a776a5 -->
+
+<!-- START_85d269ea82abda45d2cfd9ca1e894738 -->
+## api/admin/attributes/{attribute}
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/admin/attributes/{attribute}" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/admin/attributes/{attribute}");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response:
+
+```json
+null
+```
+
+### HTTP Request
+`GET api/admin/attributes/{attribute}`
+
+
+<!-- END_85d269ea82abda45d2cfd9ca1e894738 -->
+
+<!-- START_f6008fa2212e92a4515292156a75c7dc -->
+## api/admin/attributes/{attribute}
+> Example request:
+
+```bash
+curl -X DELETE "http://localhost/api/admin/attributes/{attribute}" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/admin/attributes/{attribute}");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+### HTTP Request
+`DELETE api/admin/attributes/{attribute}`
+
+
+<!-- END_f6008fa2212e92a4515292156a75c7dc -->
+
+<!-- START_a0c5536b5e69dacdeaa7c874145adb5e -->
+## api/admin/default_settings
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/admin/default_settings" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/admin/default_settings");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response:
+
+```json
+null
+```
+
+### HTTP Request
+`GET api/admin/default_settings`
+
+
+<!-- END_a0c5536b5e69dacdeaa7c874145adb5e -->
+
+<!-- START_458b8842ee8a177acf3914671c94be0c -->
+## api/admin/default_settings/{default_setting}
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/admin/default_settings/{default_setting}" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/admin/default_settings/{default_setting}");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response:
+
+```json
+null
+```
+
+### HTTP Request
+`GET api/admin/default_settings/{default_setting}`
+
+
+<!-- END_458b8842ee8a177acf3914671c94be0c -->
+
+<!-- START_1d6dfd3bf461878d481b7448dfdf224c -->
+## api/admin/default_settings/{default_setting}
+> Example request:
+
+```bash
+curl -X DELETE "http://localhost/api/admin/default_settings/{default_setting}" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/admin/default_settings/{default_setting}");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+### HTTP Request
+`DELETE api/admin/default_settings/{default_setting}`
+
+
+<!-- END_1d6dfd3bf461878d481b7448dfdf224c -->
+
+<!-- START_c7dd4ed0af4ae5e260139308d1a8a35d -->
+## api/admin/users/{user}/groups
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/admin/users/{user}/groups" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/admin/users/{user}/groups");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response:
+
+```json
+null
+```
+
+### HTTP Request
+`GET api/admin/users/{user}/groups`
+
+
+<!-- END_c7dd4ed0af4ae5e260139308d1a8a35d -->
+
+<!-- START_7ecae2d30ec557c8ee796b3e933f2eb4 -->
+## api/admin/users/{user}/sessions
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/admin/users/{user}/sessions" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/admin/users/{user}/sessions");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response:
+
+```json
+null
+```
+
+### HTTP Request
+`GET api/admin/users/{user}/sessions`
+
+
+<!-- END_7ecae2d30ec557c8ee796b3e933f2eb4 -->
+
+<!-- START_54c838b78267436591a9f5013377e334 -->
+## api/admin/users/{user}/attributes
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/admin/users/{user}/attributes" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/admin/users/{user}/attributes");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response:
+
+```json
+null
+```
+
+### HTTP Request
+`GET api/admin/users/{user}/attributes`
+
+
+<!-- END_54c838b78267436591a9f5013377e334 -->
+
+<!-- START_ab61985c959558b512cd06fff84c80ed -->
+## api/admin/users/{user}/default_settings
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/admin/users/{user}/default_settings" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/admin/users/{user}/default_settings");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response:
+
+```json
+null
+```
+
+### HTTP Request
+`GET api/admin/users/{user}/default_settings`
+
+
+<!-- END_ab61985c959558b512cd06fff84c80ed -->
+
 #attribute 属性
 <!-- START_03c20e5ac43ca78ea06bde43541c6522 -->
 ## attributes.index 自分が管理している属性一覧
@@ -254,7 +914,7 @@ fetch(url, {
 ```bash
 curl -X POST "http://localhost/api/attributes" \
     -H "Content-Type: application/json" \
-    -d '{"name":"LepBwFU7HcsWjQXD","plus_minus":12,"ratio":3.320016857}'
+    -d '{"name":"f5kOPNbfH0sWwAM4","plus_minus":19,"ratio":1790004.25}'
 
 ```
 
@@ -267,9 +927,9 @@ let headers = {
 }
 
 let body = {
-    "name": "LepBwFU7HcsWjQXD",
-    "plus_minus": 12,
-    "ratio": 3.320016857
+    "name": "f5kOPNbfH0sWwAM4",
+    "plus_minus": 19,
+    "ratio": 1790004.25
 }
 
 fetch(url, {
@@ -358,7 +1018,7 @@ curl -X GET -G "http://localhost/api/attributes/{attribute}"
 const url = new URL("http://localhost/api/attributes/{attribute}");
 
     let params = {
-            "attribute": "4TTIrUvVhSe9oOcQ",
+            "attribute": "ttOGH7mGwipjuXnf",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -438,7 +1098,7 @@ Parameter | Status | Description
 ```bash
 curl -X PUT "http://localhost/api/attributes/{attribute}" \
     -H "Content-Type: application/json" \
-    -d '{"name":"5NFM58e88hul08x1","plus_minus":16,"ratio":334272715.818}'
+    -d '{"name":"N83uUiHtyghdYmid","plus_minus":6,"ratio":1534287.578116}'
 
 ```
 
@@ -446,7 +1106,7 @@ curl -X PUT "http://localhost/api/attributes/{attribute}" \
 const url = new URL("http://localhost/api/attributes/{attribute}");
 
     let params = {
-            "attribute": "QydNEtLVRm80tvlC",
+            "attribute": "5MGF37IC9dIvfJc7",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -456,9 +1116,9 @@ let headers = {
 }
 
 let body = {
-    "name": "5NFM58e88hul08x1",
-    "plus_minus": 16,
-    "ratio": 334272715.818
+    "name": "N83uUiHtyghdYmid",
+    "plus_minus": 6,
+    "ratio": 1534287.578116
 }
 
 fetch(url, {
@@ -547,7 +1207,7 @@ curl -X DELETE "http://localhost/api/attributes/{attribute}"
 const url = new URL("http://localhost/api/attributes/{attribute}");
 
     let params = {
-            "attribute": "w40yFcHJpolUH5uY",
+            "attribute": "vtT5U6C8NCMJrPjK",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -590,7 +1250,7 @@ Parameter | Status | Description
 ```bash
 curl -X POST "http://localhost/api/auth/register" \
     -H "Content-Type: application/json" \
-    -d '{"email":"CAJpJPhCzqk6ZA8g","username":"EV1pq7TdUnCQOQ78","password":"S9XPzve92Nsb1K1m"}'
+    -d '{"email":"UPb1IJF6ALfhTwMZ","username":"oqf2AqJs394PyBoX","password":"BeVfe6KkMDbJ1Oem"}'
 
 ```
 
@@ -603,9 +1263,9 @@ let headers = {
 }
 
 let body = {
-    "email": "CAJpJPhCzqk6ZA8g",
-    "username": "EV1pq7TdUnCQOQ78",
-    "password": "S9XPzve92Nsb1K1m"
+    "email": "UPb1IJF6ALfhTwMZ",
+    "username": "oqf2AqJs394PyBoX",
+    "password": "BeVfe6KkMDbJ1Oem"
 }
 
 fetch(url, {
@@ -660,7 +1320,7 @@ Parameter | Type | Status | Description
 ```bash
 curl -X POST "http://localhost/api/auth/login" \
     -H "Content-Type: application/json" \
-    -d '{"email":"5HqYC2AAoyyGP9pw","password":"6X5ancqevPFII5OW"}'
+    -d '{"email":"dkLzxSR9nVjpXPXF","password":"YjXtxihCCfcFCFpN"}'
 
 ```
 
@@ -673,8 +1333,8 @@ let headers = {
 }
 
 let body = {
-    "email": "5HqYC2AAoyyGP9pw",
-    "password": "6X5ancqevPFII5OW"
+    "email": "dkLzxSR9nVjpXPXF",
+    "password": "YjXtxihCCfcFCFpN"
 }
 
 fetch(url, {
@@ -690,7 +1350,7 @@ fetch(url, {
 
 ```json
 {
-    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvYXV0aFwvbG9naW4iLCJpYXQiOjE1NTA0MTgwNjEsImV4cCI6MTU1MDQyMTY2MSwibmJmIjoxNTUwNDE4MDYxLCJqdGkiOiJEV05HajlhYkluejBuM2RLIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.2dmar0sA8RU5OUZNxUqoRd9Y941UpvRBhuZE-bZuDCQ",
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvYXV0aFwvbG9naW4iLCJpYXQiOjE1NTA2MjQ5NzQsImV4cCI6MTU1MDYyODU3NCwibmJmIjoxNTUwNjI0OTc0LCJqdGkiOiJ4b2ZKUlVlajNpT2FPNjhzIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.Rgom3kD2n6LbjzkpoL_dfSjPhMrDr7oH5j0qC7ut8To",
     "token_type": "bearer",
     "expires_in": 3600
 }
@@ -832,12 +1492,12 @@ fetch(url, {
         "unique_id_search_flag": 1,
         "username_search_flag": 1,
         "created_at": {
-            "date": "2019-02-17 15:40:33.000000",
+            "date": "2019-02-17 15:51:55.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
         "updated_at": {
-            "date": "2019-02-17 15:40:52.000000",
+            "date": "2019-02-17 15:52:13.000000",
             "timezone_type": 3,
             "timezone": "UTC"
         },
@@ -891,7 +1551,7 @@ fetch(url, {
 ```bash
 curl -X POST "http://localhost/api/admin/auth/login" \
     -H "Content-Type: application/json" \
-    -d '{"email":"MR8Zhc3k2vCzLzne","password":"iyZQGeko3WM6rHHC"}'
+    -d '{"email":"7rWVOmClVbmt5msN","password":"hA26hcpFMaIbQnxC"}'
 
 ```
 
@@ -904,8 +1564,8 @@ let headers = {
 }
 
 let body = {
-    "email": "MR8Zhc3k2vCzLzne",
-    "password": "iyZQGeko3WM6rHHC"
+    "email": "7rWVOmClVbmt5msN",
+    "password": "hA26hcpFMaIbQnxC"
 }
 
 fetch(url, {
@@ -921,7 +1581,7 @@ fetch(url, {
 
 ```json
 {
-    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvYXV0aFwvbG9naW4iLCJpYXQiOjE1NTA0MTgwNjEsImV4cCI6MTU1MDQyMTY2MSwibmJmIjoxNTUwNDE4MDYxLCJqdGkiOiJEV05HajlhYkluejBuM2RLIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.2dmar0sA8RU5OUZNxUqoRd9Y941UpvRBhuZE-bZuDCQ",
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvYXV0aFwvbG9naW4iLCJpYXQiOjE1NTA2MjQ5NzQsImV4cCI6MTU1MDYyODU3NCwibmJmIjoxNTUwNjI0OTc0LCJqdGkiOiJ4b2ZKUlVlajNpT2FPNjhzIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.Rgom3kD2n6LbjzkpoL_dfSjPhMrDr7oH5j0qC7ut8To",
     "token_type": "bearer",
     "expires_in": 3600
 }
@@ -1108,7 +1768,7 @@ fetch(url, {
 ```bash
 curl -X POST "http://localhost/api/default_settings" \
     -H "Content-Type: application/json" \
-    -d '{"name":"HpC5NL3hU7r6jBJP","timer":14,"group_id":18}'
+    -d '{"name":"nHG2sCfyfDyQJX4V","timer":14,"group_id":10}'
 
 ```
 
@@ -1121,9 +1781,9 @@ let headers = {
 }
 
 let body = {
-    "name": "HpC5NL3hU7r6jBJP",
+    "name": "nHG2sCfyfDyQJX4V",
     "timer": 14,
-    "group_id": 18
+    "group_id": 10
 }
 
 fetch(url, {
@@ -1281,7 +1941,7 @@ curl -X GET -G "http://localhost/api/default_settings/{default_setting}"
 const url = new URL("http://localhost/api/default_settings/{default_setting}");
 
     let params = {
-            "default_setting": "nWYI5ooDSJogwjWB",
+            "default_setting": "OuWWJMIdUbfXauzf",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -1437,7 +2097,7 @@ Parameter | Status | Description
 ```bash
 curl -X PUT "http://localhost/api/default_settings/{default_setting}" \
     -H "Content-Type: application/json" \
-    -d '{"name":"HYNlcVropqFHp8ND","timer":18,"group_id":19}'
+    -d '{"name":"euohugYdOjQPd7Vi","timer":4,"group_id":9}'
 
 ```
 
@@ -1445,7 +2105,7 @@ curl -X PUT "http://localhost/api/default_settings/{default_setting}" \
 const url = new URL("http://localhost/api/default_settings/{default_setting}");
 
     let params = {
-            "default_setting": "JaLuJ4XQpg6IIHWG",
+            "default_setting": "SPRrriFgfQL2AV6m",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -1455,9 +2115,9 @@ let headers = {
 }
 
 let body = {
-    "name": "HYNlcVropqFHp8ND",
-    "timer": 18,
-    "group_id": 19
+    "name": "euohugYdOjQPd7Vi",
+    "timer": 4,
+    "group_id": 9
 }
 
 fetch(url, {
@@ -1622,7 +2282,7 @@ curl -X DELETE "http://localhost/api/default_settings/{default_setting}"
 const url = new URL("http://localhost/api/default_settings/{default_setting}");
 
     let params = {
-            "default_setting": "kVNqlcJ77VfnS2kN",
+            "default_setting": "ljjFG7uAdIto1G06",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -1903,7 +2563,7 @@ fetch(url, {
 ```bash
 curl -X POST "http://localhost/api/friends" \
     -H "Content-Type: application/json" \
-    -d '{"email":"j7Q6k9UieudfDlIu"}'
+    -d '{"email":"thNduXZMPxTmI52T"}'
 
 ```
 
@@ -1916,7 +2576,7 @@ let headers = {
 }
 
 let body = {
-    "email": "j7Q6k9UieudfDlIu"
+    "email": "thNduXZMPxTmI52T"
 }
 
 fetch(url, {
@@ -2934,110 +3594,198 @@ fetch(url, {
 {
     "data": [
         {
-            "id": 17,
-            "unique_id": "kbSG1zwDoE",
+            "id": 5,
+            "unique_id": "j19ydjcq1J",
             "name": null,
-            "username": "宮沢 直樹",
-            "email": "shota.tanabe@example.net",
+            "username": "杉山 直人",
+            "email": "youichi54@example.com",
             "unique_id_search_flag": 1,
             "username_search_flag": 1,
             "permitted": null,
-            "attribute_id": 82,
+            "attribute_id": 24,
             "created_at": {
-                "date": "2019-02-17 15:40:33.000000",
+                "date": "2019-02-17 15:51:55.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-17 15:40:33.000000",
+                "date": "2019-02-17 15:51:55.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "deleted_at": null
         },
         {
-            "id": 18,
-            "unique_id": "fZAfXY0p7e",
+            "id": 6,
+            "unique_id": "yivXQXw5vF",
             "name": null,
-            "username": "渚 直樹",
-            "email": "kumiko01@example.net",
+            "username": "吉田 晃",
+            "email": "suzuki.nanami@example.org",
             "unique_id_search_flag": 1,
             "username_search_flag": 1,
             "permitted": null,
-            "attribute_id": 86,
+            "attribute_id": 29,
             "created_at": {
-                "date": "2019-02-17 15:40:33.000000",
+                "date": "2019-02-17 15:51:55.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-17 15:40:33.000000",
+                "date": "2019-02-17 15:51:55.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "deleted_at": null
         },
         {
-            "id": 21,
-            "unique_id": "OE8T2hBdU2",
+            "id": 20,
+            "unique_id": "iLSfA1g89n",
             "name": null,
-            "username": "山岸 真綾",
-            "email": "yoko.miyazawa@example.com",
+            "username": "渚 拓真",
+            "email": "hideki42@example.com",
             "unique_id_search_flag": 1,
             "username_search_flag": 1,
             "permitted": null,
-            "attribute_id": 101,
+            "attribute_id": 98,
             "created_at": {
-                "date": "2019-02-17 15:40:33.000000",
+                "date": "2019-02-17 15:51:55.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-17 15:40:33.000000",
+                "date": "2019-02-17 15:51:55.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "deleted_at": null
         },
         {
-            "id": 40,
-            "unique_id": "JQz1T95RFK",
+            "id": 22,
+            "unique_id": "um7YIW2CWn",
             "name": null,
-            "username": "井上 太一",
-            "email": "yoshimoto.naoko@example.net",
+            "username": "工藤 康弘",
+            "email": "takahashi.rika@example.net",
             "unique_id_search_flag": 1,
             "username_search_flag": 1,
             "permitted": null,
-            "attribute_id": 200,
+            "attribute_id": 109,
             "created_at": {
-                "date": "2019-02-17 15:40:33.000000",
+                "date": "2019-02-17 15:51:55.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-17 15:40:33.000000",
+                "date": "2019-02-17 15:51:55.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "deleted_at": null
         },
         {
-            "id": 41,
-            "unique_id": "nFpq5MvfUT",
+            "id": 25,
+            "unique_id": "9omDzMSVoS",
             "name": null,
-            "username": "吉田 千代",
-            "email": "miki41@example.net",
+            "username": "小泉 陽一",
+            "email": "tsuda.manabu@example.org",
             "unique_id_search_flag": 1,
             "username_search_flag": 1,
             "permitted": null,
-            "attribute_id": 205,
+            "attribute_id": 125,
             "created_at": {
-                "date": "2019-02-17 15:40:33.000000",
+                "date": "2019-02-17 15:51:55.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
             "updated_at": {
-                "date": "2019-02-17 15:40:33.000000",
+                "date": "2019-02-17 15:51:55.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "deleted_at": null
+        },
+        {
+            "id": 35,
+            "unique_id": "HJFow9yGoM",
+            "name": null,
+            "username": "加藤 和也",
+            "email": "taro57@example.net",
+            "unique_id_search_flag": 1,
+            "username_search_flag": 1,
+            "permitted": null,
+            "attribute_id": 175,
+            "created_at": {
+                "date": "2019-02-17 15:51:55.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-17 15:51:55.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "deleted_at": null
+        },
+        {
+            "id": 36,
+            "unique_id": "EtMQnWWZgQ",
+            "name": null,
+            "username": "宇野 翼",
+            "email": "nakatsugawa.hanako@example.com",
+            "unique_id_search_flag": 1,
+            "username_search_flag": 1,
+            "permitted": null,
+            "attribute_id": 178,
+            "created_at": {
+                "date": "2019-02-17 15:51:55.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-17 15:51:55.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "deleted_at": null
+        },
+        {
+            "id": 38,
+            "unique_id": "vo0Ltkmu92",
+            "name": null,
+            "username": "中島 香織",
+            "email": "kato.shota@example.net",
+            "unique_id_search_flag": 1,
+            "username_search_flag": 1,
+            "permitted": null,
+            "attribute_id": 189,
+            "created_at": {
+                "date": "2019-02-17 15:51:55.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-17 15:51:55.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "deleted_at": null
+        },
+        {
+            "id": 48,
+            "unique_id": "f9NqROL4fV",
+            "name": null,
+            "username": "加藤 結衣",
+            "email": "takuma54@example.com",
+            "unique_id_search_flag": 1,
+            "username_search_flag": 1,
+            "permitted": null,
+            "attribute_id": 238,
+            "created_at": {
+                "date": "2019-02-17 15:51:55.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-17 15:51:55.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             },
@@ -3061,7 +3809,7 @@ fetch(url, {
 ```bash
 curl -X POST "http://localhost/api/friends/permit" \
     -H "Content-Type: application/json" \
-    -d '{"user_id":20}'
+    -d '{"user_id":17}'
 
 ```
 
@@ -3074,7 +3822,7 @@ let headers = {
 }
 
 let body = {
-    "user_id": 20
+    "user_id": 17
 }
 
 fetch(url, {
@@ -3120,7 +3868,7 @@ Parameter | Type | Status | Description
 ```bash
 curl -X POST "http://localhost/api/friends/reject" \
     -H "Content-Type: application/json" \
-    -d '{"user_id":6}'
+    -d '{"user_id":9}'
 
 ```
 
@@ -3133,7 +3881,7 @@ let headers = {
 }
 
 let body = {
-    "user_id": 6
+    "user_id": 9
 }
 
 fetch(url, {
@@ -3299,7 +4047,7 @@ curl -X GET -G "http://localhost/api/friends/{friend}"
 const url = new URL("http://localhost/api/friends/{friend}");
 
     let params = {
-            "friend": "5QLIRE2qsLbKxt3y",
+            "friend": "DNaTEevtRioPEvIT",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -3369,7 +4117,7 @@ curl -X DELETE "http://localhost/api/friends/{friend}"
 const url = new URL("http://localhost/api/friends/{friend}");
 
     let params = {
-            "friend": "BXWitXpY5uayghYD",
+            "friend": "Gjptr2B8cZsZfvHt",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -3403,7 +4151,1164 @@ Parameter | Status | Description
 
 <!-- END_5256ac7cddbd9267236aaa0874cb6a49 -->
 
-#general
+#groups.users グループのユーザー管理
+<!-- START_25cacea309e94199433ca72c489534bc -->
+## groups.users.index あるグループのユーザー一覧
+
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/groups/{group}/users" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/groups/{group}/users");
+
+    let params = {
+            "group": "YT0QiISiICPeuNkQ",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response (200):
+
+```json
+{
+    "data": [
+        {
+            "id": 37,
+            "unique_id": "tuprMwqUxJ",
+            "name": null,
+            "username": "田辺 康弘",
+            "email": "wakamatsu.manabu@example.net",
+            "unique_id_search_flag": 1,
+            "username_search_flag": 1,
+            "created_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "deleted_at": null
+        },
+        {
+            "id": 44,
+            "unique_id": "VlSmPHgzAL",
+            "name": null,
+            "username": "山田 和也",
+            "email": "wsaito@example.net",
+            "unique_id_search_flag": 1,
+            "username_search_flag": 1,
+            "created_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "deleted_at": null
+        }
+    ]
+}
+```
+
+### HTTP Request
+`GET api/groups/{group}/users`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    group |  required  | グループid
+
+<!-- END_25cacea309e94199433ca72c489534bc -->
+
+<!-- START_f40148555e0e5ae9fd501d8c12dd032c -->
+## groups.users.store グループにユーザーを追加する
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/api/groups/{group}/users" \
+    -H "Content-Type: application/json" \
+    -d '{"user_id":5}'
+
+```
+
+```javascript
+const url = new URL("http://localhost/api/groups/{group}/users");
+
+    let params = {
+            "group": "Mc3jSR9rvODZovuv",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "user_id": 5
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response (200):
+
+```json
+{
+    "data": []
+}
+```
+
+### HTTP Request
+`POST api/groups/{group}/users`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    user_id | integer |  required  | 追加するユーザーのID
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    group |  required  | グループid
+
+<!-- END_f40148555e0e5ae9fd501d8c12dd032c -->
+
+<!-- START_193dc746eafa37d49a04e41e8a28bb43 -->
+## groups.users.show あるグループの中のひとりのユーザー情報を得る
+
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/groups/{group}/users/{user}" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/groups/{group}/users/{user}");
+
+    let params = {
+            "group": "IrMu6gNnF74sEVtc",
+            "user": "9z69Da1IBTpuLm7R",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response (200):
+
+```json
+{
+    "data": {
+        "id": 11,
+        "unique_id": "PvSBswzUj6",
+        "name": null,
+        "username": "山口 淳",
+        "email": "ryosuke73@example.org",
+        "unique_id_search_flag": 1,
+        "username_search_flag": 1,
+        "created_at": {
+            "date": "2019-02-17 15:40:33.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        },
+        "updated_at": {
+            "date": "2019-02-17 15:40:33.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        },
+        "deleted_at": null
+    }
+}
+```
+
+### HTTP Request
+`GET api/groups/{group}/users/{user}`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    group |  required  | グループid
+    user |  required  | グループに所属する一人のユーザーのid
+
+<!-- END_193dc746eafa37d49a04e41e8a28bb43 -->
+
+<!-- START_5d098753a466f1ebdbceb5c54720efb3 -->
+## groups.users.destory ユーザーをグループから削除
+
+> Example request:
+
+```bash
+curl -X DELETE "http://localhost/api/groups/{group}/users/{user}" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/groups/{group}/users/{user}");
+
+    let params = {
+            "group": "NqjUKxpvc3GiVvWz",
+            "user": "f9sNywgAUrS0JfkO",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response (204):
+
+```json
+[]
+```
+
+### HTTP Request
+`DELETE api/groups/{group}/users/{user}`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    group |  required  | グループid
+    user |  required  | グループに所属する一人のユーザーのid
+
+<!-- END_5d098753a466f1ebdbceb5c54720efb3 -->
+
+#groups グループ
+<!-- START_007018a8a9f15c2d47fcb105431ffeee -->
+## groups.index 自分が管理しているグループ一覧
+
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/groups" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/groups");
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response (200):
+
+```json
+{
+    "data": [
+        {
+            "id": 1,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "name": null,
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "unique_id_search_flag": 1,
+                "username_search_flag": 1,
+                "created_at": {
+                    "date": "2019-02-17 15:40:33.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-17 15:40:52.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "deleted_at": null
+            },
+            "name": "molestiae",
+            "users": [
+                {
+                    "id": 39,
+                    "unique_id": "GDGjBwivY9",
+                    "name": null,
+                    "username": "渚 修平",
+                    "email": "tishida@example.net",
+                    "unique_id_search_flag": 1,
+                    "username_search_flag": 1,
+                    "created_at": {
+                        "date": "2019-02-17 15:40:33.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-17 15:40:33.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "deleted_at": null
+                },
+                {
+                    "id": 44,
+                    "unique_id": "VlSmPHgzAL",
+                    "name": null,
+                    "username": "山田 和也",
+                    "email": "wsaito@example.net",
+                    "unique_id_search_flag": 1,
+                    "username_search_flag": 1,
+                    "created_at": {
+                        "date": "2019-02-17 15:40:33.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-17 15:40:33.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "deleted_at": null
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "deleted_at": null
+        },
+        {
+            "id": 2,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "name": null,
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "unique_id_search_flag": 1,
+                "username_search_flag": 1,
+                "created_at": {
+                    "date": "2019-02-17 15:40:33.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-17 15:40:52.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "deleted_at": null
+            },
+            "name": "ipsam",
+            "users": [
+                {
+                    "id": 24,
+                    "unique_id": "W7HcpzXLrY",
+                    "name": null,
+                    "username": "藤本 桃子",
+                    "email": "kumiko63@example.org",
+                    "unique_id_search_flag": 1,
+                    "username_search_flag": 1,
+                    "created_at": {
+                        "date": "2019-02-17 15:40:33.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-17 15:40:33.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "deleted_at": null
+                },
+                {
+                    "id": 44,
+                    "unique_id": "VlSmPHgzAL",
+                    "name": null,
+                    "username": "山田 和也",
+                    "email": "wsaito@example.net",
+                    "unique_id_search_flag": 1,
+                    "username_search_flag": 1,
+                    "created_at": {
+                        "date": "2019-02-17 15:40:33.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-17 15:40:33.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "deleted_at": null
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "deleted_at": null
+        },
+        {
+            "id": 3,
+            "manager": {
+                "id": 1,
+                "unique_id": "TESTTEST",
+                "name": null,
+                "username": "テスト太郎",
+                "email": "testuser@example.com",
+                "unique_id_search_flag": 1,
+                "username_search_flag": 1,
+                "created_at": {
+                    "date": "2019-02-17 15:40:33.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-17 15:40:52.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "deleted_at": null
+            },
+            "name": "et",
+            "users": [
+                {
+                    "id": 37,
+                    "unique_id": "tuprMwqUxJ",
+                    "name": null,
+                    "username": "田辺 康弘",
+                    "email": "wakamatsu.manabu@example.net",
+                    "unique_id_search_flag": 1,
+                    "username_search_flag": 1,
+                    "created_at": {
+                        "date": "2019-02-17 15:40:33.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-17 15:40:33.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "deleted_at": null
+                },
+                {
+                    "id": 44,
+                    "unique_id": "VlSmPHgzAL",
+                    "name": null,
+                    "username": "山田 和也",
+                    "email": "wsaito@example.net",
+                    "unique_id_search_flag": 1,
+                    "username_search_flag": 1,
+                    "created_at": {
+                        "date": "2019-02-17 15:40:33.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "updated_at": {
+                        "date": "2019-02-17 15:40:33.000000",
+                        "timezone_type": 3,
+                        "timezone": "UTC"
+                    },
+                    "deleted_at": null
+                }
+            ],
+            "created_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "deleted_at": null
+        }
+    ]
+}
+```
+
+### HTTP Request
+`GET api/groups`
+
+
+<!-- END_007018a8a9f15c2d47fcb105431ffeee -->
+
+<!-- START_15c22564ad248f952405021410fd1d25 -->
+## groups.store グループを追加
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/api/groups" \
+    -H "Content-Type: application/json" \
+    -d '{"name":"qwTJy9PCW1KpqcME"}'
+
+```
+
+```javascript
+const url = new URL("http://localhost/api/groups");
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "name": "qwTJy9PCW1KpqcME"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response (201):
+
+```json
+{
+    "data": {
+        "id": 152,
+        "manager": {
+            "id": 1,
+            "unique_id": "TESTTEST",
+            "name": null,
+            "username": "テスト太郎",
+            "email": "testuser@example.com",
+            "unique_id_search_flag": 1,
+            "username_search_flag": 1,
+            "created_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-17 15:40:52.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "deleted_at": null
+        },
+        "name": "ipsam",
+        "users": [],
+        "created_at": {
+            "date": "2019-02-17 15:41:00.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        },
+        "updated_at": {
+            "date": "2019-02-17 15:41:00.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        },
+        "deleted_at": null
+    }
+}
+```
+
+### HTTP Request
+`POST api/groups`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    name | string |  required  | 新規グループの名前
+
+<!-- END_15c22564ad248f952405021410fd1d25 -->
+
+<!-- START_a209a43173c7c4aaf7ab070d77fb7f0c -->
+## groups.show グループ詳細
+
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/groups/{group}" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/groups/{group}");
+
+    let params = {
+            "group": "PtbqFQSbw6qihhob",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response (200):
+
+```json
+{
+    "data": {
+        "id": 2,
+        "manager": {
+            "id": 1,
+            "unique_id": "TESTTEST",
+            "name": null,
+            "username": "テスト太郎",
+            "email": "testuser@example.com",
+            "unique_id_search_flag": 1,
+            "username_search_flag": 1,
+            "created_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-17 15:40:52.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "deleted_at": null
+        },
+        "name": "ipsam",
+        "users": [
+            {
+                "id": 24,
+                "unique_id": "W7HcpzXLrY",
+                "name": null,
+                "username": "藤本 桃子",
+                "email": "kumiko63@example.org",
+                "unique_id_search_flag": 1,
+                "username_search_flag": 1,
+                "created_at": {
+                    "date": "2019-02-17 15:40:33.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-17 15:40:33.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "deleted_at": null
+            },
+            {
+                "id": 44,
+                "unique_id": "VlSmPHgzAL",
+                "name": null,
+                "username": "山田 和也",
+                "email": "wsaito@example.net",
+                "unique_id_search_flag": 1,
+                "username_search_flag": 1,
+                "created_at": {
+                    "date": "2019-02-17 15:40:33.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "updated_at": {
+                    "date": "2019-02-17 15:40:33.000000",
+                    "timezone_type": 3,
+                    "timezone": "UTC"
+                },
+                "deleted_at": null
+            }
+        ],
+        "created_at": {
+            "date": "2019-02-17 15:40:33.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        },
+        "updated_at": {
+            "date": "2019-02-17 15:40:33.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        },
+        "deleted_at": null
+    }
+}
+```
+
+### HTTP Request
+`GET api/groups/{group}`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    group |  required  | グループid
+
+<!-- END_a209a43173c7c4aaf7ab070d77fb7f0c -->
+
+<!-- START_5b84408c838201930093112a7621935c -->
+## groups.update グループの情報を更新
+
+> Example request:
+
+```bash
+curl -X PUT "http://localhost/api/groups/{group}" \
+    -H "Content-Type: application/json" \
+    -d '{"name":"kQqxSp1a2kvQsAHD"}'
+
+```
+
+```javascript
+const url = new URL("http://localhost/api/groups/{group}");
+
+    let params = {
+            "group": "3AB9XMWVFPDnRRJ3",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "name": "kQqxSp1a2kvQsAHD"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response (200):
+
+```json
+{
+    "data": {
+        "id": 151,
+        "manager": {
+            "id": 1,
+            "unique_id": "TESTTEST",
+            "name": null,
+            "username": "テスト太郎",
+            "email": "testuser@example.com",
+            "unique_id_search_flag": 1,
+            "username_search_flag": 1,
+            "created_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-17 15:40:52.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "deleted_at": null
+        },
+        "name": "newGroupzvMOyqYN",
+        "users": [],
+        "created_at": {
+            "date": "2019-02-17 15:41:00.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        },
+        "updated_at": {
+            "date": "2019-02-17 15:41:00.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        },
+        "deleted_at": null
+    }
+}
+```
+
+### HTTP Request
+`PUT api/groups/{group}`
+
+`PATCH api/groups/{group}`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    name | string |  required  | 新たにつけるグループ名
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    group |  required  | グループid
+
+<!-- END_5b84408c838201930093112a7621935c -->
+
+<!-- START_bd4f731f3f84c755053406b8971eba1f -->
+## groups.destory グループを削除
+
+> Example request:
+
+```bash
+curl -X DELETE "http://localhost/api/groups/{group}" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/groups/{group}");
+
+    let params = {
+            "group": "IsOjXI3SiD8COTiF",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response (204):
+
+```json
+[]
+```
+> Example response (409):
+
+```json
+{
+    "error": "このグループを使用しているデフォルト設定があるので、削除できません"
+}
+```
+
+### HTTP Request
+`DELETE api/groups/{group}`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    group |  required  | グループid
+
+<!-- END_bd4f731f3f84c755053406b8971eba1f -->
+
+<!-- START_7abc713c473ec0e612bd83b515b63b1d -->
+## groups.can_add_users  対象のグループに追加できるユーザー一覧を返す（自分のフレンド−そのグループのメンバー）
+
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/groups/{group}/users/can_add" 
+```
+
+```javascript
+const url = new URL("http://localhost/api/groups/{group}/users/can_add");
+
+    let params = {
+            "group": "prvO87tRF81sqzEP",
+        };
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response (200):
+
+```json
+{
+    "data": [
+        {
+            "id": 2,
+            "unique_id": "od6pLAcmal",
+            "name": null,
+            "username": "工藤 陽一",
+            "email": "tsubasa34@example.net",
+            "unique_id_search_flag": 1,
+            "username_search_flag": 1,
+            "permitted": 1,
+            "attribute_id": null,
+            "created_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "deleted_at": null
+        },
+        {
+            "id": 24,
+            "unique_id": "W7HcpzXLrY",
+            "name": null,
+            "username": "藤本 桃子",
+            "email": "kumiko63@example.org",
+            "unique_id_search_flag": 1,
+            "username_search_flag": 1,
+            "permitted": 1,
+            "attribute_id": 4,
+            "created_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "deleted_at": null
+        },
+        {
+            "id": 27,
+            "unique_id": "3krXm3nbSQ",
+            "name": null,
+            "username": "井高 直人",
+            "email": "kato.kana@example.com",
+            "unique_id_search_flag": 1,
+            "username_search_flag": 1,
+            "permitted": 1,
+            "attribute_id": null,
+            "created_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "deleted_at": null
+        },
+        {
+            "id": 33,
+            "unique_id": "KkBj7AzQO7",
+            "name": null,
+            "username": "小林 学",
+            "email": "xsakamoto@example.com",
+            "unique_id_search_flag": 1,
+            "username_search_flag": 1,
+            "permitted": 1,
+            "attribute_id": 5,
+            "created_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "deleted_at": null
+        },
+        {
+            "id": 36,
+            "unique_id": "Dx0cl25PWU",
+            "name": null,
+            "username": "西之園 くみ子",
+            "email": "hogaki@example.com",
+            "unique_id_search_flag": 1,
+            "username_search_flag": 1,
+            "permitted": 1,
+            "attribute_id": 1,
+            "created_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "deleted_at": null
+        },
+        {
+            "id": 37,
+            "unique_id": "tuprMwqUxJ",
+            "name": null,
+            "username": "田辺 康弘",
+            "email": "wakamatsu.manabu@example.net",
+            "unique_id_search_flag": 1,
+            "username_search_flag": 1,
+            "permitted": 1,
+            "attribute_id": null,
+            "created_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "deleted_at": null
+        },
+        {
+            "id": 39,
+            "unique_id": "GDGjBwivY9",
+            "name": null,
+            "username": "渚 修平",
+            "email": "tishida@example.net",
+            "unique_id_search_flag": 1,
+            "username_search_flag": 1,
+            "permitted": 1,
+            "attribute_id": null,
+            "created_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "deleted_at": null
+        },
+        {
+            "id": 44,
+            "unique_id": "VlSmPHgzAL",
+            "name": null,
+            "username": "山田 和也",
+            "email": "wsaito@example.net",
+            "unique_id_search_flag": 1,
+            "username_search_flag": 1,
+            "permitted": 1,
+            "attribute_id": 5,
+            "created_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "deleted_at": null
+        },
+        {
+            "id": 11,
+            "unique_id": "PvSBswzUj6",
+            "name": null,
+            "username": "山口 淳",
+            "email": "ryosuke73@example.org",
+            "unique_id_search_flag": 1,
+            "username_search_flag": 1,
+            "permitted": 1,
+            "attribute_id": null,
+            "created_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "updated_at": {
+                "date": "2019-02-17 15:40:33.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            },
+            "deleted_at": null
+        }
+    ]
+}
+```
+
+### HTTP Request
+`GET api/groups/{group}/users/can_add`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    group |  required  | グループid
+
+<!-- END_7abc713c473ec0e612bd83b515b63b1d -->
+
+#guest ゲスト
 <!-- START_3a84a6accee6980b8f6727dfd0c9301a -->
 ## guests.sessions.index ゲストとして参加しているセッション一覧
 
@@ -6265,7 +8170,7 @@ curl -X GET -G "http://localhost/api/guest/sessions/{session}"
 const url = new URL("http://localhost/api/guest/sessions/{session}");
 
     let params = {
-            "session": "9soYdLbd0nGbZPsI",
+            "session": "CNwtsv5nckHugCxk",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -6390,1822 +8295,6 @@ Parameter | Status | Description
 
 <!-- END_f002f7656ea051619cc8b112ba27bdbd -->
 
-<!-- START_16e8f19f8b875dc584cd9ff3a21657f2 -->
-## api/admin/groups
-> Example request:
-
-```bash
-curl -X GET -G "http://localhost/api/admin/groups" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/admin/groups");
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response:
-
-```json
-null
-```
-
-### HTTP Request
-`GET api/admin/groups`
-
-
-<!-- END_16e8f19f8b875dc584cd9ff3a21657f2 -->
-
-<!-- START_2bf3169a40c33f16d969dd6d64a5a09f -->
-## api/admin/groups/{group}
-> Example request:
-
-```bash
-curl -X GET -G "http://localhost/api/admin/groups/{group}" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/admin/groups/{group}");
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response:
-
-```json
-null
-```
-
-### HTTP Request
-`GET api/admin/groups/{group}`
-
-
-<!-- END_2bf3169a40c33f16d969dd6d64a5a09f -->
-
-<!-- START_e4d4d7fb4ae896fde38ceed5b1927fc4 -->
-## api/admin/groups/{group}
-> Example request:
-
-```bash
-curl -X DELETE "http://localhost/api/admin/groups/{group}" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/admin/groups/{group}");
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-### HTTP Request
-`DELETE api/admin/groups/{group}`
-
-
-<!-- END_e4d4d7fb4ae896fde38ceed5b1927fc4 -->
-
-<!-- START_da33775b36055453531edd783ecc8d25 -->
-## api/admin/sessions
-> Example request:
-
-```bash
-curl -X GET -G "http://localhost/api/admin/sessions" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/admin/sessions");
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response:
-
-```json
-null
-```
-
-### HTTP Request
-`GET api/admin/sessions`
-
-
-<!-- END_da33775b36055453531edd783ecc8d25 -->
-
-<!-- START_a7775cea8212d21ad7719f96ec9caa56 -->
-## api/admin/sessions/{session}
-> Example request:
-
-```bash
-curl -X GET -G "http://localhost/api/admin/sessions/{session}" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/admin/sessions/{session}");
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response:
-
-```json
-null
-```
-
-### HTTP Request
-`GET api/admin/sessions/{session}`
-
-
-<!-- END_a7775cea8212d21ad7719f96ec9caa56 -->
-
-<!-- START_5f5bb270627aea8826378210b369088e -->
-## api/admin/sessions/{session}
-> Example request:
-
-```bash
-curl -X DELETE "http://localhost/api/admin/sessions/{session}" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/admin/sessions/{session}");
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-### HTTP Request
-`DELETE api/admin/sessions/{session}`
-
-
-<!-- END_5f5bb270627aea8826378210b369088e -->
-
-<!-- START_1fdf5c126c9b5b722e5044c3f680bf8e -->
-## api/admin/users
-> Example request:
-
-```bash
-curl -X GET -G "http://localhost/api/admin/users" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/admin/users");
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response:
-
-```json
-null
-```
-
-### HTTP Request
-`GET api/admin/users`
-
-
-<!-- END_1fdf5c126c9b5b722e5044c3f680bf8e -->
-
-<!-- START_538c6352521b306dbf554e89cd64ac98 -->
-## api/admin/users/{user}
-> Example request:
-
-```bash
-curl -X GET -G "http://localhost/api/admin/users/{user}" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/admin/users/{user}");
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response:
-
-```json
-null
-```
-
-### HTTP Request
-`GET api/admin/users/{user}`
-
-
-<!-- END_538c6352521b306dbf554e89cd64ac98 -->
-
-<!-- START_7d625b15e5b59cfac2c9129fa450c5f5 -->
-## api/admin/users/{user}
-> Example request:
-
-```bash
-curl -X DELETE "http://localhost/api/admin/users/{user}" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/admin/users/{user}");
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-### HTTP Request
-`DELETE api/admin/users/{user}`
-
-
-<!-- END_7d625b15e5b59cfac2c9129fa450c5f5 -->
-
-<!-- START_0c83e767b9d8eab5c7d6a48c01a776a5 -->
-## api/admin/attributes
-> Example request:
-
-```bash
-curl -X GET -G "http://localhost/api/admin/attributes" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/admin/attributes");
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response:
-
-```json
-null
-```
-
-### HTTP Request
-`GET api/admin/attributes`
-
-
-<!-- END_0c83e767b9d8eab5c7d6a48c01a776a5 -->
-
-<!-- START_85d269ea82abda45d2cfd9ca1e894738 -->
-## api/admin/attributes/{attribute}
-> Example request:
-
-```bash
-curl -X GET -G "http://localhost/api/admin/attributes/{attribute}" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/admin/attributes/{attribute}");
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response:
-
-```json
-null
-```
-
-### HTTP Request
-`GET api/admin/attributes/{attribute}`
-
-
-<!-- END_85d269ea82abda45d2cfd9ca1e894738 -->
-
-<!-- START_f6008fa2212e92a4515292156a75c7dc -->
-## api/admin/attributes/{attribute}
-> Example request:
-
-```bash
-curl -X DELETE "http://localhost/api/admin/attributes/{attribute}" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/admin/attributes/{attribute}");
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-### HTTP Request
-`DELETE api/admin/attributes/{attribute}`
-
-
-<!-- END_f6008fa2212e92a4515292156a75c7dc -->
-
-<!-- START_a0c5536b5e69dacdeaa7c874145adb5e -->
-## api/admin/default_settings
-> Example request:
-
-```bash
-curl -X GET -G "http://localhost/api/admin/default_settings" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/admin/default_settings");
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response:
-
-```json
-null
-```
-
-### HTTP Request
-`GET api/admin/default_settings`
-
-
-<!-- END_a0c5536b5e69dacdeaa7c874145adb5e -->
-
-<!-- START_458b8842ee8a177acf3914671c94be0c -->
-## api/admin/default_settings/{default_setting}
-> Example request:
-
-```bash
-curl -X GET -G "http://localhost/api/admin/default_settings/{default_setting}" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/admin/default_settings/{default_setting}");
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response:
-
-```json
-null
-```
-
-### HTTP Request
-`GET api/admin/default_settings/{default_setting}`
-
-
-<!-- END_458b8842ee8a177acf3914671c94be0c -->
-
-<!-- START_1d6dfd3bf461878d481b7448dfdf224c -->
-## api/admin/default_settings/{default_setting}
-> Example request:
-
-```bash
-curl -X DELETE "http://localhost/api/admin/default_settings/{default_setting}" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/admin/default_settings/{default_setting}");
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-### HTTP Request
-`DELETE api/admin/default_settings/{default_setting}`
-
-
-<!-- END_1d6dfd3bf461878d481b7448dfdf224c -->
-
-<!-- START_c7dd4ed0af4ae5e260139308d1a8a35d -->
-## api/admin/users/{user}/groups
-> Example request:
-
-```bash
-curl -X GET -G "http://localhost/api/admin/users/{user}/groups" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/admin/users/{user}/groups");
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response:
-
-```json
-null
-```
-
-### HTTP Request
-`GET api/admin/users/{user}/groups`
-
-
-<!-- END_c7dd4ed0af4ae5e260139308d1a8a35d -->
-
-<!-- START_7ecae2d30ec557c8ee796b3e933f2eb4 -->
-## api/admin/users/{user}/sessions
-> Example request:
-
-```bash
-curl -X GET -G "http://localhost/api/admin/users/{user}/sessions" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/admin/users/{user}/sessions");
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response:
-
-```json
-null
-```
-
-### HTTP Request
-`GET api/admin/users/{user}/sessions`
-
-
-<!-- END_7ecae2d30ec557c8ee796b3e933f2eb4 -->
-
-<!-- START_54c838b78267436591a9f5013377e334 -->
-## api/admin/users/{user}/attributes
-> Example request:
-
-```bash
-curl -X GET -G "http://localhost/api/admin/users/{user}/attributes" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/admin/users/{user}/attributes");
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response:
-
-```json
-null
-```
-
-### HTTP Request
-`GET api/admin/users/{user}/attributes`
-
-
-<!-- END_54c838b78267436591a9f5013377e334 -->
-
-<!-- START_ab61985c959558b512cd06fff84c80ed -->
-## api/admin/users/{user}/default_settings
-> Example request:
-
-```bash
-curl -X GET -G "http://localhost/api/admin/users/{user}/default_settings" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/admin/users/{user}/default_settings");
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response:
-
-```json
-null
-```
-
-### HTTP Request
-`GET api/admin/users/{user}/default_settings`
-
-
-<!-- END_ab61985c959558b512cd06fff84c80ed -->
-
-#groups.users グループのユーザー管理
-<!-- START_25cacea309e94199433ca72c489534bc -->
-## groups.users.index あるグループのユーザー一覧
-
-> Example request:
-
-```bash
-curl -X GET -G "http://localhost/api/groups/{group}/users" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/groups/{group}/users");
-
-    let params = {
-            "group": "Qf489VuSBq0tZDR8",
-        };
-    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response (200):
-
-```json
-{
-    "data": [
-        {
-            "id": 37,
-            "unique_id": "tuprMwqUxJ",
-            "name": null,
-            "username": "田辺 康弘",
-            "email": "wakamatsu.manabu@example.net",
-            "unique_id_search_flag": 1,
-            "username_search_flag": 1,
-            "created_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "deleted_at": null
-        },
-        {
-            "id": 44,
-            "unique_id": "VlSmPHgzAL",
-            "name": null,
-            "username": "山田 和也",
-            "email": "wsaito@example.net",
-            "unique_id_search_flag": 1,
-            "username_search_flag": 1,
-            "created_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "deleted_at": null
-        }
-    ]
-}
-```
-
-### HTTP Request
-`GET api/groups/{group}/users`
-
-#### Query Parameters
-
-Parameter | Status | Description
---------- | ------- | ------- | -----------
-    group |  required  | グループid
-
-<!-- END_25cacea309e94199433ca72c489534bc -->
-
-<!-- START_f40148555e0e5ae9fd501d8c12dd032c -->
-## groups.users.store グループにユーザーを追加する
-
-> Example request:
-
-```bash
-curl -X POST "http://localhost/api/groups/{group}/users" \
-    -H "Content-Type: application/json" \
-    -d '{"user_id":16}'
-
-```
-
-```javascript
-const url = new URL("http://localhost/api/groups/{group}/users");
-
-    let params = {
-            "group": "XNIQrTRhFFF30v2h",
-        };
-    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-}
-
-let body = {
-    "user_id": 16
-}
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-    body: body
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response (200):
-
-```json
-{
-    "data": []
-}
-```
-
-### HTTP Request
-`POST api/groups/{group}/users`
-
-#### Body Parameters
-
-Parameter | Type | Status | Description
---------- | ------- | ------- | ------- | -----------
-    user_id | integer |  required  | 追加するユーザーのID
-#### Query Parameters
-
-Parameter | Status | Description
---------- | ------- | ------- | -----------
-    group |  required  | グループid
-
-<!-- END_f40148555e0e5ae9fd501d8c12dd032c -->
-
-<!-- START_193dc746eafa37d49a04e41e8a28bb43 -->
-## groups.users.show あるグループの中のひとりのユーザー情報を得る
-
-> Example request:
-
-```bash
-curl -X GET -G "http://localhost/api/groups/{group}/users/{user}" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/groups/{group}/users/{user}");
-
-    let params = {
-            "group": "4P74P874bDQeaTSb",
-            "user": "lNPGMs3SkYwaIpqg",
-        };
-    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response (200):
-
-```json
-{
-    "data": {
-        "id": 11,
-        "unique_id": "PvSBswzUj6",
-        "name": null,
-        "username": "山口 淳",
-        "email": "ryosuke73@example.org",
-        "unique_id_search_flag": 1,
-        "username_search_flag": 1,
-        "created_at": {
-            "date": "2019-02-17 15:40:33.000000",
-            "timezone_type": 3,
-            "timezone": "UTC"
-        },
-        "updated_at": {
-            "date": "2019-02-17 15:40:33.000000",
-            "timezone_type": 3,
-            "timezone": "UTC"
-        },
-        "deleted_at": null
-    }
-}
-```
-
-### HTTP Request
-`GET api/groups/{group}/users/{user}`
-
-#### Query Parameters
-
-Parameter | Status | Description
---------- | ------- | ------- | -----------
-    group |  required  | グループid
-    user |  required  | グループに所属する一人のユーザーのid
-
-<!-- END_193dc746eafa37d49a04e41e8a28bb43 -->
-
-<!-- START_5d098753a466f1ebdbceb5c54720efb3 -->
-## groups.users.destory ユーザーをグループから削除
-
-> Example request:
-
-```bash
-curl -X DELETE "http://localhost/api/groups/{group}/users/{user}" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/groups/{group}/users/{user}");
-
-    let params = {
-            "group": "CTihp4UtastP9QX3",
-            "user": "007lKHNxhHnGqy0B",
-        };
-    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response (204):
-
-```json
-[]
-```
-
-### HTTP Request
-`DELETE api/groups/{group}/users/{user}`
-
-#### Query Parameters
-
-Parameter | Status | Description
---------- | ------- | ------- | -----------
-    group |  required  | グループid
-    user |  required  | グループに所属する一人のユーザーのid
-
-<!-- END_5d098753a466f1ebdbceb5c54720efb3 -->
-
-#groups グループ
-<!-- START_007018a8a9f15c2d47fcb105431ffeee -->
-## groups.index 自分が管理しているグループ一覧
-
-> Example request:
-
-```bash
-curl -X GET -G "http://localhost/api/groups" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/groups");
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response (200):
-
-```json
-{
-    "data": [
-        {
-            "id": 1,
-            "manager": {
-                "id": 1,
-                "unique_id": "TESTTEST",
-                "name": null,
-                "username": "テスト太郎",
-                "email": "testuser@example.com",
-                "unique_id_search_flag": 1,
-                "username_search_flag": 1,
-                "created_at": {
-                    "date": "2019-02-17 15:40:33.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-17 15:40:52.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "deleted_at": null
-            },
-            "name": "molestiae",
-            "users": [
-                {
-                    "id": 39,
-                    "unique_id": "GDGjBwivY9",
-                    "name": null,
-                    "username": "渚 修平",
-                    "email": "tishida@example.net",
-                    "unique_id_search_flag": 1,
-                    "username_search_flag": 1,
-                    "created_at": {
-                        "date": "2019-02-17 15:40:33.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-17 15:40:33.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "deleted_at": null
-                },
-                {
-                    "id": 44,
-                    "unique_id": "VlSmPHgzAL",
-                    "name": null,
-                    "username": "山田 和也",
-                    "email": "wsaito@example.net",
-                    "unique_id_search_flag": 1,
-                    "username_search_flag": 1,
-                    "created_at": {
-                        "date": "2019-02-17 15:40:33.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-17 15:40:33.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "deleted_at": null
-                }
-            ],
-            "created_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "deleted_at": null
-        },
-        {
-            "id": 2,
-            "manager": {
-                "id": 1,
-                "unique_id": "TESTTEST",
-                "name": null,
-                "username": "テスト太郎",
-                "email": "testuser@example.com",
-                "unique_id_search_flag": 1,
-                "username_search_flag": 1,
-                "created_at": {
-                    "date": "2019-02-17 15:40:33.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-17 15:40:52.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "deleted_at": null
-            },
-            "name": "ipsam",
-            "users": [
-                {
-                    "id": 24,
-                    "unique_id": "W7HcpzXLrY",
-                    "name": null,
-                    "username": "藤本 桃子",
-                    "email": "kumiko63@example.org",
-                    "unique_id_search_flag": 1,
-                    "username_search_flag": 1,
-                    "created_at": {
-                        "date": "2019-02-17 15:40:33.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-17 15:40:33.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "deleted_at": null
-                },
-                {
-                    "id": 44,
-                    "unique_id": "VlSmPHgzAL",
-                    "name": null,
-                    "username": "山田 和也",
-                    "email": "wsaito@example.net",
-                    "unique_id_search_flag": 1,
-                    "username_search_flag": 1,
-                    "created_at": {
-                        "date": "2019-02-17 15:40:33.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-17 15:40:33.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "deleted_at": null
-                }
-            ],
-            "created_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "deleted_at": null
-        },
-        {
-            "id": 3,
-            "manager": {
-                "id": 1,
-                "unique_id": "TESTTEST",
-                "name": null,
-                "username": "テスト太郎",
-                "email": "testuser@example.com",
-                "unique_id_search_flag": 1,
-                "username_search_flag": 1,
-                "created_at": {
-                    "date": "2019-02-17 15:40:33.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-17 15:40:52.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "deleted_at": null
-            },
-            "name": "et",
-            "users": [
-                {
-                    "id": 37,
-                    "unique_id": "tuprMwqUxJ",
-                    "name": null,
-                    "username": "田辺 康弘",
-                    "email": "wakamatsu.manabu@example.net",
-                    "unique_id_search_flag": 1,
-                    "username_search_flag": 1,
-                    "created_at": {
-                        "date": "2019-02-17 15:40:33.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-17 15:40:33.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "deleted_at": null
-                },
-                {
-                    "id": 44,
-                    "unique_id": "VlSmPHgzAL",
-                    "name": null,
-                    "username": "山田 和也",
-                    "email": "wsaito@example.net",
-                    "unique_id_search_flag": 1,
-                    "username_search_flag": 1,
-                    "created_at": {
-                        "date": "2019-02-17 15:40:33.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "updated_at": {
-                        "date": "2019-02-17 15:40:33.000000",
-                        "timezone_type": 3,
-                        "timezone": "UTC"
-                    },
-                    "deleted_at": null
-                }
-            ],
-            "created_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "deleted_at": null
-        }
-    ]
-}
-```
-
-### HTTP Request
-`GET api/groups`
-
-
-<!-- END_007018a8a9f15c2d47fcb105431ffeee -->
-
-<!-- START_15c22564ad248f952405021410fd1d25 -->
-## groups.store グループを追加
-
-> Example request:
-
-```bash
-curl -X POST "http://localhost/api/groups" \
-    -H "Content-Type: application/json" \
-    -d '{"name":"XNSXrZRD1Ps9Y9jz"}'
-
-```
-
-```javascript
-const url = new URL("http://localhost/api/groups");
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-}
-
-let body = {
-    "name": "XNSXrZRD1Ps9Y9jz"
-}
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-    body: body
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response (201):
-
-```json
-{
-    "data": {
-        "id": 152,
-        "manager": {
-            "id": 1,
-            "unique_id": "TESTTEST",
-            "name": null,
-            "username": "テスト太郎",
-            "email": "testuser@example.com",
-            "unique_id_search_flag": 1,
-            "username_search_flag": 1,
-            "created_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-17 15:40:52.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "deleted_at": null
-        },
-        "name": "ipsam",
-        "users": [],
-        "created_at": {
-            "date": "2019-02-17 15:41:00.000000",
-            "timezone_type": 3,
-            "timezone": "UTC"
-        },
-        "updated_at": {
-            "date": "2019-02-17 15:41:00.000000",
-            "timezone_type": 3,
-            "timezone": "UTC"
-        },
-        "deleted_at": null
-    }
-}
-```
-
-### HTTP Request
-`POST api/groups`
-
-#### Body Parameters
-
-Parameter | Type | Status | Description
---------- | ------- | ------- | ------- | -----------
-    name | string |  required  | 新規グループの名前
-
-<!-- END_15c22564ad248f952405021410fd1d25 -->
-
-<!-- START_a209a43173c7c4aaf7ab070d77fb7f0c -->
-## groups.show グループ詳細
-
-> Example request:
-
-```bash
-curl -X GET -G "http://localhost/api/groups/{group}" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/groups/{group}");
-
-    let params = {
-            "group": "HKc39qTm2wr2lgdo",
-        };
-    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response (200):
-
-```json
-{
-    "data": {
-        "id": 2,
-        "manager": {
-            "id": 1,
-            "unique_id": "TESTTEST",
-            "name": null,
-            "username": "テスト太郎",
-            "email": "testuser@example.com",
-            "unique_id_search_flag": 1,
-            "username_search_flag": 1,
-            "created_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-17 15:40:52.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "deleted_at": null
-        },
-        "name": "ipsam",
-        "users": [
-            {
-                "id": 24,
-                "unique_id": "W7HcpzXLrY",
-                "name": null,
-                "username": "藤本 桃子",
-                "email": "kumiko63@example.org",
-                "unique_id_search_flag": 1,
-                "username_search_flag": 1,
-                "created_at": {
-                    "date": "2019-02-17 15:40:33.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-17 15:40:33.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "deleted_at": null
-            },
-            {
-                "id": 44,
-                "unique_id": "VlSmPHgzAL",
-                "name": null,
-                "username": "山田 和也",
-                "email": "wsaito@example.net",
-                "unique_id_search_flag": 1,
-                "username_search_flag": 1,
-                "created_at": {
-                    "date": "2019-02-17 15:40:33.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "updated_at": {
-                    "date": "2019-02-17 15:40:33.000000",
-                    "timezone_type": 3,
-                    "timezone": "UTC"
-                },
-                "deleted_at": null
-            }
-        ],
-        "created_at": {
-            "date": "2019-02-17 15:40:33.000000",
-            "timezone_type": 3,
-            "timezone": "UTC"
-        },
-        "updated_at": {
-            "date": "2019-02-17 15:40:33.000000",
-            "timezone_type": 3,
-            "timezone": "UTC"
-        },
-        "deleted_at": null
-    }
-}
-```
-
-### HTTP Request
-`GET api/groups/{group}`
-
-#### Query Parameters
-
-Parameter | Status | Description
---------- | ------- | ------- | -----------
-    group |  required  | グループid
-
-<!-- END_a209a43173c7c4aaf7ab070d77fb7f0c -->
-
-<!-- START_5b84408c838201930093112a7621935c -->
-## groups.update グループの情報を更新
-
-> Example request:
-
-```bash
-curl -X PUT "http://localhost/api/groups/{group}" \
-    -H "Content-Type: application/json" \
-    -d '{"name":"e16VrmS4yEDf1GpL"}'
-
-```
-
-```javascript
-const url = new URL("http://localhost/api/groups/{group}");
-
-    let params = {
-            "group": "bQs22uAidnknpWe6",
-        };
-    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-}
-
-let body = {
-    "name": "e16VrmS4yEDf1GpL"
-}
-
-fetch(url, {
-    method: "PUT",
-    headers: headers,
-    body: body
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response (200):
-
-```json
-{
-    "data": {
-        "id": 151,
-        "manager": {
-            "id": 1,
-            "unique_id": "TESTTEST",
-            "name": null,
-            "username": "テスト太郎",
-            "email": "testuser@example.com",
-            "unique_id_search_flag": 1,
-            "username_search_flag": 1,
-            "created_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-17 15:40:52.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "deleted_at": null
-        },
-        "name": "newGroupzvMOyqYN",
-        "users": [],
-        "created_at": {
-            "date": "2019-02-17 15:41:00.000000",
-            "timezone_type": 3,
-            "timezone": "UTC"
-        },
-        "updated_at": {
-            "date": "2019-02-17 15:41:00.000000",
-            "timezone_type": 3,
-            "timezone": "UTC"
-        },
-        "deleted_at": null
-    }
-}
-```
-
-### HTTP Request
-`PUT api/groups/{group}`
-
-`PATCH api/groups/{group}`
-
-#### Body Parameters
-
-Parameter | Type | Status | Description
---------- | ------- | ------- | ------- | -----------
-    name | string |  required  | 新たにつけるグループ名
-#### Query Parameters
-
-Parameter | Status | Description
---------- | ------- | ------- | -----------
-    group |  required  | グループid
-
-<!-- END_5b84408c838201930093112a7621935c -->
-
-<!-- START_bd4f731f3f84c755053406b8971eba1f -->
-## groups.destory グループを削除
-
-> Example request:
-
-```bash
-curl -X DELETE "http://localhost/api/groups/{group}" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/groups/{group}");
-
-    let params = {
-            "group": "fScfGx6ucR39KlMQ",
-        };
-    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response (204):
-
-```json
-[]
-```
-> Example response (409):
-
-```json
-{
-    "error": "このグループを使用しているデフォルト設定があるので、削除できません"
-}
-```
-
-### HTTP Request
-`DELETE api/groups/{group}`
-
-#### Query Parameters
-
-Parameter | Status | Description
---------- | ------- | ------- | -----------
-    group |  required  | グループid
-
-<!-- END_bd4f731f3f84c755053406b8971eba1f -->
-
-<!-- START_7abc713c473ec0e612bd83b515b63b1d -->
-## groups.can_add_users  対象のグループに追加できるユーザー一覧を返す（自分のフレンド−そのグループのメンバー）
-
-> Example request:
-
-```bash
-curl -X GET -G "http://localhost/api/groups/{group}/users/can_add" 
-```
-
-```javascript
-const url = new URL("http://localhost/api/groups/{group}/users/can_add");
-
-    let params = {
-            "group": "ax52Eixa1nD9Rqsw",
-        };
-    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
-
-let headers = {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-> Example response (200):
-
-```json
-{
-    "data": [
-        {
-            "id": 2,
-            "unique_id": "od6pLAcmal",
-            "name": null,
-            "username": "工藤 陽一",
-            "email": "tsubasa34@example.net",
-            "unique_id_search_flag": 1,
-            "username_search_flag": 1,
-            "permitted": 1,
-            "attribute_id": null,
-            "created_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "deleted_at": null
-        },
-        {
-            "id": 24,
-            "unique_id": "W7HcpzXLrY",
-            "name": null,
-            "username": "藤本 桃子",
-            "email": "kumiko63@example.org",
-            "unique_id_search_flag": 1,
-            "username_search_flag": 1,
-            "permitted": 1,
-            "attribute_id": 4,
-            "created_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "deleted_at": null
-        },
-        {
-            "id": 27,
-            "unique_id": "3krXm3nbSQ",
-            "name": null,
-            "username": "井高 直人",
-            "email": "kato.kana@example.com",
-            "unique_id_search_flag": 1,
-            "username_search_flag": 1,
-            "permitted": 1,
-            "attribute_id": null,
-            "created_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "deleted_at": null
-        },
-        {
-            "id": 33,
-            "unique_id": "KkBj7AzQO7",
-            "name": null,
-            "username": "小林 学",
-            "email": "xsakamoto@example.com",
-            "unique_id_search_flag": 1,
-            "username_search_flag": 1,
-            "permitted": 1,
-            "attribute_id": 5,
-            "created_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "deleted_at": null
-        },
-        {
-            "id": 36,
-            "unique_id": "Dx0cl25PWU",
-            "name": null,
-            "username": "西之園 くみ子",
-            "email": "hogaki@example.com",
-            "unique_id_search_flag": 1,
-            "username_search_flag": 1,
-            "permitted": 1,
-            "attribute_id": 1,
-            "created_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "deleted_at": null
-        },
-        {
-            "id": 37,
-            "unique_id": "tuprMwqUxJ",
-            "name": null,
-            "username": "田辺 康弘",
-            "email": "wakamatsu.manabu@example.net",
-            "unique_id_search_flag": 1,
-            "username_search_flag": 1,
-            "permitted": 1,
-            "attribute_id": null,
-            "created_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "deleted_at": null
-        },
-        {
-            "id": 39,
-            "unique_id": "GDGjBwivY9",
-            "name": null,
-            "username": "渚 修平",
-            "email": "tishida@example.net",
-            "unique_id_search_flag": 1,
-            "username_search_flag": 1,
-            "permitted": 1,
-            "attribute_id": null,
-            "created_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "deleted_at": null
-        },
-        {
-            "id": 44,
-            "unique_id": "VlSmPHgzAL",
-            "name": null,
-            "username": "山田 和也",
-            "email": "wsaito@example.net",
-            "unique_id_search_flag": 1,
-            "username_search_flag": 1,
-            "permitted": 1,
-            "attribute_id": 5,
-            "created_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "deleted_at": null
-        },
-        {
-            "id": 11,
-            "unique_id": "PvSBswzUj6",
-            "name": null,
-            "username": "山口 淳",
-            "email": "ryosuke73@example.org",
-            "unique_id_search_flag": 1,
-            "username_search_flag": 1,
-            "permitted": 1,
-            "attribute_id": null,
-            "created_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "updated_at": {
-                "date": "2019-02-17 15:40:33.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            },
-            "deleted_at": null
-        }
-    ]
-}
-```
-
-### HTTP Request
-`GET api/groups/{group}/users/can_add`
-
-#### Query Parameters
-
-Parameter | Status | Description
---------- | ------- | ------- | -----------
-    group |  required  | グループid
-
-<!-- END_7abc713c473ec0e612bd83b515b63b1d -->
-
 #profile プロフィール
 <!-- START_083f8e6e87f50a46d0cc30956e5b0812 -->
 ## profiles.update 自分の情報を更新
@@ -8215,7 +8304,7 @@ Parameter | Status | Description
 ```bash
 curl -X PUT "http://localhost/api/profile/update" \
     -H "Content-Type: application/json" \
-    -d '{"unique_id":"mpYpeI383sHL8Jzm","username":"KUUAwDWGLze6k0o3","password":"1pgIhopckiKB0g2a","unique_id_search_flag":true,"username_search_flag":false}'
+    -d '{"unique_id":"lbBLuWgQkZVsk1SJ","username":"kBPxVP0enWnnqpM3","password":"BiIYACMU9GFDsSoQ","unique_id_search_flag":false,"username_search_flag":true}'
 
 ```
 
@@ -8228,11 +8317,11 @@ let headers = {
 }
 
 let body = {
-    "unique_id": "mpYpeI383sHL8Jzm",
-    "username": "KUUAwDWGLze6k0o3",
-    "password": "1pgIhopckiKB0g2a",
-    "unique_id_search_flag": true,
-    "username_search_flag": false
+    "unique_id": "lbBLuWgQkZVsk1SJ",
+    "username": "kBPxVP0enWnnqpM3",
+    "password": "BiIYACMU9GFDsSoQ",
+    "unique_id_search_flag": false,
+    "username_search_flag": true
 }
 
 fetch(url, {
@@ -8915,7 +9004,7 @@ fetch(url, {
 ```bash
 curl -X POST "http://localhost/api/search/forward_by_username" \
     -H "Content-Type: application/json" \
-    -d '{"username":"JAiD3X8kcY1nXyVG"}'
+    -d '{"username":"VgJL61dQbn7tjVPs"}'
 
 ```
 
@@ -8928,7 +9017,7 @@ let headers = {
 }
 
 let body = {
-    "username": "JAiD3X8kcY1nXyVG"
+    "username": "VgJL61dQbn7tjVPs"
 }
 
 fetch(url, {
@@ -8988,7 +9077,7 @@ Parameter | Type | Status | Description
 ```bash
 curl -X POST "http://localhost/api/search/perfect_by_unique_id" \
     -H "Content-Type: application/json" \
-    -d '{"unique_id":"D75rUHohHiFOOsEb"}'
+    -d '{"unique_id":"j9HKGN3tlnCGRw1g"}'
 
 ```
 
@@ -9001,7 +9090,7 @@ let headers = {
 }
 
 let body = {
-    "unique_id": "D75rUHohHiFOOsEb"
+    "unique_id": "j9HKGN3tlnCGRw1g"
 }
 
 fetch(url, {
@@ -9059,7 +9148,7 @@ Parameter | Type | Status | Description
 ```bash
 curl -X POST "http://localhost/api/search/forward_by_unique_id" \
     -H "Content-Type: application/json" \
-    -d '{"unique_id":"0WgGuc217VxEIGSg"}'
+    -d '{"unique_id":"nwkGcxAF8Y9I3Jsg"}'
 
 ```
 
@@ -9072,7 +9161,7 @@ let headers = {
 }
 
 let body = {
-    "unique_id": "0WgGuc217VxEIGSg"
+    "unique_id": "nwkGcxAF8Y9I3Jsg"
 }
 
 fetch(url, {
@@ -9158,7 +9247,7 @@ curl -X GET -G "http://localhost/api/sessions/{session}/users"
 const url = new URL("http://localhost/api/sessions/{session}/users");
 
     let params = {
-            "session": "Q1qNGBq4V3XuR0iV",
+            "session": "pEt39rhMqguwE9bx",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -9299,7 +9388,7 @@ Parameter | Status | Description
 ```bash
 curl -X POST "http://localhost/api/sessions/{session}/users" \
     -H "Content-Type: application/json" \
-    -d '{"user_id":"T0qqwN4G4DI6Mb0I","join_status":"mcoHAZYVZ87Naqpc","paid":18,"plus_minus":19,"ratio":"jTTzOKY0JrVUD7an"}'
+    -d '{"user_id":"NjOk53qVBvn077TB","join_status":"3VZufUvv1CFg4lv9","paid":15,"plus_minus":7,"ratio":"ehjodCPSntm4Ua14"}'
 
 ```
 
@@ -9307,7 +9396,7 @@ curl -X POST "http://localhost/api/sessions/{session}/users" \
 const url = new URL("http://localhost/api/sessions/{session}/users");
 
     let params = {
-            "session": "6oxe9BIgPIwBHaXM",
+            "session": "xeDRjchoH0SOwP9W",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -9317,11 +9406,11 @@ let headers = {
 }
 
 let body = {
-    "user_id": "T0qqwN4G4DI6Mb0I",
-    "join_status": "mcoHAZYVZ87Naqpc",
-    "paid": 18,
-    "plus_minus": 19,
-    "ratio": "jTTzOKY0JrVUD7an"
+    "user_id": "NjOk53qVBvn077TB",
+    "join_status": "3VZufUvv1CFg4lv9",
+    "paid": 15,
+    "plus_minus": 7,
+    "ratio": "ehjodCPSntm4Ua14"
 }
 
 fetch(url, {
@@ -9399,8 +9488,8 @@ curl -X GET -G "http://localhost/api/sessions/{session}/users/{user}"
 const url = new URL("http://localhost/api/sessions/{session}/users/{user}");
 
     let params = {
-            "session": "pIKyj5GaRYd4g6qr",
-            "user": "PkpIpYl6SFKNMJ0V",
+            "session": "M84aNCYkqAXq76Tq",
+            "user": "XTVICflnvkVOCdZT",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -9468,7 +9557,7 @@ Parameter | Status | Description
 ```bash
 curl -X PUT "http://localhost/api/sessions/{session}/users/{user}" \
     -H "Content-Type: application/json" \
-    -d '{"user_id":"0MS6rxhVNlEUq5iw","join_status":"HoctEgsy0ocNGw33","paid":11,"plus_minus":16,"ratio":"yJ4VcKn2zpyTE1ig"}'
+    -d '{"user_id":"uJaKafHR8WisFDSJ","join_status":"AA8pdr5KmLM0ciUk","paid":1,"plus_minus":16,"ratio":"wqIB6VDMHm75hbAr"}'
 
 ```
 
@@ -9476,8 +9565,8 @@ curl -X PUT "http://localhost/api/sessions/{session}/users/{user}" \
 const url = new URL("http://localhost/api/sessions/{session}/users/{user}");
 
     let params = {
-            "session": "GyJcav96kap6zOCZ",
-            "user": "MYXHOFdWAzxOx2Ac",
+            "session": "wzRAFzoxRBjtjzsF",
+            "user": "atuyd22Ouykg7bp1",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -9487,11 +9576,11 @@ let headers = {
 }
 
 let body = {
-    "user_id": "0MS6rxhVNlEUq5iw",
-    "join_status": "HoctEgsy0ocNGw33",
-    "paid": 11,
+    "user_id": "uJaKafHR8WisFDSJ",
+    "join_status": "AA8pdr5KmLM0ciUk",
+    "paid": 1,
     "plus_minus": 16,
-    "ratio": "yJ4VcKn2zpyTE1ig"
+    "ratio": "wqIB6VDMHm75hbAr"
 }
 
 fetch(url, {
@@ -9570,8 +9659,8 @@ curl -X DELETE "http://localhost/api/sessions/{session}/users/{user}"
 const url = new URL("http://localhost/api/sessions/{session}/users/{user}");
 
     let params = {
-            "session": "XbRsF0CqLGqt3KC7",
-            "user": "3u6wsFryJ1sah5ET",
+            "session": "GpyL8F8HI6IzL9Bd",
+            "user": "0pSmoQPP5LQKWtex",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -10159,7 +10248,7 @@ fetch(url, {
 ```bash
 curl -X POST "http://localhost/api/sessions" \
     -H "Content-Type: application/json" \
-    -d '{"name":"LXRQv0SueZoefmOq","shop_id":7,"budget":2,"actual":13,"start_time":"60wZiTHb4TaamCXH","end_time":"3by8VRavkEe4J5oj"}'
+    -d '{"name":"YB2000IqdtOqAZAd","shop_id":2,"budget":9,"actual":8,"start_time":"kX4ALFnSREfrS6Ag","end_time":"siibdj73EkBDysce"}'
 
 ```
 
@@ -10172,12 +10261,12 @@ let headers = {
 }
 
 let body = {
-    "name": "LXRQv0SueZoefmOq",
-    "shop_id": 7,
-    "budget": 2,
-    "actual": 13,
-    "start_time": "60wZiTHb4TaamCXH",
-    "end_time": "3by8VRavkEe4J5oj"
+    "name": "YB2000IqdtOqAZAd",
+    "shop_id": 2,
+    "budget": 9,
+    "actual": 8,
+    "start_time": "kX4ALFnSREfrS6Ag",
+    "end_time": "siibdj73EkBDysce"
 }
 
 fetch(url, {
@@ -10266,7 +10355,7 @@ curl -X GET -G "http://localhost/api/sessions/{session}"
 const url = new URL("http://localhost/api/sessions/{session}");
 
     let params = {
-            "session": "reHY0zLGsKZXebwh",
+            "session": "6ArhoOTP1uCfLhtS",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -10447,7 +10536,7 @@ Parameter | Status | Description
 ```bash
 curl -X PUT "http://localhost/api/sessions/{session}" \
     -H "Content-Type: application/json" \
-    -d '{"name":"0BogtZCQGLpHucFa","shop_id":17,"budget":3,"actual":8,"start_time":"Y6Jkvze7nuYeVS4O","end_time":"ucLyGqlKsUqUItWv"}'
+    -d '{"name":"SQaxv2wHJml9S7qI","shop_id":17,"budget":1,"actual":5,"start_time":"7DbS6ObweKS1eGnI","end_time":"51G4qCbwkhj3oWCo"}'
 
 ```
 
@@ -10455,7 +10544,7 @@ curl -X PUT "http://localhost/api/sessions/{session}" \
 const url = new URL("http://localhost/api/sessions/{session}");
 
     let params = {
-            "session": "78hZYapPoMYYKA4Z",
+            "session": "isRB7kmHlq0DcnIi",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -10465,12 +10554,12 @@ let headers = {
 }
 
 let body = {
-    "name": "0BogtZCQGLpHucFa",
+    "name": "SQaxv2wHJml9S7qI",
     "shop_id": 17,
-    "budget": 3,
-    "actual": 8,
-    "start_time": "Y6Jkvze7nuYeVS4O",
-    "end_time": "ucLyGqlKsUqUItWv"
+    "budget": 1,
+    "actual": 5,
+    "start_time": "7DbS6ObweKS1eGnI",
+    "end_time": "51G4qCbwkhj3oWCo"
 }
 
 fetch(url, {
@@ -10639,7 +10728,7 @@ curl -X DELETE "http://localhost/api/sessions/{session}"
 const url = new URL("http://localhost/api/sessions/{session}");
 
     let params = {
-            "session": "pligyRxm9q5BnCVX",
+            "session": "OPFQlmdQYSom0fuU",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 

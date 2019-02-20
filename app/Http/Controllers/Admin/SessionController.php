@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 
+/**
+ * @group admin 管理者ページ
+ */
 class SessionController extends Controller
 {
     public function index()

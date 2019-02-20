@@ -7,6 +7,9 @@ use App\Model\Session;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+/**
+ * @group guest ゲスト
+ */
 class SessionController extends Controller
 {
     /**

@@ -35,9 +35,9 @@ class DefaultSettingController extends Controller
     public function store(DefaultSettingStoreRequest $request)
     {
         // 同じ名前はやめよう
-        if ($request->user()->managedDefaultSettings()->where('name', $request->name)->exists()) {
-            return response()->json(['error' => '同じ名前は使用できません'], Response::HTTP_CONFLICT);
-        }
+//        if ($request->user()->managedDefaultSettings()->where('name', $request->name)->exists()) {
+//            return response()->json(['error' => '同じ名前は使用できません'], Response::HTTP_CONFLICT);
+//        }
 
         return new DefaultSettingResource($request->user()->managedDefaultSettings()->create($request->all()));
     }
