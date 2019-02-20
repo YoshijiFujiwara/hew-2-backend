@@ -207,7 +207,7 @@ class FriendTest extends TestCase
     public function testBlock()
     {
         $testUser = User::find(1);
-        $friend = $testUser->friends->random();
+        $friend = $testUser->allRequestMeUsers->random();
         $response = $this->apiAs($testUser, 'PUT', route('friends.block', [$friend]), [], []);
         $response->assertStatus(Response::HTTP_OK);
     }
