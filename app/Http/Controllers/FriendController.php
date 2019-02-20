@@ -152,7 +152,7 @@ class FriendController extends Controller
         if (! $request->user()->invitingMeUsers()->where('id', $request->user_id)->exists()) {
             return response()->json(['error' => 'そのユーザーからは招待されていません'], Response::HTTP_CONFLICT);
         }
-        $request->user()->invitingMeUsers()->updateExistingPivot($request->user()->id, [
+        $request->user()->invitingMeUsers()->updateExistingPivot($request->user_id, [
             'permitted' => true
         ]);
         // 自分からも友達に追加する
@@ -179,7 +179,7 @@ class FriendController extends Controller
         if (! $request->user()->invitingMeUsers()->where('id', $request->user_id)->exists()) {
             return response()->json(['error' => 'そのユーザーからは招待されていません'], Response::HTTP_CONFLICT);
         }
-        $request->user()->invitingMeUsers()->updateExistingPivot($request->user()->id, [
+        $request->user()->invitingMeUsers()->updateExistingPivot($request->user_id, [
             'permitted' => false
         ]);
         // すでに友達の場合は、destoryするか
