@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SessionStoreRequest;
 use App\Http\Resources\SessionResource;
+use App\Http\Resources\UserResource;
 use App\Model\Session;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -52,6 +53,20 @@ class SessionController extends Controller
     public function show(Request $request, Session $session)
     {
         return new SessionResource($session);
+    }
+
+    /**
+     * sessions.can_add_users  対象のセッションに追加できるユーザー一覧を返す（自分のフレンド−そのセッションのメンバー）
+     *
+     * @queryParam session required グループid
+     *
+     * @responseFile 200 responses/sessions.can_add_users.200.json
+     */
+    public function canAddUsers(Request $request, Session $session)
+    {
+        $users = $request->user()->friends()->whereNotIn('id', $session->users()->pluck('id'))->get();
+
+        return UserResource::collection($users);
     }
 
 

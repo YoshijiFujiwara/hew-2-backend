@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\SessionUserResource;
 use App\Http\Resources\UserResource;
+use App\Model\Group;
 use App\Model\Session;
 use App\User;
+use GPBMetadata\Google\Api\Log;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -29,7 +31,7 @@ class SessionUserController extends Controller
      * sessions.users.store セッションにユーザーを追加する
      * @queryParam session required セッションid
      * @bodyParam user_id string required 追加するユーザーのID
-     * @bodyParam join_status required integer 参加状況のステータス
+     * @bodyParam join_status string 参加状況のステータス['allow', 'wait', 'deny'] デフォルトでは wait
      * @bodyParam paid integer  支払いしたか
      * @bodyParam plus_minus integer 加減算
      * @bodyParam budget integer 支払い予定額
@@ -48,6 +50,30 @@ class SessionUserController extends Controller
         }
 
         $session->users()->attach($request->user_id, $request->all());
+
+        // ユーザー情報を更新するため、あえて再インスタンス化
+        return UserResource::collection(Session::find($session->id)->users);
+    }
+
+    /**
+     * sessions.users.store_group セッションにあるグループのメンバーを追加する。（重複はしないように追加される。また、join_statusは、　waitなどのDBの初期値で決め打ちされる）。追加した後のsessionのuser一覧を返す
+     * @queryParam session required セッションid
+     * @queryParam group required 追加するグループ
+     *
+     * @responseFile 200 responses/sessions.users.store_group.200.json
+     */
+    public function storeGroup(Request $request, Session $session, Group $group)
+    {
+        // グループのメンバーから、すでにセッションにいるメンバーを除く
+        $newUsers = $group->users()->whereNotIn('id', $session->users()->pluck('id'))->get();
+        \Illuminate\Support\Facades\Log::debug(print_r($group->users, true));
+        \Illuminate\Support\Facades\Log::debug(print_r($session->users, true));
+
+        if (empty($newUsers)) {
+            return response()->json(['message' => 'そのグループのメンバーは全員、そのsessionに招待済みです'], Response::HTTP_CONFLICT);
+        }
+
+        $session->users()->attach($newUsers);
 
         // ユーザー情報を更新するため、あえて再インスタンス化
         return UserResource::collection(Session::find($session->id)->users);

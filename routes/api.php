@@ -41,14 +41,19 @@ Route::middleware('JWT')->group(function () {
 
     Route::apiResource('sessions', 'SessionController')->only(['index', 'store']);
     Route::apiResource('sessions', 'SessionController')->only(['show', 'update', 'destroy'])->middleware('can:has,session');
+    Route::get('sessions/{session}/users/can_add', 'SessionController@canAddUsers')->name('sessions.can_add_users')->middleware('can:has,session');
     Route::apiResource('sessions/{session}/users', 'SessionUserController', ['as' => 'sessions'])->middleware('can:has,session');
+    Route::post('sessions/{session}/groups/{group}', 'SessionUserController@storeGroup')->name('sessions.users.store_group')->middleware(['can:has,session', 'can:has,group']);
 
     Route::apiResource('attributes', 'AttributeController')->only(['index', 'store']);
     Route::apiResource('attributes', 'AttributeController')->only(['show', 'update', 'destroy'])->middleware('can:has,attribute');
 
     Route::group(['prefix' => 'guest', 'namespace' => 'Guest', 'as' => 'guests.'], function () {
         Route::apiResource('sessions', 'SessionController')->only(['index']);
-        Route::apiResource('sessions', 'SessionController')->only(['show'])->middleware('can:participated,session');
+        Route::get('sessions/wait', 'SessionController@waitSessions')->name('sessions.wait');
+        Route::get('sessions/allow', 'SessionController@allowSessions')->name('sessions.allow');
+        Route::get('sessions/deny', 'SessionController@denySessions')->name('sessions.deny');
+        Route::apiResource('sessions', 'SessionController')->only(['show', 'update'])->middleware('can:participated,session');
 
     });
 
