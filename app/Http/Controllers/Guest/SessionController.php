@@ -28,6 +28,36 @@ class SessionController extends Controller
     }
 
     /**
+     * guests.sessions.wait ゲストとして招待されていて、まだ返事していないセション一覧
+     *
+     * @responseFile 200 responses/guests.sessions.wait.200.json
+     */
+    public function waitSessions(Request $request)
+    {
+        return SessionResource::collection($request->user()->waitSessions);
+    }
+
+    /**
+     * guests.sessions.allow ゲストとして招待されていて、参加了承したセション一覧
+     *
+     * @responseFile 200 responses/guests.sessions.allow.200.json
+     */
+    public function allowSessions(Request $request)
+    {
+        return SessionResource::collection($request->user()->allowSessions);
+    }
+
+    /**
+     * guests.sessions.deny ゲストとして招待されていて、参加拒否した一覧
+     *
+     * @responseFile 200 responses/guests.sessions.deny.200.json
+     */
+    public function denySessions(Request $request)
+    {
+        return SessionResource::collection($request->user()->denySessions);
+    }
+
+    /**
      * guests.sessions.show ゲストとして参加しているセッションの一つの詳細
      * @queryParam session required セッションid
      *
