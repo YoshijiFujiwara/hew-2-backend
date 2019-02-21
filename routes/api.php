@@ -48,7 +48,7 @@ Route::middleware('JWT')->group(function () {
 
     Route::group(['prefix' => 'guest', 'namespace' => 'Guest', 'as' => 'guests.'], function () {
         Route::apiResource('sessions', 'SessionController')->only(['index']);
-        Route::apiResource('sessions', 'SessionController')->only(['show'])->middleware('can:participated,session');
+        Route::apiResource('sessions', 'SessionController')->only(['show', 'update'])->middleware('can:participated,session');
 
     });
 

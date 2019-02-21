@@ -26,4 +26,27 @@ class GuestSessionTest extends TestCase
 
         $response->assertStatus(Response::HTTP_OK);
     }
+
+    public function testUpdate()
+    {
+        $testUser = User::find(1);
+        $participatedSession = $testUser->participatedSessions->random();
+        $response = $this->apiAs($testUser, 'PUT', route('guests.sessions.update', [$participatedSession]), [
+            'join_status' => 'allow'
+        ], []);
+
+        $response->assertStatus(Response::HTTP_OK);
+
+        $response = $this->apiAs($testUser, 'PUT', route('guests.sessions.update', [$participatedSession]), [
+            'join_status' => 'deny'
+        ], []);
+
+        $response->assertStatus(Response::HTTP_OK);
+
+        $response = $this->apiAs($testUser, 'PUT', route('guests.sessions.update', [$participatedSession]), [
+            'join_status' => 'wait'
+        ], []);
+
+        $response->assertStatus(Response::HTTP_OK);
+    }
 }
