@@ -43,6 +43,27 @@ class SessionUserTest extends TestCase
         $response->assertStatus(Response::HTTP_OK);
     }
 
+    public function testStoreGroup()
+    {
+
+        $testUser = User::find(1);
+        $newSessionName = 'newSession' . str_random(5);
+        $testUser->managedSessions()->create([
+            'name' => $newSessionName,
+            'shop_id' => 34,
+            'budget' => 3000,
+            'actual' => 3000,
+            'start_time' => null,
+            'end_time' => null
+        ]);
+        $newSession = $testUser->managedSessions->where('name', $newSessionName)->first();
+
+        $group = $testUser->managedGroups->random();
+        $response = $this->apiAs($testUser, 'POST', route('sessions.users.store_group', [$newSession, $group]), [], []);
+
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
     public function testShow()
     {
         $testUser = User::find(1);

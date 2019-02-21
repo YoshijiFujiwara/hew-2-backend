@@ -36,10 +36,10 @@ class DatabaseSeeder extends Seeder
                 ]);
             }
 
-            $u->managedGroups()->saveMany(factory(\App\Model\Group::class, 3)->make())
+            $u->managedGroups()->saveMany(factory(\App\Model\Group::class, 5)->make())
                 ->each(function ($g) {
                     // 全フレンドの25％を適当に登録
-                    $g->users()->attach($g->manager->friends->random($g->manager->friends->count() / 4));
+                    $g->users()->attach($g->manager->friends->random($g->manager->friends->count() / 3));
                 });
             $u->managedSessions()->saveMany(factory(\App\Model\Session::class, 4)->make())
                 ->each(function ($s) {
