@@ -32,7 +32,8 @@ class SessionUserController extends Controller
      * @bodyParam join_status required integer 参加状況のステータス
      * @bodyParam paid integer  支払いしたか
      * @bodyParam plus_minus integer 加減算
-     * @bodyParam ratio datetime  割合（加減算と重複しないほうが良いでしょう）
+     * @bodyParam budget integer 支払い予定額
+     * @bodyParam budget_actual integer 支払い確定金額
      *
      * @responseFile 200 responses/sessions.users.store.200.json
      */
@@ -46,11 +47,7 @@ class SessionUserController extends Controller
             return response()->json(['error' => 'すでにそのグループに登録されています'], Response::HTTP_CONFLICT);
         }
 
-        $session->users()->attach($request->user_id, [
-            'join_status' => $request->join_status,
-            'paid' => $request->paid,
-            'plus_minus' => $request->plus_minus,
-        ]);
+        $session->users()->attach($request->user_id, $request->all());
 
         // ユーザー情報を更新するため、あえて再インスタンス化
         return UserResource::collection(Session::find($session->id)->users);
