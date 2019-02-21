@@ -118,7 +118,7 @@ Route::group([
         });
     });
 
-
+    Route::get('test', 'TestController@test')->name('test');
 
 
 });
