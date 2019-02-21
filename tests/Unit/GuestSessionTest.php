@@ -18,6 +18,30 @@ class GuestSessionTest extends TestCase
         $response->assertStatus(Response::HTTP_OK);
     }
 
+    public function testWait()
+    {
+        $testUser = User::find(1);
+        $response = $this->apiAs($testUser, 'GET', route('guests.sessions.wait'), [], []);
+
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
+    public function testAllow()
+    {
+        $testUser = User::find(1);
+        $response = $this->apiAs($testUser, 'GET', route('guests.sessions.allow'), [], []);
+
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
+    public function testDeny()
+    {
+        $testUser = User::find(1);
+        $response = $this->apiAs($testUser, 'GET', route('guests.sessions.deny'), [], []);
+
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
     public function testShow()
     {
         $testUser = User::find(1);

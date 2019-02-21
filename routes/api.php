@@ -50,6 +50,9 @@ Route::middleware('JWT')->group(function () {
 
     Route::group(['prefix' => 'guest', 'namespace' => 'Guest', 'as' => 'guests.'], function () {
         Route::apiResource('sessions', 'SessionController')->only(['index']);
+        Route::get('sessions/wait', 'SessionController@waitSessions')->name('sessions.wait');
+        Route::get('sessions/allow', 'SessionController@allowSessions')->name('sessions.allow');
+        Route::get('sessions/deny', 'SessionController@denySessions')->name('sessions.deny');
         Route::apiResource('sessions', 'SessionController')->only(['show', 'update'])->middleware('can:participated,session');
 
     });
