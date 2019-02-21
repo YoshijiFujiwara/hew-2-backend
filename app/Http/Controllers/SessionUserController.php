@@ -29,7 +29,7 @@ class SessionUserController extends Controller
      * sessions.users.store セッションにユーザーを追加する
      * @queryParam session required セッションid
      * @bodyParam user_id string required 追加するユーザーのID
-     * @bodyParam join_status required integer 参加状況のステータス
+     * @bodyParam join_status string required 参加状況のステータス['allow', 'wait', 'deny']
      * @bodyParam paid integer  支払いしたか
      * @bodyParam plus_minus integer 加減算
      * @bodyParam budget integer 支払い予定額

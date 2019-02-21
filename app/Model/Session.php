@@ -40,6 +40,21 @@ class Session extends Model
             ->withPivot('join_status', 'paid', 'plus_minus', 'deleted_at');
     }
 
+    public function allowUsers()
+    {
+        return $this->users()->wherePivot('join_status', 'allow');
+    }
+
+    public function denyUsers()
+    {
+        return $this->users()->wherePivot('join_status', 'deny');
+    }
+
+    public function waitUsers()
+    {
+        return $this->users()->wherePivot('join_status', 'wait');
+    }
+
     /**
      * ポリシーで使用する
      */
