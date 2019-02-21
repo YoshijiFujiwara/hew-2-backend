@@ -34,7 +34,7 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": ["beyondcode/laravel-dump-server"]
+            "dont-discover": []
         }
     },
     "autoload": {
