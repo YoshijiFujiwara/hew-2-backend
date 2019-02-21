@@ -34,6 +34,15 @@ class SessionTest extends TestCase
         $response->assertStatus(Response::HTTP_CREATED);
     }
 
+    public function testCanAddUsers()
+    {
+        $testUser = User::find(1);
+        $alreadySession = $testUser->managedSessions->random();
+        $response = $this->apiAs($testUser, 'GET', route('sessions.can_add_users', ['session' => $alreadySession->id]), [], []);
+
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
     public function testShow()
     {
         $testUser = User::find(1);
