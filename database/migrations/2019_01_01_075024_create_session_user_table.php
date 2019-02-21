@@ -20,6 +20,8 @@ class CreateSessionUserTable extends Migration
             $table->enum('join_status', ['allow', 'deny', 'wait']);
             $table->boolean('paid')->nullable();
             $table->integer('plus_minus')->nullable()->comment('加減算');
+            $table->integer('budget')->nullable()->comment('この人の支払い予定額');
+            $table->integer('budget_actual')->nullable()->comment('この人の実際の支払い金額');
             $table->softDeletes();
         });
     }
