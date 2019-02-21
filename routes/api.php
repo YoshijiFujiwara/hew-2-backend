@@ -23,6 +23,7 @@ Route::middleware('JWT')->group(function () {
         Route::get('requested', 'FriendController@friendRequestUsers')->name('friends.friend_request_users');
         Route::post('permit', 'FriendController@permit')->name('friends.permit');
         Route::post('reject', 'FriendController@reject')->name('friends.reject');
+        Route::get('{friend}/attribute', 'FriendController@updateAttribute')->name('friends.update_attribute')->middleware('can:has,friend');
         Route::put('{friend}/attribute', 'FriendController@updateAttribute')->name('friends.update_attribute')->middleware('can:has,friend');
         Route::put('{friend}/cancel_invitation', 'FriendController@cancelInvitation')->name('friends.cancel_invitation');
         Route::put('{friend}/block', 'FriendController@block')->name('friends.block');

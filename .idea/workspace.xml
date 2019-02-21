@@ -2,47 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc97d55e-750a-4d18-8aca-a7e761cc613c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SessionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_01_075013_create_sessions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_01_075013_create_sessions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/attributes.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/attributes.index.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/attributes.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/attributes.show.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/attributes.store.201.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/attributes.store.201.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/attributes.update.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/attributes.update.200.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/responses/auth.login.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/auth.login.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/auth.me.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/auth.me.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/auth.refresh.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/auth.refresh.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/auth.register.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/auth.register.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/default_settings.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/default_settings.index.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/default_settings.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/default_settings.show.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/default_settings.store.201.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/default_settings.store.201.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/default_settings.update.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/default_settings.update.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/friends.friend_request_users.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.friend_request_users.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/friends.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.index.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/friends.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.show.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/friends.store.201.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.store.201.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/friends.waiting_friends.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.waiting_friends.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/groups.can_add_users.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/groups.can_add_users.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/groups.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/groups.index.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/groups.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/groups.show.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/groups.store.201.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/groups.store.201.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/groups.update.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/groups.update.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/groups.users.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/groups.users.index.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/groups.users.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/groups.users.show.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/guests.sessions.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/guests.sessions.index.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/guests.sessions.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/guests.sessions.show.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/profile.update.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/profile.update.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/search.can_add_friend_users.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/search.can_add_friend_users.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/search.forward_by_unique_id.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/search.forward_by_unique_id.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/search.forward_by_username.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/search.forward_by_username.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/search.perfect_by_unique_id.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/search.perfect_by_unique_id.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/sessions.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.index.200.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/responses/sessions.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.show.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/sessions.store.201.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.store.201.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/responses/sessions.update.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.update.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/sessions.users.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.users.index.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/sessions.users.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.users.show.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/sessions.users.store.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.users.store.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/sessions.users.update.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.users.update.200.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,10 +40,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/docs/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_01_075013_create_sessions_table.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+              <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -98,44 +72,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SessionController.php">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="355">
+              <caret line="59" column="29" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/api.php">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
-              <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Resources/AttributeResource.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/Unit/FriendTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="186" column="36" selection-start-line="186" selection-start-column="36" selection-end-line="186" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-02-20.log">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="2163" column="177" selection-start-line="2163" selection-start-column="177" selection-end-line="2163" selection-end-column="177" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FriendController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="236" column="47" selection-start-line="236" selection-start-column="30" selection-end-line="236" selection-end-column="47" />
+              <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -143,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Resources/UserResource.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+            <state relative-caret-position="195">
+              <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
               <folding>
                 <element signature="e#38#62#0#PHP" expanded="true" />
               </folding>
@@ -153,10 +100,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Resources/SessionResource.php">
+        <entry file="file://$PROJECT_DIR$/tests/Unit/FriendTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+            <state relative-caret-position="2700">
+              <caret line="186" column="36" selection-start-line="186" selection-start-column="36" selection-end-line="186" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-02-20.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="32445">
+              <caret line="2163" column="177" selection-start-line="2163" selection-start-column="177" selection-end-line="2163" selection-end-column="177" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FriendController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3405">
+              <caret line="236" column="47" selection-start-line="236" selection-start-column="30" selection-end-line="236" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -253,7 +218,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Guest/SessionController.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FriendController.php" />
-        <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Http/Resources/AttributeResource.php" />
         <option value="$PROJECT_DIR$/tests/Unit/AttributeTest.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_01_075045_create_attributes_table.php" />
@@ -263,11 +227,12 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/SessionUserController.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/database/factories/AttributeFactory.php" />
-        <option value="$PROJECT_DIR$/app/Http/Resources/UserResource.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_01_075024_create_session_user_table.php" />
         <option value="$PROJECT_DIR$/app/Model/Session.php" />
         <option value="$PROJECT_DIR$/tests/Unit/FriendTest.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_01_075013_create_sessions_table.php" />
+        <option value="$PROJECT_DIR$/routes/api.php" />
+        <option value="$PROJECT_DIR$/app/Http/Resources/UserResource.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SessionController.php" />
       </list>
     </option>
@@ -399,9 +364,9 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="960" />
-    <option name="y" value="31" />
-    <option name="width" value="960" />
-    <option name="height" value="1049" />
+    <option name="y" value="32" />
+    <option name="width" value="950" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -411,7 +376,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -484,6 +448,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -532,11 +497,12 @@
       <workItem from="1550456977364" duration="5264000" />
       <workItem from="1550476636164" duration="1329000" />
       <workItem from="1550624437024" duration="6161000" />
+      <workItem from="1550708935361" duration="140000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72741000" />
+    <option name="totallyTimeSpent" value="74977000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="31" width="1920" height="1049" extended-state="6" />
@@ -545,7 +511,7 @@
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="npm" order="1" side_tool="true" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.1826411" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.18423855" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -610,157 +576,6 @@
           <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
           <folding>
             <element signature="e#46#82#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/docs/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-          <folding>
-            <element signature="e#24361#24365#0" expanded="true" />
-            <element signature="e#24399#24403#0" expanded="true" />
-            <element signature="e#26628#26632#0" expanded="true" />
-            <element signature="e#26848#26852#0" expanded="true" />
-            <element signature="e#26886#26890#0" expanded="true" />
-            <element signature="e#28971#28975#0" expanded="true" />
-            <element signature="e#29274#29278#0" expanded="true" />
-            <element signature="e#29312#29316#0" expanded="true" />
-            <element signature="e#31663#31667#0" expanded="true" />
-            <element signature="e#31886#31890#0" expanded="true" />
-            <element signature="e#31924#31928#0" expanded="true" />
-            <element signature="e#33207#33211#0" expanded="true" />
-            <element signature="e#33245#33249#0" expanded="true" />
-            <element signature="e#35273#35277#0" expanded="true" />
-            <element signature="e#35311#35315#0" expanded="true" />
-            <element signature="e#36892#36896#0" expanded="true" />
-            <element signature="e#36930#36934#0" expanded="true" />
-            <element signature="e#37725#37729#0" expanded="true" />
-            <element signature="e#37763#37767#0" expanded="true" />
-            <element signature="e#38904#38908#0" expanded="true" />
-            <element signature="e#38942#38946#0" expanded="true" />
-            <element signature="e#40236#40240#0" expanded="true" />
-            <element signature="e#40274#40278#0" expanded="true" />
-            <element signature="e#41151#41155#0" expanded="true" />
-            <element signature="e#41189#41193#0" expanded="true" />
-            <element signature="e#42847#42851#0" expanded="true" />
-            <element signature="e#42885#42889#0" expanded="true" />
-            <element signature="e#47297#47301#0" expanded="true" />
-            <element signature="e#47335#47339#0" expanded="true" />
-            <element signature="e#51558#51562#0" expanded="true" />
-            <element signature="e#51778#51782#0" expanded="true" />
-            <element signature="e#51816#51820#0" expanded="true" />
-            <element signature="e#55966#55970#0" expanded="true" />
-            <element signature="e#56284#56288#0" expanded="true" />
-            <element signature="e#56322#56326#0" expanded="true" />
-            <element signature="e#60848#60852#0" expanded="true" />
-            <element signature="e#61071#61075#0" expanded="true" />
-            <element signature="e#61109#61113#0" expanded="true" />
-            <element signature="e#62104#62108#0" expanded="true" />
-            <element signature="e#62142#62146#0" expanded="true" />
-            <element signature="e#73747#73751#0" expanded="true" />
-            <element signature="e#73785#73789#0" expanded="true" />
-            <element signature="e#75444#75448#0" expanded="true" />
-            <element signature="e#75482#75486#0" expanded="true" />
-            <element signature="e#88359#88363#0" expanded="true" />
-            <element signature="e#88397#88401#0" expanded="true" />
-            <element signature="e#105234#105238#0" expanded="true" />
-            <element signature="e#105272#105276#0" expanded="true" />
-            <element signature="e#126281#126285#0" expanded="true" />
-            <element signature="e#126319#126323#0" expanded="true" />
-            <element signature="e#143191#143195#0" expanded="true" />
-            <element signature="e#143229#143233#0" expanded="true" />
-            <element signature="e#164294#164298#0" expanded="true" />
-            <element signature="e#164332#164336#0" expanded="true" />
-            <element signature="e#165623#165627#0" expanded="true" />
-            <element signature="e#165661#165665#0" expanded="true" />
-            <element signature="e#166891#166895#0" expanded="true" />
-            <element signature="e#167164#167168#0" expanded="true" />
-            <element signature="e#167202#167206#0" expanded="true" />
-            <element signature="e#169030#169034#0" expanded="true" />
-            <element signature="e#169250#169254#0" expanded="true" />
-            <element signature="e#169288#169292#0" expanded="true" />
-            <element signature="e#170236#170240#0" expanded="true" />
-            <element signature="e#170456#170460#0" expanded="true" />
-            <element signature="e#170494#170498#0" expanded="true" />
-            <element signature="e#171473#171477#0" expanded="true" />
-            <element signature="e#171693#171697#0" expanded="true" />
-            <element signature="e#171731#171735#0" expanded="true" />
-            <element signature="e#172680#172684#0" expanded="true" />
-            <element signature="e#172900#172904#0" expanded="true" />
-            <element signature="e#172938#172942#0" expanded="true" />
-            <element signature="e#175629#175633#0" expanded="true" />
-            <element signature="e#175852#175856#0" expanded="true" />
-            <element signature="e#175890#175894#0" expanded="true" />
-            <element signature="e#176850#176854#0" expanded="true" />
-            <element signature="e#177070#177074#0" expanded="true" />
-            <element signature="e#177108#177112#0" expanded="true" />
-            <element signature="e#178117#178121#0" expanded="true" />
-            <element signature="e#178386#178390#0" expanded="true" />
-            <element signature="e#178424#178428#0" expanded="true" />
-            <element signature="e#179671#179675#0" expanded="true" />
-            <element signature="e#179891#179895#0" expanded="true" />
-            <element signature="e#179929#179933#0" expanded="true" />
-            <element signature="e#181541#181545#0" expanded="true" />
-            <element signature="e#181764#181768#0" expanded="true" />
-            <element signature="e#181802#181806#0" expanded="true" />
-            <element signature="e#182862#182866#0" expanded="true" />
-            <element signature="e#182900#182904#0" expanded="true" />
-            <element signature="e#188942#188946#0" expanded="true" />
-            <element signature="e#188980#188984#0" expanded="true" />
-            <element signature="e#190952#190956#0" expanded="true" />
-            <element signature="e#191172#191176#0" expanded="true" />
-            <element signature="e#191210#191214#0" expanded="true" />
-            <element signature="e#193234#193238#0" expanded="true" />
-            <element signature="e#193516#193520#0" expanded="true" />
-            <element signature="e#193554#193558#0" expanded="true" />
-            <element signature="e#196513#196517#0" expanded="true" />
-            <element signature="e#196736#196740#0" expanded="true" />
-            <element signature="e#196774#196778#0" expanded="true" />
-            <element signature="e#197904#197908#0" expanded="true" />
-            <element signature="e#198124#198128#0" expanded="true" />
-            <element signature="e#198162#198166#0" expanded="true" />
-            <element signature="e#207257#207261#0" expanded="true" />
-            <element signature="e#207295#207299#0" expanded="true" />
-            <element signature="e#281119#281123#0" expanded="true" />
-            <element signature="e#281339#281343#0" expanded="true" />
-            <element signature="e#281377#281381#0" expanded="true" />
-            <element signature="e#288067#288071#0" expanded="true" />
-            <element signature="e#288105#288109#0" expanded="true" />
-            <element signature="e#289981#289985#0" expanded="true" />
-            <element signature="e#290019#290023#0" expanded="true" />
-            <element signature="e#309316#309320#0" expanded="true" />
-            <element signature="e#309354#309358#0" expanded="true" />
-            <element signature="e#311199#311203#0" expanded="true" />
-            <element signature="e#311237#311241#0" expanded="true" />
-            <element signature="e#312992#312996#0" expanded="true" />
-            <element signature="e#313030#313034#0" expanded="true" />
-            <element signature="e#319106#319110#0" expanded="true" />
-            <element signature="e#319326#319330#0" expanded="true" />
-            <element signature="e#319364#319368#0" expanded="true" />
-            <element signature="e#322662#322666#0" expanded="true" />
-            <element signature="e#323058#323062#0" expanded="true" />
-            <element signature="e#323096#323100#0" expanded="true" />
-            <element signature="e#325436#325440#0" expanded="true" />
-            <element signature="e#325656#325660#0" expanded="true" />
-            <element signature="e#325694#325698#0" expanded="true" />
-            <element signature="e#327550#327554#0" expanded="true" />
-            <element signature="e#327911#327915#0" expanded="true" />
-            <element signature="e#327949#327953#0" expanded="true" />
-            <element signature="e#330218#330222#0" expanded="true" />
-            <element signature="e#330441#330445#0" expanded="true" />
-            <element signature="e#330479#330483#0" expanded="true" />
-            <element signature="e#331553#331557#0" expanded="true" />
-            <element signature="e#331591#331595#0" expanded="true" />
-            <element signature="e#348119#348123#0" expanded="true" />
-            <element signature="e#348157#348161#0" expanded="true" />
-            <element signature="e#350687#350691#0" expanded="true" />
-            <element signature="e#350907#350911#0" expanded="true" />
-            <element signature="e#350945#350949#0" expanded="true" />
-            <element signature="e#355671#355675#0" expanded="true" />
-            <element signature="e#356080#356084#0" expanded="true" />
-            <element signature="e#356118#356122#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -890,13 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/Admin/UserRegisterRequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -975,16 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Resources/UserResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-          <folding>
-            <element signature="e#38#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Resources/SessionResource.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1016,30 +814,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FriendController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="236" column="47" selection-start-line="236" selection-start-column="30" selection-end-line="236" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-02-20.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="2163" column="177" selection-start-line="2163" selection-start-column="177" selection-end-line="2163" selection-end-column="177" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Unit/FriendTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="186" column="36" selection-start-line="186" selection-start-column="36" selection-end-line="186" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_01_075024_create_session_user_table.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SessionUserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -1047,10 +821,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_01_075024_create_session_user_table.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_01_075013_create_sessions_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/UserResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+          <folding>
+            <element signature="e#38#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Unit/FriendTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2700">
+          <caret line="186" column="36" selection-start-line="186" selection-start-column="36" selection-end-line="186" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-02-20.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32445">
+          <caret line="2163" column="177" selection-start-line="2163" selection-start-column="177" selection-end-line="2163" selection-end-column="177" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FriendController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3405">
+          <caret line="236" column="47" selection-start-line="236" selection-start-column="30" selection-end-line="236" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/docs/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1066,8 +888,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SessionController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+        <state relative-caret-position="355">
+          <caret line="59" column="29" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
         </state>
       </provider>
     </entry>

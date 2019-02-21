@@ -57,7 +57,7 @@ class SessionController extends Controller
 
     /**
      * sessions.update セッション情報を更新
-     * @bodyParam name string required 新規セッションの名前
+     * @bodyParam name string 新規セッションの名前
      * @bodyParam shop_id integer  ショップのID(ぐるなび？)
      * @bodyParam budget integer  予算額
      * @bodyParam actual integer  実際の金額
