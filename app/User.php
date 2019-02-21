@@ -176,6 +176,21 @@ class User extends Authenticatable implements JWTSubject
             ->withPivot('join_status', 'paid', 'plus_minus', 'deleted_at');
     }
 
+    public function waitSessions()
+    {
+        return $this->participatedSessions()->wherePivot('join_status', 'wait');
+    }
+
+    public function allowSessions()
+    {
+        return $this->participatedSessions()->wherePivot('join_status', 'allow');
+    }
+
+    public function denySessions()
+    {
+        return $this->participatedSessions()->wherePivot('join_status', 'deny');
+    }
+
     public function managedGroups()
     {
         return $this->hasMany(Group::class, 'manager_id');
