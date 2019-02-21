@@ -78,10 +78,12 @@ class SessionUserController extends Controller
      * sessions.users.update セッションの中のユーザーのステータスなどを更新する
      * @queryParam session required セッションid
      * @queryParam user required セッションに属するユーザーのid
-     * @bodyParam user_id string required 追加するユーザーのID
-     * @bodyParam join_status required integer 参加状況のステータス
+     * @bodyParam user_id string 追加するユーザーのID
+     * @bodyParam join_status integer 参加状況のステータス
      * @bodyParam paid integer  支払いしたか
      * @bodyParam plus_minus integer 加減算
+     * @bodyParam budget integer 支払い予定額
+     * @bodyParam budget_actual integer 支払い確定金額
      *
      * @responseFile 200 responses/sessions.users.update.200.json
      */
@@ -92,11 +94,7 @@ class SessionUserController extends Controller
             return response()->json(['error' => 'そのユーザーはそのグループの一員ではありません'], Response::HTTP_NOT_FOUND);
         }
 
-        $session->users()->updateExistingPivot($user->id, [
-            'join_status' => $request->join_status,
-            'paid' => $request->paid,
-            'plus_minus' => $request->plus_minus,
-        ]);
+        $session->users()->updateExistingPivot($user->id, $request->all());
 
         return new UserResource($session->users->where('id', $user->id)->first());
     }
