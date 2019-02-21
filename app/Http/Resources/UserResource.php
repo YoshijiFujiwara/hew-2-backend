@@ -38,6 +38,12 @@ class UserResource extends JsonResource
             'plus_minus' => $this->whenPivotLoaded('session_user', function () {
                 return $this->pivot->plus_minus;
             }),
+            'budget' => $this->whenPivotLoaded('session_user', function () {
+                return $this->pivot->budget;
+            }),
+            'budget_actual' => $this->whenPivotLoaded('session_user', function () {
+                return $this->pivot->budget_actual;
+            }),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'deleted_at' => $this->deleted_at,
