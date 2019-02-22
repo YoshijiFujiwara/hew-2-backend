@@ -8,6 +8,7 @@ use App\Http\Resources\UserResource;
 use App\Model\Group;
 use App\Model\Session;
 use App\Services\FriendService;
+use App\Services\PushNotificationService;
 use App\User;
 use function Composer\Autoload\includeFile;
 use Illuminate\Http\Request;
@@ -20,8 +21,9 @@ class FriendController extends Controller
 {
     protected $friendService;
 
-    public function __construct(FriendService $friendService)
+    public function __construct(PushNotificationService $pushNotificationService, FriendService $friendService)
     {
+        parent::__construct($pushNotificationService);
         $this->friendService = $friendService;
     }
 
@@ -36,7 +38,7 @@ class FriendController extends Controller
     }
 
     /**
-     * friends.store 友達申請する
+     * friends.store ◆友達申請する
      *
      * @bodyParam email string required 追加する友達のメールアドレス
      *
@@ -47,6 +49,10 @@ class FriendController extends Controller
     {
         // 申請対象者
         $friendRequestUser = User::where('email', $request->email)->first();
+
+        // push通知
+        $this->pushNotificationService->notification($request->user()->username . 'さんからフレンド申請が来ました', $friendRequestUser->deviceTokenArray());
+
         return $this->friendService->store($request->user(), $friendRequestUser, $request->email);
     }
 

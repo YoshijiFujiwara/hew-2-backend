@@ -28,7 +28,7 @@ class SessionUserController extends Controller
     }
 
     /**
-     * sessions.users.store セッションにユーザーを追加する
+     * sessions.users.store ◆セッションにユーザーを追加する
      * @queryParam session required セッションid
      * @bodyParam user_id string required 追加するユーザーのID
      * @bodyParam join_status string 参加状況のステータス['allow', 'wait', 'deny'] デフォルトでは wait
@@ -51,12 +51,15 @@ class SessionUserController extends Controller
 
         $session->users()->attach($request->user_id, $request->all());
 
+        // push通知
+        $this->pushNotificationService->notification("{$request->user()->username}さんからセッション {$session->name}に招待されました", User::find($request->user_id)->deviceTokenArray());
+
         // ユーザー情報を更新するため、あえて再インスタンス化
         return UserResource::collection(Session::find($session->id)->users);
     }
 
     /**
-     * sessions.users.store_group セッションにあるグループのメンバーを追加する。（重複はしないように追加される。また、join_statusは、　waitなどのDBの初期値で決め打ちされる）。追加した後のsessionのuser一覧を返す
+     * sessions.users.store_group ◆セッションにあるグループのメンバーを追加する。（重複はしないように追加される。また、join_statusは、　waitなどのDBの初期値で決め打ちされる）。追加した後のsessionのuser一覧を返す
      * @queryParam session required セッションid
      * @queryParam group required 追加するグループ
      *
@@ -66,14 +69,19 @@ class SessionUserController extends Controller
     {
         // グループのメンバーから、すでにセッションにいるメンバーを除く
         $newUsers = $group->users()->whereNotIn('id', $session->users()->pluck('id'))->get();
-        \Illuminate\Support\Facades\Log::debug(print_r($group->users, true));
-        \Illuminate\Support\Facades\Log::debug(print_r($session->users, true));
+//        \Illuminate\Support\Facades\Log::debug(print_r($group->users, true));
+//        \Illuminate\Support\Facades\Log::debug(print_r($session->users, true));
 
         if (empty($newUsers)) {
             return response()->json(['message' => 'そのグループのメンバーは全員、そのsessionに招待済みです'], Response::HTTP_CONFLICT);
         }
 
         $session->users()->attach($newUsers);
+
+        foreach ($newUsers as $newUser) {
+            // push通知
+            $this->pushNotificationService->notification("{$request->user()->username}さんからセッション {$session->name}に招待されました", $newUser->deviceTokenArray());
+        }
 
         // ユーザー情報を更新するため、あえて再インスタンス化
         return UserResource::collection(Session::find($session->id)->users);

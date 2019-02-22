@@ -14,6 +14,9 @@ Route::group([
 });
 
 Route::middleware('JWT')->group(function () {
+
+    Route::post('device_token', 'PushNotificationController@storeDeviceToken')->name('push_notification.store_device_token');
+
     Route::apiResource('friends', 'FriendController')->only(['index', 'store']);
     Route::group(['prefix' => 'friends'], function () {
         Route::get('blocking', 'FriendController@blockingUsers')->name('friends.blocking_users');
@@ -118,7 +121,7 @@ Route::group([
         });
     });
 
-
+    Route::get('test', 'TestController@test')->name('test');
 
 
 });
