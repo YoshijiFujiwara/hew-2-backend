@@ -131,5 +131,6 @@ Route::group([
     ], function () {
         Route::post('notification', 'TestController@notification')->name('test.notification');
 
+        Route::get('realtime', 'TestController@realtime')->name('test.realtime');
     });
 });
