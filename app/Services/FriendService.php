@@ -2,11 +2,15 @@
 namespace App\Services;
 
 
+use App\Http\Controllers\Controller;
+use App\Http\Resources\GroupResource;
+use App\Http\Resources\SessionResource;
 use App\Http\Resources\UserResource;
 use App\Model\Group;
 use App\Model\Session;
 use App\User;
 use Illuminate\Http\Response;
+use Pusher\Laravel\Facades\Pusher;
 
 class FriendService
 {
@@ -41,6 +45,11 @@ class FriendService
             $user->friends()->attach($friendRequestUser, ['permitted' => null]);
         }
 
+        // リアルタイム通知
+        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_UPDATE_EVENT, [
+            'message' => UserResource::collection($user->friends)
+        ]);
+
         return response(new UserResource($user->waitingFriends->where('id', $friendRequestUser->id)->first()),  Response::HTTP_CREATED);
     }
 
@@ -62,5 +71,20 @@ class FriendService
             $user->pivot->deleted_at = now();
             $user->pivot->save();
         });
+
+        // リアルタイム通知
+        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::GROUP_UPDATE_EVENT, [
+            'message' => GroupResource::collection($user->managedGroups)
+        ]);
+
+        // リアルタイム通知
+        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::SESSION_UPDATE_EVENT, [
+            'message' => SessionResource::collection($user->managedSessions)
+        ]);
+
+        // リアルタイム通知
+        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_UPDATE_EVENT, [
+            'message' => UserResource::collection($user->friends)
+        ]);
     }
 }

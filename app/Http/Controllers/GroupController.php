@@ -9,6 +9,7 @@ use App\Model\Group;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Pusher\Laravel\Facades\Pusher;
 
 /**
  * @group groups グループ
@@ -39,6 +40,11 @@ class GroupController extends Controller
 //        if ($request->user()->managedGroups()->where('name', $request->name)->exists()) {
 //            return response()->json(['error' => '同じ名前は使用できません'], Response::HTTP_CONFLICT);
 //        }
+
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_UPDATE_EVENT, [
+            'message' => GroupResource::collection($request->user()->managedGroups)
+        ]);
 
         return new GroupResource($request->user()->managedGroups()->create($request->all()));
     }
@@ -85,6 +91,11 @@ class GroupController extends Controller
 
         $group->update($request->all());
 
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_UPDATE_EVENT, [
+            'message' => GroupResource::collection($request->user()->managedGroups)
+        ]);
+
         return new GroupResource($group);
     }
 
@@ -104,6 +115,12 @@ class GroupController extends Controller
         }
 
         $group->delete();
+
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_UPDATE_EVENT, [
+            'message' => GroupResource::collection($request->user()->managedGroups)
+        ]);
+
         return response(null, Response::HTTP_NO_CONTENT);
     }
 }

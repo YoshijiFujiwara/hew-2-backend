@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use Pusher\Laravel\Facades\Pusher;
 
 /**
  * @group profile プロフィール
@@ -45,6 +46,11 @@ class ProfileController extends Controller
 
         // orm のbootを無視したいから、仕方ない
         DB::table('users')->where('id', $request->user()->id)->update(['unique_id' => $request->unique_id]);
+
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::USER_PROFILE_UPDATE_EVENT, [
+            'message' => new UserResource($request->user())
+        ]);
 
         return new UserResource(User::find($user->id));
     }

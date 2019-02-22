@@ -15,11 +15,19 @@ class Controller extends BaseController
 
     public const USER_UPDATE_EVENT = 'user_update';
 
+    public const USER_PROFILE_UPDATE_EVENT = 'user_update';
+
     public const FRIEND_UPDATE_EVENT = 'friend_update';
+
+    public const DEVICE_TOKEN_UPDATE_EVENT = 'device_token_update';
 
     public const SESSION_UPDATE_EVENT = 'session_update';
 
+    public const SESSION_USER_UPDATE_EVENT = 'session_user_update';
+
     public const GROUP_UPDATE_EVENT = 'group_update';
+
+    public const GROUP_USER_UPDATE_EVENT = 'group_user_update';
 
     public const ATTRIBUTE_UPDATE_EVENT = 'attribute_update';
 
