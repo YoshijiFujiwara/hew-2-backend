@@ -13,7 +13,7 @@ class PushNotificationController extends Controller
     /**
      * push_notification.store_device_token android端末のデバイスIDを保存する
      * @bodyParam device_token string required 端末トークン（ID)
-     * 
+     *
      * @responseFile 201 responses/push_notification.store_device_token.201.json
      * @responseFile 208 responses/push_notification.store_device_token.208.json
      */
