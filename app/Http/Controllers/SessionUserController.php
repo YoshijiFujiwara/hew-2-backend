@@ -177,7 +177,7 @@ class SessionUserController extends Controller
         Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
             'message' => new SessionResource(Session::find($session->id))
         ]);
-        
+
         return response(null, Response::HTTP_NO_CONTENT);
     }
 }

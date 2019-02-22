@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use Pusher\Laravel\Facades\Pusher;
 
 /**
  * @group guest ゲスト
@@ -82,6 +83,11 @@ class SessionController extends Controller
 
         $request->user()->participatedSessions()->where('id', $session->id)->updateExistingPivot($session->id, [
             'join_status' => $request->join_status
+        ]);
+
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
+            'message' => new SessionResource(Session::find($session->id))
         ]);
 
         return new UserResource($session->users()->where('id', $request->user()->id)->first());

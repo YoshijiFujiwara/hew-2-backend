@@ -7,6 +7,7 @@ use App\Http\Resources\DefaultSettingResource;
 use App\Model\DefaultSetting;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Pusher\Laravel\Facades\Pusher;
 
 /**
  * @group default_settings デフォルト設定
@@ -41,7 +42,7 @@ class DefaultSettingController extends Controller
 
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::DEFAULT_SETTING_UPDATE_EVENT, [
-            'message' => DefaultSettingResource::collection($request->user()->managedDefaultSettings())
+            'message' => DefaultSettingResource::collection($request->user()->managedDefaultSettings)
         ]);
 
         return new DefaultSettingResource($request->user()->managedDefaultSettings()->create($request->all()));
@@ -76,7 +77,7 @@ class DefaultSettingController extends Controller
 
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::DEFAULT_SETTING_UPDATE_EVENT, [
-            'message' => DefaultSettingResource::collection($request->user()->managedDefaultSettings())
+            'message' => DefaultSettingResource::collection($request->user()->managedDefaultSettings)
         ]);
 
         return new DefaultSettingResource(DefaultSetting::find($defaultSetting->id));
@@ -95,7 +96,7 @@ class DefaultSettingController extends Controller
 
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::DEFAULT_SETTING_UPDATE_EVENT, [
-            'message' => DefaultSettingResource::collection($request->user()->managedDefaultSettings())
+            'message' => DefaultSettingResource::collection($request->user()->managedDefaultSettings)
         ]);
 
         return response(null, Response::HTTP_NO_CONTENT);

@@ -13,6 +13,7 @@ use App\User;
 use function Composer\Autoload\includeFile;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Pusher\Laravel\Facades\Pusher;
 
 /**
  * @group friends 友達
@@ -164,7 +165,7 @@ class FriendController extends Controller
 
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::FRIEND_UPDATE_EVENT, [
-            'message' => UserResource::collection($request->user->friends)
+            'message' => UserResource::collection($request->user()->friends)
         ]);
 
         return new UserResource($request->user()->friends->where('id', $friend->id)->first());
@@ -197,7 +198,7 @@ class FriendController extends Controller
 
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::FRIEND_UPDATE_EVENT, [
-            'message' => UserResource::collection($request->user->friends)
+            'message' => UserResource::collection($request->user()->friends)
         ]);
 
         return response(['message' => '招待を許可しました'], Response::HTTP_OK);
@@ -229,7 +230,7 @@ class FriendController extends Controller
 
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::FRIEND_UPDATE_EVENT, [
-            'message' => UserResource::collection($request->user->friends)
+            'message' => UserResource::collection($request->user()->friends)
         ]);
 
         return response(['message' => '招待をキャンセルしました'], Response::HTTP_OK);
@@ -249,7 +250,7 @@ class FriendController extends Controller
         });
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::FRIEND_UPDATE_EVENT, [
-            'message' => UserResource::collection($request->user->friends)
+            'message' => UserResource::collection($request->user()->friends)
         ]);
 
         return response(null, Response::HTTP_NO_CONTENT);
@@ -273,7 +274,7 @@ class FriendController extends Controller
         }
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::FRIEND_UPDATE_EVENT, [
-            'message' => UserResource::collection($request->user->friends)
+            'message' => UserResource::collection($request->user()->friends)
         ]);
         return response(['message' => 'ユーザーをブロックしました'], Response::HTTP_OK);
     }
@@ -300,7 +301,7 @@ class FriendController extends Controller
         }
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::FRIEND_UPDATE_EVENT, [
-            'message' => UserResource::collection($request->user->friends)
+            'message' => UserResource::collection($request->user()->friends)
         ]);
         return response(['message' => 'ユーザーをブロックしました'], Response::HTTP_OK);
     }
