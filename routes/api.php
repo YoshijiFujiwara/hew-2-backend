@@ -100,6 +100,11 @@ Route::group([
         Route::get('', 'UserController@show')->name('users.show');
         Route::delete('', 'UserController@destroy')->name('users.destroy');
 
+        Route::prefix('friends')->group(function () {
+            Route::get('', 'UserFriendController@index')->name('users.friends.index');
+
+        });
+
         Route::prefix('groups')->group(function () {
             Route::get('', 'UserGroupController@index')->name('users.groups.index');
 
