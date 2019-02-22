@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\SessionUserResource;
 use App\Http\Resources\UserResource;
+use App\Jobs\PushNotification;
 use App\Model\Group;
 use App\Model\Session;
 use App\User;
@@ -52,7 +53,10 @@ class SessionUserController extends Controller
         $session->users()->attach($request->user_id, $request->all());
 
         // push通知
-        $this->pushNotificationService->notification("{$request->user()->username}さんからセッション {$session->name}に招待されました", User::find($request->user_id)->deviceTokenArray());
+        $this->dispatch(new PushNotification(
+            "{$request->user()->username}さんからセッション {$session->name}に招待されました",
+            User::find($request->user_id)->deviceTokenArray()
+        ));
 
         // ユーザー情報を更新するため、あえて再インスタンス化
         return UserResource::collection(Session::find($session->id)->users);
@@ -80,7 +84,10 @@ class SessionUserController extends Controller
 
         foreach ($newUsers as $newUser) {
             // push通知
-            $this->pushNotificationService->notification("{$request->user()->username}さんからセッション {$session->name}に招待されました", $newUser->deviceTokenArray());
+            $this->dispatch(new PushNotification(
+                "{$request->user()->username}さんからセッション {$session->name}に招待されました",
+                $newUser->deviceTokenArray()
+            ));
         }
 
         // ユーザー情報を更新するため、あえて再インスタンス化
