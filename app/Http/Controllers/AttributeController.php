@@ -101,7 +101,7 @@ class AttributeController extends Controller
         Pusher::trigger(self::ADMIN_CHANNEL, self::ATTRIBUTE_DELETE_EVENT, [
             'message' => new AttributeResource($attribute)
         ]);
-        
+
         return response(null, Response::HTTP_NO_CONTENT);
     }
 }

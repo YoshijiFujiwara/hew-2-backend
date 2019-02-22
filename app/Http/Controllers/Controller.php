@@ -20,4 +20,8 @@ class Controller extends BaseController
     protected const ATTRIBUTE_CREATE_EVENT = 'attribute_create';
     protected const ATTRIBUTE_UPDATE_EVENT = 'attribute_update';
     protected const ATTRIBUTE_DELETE_EVENT = 'attribute_delete';
+
+    protected const DEFAULT_SETTING_CREATE_EVENT = 'default_setting_create';
+    protected const DEFAULT_SETTING_UPDATE_EVENT = 'default_setting_update';
+    protected const DEFAULT_SETTING_DELETE_EVENT = 'default_setting_delete';
 }
