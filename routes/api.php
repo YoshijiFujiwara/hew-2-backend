@@ -126,7 +126,11 @@ Route::group([
         });
     });
 
-    Route::get('test', 'TestController@test')->name('test');
+    Route::group([
+        'prefix' => 'test',
+    ], function () {
+        Route::get('', 'TestController@test')->name('test');
+        Route::post('notification', 'TestController@notification')->name('test.notification');
 
-
+    });
 });
