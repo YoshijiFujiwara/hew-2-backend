@@ -10,4 +10,10 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    protected const ADMIN_CHANNEL = 'admin_channel';
+
+    protected const USER_CREATE_EVENT = 'user_create';
+    protected const USER_UPDATE_EVENT = 'user_update';
+    protected const USER_DELETE_EVENT = 'user_delete';
 }
