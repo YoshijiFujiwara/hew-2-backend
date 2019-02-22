@@ -1,35 +1,53 @@
 <?php
-namespace App\Services;
 
-class PushNotificationService
+namespace App\Jobs;
+
+use Illuminate\Bus\Queueable;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
+
+class PushNotification implements ShouldQueue
 {
-    public function sendNotification()
-    {
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+    protected $title;
+    protected $tokenList;
+
+    /**
+     * Create a new job instance.
+     *
+     * @return void
+     */
+    public function __construct($title, array $tokenList)
+    {
+        $this->title = $title;
+        $this->tokenList = $tokenList;
     }
 
     /**
-     * 通知の送信処理
-     * @param array $tokenList 通知の送信先
-     * @param $title メッセージ
+     * Execute the job.
+     *
+     * @return void
      */
-    public function notification($title, array $tokenList)
+    public function handle()
     {
-        if (empty($tokenList)) {
+        if (empty($this->tokenList)) {
             return true;
         }
 
         $fcmUrl = 'https://fcm.googleapis.com/fcm/send';
 
         $notification = [
-            'title' => $title,
+            'title' => $this->title,
             'sound' => true,
         ];
 
         $extraNotificationData = ["message" => $notification,"moredata" =>'dd'];
 
         $fcmNotification = [
-            'registration_ids' => $tokenList, //multple token array
+            'registration_ids' => $this->tokenList, //multple token array
 //            'to'        => $token, //single token
             'notification' => $notification,
             'data' => $extraNotificationData
