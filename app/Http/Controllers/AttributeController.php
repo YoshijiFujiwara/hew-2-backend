@@ -40,14 +40,12 @@ class AttributeController extends Controller
             return response()->json(['error' => '同じ名前は使用できません'], Response::HTTP_CONFLICT);
         }
 
-        $response = new AttributeResource($request->user()->managedAttributes()->create($request->all()));
-
         // リアルタイム通知
-        Pusher::trigger(self::ADMIN_CHANNEL, self::ATTRIBUTE_CREATE_EVENT, [
-            'message' => $response
+        Pusher::trigger(self::ADMIN_CHANNEL, self::ATTRIBUTE_UPDATE_EVENT, [
+            'message' => AttributeResource::collection($request->user()->managedAttributes)
         ]);
 
-        return $response;
+        return new AttributeResource($request->user()->managedAttributes()->create($request->all()));
     }
 
     /**
@@ -75,15 +73,12 @@ class AttributeController extends Controller
         $attribute->update($request->all());
         // 更新後のものを返す
 
-
-        $response = new AttributeResource(Attribute::find($attribute->id));
-
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::ATTRIBUTE_UPDATE_EVENT, [
-            'message' => $response
+            'message' => AttributeResource::collection($request->user()->managedAttributes)
         ]);
 
-        return $response;
+        return new AttributeResource(Attribute::find($attribute->id));
     }
 
     /**
@@ -98,9 +93,10 @@ class AttributeController extends Controller
         $attribute->delete();
 
         // リアルタイム通知
-        Pusher::trigger(self::ADMIN_CHANNEL, self::ATTRIBUTE_DELETE_EVENT, [
-            'message' => new AttributeResource($attribute)
+        Pusher::trigger(self::ADMIN_CHANNEL, self::ATTRIBUTE_UPDATE_EVENT, [
+            'message' => AttributeResource::collection($request->user()->managedAttributes)
         ]);
+
 
         return response(null, Response::HTTP_NO_CONTENT);
     }

@@ -11,17 +11,17 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    protected const ADMIN_CHANNEL = 'admin_channel';
+    public const ADMIN_CHANNEL = 'admin_channel';
 
-    protected const USER_CREATE_EVENT = 'user_create';
-    protected const USER_UPDATE_EVENT = 'user_update';
-    protected const USER_DELETE_EVENT = 'user_delete';
+    public const USER_UPDATE_EVENT = 'user_update';
 
-    protected const ATTRIBUTE_CREATE_EVENT = 'attribute_create';
-    protected const ATTRIBUTE_UPDATE_EVENT = 'attribute_update';
-    protected const ATTRIBUTE_DELETE_EVENT = 'attribute_delete';
+    public const FRIEND_UPDATE_EVENT = 'friend_update';
 
-    protected const DEFAULT_SETTING_CREATE_EVENT = 'default_setting_create';
-    protected const DEFAULT_SETTING_UPDATE_EVENT = 'default_setting_update';
-    protected const DEFAULT_SETTING_DELETE_EVENT = 'default_setting_delete';
+    public const SESSION_UPDATE_EVENT = 'session_update';
+
+    public const GROUP_UPDATE_EVENT = 'group_update';
+
+    public const ATTRIBUTE_UPDATE_EVENT = 'attribute_update';
+
+    public const DEFAULT_SETTING_UPDATE_EVENT = 'default_setting_update';
 }
