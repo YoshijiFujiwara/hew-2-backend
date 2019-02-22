@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Model\AndroidDeviceToken;
 use App\Model\Attribute;
 use App\Model\DefaultSetting;
 use App\Model\Group;
@@ -212,6 +213,13 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->hasMany(DefaultSetting::class, 'manager_id');
     }
+
+
+    public function androidDeviceTokens()
+    {
+        return $this->hasMany(AndroidDeviceToken::class);
+    }
+
 
     /**
      * ポリシーで使用するメソッド
