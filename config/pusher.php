@@ -40,11 +40,11 @@ return [
     'connections' => [
 
         'main' => [
-            'auth_key' => env('PUSHER_APP_KEY'),
-            'secret' => env('PUSHER_APP_SECRET'),
-            'app_id' => env('PUSHER_APP_ID'),
+            'auth_key' => '7c7e8a09165d3cfe3468',
+            'secret' => '759e34abbab6e5fbf7c8',
+            'app_id' => '720491',
             'options' => [
-                'cluster' => env('PUSHER_APP_CLUSTER'),
+                'cluster' => 'ap1',
                 // 'encryption_master_key' => env('PUSHER_ENCRYPTION_MASTER_KEY'),
             ],
             'host' => null,
