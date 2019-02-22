@@ -253,4 +253,9 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->participatedSessions()->where('id', $session->id)->exists();
     }
+
+    public function deviceTokenArray()
+    {
+        return $this->androidDeviceTokens()->pluck('device_token')->toArray();
+    }
 }

@@ -15,6 +15,10 @@ class PushNotificationService
      */
     public function notification($title, array $tokenList)
     {
+        if (empty($tokenList)) {
+            return true;
+        }
+
         $fcmUrl = 'https://fcm.googleapis.com/fcm/send';
 
         $notification = [
