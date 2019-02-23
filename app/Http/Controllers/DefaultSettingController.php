@@ -89,6 +89,7 @@ class DefaultSettingController extends Controller
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::DEFAULT_SETTING_UPDATE_EVENT, [
             'message' => [
+                'manager_id' => $defaultSetting->manager->id,
                 'default_setting_id' => $defaultSetting->id
             ]
         ]);
@@ -110,6 +111,7 @@ class DefaultSettingController extends Controller
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::DEFAULT_SETTING_DELETE_EVENT, [
             'message' => [
+                'manager_id' => $defaultSetting->manager->id,
                 'default_setting_id' => $defaultSetting->id
             ]
         ]);

@@ -63,6 +63,7 @@ class SessionUserController extends Controller
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
             'message' => [
+                'manager_id' => $session->manager->id,
                 'session_id' => $session->id
             ]
         ]);
@@ -102,6 +103,7 @@ class SessionUserController extends Controller
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
             'message' => [
+                'manager_id' => $session->manager->id,
                 'session_id' => $session->id
             ]
         ]);
@@ -153,6 +155,7 @@ class SessionUserController extends Controller
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
             'message' => [
+                'manager_id' => $session->manager->id,
                 'session_id' => $session->id
             ]
         ]);
@@ -182,6 +185,7 @@ class SessionUserController extends Controller
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
             'message' => [
+                'manager_id' => $session->manager->id,
                 'session_id' => $session->id
             ]
         ]);

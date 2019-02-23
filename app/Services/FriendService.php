@@ -66,6 +66,7 @@ class FriendService
             // リアルタイム通知
             Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::GROUP_UPDATE_EVENT, [
                 'message' => [
+                    'manager_id' => $group->manager->id,
                     'group_id' => $group->id
                 ]
             ]);
@@ -78,6 +79,7 @@ class FriendService
             // リアルタイム通知
             Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::SESSION_UPDATE_EVENT, [
                 'message' => [
+                    'manager_id' => $session->manager->id,
                     'session_id' => $session->id
                 ]
             ]);
@@ -90,6 +92,7 @@ class FriendService
         // リアルタイム通知
         Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_DELETE_EVENT, [
             'message' => [
+                'user_id' => $user->id,
                 'friend_id' => $friend->id
             ]
         ]);

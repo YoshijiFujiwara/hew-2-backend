@@ -29,8 +29,10 @@ class PushNotificationController extends Controller
             $request->user()->androidDeviceTokens()->save($androidDeviceToken);
 
             // リアルタイム通知
-            Pusher::trigger(self::ADMIN_CHANNEL, self::DEVICE_TOKEN_UPDATE_EVENT, [
-                'message' => AndroidDeviceTokenResource::collection($request->user()->androidDeviceTokens)
+            Pusher::trigger(self::ADMIN_CHANNEL, self::DEVICE_TOKEN_CREATE_EVENT, [
+                'message' => [
+                    'device_token_id' => $androidDeviceToken->id
+                ]
             ]);
 
             return new AndroidDeviceTokenResource($androidDeviceToken);
