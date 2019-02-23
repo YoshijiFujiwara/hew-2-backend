@@ -46,8 +46,8 @@ class FriendService
         }
 
         // リアルタイム通知
-        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_UPDATE_EVENT, [
-            'message' => UserResource::collection($user->friends)
+        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_CREATE_EVENT, [
+            'message' => new UserResource($user->waitingFriends->where('id', $friendRequestUser->id)->first())
         ]);
 
         return response(new UserResource($user->waitingFriends->where('id', $friendRequestUser->id)->first()),  Response::HTTP_CREATED);
@@ -60,12 +60,20 @@ class FriendService
                 $user->pivot->deleted_at = now();
                 $user->pivot->save();
             });
+            // リアルタイム通知
+            Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::GROUP_UPDATE_EVENT, [
+                'message' => new GroupResource($group)
+            ]);
         });
         $user->managedSessions->each(function (Session $session) use ($friend) {
             $session->users()->where('id', $friend->id)->get()->each(function (User $user) {
                 $user->pivot->deleted_at = now();
                 $user->pivot->save();
             });
+            // リアルタイム通知
+            Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::SESSION_UPDATE_EVENT, [
+                'message' => new SessionResource($session)
+            ]);
         });
         $user->friends()->where('id', $friend->id)->get()->each(function (User $user) {
             $user->pivot->deleted_at = now();
@@ -73,18 +81,8 @@ class FriendService
         });
 
         // リアルタイム通知
-        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::GROUP_UPDATE_EVENT, [
-            'message' => GroupResource::collection($user->managedGroups)
-        ]);
-
-        // リアルタイム通知
-        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::SESSION_UPDATE_EVENT, [
-            'message' => SessionResource::collection($user->managedSessions)
-        ]);
-
-        // リアルタイム通知
-        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_UPDATE_EVENT, [
-            'message' => UserResource::collection($user->friends)
+        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_DELETE_EVENT, [
+            'message' => new UserResource($user)
         ]);
     }
 }

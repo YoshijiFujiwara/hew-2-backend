@@ -41,12 +41,13 @@ class GroupController extends Controller
 //            return response()->json(['error' => '同じ名前は使用できません'], Response::HTTP_CONFLICT);
 //        }
 
+        $response = new GroupResource($request->user()->managedGroups()->create($request->all()));
         // リアルタイム通知
-        Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_UPDATE_EVENT, [
-            'message' => GroupResource::collection($request->user()->managedGroups)
+        Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_CREATE_EVENT, [
+            'message' => $response
         ]);
 
-        return new GroupResource($request->user()->managedGroups()->create($request->all()));
+        return $response;
     }
 
     /**
@@ -91,12 +92,13 @@ class GroupController extends Controller
 
         $group->update($request->all());
 
+        $response = new GroupResource(Group::find($group->id));
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_UPDATE_EVENT, [
-            'message' => GroupResource::collection($request->user()->managedGroups)
+            'message' => $response
         ]);
 
-        return new GroupResource($group);
+        return $response;
     }
 
     /**
@@ -117,8 +119,8 @@ class GroupController extends Controller
         $group->delete();
 
         // リアルタイム通知
-        Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_UPDATE_EVENT, [
-            'message' => GroupResource::collection($request->user()->managedGroups)
+        Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_DELETE_EVENT, [
+            'message' => new GroupResource($group)
         ]);
 
         return response(null, Response::HTTP_NO_CONTENT);
