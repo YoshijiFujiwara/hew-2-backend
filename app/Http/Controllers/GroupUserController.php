@@ -46,7 +46,7 @@ class GroupUserController extends Controller
         $group->users()->attach($request->user_id);
 
         // リアルタイム通知
-        Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_USER_UPDATE_EVENT, [
+        Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_UPDATE_EVENT, [
             'message' => new GroupResource(Group::find($group->id))
         ]);
 
@@ -90,7 +90,7 @@ class GroupUserController extends Controller
         });
 
         // リアルタイム通知
-        Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_USER_UPDATE_EVENT, [
+        Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_UPDATE_EVENT, [
             'message' => new GroupResource(Group::find($group->id))
         ]);
 
