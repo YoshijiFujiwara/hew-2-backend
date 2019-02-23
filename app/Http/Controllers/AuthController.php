@@ -90,8 +90,8 @@ class AuthController extends Controller
         }
 
         // リアルタイム通知
-        Pusher::trigger(self::ADMIN_CHANNEL, self::USER_UPDATE_EVENT, [
-            'message' => UserResource::collection(User::all())
+        Pusher::trigger(self::ADMIN_CHANNEL, self::USER_CREATE_EVENT, [
+            'message' => new UserResource(User::where('email', $request->email)->first())
         ]);
 
         return $this->respondWithToken($token);
@@ -107,7 +107,7 @@ class AuthController extends Controller
 
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::USER_UPDATE_EVENT, [
-            'message' => UserResource::collection(User::all())
+            'message' => new UserResource(User::where('email', $request->email)->first())
         ]);
 
         return $this->respondWithToken($token);
