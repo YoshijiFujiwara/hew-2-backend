@@ -45,7 +45,7 @@ class SessionController extends Controller
         $response = new SessionResource($newSession);
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_CREATE_EVENT, [
-            'message' => $response
+            'message' => ''
         ]);
 
         return $response;
@@ -96,7 +96,9 @@ class SessionController extends Controller
         $response = new SessionResource(Session::find($session->id));
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
-            'message' => $response
+            'message' => [
+                'session_id' => $session->id
+            ]
         ]);
 
         return $response;
@@ -114,7 +116,9 @@ class SessionController extends Controller
 
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_DELETE_EVENT, [
-            'message' => new SessionResource($session)
+            'message' => [
+                'session_id' => $session->id
+            ]
         ]);
 
         return response(null, Response::HTTP_NO_CONTENT);

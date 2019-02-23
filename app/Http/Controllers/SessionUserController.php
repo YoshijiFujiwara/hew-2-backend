@@ -62,7 +62,9 @@ class SessionUserController extends Controller
 
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
-            'message' => new SessionResource(Session::find($session->id))
+            'message' => [
+                'session_id' => $session->id
+            ]
         ]);
 
         // ユーザー情報を更新するため、あえて再インスタンス化
@@ -99,7 +101,9 @@ class SessionUserController extends Controller
 
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
-            'message' => new SessionResource(Session::find($session->id))
+            'message' => [
+                'session_id' => $session->id
+            ]
         ]);
 
         // ユーザー情報を更新するため、あえて再インスタンス化
@@ -148,7 +152,9 @@ class SessionUserController extends Controller
 
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
-            'message' => new SessionResource(Session::find($session->id))
+            'message' => [
+                'session_id' => $session->id
+            ]
         ]);
 
         return new UserResource($session->users->where('id', $user->id)->first());
@@ -175,7 +181,9 @@ class SessionUserController extends Controller
 
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
-            'message' => new SessionResource(Session::find($session->id))
+            'message' => [
+                'session_id' => $session->id
+            ]
         ]);
 
         return response(null, Response::HTTP_NO_CONTENT);

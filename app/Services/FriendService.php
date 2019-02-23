@@ -47,7 +47,10 @@ class FriendService
 
         // リアルタイム通知
         Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_CREATE_EVENT, [
-            'message' => new UserResource($user->waitingFriends->where('id', $friendRequestUser->id)->first())
+            'message' => [
+                'user_id' => $user->id,
+                'friend_id' => $friendRequestUser->id
+            ]
         ]);
 
         return response(new UserResource($user->waitingFriends->where('id', $friendRequestUser->id)->first()),  Response::HTTP_CREATED);
@@ -62,7 +65,9 @@ class FriendService
             });
             // リアルタイム通知
             Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::GROUP_UPDATE_EVENT, [
-                'message' => new GroupResource($group)
+                'message' => [
+                    'group_id' => $group->id
+                ]
             ]);
         });
         $user->managedSessions->each(function (Session $session) use ($friend) {
@@ -72,7 +77,9 @@ class FriendService
             });
             // リアルタイム通知
             Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::SESSION_UPDATE_EVENT, [
-                'message' => new SessionResource($session)
+                'message' => [
+                    'session_id' => $session->id
+                ]
             ]);
         });
         $user->friends()->where('id', $friend->id)->get()->each(function (User $user) {
@@ -82,7 +89,9 @@ class FriendService
 
         // リアルタイム通知
         Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_DELETE_EVENT, [
-            'message' => new UserResource($user)
+            'message' => [
+                'friend_id' => $friend->id
+            ]
         ]);
     }
 }

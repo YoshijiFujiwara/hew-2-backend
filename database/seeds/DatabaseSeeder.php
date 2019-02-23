@@ -69,8 +69,22 @@ class DatabaseSeeder extends Seeder
                     }
                 });
 
+
+            if (rand(0, 10)) {
+                $currentLocationFlag = true;
+                $longitude = null;
+                $latitude = null;
+            } else {
+                $currentLocationFlag = false;
+                $longitude = 140.00898606;
+                $latitude = 35.71727401;
+            }
+
             $defaultSetting = new \App\Model\DefaultSetting;
             $defaultSetting->name = str_random(7);
+            $defaultSetting->current_location_flag = $currentLocationFlag;
+            $defaultSetting->longitude = $longitude;
+            $defaultSetting->latitude = $latitude;
             $defaultSetting->timer =  \Carbon\Carbon::createFromTime(1,0,0);
             $defaultSetting->group()->associate($u->managedGroups()->get()->random());
             $u->managedDefaultSettings()->save($defaultSetting);

@@ -19,17 +19,10 @@
             "type": "->"
         },
         {
-            "file": "/var/www/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php",
-            "line": 68,
-            "function": "render",
-            "class": "App\\Exceptions\\Handler",
-            "type": "->"
-        },
-        {
             "file": "/var/www/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php",
             "line": 83,
             "function": "render",
-            "class": "NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler",
+            "class": "App\\Exceptions\\Handler",
             "type": "->"
         },
         {

@@ -17,9 +17,12 @@ class DefaultSettingResource extends JsonResource
         return [
             'id' => $this->id,
             'manager' => new UserResource($this->manager),
-            'group' => new GroupResource($this->group),
             'name' => $this->name,
+            'current_location_flag' => $this->current_location_flag,
+            'longitude' => $this->longitude,
+            'latitude' => $this->latitude,
             'timer' => $this->timer,
+            'group' => new GroupResource($this->group),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'deleted_at' => $this->deleted_at,

@@ -28,6 +28,9 @@ class DefaultSettingController extends Controller
      * default_settings.store 新規デフォルト設定を作成する
      *
      * @bodyParam name string required 設定名
+     * @bodyParam current_location_flag boolean 現在地からなら、1を、そうでないなら0を入れる(デフォルトでは１が入る)
+     * @bodyParam latitude string  緯度（'35.71727401'）みたいな数字
+     * @bodyParam longitude string  経度（'140.00898606'）みたいな数字
      * @bodyParam timer integer required 始まるまでの時間'01:00:00'形式
      * @bodyParam group_id integer required この設定を適用するグループid
      *
@@ -40,13 +43,14 @@ class DefaultSettingController extends Controller
 //            return response()->json(['error' => '同じ名前は使用できません'], Response::HTTP_CONFLICT);
 //        }
 
-        $response = new DefaultSettingResource($request->user()->managedDefaultSettings()->create($request->all()));
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::DEFAULT_SETTING_CREATE_EVENT, [
-            'message' => $response
+            'message' => [
+                'group_id' => $request->group_id
+            ]
         ]);
 
-        return $response;
+        return new DefaultSettingResource($request->user()->managedDefaultSettings()->create($request->all()));
     }
 
     /**
@@ -66,6 +70,9 @@ class DefaultSettingController extends Controller
      *
      * @queryParam default_setting required 設定のid
      * @bodyParam name string required 設定名
+     * @bodyParam current_location_flag boolean 現在地からなら、1を、そうでないなら0を入れる
+     * @bodyParam latitude string  緯度（'35.71727401'）みたいな数字
+     * @bodyParam longitude string  経度（'140.00898606'）みたいな数字
      * @bodyParam timer integer required 始まるまでの時間'01:00:00'形式
      * @bodyParam group_id integer required この設定を適用するグループid
      *
@@ -80,7 +87,9 @@ class DefaultSettingController extends Controller
 
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::DEFAULT_SETTING_UPDATE_EVENT, [
-            'message' => $response
+            'message' => [
+                'default_setting_id' => $defaultSetting->id
+            ]
         ]);
 
         return $response;
@@ -99,7 +108,9 @@ class DefaultSettingController extends Controller
 
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::DEFAULT_SETTING_DELETE_EVENT, [
-            'message' => new DefaultSettingResource($defaultSetting)
+            'message' => [
+                'default_setting_id' => $defaultSetting->id
+            ]
         ]);
 
         return response(null, Response::HTTP_NO_CONTENT);

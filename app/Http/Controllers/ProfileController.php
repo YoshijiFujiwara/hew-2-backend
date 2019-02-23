@@ -50,7 +50,9 @@ class ProfileController extends Controller
         $response = new UserResource(User::find($user->id));
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::USER_UPDATE_EVENT, [
-            'message' => $response
+            'message' => [
+                'user_id' => $request->user()->id
+            ]
         ]);
 
         return $response;

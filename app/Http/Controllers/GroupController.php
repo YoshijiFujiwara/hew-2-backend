@@ -44,7 +44,7 @@ class GroupController extends Controller
         $response = new GroupResource($request->user()->managedGroups()->create($request->all()));
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_CREATE_EVENT, [
-            'message' => $response
+            'message' => ''
         ]);
 
         return $response;
@@ -95,7 +95,9 @@ class GroupController extends Controller
         $response = new GroupResource(Group::find($group->id));
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_UPDATE_EVENT, [
-            'message' => $response
+            'message' => [
+                'group_id' => $group->id
+            ]
         ]);
 
         return $response;
@@ -120,7 +122,9 @@ class GroupController extends Controller
 
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_DELETE_EVENT, [
-            'message' => new GroupResource($group)
+            'message' => [
+                'group_id' => $group->id
+            ]
         ]);
 
         return response(null, Response::HTTP_NO_CONTENT);
