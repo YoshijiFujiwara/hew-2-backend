@@ -6,6 +6,7 @@ use App\Jobs\PushNotification;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
+use Pusher\Laravel\Facades\Pusher;
 
 class TestController extends Controller
 {
@@ -14,5 +15,10 @@ class TestController extends Controller
         $this->dispatch(new PushNotification($request->sendMessage, [$request->deviceToken]));
 
         return response()->json(null, Response::HTTP_OK);
+    }
+
+    public function realtime()
+    {
+        Pusher::trigger('my-channel', 'my-event', ['message' => 'sssss']);
     }
 }

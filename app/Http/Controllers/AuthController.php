@@ -10,6 +10,7 @@ use http\Env\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\UserRegisterRequest as AdminUserRegister;
+use Pusher\Laravel\Facades\Pusher;
 
 /**
  * @group auth 認証
@@ -88,6 +89,11 @@ class AuthController extends Controller
             return abort(401);
         }
 
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::USER_CREATE_EVENT, [
+            'message' => new UserResource(User::where('email', $request->email)->first())
+        ]);
+
         return $this->respondWithToken($token);
     }
 
@@ -98,6 +104,11 @@ class AuthController extends Controller
         if (! $token = auth()->attempt($request->only(['email', 'password']))) {
             return abort(401);
         }
+
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::USER_UPDATE_EVENT, [
+            'message' => new UserResource(User::where('email', $request->email)->first())
+        ]);
 
         return $this->respondWithToken($token);
     }

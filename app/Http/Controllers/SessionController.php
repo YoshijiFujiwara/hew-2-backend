@@ -9,6 +9,7 @@ use App\Model\Session;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Pusher\Laravel\Facades\Pusher;
 
 /**
  * @group session イベントセッション
@@ -41,7 +42,13 @@ class SessionController extends Controller
     {
         $newSession = $request->user()->managedSessions()->create($request->all());
 
-        return new SessionResource($newSession);
+        $response = new SessionResource($newSession);
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_CREATE_EVENT, [
+            'message' => $response
+        ]);
+
+        return $response;
     }
 
     /**
@@ -85,7 +92,14 @@ class SessionController extends Controller
     public function update(Request $request, Session $session)
     {
         $session->update($request->all());
-        return new SessionResource($session);
+
+        $response = new SessionResource(Session::find($session->id));
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
+            'message' => $response
+        ]);
+
+        return $response;
     }
 
     /**
@@ -94,9 +108,15 @@ class SessionController extends Controller
      *
      * @responseFile 204 responses/sessions.destroy.204.json
      */
-    public function destroy(Session $session)
+    public function destroy(Request $request, Session $session)
     {
         $session->delete();
+
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_DELETE_EVENT, [
+            'message' => new SessionResource($session)
+        ]);
+
         return response(null, Response::HTTP_NO_CONTENT);
     }
 }

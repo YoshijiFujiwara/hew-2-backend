@@ -7,6 +7,7 @@ use App\Http\Resources\AndroidDeviceTokenResource;
 use App\Model\AndroidDeviceToken;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Pusher\Laravel\Facades\Pusher;
 
 class PushNotificationController extends Controller
 {
@@ -26,6 +27,11 @@ class PushNotificationController extends Controller
             $androidDeviceToken->save();
 
             $request->user()->androidDeviceTokens()->save($androidDeviceToken);
+
+            // リアルタイム通知
+            Pusher::trigger(self::ADMIN_CHANNEL, self::DEVICE_TOKEN_UPDATE_EVENT, [
+                'message' => AndroidDeviceTokenResource::collection($request->user()->androidDeviceTokens)
+            ]);
 
             return new AndroidDeviceTokenResource($androidDeviceToken);
 

@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\GroupResource;
 use App\Http\Resources\UserResource;
 use App\Model\Group;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Pusher\Laravel\Facades\Pusher;
 
 /**
  * @group groups.users グループのユーザー管理
@@ -42,6 +44,11 @@ class GroupUserController extends Controller
         }
 
         $group->users()->attach($request->user_id);
+
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_UPDATE_EVENT, [
+            'message' => new GroupResource(Group::find($group->id))
+        ]);
 
         return UserResource::collection($group->users);
     }
@@ -81,6 +88,12 @@ class GroupUserController extends Controller
             $user->pivot->deleted_at = now();
             $user->pivot->save();
         });
+
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_UPDATE_EVENT, [
+            'message' => new GroupResource(Group::find($group->id))
+        ]);
+
         return response(null, Response::HTTP_NO_CONTENT);
     }
 }

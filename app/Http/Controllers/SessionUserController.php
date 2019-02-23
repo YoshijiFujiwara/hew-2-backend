@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\SessionResource;
 use App\Http\Resources\SessionUserResource;
 use App\Http\Resources\UserResource;
 use App\Jobs\PushNotification;
@@ -11,6 +12,7 @@ use App\User;
 use GPBMetadata\Google\Api\Log;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Pusher\Laravel\Facades\Pusher;
 
 /**
  * @group sessions.users セッションのユーザー管理
@@ -58,6 +60,11 @@ class SessionUserController extends Controller
             User::find($request->user_id)->deviceTokenArray()
         ));
 
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
+            'message' => new SessionResource(Session::find($session->id))
+        ]);
+
         // ユーザー情報を更新するため、あえて再インスタンス化
         return UserResource::collection(Session::find($session->id)->users);
     }
@@ -89,6 +96,11 @@ class SessionUserController extends Controller
                 $newUser->deviceTokenArray()
             ));
         }
+
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
+            'message' => new SessionResource(Session::find($session->id))
+        ]);
 
         // ユーザー情報を更新するため、あえて再インスタンス化
         return UserResource::collection(Session::find($session->id)->users);
@@ -134,6 +146,11 @@ class SessionUserController extends Controller
 
         $session->users()->updateExistingPivot($user->id, $request->all());
 
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
+            'message' => new SessionResource(Session::find($session->id))
+        ]);
+
         return new UserResource($session->users->where('id', $user->id)->first());
     }
 
@@ -155,6 +172,12 @@ class SessionUserController extends Controller
             $user->pivot->deleted_at = now();
             $user->pivot->save();
         });
+
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
+            'message' => new SessionResource(Session::find($session->id))
+        ]);
+
         return response(null, Response::HTTP_NO_CONTENT);
     }
 }

@@ -7,6 +7,7 @@ use App\Http\Resources\DefaultSettingResource;
 use App\Model\DefaultSetting;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Pusher\Laravel\Facades\Pusher;
 
 /**
  * @group default_settings デフォルト設定
@@ -39,7 +40,13 @@ class DefaultSettingController extends Controller
 //            return response()->json(['error' => '同じ名前は使用できません'], Response::HTTP_CONFLICT);
 //        }
 
-        return new DefaultSettingResource($request->user()->managedDefaultSettings()->create($request->all()));
+        $response = new DefaultSettingResource($request->user()->managedDefaultSettings()->create($request->all()));
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::DEFAULT_SETTING_CREATE_EVENT, [
+            'message' => $response
+        ]);
+
+        return $response;
     }
 
     /**
@@ -68,7 +75,15 @@ class DefaultSettingController extends Controller
     {
         $defaultSetting->update($request->all());
         // 更新後のものを返す
-        return new DefaultSettingResource(DefaultSetting::find($defaultSetting->id));
+
+        $response = new DefaultSettingResource(DefaultSetting::find($defaultSetting->id));
+
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::DEFAULT_SETTING_UPDATE_EVENT, [
+            'message' => $response
+        ]);
+
+        return $response;
     }
 
     /**
@@ -81,6 +96,12 @@ class DefaultSettingController extends Controller
     public function destroy(Request $request, DefaultSetting $defaultSetting)
     {
         $defaultSetting->delete();
+
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::DEFAULT_SETTING_DELETE_EVENT, [
+            'message' => new DefaultSettingResource($defaultSetting)
+        ]);
+
         return response(null, Response::HTTP_NO_CONTENT);
     }
 }
