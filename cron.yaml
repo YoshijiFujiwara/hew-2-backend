@@ -1,0 +1,5 @@
+cron:
+- description: "laravel queue worker"
+  url: /tasks/queue
+  schedule: every 1 mins synchronized
+  target: laravelv2
