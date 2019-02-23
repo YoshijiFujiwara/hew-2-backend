@@ -40,8 +40,7 @@ return [
     'connections' => [
 
         'main' => [
-//            'auth_key' => '7c7e8a09165d3cfe3468',
-            'auth_key' => '7c7e8a09165d3cfe3468hogehoge',
+            'auth_key' => '7c7e8a09165d3cfe3468',
             'secret' => '759e34abbab6e5fbf7c8',
             'app_id' => '720491',
             'options' => [
