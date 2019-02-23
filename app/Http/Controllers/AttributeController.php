@@ -42,7 +42,9 @@ class AttributeController extends Controller
 
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::ATTRIBUTE_CREATE_EVENT, [
-            'message' => ''
+            'message' => [
+                'manager_id' => $request->user()->id
+            ]
         ]);
 
         return new AttributeResource($request->user()->managedAttributes()->create($request->all()));

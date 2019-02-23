@@ -91,7 +91,7 @@ class AuthController extends Controller
 
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::USER_CREATE_EVENT, [
-            'message' => new UserResource(User::where('email', $request->email)->first())
+            'message' => ''
         ]);
 
         return $this->respondWithToken($token);

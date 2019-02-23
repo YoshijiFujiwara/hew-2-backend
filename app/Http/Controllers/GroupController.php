@@ -44,7 +44,9 @@ class GroupController extends Controller
         $response = new GroupResource($request->user()->managedGroups()->create($request->all()));
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_CREATE_EVENT, [
-            'message' => ''
+            'message' => [
+                'manager_id' => $request->user()->id
+            ]
         ]);
 
         return $response;

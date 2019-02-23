@@ -46,6 +46,7 @@ class DefaultSettingController extends Controller
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::DEFAULT_SETTING_CREATE_EVENT, [
             'message' => [
+                'manager_id' => $request->user()->id,
                 'group_id' => $request->group_id
             ]
         ]);

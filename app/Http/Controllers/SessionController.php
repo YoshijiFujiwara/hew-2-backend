@@ -45,7 +45,9 @@ class SessionController extends Controller
         $response = new SessionResource($newSession);
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_CREATE_EVENT, [
-            'message' => ''
+            'message' => [
+                'manager_id' => $request->user()->id
+            ]
         ]);
 
         return $response;
