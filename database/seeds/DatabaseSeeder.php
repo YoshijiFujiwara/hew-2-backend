@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
             foreach (\App\User::where('id', '<>', $u->id)->get()->random(25) as $friend) {
                 $permitted = false;
                 $random = rand(1, 15);
-                if ($random > 5) {
+                if ($random > 7) {
                     $permitted = true;
                 } elseif ($random > 2) {
                     $permitted = null;
