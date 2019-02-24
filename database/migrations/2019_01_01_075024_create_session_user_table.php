@@ -20,6 +20,7 @@ class CreateSessionUserTable extends Migration
             $table->enum('join_status', ['allow', 'deny', 'wait'])->default('wait');
             $table->boolean('paid')->default(false);
             $table->integer('plus_minus')->nullable()->comment('加減算');
+            $table->string('attribute_name')->nullable()->comment('このセッションにおける、この人の属性名。セッション追加時に、フレンドに属性がついていた場合、その名前をコピペしてくる');
             $table->integer('budget')->nullable()->comment('この人の支払い予定額');
             $table->integer('budget_actual')->nullable()->comment('この人の実際の支払い金額');
             $table->softDeletes();

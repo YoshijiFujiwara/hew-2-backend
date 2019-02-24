@@ -36,7 +36,6 @@ class SessionUserController extends Controller
      * @bodyParam user_id string required 追加するユーザーのID
      * @bodyParam join_status string 参加状況のステータス['allow', 'wait', 'deny'] デフォルトでは wait
      * @bodyParam paid integer  支払いしたか
-     * @bodyParam plus_minus integer 加減算
      * @bodyParam budget integer 支払い予定額
      * @bodyParam budget_actual integer 支払い確定金額
      *
@@ -52,7 +51,11 @@ class SessionUserController extends Controller
             return response()->json(['error' => 'すでにそのグループに登録されています'], Response::HTTP_CONFLICT);
         }
 
-        $session->users()->attach($request->user_id, $request->all());
+
+        $session->users()->attach($request->user_id, array_merge($request->all(), [
+            'attribute_name' => $request->user()->getFriendAttributeName($request->user_id),
+            'plus_minus' => $request->user()->getFriendAttributePlusMinus($request->user_id)
+        ]));
 
         // push通知
         $this->dispatch(new PushNotification(
@@ -90,7 +93,12 @@ class SessionUserController extends Controller
             return response()->json(['message' => 'そのグループのメンバーは全員、そのsessionに招待済みです'], Response::HTTP_CONFLICT);
         }
 
-        $session->users()->attach($newUsers);
+        foreach ($newUsers as $newUser) {
+            $session->users()->attach($newUser->id, [
+                'attribute_name' => $request->user()->getFriendAttributeName($newUser->id),
+                'plus_minus' => $request->user()->getFriendAttributePlusMinus($newUser->id)
+            ]);
+        }
 
         foreach ($newUsers as $newUser) {
             // push通知

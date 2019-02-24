@@ -258,4 +258,29 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->androidDeviceTokens()->pluck('device_token')->toArray();
     }
+
+
+    /**
+     * 関数
+     */
+
+    // 特定のfriendの属性名を取得する（セッションにuserを追加するときに使用する）
+    public function getFriendAttributeName($friendId)
+    {
+        $attributeId = $this->friends->where('id', $friendId)->first()->pivot->attribute_id;
+        if (!empty($attributeId)) {
+            return $this->managedAttributes()->where('id', $attributeId)->first()->name;
+        }
+        return '';
+    }
+
+    // 特定のfriendの属性名を取得する（セッションにuserを追加するときに使用する）
+    public function getFriendAttributePlusMinus($friendId)
+    {
+        $attributeId = $this->friends->where('id', $friendId)->first()->pivot->attribute_id;
+        if (!empty($attributeId)) {
+            return $this->managedAttributes()->where('id', $attributeId)->first()->plus_minus;
+        }
+        return 0;
+    }
 }
