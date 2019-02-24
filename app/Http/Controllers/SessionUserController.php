@@ -51,7 +51,6 @@ class SessionUserController extends Controller
             return response()->json(['error' => 'すでにそのグループに登録されています'], Response::HTTP_CONFLICT);
         }
 
-
         $session->users()->attach($request->user_id, array_merge($request->all(), [
             'attribute_name' => $request->user()->getFriendAttributeName($request->user_id),
             'plus_minus' => $request->user()->getFriendAttributePlusMinus($request->user_id)

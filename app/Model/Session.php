@@ -37,7 +37,7 @@ class Session extends Model
     {
         return $this->belongsToMany(User::class)
             ->wherePivot('deleted_at', null)
-            ->withPivot('join_status', 'paid', 'plus_minus', 'deleted_at');
+            ->withPivot('join_status', 'paid', 'attribute_name', 'plus_minus', 'deleted_at');
     }
 
     public function allowUsers()
