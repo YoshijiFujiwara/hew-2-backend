@@ -20,15 +20,11 @@ class DatabaseSeeder extends Seeder
 
             foreach (\App\User::where('id', '<>', $u->id)->get()->random(25) as $friend) {
                 $permitted = false;
-                switch (rand(1,3)) {
-                    case 1:
-                        $permitted = null;
-                        break;
-                    case 2:
-                        $permitted = true;
-                        break;
-                    default:
-                        break;
+                $random = rand(1, 15);
+                if ($random > 5) {
+                    $permitted = true;
+                } elseif ($random > 2) {
+                    $permitted = null;
                 }
                 $u->friends()->attach($friend, [
                     'attribute_id' => $u->managedAttributes->random()->id,
