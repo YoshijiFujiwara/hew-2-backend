@@ -134,7 +134,6 @@ class SessionUserController extends Controller
      * sessions.users.update セッションの中のユーザーのステータスなどを更新する
      * @queryParam session required セッションid
      * @queryParam user required セッションに属するユーザーのid
-     * @bodyParam user_id string 追加するユーザーのID
      * @bodyParam join_status integer 参加状況のステータス
      * @bodyParam paid integer  支払いしたか
      * @bodyParam plus_minus integer 加減算
@@ -161,6 +160,14 @@ class SessionUserController extends Controller
         ]);
 
         return new UserResource($session->users->where('id', $user->id)->first());
+    }
+
+    /**
+     * sessions.users.switch_paid 指定したセッションのuserの支払い状況を反転する
+     */
+    public function switchPaid()
+    {
+
     }
 
     /**
