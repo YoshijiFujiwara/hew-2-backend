@@ -909,7 +909,7 @@ fetch(url, {
 ```bash
 curl -X POST "http://localhost/api/attributes" \
     -H "Content-Type: application/json" \
-    -d '{"name":"rhmHJscYW0zU1wwK","plus_minus":9}'
+    -d '{"name":"VEHXXvJeieuZ4kPa","plus_minus":8}'
 
 ```
 
@@ -922,8 +922,8 @@ let headers = {
 }
 
 let body = {
-    "name": "rhmHJscYW0zU1wwK",
-    "plus_minus": 9
+    "name": "VEHXXvJeieuZ4kPa",
+    "plus_minus": 8
 }
 
 fetch(url, {
@@ -1010,7 +1010,7 @@ curl -X GET -G "http://localhost/api/attributes/{attribute}"
 const url = new URL("http://localhost/api/attributes/{attribute}");
 
     let params = {
-            "attribute": "EbaTlZ0Hw5YckTae",
+            "attribute": "LWs3mCA5zUthEPyg",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -1089,7 +1089,7 @@ Parameter | Status | Description
 ```bash
 curl -X PUT "http://localhost/api/attributes/{attribute}" \
     -H "Content-Type: application/json" \
-    -d '{"name":"XLWzOOIwczgtZ7wl","plus_minus":17}'
+    -d '{"name":"gqxFkES8zmStPFHS","plus_minus":8}'
 
 ```
 
@@ -1097,7 +1097,7 @@ curl -X PUT "http://localhost/api/attributes/{attribute}" \
 const url = new URL("http://localhost/api/attributes/{attribute}");
 
     let params = {
-            "attribute": "RXhCKUlkMPQ6FdtQ",
+            "attribute": "JGcQdqpEmG2FTfc2",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -1107,8 +1107,8 @@ let headers = {
 }
 
 let body = {
-    "name": "XLWzOOIwczgtZ7wl",
-    "plus_minus": 17
+    "name": "gqxFkES8zmStPFHS",
+    "plus_minus": 8
 }
 
 fetch(url, {
@@ -1195,7 +1195,7 @@ curl -X DELETE "http://localhost/api/attributes/{attribute}"
 const url = new URL("http://localhost/api/attributes/{attribute}");
 
     let params = {
-            "attribute": "5EmJomjBTzLnJ3hd",
+            "attribute": "8cOvstBC7qLkv1JN",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -1238,7 +1238,7 @@ Parameter | Status | Description
 ```bash
 curl -X POST "http://localhost/api/auth/register" \
     -H "Content-Type: application/json" \
-    -d '{"email":"CZzrLNWJ6ZU6YYjB","username":"xANmIu2KY9FwqT4Y","password":"ZMInhS5541Z11UlK"}'
+    -d '{"email":"NWkqagMTR2GuKtDC","username":"4ZfRrW8dd5134X5S","password":"liP6fnZ9ODl3Jdim"}'
 
 ```
 
@@ -1251,9 +1251,9 @@ let headers = {
 }
 
 let body = {
-    "email": "CZzrLNWJ6ZU6YYjB",
-    "username": "xANmIu2KY9FwqT4Y",
-    "password": "ZMInhS5541Z11UlK"
+    "email": "NWkqagMTR2GuKtDC",
+    "username": "4ZfRrW8dd5134X5S",
+    "password": "liP6fnZ9ODl3Jdim"
 }
 
 fetch(url, {
@@ -1308,7 +1308,7 @@ Parameter | Type | Status | Description
 ```bash
 curl -X POST "http://localhost/api/auth/login" \
     -H "Content-Type: application/json" \
-    -d '{"email":"P4NnkXOxV4puy5c5","password":"uKjg8FQNKj7tsw7L"}'
+    -d '{"email":"LvRikeUEPRzHs0yK","password":"lbF0UknIuRcbnBHE"}'
 
 ```
 
@@ -1321,8 +1321,8 @@ let headers = {
 }
 
 let body = {
-    "email": "P4NnkXOxV4puy5c5",
-    "password": "uKjg8FQNKj7tsw7L"
+    "email": "LvRikeUEPRzHs0yK",
+    "password": "lbF0UknIuRcbnBHE"
 }
 
 fetch(url, {
@@ -1539,7 +1539,7 @@ fetch(url, {
 ```bash
 curl -X POST "http://localhost/api/admin/auth/login" \
     -H "Content-Type: application/json" \
-    -d '{"email":"0cKJPHoEhW8jOhzM","password":"2o6EzCAwYrDQKih3"}'
+    -d '{"email":"tSCoVfEdQn1L42lc","password":"DAzfqh9vhWFokoDR"}'
 
 ```
 
@@ -1552,8 +1552,8 @@ let headers = {
 }
 
 let body = {
-    "email": "0cKJPHoEhW8jOhzM",
-    "password": "2o6EzCAwYrDQKih3"
+    "email": "tSCoVfEdQn1L42lc",
+    "password": "DAzfqh9vhWFokoDR"
 }
 
 fetch(url, {
@@ -1779,7 +1779,7 @@ fetch(url, {
 ```bash
 curl -X POST "http://localhost/api/default_settings" \
     -H "Content-Type: application/json" \
-    -d '{"name":"iEdbEamSH6XPiLUH","current_location_flag":false,"latitude":"pBwUf5Zx5e43cjTm","longitude":"oS9GxC0k0TCq62U1","timer":3,"group_id":13}'
+    -d '{"name":"i0gXAZgbmPAsbznJ","current_location_flag":false,"latitude":"F7oYnfhgUZPgLfiS","longitude":"ugb372CCw6vWR3IQ","timer":3,"group_id":16}'
 
 ```
 
@@ -1792,12 +1792,12 @@ let headers = {
 }
 
 let body = {
-    "name": "iEdbEamSH6XPiLUH",
+    "name": "i0gXAZgbmPAsbznJ",
     "current_location_flag": false,
-    "latitude": "pBwUf5Zx5e43cjTm",
-    "longitude": "oS9GxC0k0TCq62U1",
+    "latitude": "F7oYnfhgUZPgLfiS",
+    "longitude": "ugb372CCw6vWR3IQ",
     "timer": 3,
-    "group_id": 13
+    "group_id": 16
 }
 
 fetch(url, {
@@ -1981,7 +1981,7 @@ curl -X GET -G "http://localhost/api/default_settings/{default_setting}"
 const url = new URL("http://localhost/api/default_settings/{default_setting}");
 
     let params = {
-            "default_setting": "V55YUxhgz0YgwLXc",
+            "default_setting": "QvG7HdJPkx687QKv",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -2160,7 +2160,7 @@ Parameter | Status | Description
 ```bash
 curl -X PUT "http://localhost/api/default_settings/{default_setting}" \
     -H "Content-Type: application/json" \
-    -d '{"name":"NN1ZDGtCPMw4nCCt","current_location_flag":false,"latitude":"58d2ZHC85Ce6vXYj","longitude":"JlV7XPNN0uxMqVfa","timer":10,"group_id":15}'
+    -d '{"name":"gxIxE4cEjFNNPJZe","current_location_flag":true,"latitude":"us1dqC0dGOhzL8AZ","longitude":"dR6SxzHykvox6j9g","timer":1,"group_id":15}'
 
 ```
 
@@ -2168,7 +2168,7 @@ curl -X PUT "http://localhost/api/default_settings/{default_setting}" \
 const url = new URL("http://localhost/api/default_settings/{default_setting}");
 
     let params = {
-            "default_setting": "pd89mOx0o8IG6WSZ",
+            "default_setting": "H4aYFrTOfxPjWZnm",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -2178,11 +2178,11 @@ let headers = {
 }
 
 let body = {
-    "name": "NN1ZDGtCPMw4nCCt",
-    "current_location_flag": false,
-    "latitude": "58d2ZHC85Ce6vXYj",
-    "longitude": "JlV7XPNN0uxMqVfa",
-    "timer": 10,
+    "name": "gxIxE4cEjFNNPJZe",
+    "current_location_flag": true,
+    "latitude": "us1dqC0dGOhzL8AZ",
+    "longitude": "dR6SxzHykvox6j9g",
+    "timer": 1,
     "group_id": 15
 }
 
@@ -2374,7 +2374,7 @@ curl -X DELETE "http://localhost/api/default_settings/{default_setting}"
 const url = new URL("http://localhost/api/default_settings/{default_setting}");
 
     let params = {
-            "default_setting": "XbG7aQk7LJXd0cda",
+            "default_setting": "Ey4Ua0lXyOYMOvxf",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -2900,7 +2900,7 @@ fetch(url, {
 ```bash
 curl -X POST "http://localhost/api/friends" \
     -H "Content-Type: application/json" \
-    -d '{"email":"BsjgIK9YSwvR4sGw"}'
+    -d '{"email":"VbcHS5dkPvyBmc2e"}'
 
 ```
 
@@ -2913,7 +2913,7 @@ let headers = {
 }
 
 let body = {
-    "email": "BsjgIK9YSwvR4sGw"
+    "email": "VbcHS5dkPvyBmc2e"
 }
 
 fetch(url, {
@@ -5340,7 +5340,7 @@ fetch(url, {
 ```bash
 curl -X POST "http://localhost/api/friends/permit" \
     -H "Content-Type: application/json" \
-    -d '{"user_id":17}'
+    -d '{"user_id":15}'
 
 ```
 
@@ -5353,7 +5353,7 @@ let headers = {
 }
 
 let body = {
-    "user_id": 17
+    "user_id": 15
 }
 
 fetch(url, {
@@ -5399,7 +5399,7 @@ Parameter | Type | Status | Description
 ```bash
 curl -X POST "http://localhost/api/friends/reject" \
     -H "Content-Type: application/json" \
-    -d '{"user_id":4}'
+    -d '{"user_id":16}'
 
 ```
 
@@ -5412,7 +5412,7 @@ let headers = {
 }
 
 let body = {
-    "user_id": 4
+    "user_id": 16
 }
 
 fetch(url, {
@@ -5458,7 +5458,7 @@ Parameter | Type | Status | Description
 ```bash
 curl -X GET -G "http://localhost/api/friends/{friend}/attribute" \
     -H "Content-Type: application/json" \
-    -d '{"attribute_id":15}'
+    -d '{"attribute_id":7}'
 
 ```
 
@@ -5466,7 +5466,7 @@ curl -X GET -G "http://localhost/api/friends/{friend}/attribute" \
 const url = new URL("http://localhost/api/friends/{friend}/attribute");
 
     let params = {
-            "friend": "qG4efyB8YrsuRokN",
+            "friend": "Kh7k9zUBAVC4YlPa",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -5476,7 +5476,7 @@ let headers = {
 }
 
 let body = {
-    "attribute_id": 15
+    "attribute_id": 7
 }
 
 fetch(url, {
@@ -5541,7 +5541,7 @@ Parameter | Status | Description
 ```bash
 curl -X PUT "http://localhost/api/friends/{friend}/attribute" \
     -H "Content-Type: application/json" \
-    -d '{"attribute_id":9}'
+    -d '{"attribute_id":16}'
 
 ```
 
@@ -5549,7 +5549,7 @@ curl -X PUT "http://localhost/api/friends/{friend}/attribute" \
 const url = new URL("http://localhost/api/friends/{friend}/attribute");
 
     let params = {
-            "friend": "EGD992TfTvR0obv7",
+            "friend": "QujXERZ5Ot3Uit4L",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -5559,7 +5559,7 @@ let headers = {
 }
 
 let body = {
-    "attribute_id": 9
+    "attribute_id": 16
 }
 
 fetch(url, {
@@ -5629,7 +5629,7 @@ curl -X PUT "http://localhost/api/friends/{friend}/cancel_invitation"
 const url = new URL("http://localhost/api/friends/{friend}/cancel_invitation");
 
     let params = {
-            "friend": "s4aR8ngeHQFmjOlV",
+            "friend": "aCJv5iPQKZSGXPle",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -5676,7 +5676,7 @@ curl -X PUT "http://localhost/api/friends/{friend}/block"
 const url = new URL("http://localhost/api/friends/{friend}/block");
 
     let params = {
-            "friend": "00vniBmXJZlmj5pr",
+            "friend": "otFui1yuCDIFj15x",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -5725,7 +5725,7 @@ curl -X PUT "http://localhost/api/friends/{friend}/un_block"
 const url = new URL("http://localhost/api/friends/{friend}/un_block");
 
     let params = {
-            "friend": "sGsU6WsxDJkV83Fr",
+            "friend": "zIDj6I1h9uR6zlfR",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -5774,7 +5774,7 @@ curl -X GET -G "http://localhost/api/friends/{friend}"
 const url = new URL("http://localhost/api/friends/{friend}");
 
     let params = {
-            "friend": "Q7mYELekVk7Jg3Z9",
+            "friend": "d7QIS4FUbvgQCYMK",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -5879,7 +5879,7 @@ curl -X DELETE "http://localhost/api/friends/{friend}"
 const url = new URL("http://localhost/api/friends/{friend}");
 
     let params = {
-            "friend": "mpuQROdX2qVdSTTD",
+            "friend": "34q2WFlV0WQh5D3b",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -5922,7 +5922,7 @@ Parameter | Status | Description
 ```bash
 curl -X POST "http://localhost/api/device_token" \
     -H "Content-Type: application/json" \
-    -d '{"device_token":"O9OoHfGLAJWE5jxN"}'
+    -d '{"device_token":"1CdyH0HstDcfmFL9"}'
 
 ```
 
@@ -5935,7 +5935,7 @@ let headers = {
 }
 
 let body = {
-    "device_token": "O9OoHfGLAJWE5jxN"
+    "device_token": "1CdyH0HstDcfmFL9"
 }
 
 fetch(url, {
@@ -6124,7 +6124,7 @@ curl -X GET -G "http://localhost/api/groups/{group}/users"
 const url = new URL("http://localhost/api/groups/{group}/users");
 
     let params = {
-            "group": "I0JqMFTMrodfW2Tn",
+            "group": "dipcIdGLTm6VrPjK",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -6229,7 +6229,7 @@ Parameter | Status | Description
 ```bash
 curl -X POST "http://localhost/api/groups/{group}/users" \
     -H "Content-Type: application/json" \
-    -d '{"user_id":2}'
+    -d '{"user_id":9}'
 
 ```
 
@@ -6237,7 +6237,7 @@ curl -X POST "http://localhost/api/groups/{group}/users" \
 const url = new URL("http://localhost/api/groups/{group}/users");
 
     let params = {
-            "group": "MQ35icZLsQnQ3KRV",
+            "group": "keYFv4kggaxQdM0C",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -6247,7 +6247,7 @@ let headers = {
 }
 
 let body = {
-    "user_id": 2
+    "user_id": 9
 }
 
 fetch(url, {
@@ -6296,8 +6296,8 @@ curl -X GET -G "http://localhost/api/groups/{group}/users/{user}"
 const url = new URL("http://localhost/api/groups/{group}/users/{user}");
 
     let params = {
-            "group": "B1kMjqE7cSkeUjYq",
-            "user": "cFgSov38IqNk9GXf",
+            "group": "v3wf4sp4QnWkRzeI",
+            "user": "WVX56CvXHaalKkBY",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -6366,8 +6366,8 @@ curl -X DELETE "http://localhost/api/groups/{group}/users/{user}"
 const url = new URL("http://localhost/api/groups/{group}/users/{user}");
 
     let params = {
-            "group": "ir2TiYtvrBbDtIap",
-            "user": "6KaZHDw1QgHAJvEA",
+            "group": "uxSe3n9dfnEwmeMC",
+            "user": "Gkvk8uc9jXAY2aZO",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -6916,7 +6916,7 @@ fetch(url, {
 ```bash
 curl -X POST "http://localhost/api/groups" \
     -H "Content-Type: application/json" \
-    -d '{"name":"gvjjuPRu0bDOWCYE"}'
+    -d '{"name":"KrE23Atn3wMQZFDR"}'
 
 ```
 
@@ -6929,7 +6929,7 @@ let headers = {
 }
 
 let body = {
-    "name": "gvjjuPRu0bDOWCYE"
+    "name": "KrE23Atn3wMQZFDR"
 }
 
 fetch(url, {
@@ -7008,7 +7008,7 @@ curl -X GET -G "http://localhost/api/groups/{group}"
 const url = new URL("http://localhost/api/groups/{group}");
 
     let params = {
-            "group": "5aPwWtIDQ183KuzB",
+            "group": "6lQskcrJlTqVTJc0",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -7087,7 +7087,7 @@ Parameter | Status | Description
 ```bash
 curl -X PUT "http://localhost/api/groups/{group}" \
     -H "Content-Type: application/json" \
-    -d '{"name":"suIx3haJKDBLUCWY"}'
+    -d '{"name":"Dmv1Krs1nbgWLFlG"}'
 
 ```
 
@@ -7095,7 +7095,7 @@ curl -X PUT "http://localhost/api/groups/{group}" \
 const url = new URL("http://localhost/api/groups/{group}");
 
     let params = {
-            "group": "EUB1Anh4oHhEkYD1",
+            "group": "wyIhkUmssA45NqiY",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -7105,7 +7105,7 @@ let headers = {
 }
 
 let body = {
-    "name": "suIx3haJKDBLUCWY"
+    "name": "Dmv1Krs1nbgWLFlG"
 }
 
 fetch(url, {
@@ -7232,7 +7232,7 @@ curl -X DELETE "http://localhost/api/groups/{group}"
 const url = new URL("http://localhost/api/groups/{group}");
 
     let params = {
-            "group": "8iNAjcmRUapxPkiq",
+            "group": "QNoXhaPj3RqLujnD",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -7286,7 +7286,7 @@ curl -X GET -G "http://localhost/api/groups/{group}/users/can_add"
 const url = new URL("http://localhost/api/groups/{group}/users/can_add");
 
     let params = {
-            "group": "W35xmPac6KiC7Pcq",
+            "group": "k3iRMx9mfVIRAJi5",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -11166,7 +11166,7 @@ curl -X GET -G "http://localhost/api/guest/sessions/{session}"
 const url = new URL("http://localhost/api/guest/sessions/{session}");
 
     let params = {
-            "session": "DMOFXnu5ALME8j6c",
+            "session": "AQQeZDLNBBr16abx",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -11303,7 +11303,7 @@ Parameter | Status | Description
 ```bash
 curl -X PUT "http://localhost/api/guest/sessions/{session}" \
     -H "Content-Type: application/json" \
-    -d '{"join_status":"e2jVnUMjnusSOFet"}'
+    -d '{"join_status":"NKq0LgZAljz9Y8ht"}'
 
 ```
 
@@ -11316,7 +11316,7 @@ let headers = {
 }
 
 let body = {
-    "join_status": "e2jVnUMjnusSOFet"
+    "join_status": "NKq0LgZAljz9Y8ht"
 }
 
 fetch(url, {
@@ -11383,7 +11383,7 @@ Parameter | Type | Status | Description
 ```bash
 curl -X PUT "http://localhost/api/profile/update" \
     -H "Content-Type: application/json" \
-    -d '{"unique_id":"zI5TCuliQ4ABNy3b","username":"dwvE7ewCtFYicPdp","password":"Dwhy6VnFJSSemiNY","unique_id_search_flag":false,"username_search_flag":true}'
+    -d '{"unique_id":"7pqhUzEmc4ERvgeC","username":"SWTKGpabFFJf02dF","password":"PmvFkL65XsAngof5","unique_id_search_flag":true,"username_search_flag":false}'
 
 ```
 
@@ -11396,11 +11396,11 @@ let headers = {
 }
 
 let body = {
-    "unique_id": "zI5TCuliQ4ABNy3b",
-    "username": "dwvE7ewCtFYicPdp",
-    "password": "Dwhy6VnFJSSemiNY",
-    "unique_id_search_flag": false,
-    "username_search_flag": true
+    "unique_id": "7pqhUzEmc4ERvgeC",
+    "username": "SWTKGpabFFJf02dF",
+    "password": "PmvFkL65XsAngof5",
+    "unique_id_search_flag": true,
+    "username_search_flag": false
 }
 
 fetch(url, {
@@ -12083,7 +12083,7 @@ fetch(url, {
 ```bash
 curl -X POST "http://localhost/api/search/forward_by_username" \
     -H "Content-Type: application/json" \
-    -d '{"username":"zsQzE7Wu4mZaXB87"}'
+    -d '{"username":"qRPOJiPpnnIbSZ4Z"}'
 
 ```
 
@@ -12096,7 +12096,7 @@ let headers = {
 }
 
 let body = {
-    "username": "zsQzE7Wu4mZaXB87"
+    "username": "qRPOJiPpnnIbSZ4Z"
 }
 
 fetch(url, {
@@ -12156,7 +12156,7 @@ Parameter | Type | Status | Description
 ```bash
 curl -X POST "http://localhost/api/search/perfect_by_unique_id" \
     -H "Content-Type: application/json" \
-    -d '{"unique_id":"skA2f6zZMhcB7uyF"}'
+    -d '{"unique_id":"07510kAfleXn5lcE"}'
 
 ```
 
@@ -12169,7 +12169,7 @@ let headers = {
 }
 
 let body = {
-    "unique_id": "skA2f6zZMhcB7uyF"
+    "unique_id": "07510kAfleXn5lcE"
 }
 
 fetch(url, {
@@ -12227,7 +12227,7 @@ Parameter | Type | Status | Description
 ```bash
 curl -X POST "http://localhost/api/search/forward_by_unique_id" \
     -H "Content-Type: application/json" \
-    -d '{"unique_id":"1PvZWDLZHlz92esG"}'
+    -d '{"unique_id":"xjaZFEwDm074EmWY"}'
 
 ```
 
@@ -12240,7 +12240,7 @@ let headers = {
 }
 
 let body = {
-    "unique_id": "1PvZWDLZHlz92esG"
+    "unique_id": "xjaZFEwDm074EmWY"
 }
 
 fetch(url, {
@@ -12306,7 +12306,7 @@ curl -X GET -G "http://localhost/api/sessions/{session}/users"
 const url = new URL("http://localhost/api/sessions/{session}/users");
 
     let params = {
-            "session": "Z1S8eAU2NlFbdHTg",
+            "session": "yY0hOyqt5AcyHCoI",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -12455,7 +12455,7 @@ Parameter | Status | Description
 ```bash
 curl -X POST "http://localhost/api/sessions/{session}/users" \
     -H "Content-Type: application/json" \
-    -d '{"user_id":"0tdtE9K5nP6btxLc","join_status":"AFINeLl35QLWSZtI","paid":7,"budget":4,"budget_actual":5}'
+    -d '{"user_id":"Vka18ak7hUN9BEcR","join_status":"tAlr2grpCTK6pDlM","paid":2,"budget":8,"budget_actual":7}'
 
 ```
 
@@ -12463,7 +12463,7 @@ curl -X POST "http://localhost/api/sessions/{session}/users" \
 const url = new URL("http://localhost/api/sessions/{session}/users");
 
     let params = {
-            "session": "watsErXFeYIxtO5L",
+            "session": "apgRcwLLhz9w5pav",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -12473,11 +12473,11 @@ let headers = {
 }
 
 let body = {
-    "user_id": "0tdtE9K5nP6btxLc",
-    "join_status": "AFINeLl35QLWSZtI",
-    "paid": 7,
-    "budget": 4,
-    "budget_actual": 5
+    "user_id": "Vka18ak7hUN9BEcR",
+    "join_status": "tAlr2grpCTK6pDlM",
+    "paid": 2,
+    "budget": 8,
+    "budget_actual": 7
 }
 
 fetch(url, {
@@ -12557,8 +12557,8 @@ curl -X GET -G "http://localhost/api/sessions/{session}/users/{user}"
 const url = new URL("http://localhost/api/sessions/{session}/users/{user}");
 
     let params = {
-            "session": "zMogkAsGwFroTmKc",
-            "user": "RgWVaQ426ppxnPjb",
+            "session": "69JoGuhXBEHwHC5K",
+            "user": "obnye8uR1GqvIz6k",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -12628,7 +12628,7 @@ Parameter | Status | Description
 ```bash
 curl -X PUT "http://localhost/api/sessions/{session}/users/{user}" \
     -H "Content-Type: application/json" \
-    -d '{"join_status":2,"paid":10,"plus_minus":9,"budget":18,"budget_actual":10}'
+    -d '{"join_status":6,"paid":3,"plus_minus":10,"attribute_name":"VQmTTjirEcazjjo2","budget":19,"budget_actual":19}'
 
 ```
 
@@ -12636,8 +12636,8 @@ curl -X PUT "http://localhost/api/sessions/{session}/users/{user}" \
 const url = new URL("http://localhost/api/sessions/{session}/users/{user}");
 
     let params = {
-            "session": "64bFQ7fHmON19p1P",
-            "user": "GPCPkT0Ddvoriob9",
+            "session": "zwMBfR5hAREJuiKN",
+            "user": "fT7E8Adaj5Tq07Uf",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -12647,11 +12647,12 @@ let headers = {
 }
 
 let body = {
-    "join_status": 2,
-    "paid": 10,
-    "plus_minus": 9,
-    "budget": 18,
-    "budget_actual": 10
+    "join_status": 6,
+    "paid": 3,
+    "plus_minus": 10,
+    "attribute_name": "VQmTTjirEcazjjo2",
+    "budget": 19,
+    "budget_actual": 19
 }
 
 fetch(url, {
@@ -12707,7 +12708,8 @@ Parameter | Type | Status | Description
 --------- | ------- | ------- | ------- | -----------
     join_status | integer |  optional  | 参加状況のステータス
     paid | integer |  optional  | 支払いしたか
-    plus_minus | integer |  optional  | 加減算
+    plus_minus | integer |  optional  | 加減算。セッションに追加時は、フレンドとしてのplus_minusが自動適用される。
+    attribute_name | string |  optional  | このuserのこのセッションにおける属性名。セッションに追加時は、フレンドとしての属性名が自動適用される
     budget | integer |  optional  | 支払い予定額
     budget_actual | integer |  optional  | 支払い確定金額
 #### Query Parameters
@@ -12732,8 +12734,8 @@ curl -X DELETE "http://localhost/api/sessions/{session}/users/{user}"
 const url = new URL("http://localhost/api/sessions/{session}/users/{user}");
 
     let params = {
-            "session": "VYie0aPbngy89Vbw",
-            "user": "1mc1tiAW0eUg7i3F",
+            "session": "uZCRld9Gcfcp39xV",
+            "user": "JNWdDw6PsHzLS5Cw",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -12781,8 +12783,8 @@ curl -X PUT "http://localhost/api/sessions/{session}/users/{user}/switch_paid"
 const url = new URL("http://localhost/api/sessions/{session}/users/{user}/switch_paid");
 
     let params = {
-            "session": "JjAPIWu3ezl7yTtP",
-            "user": "Cm76LInalW7fry9r",
+            "session": "yHSBP4jNAzCZ5sky",
+            "user": "lv9a7AGwg683aLGe",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -12857,8 +12859,8 @@ curl -X POST "http://localhost/api/sessions/{session}/groups/{group}"
 const url = new URL("http://localhost/api/sessions/{session}/groups/{group}");
 
     let params = {
-            "session": "7aZjwKiH087vaugy",
-            "group": "mBLyY68KPGjJGdVd",
+            "session": "E2vDH5Tr3xBSi0Vb",
+            "group": "9vgpVOOaVu96Rm7u",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -13607,7 +13609,7 @@ fetch(url, {
 ```bash
 curl -X POST "http://localhost/api/sessions" \
     -H "Content-Type: application/json" \
-    -d '{"name":"l9hhAlottqO3DoPK","shop_id":"Yoyusqf0aeBU6Hvp","budget":4,"actual":19,"start_time":"7r1AeUHaJuaPOhkC","end_time":"AhJiXSsqYH0es4hK"}'
+    -d '{"name":"QUOpjjjLPGQN8Z4T","shop_id":"fGTmKvJ62prLgmOR","budget":7,"actual":9,"start_time":"7Yz3Ct76XEqEN7jU","end_time":"osd4ufjGf3kSWeHM"}'
 
 ```
 
@@ -13620,12 +13622,12 @@ let headers = {
 }
 
 let body = {
-    "name": "l9hhAlottqO3DoPK",
-    "shop_id": "Yoyusqf0aeBU6Hvp",
-    "budget": 4,
-    "actual": 19,
-    "start_time": "7r1AeUHaJuaPOhkC",
-    "end_time": "AhJiXSsqYH0es4hK"
+    "name": "QUOpjjjLPGQN8Z4T",
+    "shop_id": "fGTmKvJ62prLgmOR",
+    "budget": 7,
+    "actual": 9,
+    "start_time": "7Yz3Ct76XEqEN7jU",
+    "end_time": "osd4ufjGf3kSWeHM"
 }
 
 fetch(url, {
@@ -13714,7 +13716,7 @@ curl -X GET -G "http://localhost/api/sessions/{session}"
 const url = new URL("http://localhost/api/sessions/{session}");
 
     let params = {
-            "session": "of5opRtHcbZMAW6A",
+            "session": "vMceKsVVrOKUcbAO",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -13903,7 +13905,7 @@ Parameter | Status | Description
 ```bash
 curl -X PUT "http://localhost/api/sessions/{session}" \
     -H "Content-Type: application/json" \
-    -d '{"name":"FKRhxM9fBaa5uw7p","shop_id":11,"budget":20,"actual":6,"start_time":"vKvjltWCBoPcADNC","end_time":"DlU11JtgTXyhEz8g"}'
+    -d '{"name":"sTWtDo11sSz6FmHh","shop_id":8,"budget":11,"actual":19,"start_time":"SvYBPtU44KNszpel","end_time":"0LCSApkj512vp738"}'
 
 ```
 
@@ -13911,7 +13913,7 @@ curl -X PUT "http://localhost/api/sessions/{session}" \
 const url = new URL("http://localhost/api/sessions/{session}");
 
     let params = {
-            "session": "df4QksGKyatiPYUp",
+            "session": "nPZQwSpmDN9lLkbS",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -13921,12 +13923,12 @@ let headers = {
 }
 
 let body = {
-    "name": "FKRhxM9fBaa5uw7p",
-    "shop_id": 11,
-    "budget": 20,
-    "actual": 6,
-    "start_time": "vKvjltWCBoPcADNC",
-    "end_time": "DlU11JtgTXyhEz8g"
+    "name": "sTWtDo11sSz6FmHh",
+    "shop_id": 8,
+    "budget": 11,
+    "actual": 19,
+    "start_time": "SvYBPtU44KNszpel",
+    "end_time": "0LCSApkj512vp738"
 }
 
 fetch(url, {
@@ -14127,7 +14129,7 @@ curl -X DELETE "http://localhost/api/sessions/{session}"
 const url = new URL("http://localhost/api/sessions/{session}");
 
     let params = {
-            "session": "IfCW8u4az0hmTZQs",
+            "session": "htewL3vOIImlBnSm",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
@@ -14174,7 +14176,7 @@ curl -X GET -G "http://localhost/api/sessions/{session}/users/can_add"
 const url = new URL("http://localhost/api/sessions/{session}/users/can_add");
 
     let params = {
-            "session": "Mrwg5J6SvykOMCZw",
+            "session": "Fwhk3N1jvxoaUL0G",
         };
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 

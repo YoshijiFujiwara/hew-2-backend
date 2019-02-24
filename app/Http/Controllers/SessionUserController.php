@@ -144,7 +144,8 @@ class SessionUserController extends Controller
      * @queryParam user required セッションに属するユーザーのid
      * @bodyParam join_status integer 参加状況のステータス
      * @bodyParam paid integer  支払いしたか
-     * @bodyParam plus_minus integer 加減算
+     * @bodyParam plus_minus integer 加減算。セッションに追加時は、フレンドとしてのplus_minusが自動適用される。
+     * @bodyParam attribute_name string このuserのこのセッションにおける属性名。セッションに追加時は、フレンドとしての属性名が自動適用される
      * @bodyParam budget integer 支払い予定額
      * @bodyParam budget_actual integer 支払い確定金額
      *
