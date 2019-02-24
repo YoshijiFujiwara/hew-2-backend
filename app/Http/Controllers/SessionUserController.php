@@ -60,13 +60,13 @@ class SessionUserController extends Controller
             User::find($request->user_id)->deviceTokenArray()
         ));
 
-        // リアルタイム通知
-        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
-            'message' => [
-                'manager_id' => $session->manager->id,
-                'session_id' => $session->id
-            ]
-        ]);
+//        // リアルタイム通知
+//        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
+//            'message' => [
+//                'manager_id' => $session->manager->id,
+//                'session_id' => $session->id
+//            ]
+//        ]);
 
         // ユーザー情報を更新するため、あえて再インスタンス化
         return UserResource::collection(Session::find($session->id)->users);
@@ -100,13 +100,13 @@ class SessionUserController extends Controller
             ));
         }
 
-        // リアルタイム通知
-        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
-            'message' => [
-                'manager_id' => $session->manager->id,
-                'session_id' => $session->id
-            ]
-        ]);
+//        // リアルタイム通知
+//        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
+//            'message' => [
+//                'manager_id' => $session->manager->id,
+//                'session_id' => $session->id
+//            ]
+//        ]);
 
         // ユーザー情報を更新するため、あえて再インスタンス化
         return UserResource::collection(Session::find($session->id)->users);
@@ -151,23 +151,52 @@ class SessionUserController extends Controller
 
         $session->users()->updateExistingPivot($user->id, $request->all());
 
-        // リアルタイム通知
-        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
-            'message' => [
-                'manager_id' => $session->manager->id,
-                'session_id' => $session->id
-            ]
-        ]);
+//        // リアルタイム通知
+//        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
+//            'message' => [
+//                'manager_id' => $session->manager->id,
+//                'session_id' => $session->id
+//            ]
+//        ]);
 
         return new UserResource($session->users->where('id', $user->id)->first());
     }
 
     /**
      * sessions.users.switch_paid 指定したセッションのuserの支払い状況を反転する
+     *
+     * @queryParam session required セッションid
+     * @queryParam user required セッションに属するユーザーのid
+     * @bodyParam join_status integer 参加状況のステータス
+     * @bodyParam paid integer  支払いしたか
+     * @bodyParam plus_minus integer 加減算
+     * @bodyParam budget integer 支払い予定額
+     * @bodyParam budget_actual integer 支払い確定金額
+     *
+     * @responseFile 200 responses/sessions.users.update.200.json
      */
-    public function switchPaid()
+    public function switchPaid(Request $request, Session $session, User $user)
     {
+        // セッションの一員でない
+        if (! $session->hasTheUser($user)) {
+            return response()->json(['error' => 'そのユーザーはそのグループの一員ではありません'], Response::HTTP_NOT_FOUND);
+        }
 
+        // そのuserのpaid を取得する
+        $paid = $session->users->where('id', $user->id)->first()->paid;
+        $reversePaid = ! $paid;
+
+        $session->users()->updateExistingPivot($user->id, [
+            'paid' => $reversePaid
+        ]);
+
+//        // リアルタイム通知
+//        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
+//            'message' => [
+//                'manager_id' => $session->manager->id,
+//                'session_id' => $session->id
+//            ]
+//        ]);
     }
 
     /**
@@ -189,13 +218,13 @@ class SessionUserController extends Controller
             $user->pivot->save();
         });
 
-        // リアルタイム通知
-        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
-            'message' => [
-                'manager_id' => $session->manager->id,
-                'session_id' => $session->id
-            ]
-        ]);
+//        // リアルタイム通知
+//        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
+//            'message' => [
+//                'manager_id' => $session->manager->id,
+//                'session_id' => $session->id
+//            ]
+//        ]);
 
         return response(null, Response::HTTP_NO_CONTENT);
     }

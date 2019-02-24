@@ -85,13 +85,13 @@ class SessionController extends Controller
             'join_status' => $request->join_status
         ]);
 
-        // リアルタイム通知
-        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
-            'message' => [
-                'manager_id' => $session->manager->id,
-                'session_id' => $session->id
-            ]
-        ]);
+//        // リアルタイム通知
+//        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
+//            'message' => [
+//                'manager_id' => $session->manager->id,
+//                'session_id' => $session->id
+//            ]
+//        ]);
 
         return new UserResource($session->users()->where('id', $request->user()->id)->first());
     }

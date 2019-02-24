@@ -42,12 +42,12 @@ class GroupController extends Controller
 //        }
 
         $response = new GroupResource($request->user()->managedGroups()->create($request->all()));
-        // リアルタイム通知
-        Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_CREATE_EVENT, [
-            'message' => [
-                'manager_id' => $request->user()->id
-            ]
-        ]);
+//        // リアルタイム通知
+//        Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_CREATE_EVENT, [
+//            'message' => [
+//                'manager_id' => $request->user()->id
+//            ]
+//        ]);
 
         return $response;
     }
@@ -95,13 +95,13 @@ class GroupController extends Controller
         $group->update($request->all());
 
         $response = new GroupResource(Group::find($group->id));
-        // リアルタイム通知
-        Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_UPDATE_EVENT, [
-            'message' => [
-                'manager_id' => $group->manager->id,
-                'group_id' => $group->id
-            ]
-        ]);
+//        // リアルタイム通知
+//        Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_UPDATE_EVENT, [
+//            'message' => [
+//                'manager_id' => $group->manager->id,
+//                'group_id' => $group->id
+//            ]
+//        ]);
 
         return $response;
     }
@@ -123,12 +123,12 @@ class GroupController extends Controller
 
         $group->delete();
 
-        // リアルタイム通知
-        Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_DELETE_EVENT, [
-            'message' => [
-                'group_id' => $group->id
-            ]
-        ]);
+//        // リアルタイム通知
+//        Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_DELETE_EVENT, [
+//            'message' => [
+//                'group_id' => $group->id
+//            ]
+//        ]);
 
         return response(null, Response::HTTP_NO_CONTENT);
     }

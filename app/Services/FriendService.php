@@ -45,13 +45,13 @@ class FriendService
             $user->friends()->attach($friendRequestUser, ['permitted' => null]);
         }
 
-        // リアルタイム通知
-        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_CREATE_EVENT, [
-            'message' => [
-                'user_id' => $user->id,
-                'friend_id' => $friendRequestUser->id
-            ]
-        ]);
+//        // リアルタイム通知
+//        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_CREATE_EVENT, [
+//            'message' => [
+//                'user_id' => $user->id,
+//                'friend_id' => $friendRequestUser->id
+//            ]
+//        ]);
 
         return response(new UserResource($user->waitingFriends->where('id', $friendRequestUser->id)->first()),  Response::HTTP_CREATED);
     }
@@ -63,38 +63,38 @@ class FriendService
                 $user->pivot->deleted_at = now();
                 $user->pivot->save();
             });
-            // リアルタイム通知
-            Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::GROUP_UPDATE_EVENT, [
-                'message' => [
-                    'manager_id' => $group->manager->id,
-                    'group_id' => $group->id
-                ]
-            ]);
+//            // リアルタイム通知
+//            Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::GROUP_UPDATE_EVENT, [
+//                'message' => [
+//                    'manager_id' => $group->manager->id,
+//                    'group_id' => $group->id
+//                ]
+//            ]);
         });
         $user->managedSessions->each(function (Session $session) use ($friend) {
             $session->users()->where('id', $friend->id)->get()->each(function (User $user) {
                 $user->pivot->deleted_at = now();
                 $user->pivot->save();
             });
-            // リアルタイム通知
-            Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::SESSION_UPDATE_EVENT, [
-                'message' => [
-                    'manager_id' => $session->manager->id,
-                    'session_id' => $session->id
-                ]
-            ]);
+//            // リアルタイム通知
+//            Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::SESSION_UPDATE_EVENT, [
+//                'message' => [
+//                    'manager_id' => $session->manager->id,
+//                    'session_id' => $session->id
+//                ]
+//            ]);
         });
         $user->friends()->where('id', $friend->id)->get()->each(function (User $user) {
             $user->pivot->deleted_at = now();
             $user->pivot->save();
         });
 
-        // リアルタイム通知
-        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_DELETE_EVENT, [
-            'message' => [
-                'user_id' => $user->id,
-                'friend_id' => $friend->id
-            ]
-        ]);
+//        // リアルタイム通知
+//        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_DELETE_EVENT, [
+//            'message' => [
+//                'user_id' => $user->id,
+//                'friend_id' => $friend->id
+//            ]
+//        ]);
     }
 }

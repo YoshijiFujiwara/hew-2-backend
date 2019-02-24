@@ -48,12 +48,12 @@ class ProfileController extends Controller
         DB::table('users')->where('id', $request->user()->id)->update(['unique_id' => $request->unique_id]);
 
         $response = new UserResource(User::find($user->id));
-        // リアルタイム通知
-        Pusher::trigger(self::ADMIN_CHANNEL, self::USER_UPDATE_EVENT, [
-            'message' => [
-                'user_id' => $request->user()->id
-            ]
-        ]);
+//        // リアルタイム通知
+//        Pusher::trigger(self::ADMIN_CHANNEL, self::USER_UPDATE_EVENT, [
+//            'message' => [
+//                'user_id' => $request->user()->id
+//            ]
+//        ]);
 
         return $response;
     }

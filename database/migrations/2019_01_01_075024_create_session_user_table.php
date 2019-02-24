@@ -18,7 +18,7 @@ class CreateSessionUserTable extends Migration
             $table->integer('session_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->enum('join_status', ['allow', 'deny', 'wait'])->default('wait');
-            $table->boolean('paid')->nullable();
+            $table->boolean('paid')->default(false);
             $table->integer('plus_minus')->nullable()->comment('加減算');
             $table->integer('budget')->nullable()->comment('この人の支払い予定額');
             $table->integer('budget_actual')->nullable()->comment('この人の実際の支払い金額');

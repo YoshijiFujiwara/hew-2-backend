@@ -43,13 +43,13 @@ class DefaultSettingController extends Controller
 //            return response()->json(['error' => '同じ名前は使用できません'], Response::HTTP_CONFLICT);
 //        }
 
-        // リアルタイム通知
-        Pusher::trigger(self::ADMIN_CHANNEL, self::DEFAULT_SETTING_CREATE_EVENT, [
-            'message' => [
-                'manager_id' => $request->user()->id,
-                'group_id' => $request->group_id
-            ]
-        ]);
+//        // リアルタイム通知
+//        Pusher::trigger(self::ADMIN_CHANNEL, self::DEFAULT_SETTING_CREATE_EVENT, [
+//            'message' => [
+//                'manager_id' => $request->user()->id,
+//                'group_id' => $request->group_id
+//            ]
+//        ]);
 
         return new DefaultSettingResource($request->user()->managedDefaultSettings()->create($request->all()));
     }
@@ -86,13 +86,13 @@ class DefaultSettingController extends Controller
 
         $response = new DefaultSettingResource(DefaultSetting::find($defaultSetting->id));
 
-        // リアルタイム通知
-        Pusher::trigger(self::ADMIN_CHANNEL, self::DEFAULT_SETTING_UPDATE_EVENT, [
-            'message' => [
-                'manager_id' => $defaultSetting->manager->id,
-                'default_setting_id' => $defaultSetting->id
-            ]
-        ]);
+//        // リアルタイム通知
+//        Pusher::trigger(self::ADMIN_CHANNEL, self::DEFAULT_SETTING_UPDATE_EVENT, [
+//            'message' => [
+//                'manager_id' => $defaultSetting->manager->id,
+//                'default_setting_id' => $defaultSetting->id
+//            ]
+//        ]);
 
         return $response;
     }
@@ -108,13 +108,13 @@ class DefaultSettingController extends Controller
     {
         $defaultSetting->delete();
 
-        // リアルタイム通知
-        Pusher::trigger(self::ADMIN_CHANNEL, self::DEFAULT_SETTING_DELETE_EVENT, [
-            'message' => [
-                'manager_id' => $defaultSetting->manager->id,
-                'default_setting_id' => $defaultSetting->id
-            ]
-        ]);
+//        // リアルタイム通知
+//        Pusher::trigger(self::ADMIN_CHANNEL, self::DEFAULT_SETTING_DELETE_EVENT, [
+//            'message' => [
+//                'manager_id' => $defaultSetting->manager->id,
+//                'default_setting_id' => $defaultSetting->id
+//            ]
+//        ]);
 
         return response(null, Response::HTTP_NO_CONTENT);
     }
