@@ -98,6 +98,30 @@ class DatabaseSeeder extends Seeder
         $testUser->username_search_flag = true;
         $testUser->save();
 
+        // id 48番を固定のユーザーとする
+        $testUser = \App\User::find(48);
+        $testUser->email = 'testuser48@example.com';
+        $testUser->username = 'テストユーザー２';
+        $testUser->unique_id_search_flag = true;
+        $testUser->username_search_flag = true;
+        $testUser->save();
+
+        // id 49番を固定のユーザーとする
+        $testUser = \App\User::find(49);
+        $testUser->email = 'testuser49@example.com';
+        $testUser->username = 'テストユーザー２';
+        $testUser->unique_id_search_flag = true;
+        $testUser->username_search_flag = true;
+        $testUser->save();
+
+        // id 50番を固定のユーザーとする
+        $testUser = \App\User::find(50);
+        $testUser->email = 'testuser50@example.com';
+        $testUser->username = 'テストユーザー３';
+        $testUser->unique_id_search_flag = true;
+        $testUser->username_search_flag = true;
+        $testUser->save();
+
         // orm のbootを無視したいから、仕方ない
         \Illuminate\Support\Facades\DB::table('users')->where('id', 1)->update(['unique_id' => 'TESTTEST']);
         // テストデータでは、検索はすべてありにするか
