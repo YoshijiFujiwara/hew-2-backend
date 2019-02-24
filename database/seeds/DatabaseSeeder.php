@@ -53,11 +53,11 @@ class DatabaseSeeder extends Seeder
                                 break;
                             case 2:
                                 $joinStatus = 'deny';
-                                $paidStatus = null;
+                                $paidStatus = false;
                                 break;
                             case 3:
                                 $joinStatus = 'wait';
-                                $paidStatus = null;
+                                $paidStatus = false;
                                 break;
                         }
 

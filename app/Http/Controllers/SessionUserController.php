@@ -167,13 +167,8 @@ class SessionUserController extends Controller
      *
      * @queryParam session required セッションid
      * @queryParam user required セッションに属するユーザーのid
-     * @bodyParam join_status integer 参加状況のステータス
-     * @bodyParam paid integer  支払いしたか
-     * @bodyParam plus_minus integer 加減算
-     * @bodyParam budget integer 支払い予定額
-     * @bodyParam budget_actual integer 支払い確定金額
      *
-     * @responseFile 200 responses/sessions.users.update.200.json
+     * @responseFile 200 responses/sessions.users.switch_paid.200.json
      */
     public function switchPaid(Request $request, Session $session, User $user)
     {
@@ -183,7 +178,7 @@ class SessionUserController extends Controller
         }
 
         // そのuserのpaid を取得する
-        $paid = $session->users->where('id', $user->id)->first()->paid;
+        $paid = !! $session->users()->where('id', $user->id)->first()->pivot->paid;
         $reversePaid = ! $paid;
 
         $session->users()->updateExistingPivot($user->id, [
@@ -197,6 +192,8 @@ class SessionUserController extends Controller
 //                'session_id' => $session->id
 //            ]
 //        ]);
+
+        return new UserResource($session->users->where('id', $user->id)->first());
     }
 
     /**

@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use App\User;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Log;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -126,6 +127,29 @@ class SessionUserTest extends TestCase
             'paid' => false,
             'plus_minus' => 10000,
         ], []);
+
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
+    public function testUpdatePaid()
+    {
+        $testUser = User::find(1);
+        $session = $testUser->managedSessions->random();
+        $sessionUser = $session->users->random();
+//        Log::debug('sessionUserId');
+//        Log::debug($sessionUser->id);
+//        Log::debug($sessionUser->pivot->paid);
+
+        $response = $this->apiAs($testUser, 'PUT', route('sessions.users.switch_paid', [$session, $sessionUser]), [], []);
+
+        $response->assertStatus(Response::HTTP_OK);
+//        Log::debug($session->users()->where('id', $sessionUser->id)->first()->pivot->paid);
+        $this->assertEquals(! $sessionUser->pivot->paid, !! $session->users()->where('id', $sessionUser->id)->first()->pivot->paid);
+
+        $response = $this->apiAs($testUser, 'PUT', route('sessions.users.switch_paid', [$session, $sessionUser]), [], []);
+        $response->assertStatus(Response::HTTP_OK);
+        $this->assertEquals(!! $sessionUser->pivot->paid, !! $session->users()->where('id', $sessionUser->id)->first()->pivot->paid);
+
     }
 
     public function testDestroy()
