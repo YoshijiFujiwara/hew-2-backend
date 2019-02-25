@@ -19,6 +19,46 @@ class SessionTest extends TestCase
         $response->assertStatus(Response::HTTP_OK);
     }
 
+    public function testNotStart()
+    {
+        $testUser = User::find(1);
+        $response = $this->apiAs($testUser, 'GET', route('sessions.not_start'), [], []);
+
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
+    public function testOnGoing()
+    {
+        $testUser = User::find(1);
+        $response = $this->apiAs($testUser, 'GET', route('sessions.on_going'), [], []);
+
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
+    public function testNotPaymentComplete()
+    {
+        $testUser = User::find(1);
+        $response = $this->apiAs($testUser, 'GET', route('sessions.not_payment_complete'), [], []);
+
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
+    public function testHistory()
+    {
+        $testUser = User::find(1);
+        $response = $this->apiAs($testUser, 'GET', route('sessions.history'), [], []);
+
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
+    public function testComplete()
+    {
+        $testUser = User::find(1);
+        $response = $this->apiAs($testUser, 'GET', route('sessions.complete'), [], []);
+
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
     public function testStore()
     {
         $testUser = User::find(1);
