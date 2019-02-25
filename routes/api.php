@@ -43,6 +43,13 @@ Route::middleware('JWT')->group(function () {
     Route::apiResource('default_settings', 'DefaultSettingController')->only(['show', 'update', 'destroy'])->middleware('can:has,default_setting');
 
     Route::apiResource('sessions', 'SessionController')->only(['index', 'store']);
+    Route::prefix('sessions')->group(function () {
+        Route::get('not_start', 'SessionController@notStart')->name('sessions.not_start');
+        Route::get('on_going', 'SessionController@onGoing')->name('sessions.on_going');
+        Route::get('not_payment_complete', 'SessionController@notPaymentComplete')->name('sessions.not_payment_complete');
+        Route::get('history', 'SessionController@history')->name('sessions.history');
+        Route::get('complete', 'SessionController@complete')->name('sessions.complete');
+    });
     Route::apiResource('sessions', 'SessionController')->only(['show', 'update', 'destroy'])->middleware('can:has,session');
     Route::get('sessions/{session}/users/can_add', 'SessionController@canAddUsers')->name('sessions.can_add_users')->middleware('can:has,session');
     Route::apiResource('sessions/{session}/users', 'SessionUserController', ['as' => 'sessions'])->middleware('can:has,session');

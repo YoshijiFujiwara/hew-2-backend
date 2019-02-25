@@ -170,6 +170,32 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(Session::class, 'manager_id');
     }
 
+    // まだ始まっていないセッション一覧
+    public function notStartSessions()
+    {
+        return $this->managedSessions()
+            ->whereNotNull('start_time')
+            ->whereDate('start_time', '>', now()->format('Y-m-d h:m:s'));
+    }
+
+    // 進行中のセッション一覧
+    public function onGoingSessions()
+    {
+        return $this->managedSessions()
+            ->whereNotNull('start_time')
+            ->whereNotNull('end_time')
+            ->whereDate('start_time', '<', now()->format('Y-m-d h:m:s'))
+            ->whereDate('end_time', '>', now()->format('Y-m-d h:m:s'));
+    }
+
+    // end_timeを過ぎたセッション一覧
+    public function endSessions()
+    {
+        return $this->managedSessions()
+            ->whereNotNull('end_time')
+            ->whereDate('end_time', '<', now()->format('Y-m-d h:m:s'));
+    }
+
     public function participatedSessions()
     {
         return $this->belongsToMany(Session::class)

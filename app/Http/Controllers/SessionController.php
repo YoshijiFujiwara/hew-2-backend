@@ -6,9 +6,12 @@ use App\Http\Requests\SessionStoreRequest;
 use App\Http\Resources\SessionResource;
 use App\Http\Resources\UserResource;
 use App\Model\Session;
+use App\User;
 use Carbon\Carbon;
+use GPBMetadata\Google\Api\Log;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use mysql_xdevapi\Collection;
 use Pusher\Laravel\Facades\Pusher;
 
 /**
@@ -24,6 +27,86 @@ class SessionController extends Controller
     public function index(Request $request)
     {
         return SessionResource::collection($request->user()->managedSessions);
+    }
+
+    /**
+     * sessions.not_start 始まっていないセッション一覧(【条件式】今 < start_time && deleted_at == null)
+     *
+     * @responseFile 200 responses/sessions.not_start.200.json
+     */
+    public function notStart(Request $request)
+    {
+        return SessionResource::collection($request->user()->notStartSessions);
+    }
+
+    /**
+     * sessions.on_going 進行中のセッション一覧(【条件式】start_time < 今 < end_time && deleted_at == null)
+     *
+     * @responseFile 200 responses/sessions.on_going.200.json
+     */
+    public function onGoing(Request $request)
+    {
+        return SessionResource::collection($request->user()->onGoingSessions);
+    }
+
+    /**
+     * sessions.not_payment_complete セッションのendtimeを迎えたもののうち、支払い待ちユーザーがいるセッション一覧。join_status がallowのもののみ判定。(【条件式】end_time < 今 && deleted_at == null && 支払いがまだのユーザーがいる)
+     *
+     * @responseFile 200 responses/sessions.not_payment_complete.200.json
+     */
+    public function notPaymentComplete(Request $request)
+    {
+        $notPaymentCompleteSessions = collect([]);
+        $endSessions = $request->user()->endSessions;
+        foreach ($endSessions as $key => $endSession) {
+            $notPaidFlag = false;
+            foreach ($endSession->users as $sessionUser) {
+                if (! $sessionUser->pivot->paid && $sessionUser->pivot->join_status == 'allow') {
+                    $notPaidFlag = true;
+                }
+            }
+
+            if ($notPaidFlag) {
+                $notPaymentCompleteSessions->push($endSession);
+            }
+        }
+
+        return SessionResource::collection($notPaymentCompleteSessions);
+    }
+
+    /**
+     * sessions.history セッション履歴（deleted_atに時間が入っているもの。ようするに、幹事が削除したセッション一覧）(【条件式】deleted_at != null)
+     *
+     * @responseFile 200 responses/sessions.history.200.json
+     */
+    public function history(Request $request)
+    {
+        return SessionResource::collection($request->user()->managedSessions()->onlyTrashed()->get());
+    }
+
+    /**
+     * sessions.complete end_timeを過ぎて、かつ、支払いも完了しているが、セッション削除はしていない。join_status がallowのもののみ判定。(【条件式】end_time < 今 && deleted_at == null && 全ユーザーの支払いが完了している)
+     *
+     * @responseFile 200 responses/sessions.complete.200.json
+     */
+    public function complete(Request $request)
+    {
+        $completeSessions = collect([]);
+        $endSessions = $request->user()->endSessions;
+        foreach ($endSessions as $key => $endSession) {
+            $notPaidFlag = false;
+            foreach ($endSession->users as $sessionUser) {
+                if (! $sessionUser->pivot->paid && $sessionUser->pivot->join_status == 'allow') {
+                    $notPaidFlag = true;
+                }
+            }
+
+            if (!$notPaidFlag) {
+                $completeSessions->push($endSession);
+            }
+        }
+
+        return SessionResource::collection($completeSessions);
     }
 
     /**
