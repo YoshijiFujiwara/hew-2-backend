@@ -98,6 +98,7 @@ Route::group([
     Route::group([
         'prefix' => 'users/{user}',
     ], function () {
+
         Route::get('', 'UserController@show')->name('users.show');
         Route::delete('', 'UserController@destroy')->name('users.destroy');
 
@@ -124,6 +125,19 @@ Route::group([
         Route::prefix('default_settings')->group(function () {
             Route::get('', 'UserDefaultSettingController@index')->name('users.default_settings.index');
 
+        });
+
+        // ゲストとしてのルート
+        Route::prefix('guests')->group(function () {
+            Route::prefix('sessions')->group(function () {
+                Route::get('', 'UserGuestSessionController@index')->name('users.guests.sessions.index');
+
+            });
+
+            Route::prefix('groups')->group(function () {
+                Route::get('', 'UserGuestGroupController@index')->name('users.guests.groups.index');
+
+            });
         });
     });
 
