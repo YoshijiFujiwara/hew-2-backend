@@ -98,9 +98,15 @@ Route::group([
     'namespace' => 'Admin'
 ], function () {
     Route::apiResource('groups', 'GroupController')->only(['index', 'show', 'destroy']);
+    Route::delete('groups/{group}/users/{user}', 'GroupUserController@destroy')->name('groups.users.destroy');
+
     Route::apiResource('sessions', 'SessionController')->only(['index', 'show', 'destroy']);
+    Route::delete('sessions/{session}/users/{user}', 'SessionUserController@destroy')->name('sessions.users.destroy');
+
     Route::apiResource('users', 'UserController')->only(['index', 'show', 'destroy']);
+
     Route::apiResource('attributes', 'AttributeController')->only(['index', 'show', 'destroy']);
+
     Route::apiResource('default_settings', 'DefaultSettingController')->only(['index', 'show', 'destroy']);
 
     Route::get('users', 'UserController@index')->name('users.index');
@@ -125,7 +131,6 @@ Route::group([
         Route::prefix('sessions')->group(function () {
             Route::get('', 'UserSessionController@index')->name('users.sessions.index');
             Route::delete('{session}', 'UserSessionController@destroy')->name('users.sessions.destroy');
-
         });
 
         Route::prefix('attributes')->group(function () {
