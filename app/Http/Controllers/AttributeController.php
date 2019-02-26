@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\AttributeResource;
+use App\Jobs\PusherTrigger;
 use App\Model\Attribute;
 use App\Model\Session;
 use Illuminate\Http\Request;
@@ -46,6 +47,13 @@ class AttributeController extends Controller
 //                'manager_id' => $request->user()->id
 //            ]
 //        ]);
+
+//        // pusher websocket
+//        $this->dispatch(new PusherTrigger(self::ADMIN_CHANNEL, self::ATTRIBUTE_CREATE_EVENT, [
+//            'message' => [
+//                'manager_id' => $request->user()->id
+//            ]
+//        ]));
 
         return new AttributeResource($request->user()->managedAttributes()->create($request->all()));
     }

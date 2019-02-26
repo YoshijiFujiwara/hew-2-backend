@@ -2,54 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b149596e-be26-417e-a3a2-ac0eac823ad0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AttributeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AttributeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SessionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/collection.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/source/.compare.md" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/source/.compare.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/source/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/source/index.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/attributes.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/attributes.index.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/attributes.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/attributes.show.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/attributes.store.201.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/attributes.store.201.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/attributes.update.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/attributes.update.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/auth.login.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/auth.login.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/auth.me.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/auth.me.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/auth.refresh.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/auth.refresh.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/auth.register.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/auth.register.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/default_settings.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/default_settings.index.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/default_settings.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/default_settings.show.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/default_settings.store.201.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/default_settings.store.201.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/default_settings.update.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/default_settings.update.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/friends.friend_request_users.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.friend_request_users.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/friends.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.index.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/friends.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.show.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/friends.store.201.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.store.201.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/friends.waiting_friends.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/friends.waiting_friends.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/groups.can_add_users.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/groups.can_add_users.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/groups.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/groups.index.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/groups.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/groups.show.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/groups.store.201.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/groups.store.201.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/groups.update.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/groups.update.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/groups.users.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/groups.users.index.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/groups.users.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/groups.users.show.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/guests.sessions.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/guests.sessions.index.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/guests.sessions.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/guests.sessions.show.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/profile.update.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/profile.update.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/search.can_add_friend_users.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/search.can_add_friend_users.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/search.forward_by_unique_id.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/search.forward_by_unique_id.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/search.forward_by_username.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/search.forward_by_username.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/search.perfect_by_unique_id.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/search.perfect_by_unique_id.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/sessions.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.index.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/sessions.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.show.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/sessions.store.201.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.store.201.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/sessions.update.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.update.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/sessions.users.index.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.users.index.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/sessions.users.show.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.users.show.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/sessions.users.store.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.users.store.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/responses/sessions.users.update.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/responses/sessions.users.update.200.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Unit/SessionTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/SessionTest.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/asm89/stack-cors/" />
@@ -179,20 +134,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SessionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="41" column="7" lean-forward="true" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
+            <state relative-caret-position="330">
+              <caret line="33" column="43" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/Unit/SessionTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="24" column="94" selection-start-line="24" selection-start-column="94" selection-end-line="24" selection-end-column="94" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/Unit/SessionTest.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Resources/SessionResource.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="240">
+              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="29" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Resources/SessionWithAllowUsersResource.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="35" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -210,7 +183,7 @@
         <entry file="file://$PROJECT_DIR$/app/Model/Session.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="430">
-              <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+              <caret line="42" column="30" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -239,20 +212,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="48" column="40" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserGuestGroupController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="e#46#83#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="405">
+              <caret line="45" column="137" selection-start-line="45" selection-start-column="110" selection-end-line="45" selection-end-column="137" />
             </state>
           </provider>
         </entry>
@@ -262,18 +223,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="382">
               <caret line="5826" column="9" selection-start-line="5826" selection-start-column="9" selection-end-line="5826" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserGuestSessionController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-              <folding>
-                <element signature="e#46#85#0#PHP" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -322,11 +271,12 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UserGuestController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UserGuestSessionController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UserGuestGroupController.php" />
-        <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Model/Session.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/tests/Unit/SessionTest.php" />
+        <option value="$PROJECT_DIR$/app/Http/Resources/SessionWithAllowUsersResource.php" />
+        <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SessionController.php" />
+        <option value="$PROJECT_DIR$/tests/Unit/SessionTest.php" />
       </list>
     </option>
   </component>
@@ -517,6 +467,13 @@
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Jobs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -643,12 +600,12 @@
       <workItem from="1550899332470" duration="1731000" />
       <workItem from="1550903585960" duration="7385000" />
       <workItem from="1550976447570" duration="8720000" />
-      <workItem from="1551055266029" duration="8646000" />
+      <workItem from="1551055266029" duration="9955000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32869000" />
+    <option name="totallyTimeSpent" value="34178000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="31" width="1920" height="1049" extended-state="6" />
@@ -682,13 +639,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1401">
-          <caret line="229" column="39" selection-start-line="229" selection-start-column="39" selection-end-line="229" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/pusher.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -930,13 +880,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Resources/SessionResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Jobs/PusherTrigger.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -1001,24 +944,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="48" column="40" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-02-25.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="382">
           <caret line="5826" column="9" selection-start-line="5826" selection-start-column="9" selection-end-line="5826" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Model/Session.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1046,17 +975,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Unit/SessionTest.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/SessionResource.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="240">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="29" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Model/Session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="42" column="30" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/SessionWithAllowUsersResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="35" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="45" column="137" selection-start-line="45" selection-start-column="110" selection-end-line="45" selection-end-column="137" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SessionController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="41" column="7" lean-forward="true" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
+        <state relative-caret-position="330">
+          <caret line="33" column="43" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Unit/SessionTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="24" column="94" selection-start-line="24" selection-start-column="94" selection-end-line="24" selection-end-column="94" />
         </state>
       </provider>
     </entry>
