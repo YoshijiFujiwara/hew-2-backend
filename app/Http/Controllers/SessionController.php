@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SessionStoreRequest;
 use App\Http\Resources\SessionResource;
+use App\Http\Resources\SessionWithAllowUsersResource;
 use App\Http\Resources\UserResource;
 use App\Model\Session;
 use App\User;
@@ -27,6 +28,16 @@ class SessionController extends Controller
     public function index(Request $request)
     {
         return SessionResource::collection($request->user()->managedSessions);
+    }
+
+    /**
+     * sessions.index_with_only_allow_users 管理しているセッション一覧(allow ユーザーのみを取得した、セッション情報を返す)
+     *
+     * @responseFile 200 responses/sessions.index_with_only_allow_users.200.json
+     */
+    public function indexWithOnlyAllowUsers(Request $request)
+    {
+        return SessionWithAllowUsersResource::collection($request->user()->managedSessions);
     }
 
     /**
@@ -145,6 +156,18 @@ class SessionController extends Controller
     public function show(Request $request, Session $session)
     {
         return new SessionResource($session);
+    }
+
+    /**
+     * sessions.show_with_only_allow_users allow ユーザーのみを取得した、セッション情報を返す
+     *
+     * @queryParam session required セッションid
+     *
+     * @responseFile 200 responses/sessions.show_with_only_allow_users.200.json
+     */
+    public function showWithOnlyAllowUsers(Request $request, Session $session)
+    {
+        return new SessionWithAllowUsersResource($session);
     }
 
     /**

@@ -19,6 +19,14 @@ class SessionTest extends TestCase
         $response->assertStatus(Response::HTTP_OK);
     }
 
+    public function testIndexWithAllowUsers()
+    {
+        $testUser = User::find(1);
+        $response = $this->apiAs($testUser, 'GET', route('sessions.index_with_only_allow_users'), [], []);
+
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
     public function testNotStart()
     {
         $testUser = User::find(1);
@@ -88,6 +96,15 @@ class SessionTest extends TestCase
         $testUser = User::find(1);
         $alreadySession = $testUser->managedSessions->random();
         $response = $this->apiAs($testUser, 'GET', route('sessions.show', $alreadySession), [], []);
+
+        $response->assertStatus(Response::HTTP_OK);
+    }
+
+    public function testShowWithAllowUsers()
+    {
+        $testUser = User::find(1);
+        $alreadySession = $testUser->managedSessions->random();
+        $response = $this->apiAs($testUser, 'GET', route('sessions.show_with_only_allow_users', $alreadySession), [], []);
 
         $response->assertStatus(Response::HTTP_OK);
     }

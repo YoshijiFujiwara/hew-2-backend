@@ -2,24 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Resources\SessionResource;
 use App\Model\Session;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 
-class UserGuestSessionController extends Controller
+class SessionUserController extends Controller
 {
-    /**
-     * ゲスト参加しているセッション一覧
-     */
-    public function index(User $user)
-    {
-        return SessionResource::collection($user->participatedSessions);
-    }
-
-    public function destroy(User $user, Session $session)
+    public function destroy(Session $session, User $user)
     {
         // セッションの一員でない
         if (! $session->hasTheUser($user)) {

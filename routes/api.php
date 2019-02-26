@@ -43,6 +43,7 @@ Route::middleware('JWT')->group(function () {
     Route::apiResource('default_settings', 'DefaultSettingController')->only(['show', 'update', 'destroy'])->middleware('can:has,default_setting');
 
     Route::apiResource('sessions', 'SessionController')->only(['index', 'store']);
+    Route::get('sessions/with_only_allow_users', 'SessionController@indexWithOnlyAllowUsers')->name('sessions.index_with_only_allow_users');
     Route::prefix('sessions')->group(function () {
         Route::get('not_start', 'SessionController@notStart')->name('sessions.not_start');
         Route::get('on_going', 'SessionController@onGoing')->name('sessions.on_going');
@@ -51,6 +52,7 @@ Route::middleware('JWT')->group(function () {
         Route::get('complete', 'SessionController@complete')->name('sessions.complete');
     });
     Route::apiResource('sessions', 'SessionController')->only(['show', 'update', 'destroy'])->middleware('can:has,session');
+    Route::get('sessions/{session}/with_only_allow_users', 'SessionController@showWithOnlyAllowUsers')->name('sessions.show_with_only_allow_users')->middleware('can:has,session');
     Route::get('sessions/{session}/users/can_add', 'SessionController@canAddUsers')->name('sessions.can_add_users')->middleware('can:has,session');
     Route::apiResource('sessions/{session}/users', 'SessionUserController', ['as' => 'sessions'])->middleware('can:has,session');
     Route::put('sessions/{session}/users/{user}/switch_paid', 'SessionUserController@switchPaid')->name('sessions.users.switch_paid')->middleware('can:has,session');
@@ -96,9 +98,15 @@ Route::group([
     'namespace' => 'Admin'
 ], function () {
     Route::apiResource('groups', 'GroupController')->only(['index', 'show', 'destroy']);
+    Route::delete('groups/{group}/users/{user}', 'GroupUserController@destroy')->name('groups.users.destroy');
+
     Route::apiResource('sessions', 'SessionController')->only(['index', 'show', 'destroy']);
+    Route::delete('sessions/{session}/users/{user}', 'SessionUserController@destroy')->name('sessions.users.destroy');
+
     Route::apiResource('users', 'UserController')->only(['index', 'show', 'destroy']);
+
     Route::apiResource('attributes', 'AttributeController')->only(['index', 'show', 'destroy']);
+
     Route::apiResource('default_settings', 'DefaultSettingController')->only(['index', 'show', 'destroy']);
 
     Route::get('users', 'UserController@index')->name('users.index');
@@ -111,26 +119,29 @@ Route::group([
 
         Route::prefix('friends')->group(function () {
             Route::get('', 'UserFriendController@index')->name('users.friends.index');
-
+            Route::delete('{friend}', 'UserFriendController@destroy')->name('users.friends.destroy');
         });
 
         Route::prefix('groups')->group(function () {
             Route::get('', 'UserGroupController@index')->name('users.groups.index');
+            Route::delete('{group}', 'UserGroupController@destroy')->name('users.groups.destroy');
 
         });
 
         Route::prefix('sessions')->group(function () {
             Route::get('', 'UserSessionController@index')->name('users.sessions.index');
-
+            Route::delete('{session}', 'UserSessionController@destroy')->name('users.sessions.destroy');
         });
 
         Route::prefix('attributes')->group(function () {
             Route::get('', 'UserAttributeController@index')->name('users.attributes.index');
+            Route::delete('{attribute}', 'UserAttributeController@destroy')->name('users.attributes.destroy');
 
         });
 
         Route::prefix('default_settings')->group(function () {
             Route::get('', 'UserDefaultSettingController@index')->name('users.default_settings.index');
+            Route::delete('{default_setting}', 'UserDefaultSettingController@destroy')->name('users.default_settings.destroy');
 
         });
 
@@ -138,11 +149,13 @@ Route::group([
         Route::prefix('guests')->group(function () {
             Route::prefix('sessions')->group(function () {
                 Route::get('', 'UserGuestSessionController@index')->name('users.guests.sessions.index');
+                Route::delete('{session}', 'UserGuestSessionController@destroy')->name('users.guests.sessions.destroy');
 
             });
 
             Route::prefix('groups')->group(function () {
                 Route::get('', 'UserGuestGroupController@index')->name('users.guests.groups.index');
+                Route::delete('{group}', 'UserGuestGroupController@destroy')->name('users.guests.groups.destroy');
 
             });
         });

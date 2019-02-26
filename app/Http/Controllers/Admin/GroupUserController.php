@@ -2,21 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Resources\GroupResource;
 use App\Model\Group;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 
-class UserGuestGroupController extends Controller
+class GroupUserController extends Controller
 {
-    public function index(User $user)
-    {
-        return GroupResource::collection($user->participatedGroups);
-    }
-
-    public function destroy(User $user, Group $group)
+    public function destroy(Group $group, User $user)
     {
         // グループの一員でない
         if (! $group->hasTheUser($user)) {
