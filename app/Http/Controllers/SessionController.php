@@ -128,6 +128,7 @@ class SessionController extends Controller
      * @bodyParam shop_id string  ショップのID(ぐるなび？)
      * @bodyParam budget integer  予算額
      * @bodyParam actual integer  実際の金額
+     * @bodyParam unit_rounding integer 丸め単位（1, 10, 100, 1000, 10000）
      * @bodyParam start_time datetime  セッションの開始時刻
      * @bodyParam end_time  datetime  セッションの終了時刻
      *
@@ -220,6 +221,7 @@ class SessionController extends Controller
      * @bodyParam shop_id integer  ショップのID(ぐるなび？)
      * @bodyParam budget integer  予算額
      * @bodyParam actual integer  実際の金額
+     * @bodyParam unit_rounding integer 丸め単位（1, 10, 100, 1000, 10000）
      * @bodyParam start_time datetime  セッションの開始時刻
      * @bodyParam end_time  datetime  セッションの終了時刻
      * @queryParam session required セッションid

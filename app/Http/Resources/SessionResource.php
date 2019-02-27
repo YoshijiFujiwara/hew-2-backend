@@ -22,6 +22,7 @@ class SessionResource extends JsonResource
             'actual' => $this->actual,
             'start_time' => $this->start_time,
             'end_time' => $this->end_time,
+            'unit_rounding' => $this->unit_rounding,
             'manager' => new UserResource($this->manager),
             'users' => UserResource::collection($this->users),
             'created_at' => $this->created_at,
