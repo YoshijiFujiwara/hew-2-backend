@@ -86,6 +86,9 @@ class DatabaseSeeder extends Seeder
             $u->managedDefaultSettings()->save($defaultSetting);
         });
 
+
+        // todo この辺が遅い??
+
         // id 1番を固定のユーザーとする
         $testUser = \App\User::find(1);
         $testUser->email = 'testuser@example.com';
