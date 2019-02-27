@@ -20,7 +20,8 @@ class CreateSessionsTable extends Migration
             $table->string('shop_id')->nullable()->comment('ショップid');
             $table->integer('budget')->nullable()->comment('予算');
             $table->integer('actual')->nullable()->comment('実額');
-            $table->enum('unit_rounding', [1, 10, 100, 1000, 10000])->default(100)->comment('丸め単位');
+            $table->enum('unit_rounding_budget', [1, 10, 100, 1000, 10000])->default(100)->comment('丸め単位');
+            $table->enum('unit_rounding_actual', [1, 10, 100, 1000, 10000])->default(100)->comment('丸め単位');
             $table->timestamp('start_time')->nullable()->comment('開始時刻');
             $table->timestamp('end_time')->nullable()->comment('終了時刻');
             $table->timestamps();
