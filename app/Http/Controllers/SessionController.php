@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SessionStoreRequest;
+use App\Http\Resources\GroupResource;
 use App\Http\Resources\SessionResource;
 use App\Http\Resources\SessionWithAllowUsersResource;
 use App\Http\Resources\UserResource;
@@ -182,6 +183,34 @@ class SessionController extends Controller
         $users = $request->user()->friends()->whereNotIn('id', $session->users()->pluck('id'))->get();
 
         return UserResource::collection($users);
+    }
+
+    /**
+     * sessions.can_add_groups  対象のセッションに追加できるグループ一覧を返す（全員がすでにセッションに含まれている場合のみ除く）
+     *
+     * @queryParam session required グループid
+     *
+     * @responseFile 200 responses/sessions.can_add_groups.200.json
+     */
+    public function canAddGroups(Request $request, Session $session)
+    {
+        $sessionUserIds = $session->users()->pluck('id')->toArray();
+
+        $canAddGroups = collect([]);
+        foreach ($request->user()->managedGroups as $managedGroup) {
+            $canAddFlag = false;
+            foreach ($managedGroup->users()->pluck('id')->toArray() as $groupUserId) {
+                if (!in_array($groupUserId, $sessionUserIds)) {
+                    $canAddFlag = true;
+                }
+            }
+
+            if ($canAddFlag) {
+                $canAddGroups->push($managedGroup);
+            }
+        }
+
+        return GroupResource::collection($canAddGroups);
     }
 
 
