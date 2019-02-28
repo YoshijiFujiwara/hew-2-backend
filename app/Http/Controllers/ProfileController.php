@@ -18,6 +18,7 @@ class ProfileController extends Controller
     /**
      * profiles.update 自分の情報を更新
      * @bodyParam unique_id string required
+     * @bodyParam email string required
      * @bodyParam username string required
      * @bodyParam password string required
      * @bodyParam unique_id_search_flag boolean required
