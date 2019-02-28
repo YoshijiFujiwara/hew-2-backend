@@ -13,7 +13,7 @@ class SessionTest extends TestCase
 {
     public function testIndex()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'GET', route('sessions.index'), [], []);
 
         $response->assertStatus(Response::HTTP_OK);
@@ -21,7 +21,7 @@ class SessionTest extends TestCase
 
     public function testIndexWithAllowUsers()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'GET', route('sessions.index_with_only_allow_users'), [], []);
 
         $response->assertStatus(Response::HTTP_OK);
@@ -29,7 +29,7 @@ class SessionTest extends TestCase
 
     public function testNotStart()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'GET', route('sessions.not_start'), [], []);
 
         $response->assertStatus(Response::HTTP_OK);
@@ -37,7 +37,7 @@ class SessionTest extends TestCase
 
     public function testOnGoing()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'GET', route('sessions.on_going'), [], []);
 
         $response->assertStatus(Response::HTTP_OK);
@@ -45,7 +45,7 @@ class SessionTest extends TestCase
 
     public function testNotPaymentComplete()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'GET', route('sessions.not_payment_complete'), [], []);
 
         $response->assertStatus(Response::HTTP_OK);
@@ -53,7 +53,7 @@ class SessionTest extends TestCase
 
     public function testHistory()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'GET', route('sessions.history'), [], []);
 
         $response->assertStatus(Response::HTTP_OK);
@@ -61,7 +61,7 @@ class SessionTest extends TestCase
 
     public function testComplete()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'GET', route('sessions.complete'), [], []);
 
         $response->assertStatus(Response::HTTP_OK);
@@ -69,7 +69,7 @@ class SessionTest extends TestCase
 
     public function testStore()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'POST', route('sessions.store'), [
             'name' => 'newSession' . str_random(5),
             'shop_id' => 34,
@@ -84,7 +84,7 @@ class SessionTest extends TestCase
 
     public function testCanAddUsers()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $alreadySession = $testUser->managedSessions->random();
         $response = $this->apiAs($testUser, 'GET', route('sessions.can_add_users', ['session' => $alreadySession->id]), [], []);
 
@@ -93,7 +93,7 @@ class SessionTest extends TestCase
 
     public function testCanAddGroups()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $alreadySession = $testUser->managedSessions->random();
         $response = $this->apiAs($testUser, 'GET', route('sessions.can_add_groups', ['session' => $alreadySession->id]), [], []);
 
@@ -102,7 +102,7 @@ class SessionTest extends TestCase
 
     public function testShow()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $alreadySession = $testUser->managedSessions->random();
         $response = $this->apiAs($testUser, 'GET', route('sessions.show', $alreadySession), [], []);
 
@@ -111,7 +111,7 @@ class SessionTest extends TestCase
 
     public function testShowWithAllowUsers()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $alreadySession = $testUser->managedSessions->random();
         $response = $this->apiAs($testUser, 'GET', route('sessions.show_with_only_allow_users', $alreadySession), [], []);
 
@@ -120,7 +120,7 @@ class SessionTest extends TestCase
 
     public function testUpdate()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $alreadySession = $testUser->managedSessions->random();
         $response = $this->apiAs($testUser, 'PUT', route('sessions.update', $alreadySession), [
             'name' => 'newUpdateSession' . str_random(5),
@@ -136,7 +136,7 @@ class SessionTest extends TestCase
 
     public function testDestroy()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $alreadySession = $testUser->managedSessions->random();
         $response = $this->apiAs($testUser, 'DELETE', route('sessions.destroy', $alreadySession), [], []);
 

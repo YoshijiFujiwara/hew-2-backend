@@ -12,7 +12,7 @@ class GuestSessionTest extends TestCase
 {
     public function testIndex()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'GET', route('guests.sessions.index'), [], []);
 
         $response->assertStatus(Response::HTTP_OK);
@@ -20,7 +20,7 @@ class GuestSessionTest extends TestCase
 
     public function testWait()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'GET', route('guests.sessions.wait'), [], []);
 
         $response->assertStatus(Response::HTTP_OK);
@@ -28,7 +28,7 @@ class GuestSessionTest extends TestCase
 
     public function testAllow()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'GET', route('guests.sessions.allow'), [], []);
 
         $response->assertStatus(Response::HTTP_OK);
@@ -36,7 +36,7 @@ class GuestSessionTest extends TestCase
 
     public function testDeny()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'GET', route('guests.sessions.deny'), [], []);
 
         $response->assertStatus(Response::HTTP_OK);
@@ -44,7 +44,7 @@ class GuestSessionTest extends TestCase
 
     public function testShow()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $participatedSession = $testUser->participatedSessions->random();
         $response = $this->apiAs($testUser, 'GET', route('guests.sessions.show', [$participatedSession]), [], []);
 
@@ -53,7 +53,7 @@ class GuestSessionTest extends TestCase
 
     public function testUpdate()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $participatedSession = $testUser->participatedSessions->random();
         $response = $this->apiAs($testUser, 'PUT', route('guests.sessions.update', [$participatedSession]), [
             'join_status' => 'allow'

@@ -17,7 +17,7 @@ class ProfileTest extends TestCase
         $newUniqueId = 'DDDDDDDD';
         $newPassword = 'secret2';
 
-        $oldUser = User::find(2);
+        $oldUser = User::find(8);
         $response = $this->apiAs($oldUser, 'PUT', route('profile.update', [
             'email' => $newEmail,
             'username' => $newUserName,
@@ -28,7 +28,7 @@ class ProfileTest extends TestCase
         ]), [], []);
         $response->assertStatus(Response::HTTP_OK);
 
-        $udpatedUser = User::find(2);
+        $udpatedUser = User::find(8);
         $this->assertEquals($newUserName, $udpatedUser->username);
         $this->assertEquals($newUniqueId, $udpatedUser->unique_id);
 

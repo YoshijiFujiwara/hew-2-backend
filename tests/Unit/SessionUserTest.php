@@ -13,7 +13,7 @@ class SessionUserTest extends TestCase
 {
     public function testIndex()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $alreadySession = $testUser->managedSessions->random();
         $response = $this->apiAs($testUser, 'GET', route('sessions.users.index', [$alreadySession]), [], []);
 
@@ -22,7 +22,7 @@ class SessionUserTest extends TestCase
 
     public function testStore()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $newSessionName = 'newSession' . str_random(5);
         $testUser->managedSessions()->create([
             'name' => $newSessionName,
@@ -47,7 +47,7 @@ class SessionUserTest extends TestCase
     public function testStoreGroup()
     {
 
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $newSessionName = 'newSession' . str_random(5);
         $testUser->managedSessions()->create([
             'name' => $newSessionName,
@@ -67,7 +67,7 @@ class SessionUserTest extends TestCase
 
     public function testShow()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $newSessionName = 'newSession' . str_random(5);
         $testUser->managedSessions()->create([
             'name' => $newSessionName,
@@ -96,7 +96,7 @@ class SessionUserTest extends TestCase
 
     public function testUpdate()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $newSessionName = 'newSession' . str_random(5);
         $testUser->managedSessions()->create([
             'name' => $newSessionName,
@@ -133,7 +133,7 @@ class SessionUserTest extends TestCase
 
     public function testUpdatePaid()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $session = $testUser->managedSessions->random();
         $sessionUser = $session->users->random();
 //        Log::debug('sessionUserId');
@@ -154,7 +154,7 @@ class SessionUserTest extends TestCase
 
     public function testDestroy()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $newSessionName = 'newSession' . str_random(5);
         $testUser->managedSessions()->create([
             'name' => $newSessionName,

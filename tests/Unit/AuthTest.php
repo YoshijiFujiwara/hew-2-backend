@@ -114,7 +114,7 @@ class AuthTest extends TestCase
 
     public function testMe()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'POST', route('auth.me'), [], []);
 
 //        Log::debug(print_r($response, true));
@@ -124,7 +124,7 @@ class AuthTest extends TestCase
 
     public function testLogout()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'POST', route('auth.logout'), [], []);
 
         $response
@@ -134,7 +134,7 @@ class AuthTest extends TestCase
 
     public function testRefresh()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'POST', route('auth.refresh'), [], []);
 
         $response

@@ -58,9 +58,9 @@ class AuthController extends Controller
      */
     public function adminLogin()
     {
-        if (! request('email') == 'testuser@example.com') {
-            return abort(401);
-        }
+//        if (! request('email') == 'testuser@example.com') {
+//            return abort(401);
+//        }
 
         $credentials = request(['email', 'password']);
 

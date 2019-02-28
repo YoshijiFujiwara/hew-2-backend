@@ -14,7 +14,7 @@ class FriendTest extends TestCase
 {
     public function testIndex()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'GET', route('friends.index'), [], []);
 
         $response->assertStatus(Response::HTTP_OK);
@@ -34,7 +34,7 @@ class FriendTest extends TestCase
         ]);
 
 
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'POST', route('friends.store'), [
             'email' => $newEmail
         ], []);
@@ -44,7 +44,7 @@ class FriendTest extends TestCase
 
     public function testStoreMe()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'POST', route('friends.store'), [
             'email' => $testUser->email
         ], []);
@@ -56,7 +56,7 @@ class FriendTest extends TestCase
 
     public function testStoreAlreadyFriend()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'POST', route('friends.store'), [
             'email' => $testUser->friends->random()->email
         ], []);
@@ -67,7 +67,7 @@ class FriendTest extends TestCase
 
     public function testShow()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
 //        Log::debug('QQQQQQQQQQQQQQQQ');
 //        Log::debug(print_r(route('friends.show', ['friend' => $testUser->friends->random()]), true));
         $response = $this->apiAs($testUser, 'GET', route('friends.show', ['friend' => $testUser->friends->random()]), [], []);
@@ -77,7 +77,7 @@ class FriendTest extends TestCase
 
     public function testDestory()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $friend = $testUser->friends->random();
         $response = $this->apiAs($testUser, 'DELETE', route('friends.destroy', ['friend' => $friend]), [], []);
         $response->assertStatus(Response::HTTP_NO_CONTENT);
@@ -89,42 +89,42 @@ class FriendTest extends TestCase
 
     public function testBlockingUsers()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'GET', route('friends.blocking_users'), [], []);
         $response->assertStatus(Response::HTTP_OK);
     }
 
     public function testBlockMeUsers( )
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'GET', route('friends.block_me_users'), [], []);
         $response->assertStatus(Response::HTTP_OK);
     }
 
     public function testWaitingFriends()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'GET', route('friends.waiting_friends'), [], []);
         $response->assertStatus(Response::HTTP_OK);
     }
 
     public function testPermittingUsers()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'GET', route('friends.permitting'), [], []);
         $response->assertStatus(Response::HTTP_OK);
     }
 
     public function testFriendRequestUsers()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'GET', route('friends.friend_request_users'), [], []);
         $response->assertStatus(Response::HTTP_OK);
     }
 
     public function testPermit()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
 
         $newInvitingUser = new User;
         $newInvitingUser->email = str_random(5) . '@new.com';
@@ -145,7 +145,7 @@ class FriendTest extends TestCase
 
     public function testCantPermit()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
 
         $newInvitingUser = new User;
         $newInvitingUser->email = str_random(6) . '@new.com';
@@ -161,7 +161,7 @@ class FriendTest extends TestCase
 
     public function testReject()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
 
         $newInvitingUser = new User;
         $newInvitingUser->email = str_random(7) . '@new.com';
@@ -182,7 +182,7 @@ class FriendTest extends TestCase
 
     public function testCantReject()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
 
         $newInvitingUser = new User;
         $newInvitingUser->email = str_random(8) . '@new.com';
@@ -198,7 +198,7 @@ class FriendTest extends TestCase
 
     public function testCancelInvitation()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $friend = $testUser->waitingFriends->random();
         $response = $this->apiAs($testUser, 'PUT', route('friends.cancel_invitation', [$friend]), [], []);
         $response->assertStatus(Response::HTTP_NO_CONTENT);
@@ -206,7 +206,7 @@ class FriendTest extends TestCase
 
     public function testBlock()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $friend = $testUser->allRequestMeUsers->random();
         $response = $this->apiAs($testUser, 'PUT', route('friends.block', [$friend]), [], []);
         $response->assertStatus(Response::HTTP_OK);
@@ -214,7 +214,7 @@ class FriendTest extends TestCase
 
     public function testUnBlock()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $friend = $testUser->blockingUsers->random();
         $response = $this->apiAs($testUser, 'PUT', route('friends.un_block', [$friend]), [], []);
         $response->assertStatus(Response::HTTP_OK);

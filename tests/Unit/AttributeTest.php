@@ -13,7 +13,7 @@ class AttributeTest extends TestCase
 {
     public function testIndex()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'GET', route('attributes.index'), [], []);
 
         $response->assertStatus(Response::HTTP_OK);
@@ -21,7 +21,7 @@ class AttributeTest extends TestCase
 
     public function testShow()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $attribute = $testUser->managedAttributes->random();
 
 //        Log::debug(print_r($attribute, true));
@@ -32,7 +32,7 @@ class AttributeTest extends TestCase
 
     public function testStore()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'POST', route('attributes.store'), [
             'name' => 'attributename' . str_random(5)
         ], []);
@@ -42,7 +42,7 @@ class AttributeTest extends TestCase
 
     public function testCantStore()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $sameName =  'attributename' . str_random(5);
         $response = $this->apiAs($testUser, 'POST', route('attributes.store'), [
             'name' => $sameName,
@@ -59,7 +59,7 @@ class AttributeTest extends TestCase
 
     public function testUpdate()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $attribute = $testUser->managedAttributes->random();
         $response = $this->apiAs($testUser, 'PUT', route('attributes.update', $attribute->id), [
             'name' => 'update' . str_random(5),
@@ -71,7 +71,7 @@ class AttributeTest extends TestCase
 
     public function testDestory()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $attribute = $testUser->managedAttributes->random();
         $response = $this->apiAs($testUser, 'DELETE', route('attributes.destroy', $attribute), [], []);
 

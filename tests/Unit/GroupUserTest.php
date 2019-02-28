@@ -12,7 +12,7 @@ class GroupUserTest extends TestCase
 {
     public function testIndex()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $alreadyGroup = $testUser->managedGroups->random();
         $response = $this->apiAs($testUser, 'GET', route('groups.users.index', [$alreadyGroup]), [], []);
 
@@ -21,7 +21,7 @@ class GroupUserTest extends TestCase
 
     public function testCanAddUsers()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $alreadyGroup = $testUser->managedGroups->random();
         $response = $this->apiAs($testUser, 'GET', route('groups.can_add_users', ['group' => $alreadyGroup->id]), [], []);
 
@@ -30,7 +30,7 @@ class GroupUserTest extends TestCase
 
     public function testStore()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $newGroupName = 'newGroup' . str_random(5);
 
         $testUser->managedGroups()->create([
@@ -47,7 +47,7 @@ class GroupUserTest extends TestCase
 
     public function testShow()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $newGroupName = 'newGroup' . str_random(5);
 
         $testUser->managedGroups()->create([
@@ -69,7 +69,7 @@ class GroupUserTest extends TestCase
 
     public function testDestroy()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $newGroupName = 'newGroup' . str_random(5);
 
         $testUser->managedGroups()->create([
