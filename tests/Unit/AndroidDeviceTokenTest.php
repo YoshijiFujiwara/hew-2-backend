@@ -17,7 +17,7 @@ class AndroidDeviceTokenTest extends TestCase
      */
     public function testStoreDeviceToken()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'POST', route('push_notification.store_device_token'), [
             'device_token' => 'newToken' . str_random(20)
         ], []);
@@ -27,7 +27,7 @@ class AndroidDeviceTokenTest extends TestCase
 
     public function testStoreTokenAlready()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $newToken = 'newToken' . str_random(20);
         $response = $this->apiAs($testUser, 'POST', route('push_notification.store_device_token'), [
             'device_token' => $newToken

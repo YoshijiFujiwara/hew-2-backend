@@ -15,7 +15,7 @@ class SearchTest extends TestCase
      */
     public function testSearchByUsername()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
 
         $response = $this->apiAs($testUser, 'POST', route('search.forward_by_username'), [
             'username' => 'テスト'
@@ -29,7 +29,7 @@ class SearchTest extends TestCase
      */
     public function testSearchByUniqueId()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
 
         $response = $this->apiAs($testUser, 'POST', route('search.perfect_by_unique_id'), [
             'unique_id' => 'TESTTEST'
@@ -43,7 +43,7 @@ class SearchTest extends TestCase
      */
     public function testForwardSearchByUniqueId()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
 
         $response = $this->apiAs($testUser, 'POST', route('search.forward_by_unique_id'), [
             'unique_id' => 'T'
@@ -54,7 +54,7 @@ class SearchTest extends TestCase
 
     public function testCanAddFriendUsers()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
 
         $response = $this->apiAs($testUser, 'GET', route('search.can_add_friend_users'), []);
 

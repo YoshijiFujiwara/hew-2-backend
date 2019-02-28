@@ -11,14 +11,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call([
+            ProductionSeeder::class
+        ]);
+
         // 適当にユーザーを作って
-        factory(\App\User::class, 50)->create();
+        factory(\App\User::class, 44)->create();
 
         // 作ったユーザー一人ひとりに対してフレンドやグループ、セッションをランダムに追加していく
-        \App\User::all()->each(function ($u) {
+        \App\User::whereNotIn('id', [1,2,3,4,5,6])->each(function ($u) {
             $u->managedAttributes()->saveMany(factory(\App\Model\Attribute::class, 5)->make());
 
-            foreach (\App\User::where('id', '<>', $u->id)->get()->random(25) as $friend) {
+            foreach (\App\User::where('id', '<>', $u->id)->whereNotIn('id', [1,2,3,4,5,6])->get()->random(25) as $friend) {
                 $permitted = false;
                 $random = rand(1, 15);
                 if ($random > 7) {
@@ -89,8 +93,8 @@ class DatabaseSeeder extends Seeder
 
         // todo この辺が遅い??
 
-        // id 1番を固定のユーザーとする
-        $testUser = \App\User::find(1);
+        // id 7番を固定のユーザーとする
+        $testUser = \App\User::find(7);
         $testUser->email = 'testuser@example.com';
         $testUser->username = 'テスト太郎';
         $testUser->unique_id_search_flag = true;

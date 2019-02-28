@@ -13,7 +13,7 @@ class GroupTest extends TestCase
 {
     public function testIndex()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'GET', route('groups.index'), [], []);
 
         $response->assertStatus(Response::HTTP_OK);
@@ -23,7 +23,7 @@ class GroupTest extends TestCase
     {
         $newGroupName = 'newGroup' . str_random(5);
 
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $response = $this->apiAs($testUser, 'POST', route('groups.store'), [
             'name' => $newGroupName
         ], []);
@@ -35,7 +35,7 @@ class GroupTest extends TestCase
     {
 //        $newGroupName = 'newGroup' . str_random(5);
 
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $alreadyGroup = $testUser->managedGroups->random();
 
         $response = $this->apiAs($testUser, 'POST', route('groups.store'), [
@@ -47,7 +47,7 @@ class GroupTest extends TestCase
 
     public function testShow()
     {
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $alreadyGroup = $testUser->managedGroups->random();
 
         $response = $this->apiAs($testUser, 'GET', route('groups.show', $alreadyGroup), [], []);
@@ -59,7 +59,7 @@ class GroupTest extends TestCase
     {
         $newGroupName = 'newGroup' . str_random(8);
 
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $alreadyGroup = $testUser->managedGroups->random();
         $response = $this->apiAs($testUser, 'PUT', route('groups.update', $alreadyGroup), [
             'name' => $newGroupName
@@ -71,7 +71,7 @@ class GroupTest extends TestCase
     public function testDestory()
     {
         $newGroupName = 'newGroup' . str_random(5);
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $testUser->managedGroups()->create([
             'name' => $newGroupName
         ]);
@@ -85,7 +85,7 @@ class GroupTest extends TestCase
     {
         $newGroupName = 'newGroup' . str_random(5);
         $newDefaultSettingName = 'newSetting' . str_random(5);
-        $testUser = User::find(1);
+        $testUser = User::find(7);
         $testUser->managedGroups()->create([
             'name' => $newGroupName
         ]);
