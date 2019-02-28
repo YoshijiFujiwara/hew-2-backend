@@ -32,19 +32,19 @@ class DefaultSettingTest extends TestCase
         $response->assertStatus(Response::HTTP_CREATED);
     }
 
-    public function testCantStore()
-    {
-        $testUser = User::find(7);
-        $alreadyDefaultSetting = $testUser->managedDefaultSettings->random();
-
-        $response = $this->apiAs($testUser, 'POST', route('default_settings.store'), [
-            'name' => $alreadyDefaultSetting->name,
-            'timer' => '01:00:00',
-            'group_id' => $testUser->managedGroups()->get()->random()->id
-        ], []);
-
-        $response->assertStatus(Response::HTTP_CONFLICT);
-    }
+//    public function testCantStore()
+//    {
+//        $testUser = User::find(7);
+//        $alreadyDefaultSetting = $testUser->managedDefaultSettings->random();
+//
+//        $response = $this->apiAs($testUser, 'POST', route('default_settings.store'), [
+//            'name' => $alreadyDefaultSetting->name,
+//            'timer' => '01:00:00',
+//            'group_id' => $testUser->managedGroups()->get()->random()->id
+//        ], []);
+//
+//        $response->assertStatus(Response::HTTP_CONFLICT);
+//    }
 
     public function testShow()
     {

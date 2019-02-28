@@ -154,17 +154,22 @@ class FriendController extends Controller
      */
     public function updateAttribute(Request $request, User $friend)
     {
-        // 自分が管理している属性かチェック
-        $attribute = $request->user()->managedAttributes()->where('id', $request->attribute_id)->first();
-        if (empty($attribute)) {
-            return response()->json(['error' => 'その属性は管理していません'], Response::HTTP_CONFLICT);
+        if ($request->attribute_id == null) {
+            $request->user()->friends()->updateExistingPivot($friend, [
+                'attribute_id' => null
+            ]);
+        } else {
+            // 自分が管理している属性かチェック
+            $attribute = $request->user()->managedAttributes()->where('id', $request->attribute_id)->first();
+            if (empty($attribute)) {
+                return response()->json(['error' => 'その属性は管理していません'], Response::HTTP_CONFLICT);
+            }
+            $request->user()->friends()->updateExistingPivot($friend, [
+                'attribute_id' => $attribute->id
+            ]);
         }
-        $request->user()->friends()->updateExistingPivot($friend, [
-            'attribute_id' => $attribute->id
-        ]);
 
         $response = new UserResource($request->user()->friends->where('id', $friend->id)->first());
-
 //        // リアルタイム通知
 //        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_UPDATE_EVENT, [
 //            'message' => [
