@@ -140,12 +140,12 @@ class SessionController extends Controller
         $newSession = $request->user()->managedSessions()->create($request->all());
 
         $response = new SessionResource($newSession);
-//        // リアルタイム通知
-//        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_CREATE_EVENT, [
-//            'message' => [
-//                'manager_id' => $request->user()->id
-//            ]
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_CREATE_EVENT, [
+            'message' => [
+                'manager_id' => $request->user()->id
+            ]
+        ]);
 
         return $response;
     }
@@ -235,13 +235,13 @@ class SessionController extends Controller
         $session->update($request->all());
 
         $response = new SessionResource(Session::find($session->id));
-//        // リアルタイム通知
-//        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
-//            'message' => [
-//                'manager_id' => $session->manager->id,
-//                'session_id' => $session->id
-//            ]
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
+            'message' => [
+                'manager_id' => $session->manager->id,
+                'session_id' => $session->id
+            ]
+        ]);
 
         return $response;
     }
@@ -256,13 +256,13 @@ class SessionController extends Controller
     {
         $session->delete();
 
-//        // リアルタイム通知
-//        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_DELETE_EVENT, [
-//            'message' => [
-//                'manager_id' => $session->manager->id,
-//                'session_id' => $session->id
-//            ]
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_DELETE_EVENT, [
+            'message' => [
+                'manager_id' => $session->manager->id,
+                'session_id' => $session->id
+            ]
+        ]);
 
         return response(null, Response::HTTP_NO_CONTENT);
     }
