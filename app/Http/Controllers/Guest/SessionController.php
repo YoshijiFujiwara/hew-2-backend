@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Guest;
 
 use App\Http\Resources\SessionResource;
 use App\Http\Resources\UserResource;
+use App\Jobs\PushNotification;
 use App\Model\Session;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Pusher\Laravel\Facades\Pusher;
@@ -92,6 +94,26 @@ class SessionController extends Controller
 //                'session_id' => $session->id
 //            ]
 //        ]);
+
+        $sendMessage = '';
+        // push通知用メッセージの作成
+        switch ($request->join_status) {
+            case 'allow':
+                $sendMessage = 'に参加しました';
+                break;
+            case 'wait':
+                $sendMessage = 'への参加を保留にしました';
+                break;
+            case 'deny':
+                $sendMessage = 'への参加を拒否しました';
+                break;
+        }
+
+        // push通知
+        $this->dispatch(new PushNotification(
+            "{$request->user()->username}さんがセッション {$session->name}{$sendMessage}",
+            $session->manager->deviceTokenArray()
+        ));
 
         return new UserResource($session->users()->where('id', $request->user()->id)->first());
     }
