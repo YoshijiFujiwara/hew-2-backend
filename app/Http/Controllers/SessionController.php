@@ -243,6 +243,15 @@ class SessionController extends Controller
             ]
         ]);
 
+        // リアルタイム通知
+        Pusher::trigger(self::FOCUS_MODE_CHANNEL, self::FOCUS_SESSION_UPDATE_EVENT, [
+            'message' => [
+                'manager_id' => $session->manager->id,
+                'session_id' => $session->id,
+                'user_ids' => [$session->users()->pluck('id')->toArray()]
+            ]
+        ]);
+
         return $response;
     }
 

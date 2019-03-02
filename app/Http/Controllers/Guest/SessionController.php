@@ -115,6 +115,16 @@ class SessionController extends Controller
             $session->manager->deviceTokenArray()
         ));
 
+
+        // リアルタイム通知
+        Pusher::trigger(self::FOCUS_MODE_CHANNEL, self::FOCUS_SESSION_REPLY_EVENT, [
+            'message' => [
+                'manager_id' => $session->manager->id,
+                'session_id' => $session->id,
+                'user_id' => $request->user()->id
+            ]
+        ]);
+
         return new UserResource($session->users()->where('id', $request->user()->id)->first());
     }
 }

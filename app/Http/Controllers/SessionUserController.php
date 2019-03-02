@@ -70,6 +70,15 @@ class SessionUserController extends Controller
             ]
         ]);
 
+        // リアルタイム通知
+        Pusher::trigger(self::FOCUS_MODE_CHANNEL, self::FOCUS_SESSION_INVITATION_EVENT, [
+            'message' => [
+                'manager_id' => $session->manager->id,
+                'session_id' => $session->id,
+                'user_ids' => [$request->user_id]
+            ]
+        ]);
+
         // ユーザー情報を更新するため、あえて再インスタンス化
         return UserResource::collection(Session::find($session->id)->users);
     }
@@ -112,6 +121,15 @@ class SessionUserController extends Controller
             'message' => [
                 'manager_id' => $session->manager->id,
                 'session_id' => $session->id
+            ]
+        ]);
+
+        // リアルタイム通知
+        Pusher::trigger(self::FOCUS_MODE_CHANNEL, self::FOCUS_SESSION_INVITATION_EVENT, [
+            'message' => [
+                'manager_id' => $session->manager->id,
+                'session_id' => $session->id,
+                'user_ids' => [$newUsers->pluck('id')->toArray()]
             ]
         ]);
 
