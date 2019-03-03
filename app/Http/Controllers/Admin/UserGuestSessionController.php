@@ -31,13 +31,13 @@ class UserGuestSessionController extends Controller
             $user->pivot->save();
         });
 
-//        // リアルタイム通知
-//        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
-//            'message' => [
-//                'manager_id' => $session->manager->id,
-//                'session_id' => $session->id
-//            ]
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
+            'message' => [
+                'manager_id' => $session->manager->id,
+                'session_id' => $session->id
+            ]
+        ]);
 
         return response(null, Response::HTTP_NO_CONTENT);
     }

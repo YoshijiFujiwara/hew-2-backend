@@ -87,13 +87,13 @@ class SessionController extends Controller
             'join_status' => $request->join_status
         ]);
 
-//        // リアルタイム通知
-//        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
-//            'message' => [
-//                'manager_id' => $session->manager->id,
-//                'session_id' => $session->id
-//            ]
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
+            'message' => [
+                'manager_id' => $session->manager->id,
+                'session_id' => $session->id
+            ]
+        ]);
 
         $sendMessage = '';
         // push通知用メッセージの作成
@@ -114,6 +114,18 @@ class SessionController extends Controller
             "{$request->user()->username}さんがセッション {$session->name}{$sendMessage}",
             $session->manager->deviceTokenArray()
         ));
+
+
+        // リアルタイム通知
+        Pusher::trigger(self::FOCUS_MODE_CHANNEL, self::FOCUS_SESSION_REPLY_EVENT, [
+            'message' => [
+                'manager_id' => $session->manager->id,
+                'session_id' => $session->id,
+                'session_name' => $session->name,
+                'user_id' => $request->user()->id,
+                'reply' => $request->join_status
+            ]
+        ]);
 
         return new UserResource($session->users()->where('id', $request->user()->id)->first());
     }

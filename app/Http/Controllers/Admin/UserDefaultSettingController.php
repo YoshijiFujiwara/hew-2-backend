@@ -23,13 +23,13 @@ class UserDefaultSettingController extends Controller
     {
         $defaultSetting->delete();
 
-//        // リアルタイム通知
-//        Pusher::trigger(self::ADMIN_CHANNEL, self::DEFAULT_SETTING_DELETE_EVENT, [
-//            'message' => [
-//                'manager_id' => $defaultSetting->manager->id,
-//                'default_setting_id' => $defaultSetting->id
-//            ]
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::DEFAULT_SETTING_DELETE_EVENT, [
+            'message' => [
+                'manager_id' => $defaultSetting->manager->id,
+                'default_setting_id' => $defaultSetting->id
+            ]
+        ]);
 
         return response(null, Response::HTTP_NO_CONTENT);
     }

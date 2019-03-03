@@ -62,13 +62,23 @@ class SessionUserController extends Controller
             User::find($request->user_id)->deviceTokenArray()
         ));
 
-//        // リアルタイム通知
-//        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
-//            'message' => [
-//                'manager_id' => $session->manager->id,
-//                'session_id' => $session->id
-//            ]
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
+            'message' => [
+                'manager_id' => $session->manager->id,
+                'session_id' => $session->id
+            ]
+        ]);
+
+        // リアルタイム通知
+        Pusher::trigger(self::FOCUS_MODE_CHANNEL, self::FOCUS_SESSION_INVITATION_EVENT, [
+            'message' => [
+                'manager_id' => $session->manager->id,
+                'session_id' => $session->id,
+                'session_name' => $session->name,
+                'user_ids' => [$request->user_id]
+            ]
+        ]);
 
         // ユーザー情報を更新するため、あえて再インスタンス化
         return UserResource::collection(Session::find($session->id)->users);
@@ -107,13 +117,23 @@ class SessionUserController extends Controller
             ));
         }
 
-//        // リアルタイム通知
-//        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
-//            'message' => [
-//                'manager_id' => $session->manager->id,
-//                'session_id' => $session->id
-//            ]
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
+            'message' => [
+                'manager_id' => $session->manager->id,
+                'session_id' => $session->id
+            ]
+        ]);
+
+        // リアルタイム通知
+        Pusher::trigger(self::FOCUS_MODE_CHANNEL, self::FOCUS_SESSION_INVITATION_EVENT, [
+            'message' => [
+                'manager_id' => $session->manager->id,
+                'session_id' => $session->id,
+                'session_name' => $session->name,
+                'user_ids' => $newUsers->pluck('id')->toArray()
+            ]
+        ]);
 
         // ユーザー情報を更新するため、あえて再インスタンス化
         return UserResource::collection(Session::find($session->id)->users);
@@ -159,13 +179,13 @@ class SessionUserController extends Controller
 
         $session->users()->updateExistingPivot($user->id, $request->all());
 
-//        // リアルタイム通知
-//        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
-//            'message' => [
-//                'manager_id' => $session->manager->id,
-//                'session_id' => $session->id
-//            ]
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
+            'message' => [
+                'manager_id' => $session->manager->id,
+                'session_id' => $session->id
+            ]
+        ]);
 
         return new UserResource($session->users->where('id', $user->id)->first());
     }
@@ -193,13 +213,13 @@ class SessionUserController extends Controller
             'paid' => $reversePaid
         ]);
 
-//        // リアルタイム通知
-//        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
-//            'message' => [
-//                'manager_id' => $session->manager->id,
-//                'session_id' => $session->id
-//            ]
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
+            'message' => [
+                'manager_id' => $session->manager->id,
+                'session_id' => $session->id
+            ]
+        ]);
 
         return new UserResource($session->users->where('id', $user->id)->first());
     }
@@ -223,13 +243,13 @@ class SessionUserController extends Controller
             $user->pivot->save();
         });
 
-//        // リアルタイム通知
-//        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
-//            'message' => [
-//                'manager_id' => $session->manager->id,
-//                'session_id' => $session->id
-//            ]
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
+            'message' => [
+                'manager_id' => $session->manager->id,
+                'session_id' => $session->id
+            ]
+        ]);
 
         return response(null, Response::HTTP_NO_CONTENT);
     }

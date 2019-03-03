@@ -89,10 +89,10 @@ class AuthController extends Controller
             return abort(401);
         }
 
-//        // リアルタイム通知
-//        Pusher::trigger(self::ADMIN_CHANNEL, self::USER_CREATE_EVENT, [
-//            'message' => ''
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::USER_CREATE_EVENT, [
+            'message' => ''
+        ]);
 
         return $this->respondWithToken($token);
     }
@@ -105,10 +105,10 @@ class AuthController extends Controller
             return abort(401);
         }
 
-//        // リアルタイム通知
-//        Pusher::trigger(self::ADMIN_CHANNEL, self::USER_CREATE_EVENT, [
-//            'message' => ''
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::USER_CREATE_EVENT, [
+            'message' => ''
+        ]);
 
         return $this->respondWithToken($token);
     }

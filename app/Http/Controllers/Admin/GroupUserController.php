@@ -23,13 +23,12 @@ class GroupUserController extends Controller
         });
 
         // リアルタイム通知
-//        // リアルタイム通知
-//        Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_UPDATE_EVENT, [
-//            'message' => [
-//                'manager_id' => $group->manager->id,
-//                'group_id' => $group->id
-//            ]
-//        ]);
+        Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_UPDATE_EVENT, [
+            'message' => [
+                'manager_id' => $group->manager->id,
+                'group_id' => $group->id
+            ]
+        ]);
 
         return response(null, Response::HTTP_NO_CONTENT);
     }

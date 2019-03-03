@@ -28,12 +28,12 @@ class UserGroupController extends Controller
 
         $group->delete();
 
-//        // リアルタイム通知
-//        Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_DELETE_EVENT, [
-//            'message' => [
-//                'group_id' => $group->id
-//            ]
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_DELETE_EVENT, [
+            'message' => [
+                'group_id' => $group->id
+            ]
+        ]);
 
         return response(null, Response::HTTP_NO_CONTENT);
     }

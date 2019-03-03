@@ -12,6 +12,11 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public const ADMIN_CHANNEL = 'admin_channel';
+    public const FOCUS_MODE_CHANNEL = 'focus_mode_channel';
+
+    /**
+     * admin_channel_event
+     */
 
     public const USER_CREATE_EVENT = 'user_create';
     public const USER_UPDATE_EVENT = 'user_update';
@@ -48,4 +53,14 @@ class Controller extends BaseController
     public const DEFAULT_SETTING_CREATE_EVENT = 'default_setting_create';
     public const DEFAULT_SETTING_UPDATE_EVENT = 'default_setting_update';
     public const DEFAULT_SETTING_DELETE_EVENT = 'default_setting_delete';
+
+
+    /**
+     * focus_mode_channel event
+     */
+    public const FOCUS_SESSION_CREATE_EVENT = 'focus_session_create';
+    public const FOCUS_SESSION_INVITATION_EVENT = 'focus_session_invitation';
+    public const FOCUS_SESSION_UPDATE_EVENT = 'focus_session_update';
+    public const FOCUS_SESSION_REPLY_EVENT = 'focus_session_reply';
+
 }

@@ -41,19 +41,12 @@ class AttributeController extends Controller
             return response()->json(['error' => '同じ名前は使用できません'], Response::HTTP_CONFLICT);
         }
 
-//        // リアルタイム通知
-//        Pusher::trigger(self::ADMIN_CHANNEL, self::ATTRIBUTE_CREATE_EVENT, [
-//            'message' => [
-//                'manager_id' => $request->user()->id
-//            ]
-//        ]);
-
-//        // pusher websocket
-//        $this->dispatch(new PusherTrigger(self::ADMIN_CHANNEL, self::ATTRIBUTE_CREATE_EVENT, [
-//            'message' => [
-//                'manager_id' => $request->user()->id
-//            ]
-//        ]));
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::ATTRIBUTE_CREATE_EVENT, [
+            'message' => [
+                'manager_id' => $request->user()->id
+            ]
+        ]);
 
         $newAttribute = $request->user()->managedAttributes()->create($request->all());
         return new AttributeResource(Attribute::find($newAttribute->id));
@@ -84,13 +77,13 @@ class AttributeController extends Controller
         $attribute->update($request->all());
         // 更新後のものを返す
 
-//        // リアルタイム通知
-//        Pusher::trigger(self::ADMIN_CHANNEL, self::ATTRIBUTE_UPDATE_EVENT, [
-//            'message' => [
-//                'manager_id' => $attribute->manager->id,
-//                'attribute_id' => $attribute->id
-//            ]
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::ATTRIBUTE_UPDATE_EVENT, [
+            'message' => [
+                'manager_id' => $attribute->manager->id,
+                'attribute_id' => $attribute->id
+            ]
+        ]);
 
         return new AttributeResource(Attribute::find($attribute->id));
     }
@@ -106,12 +99,12 @@ class AttributeController extends Controller
     {
         $attribute->delete();
 
-//        // リアルタイム通知
-//        Pusher::trigger(self::ADMIN_CHANNEL, self::ATTRIBUTE_DELETE_EVENT, [
-//            'message' => [
-//                'attribute_id' => $attribute->id
-//            ]
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::ATTRIBUTE_DELETE_EVENT, [
+            'message' => [
+                'attribute_id' => $attribute->id
+            ]
+        ]);
 
         return response(null, Response::HTTP_NO_CONTENT);
     }

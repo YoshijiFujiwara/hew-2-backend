@@ -23,12 +23,12 @@ class UserAttributeController extends Controller
     {
         $attribute->delete();
 
-//        // リアルタイム通知
-//        Pusher::trigger(self::ADMIN_CHANNEL, self::ATTRIBUTE_DELETE_EVENT, [
-//            'message' => [
-//                'attribute_id' => $attribute->id
-//            ]
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::ATTRIBUTE_DELETE_EVENT, [
+            'message' => [
+                'attribute_id' => $attribute->id
+            ]
+        ]);
 
         return response(null, Response::HTTP_NO_CONTENT);
     }

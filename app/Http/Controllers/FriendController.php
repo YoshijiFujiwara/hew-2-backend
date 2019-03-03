@@ -170,13 +170,13 @@ class FriendController extends Controller
         }
 
         $response = new UserResource($request->user()->friends->where('id', $friend->id)->first());
-//        // リアルタイム通知
-//        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_UPDATE_EVENT, [
-//            'message' => [
-//                'user_id' => $request->user()->id,
-//                'friend_id' => $friend->id
-//            ]
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_UPDATE_EVENT, [
+            'message' => [
+                'user_id' => $request->user()->id,
+                'friend_id' => $friend->id
+            ]
+        ]);
 
         return $response;
     }
@@ -206,13 +206,13 @@ class FriendController extends Controller
             $request->user()->friends()->attach($request->user_id, ['permitted' => true]);
         }
 
-//        // リアルタイム通知
-//        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_UPDATE_EVENT, [
-//            'message' => [
-//                'user_id' => $request->user()->id,
-//                'friend_id' => $request->user_id
-//            ]
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_UPDATE_EVENT, [
+            'message' => [
+                'user_id' => $request->user()->id,
+                'friend_id' => $request->user_id
+            ]
+        ]);
 
         return response(['message' => '招待を許可しました'], Response::HTTP_OK);
     }
@@ -241,13 +241,13 @@ class FriendController extends Controller
             });
         }
 
-//        // リアルタイム通知
-//        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_UPDATE_EVENT, [
-//            'message' => [
-//                'user_id' => $request->user()->id,
-//                'friend_id' => $request->user_id
-//            ]
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_UPDATE_EVENT, [
+            'message' => [
+                'user_id' => $request->user()->id,
+                'friend_id' => $request->user_id
+            ]
+        ]);
 
         return response(['message' => '招待をキャンセルしました'], Response::HTTP_OK);
     }
@@ -265,13 +265,13 @@ class FriendController extends Controller
             $f->pivot->save();
         });
 
-//        // リアルタイム通知
-//        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_UPDATE_EVENT, [
-//            'message' => [
-//                'user_id' => $request->user()->id,
-//                'friend_id' => $friend->id
-//            ]
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_UPDATE_EVENT, [
+            'message' => [
+                'user_id' => $request->user()->id,
+                'friend_id' => $friend->id
+            ]
+        ]);
 
         return response(null, Response::HTTP_NO_CONTENT);
     }
@@ -293,13 +293,13 @@ class FriendController extends Controller
             return response()->json(['error' => 'そのユーザーからは招待されていません'], Response::HTTP_CONFLICT);
         }
 
-//        // リアルタイム通知
-//        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_UPDATE_EVENT, [
-//            'message' => [
-//                'user_id' => $request->user()->id,
-//                'friend_id' => $friend->id
-//            ]
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_UPDATE_EVENT, [
+            'message' => [
+                'user_id' => $request->user()->id,
+                'friend_id' => $friend->id
+            ]
+        ]);
 
         return response(['message' => 'ユーザーをブロックしました'], Response::HTTP_OK);
     }
@@ -325,13 +325,13 @@ class FriendController extends Controller
             $request->user()->friends()->attach($friend, ['permitted' => true]);
         }
 
-//        // リアルタイム通知
-//        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_UPDATE_EVENT, [
-//            'message' => [
-//                'user_id' => $request->user()->id,
-//                'friend_id' => $friend->id
-//            ]
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::FRIEND_UPDATE_EVENT, [
+            'message' => [
+                'user_id' => $request->user()->id,
+                'friend_id' => $friend->id
+            ]
+        ]);
 
         return response(['message' => 'ユーザーをブロックしました'], Response::HTTP_OK);
     }

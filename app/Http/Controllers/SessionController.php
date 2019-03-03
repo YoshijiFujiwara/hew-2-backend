@@ -141,12 +141,21 @@ class SessionController extends Controller
 
         $response = new SessionResource(Session::find($newSession->id));
 
-//        // リアルタイム通知
-//        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_CREATE_EVENT, [
-//            'message' => [
-//                'manager_id' => $request->user()->id
-//            ]
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_CREATE_EVENT, [
+            'message' => [
+                'manager_id' => $request->user()->id
+            ]
+        ]);
+
+        // リアルタイム通知
+        Pusher::trigger(self::FOCUS_MODE_CHANNEL, self::FOCUS_SESSION_CREATE_EVENT, [
+            'message' => [
+                'manager_id' => $request->user()->id,
+                'session_id' => $newSession->id,
+                'session_name' => $newSession->name
+            ]
+        ]);
 
         return $response;
     }
@@ -236,13 +245,22 @@ class SessionController extends Controller
         $session->update($request->all());
 
         $response = new SessionResource(Session::find($session->id));
-//        // リアルタイム通知
-//        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
-//            'message' => [
-//                'manager_id' => $session->manager->id,
-//                'session_id' => $session->id
-//            ]
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_UPDATE_EVENT, [
+            'message' => [
+                'manager_id' => $session->manager->id,
+                'session_id' => $session->id
+            ]
+        ]);
+
+        // リアルタイム通知
+        Pusher::trigger(self::FOCUS_MODE_CHANNEL, self::FOCUS_SESSION_UPDATE_EVENT, [
+            'message' => [
+                'manager_id' => $session->manager->id,
+                'session_id' => $session->id,
+                'user_ids' => [$session->users()->pluck('id')->toArray()]
+            ]
+        ]);
 
         return $response;
     }
@@ -257,13 +275,13 @@ class SessionController extends Controller
     {
         $session->delete();
 
-//        // リアルタイム通知
-//        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_DELETE_EVENT, [
-//            'message' => [
-//                'manager_id' => $session->manager->id,
-//                'session_id' => $session->id
-//            ]
-//        ]);
+        // リアルタイム通知
+        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_DELETE_EVENT, [
+            'message' => [
+                'manager_id' => $session->manager->id,
+                'session_id' => $session->id
+            ]
+        ]);
 
         return response(null, Response::HTTP_NO_CONTENT);
     }
