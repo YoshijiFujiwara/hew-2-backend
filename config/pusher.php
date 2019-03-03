@@ -40,12 +40,12 @@ return [
     'connections' => [
 
         'main' => [
-//            'auth_key' => '7c7e8a09165d3cfe3468',
-//            'secret' => '759e34abbab6e5fbf7c8',
+            'auth_key' => '7c7e8a09165d3cfe3468',
+            'secret' => '759e34abbab6e5fbf7c8',
             'app_id' => '720491',
-            'auth_key' => '7c7e8a09165d3cfe3468hogehoge',
-            'secret' => '759e34abbab6e5fbf7c8hogehoge',
-            'app_id' => '720491hogehoge',
+//            'auth_key' => '7c7e8a09165d3cfe3468hogehoge',
+//            'secret' => '759e34abbab6e5fbf7c8hogehoge',
+//            'app_id' => '720491hogehoge',
             'options' => [
                 'cluster' => 'ap1',
                 // 'encryption_master_key' => env('PUSHER_ENCRYPTION_MASTER_KEY'),

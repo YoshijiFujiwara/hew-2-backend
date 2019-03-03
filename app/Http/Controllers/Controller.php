@@ -58,6 +58,7 @@ class Controller extends BaseController
     /**
      * focus_mode_channel event
      */
+    public const FOCUS_SESSION_CREATE_EVENT = 'focus_session_create';
     public const FOCUS_SESSION_INVITATION_EVENT = 'focus_session_invitation';
     public const FOCUS_SESSION_UPDATE_EVENT = 'focus_session_update';
     public const FOCUS_SESSION_REPLY_EVENT = 'focus_session_reply';
