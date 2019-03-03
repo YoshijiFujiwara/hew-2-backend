@@ -34,7 +34,7 @@ class DefaultSettingController extends Controller
      * @bodyParam timer integer required 始まるまでの時間'01:00:00'形式
      * @bodyParam group_id integer required この設定を適用するグループid
      *
-     * @responseFile 201 responses/default_settings.store.201.json
+     * @responseFile 200 responses/default_settings.store.200.json
      */
     public function store(DefaultSettingStoreRequest $request)
     {
@@ -51,7 +51,8 @@ class DefaultSettingController extends Controller
 //            ]
 //        ]);
 
-        return new DefaultSettingResource($request->user()->managedDefaultSettings()->create($request->all()));
+        $newDefaultSetting = $request->user()->managedDefaultSettings()->create($request->all());
+        return new DefaultSettingResource(DefaultSetting::find($newDefaultSetting->id));
     }
 
     /**
