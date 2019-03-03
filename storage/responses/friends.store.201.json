@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"id":7,"unique_id":"ViuP8DnakL","name":null,"username":"\u30c6\u30b9\u30c8\u592a\u90ce","email":"testuser@example.com","unique_id_search_flag":1,"username_search_flag":1,"permitted":null,"attribute":null,"created_at":{"date":"2019-03-02 14:31:29.000000","timezone_type":3,"timezone":"UTC"},"updated_at":{"date":"2019-03-02 14:31:51.000000","timezone_type":3,"timezone":"UTC"},"deleted_at":null}
+=======
+{"id":7,"unique_id":"19uHJNkjFa","name":null,"username":"\u30c6\u30b9\u30c8\u592a\u90ce","email":"testuser@example.com","unique_id_search_flag":1,"username_search_flag":1,"permitted":null,"attribute":null,"created_at":{"date":"2019-03-03 01:56:21.000000","timezone_type":3,"timezone":"UTC"},"updated_at":{"date":"2019-03-03 01:56:40.000000","timezone_type":3,"timezone":"UTC"},"deleted_at":null}
+>>>>>>> master

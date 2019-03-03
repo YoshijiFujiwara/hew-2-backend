@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"data":[{"id":1,"unique_id":"TESTTEST","name":null,"username":"\u5e79\u4e8b\u3000\u6d5c\u7530","email":"hamada-manager@example.com","unique_id_search_flag":1,"username_search_flag":1,"created_at":{"date":"2019-03-02 14:31:26.000000","timezone_type":3,"timezone":"UTC"},"updated_at":{"date":"2019-03-02 14:31:26.000000","timezone_type":3,"timezone":"UTC"},"deleted_at":null}]}
+=======
+{"data":[{"id":1,"unique_id":"TESTTEST","name":null,"username":"\u5e79\u4e8b\u3000\u6d5c\u7530","email":"hamada-manager@example.com","unique_id_search_flag":1,"username_search_flag":1,"created_at":{"date":"2019-03-03 01:56:18.000000","timezone_type":3,"timezone":"UTC"},"updated_at":{"date":"2019-03-03 01:56:18.000000","timezone_type":3,"timezone":"UTC"},"deleted_at":null},{"id":38,"unique_id":"THpYhKHPnJ","name":null,"username":"\u4e95\u9ad8 \u62d3\u771f","email":"cwatanabe@example.com","unique_id_search_flag":1,"username_search_flag":1,"created_at":{"date":"2019-03-03 01:56:21.000000","timezone_type":3,"timezone":"UTC"},"updated_at":{"date":"2019-03-03 01:56:21.000000","timezone_type":3,"timezone":"UTC"},"deleted_at":null}]}
+>>>>>>> master

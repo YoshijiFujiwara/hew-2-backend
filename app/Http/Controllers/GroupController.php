@@ -31,7 +31,7 @@ class GroupController extends Controller
      *
      * @bodyParam name string required 新規グループの名前
      *
-     * @responseFile 201 responses/groups.store.201.json
+     * @responseFile 200 responses/groups.store.200.json
      */
     public function store(GroupStoreRequest $request)
     {
@@ -41,7 +41,8 @@ class GroupController extends Controller
 //            return response()->json(['error' => '同じ名前は使用できません'], Response::HTTP_CONFLICT);
 //        }
 
-        $response = new GroupResource($request->user()->managedGroups()->create($request->all()));
+        $newGroup= $request->user()->managedGroups()->create($request->all());
+        $response = new GroupResource(Group::find($newGroup->id));
         // リアルタイム通知
         Pusher::trigger(self::ADMIN_CHANNEL, self::GROUP_CREATE_EVENT, [
             'message' => [
