@@ -31,7 +31,7 @@ class AttributeController extends Controller
      * @bodyParam name string required 属性名。必須
      * @bodyParam plus_minus integer 加減算
      *
-     * @responseFile 201 responses/attributes.store.201.json
+     * @responseFile 200 responses/attributes.store.200.json
      * @responseFile 409 responses/attributes.store.409.json
      */
     public function store(Request $request)
@@ -55,7 +55,8 @@ class AttributeController extends Controller
 //            ]
 //        ]));
 
-        return new AttributeResource($request->user()->managedAttributes()->create($request->all()));
+        $newAttribute = $request->user()->managedAttributes()->create($request->all());
+        return new AttributeResource(Attribute::find($newAttribute->id));
     }
 
     /**

@@ -133,13 +133,14 @@ class SessionController extends Controller
      * @bodyParam start_time datetime  セッションの開始時刻
      * @bodyParam end_time  datetime  セッションの終了時刻
      *
-     * @responseFile 201 responses/sessions.store.201.json
+     * @responseFile 200 responses/sessions.store.200.json
      */
     public function store(SessionStoreRequest $request)
     {
         $newSession = $request->user()->managedSessions()->create($request->all());
 
-        $response = new SessionResource($newSession);
+        $response = new SessionResource(Session::find($newSession->id));
+
 //        // リアルタイム通知
 //        Pusher::trigger(self::ADMIN_CHANNEL, self::SESSION_CREATE_EVENT, [
 //            'message' => [
