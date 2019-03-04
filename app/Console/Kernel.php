@@ -25,9 +25,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->call(function () {
-            Artisan::call('queue:work');
-        })->name('queue_work')->everyMinute()->withoutOverlapping(525600);
+
     }
 
 
