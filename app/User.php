@@ -122,16 +122,19 @@ class User extends Authenticatable implements JWTSubject
             ->wherePivot('deleted_at', null)
             ->withPivot('attribute_id', 'permitted', 'deleted_at');
     }
+
     // フレンド
     public function friends()
     {
         return $this->allFriends()->wherePivot('permitted', true);
     }
+
     // 申請したけどブロックされた
     public function blockMeUsers()
     {
         return $this->allFriends()->wherePivot('permitted', false);
     }
+
     // 申請中
     public function waitingFriends()
     {
@@ -149,16 +152,19 @@ class User extends Authenticatable implements JWTSubject
             ->wherePivot('deleted_at', null)
             ->withPivot('attribute_id', 'permitted', 'deleted_at');
     }
+
     // 自分にフレンド申請しているユーザー
     public function invitingMeUsers()
     {
         return $this->allRequestMeUsers()->wherePivot('permitted', null);
     }
+
     // 自分に申請してきたユーザーで、自分がそれを了承した
     public function permittingUsers()
     {
         return $this->allRequestMeUsers()->wherePivot('permitted', true);
     }
+
     // 申請してきたけど、ブロックした
     public function blockingUsers()
     {
@@ -174,8 +180,12 @@ class User extends Authenticatable implements JWTSubject
     public function notStartSessions()
     {
         return $this->managedSessions()
-            ->whereNotNull('start_time')
-            ->where('start_time', '>', now()->format('Y-m-d H:i:s'));
+            ->Where(function ($query) {
+                $query
+                    ->whereNotNull('start_time')
+                    ->where('start_time', '>', now()->format('Y-m-d H:i:s'))
+                    ->orWhereNull('start_time');
+            });
     }
 
     // 進行中のセッション一覧
@@ -183,9 +193,13 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->managedSessions()
             ->whereNotNull('start_time')
-            ->whereNotNull('end_time')
             ->where('start_time', '<', now()->format('Y-m-d H:i:s'))
-            ->where('end_time', '>', now()->format('Y-m-d H:i:s'));
+            ->where(function ($query) {
+                $query
+                    ->whereNotNull('end_time')
+                    ->where('end_time', '>', now()->format('Y-m-d H:i:s'))
+                    ->orWhereNull('end_time');
+                });
     }
 
     // end_timeを過ぎたセッション一覧
