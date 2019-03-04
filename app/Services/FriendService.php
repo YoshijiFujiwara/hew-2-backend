@@ -84,7 +84,38 @@ class FriendService
                 ]
             ]);
         });
-        $user->friends()->where('id', $friend->id)->get()->each(function (User $user) {
+        $user->allFriends()->where('id', $friend->id)->get()->each(function (User $user) {
+            $user->pivot->deleted_at = now();
+            $user->pivot->save();
+        });
+
+        $friend->managedGroups->each(function (Group $group) use ($user) {
+            $group->users()->where('id', $user->id)->get()->each(function (User $user) {
+                $user->pivot->deleted_at = now();
+                $user->pivot->save();
+            });
+            // リアルタイム通知
+            Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::GROUP_UPDATE_EVENT, [
+                'message' => [
+                    'manager_id' => $group->manager->id,
+                    'group_id' => $group->id
+                ]
+            ]);
+        });
+        $friend->managedSessions->each(function (Session $session) use ($user) {
+            $session->users()->where('id', $user->id)->get()->each(function (User $user) {
+                $user->pivot->deleted_at = now();
+                $user->pivot->save();
+            });
+            // リアルタイム通知
+            Pusher::trigger(Controller::ADMIN_CHANNEL, Controller::SESSION_UPDATE_EVENT, [
+                'message' => [
+                    'manager_id' => $session->manager->id,
+                    'session_id' => $session->id
+                ]
+            ]);
+        });
+        $friend->allRequestMeUsers()->where('id', $friend->id)->get()->each(function (User $user) {
             $user->pivot->deleted_at = now();
             $user->pivot->save();
         });
