@@ -16,13 +16,13 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // 適当にユーザーを作って
-        factory(\App\User::class, 44)->create();
+        factory(\App\User::class, 6)->create();
 
         // 作ったユーザー一人ひとりに対してフレンドやグループ、セッションをランダムに追加していく
         \App\User::whereNotIn('id', [1,2,3,4,5,6])->each(function ($u) {
-            $u->managedAttributes()->saveMany(factory(\App\Model\Attribute::class, 5)->make());
+            $u->managedAttributes()->saveMany(factory(\App\Model\Attribute::class, 3)->make());
 
-            foreach (\App\User::where('id', '<>', $u->id)->whereNotIn('id', [1,2,3,4,5,6])->get()->random(25) as $friend) {
+            foreach (\App\User::where('id', '<>', $u->id)->whereNotIn('id', [1,2,3,4,5,6])->get()->random(3) as $friend) {
                 $permitted = false;
                 $random = rand(1, 15);
                 if ($random > 7) {
@@ -36,15 +36,15 @@ class DatabaseSeeder extends Seeder
                 ]);
             }
 
-            $u->managedGroups()->saveMany(factory(\App\Model\Group::class, 5)->make())
+            $u->managedGroups()->saveMany(factory(\App\Model\Group::class, 1)->make())
                 ->each(function ($g) {
                     // 全フレンドの25％を適当に登録
-                    $g->users()->attach($g->manager->friends->random($g->manager->friends->count() / 3));
+                    $g->users()->attach($g->manager->friends->random($g->manager->friends->count()));
                 });
-            $u->managedSessions()->saveMany(factory(\App\Model\Session::class, 4)->make())
+            $u->managedSessions()->saveMany(factory(\App\Model\Session::class, 2)->make())
                 ->each(function ($s) {
                     // 全フレンドの50%を適当に登録
-                    foreach ($s->manager->friends->random($s->manager->friends->count() / 2) as $friend) {
+                    foreach ($s->manager->friends->random($s->manager->friends->count()) as $friend) {
 
                         switch (rand(1,3)) {
                             case 1:
@@ -102,7 +102,7 @@ class DatabaseSeeder extends Seeder
         $testUser->save();
 
         // id 48番を固定のユーザーとする
-        $testUser = \App\User::find(48);
+        $testUser = \App\User::find(8);
         $testUser->email = 'testuser48@example.com';
         $testUser->username = 'テストユーザー２';
         $testUser->unique_id_search_flag = true;
@@ -110,7 +110,7 @@ class DatabaseSeeder extends Seeder
         $testUser->save();
 
         // id 49番を固定のユーザーとする
-        $testUser = \App\User::find(49);
+        $testUser = \App\User::find(9);
         $testUser->email = 'testuser49@example.com';
         $testUser->username = 'テストユーザー２';
         $testUser->unique_id_search_flag = true;
@@ -118,7 +118,7 @@ class DatabaseSeeder extends Seeder
         $testUser->save();
 
         // id 50番を固定のユーザーとする
-        $testUser = \App\User::find(50);
+        $testUser = \App\User::find(10);
         $testUser->email = 'testuser50@example.com';
         $testUser->username = 'テストユーザー３';
         $testUser->unique_id_search_flag = true;
