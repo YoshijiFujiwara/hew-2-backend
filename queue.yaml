@@ -1,0 +1,4 @@
+queue:
+- name: laravel-queue
+  rate: 12/m
+  target: laravelv2
