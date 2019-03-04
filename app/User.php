@@ -175,7 +175,7 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->managedSessions()
             ->whereNotNull('start_time')
-            ->whereDate('start_time', '>', now()->format('Y-m-d h:m:s'));
+            ->where('start_time', '>', now()->format('Y-m-d H:i:s'));
     }
 
     // 進行中のセッション一覧
@@ -184,8 +184,8 @@ class User extends Authenticatable implements JWTSubject
         return $this->managedSessions()
             ->whereNotNull('start_time')
             ->whereNotNull('end_time')
-            ->whereDate('start_time', '<', now()->format('Y-m-d h:m:s'))
-            ->whereDate('end_time', '>', now()->format('Y-m-d h:m:s'));
+            ->where('start_time', '<', now()->format('Y-m-d H:i:s'))
+            ->where('end_time', '>', now()->format('Y-m-d H:i:s'));
     }
 
     // end_timeを過ぎたセッション一覧
@@ -193,7 +193,7 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->managedSessions()
             ->whereNotNull('end_time')
-            ->whereDate('end_time', '<', now()->format('Y-m-d h:m:s'));
+            ->where('end_time', '<', now()->format('Y-m-d H:i:s'));
     }
 
     public function participatedSessions()
