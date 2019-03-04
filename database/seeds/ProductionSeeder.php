@@ -11,7 +11,7 @@ class ProductionSeeder extends Seeder
      */
     public function run()
     {
-        $managerEmail = 'hamada-manager@example.com';
+        $managerEmail = 'hamada@hew.com';
 
         $managers = [
             [
@@ -19,45 +19,45 @@ class ProductionSeeder extends Seeder
                 'email' => $managerEmail,
                 'unique_id_search_flag' => true,
                 'username_search_flag' => true,
-                'password' => 'o34k30skm3h4b'
+                'password' => 'hoisulu'
             ]
         ];
 
         $users = [
             [
                 'username' => '山本 京助',
-                'email' => 'kyosuke-yamamoto@example.com',
+                'email' => 'yamamoto@hew.com',
                 'unique_id_search_flag' => true,
                 'username_search_flag' => true,
-                'password' => 'o34k30skm3h4b'
+                'password' => 'hoisulu'
             ],
             [
                 'username' => '原田 和也',
-                'email' => 'kazuya-harada@example.com',
+                'email' => 'harada@hew.com',
                 'unique_id_search_flag' => true,
                 'username_search_flag' => true,
-                'password' => 'o34k30skm3h4b'
+                'password' => 'hoisulu'
             ],
             [
                 'username' => '若松 桃子',
-                'email' => 'momoko-wakamatsu@example.com',
+                'email' => 'wakamatsu@hew.com',
                 'unique_id_search_flag' => true,
                 'username_search_flag' => true,
-                'password' => 'o34k30skm3h4b'
+                'password' => 'hoisulu'
             ],
             [
                 'username' => '坂本 太一',
-                'email' => 'taichi-sakamoto@example.com',
+                'email' => 'sakamoto@hew.com',
                 'unique_id_search_flag' => true,
                 'username_search_flag' => true,
-                'password' => 'o34k30skm3h4b'
+                'password' => 'hoisulu'
             ],
             [
                 'username' => '伊藤 直子',
-                'email' => 'naoko-itho@example.com',
+                'email' => 'itho@hew.com',
                 'unique_id_search_flag' => true,
                 'username_search_flag' => true,
-                'password' => 'o34k30skm3h4b'
+                'password' => 'hoisulu'
             ]
         ];
 
