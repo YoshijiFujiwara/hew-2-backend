@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Guest;
 
+use App\Http\Resources\GuestSessionResource;
 use App\Http\Resources\SessionResource;
 use App\Http\Resources\UserResource;
 use App\Jobs\PushNotification;
 use App\Model\Session;
+use App\Services\GuestSessionService;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -20,6 +22,13 @@ use Pusher\Laravel\Facades\Pusher;
  */
 class SessionController extends Controller
 {
+    protected $guestSessionService;
+
+    public function __construct(GuestSessionService $guestSessionService)
+    {
+        $this->guestSessionService = $guestSessionService;
+    }
+
     /**
      * guests.sessions.index ゲストとして参加しているセッション一覧
      *
@@ -27,7 +36,9 @@ class SessionController extends Controller
      */
     public function index(Request $request)
     {
-        return SessionResource::collection($request->user()->participatedSessions);
+        $guestSessions = $this->guestSessionService->myGuestSessions($request->user(), 'participatedSessions');
+
+        return GuestSessionResource::collection($guestSessions);
     }
 
     /**
@@ -37,7 +48,9 @@ class SessionController extends Controller
      */
     public function waitSessions(Request $request)
     {
-        return SessionResource::collection($request->user()->waitSessions);
+        $guestSessions = $this->guestSessionService->myGuestSessions($request->user(), 'waitSessions');
+
+        return GuestSessionResource::collection($guestSessions);
     }
 
     /**
@@ -47,7 +60,9 @@ class SessionController extends Controller
      */
     public function allowSessions(Request $request)
     {
-        return SessionResource::collection($request->user()->allowSessions);
+        $guestSessions = $this->guestSessionService->myGuestSessions($request->user(), 'allowSessions');
+
+        return GuestSessionResource::collection($guestSessions);
     }
 
     /**
@@ -57,7 +72,9 @@ class SessionController extends Controller
      */
     public function denySessions(Request $request)
     {
-        return SessionResource::collection($request->user()->denySessions);
+        $guestSessions = $this->guestSessionService->myGuestSessions($request->user(), 'denySessions');
+
+        return GuestSessionResource::collection($guestSessions);
     }
 
     /**
@@ -68,7 +85,9 @@ class SessionController extends Controller
      */
     public function show(Request $request, Session $session)
     {
-        return new SessionResource($session);
+        $guestSession = $this->guestSessionService->myGuestSession($request->user(), $session);
+
+        return new GuestSessionResource($guestSession);
     }
 
     /**

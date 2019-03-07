@@ -258,7 +258,7 @@ class SessionController extends Controller
             'message' => [
                 'manager_id' => $session->manager->id,
                 'session_id' => $session->id,
-                'user_ids' => [$session->users()->pluck('id')->toArray()]
+                'user_ids' => $session->users()->pluck('id')->toArray()
             ]
         ]);
 
