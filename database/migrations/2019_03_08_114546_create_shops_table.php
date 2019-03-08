@@ -16,6 +16,7 @@ class CreateShopsTable extends Migration
         Schema::create('shops', function (Blueprint $table) {
             $table->increments('id');
             $table->string('shop_id')->unique()->comment('hotpepperのshop_idc');
+            $table->string('name');
             $table->float('lng')->comment('経度');
             $table->float('lat')->comment('緯度');
             $table->string('genre_id')->comment('ジャンルID');

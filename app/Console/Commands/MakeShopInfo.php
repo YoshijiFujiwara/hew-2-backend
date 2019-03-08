@@ -62,6 +62,7 @@ class MakeShopInfo extends Command
                 if (!empty($shopInfo)) {
                     Shop::create([
                         'shop_id' => $shopId,
+                        'name' => $shopInfo->name,
                         'lng' => $shopInfo->lng,
                         'lat' => $shopInfo->lat,
                         'genre_id' => $shopInfo->genre->code,
