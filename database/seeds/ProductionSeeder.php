@@ -161,7 +161,7 @@ class ProductionSeeder extends Seeder
                 'name' => 'いつもの飲み設定',
                 'current_location_flag' => 1,
                 'group_id' => 1,
-                'timer' => '01:00:00'
+                'timer' => '00:01:00'
             ],
         ]);
     }
