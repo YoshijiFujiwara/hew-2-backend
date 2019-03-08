@@ -21,10 +21,11 @@ class Session extends Model
         parent::boot();
 
         static::deleting(function (Session $session) {
-            $session->users()->get()->each(function (User $user) {
-                $user->pivot->deleted_at = now();
-                $user->pivot->save();
-            });
+            // デリート時でも残す
+//            $session->users()->get()->each(function (User $user) {
+//                $user->pivot->deleted_at = now();
+//                $user->pivot->save();
+//            });
         });
     }
 

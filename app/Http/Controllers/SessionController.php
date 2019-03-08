@@ -13,7 +13,6 @@ use Carbon\Carbon;
 use GPBMetadata\Google\Api\Log;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use mysql_xdevapi\Collection;
 use Pusher\Laravel\Facades\Pusher;
 
 /**
