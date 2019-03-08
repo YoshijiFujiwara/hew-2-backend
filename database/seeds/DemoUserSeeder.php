@@ -2,9 +2,9 @@
 
 use Illuminate\Database\Seeder;
 
-class ProductionSeeder extends Seeder
+class DemoUserSeeder extends Seeder
 {
-    const ID_ARRAY = [1, 2, 3, 4];
+    const ID_ARRAY = [5, 6, 7];
 
     /**
      * Run the database seeds.
@@ -13,40 +13,32 @@ class ProductionSeeder extends Seeder
      */
     public function run()
     {
-        // プレゼン用データ
+        // デモ用データ
         $users = [
-            [   // id 1
-                'username' => '浜田　太郎',
-                'email' => 'hamada@hew.com',
+            [   // id 5
+                'username' => '浜田　太郎(デモ)',
+                'email' => 'demo5@hew.com',
                 'unique_id_search_flag' => true,
                 'username_search_flag' => true,
                 'password' => 'hoisulu',
                 'email_verified_at' => now()
             ],
-            [   // id 2
-                'username' => '山田　忠明',
-                'email' => 'yamada@hew.com',
+            [   // id 6
+                'username' => '山田　忠明(デモ)',
+                'email' => 'demo6@hew.com',
                 'unique_id_search_flag' => true,
                 'username_search_flag' => true,
                 'password' => 'hoisulu',
                 'email_verified_at' => now()
             ],
-            [   // id 3
-                'username' => '田中　信也',
-                'email' => 'tanaka@hew.com',
+            [   // id 7
+                'username' => '田中　信也(デモ)',
+                'email' => 'demo7@hew.com',
                 'unique_id_search_flag' => true,
                 'username_search_flag' => true,
                 'password' => 'hoisulu',
                 'email_verified_at' => now()
-            ],
-            [   // id 4
-                'username' => '山本　京介',
-                'email' => 'yamamoto@hew.com',
-                'unique_id_search_flag' => true,
-                'username_search_flag' => true,
-                'password' => 'hoisulu',
-                'email_verified_at' => now()
-            ],
+            ]
         ];
 
         foreach ($users as $user) {
@@ -54,7 +46,7 @@ class ProductionSeeder extends Seeder
         }
         \App\User::whereIn('id', self::ID_ARRAY)->get()->each(function (\App\User $user) {
             $user->managedAttributes()->createMany([
-                [   // id 1
+                [
                     'name' => '先生',
                     'plus_minus' => '5000'
                 ],
@@ -105,15 +97,12 @@ class ProductionSeeder extends Seeder
 
             // それぞれから見た属性割当
             switch ($user->id) {
-                case 1:
-                    $user->allFriends()->updateExistingPivot(2, [
+                case 5:
+                    $user->allFriends()->updateExistingPivot(6, [
                         'attribute_id' => $user->managedAttributes->where('name', '先生')->first()->id
                     ]);
-                    $user->allFriends()->updateExistingPivot(3, [
+                    $user->allFriends()->updateExistingPivot(7, [
                         'attribute_id' => $user->managedAttributes->where('name', '先生')->first()->id
-                    ]);
-                    $user->allFriends()->updateExistingPivot(4, [
-                        'attribute_id' => $user->managedAttributes->where('name', '同級生')->first()->id
                     ]);
 
                     $user->managedSessions()->create([
@@ -126,56 +115,32 @@ class ProductionSeeder extends Seeder
                     ]);
 
                     $session = \App\Model\Session::where('name', '飲み会')->first();
-                    $session->users()->attach(2, [
+                    $session->users()->attach(6, [
                         'join_status' => 'allow',
                         'attribute_name' => '先生',
                         'plus_minus' => 5000
                     ]);
-                    $session->users()->attach(3, [
+                    $session->users()->attach(7, [
                         'join_status' => 'allow',
                         'attribute_name' => '先生',
                         'plus_minus' => 5000
                     ]);
-                    $session->users()->attach(4, [
-                        'join_status' => 'allow',
-                        'attribute_name' => '同級生',
-                        'plus_minus' => 0
-                    ]);
-
                     break;
-                case 2:
-                    $user->allFriends()->updateExistingPivot(1, [
+                case 6:
+                    $user->allFriends()->updateExistingPivot(5, [
                         'attribute_id' => $user->managedAttributes->where('name', '学生')->first()->id
                     ]);
-                    $user->allFriends()->updateExistingPivot(3, [
+                    $user->allFriends()->updateExistingPivot(7, [
                         'attribute_id' => $user->managedAttributes->where('name', '同僚')->first()->id
                     ]);
-                    $user->allFriends()->updateExistingPivot(4, [
-                        'attribute_id' => $user->managedAttributes->where('name', '学生')->first()->id
-                    ]);
 
                     break;
-                case 3:
-                    $user->allFriends()->updateExistingPivot(1, [
+                case 7:
+                    $user->allFriends()->updateExistingPivot(5, [
                         'attribute_id' => $user->managedAttributes->where('name', '学生')->first()->id
                     ]);
-                    $user->allFriends()->updateExistingPivot(2, [
+                    $user->allFriends()->updateExistingPivot(6, [
                         'attribute_id' => $user->managedAttributes->where('name', '同僚')->first()->id
-                    ]);
-                    $user->allFriends()->updateExistingPivot(4, [
-                        'attribute_id' => $user->managedAttributes->where('name', '学生')->first()->id
-                    ]);
-
-                    break;
-                case 4:
-                    $user->allFriends()->updateExistingPivot(1, [
-                        'attribute_id' => $user->managedAttributes->where('name', '同級生')->first()->id
-                    ]);
-                    $user->allFriends()->updateExistingPivot(2, [
-                        'attribute_id' => $user->managedAttributes->where('name', '先生')->first()->id
-                    ]);
-                    $user->allFriends()->updateExistingPivot(3, [
-                        'attribute_id' => $user->managedAttributes->where('name', '先生')->first()->id
                     ]);
 
                     break;
