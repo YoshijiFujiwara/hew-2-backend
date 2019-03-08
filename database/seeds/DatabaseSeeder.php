@@ -16,9 +16,14 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            ProductionSeeder::class,
+            PresentationSeeder::class,
             DemoUserSeeder::class
         ]);
+
+
+        /**
+         * todo　本番時はコメントアウトを外す
+         */
 
 //        // 適当にユーザーを作って
 //        factory(\App\User::class, 100)->create();
@@ -144,6 +149,44 @@ class DatabaseSeeder extends Seeder
 //        \Illuminate\Support\Facades\DB::table('users')->where('id', $testuserId)->update(['unique_id' => 'TESTTEST']);
 //        // テストデータでは、検索はすべてありにするか
 //        \Illuminate\Support\Facades\DB::table('users')->update(['unique_id_search_flag' => true, 'username_search_flag' => true]);
+        /**
+         * todo　本番時はここまでのコメントアウトを外す
+         */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

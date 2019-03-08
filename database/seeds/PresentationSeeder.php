@@ -1,8 +1,7 @@
 <?php
-
 use Illuminate\Database\Seeder;
 
-class ProductionSeeder extends Seeder
+class PresentationSeeder extends Seeder
 {
     const ID_ARRAY = [1, 2, 3, 4];
 
@@ -52,6 +51,11 @@ class ProductionSeeder extends Seeder
         foreach ($users as $user) {
             \App\User::create($user);
         }
+
+        /**
+         * todo これ以降は、PresentationUserReload.phpと完全一致すること
+         */
+
         \App\User::whereIn('id', self::ID_ARRAY)->get()->each(function (\App\User $user) {
             $user->managedAttributes()->createMany([
                 [   // id 1

@@ -45,8 +45,7 @@
             "App\\Repositories\\": "app/Repositories/"
         },
         "classmap": [
-            "database/seeds",
-            "database/factories"
+            "database"
         ]
     },
     "autoload-dev": {

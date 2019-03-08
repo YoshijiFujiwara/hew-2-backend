@@ -1,56 +1,58 @@
 <?php
-use Illuminate\Database\Seeder;
 
-class DemoUserSeeder extends Seeder
+namespace App\Console\Commands;
+
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
+
+class PresentationUserReload extends Command
 {
-    const ID_ARRAY = [5, 6, 7];
+    const ID_ARRAY = [1, 2, 3, 4];
 
     /**
-     * Run the database seeds.
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'reload:presentation';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'プレゼンテーション用ユーザーのデータのみをリロードする';
+
+    /**
+     * Create a new command instance.
      *
      * @return void
      */
-    public function run()
+    public function __construct()
     {
-        // デモ用データ
-        $users = [
-            [   // id 5
-                'username' => '浜田　太郎(デモ)',
-                'email' => 'demo5@hew.com',
-                'unique_id_search_flag' => true,
-                'username_search_flag' => true,
-                'password' => 'hoisulu',
-                'email_verified_at' => now()
-            ],
-            [   // id 6
-                'username' => '山田　忠明(デモ)',
-                'email' => 'demo6@hew.com',
-                'unique_id_search_flag' => true,
-                'username_search_flag' => true,
-                'password' => 'hoisulu',
-                'email_verified_at' => now()
-            ],
-            [   // id 7
-                'username' => '田中　信也(デモ)',
-                'email' => 'demo7@hew.com',
-                'unique_id_search_flag' => true,
-                'username_search_flag' => true,
-                'password' => 'hoisulu',
-                'email_verified_at' => now()
-            ]
-        ];
+        parent::__construct();
+    }
 
-        foreach ($users as $user) {
-            \App\User::create($user);
-        }
-
-        /**
-         * todo これ以降は、DemoUserReload.phpと完全一致すること
-         */
+    /**
+     * Execute the console command.
+     *
+     * @return mixed
+     */
+    public function handle()
+    {
+        // user_idが1,2,3,4にまつわるユーザー自身以外のデータを削除する
+        DB::table('user_friends')->whereIn('user_id', self::ID_ARRAY)->orWhereIn('friend_id', self::ID_ARRAY)->delete();
+        DB::table('session_user')->whereIn('user_id', self::ID_ARRAY)->delete();
+        DB::table('sessions')->whereIn('manager_id', self::ID_ARRAY)->delete();
+        DB::table('group_user')->whereIn('user_id', self::ID_ARRAY)->delete();
+        DB::table('groups')->whereIn('manager_id', self::ID_ARRAY)->delete();
+        DB::table('default_settings')->whereIn('manager_id', self::ID_ARRAY)->delete();
+        DB::table('attributes')->whereIn('manager_id', self::ID_ARRAY)->delete();
+        DB::table('android_device_tokens')->whereIn('user_id', self::ID_ARRAY)->delete();
 
         \App\User::whereIn('id', self::ID_ARRAY)->get()->each(function (\App\User $user) {
             $user->managedAttributes()->createMany([
-                [
+                [   // id 1
                     'name' => '先生',
                     'plus_minus' => '5000'
                 ],
@@ -101,12 +103,15 @@ class DemoUserSeeder extends Seeder
 
             // それぞれから見た属性割当
             switch ($user->id) {
-                case 5:
-                    $user->allFriends()->updateExistingPivot(6, [
+                case 1:
+                    $user->allFriends()->updateExistingPivot(2, [
                         'attribute_id' => $user->managedAttributes->where('name', '先生')->first()->id
                     ]);
-                    $user->allFriends()->updateExistingPivot(7, [
+                    $user->allFriends()->updateExistingPivot(3, [
                         'attribute_id' => $user->managedAttributes->where('name', '先生')->first()->id
+                    ]);
+                    $user->allFriends()->updateExistingPivot(4, [
+                        'attribute_id' => $user->managedAttributes->where('name', '同級生')->first()->id
                     ]);
 
                     $user->managedSessions()->create([
@@ -119,32 +124,56 @@ class DemoUserSeeder extends Seeder
                     ]);
 
                     $session = \App\Model\Session::where('name', '飲み会')->first();
-                    $session->users()->attach(6, [
+                    $session->users()->attach(2, [
                         'join_status' => 'allow',
                         'attribute_name' => '先生',
                         'plus_minus' => 5000
                     ]);
-                    $session->users()->attach(7, [
+                    $session->users()->attach(3, [
                         'join_status' => 'allow',
                         'attribute_name' => '先生',
                         'plus_minus' => 5000
                     ]);
-                    break;
-                case 6:
-                    $user->allFriends()->updateExistingPivot(5, [
-                        'attribute_id' => $user->managedAttributes->where('name', '学生')->first()->id
-                    ]);
-                    $user->allFriends()->updateExistingPivot(7, [
-                        'attribute_id' => $user->managedAttributes->where('name', '同僚')->first()->id
+                    $session->users()->attach(4, [
+                        'join_status' => 'allow',
+                        'attribute_name' => '同級生',
+                        'plus_minus' => 0
                     ]);
 
                     break;
-                case 7:
-                    $user->allFriends()->updateExistingPivot(5, [
+                case 2:
+                    $user->allFriends()->updateExistingPivot(1, [
                         'attribute_id' => $user->managedAttributes->where('name', '学生')->first()->id
                     ]);
-                    $user->allFriends()->updateExistingPivot(6, [
+                    $user->allFriends()->updateExistingPivot(3, [
                         'attribute_id' => $user->managedAttributes->where('name', '同僚')->first()->id
+                    ]);
+                    $user->allFriends()->updateExistingPivot(4, [
+                        'attribute_id' => $user->managedAttributes->where('name', '学生')->first()->id
+                    ]);
+
+                    break;
+                case 3:
+                    $user->allFriends()->updateExistingPivot(1, [
+                        'attribute_id' => $user->managedAttributes->where('name', '学生')->first()->id
+                    ]);
+                    $user->allFriends()->updateExistingPivot(2, [
+                        'attribute_id' => $user->managedAttributes->where('name', '同僚')->first()->id
+                    ]);
+                    $user->allFriends()->updateExistingPivot(4, [
+                        'attribute_id' => $user->managedAttributes->where('name', '学生')->first()->id
+                    ]);
+
+                    break;
+                case 4:
+                    $user->allFriends()->updateExistingPivot(1, [
+                        'attribute_id' => $user->managedAttributes->where('name', '同級生')->first()->id
+                    ]);
+                    $user->allFriends()->updateExistingPivot(2, [
+                        'attribute_id' => $user->managedAttributes->where('name', '先生')->first()->id
+                    ]);
+                    $user->allFriends()->updateExistingPivot(3, [
+                        'attribute_id' => $user->managedAttributes->where('name', '先生')->first()->id
                     ]);
 
                     break;
