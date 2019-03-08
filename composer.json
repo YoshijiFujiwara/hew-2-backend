@@ -14,11 +14,13 @@
         "fideloper/proxy": "^4.0",
         "google/cloud-error-reporting": "^0.12.4",
         "google/cloud-logging": "^1.14",
+        "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "5.7.*",
         "laravel/telescope": "^1.0",
         "laravel/tinker": "^1.0",
         "mpociot/laravel-apidoc-generator": "^3.3",
         "pusher/pusher-http-laravel": "^4.2",
+        "symfony/psr-http-message-bridge": "^1.1",
         "tymon/jwt-auth": "^1.0.0"
     },
     "require-dev": {

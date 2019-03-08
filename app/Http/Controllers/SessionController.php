@@ -8,6 +8,7 @@ use App\Http\Resources\SessionResource;
 use App\Http\Resources\SessionWithAllowUsersResource;
 use App\Http\Resources\UserResource;
 use App\Model\Session;
+use App\Model\Shop;
 use App\User;
 use Carbon\Carbon;
 use GPBMetadata\Google\Api\Log;

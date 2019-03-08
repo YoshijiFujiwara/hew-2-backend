@@ -13,6 +13,7 @@ Route::group([
 
 });
 
+
 Route::middleware('JWT')->group(function () {
 
     Route::post('device_token', 'PushNotificationController@storeDeviceToken')->name('push_notification.store_device_token');
@@ -80,6 +81,9 @@ Route::middleware('JWT')->group(function () {
         Route::post('perfect_by_unique_id', 'SearchController@perfectSearchByUniqueId')->name('search.perfect_by_unique_id');
         Route::post('forward_by_unique_id', 'SearchController@forwardSearchByUniqueId')->name('search.forward_by_unique_id');
     });
+
+    // hotpepper
+    Route::post('hotpepper/recommend', 'HotPepperController@recommend')->name('hotpepper.recommend');
 });
 
 Route::group([
