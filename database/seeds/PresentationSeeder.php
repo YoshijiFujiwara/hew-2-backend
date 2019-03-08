@@ -85,10 +85,10 @@ class PresentationSeeder extends Seeder
                     'permitted' => true
                 ]);
             });
-
-            $user->managedGroups()->create([
-                'name' => 'いつもの'
-            ]);
+//
+//            $user->managedGroups()->create([
+//                'name' => 'いつもの'
+//            ]);
 
             $group = new \App\Model\Group;
             $group->manager()->associate($user);
