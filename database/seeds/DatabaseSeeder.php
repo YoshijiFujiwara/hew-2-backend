@@ -20,7 +20,6 @@ class DatabaseSeeder extends Seeder
             DemoUserSeeder::class
         ]);
 
-
         /**
          * todo　本番時はコメントアウトを外す
          */
@@ -103,7 +102,7 @@ class DatabaseSeeder extends Seeder
 //            $defaultSetting->current_location_flag = $currentLocationFlag;
 //            $defaultSetting->longitude = $longitude;
 //            $defaultSetting->latitude = $latitude;
-//            $defaultSetting->timer =  \Carbon\Carbon::createFromTime(1,0,0);
+//            $defaultSetting->timer =  \Carbon\Carbon::createFromTime(0,1,0);
 //            $defaultSetting->group()->associate($u->managedGroups()->get()->random());
 //            $u->managedDefaultSettings()->save($defaultSetting);
 //        });
@@ -152,31 +151,6 @@ class DatabaseSeeder extends Seeder
         /**
          * todo　本番時はここまでのコメントアウトを外す
          */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
