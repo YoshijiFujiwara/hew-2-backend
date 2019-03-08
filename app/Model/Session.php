@@ -56,6 +56,11 @@ class Session extends Model
         return $this->users()->wherePivot('join_status', 'wait');
     }
 
+    public function shop()
+    {
+        return $this->belongsTo(Shop::class, 'shop_id', 'shop_id');
+    }
+
     /**
      * ポリシーで使用する
      */
