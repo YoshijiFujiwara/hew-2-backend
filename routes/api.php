@@ -113,6 +113,11 @@ Route::group([
 
     Route::apiResource('default_settings', 'DefaultSettingController')->only(['index', 'show', 'destroy']);
 
+    Route::apiResource('shops', 'ShopController')->only(['index', 'show']);
+    Route::prefix('shops/{shop}')->group(function () {
+        Route::get('sessions', 'ShopSessionController@index')->name('shops.sessions.index');
+    });
+
     Route::get('users', 'UserController@index')->name('users.index');
     Route::group([
         'prefix' => 'users/{user}',
@@ -163,6 +168,7 @@ Route::group([
 
             });
         });
+
     });
 
     Route::group([
