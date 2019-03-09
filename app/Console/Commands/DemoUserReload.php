@@ -121,7 +121,7 @@ class DemoUserReload extends Command
                         'end_time' => new \Carbon\Carbon('2019-03-13 21:30:00'),
                     ]);
 
-                    $session = \App\Model\Session::where('name', '飲み会')->first();
+                    $session = $user->managedSessions->where('name', '飲み会')->first();
                     $session->users()->attach(6, [
                         'join_status' => 'allow',
                         'attribute_name' => '先生',
