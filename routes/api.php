@@ -9,7 +9,7 @@ Route::group([
     Route::post('login', 'AuthController@login')->name('auth.login');
     Route::post('logout', 'AuthController@logout')->name('auth.logout');
     Route::post('refresh', 'AuthController@refresh')->name('auth.refresh');
-    Route::post('me', 'AuthController@me')->name('auth.me');
+    Route::get('me', 'AuthController@me')->middleware('cache')->name('auth.me');
 
 });
 

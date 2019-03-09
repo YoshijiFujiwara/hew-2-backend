@@ -115,7 +115,7 @@ class AuthTest extends TestCase
     public function testMe()
     {
         $testUser = User::find(7);
-        $response = $this->apiAs($testUser, 'POST', route('auth.me'), [], []);
+        $response = $this->apiAs($testUser, 'GET', route('auth.me'), [], []);
 
 //        Log::debug(print_r($response, true));
 

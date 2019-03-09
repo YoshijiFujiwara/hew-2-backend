@@ -18,7 +18,7 @@
         "laravel/framework": "5.7.*",
         "laravel/telescope": "^1.0",
         "laravel/tinker": "^1.0",
-        "mpociot/laravel-apidoc-generator": "^3.3",
+        "mpociot/laravel-apidoc-generator": "^3.4",
         "pusher/pusher-http-laravel": "^4.2",
         "symfony/psr-http-message-bridge": "^1.1",
         "tymon/jwt-auth": "^1.0.0"
