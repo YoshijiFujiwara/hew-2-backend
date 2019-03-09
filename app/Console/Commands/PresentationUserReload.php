@@ -50,9 +50,14 @@ class PresentationUserReload extends Command
         DB::table('attributes')->whereIn('manager_id', self::ID_ARRAY)->delete();
         DB::table('android_device_tokens')->whereIn('user_id', self::ID_ARRAY)->delete();
 
+        $this->seeding();
+    }
+
+    public function seeding()
+    {
         \App\User::whereIn('id', self::ID_ARRAY)->get()->each(function (\App\User $user) {
             $user->managedAttributes()->createMany([
-                [   // id 1
+                [
                     'name' => '先生',
                     'plus_minus' => '5000'
                 ],
