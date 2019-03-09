@@ -66,7 +66,8 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         // 追加
-        'JWT' => \App\Http\Middleware\JWT::class,];
+        'JWT' => \App\Http\Middleware\JWT::class,
+        'cache' => \App\Http\Middleware\Cache::class,];
 
     /**
      * The priority-sorted list of middleware.

@@ -14,7 +14,7 @@ Route::group([
 });
 
 
-Route::middleware('JWT')->group(function () {
+Route::middleware(['JWT', 'cache'])->group(function () {
 
     Route::post('device_token', 'PushNotificationController@storeDeviceToken')->name('push_notification.store_device_token');
 
