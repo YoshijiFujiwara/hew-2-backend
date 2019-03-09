@@ -54,42 +54,42 @@ class HotPepperController extends Controller
             $resultArray = [];
             // todo とりあえず、イベントでの使用数が多い順に並べて
             $recommendIds = Shop::whereIn('shop_id', $shopIds)->withCount('sessions')->get()->sortByDesc('sessions_count')->pluck('shop_id')->toArray();
-            if (isset($recommendIds[0])) {
-                $resultArray[] = $recommendIds[0];
-            }
-            if (isset($recommendIds[1])) {
-                $resultArray[] = $recommendIds[1];
-            }
-
-//            dd($recommendIds);
-
-            // todo 自分がイベントで使用したことのある店をさらに先に表示する
-            $managedSessionShopIds = $request->user()->managedSessions()->pluck('shop_id')->toArray();
-            // todo 自分がゲストとして参加したことのある店を次に表示する
-            $participatedSessionShopIds = $request->user()->participatedSessions()->pluck('shop_id')->toArray();
-
-            $alreadyShopIds = array_merge($managedSessionShopIds,$participatedSessionShopIds);
-            $alreadyShopIds = array_unique($alreadyShopIds);
-
-            $alreadyShopIds = array_diff($alreadyShopIds, $recommendIds);
-//            dd($alreadyShopIds);
-
-            foreach ($alreadyShopIds as $alreadyShopId) {
-                foreach ($recommendIds as $key => $id) {
-                    if ($key > 1 && $alreadyShopId == $id) {
-                        $resultArray[] = $id;
-                    }
-                }
-            }
-
-            if (count($resultArray) < 3) {
-                for ($i = 2; count($resultArray) < 3; $i++) {
-                    $resultArray[] = $recommendIds[$i];
-                }
-            }
+//            if (isset($recommendIds[0])) {
+//                $resultArray[] = $recommendIds[0];
+//            }
+//            if (isset($recommendIds[1])) {
+//                $resultArray[] = $recommendIds[1];
+//            }
+//
+////            dd($recommendIds);
+//
+//            // todo 自分がイベントで使用したことのある店をさらに先に表示する
+//            $managedSessionShopIds = $request->user()->managedSessions()->pluck('shop_id')->toArray();
+//            // todo 自分がゲストとして参加したことのある店を次に表示する
+//            $participatedSessionShopIds = $request->user()->participatedSessions()->pluck('shop_id')->toArray();
+//
+//            $alreadyShopIds = array_merge($managedSessionShopIds,$participatedSessionShopIds);
+//            $alreadyShopIds = array_unique($alreadyShopIds);
+//
+//            $alreadyShopIds = array_diff($alreadyShopIds, $recommendIds);
+////            dd($alreadyShopIds);
+//
+//            foreach ($alreadyShopIds as $alreadyShopId) {
+//                foreach ($recommendIds as $key => $id) {
+//                    if ($key > 1 && $alreadyShopId == $id) {
+//                        $resultArray[] = $id;
+//                    }
+//                }
+//            }
+//
+//            if (count($resultArray) < 3) {
+//                for ($i = 2; count($resultArray) < 3; $i++) {
+//                    $resultArray[] = $recommendIds[$i];
+//                }
+//            }
 
             return response()->json([
-                'data' => $resultArray
+                'data' => $recommendIds
             ]);
 
         } catch (ClientException $exception) {
