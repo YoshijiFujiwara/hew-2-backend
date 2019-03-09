@@ -20,24 +20,7 @@ class JWT
      */
     public function handle($request, Closure $next)
     {
-//        JWTAuth::parseToken()->authenticate();
-
-        try {
-            if (! $user = JWTAuth::parseToken()->authenticate()) {
-                return response()->json(['user_not_found'], 404);
-            }
-
-        } catch (TokenExpiredException $e) {
-            return response()->json(['token_expired'], 401);
-
-        } catch (TokenBlacklistedException $e) {
-            return response()->json(['token_blacklisted'], 401);
-
-        } catch (TokenInvalidException $e) {
-            return response()->json(['token_invalid'], 401);
-
-        }
-
+        JWTAuth::parseToken()->authenticate();
         return $next($request);
 
     }
