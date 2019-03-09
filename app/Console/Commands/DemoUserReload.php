@@ -85,10 +85,6 @@ class DemoUserReload extends Command
                 ]);
             });
 
-            $user->managedGroups()->create([
-                'name' => 'いつもの'
-            ]);
-
             $group = new \App\Model\Group;
             $group->manager()->associate($user);
             $group->name = 'いつもの';
