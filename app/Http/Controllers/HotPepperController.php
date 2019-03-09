@@ -54,8 +54,12 @@ class HotPepperController extends Controller
             $resultArray = [];
             // todo とりあえず、イベントでの使用数が多い順に並べて
             $recommendIds = Shop::whereIn('shop_id', $shopIds)->withCount('sessions')->get()->sortByDesc('sessions_count')->pluck('shop_id')->toArray();
-            $resultArray[] = $recommendIds[0];
-            $resultArray[] = $recommendIds[1];
+            if (isset($recommendIds[0])) {
+                $resultArray[] = $recommendIds[0];
+            }
+            if (isset($recommendIds[1])) {
+                $resultArray[] = $recommendIds[1];
+            }
 
 //            dd($recommendIds);
 
