@@ -53,11 +53,12 @@ class FriendService
             ]
         ]);
 
-        return response(new UserResource($user->waitingFriends->where('id', $friendRequestUser->id)->first()),  Response::HTTP_CREATED);
+        return response(new UserResource($user->waitingFriends()->where('id', $friendRequestUser->id)->first()),  Response::HTTP_CREATED);
     }
 
     public function delete(User $user, User $friend)
     {
+        // 解除した側の処理
         $user->managedGroups->each(function (Group $group) use ($friend) {
             $group->users()->where('id', $friend->id)->get()->each(function (User $user) {
                 $user->pivot->deleted_at = now();
@@ -89,6 +90,7 @@ class FriendService
             $user->pivot->save();
         });
 
+        // 解除された側の処理
         $friend->managedGroups->each(function (Group $group) use ($user) {
             $group->users()->where('id', $user->id)->get()->each(function (User $user) {
                 $user->pivot->deleted_at = now();
@@ -115,7 +117,13 @@ class FriendService
                 ]
             ]);
         });
+        /*
         $friend->allRequestMeUsers()->where('id', $friend->id)->get()->each(function (User $user) {
+            $user->pivot->deleted_at = now();
+            $user->pivot->save();
+        });
+        */
+        $friend->allFriends()->where('id', $user->id)->get()->each(function (User $user) {
             $user->pivot->deleted_at = now();
             $user->pivot->save();
         });
