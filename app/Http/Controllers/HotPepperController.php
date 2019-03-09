@@ -18,20 +18,21 @@ class HotPepperController extends Controller
      * hotpepper.search.favorite ホットペッパーの検索の際に、店IDをおすすめ順に並べ替える。その中に自分のいったことのある店があれば、[1番人気, 2番人気, 行ったことがある]の順に返す。なければ、[1番人気, 2番人気, ３番人気]の順に返す。レスポンス速度があやしい。
      *
      * @bodyParam body 連想配列 required ホットペッパーの検索の際に使う、クエリパラメータをAPIKEYを除いて渡す
+     * @bodyParam count int 返却する店件数（指定なしの場合３件）
      *
      * @response {
-    "data": [
-    "J001098881",
-    "J001182578",
-    "J001100873"
-    ]
-    }
+     * "data": [
+     * "J001098881",
+     * "J001182578",
+     * "J001100873"
+     * ]
+     * }
      */
     public function recommend(Request $request)
     {
         // body のクエリ検索条件を解体して、urlを組み立てる
         $url = config('apikey.RECRUIT_WEB_API_URL');
-        $url .= '&count=30';
+        $url .= '&count=100';
 
         foreach ($request->body as $key => $value) {
             $url .= '&' . $key . '=' . $value;
@@ -88,8 +89,36 @@ class HotPepperController extends Controller
 //                }
 //            }
 
+            $i = 0;
+            $size = 3;
+            if ($request->has('count')){
+                $size = $request->count;
+            }
+            foreach ($recommendIds as $id) {
+                $i++;
+                if ($i > $size) {
+                    break;
+                }
+                $resultArray[] = $id;
+            }
+            // 件数が少ない場合素の検索結果から補填
+            foreach ($shopInfos as $shopInfo) {
+                $i++;
+                if ($i > $size) {
+                    break;
+                }
+                // 既に存在するSHOPなら飛ばす
+                if (in_array($shopInfo->id, $resultArray)) {
+                    $i--;
+                    continue;
+                } else {
+                    $resultArray[] = $shopInfo->id;
+                }
+            }
+            // それで足りなければ諦める
+
             return response()->json([
-                'data' => $recommendIds
+                'data' => $resultArray
             ]);
 
         } catch (ClientException $exception) {
