@@ -50,6 +50,11 @@ class DemoUserReload extends Command
         DB::table('attributes')->whereIn('manager_id', self::ID_ARRAY)->delete();
         DB::table('android_device_tokens')->whereIn('user_id', self::ID_ARRAY)->delete();
 
+       $this->seeding();
+    }
+
+    public function seeding()
+    {
         \App\User::whereIn('id', self::ID_ARRAY)->get()->each(function (\App\User $user) {
             $user->managedAttributes()->createMany([
                 [
@@ -79,10 +84,6 @@ class DemoUserReload extends Command
                     'permitted' => true
                 ]);
             });
-
-            $user->managedGroups()->create([
-                'name' => 'いつもの'
-            ]);
 
             $group = new \App\Model\Group;
             $group->manager()->associate($user);
@@ -120,7 +121,7 @@ class DemoUserReload extends Command
                         'end_time' => new \Carbon\Carbon('2019-03-13 21:30:00'),
                     ]);
 
-                    $session = \App\Model\Session::where('name', '飲み会')->first();
+                    $session = $user->managedSessions->where('name', '飲み会')->first();
                     $session->users()->attach(6, [
                         'join_status' => 'allow',
                         'attribute_name' => '先生',

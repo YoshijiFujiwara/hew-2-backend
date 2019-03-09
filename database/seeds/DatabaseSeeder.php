@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
          */
 
 //        // 適当にユーザーを作って
-//        factory(\App\User::class, 100)->create();
+//        factory(\App\User::class, 50)->create();
 //
 //        // 作ったユーザー一人ひとりに対してフレンドやグループ、セッションをランダムに追加していく
 //        \App\User::whereNotIn('id', [1,2,3,4,5,6,7])->each(function ($u) {
