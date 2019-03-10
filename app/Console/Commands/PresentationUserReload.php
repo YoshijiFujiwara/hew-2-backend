@@ -51,6 +51,8 @@ class PresentationUserReload extends Command
         DB::table('attributes')->whereIn('manager_id', self::ID_ARRAY)->delete();
         DB::table('android_device_tokens')->whereIn('user_id', self::ID_ARRAY)->delete();
 
+        $this->seeding();
+
         User::find(1)->update([
             'username' => '浜田　太郎',
             'email' => 'hamada@hew.com',
@@ -83,8 +85,6 @@ class PresentationUserReload extends Command
             'password' => 'hoisulu',
             'email_verified_at' => now()
         ]);
-
-        $this->seeding();
     }
 
     public function seeding()
