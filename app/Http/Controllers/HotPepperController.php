@@ -127,37 +127,39 @@ class HotPepperController extends Controller
 
     }
 
-//    public function test()
-//    {
-//        //request先
-//        $url = config('apikey.RECRUIT_WEB_API_URL');
-//
-//        $url .= '&large_area=Z023&count=100';
-//
-//        // インスタンス作成
-//        $client = new Client();
-//
-//        // リクエスト送信
-//        $response = $client->request('GET', $url);
-////        $response = $client->request('GET', 'http://webservice.recruit.co.jp/hotpepper/large_area/v1/?key=6a2f08f9864336a2&format=json&keyword=大阪');
-//
-//        $result = json_decode($response->getBody());
-////        dd($result->results);
-////        dd($result->results->shop[0]);
-////        dd($result->results->shop[0]->lng);
-//
-//        $data = [];
-//        foreach ($result->results->shop as $shop) {
-//            $data[] = $shop->id;
-//        }
-//
-//
-//        foreach ($data as $id) {
-//            echo '\'';
-//            echo $id;
-//            echo '\'';
-//            echo ',';
-//        }
-//        return ;
-//    }
+    public function test()
+    {
+        //request先
+        $url = config('apikey.RECRUIT_WEB_API_URL');
+
+        $url .= '&count=100&keyword=兵庫';
+
+        // インスタンス作成
+        $client = new Client();
+
+        // リクエスト送信
+        $response = $client->request('GET', $url);
+//        $response = $client->request('GET', 'http://webservice.recruit.co.jp/hotpepper/large_area/v1/?key=6a2f08f9864336a2&format=json&keyword=大阪');
+
+        $result = json_decode($response->getBody());
+//        dd($result->results);
+//        dd($result->results->shop[0]);
+//        dd($result->results->shop[0]->lng);
+
+        dd($result->results->shop[0]);
+
+        $data = [];
+        foreach ($result->results->shop as $shop) {
+            $data[] = $shop->id;
+        }
+
+
+        foreach ($data as $id) {
+            echo '\'';
+            echo $id;
+            echo '\'';
+            echo ',';
+        }
+        return ;
+    }
 }
