@@ -21,6 +21,9 @@ class CreateShopsTable extends Migration
             $table->float('lat')->comment('緯度');
             $table->string('genre_id')->comment('ジャンルID');
             $table->string('genre_name')->comment('ジャンル名');
+            $table->string('large_area_name')->comment('大阪とか');
+            $table->string('middle_area_name')->comment('神戸とか');
+            $table->string('small_area_name')->comment('三宮とか');
             $table->timestamps();
             $table->softDeletes();
         });

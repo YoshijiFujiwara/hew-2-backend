@@ -66,7 +66,10 @@ class MakeShopInfo extends Command
                         'lng' => $shopInfo->lng,
                         'lat' => $shopInfo->lat,
                         'genre_id' => $shopInfo->genre->code,
-                        'genre_name' => $shopInfo->genre->name
+                        'genre_name' => $shopInfo->genre->name,
+                        'large_area_name' => $shopInfo->large_area->name,
+                        'middle_area_name' => $shopInfo->middle_area->name,
+                        'small_area_name' => $shopInfo->small_area->name,
                     ]);
                 }
 
