@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Model\Shop;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class SessionResource extends JsonResource
@@ -18,6 +19,7 @@ class SessionResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'shop_id' => $this->shop_id,
+            'shop' => new ShopResource($this->shop),
             'budget' => $this->budget,
             'actual' => $this->actual,
             'start_time' => $this->start_time,

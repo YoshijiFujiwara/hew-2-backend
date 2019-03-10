@@ -8,6 +8,11 @@ class DatabaseSeeder extends Seeder
         '上司', '先輩', '後輩', '同僚', '部長', '同級生', '部下', '親', '親戚', '幼馴染', 'VIP', '先生', '特別', '女性'
     ];
 
+    const DEMO_MAX_ID = 25;
+
+    const DS_PREFIX_ARRAY = ['いつもの', 'たまに', '重要な', 'まれな', '大事な', 'スペシャル', '普通の', '学校の', '職場の', 'バイト先の', '大切な', '愉快な'];
+    const DS_NAMES = ['設定', 'テンプレ'];
+
     /**
      * Seed the application's database.
      *
@@ -25,13 +30,13 @@ class DatabaseSeeder extends Seeder
          */
 
 //        // 適当にユーザーを作って
-//        factory(\App\User::class, 50)->create();
+//        factory(\App\User::class, 200)->create();
 //
 //        // 作ったユーザー一人ひとりに対してフレンドやグループ、セッションをランダムに追加していく
-//        \App\User::whereNotIn('id', [1,2,3,4,5,6,7])->each(function ($u) {
+//        \App\User::where('id', '>', self::DEMO_MAX_ID)->each(function ($u) {
 //            $u->managedAttributes()->saveMany(factory(\App\Model\Attribute::class, 3)->make());
 //
-//            foreach (\App\User::where('id', '<>', $u->id)->whereNotIn('id', [1,2,3,4,5,6,7])->get()->random(20) as $friend) {
+//            foreach (\App\User::where('id', '<>', $u->id)->where('id', '>', self::DEMO_MAX_ID)->get()->random(20) as $friend) {
 //                $permitted = false;
 //                $random = rand(1, 15);
 //                if ($random > 7) {
@@ -98,7 +103,7 @@ class DatabaseSeeder extends Seeder
 //            }
 //
 //            $defaultSetting = new \App\Model\DefaultSetting;
-//            $defaultSetting->name = str_random(7);
+//            $defaultSetting->name = self::DS_PREFIX_ARRAY[array_rand(self::DS_PREFIX_ARRAY)] . self::DS_NAMES[array_rand(self::DS_NAMES)];
 //            $defaultSetting->current_location_flag = $currentLocationFlag;
 //            $defaultSetting->longitude = $longitude;
 //            $defaultSetting->latitude = $latitude;
@@ -110,10 +115,8 @@ class DatabaseSeeder extends Seeder
 //
 //        // todo この辺が遅い??
 //
-//        $testuserId = 8;
-//
 //        // id 7番を固定のユーザーとする
-//        $testUser = \App\User::find($testuserId);
+//        $testUser = \App\User::find(self::DEMO_MAX_ID + 1);
 //        $testUser->email = 'testuser@example.com';
 //        $testUser->username = 'テスト太郎';
 //        $testUser->unique_id_search_flag = true;
@@ -121,7 +124,7 @@ class DatabaseSeeder extends Seeder
 //        $testUser->save();
 //
 //        // id 48番を固定のユーザーとする
-//        $testUser = \App\User::find($testuserId + 1);
+//        $testUser = \App\User::find(self::DEMO_MAX_ID + 2);
 //        $testUser->email = 'testuser48@example.com';
 //        $testUser->username = 'テストユーザー２';
 //        $testUser->unique_id_search_flag = true;
@@ -129,7 +132,7 @@ class DatabaseSeeder extends Seeder
 //        $testUser->save();
 //
 //        // id 49番を固定のユーザーとする
-//        $testUser = \App\User::find($testuserId + 2);
+//        $testUser = \App\User::find(self::DEMO_MAX_ID + 3);
 //        $testUser->email = 'testuser49@example.com';
 //        $testUser->username = 'テストユーザー２';
 //        $testUser->unique_id_search_flag = true;
@@ -137,7 +140,7 @@ class DatabaseSeeder extends Seeder
 //        $testUser->save();
 //
 //        // id 50番を固定のユーザーとする
-//        $testUser = \App\User::find($testuserId + 3);
+//        $testUser = \App\User::find(self::DEMO_MAX_ID + 4);
 //        $testUser->email = 'testuser50@example.com';
 //        $testUser->username = 'テストユーザー３';
 //        $testUser->unique_id_search_flag = true;
@@ -145,14 +148,23 @@ class DatabaseSeeder extends Seeder
 //        $testUser->save();
 //
 //        // orm のbootを無視したいから、仕方ない
-//        \Illuminate\Support\Facades\DB::table('users')->where('id', $testuserId)->update(['unique_id' => 'TESTTEST']);
+//        \Illuminate\Support\Facades\DB::table('users')->where('id', self::DEMO_MAX_ID + 1)->update(['unique_id' => 'TESTTEST']);
 //        // テストデータでは、検索はすべてありにするか
 //        \Illuminate\Support\Facades\DB::table('users')->update(['unique_id_search_flag' => true, 'username_search_flag' => true]);
+
         /**
          * todo　本番時はここまでのコメントアウトを外す
          */
 
-
+        // 管理者画面用
+        \App\User::create([
+            'username' => '管理者',
+            'email' => 'admin@hew.com',
+            'unique_id_search_flag' => true,
+            'username_search_flag' => true,
+            'password' => 'hoisulu',
+            'email_verified_at' => now()
+        ]);
 
 
 
