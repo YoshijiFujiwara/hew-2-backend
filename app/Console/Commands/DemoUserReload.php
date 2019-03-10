@@ -158,6 +158,12 @@ class DemoUserReload extends Command
                 $latitude = 35.71727401;
             }
 
+            // セッションを1個ソフトデリートする
+            $endSession = $u->endSessions()->first();
+            if (!empty($endSession)) {
+                $endSession->delete();
+            }
+
             $defaultSetting = new \App\Model\DefaultSetting;
             $defaultSetting->name = self::DS_PREFIX_ARRAY[array_rand(self::DS_PREFIX_ARRAY)] . self::DS_NAMES[array_rand(self::DS_NAMES)];
             $defaultSetting->current_location_flag = $currentLocationFlag;
