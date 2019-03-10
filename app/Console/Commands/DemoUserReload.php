@@ -12,6 +12,9 @@ class DemoUserReload extends Command
 
     const ATTRIBUTE_ARRAY = ['上司', '先輩', '後輩', '同僚', '部長', '同級生', '部下', '親', '親戚', '幼馴染', 'VIP', '先生', '特別', '女性'];
 
+    const DS_PREFIX_ARRAY = ['いつもの', 'たまに', '重要な', 'まれな', '大事な', 'スペシャル', '普通の', '学校の', '職場の', 'バイト先の', '大切な', '愉快な'];
+    const DS_NAMES = ['設定', 'テンプレ'];
+
     /**
      * The name and signature of the console command.
      *
@@ -108,10 +111,10 @@ class DemoUserReload extends Command
                     // 全フレンドの25％を適当に登録
                     $g->users()->attach($g->manager->friends->random($g->manager->friends->count() / 4));
                 });
-            $u->managedSessions()->saveMany(factory(\App\Model\Session::class, 3)->make())
+            $u->managedSessions()->saveMany(factory(\App\Model\Session::class, 10)->make())
                 ->each(function ($s) {
                     // 全フレンドの50%を適当に登録
-                    foreach ($s->manager->friends->random($s->manager->friends->count() / 2) as $friend) {
+                    foreach ($s->manager->friends->random((int)$s->manager->friends->count() * 0.75) as $friend) {
 
                         switch (rand(1,10)) {
                             case 1:
@@ -119,16 +122,16 @@ class DemoUserReload extends Command
                             case 3:
                             case 4:
                             case 5:
+                            case 6:
+                            case 7:
                                 $joinStatus = 'allow';
                                 $paidStatus = (rand(0,10) > 5)? true : false;
                                 break;
-                            case 6:
-                            case 7:
-                            case 8:
+                            case 9:
                                 $joinStatus = 'deny';
                                 $paidStatus = false;
                                 break;
-                            case 9:
+                            case 8:
                             case 10:
                                 $joinStatus = 'wait';
                                 $paidStatus = false;
@@ -156,7 +159,7 @@ class DemoUserReload extends Command
             }
 
             $defaultSetting = new \App\Model\DefaultSetting;
-            $defaultSetting->name = str_random(7);
+            $defaultSetting->name = self::DS_PREFIX_ARRAY[array_rand(self::DS_PREFIX_ARRAY)] . self::DS_NAMES[array_rand(self::DS_NAMES)];
             $defaultSetting->current_location_flag = $currentLocationFlag;
             $defaultSetting->longitude = $longitude;
             $defaultSetting->latitude = $latitude;

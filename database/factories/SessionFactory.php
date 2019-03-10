@@ -14,21 +14,25 @@ $factory->define(\App\Model\Session::class, function (Faker $faker) {
     $random = rand(5, 100);
     $randomHour = rand(-12, 12);
     if ($randomNumber > 15) {
-        $startTime = \Carbon\Carbon::now()->addDay($random * (-1))->addHour($randomHour);
+        $startTime = \Carbon\Carbon::now()->addDay($random)->addHour($randomHour);
         $endTime = null;
-    } else if ($randomNumber > 11) {
+    } else if ($randomNumber > 10) {
         $startTime = \Carbon\Carbon::now()->addDay($random)->addHour($randomHour);
         $endTime = \Carbon\Carbon::now()->addDay($random)->addHour($randomHour + 3);
-    } else if ($randomNumber > 7) {
+    } else if ($randomNumber > 5) {
         $startTime = \Carbon\Carbon::now()->addHour(rand(-5, -1));
         $endTime = \Carbon\Carbon::now()->addHour(rand(1, 5));
-    } else if ($randomNumber > 3) {
+    } else {
         $startTime = \Carbon\Carbon::now()->addDay($random * (-1))->addHour($randomHour);
         $endTime = \Carbon\Carbon::now()->addDay($random * (-1))->addHour($randomHour + 3);
     }
 
+
+    $prefixArray = ['いつもの', 'たまに', '重要な', 'まれな', '大事な', 'スペシャル', '普通の', '学校の', '職場の', 'バイト先の', '大切な', '愉快な'];
+    $sessionNames = ['飲み会', 'パーティ', 'うちあげ', 'イベント'];
+
     return [
-        'name' => $faker->word,
+        'name' => $prefixArray[array_rand($prefixArray)] . $sessionNames[array_rand($sessionNames)] . rand(1,10),
         'shop_id' => \Illuminate\Support\Arr::random($shopIds),
         'budget' => $faker->numberBetween(1000, 30000),
         'actual' => $faker->numberBetween(1000, 50000),
