@@ -33,7 +33,7 @@ class FriendService
             return response()->json(['error' => 'そのユーザーからのフレンド申請に対して、ブロックをしています。申請する前に、そのユーザーに対するブロックを解除してください'], Response::HTTP_CONFLICT);
             // すでに申請が来ていた場合は、両方の了承を得たと解釈して良いだろう
         } else if ($user->invitingMeUsers()->where('email', $email)->exists()) {
-            $user->invitingMeUsers()->where('email', $email)->updateExistingPivot($friendRequestUser->id, [
+            $user->invitingMeUsers()->where('email', $email)->updateExistingPivot($friendRequestUser, [
                 'permitted' => true
             ]);
             $user->friends()->attach($friendRequestUser, ['permitted' => true]);
@@ -53,7 +53,7 @@ class FriendService
             ]
         ]);
 
-        return response(new UserResource($user->waitingFriends()->where('id', $friendRequestUser->id)->first()),  Response::HTTP_CREATED);
+        return response(new UserResource($user->allFriends()->where('id', $friendRequestUser->id)->first()),  Response::HTTP_CREATED);
     }
 
     public function delete(User $user, User $friend)

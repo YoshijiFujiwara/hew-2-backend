@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class DemoUserReload extends Command
 {
-    const ID_ARRAY = [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
+    const ID_ARRAY = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
 
     const ATTRIBUTE_ARRAY = ['上司', '先輩', '後輩', '同僚', '部長', '同級生', '部下', '親', '親戚', '幼馴染', 'VIP', '先生', '特別', '女性'];
 
@@ -56,7 +56,7 @@ class DemoUserReload extends Command
         DB::table('attributes')->whereIn('manager_id', self::ID_ARRAY)->delete();
         DB::table('android_device_tokens')->whereIn('user_id', self::ID_ARRAY)->delete();
 
-       $this->seeding();
+        $this->seeding();
 
         User::find(5)->update([   // id 5
             'username' => '浜田　太郎(デモ)',
@@ -88,22 +88,46 @@ class DemoUserReload extends Command
 
     public function seeding()
     {
-        // 作ったユーザー一人ひとりに対してフレンドやグループ、セッションをランダムに追加していく
         \App\User::whereIn('id', self::ID_ARRAY)->each(function ($u) {
             $u->managedAttributes()->saveMany(factory(\App\Model\Attribute::class, 3)->make());
+        });
+        // 作ったユーザー一人ひとりに対してフレンドやグループ、セッションをランダムに追加していく
+        \App\User::whereIn('id', self::ID_ARRAY)->each(function ($u) {
 
             foreach (\App\User::where('id', '<>', $u->id)->whereIn('id', self::ID_ARRAY)->get()->random(15) as $friend) {
-                $permitted = false;
+                if ($u->id > $friend->id) {
+                    continue;
+                }
+                $permitted = 2;
                 $random = rand(1, 15);
                 if ($random > 7) {
-                    $permitted = true;
-                } elseif ($random > 2) {
-                    $permitted = null;
+                    $permitted = 0;
+                } else if ($random > 4) {
+                    $permitted = 1;
                 }
-                $u->friends()->attach($friend, [
-                    'attribute_id' => $u->managedAttributes->random()->id,
-                    'permitted' => $permitted
-                ]);
+                if ($permitted == 0) {
+                    // 友達
+                    $u->friends()->attach($friend, [
+                        'attribute_id' => $u->managedAttributes->random()->id,
+                        'permitted' => true
+                    ]);
+                    $friend->friends()->attach($u, [
+                        'attribute_id' => $friend->managedAttributes->random()->id,
+                        'permitted' => true
+                    ]);
+                } else if ($permitted == 1) {
+                    // こちらから申請した
+                    $u->friends()->attach($friend, [
+                        'attribute_id' => $u->managedAttributes->random()->id,
+                        'permitted' => null
+                    ]);
+                } else if ($permitted == 2) {
+                    // 向こうから申請が来た
+                    $friend->friends()->attach($u, [
+                        'attribute_id' => $friend->managedAttributes->random()->id,
+                        'permitted' => null
+                    ]);
+                }
             }
 
             $u->managedGroups()->saveMany(factory(\App\Model\Group::class, 2)->make())
@@ -116,7 +140,7 @@ class DemoUserReload extends Command
                     // 全フレンドの50%を適当に登録
                     foreach ($s->manager->friends->random((int)$s->manager->friends->count() * 0.75) as $friend) {
 
-                        switch (rand(1,10)) {
+                        switch (rand(1, 10)) {
                             case 1:
                             case 2:
                             case 3:
@@ -125,7 +149,7 @@ class DemoUserReload extends Command
                             case 6:
                             case 7:
                                 $joinStatus = 'allow';
-                                $paidStatus = (rand(0,10) > 5)? true : false;
+                                $paidStatus = (rand(0, 10) > 5) ? true : false;
                                 break;
                             case 9:
                                 $joinStatus = 'deny';
@@ -169,7 +193,7 @@ class DemoUserReload extends Command
             $defaultSetting->current_location_flag = $currentLocationFlag;
             $defaultSetting->longitude = $longitude;
             $defaultSetting->latitude = $latitude;
-            $defaultSetting->timer =  \Carbon\Carbon::createFromTime(0,1,0);
+            $defaultSetting->timer = \Carbon\Carbon::createFromTime(0, 1, 0);
             $defaultSetting->group()->associate($u->managedGroups()->get()->random());
             $u->managedDefaultSettings()->save($defaultSetting);
         });

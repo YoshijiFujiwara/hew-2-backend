@@ -231,7 +231,8 @@ class FriendController extends Controller
             return response()->json(['error' => 'そのユーザーからは招待されていません'], Response::HTTP_CONFLICT);
         }
         $request->user()->invitingMeUsers()->updateExistingPivot($request->user_id, [
-            'permitted' => false
+            'permitted' => false,
+            'deleted_at' => now()
         ]);
         // すでに友達の場合は、destoryするか
         if ($request->user()->allFriends()->where('id', $request->user_id)->exists()) {
