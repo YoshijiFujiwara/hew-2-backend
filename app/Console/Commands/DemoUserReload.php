@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 
@@ -49,6 +50,33 @@ class DemoUserReload extends Command
         DB::table('default_settings')->whereIn('manager_id', self::ID_ARRAY)->delete();
         DB::table('attributes')->whereIn('manager_id', self::ID_ARRAY)->delete();
         DB::table('android_device_tokens')->whereIn('user_id', self::ID_ARRAY)->delete();
+
+        User::find(5)->update([   // id 5
+            'username' => '浜田　太郎(デモ)',
+            'email' => 'demo5@hew.com',
+            'unique_id_search_flag' => true,
+            'username_search_flag' => true,
+            'password' => 'hoisulu',
+            'email_verified_at' => now()
+        ]);
+
+        User::find(6)->update([   // id 6
+            'username' => '山田　忠明(デモ)',
+            'email' => 'demo6@hew.com',
+            'unique_id_search_flag' => true,
+            'username_search_flag' => true,
+            'password' => 'hoisulu',
+            'email_verified_at' => now()
+        ]);
+
+        User::find(7)->update([   // id 7
+            'username' => '田中　信也(デモ)',
+            'email' => 'demo7@hew.com',
+            'unique_id_search_flag' => true,
+            'username_search_flag' => true,
+            'password' => 'hoisulu',
+            'email_verified_at' => now()
+        ]);
 
        $this->seeding();
     }
