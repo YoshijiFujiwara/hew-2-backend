@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 
@@ -49,6 +50,39 @@ class PresentationUserReload extends Command
         DB::table('default_settings')->whereIn('manager_id', self::ID_ARRAY)->delete();
         DB::table('attributes')->whereIn('manager_id', self::ID_ARRAY)->delete();
         DB::table('android_device_tokens')->whereIn('user_id', self::ID_ARRAY)->delete();
+
+        User::find(1)->update([
+            'username' => '浜田　太郎',
+            'email' => 'hamada@hew.com',
+            'unique_id_search_flag' => true,
+            'username_search_flag' => true,
+            'password' => 'hoisulu',
+            'email_verified_at' => now()
+        ]);
+        User::find(2)->update([
+            'username' => '山田　忠明',
+            'email' => 'yamada@hew.com',
+            'unique_id_search_flag' => true,
+            'username_search_flag' => true,
+            'password' => 'hoisulu',
+            'email_verified_at' => now()
+        ]);
+        User::find(3)->update([
+            'username' => '田中　信也',
+            'email' => 'tanaka@hew.com',
+            'unique_id_search_flag' => true,
+            'username_search_flag' => true,
+            'password' => 'hoisulu',
+            'email_verified_at' => now()
+        ]);
+        User::find(4)->update([
+            'username' => '山本　京介',
+            'email' => 'yamamoto@hew.com',
+            'unique_id_search_flag' => true,
+            'username_search_flag' => true,
+            'password' => 'hoisulu',
+            'email_verified_at' => now()
+        ]);
 
         $this->seeding();
     }
