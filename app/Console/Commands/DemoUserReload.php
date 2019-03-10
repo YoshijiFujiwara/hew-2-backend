@@ -8,7 +8,10 @@ use Illuminate\Support\Facades\DB;
 
 class DemoUserReload extends Command
 {
-    const ID_ARRAY = [5,6,7];
+    const ID_ARRAY = [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
+
+    const ATTRIBUTE_ARRAY = ['上司', '先輩', '後輩', '同僚', '部長', '同級生', '部下', '親', '親戚', '幼馴染', 'VIP', '先生', '特別', '女性'];
+
 
     /**
      * The name and signature of the console command.
@@ -51,6 +54,8 @@ class DemoUserReload extends Command
         DB::table('attributes')->whereIn('manager_id', self::ID_ARRAY)->delete();
         DB::table('android_device_tokens')->whereIn('user_id', self::ID_ARRAY)->delete();
 
+       $this->seeding();
+
         User::find(5)->update([   // id 5
             'username' => '浜田　太郎(デモ)',
             'email' => 'demo5@hew.com',
@@ -77,109 +82,88 @@ class DemoUserReload extends Command
             'password' => 'hoisulu',
             'email_verified_at' => now()
         ]);
-
-       $this->seeding();
     }
 
     public function seeding()
     {
-        \App\User::whereIn('id', self::ID_ARRAY)->get()->each(function (\App\User $user) {
-            $user->managedAttributes()->createMany([
-                [
-                    'name' => '先生',
-                    'plus_minus' => '5000'
-                ],
-                [
-                    'name' => '同僚',
-                    'plus_minus' => '0'
-                ],
-                [
-                    'name' => '同級生',
-                    'plus_minus' => '0'
-                ],
-                [
-                    'name' => '女性',
-                    'plus_minus' => '-500'
-                ],
-                [
-                    'name' => '学生',
-                    'plus_minus' => '-1000'
-                ],
-            ]);
+        // 作ったユーザー一人ひとりに対してフレンドやグループ、セッションをランダムに追加していく
+        \App\User::whereIn('id', self::ID_ARRAY)->each(function ($u) {
+            $u->managedAttributes()->saveMany(factory(\App\Model\Attribute::class, 3)->make());
 
-            \App\User::whereIn('id', self::ID_ARRAY)->where('id', '<>', $user->id)->get()->each(function (\App\User $friend) use ($user) {
-                $user->allFriends()->attach($friend->id, [
-                    'permitted' => true
+            foreach (\App\User::where('id', '<>', $u->id)->whereIn('id', self::ID_ARRAY)->get()->random(15) as $friend) {
+                $permitted = false;
+                $random = rand(1, 15);
+                if ($random > 7) {
+                    $permitted = true;
+                } elseif ($random > 2) {
+                    $permitted = null;
+                }
+                $u->friends()->attach($friend, [
+                    'attribute_id' => $u->managedAttributes->random()->id,
+                    'permitted' => $permitted
                 ]);
-            });
-
-            $group = new \App\Model\Group;
-            $group->manager()->associate($user);
-            $group->name = 'いつもの';
-            $group->save();
-            // 自分以外をグループに登録
-            $group->users()->attach(array_diff(self::ID_ARRAY, [$user->id]));
-
-            // default_settingを作成
-            $user->managedDefaultSettings()->createMany([
-                [
-                    'name' => 'いつもの設定',
-                    'current_location_flag' => 1,
-                    'group_id' => $user->managedGroups()->first()->id,
-                    'timer' => '00:01:00'
-                ],
-            ]);
-
-            // それぞれから見た属性割当
-            switch ($user->id) {
-                case 5:
-                    $user->allFriends()->updateExistingPivot(6, [
-                        'attribute_id' => $user->managedAttributes->where('name', '先生')->first()->id
-                    ]);
-                    $user->allFriends()->updateExistingPivot(7, [
-                        'attribute_id' => $user->managedAttributes->where('name', '先生')->first()->id
-                    ]);
-
-                    $user->managedSessions()->create([
-                        'name' => '飲み会',
-                        'shop_id' => 'J000766202',
-                        'budget' => 20000,
-                        'actual' => null,
-                        'start_time' => new \Carbon\Carbon('2019-03-13 18:30:00'),
-                        'end_time' => new \Carbon\Carbon('2019-03-13 21:30:00'),
-                    ]);
-
-                    $session = $user->managedSessions->where('name', '飲み会')->first();
-                    $session->users()->attach(6, [
-                        'join_status' => 'allow',
-                        'attribute_name' => '先生',
-                        'plus_minus' => 5000
-                    ]);
-                    $session->users()->attach(7, [
-                        'join_status' => 'allow',
-                        'attribute_name' => '先生',
-                        'plus_minus' => 5000
-                    ]);
-                    break;
-                case 6:
-                    $user->allFriends()->updateExistingPivot(5, [
-                        'attribute_id' => $user->managedAttributes->where('name', '学生')->first()->id
-                    ]);
-                    $user->allFriends()->updateExistingPivot(7, [
-                        'attribute_id' => $user->managedAttributes->where('name', '同僚')->first()->id
-                    ]);
-
-                    break;
-                case 7:
-                    $user->allFriends()->updateExistingPivot(5, [
-                        'attribute_id' => $user->managedAttributes->where('name', '学生')->first()->id
-                    ]);
-                    $user->allFriends()->updateExistingPivot(6, [
-                        'attribute_id' => $user->managedAttributes->where('name', '同僚')->first()->id
-                    ]);
-
-                    break;
             }
+
+            $u->managedGroups()->saveMany(factory(\App\Model\Group::class, 2)->make())
+                ->each(function ($g) {
+                    // 全フレンドの25％を適当に登録
+                    $g->users()->attach($g->manager->friends->random($g->manager->friends->count() / 4));
+                });
+            $u->managedSessions()->saveMany(factory(\App\Model\Session::class, 3)->make())
+                ->each(function ($s) {
+                    // 全フレンドの50%を適当に登録
+                    foreach ($s->manager->friends->random($s->manager->friends->count() / 2) as $friend) {
+
+                        switch (rand(1,10)) {
+                            case 1:
+                            case 2:
+                            case 3:
+                            case 4:
+                            case 5:
+                                $joinStatus = 'allow';
+                                $paidStatus = (rand(0,10) > 5)? true : false;
+                                break;
+                            case 6:
+                            case 7:
+                            case 8:
+                                $joinStatus = 'deny';
+                                $paidStatus = false;
+                                break;
+                            case 9:
+                            case 10:
+                                $joinStatus = 'wait';
+                                $paidStatus = false;
+                                break;
+                        }
+
+                        $s->users()->attach($friend, [
+                            'join_status' => $joinStatus,
+                            'paid' => $paidStatus,
+                            'plus_minus' => rand(-3000, 10000),
+                            'attribute_name' => self::ATTRIBUTE_ARRAY[array_rand(self::ATTRIBUTE_ARRAY)]
+                        ]);
+                    }
+                });
+
+
+            if (rand(0, 10)) {
+                $currentLocationFlag = true;
+                $longitude = null;
+                $latitude = null;
+            } else {
+                $currentLocationFlag = false;
+                $longitude = 140.00898606;
+                $latitude = 35.71727401;
+            }
+
+            $defaultSetting = new \App\Model\DefaultSetting;
+            $defaultSetting->name = str_random(7);
+            $defaultSetting->current_location_flag = $currentLocationFlag;
+            $defaultSetting->longitude = $longitude;
+            $defaultSetting->latitude = $latitude;
+            $defaultSetting->timer =  \Carbon\Carbon::createFromTime(0,1,0);
+            $defaultSetting->group()->associate($u->managedGroups()->get()->random());
+            $u->managedDefaultSettings()->save($defaultSetting);
         });
     }
 }

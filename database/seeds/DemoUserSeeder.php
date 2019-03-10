@@ -3,7 +3,8 @@ use Illuminate\Database\Seeder;
 
 class DemoUserSeeder extends Seeder
 {
-    const ID_ARRAY = [5, 6, 7];
+    const MAX_ID = 25;
+    const ID_ARRAY = [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
 
     /**
      * Run the database seeds.
@@ -43,6 +44,8 @@ class DemoUserSeeder extends Seeder
         foreach ($users as $user) {
             \App\User::create($user);
         }
+
+        factory(\App\User::class, self::MAX_ID - \App\User::all()->count())->create();
 
         /**
          * todo これ以降は、DemoUserReload.phpと完全一致すること
