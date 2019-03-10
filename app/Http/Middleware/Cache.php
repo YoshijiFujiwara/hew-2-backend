@@ -9,8 +9,8 @@ class Cache
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure $next
      * @return mixed
      */
     public function handle($request, Closure $next)
@@ -21,7 +21,8 @@ class Cache
         $isValidResponse = $statusCode === 200 || $statusCode === 203;
 
         if ($isValidResponse) {
-            $response->header('Cache-Control', 'public,max-age=10');
+            $cacheControl = $request->header('Cache-Control', 'public,max-age=3');
+            $response->header('Cache-Control', $cacheControl);
         }
 
         return $response;
