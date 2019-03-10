@@ -12,7 +12,6 @@ class DemoUserReload extends Command
 
     const ATTRIBUTE_ARRAY = ['上司', '先輩', '後輩', '同僚', '部長', '同級生', '部下', '親', '親戚', '幼馴染', 'VIP', '先生', '特別', '女性'];
 
-
     /**
      * The name and signature of the console command.
      *

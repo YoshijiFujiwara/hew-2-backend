@@ -12,7 +12,7 @@ $factory->define(\App\Model\Session::class, function (Faker $faker) {
     $randomNumber = rand(0,20);
 
     $random = rand(5, 100);
-    $randomHour = rand(-5, 5);
+    $randomHour = rand(-12, 12);
     if ($randomNumber > 15) {
         $startTime = \Carbon\Carbon::now()->addDay($random * (-1))->addHour($randomHour);
         $endTime = null;
