@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
          */
 
 //        // 適当にユーザーを作って
-//        factory(\App\User::class, 200)->create();
+//        factory(\App\User::class, 300)->create();
 //
 //        // 作ったユーザー一人ひとりに対してフレンドやグループ、セッションをランダムに追加していく
 //        \App\User::where('id', '>', self::DEMO_MAX_ID)->each(function ($u) {

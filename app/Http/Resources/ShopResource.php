@@ -22,6 +22,7 @@ class ShopResource extends JsonResource
             'lat' => $this->lat,
             'genre_id' => $this->genre_id,
             'genre_name' => $this->genre_name,
+            'address' => $this->address,
             'large_area_name' => $this->large_area_name,
             'middle_area_name' => $this->middle_area_name,
             'small_area_name' => $this->small_area_name,

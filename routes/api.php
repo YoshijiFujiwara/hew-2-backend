@@ -13,6 +13,9 @@ Route::group([
 
 });
 
+// test
+//Route::get('hotpepper/test', 'HotPepperController@test')->name('hotpepper.test');
+
 
 Route::middleware(['JWT', 'cache'])->group(function () {
 
