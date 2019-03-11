@@ -53,7 +53,7 @@ class GroupUserController extends Controller
             ]
         ]);
 
-        return UserResource::collection($group->users);
+        return UserResource::collection(Group::find($group->id)->users);
     }
 
     /**

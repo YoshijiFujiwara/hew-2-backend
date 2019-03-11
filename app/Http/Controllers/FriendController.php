@@ -40,7 +40,8 @@ class FriendController extends Controller
     /**
      * friends.store ◆友達申請する
      *
-     * @bodyParam email string required 追加する友達のメールアドレス
+     * @bodyParam email string 追加する友達のメールアドレス（どちらか必須）
+     * @bodyParam unique_id string 追加する友達のユニークID（どちらか必須）
      *
      * @responseFile 201 responses/friends.store.201.json
      * @responseFile 409 responses/friends.store.409.json
@@ -48,7 +49,11 @@ class FriendController extends Controller
     public function store(FriendStoreRequest $request)
     {
         // 申請対象者
-        $friendRequestUser = User::where('email', $request->email)->first();
+        if($request->has('email')){
+            $friendRequestUser = User::where('email', $request->email)->first();
+        } else {
+            $friendRequestUser = User::where('unique_id', $request->unique_id)->first();
+        }
 
         // push通知
         $this->dispatch(new PushNotification($request->user()->username . 'さんからフレンド申請が来ました', $friendRequestUser->deviceTokenArray()));
