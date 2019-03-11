@@ -54,8 +54,8 @@ class PresentationUserReload extends Command
         $this->seeding();
 
         User::find(1)->update([
-            'username' => '浜田　太郎',
-            'email' => 'hamada@hew.com',
+            'username' => '松坂 一穂',
+            'email' => 'matsu@hew.com',
             'unique_id_search_flag' => true,
             'username_search_flag' => true,
             'password' => 'hoisulu',
@@ -78,8 +78,8 @@ class PresentationUserReload extends Command
             'email_verified_at' => now()
         ]);
         User::find(4)->update([
-            'username' => '山本　京介',
-            'email' => 'yamamoto@hew.com',
+            'username' => '藤原 吉司',
+            'email' => 'fuji@hew.com',
             'unique_id_search_flag' => true,
             'username_search_flag' => true,
             'password' => 'hoisulu',
