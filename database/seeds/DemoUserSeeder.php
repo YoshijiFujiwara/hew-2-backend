@@ -16,7 +16,7 @@ class DemoUserSeeder extends Seeder
         // デモ用データ
         $users = [
             [   // id 5
-                'username' => '浜田　太郎(デモ)',
+                'username' => '浜田 太郎(デモ)',
                 'email' => 'demo5@hew.com',
                 'unique_id_search_flag' => true,
                 'username_search_flag' => true,
@@ -24,7 +24,7 @@ class DemoUserSeeder extends Seeder
                 'email_verified_at' => now()
             ],
             [   // id 6
-                'username' => '山田　忠明(デモ)',
+                'username' => '山田 忠明(デモ)',
                 'email' => 'demo6@hew.com',
                 'unique_id_search_flag' => true,
                 'username_search_flag' => true,
@@ -32,7 +32,7 @@ class DemoUserSeeder extends Seeder
                 'email_verified_at' => now()
             ],
             [   // id 7
-                'username' => '田中　信也(デモ)',
+                'username' => '田中 信也(デモ)',
                 'email' => 'demo7@hew.com',
                 'unique_id_search_flag' => true,
                 'username_search_flag' => true,

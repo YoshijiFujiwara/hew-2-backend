@@ -15,15 +15,15 @@ class PresentationSeeder extends Seeder
         // プレゼン用データ
         $users = [
             [   // id 1
-                'username' => '浜田　太郎',
-                'email' => 'hamada@hew.com',
+                'username' => '松坂 一穂',
+                'email' => 'matsu@hew.com',
                 'unique_id_search_flag' => true,
                 'username_search_flag' => true,
                 'password' => 'hoisulu',
                 'email_verified_at' => now()
             ],
             [   // id 2
-                'username' => '山田　忠明',
+                'username' => '山田 忠明',
                 'email' => 'yamada@hew.com',
                 'unique_id_search_flag' => true,
                 'username_search_flag' => true,
@@ -31,7 +31,7 @@ class PresentationSeeder extends Seeder
                 'email_verified_at' => now()
             ],
             [   // id 3
-                'username' => '田中　信也',
+                'username' => '田中 信也',
                 'email' => 'tanaka@hew.com',
                 'unique_id_search_flag' => true,
                 'username_search_flag' => true,
@@ -39,8 +39,8 @@ class PresentationSeeder extends Seeder
                 'email_verified_at' => now()
             ],
             [   // id 4
-                'username' => '山本　京介',
-                'email' => 'yamamoto@hew.com',
+                'username' => '藤原 吉司',
+                'email' => 'fuji@hew.com',
                 'unique_id_search_flag' => true,
                 'username_search_flag' => true,
                 'password' => 'hoisulu',
