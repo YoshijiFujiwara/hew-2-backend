@@ -1,5 +1,1 @@
 cron:
-- description: "laravel tasks worker"
-  url: /tasks/shopInfo
-  schedule: every 5 mins synchronized
-  target: laravelv2

@@ -1,0 +1,46 @@
+runtime: php72
+service: whistle
+
+entrypoint: serve public/index.php
+
+handlers:
+- url: /js
+  static_dir: public/js
+- url: /css
+  static_dir: public/css
+- url: /docs
+  static_dir: public/docs
+- url: /svg
+  static_dir: public/svg
+- url: /privacy_policy.html
+  static_files: public/privacy_policy.html
+  upload: public/privacy_policy.html
+
+- url: .*
+  script: auto
+
+automatic_scaling:
+  min_idle_instances: 1   # idle状態にあるインスタンスの最小値
+  max_idle_instances: 1                 # idle状態にあるインスタンスの最大値
+  min_pending_latency: 5000ms  # リクエストを処理するまでに許される待ち時間の最小
+  max_pending_latency: automatic
+
+env_variables:
+  # Put production environment variables here.
+  APP_LOG: errorlog
+  APP_KEY: [LARAVEL_APP_KEY]
+  APP_STORAGE: /tmp
+  VIEW_COMPILED_PATH: /tmp
+  CACHE_DRIVER: database
+  SESSION_DRIVER: array
+  QUEUE_CONNECTION: database
+  DB_HOST: localhost
+  DB_DATABASE: whistle
+  DB_USERNAME: [DBユーザー名]
+  DB_PASSWORD: [DBパスワード]
+  DB_SOCKET: "/cloudsql/[CLOUDSQLインスタンス接続名]"
+  JWT_SECRET: [LARAVEL_JWT_KEY]
+
+  LOG_CHANNEL: stackdriver
+beta_settings:
+  cloud_sql_instances: "[CLOUDSQLインスタンス接続名]" 
