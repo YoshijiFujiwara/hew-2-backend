@@ -1,1 +1,10 @@
 cron:
+- description: "laravel queue worker"
+  url: /tasks/queue
+  schedule: every 1 mins synchronized
+  target: whistle
+
+- description: "laravel tasks worker"
+  url: /tasks/shopInfo
+  schedule: every 5 mins synchronized
+  target: whistle
